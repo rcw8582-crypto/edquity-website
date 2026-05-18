@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, Calendar, CheckCircle2 } from "lucide-react";
+import PageMeta from "@/components/PageMeta";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -48,6 +49,10 @@ export default function Contact() {
 
   return (
     <div className="pt-20">
+      <PageMeta
+        title="Contact Us"
+        description="Reach out to EDquity at the Margins by email, phone, or by booking a free discovery call. We respond within 24 to 48 business hours."
+      />
       <section className="sp" style={{ background: "#f8fafc" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div className="max-w-3xl mx-auto text-center">

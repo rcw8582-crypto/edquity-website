@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import PageMeta from "@/components/PageMeta";
 import { Calendar, ArrowRight, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -58,6 +59,10 @@ export default function News() {
 
   return (
     <div className="pt-20">
+      <PageMeta
+        title="News and Updates"
+        description="Resources, advocacy guidance, and updates from EDquity at the Margins on special education law, IEP rights, and the families doing this work."
+      />
       <section className="sp" style={{ background: "#f8fafc" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div className="max-w-3xl mx-auto text-center">

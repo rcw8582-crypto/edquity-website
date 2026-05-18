@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { CheckCircle2, FileText, ChevronDown, ChevronUp } from "lucide-react";
+import PageMeta from "@/components/PageMeta";
 
 const CALENDLY = "https://calendly.com/dr-reba/discovery";
 
@@ -86,6 +87,10 @@ export default function Services() {
 
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: "#122C54", background: "#fff" }}>
+      <PageMeta
+        title="IEP Document Analysis, Advocacy Coaching, and Family Support Services"
+        description="Independent IEP document analysis, advocacy coaching, MTSS navigation, 504 plan reviews, and Child Find consultations for BIPOC families. Delivered virtually nationwide by Dr. Reba Clarke-Wedderburn."
+      />
 
       {/* Hero */}
       <section className="sp" style={{ background: "#122C54" }}>

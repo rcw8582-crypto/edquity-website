@@ -56,22 +56,27 @@ function NewsletterSignup() {
           <p style={{ color: "#fff", fontWeight: 700, fontSize: 17, margin: 0 }}>{msg}</p>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} style={{ maxWidth: 620, margin: "0 auto", display: "flex", flexDirection: "column", gap: 12 }}>
+        <form onSubmit={handleSubmit} style={{ maxWidth: 620, margin: "0 auto", display: "flex", flexDirection: "column", gap: 12 }} aria-label="Newsletter signup">
           <div className="newsletter-inputs">
+            <label htmlFor="newsletter-first-name" className="sr-only">First name (optional)</label>
             <input
+              id="newsletter-first-name"
               type="text"
               placeholder="First name (optional)"
               value={firstName}
               onChange={e => setFirstName(e.target.value)}
               style={inputStyle}
             />
+            <label htmlFor="newsletter-email" className="sr-only">Email address (required)</label>
             <input
+              id="newsletter-email"
               type="email"
               required
               placeholder="Email address *"
               value={email}
               onChange={e => setEmail(e.target.value)}
               style={inputStyle}
+              aria-required="true"
             />
           </div>
           {status === "error" && (
@@ -108,7 +113,7 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-6">
             <img
               src="/images/logo-white.png"
-              alt="EDquity at the Margins Logo"
+              alt="EDquity at the Margins"
               className="h-12 w-auto"
             />
             <p className="text-primary-foreground/80 leading-relaxed text-sm">
@@ -154,6 +159,7 @@ export default function Footer() {
               <li><Link href="/ferpa-compliance" className="text-primary-foreground/80 hover:text-accent transition-colors">FERPA Compliance</Link></li>
               <li><Link href="/research-data-policy" className="text-primary-foreground/80 hover:text-accent transition-colors">Research Data Use</Link></li>
               <li><Link href="/intake-consent" className="text-primary-foreground/80 hover:text-accent transition-colors">Intake Consent</Link></li>
+              <li><Link href="/accessibility" className="text-primary-foreground/80 hover:text-accent transition-colors">Accessibility</Link></li>
             </ul>
           </div>
 

@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import PageMeta from "@/components/PageMeta";
 
 export default function About() {
   return (
     <div className="pt-20">
+      <PageMeta
+        title="About Dr. Reba Clarke-Wedderburn and Our Mission"
+        description="Meet Dr. Reba Clarke-Wedderburn and learn how EDquity at the Margins demystifies the special education system for BIPOC families to advocate for their child's federally guaranteed IEP rights."
+      />
       {/* Header */}
       <section className="sp" style={{ background: "#f8fafc" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -54,7 +59,7 @@ export default function About() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div className="aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl">
             <img 
-              src="/images/about.png" 
+              src="/images/about.jpg"
               alt="Community meeting in school" 
               className="w-full h-full object-cover"
             />

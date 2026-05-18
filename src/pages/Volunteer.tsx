@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Heart, Users, BookOpen, Megaphone, CheckCircle2 } from "lucide-react";
+import PageMeta from "@/components/PageMeta";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -78,6 +79,10 @@ export default function Volunteer() {
 
   return (
     <div className="pt-20">
+      <PageMeta
+        title="Volunteer With Us"
+        description="Volunteer with EDquity at the Margins in education and training, community outreach, advocacy support, or administrative help. Match your background and availability to roles that directly change what a child's education looks like."
+      />
       <section className="sp" style={{ background: "#f8fafc" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div className="max-w-3xl mx-auto text-center">

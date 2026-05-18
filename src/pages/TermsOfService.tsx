@@ -1,9 +1,14 @@
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
+import PageMeta from "@/components/PageMeta";
 
 export default function TermsOfService() {
   return (
     <div className="pt-20">
+      <PageMeta
+        title="Terms of Service"
+        description="Terms and conditions for using the EDquity at the Margins website and engaging our services."
+      />
       <section className="bg-muted/50 py-12">
         <div className="container mx-auto px-4 md:px-6">
           <Link href="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent mb-6 transition-colors" data-testid="back-home">

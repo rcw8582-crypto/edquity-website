@@ -47,10 +47,10 @@ export default function Navbar() {
       }`}
     >
       <div className="site-gutter flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group" data-testid="nav-logo">
+          <Link href="/" className="flex items-center gap-2 group" data-testid="nav-logo" aria-label="EDquity at the Margins, home">
             <img
               src="/images/logo-dark.png"
-              alt="EDquity at the Margins Logo"
+              alt=""
               className="h-10 w-auto group-hover:scale-105 transition-transform duration-300"
             />
           </Link>

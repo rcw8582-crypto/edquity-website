@@ -1,9 +1,14 @@
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
+import PageMeta from "@/components/PageMeta";
 
 export default function FerpaCompliance() {
   return (
     <div className="pt-20">
+      <PageMeta
+        title="FERPA Compliance Statement"
+        description="How EDquity at the Margins handles educational records consistent with the Family Educational Rights and Privacy Act."
+      />
       <section className="bg-muted/50 py-12">
         <div className="container mx-auto px-4 md:px-6">
           <Link href="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent mb-6 transition-colors" data-testid="back-home">

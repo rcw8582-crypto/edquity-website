@@ -18,7 +18,7 @@
     <meta property="og:image" content="https://edquityatthemargins.org/images/og-card.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="EDquity at the Margins — IEP Advocacy for Families Who Deserve a Seat at the Table" />
+    <meta property="og:image:alt" content="EDquity at the Margins: IEP Advocacy for Families Who Deserve a Seat at the Table" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -33,6 +33,64 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Structured data: Organization, Founder, WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "NGO",
+          "@id": "https://edquityatthemargins.org/#org",
+          "name": "EDquity at the Margins",
+          "alternateName": "EDATM",
+          "url": "https://edquityatthemargins.org",
+          "logo": "https://edquityatthemargins.org/images/logo-dark.png",
+          "image": "https://edquityatthemargins.org/images/og-card.png",
+          "description": "EDquity at the Margins is a Tennessee nonprofit helping BIPOC families advocate for their children's IEP rights.",
+          "email": "info@edquityatthemargins.org",
+          "telephone": "+1-786-810-6178",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "407 Goodman Drive",
+            "addressLocality": "Gallatin",
+            "addressRegion": "TN",
+            "postalCode": "37066",
+            "addressCountry": "US"
+          },
+          "founder": {
+            "@type": "Person",
+            "@id": "https://edquityatthemargins.org/#founder",
+            "name": "Dr. Reba Clarke-Wedderburn",
+            "jobTitle": "Founder and Executive Director",
+            "alumniOf": [
+              {"@type": "EducationalOrganization", "name": "Lipscomb University"},
+              {"@type": "EducationalOrganization", "name": "Union University"},
+              {"@type": "EducationalOrganization", "name": "Florida Atlantic University"}
+            ]
+          },
+          "areaServed": {"@type": "Country", "name": "United States"},
+          "knowsAbout": [
+            "Individuals with Disabilities Education Act",
+            "Individualized Education Programs",
+            "Special Education",
+            "Section 504 Plans",
+            "Multi-Tiered System of Supports",
+            "Child Find",
+            "Family Advocacy"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://edquityatthemargins.org/#website",
+          "url": "https://edquityatthemargins.org",
+          "name": "EDquity at the Margins",
+          "publisher": {"@id": "https://edquityatthemargins.org/#org"},
+          "inLanguage": ["en", "es"]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
