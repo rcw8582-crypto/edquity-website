@@ -28,7 +28,7 @@ Each of those phrases sounds reasonable until you sit down to teach. Improve fro
 
 A goal like "Jordan will improve reading" gives the substitute teacher nothing to work with. A complete goal names the trajectory the child is supposed to travel: from where they are now to where they are expected to be. It reads something like this:
 
-> *Given a 4-function calculator, Luis will increase his accuracy in solving one-step equations from 40% to 90%, across 4 of 5 consecutive sessions, weekly, evaluated by exit tickets, by April 2027.*
+> *Given a 4-function calculator, Luis will increase his accuracy in solving one-step equations from 40% to 90%, across 4 of 5 consecutive sessions, weekly, evaluated by a 10-problem one-step equation probe administered at independent practice level, by April 2027.*
 
 That single sentence tells the substitute teacher exactly what materials Luis has, exactly what skill to teach, exactly where Luis is starting, exactly where Luis is expected to land, exactly how consistently the skill must be shown, exactly how often the team checks the data, and exactly what tool they use to measure. Nothing is left to interpretation.
 
@@ -42,7 +42,7 @@ Every strong annual goal has seven parts. Look for all seven when you read your 
 4. **Extent (from baseline to target).** "From 40% to 90%" names both the current performance and the target the child is expected to reach. The two numbers together show the expected rate of improvement across the goal period. "With 90% accuracy" alone could mean a year of meaningful growth or no growth at all, depending on where the child started. The team and the family can only judge whether a goal is appropriately ambitious when both numbers are on the page. Rubric-based goals use the same pattern ("from a Level 1 to a Level 3 on the writing rubric").
 5. **Frequency.** "Across 4 of 5 consecutive sessions" sets how consistently Luis must show the skill before the team can call it mastered.
 6. **Evaluation schedule.** "Weekly" sets how often the team checks the data.
-7. **Measurement tool.** "Evaluated by exit tickets" names what the team will use to measure. Without this, progress is whatever the case manager remembers.
+7. **Measurement tool.** "Evaluated by a 10-problem one-step equation probe administered at independent practice level" names exactly what the team uses, what is on it, and the conditions under which it is given. A strong measurement tool has three traits: it measures the specific skill the goal targets (not adjacent skills), it has a clear structure (number of items, scoring criteria, administration setting), and it is administered consistently across data points. Vague tools like "exit tickets," "classroom observations," or "teacher report" sound reasonable on paper but leave the team free to interpret data however they want, which means progress becomes whatever the case manager remembers. Exit tickets in particular reflect what a student did during the lesson they just received, not what they have retained, so a goal that depends only on exit tickets cannot tell you whether the student is actually mastering the skill.
 
 If any one of those seven parts is missing from your child's annual goals, the goal cannot be measured, cannot be taught reliably across teachers, and cannot prove progress. Each gap is grounds for a request to rewrite the goal.
 
