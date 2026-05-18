@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Calendar, ArrowLeft, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageMeta from "@/components/PageMeta";
+import ShareWidget from "@/components/ShareWidget";
 import { getPostBySlug } from "@/lib/posts";
 
 const NEWS_IMAGES = [
@@ -108,6 +109,8 @@ export default function NewsPost() {
               className="prose prose-lg max-w-none prose-headings:text-primary prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-lg prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6 prose-strong:text-primary prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-ul:my-6 prose-ol:my-6 prose-li:text-muted-foreground prose-li:leading-relaxed"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
+
+            <ShareWidget title={post.title} description={post.excerpt} />
           </motion.div>
 
           <div className="mt-16 pt-10 border-t border-border flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
