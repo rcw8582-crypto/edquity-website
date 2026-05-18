@@ -4,6 +4,7 @@ import { Calendar, ArrowLeft, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageMeta from "@/components/PageMeta";
 import ShareWidget from "@/components/ShareWidget";
+import RelatedPosts from "@/components/RelatedPosts";
 import { getPostBySlug } from "@/lib/posts";
 
 const NEWS_IMAGES = [
@@ -127,6 +128,8 @@ export default function NewsPost() {
           </div>
         </div>
       </section>
+
+      <RelatedPosts currentSlug={post.slug} />
     </div>
   );
 }

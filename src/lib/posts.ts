@@ -137,3 +137,34 @@ export function getAllPublishedPosts(): BlogPost[] {
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return ALL_POSTS.find((p) => p.slug === slug && p.published);
 }
+
+/**
+ * Returns up to `count` posts related to `currentSlug`.
+ *
+ * Selection order:
+ *   1. Other posts in the same category, newest first.
+ *   2. If fewer than `count` same-category matches exist, fall back
+ *      to the most recent posts across all categories to fill the
+ *      remaining slots.
+ *
+ * Always excludes the current post. Returns an empty array when no
+ * other published posts exist (e.g., the blog has only one post).
+ */
+export function getRelatedPosts(currentSlug: string, count: number = 3): BlogPost[] {
+  const published = getAllPublishedPosts();
+  const current = published.find((p) => p.slug === currentSlug);
+  const others = published.filter((p) => p.slug !== currentSlug);
+  if (others.length === 0) return [];
+
+  const sameCategory = current
+    ? others.filter((p) => p.category === current.category)
+    : [];
+
+  const picks: BlogPost[] = [...sameCategory];
+  for (const post of others) {
+    if (picks.length >= count) break;
+    if (!picks.some((p) => p.slug === post.slug)) picks.push(post);
+  }
+
+  return picks.slice(0, count);
+}
