@@ -26,18 +26,19 @@ Weak goals share a few common patterns. They use language like:
 
 Each of those phrases sounds reasonable until you sit down to teach. Improve from what to what? Progress in math at what skill, at what level, measured how? Better behavior compared to what baseline? Engage more is a feeling, not a target.
 
-A goal like "Jordan will improve reading" gives the substitute teacher nothing to work with. A goal like "Jordan will read aloud a grade-level passage at 80 words per minute with no more than 5 errors, across 4 of 5 attempts, by April 2027" tells the substitute exactly what to teach, exactly what to measure, and exactly how to know when Jordan has met the goal.
+A goal like "Jordan will improve reading" gives the substitute teacher nothing to work with. A complete goal pairs a measurable baseline with a measurable target. For example: "Given a March 2026 baseline of 42 words per minute and 8 errors per grade-level passage, Jordan will read aloud a grade-level passage at 80 words per minute with no more than 5 errors, across 4 of 5 attempts, by April 2027." That tells the substitute exactly where Jordan is starting, exactly what to teach, exactly what to measure, and exactly how to know when Jordan has met the goal.
 
-## The four parts of a goal that passes
+## The five parts of a goal that passes
 
-Every strong annual goal has four parts. Look for all four when you read your child's IEP.
+Every strong annual goal has five parts. Look for all five when you read your child's IEP.
 
-1. **Who does what.** "Jordan will read aloud..." names the student and the action.
-2. **Under what conditions.** "...a grade-level passage..." names the materials or setting.
-3. **At what level of mastery.** "...at 80 words per minute with no more than 5 errors..." gives the measurable target.
-4. **By when, and how often it must be shown.** "...across 4 of 5 attempts, by April 2027" sets the timeline and the consistency required.
+1. **A measurable baseline.** "Given a March 2026 baseline of 42 words per minute and 8 errors per grade-level passage..." names where the child is starting from. Without a baseline, no one can measure whether progress happened.
+2. **Who does what.** "Jordan will read aloud..." names the student and the action.
+3. **Under what conditions.** "...a grade-level passage..." names the materials or setting.
+4. **At what level of mastery.** "...at 80 words per minute with no more than 5 errors..." gives the measurable target.
+5. **By when, and how often it must be shown.** "...across 4 of 5 attempts, by April 2027" sets the timeline and the consistency required.
 
-If any one of those four parts is missing from your child's annual goals, the goal cannot be measured, cannot be taught reliably, and cannot prove progress. That gap is grounds for a request to rewrite the goal.
+If any one of those five parts is missing from your child's annual goals, the goal cannot be measured, cannot be taught reliably, and cannot prove progress. That gap is grounds for a request to rewrite the goal.
 
 ## What baselines have to do with it (and why so few IEPs have them)
 
