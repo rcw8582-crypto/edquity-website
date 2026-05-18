@@ -1,21 +1,9 @@
-import { useEffect, useState } from "react";
 import { useParams, Link } from "wouter";
 import { motion } from "framer-motion";
 import { Calendar, ArrowLeft, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-interface BlogPost {
-  id: number;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-  category: string;
-  readTime: string;
-  published: boolean;
-  publishedAt: string | null;
-  createdAt: string;
-}
+import PageMeta from "@/components/PageMeta";
+import { getPostBySlug } from "@/lib/posts";
 
 const NEWS_IMAGES = [
   "/images/news-1.png",
@@ -43,54 +31,18 @@ function formatDate(iso: string | null) {
   });
 }
 
-function renderContent(content: string) {
-  return content
-    .split(/\n\n+/)
-    .filter((p) => p.trim())
-    .map((paragraph, i) => (
-      <p key={i} className="text-lg text-muted-foreground leading-relaxed mb-6">
-        {paragraph.trim()}
-      </p>
-    ));
-}
-
 export default function NewsPost() {
   const params = useParams<{ slug: string }>();
   const slug = params.slug;
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [notFound, setNotFound] = useState(false);
+  const post = slug ? getPostBySlug(slug) : undefined;
 
-  useEffect(() => {
-    if (!slug) return;
-    setLoading(true);
-    setNotFound(false);
-    fetch(`/api/posts/${slug}`)
-      .then((r) => {
-        if (r.status === 404) {
-          setNotFound(true);
-          return null;
-        }
-        return r.json();
-      })
-      .then((data) => {
-        if (data) setPost(data);
-      })
-      .catch(() => setNotFound(true))
-      .finally(() => setLoading(false));
-  }, [slug]);
-
-  if (loading) {
-    return (
-      <div className="pt-20 min-h-screen flex items-center justify-center">
-        <div className="animate-pulse text-muted-foreground text-lg">Loading…</div>
-      </div>
-    );
-  }
-
-  if (notFound || !post) {
+  if (!post) {
     return (
       <div className="pt-20 min-h-screen flex flex-col items-center justify-center gap-6">
+        <PageMeta
+          title="Article Not Found"
+          description="The article you are looking for could not be found."
+        />
         <h1 className="text-3xl font-bold text-primary">Article not found.</h1>
         <Link href="/news">
           <Button className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full">
@@ -103,6 +55,8 @@ export default function NewsPost() {
 
   return (
     <div className="pt-20">
+      <PageMeta title={post.title} description={post.excerpt} />
+
       <section className="bg-primary text-primary-foreground py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <Link href="/news" className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground text-sm mb-8 transition-colors">
@@ -150,7 +104,10 @@ export default function NewsPost() {
             <p className="text-xl text-primary font-medium leading-relaxed mb-10 border-l-4 border-accent pl-5 py-2">
               {post.excerpt}
             </p>
-            <div>{renderContent(post.content || "Full article content coming soon.")}</div>
+            <div
+              className="prose prose-lg max-w-none prose-headings:text-primary prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-lg prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6 prose-strong:text-primary prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-ul:my-6 prose-ol:my-6 prose-li:text-muted-foreground prose-li:leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
           </motion.div>
 
           <div className="mt-16 pt-10 border-t border-border flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">

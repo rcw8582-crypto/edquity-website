@@ -1,21 +1,9 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import PageMeta from "@/components/PageMeta";
 import { Calendar, ArrowRight, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-interface BlogPost {
-  id: number;
-  title: string;
-  slug: string;
-  excerpt: string;
-  category: string;
-  readTime: string;
-  published: boolean;
-  publishedAt: string | null;
-  createdAt: string;
-}
+import { getAllPublishedPosts, type BlogPost } from "@/lib/posts";
 
 const categoryColors: Record<string, string> = {
   Education: "bg-blue-100 text-blue-800",
@@ -44,18 +32,8 @@ function formatDate(iso: string | null) {
 }
 
 export default function News() {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("/api/posts")
-      .then((r) => r.json())
-      .then((data) => {
-        if (Array.isArray(data)) setPosts(data);
-      })
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  }, []);
+  const posts: BlogPost[] = getAllPublishedPosts();
+  const loading = false;
 
   return (
     <div className="pt-20">
