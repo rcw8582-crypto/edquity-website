@@ -26,11 +26,11 @@ Weak goals share a few common patterns. They use language like:
 
 Each of those phrases sounds reasonable until you sit down to teach. Improve from what to what? Progress in math at what skill, at what level, measured how? Better behavior compared to what baseline? Engage more is a feeling, not a target.
 
-A goal like "Jordan will improve reading" gives the substitute teacher nothing to work with. A complete goal has seven parts and reads something like this:
+A goal like "Jordan will improve reading" gives the substitute teacher nothing to work with. A complete goal names the trajectory the child is supposed to travel: from where they are now to where they are expected to be. It reads something like this:
 
-> *Given a 4-function calculator, Luis will solve one-step equations with 90% accuracy in 4 of 5 consecutive sessions, weekly, evaluated by exit tickets.*
+> *Given a 4-function calculator, Luis will increase his accuracy in solving one-step equations from 40% to 90%, across 4 of 5 consecutive sessions, weekly, evaluated by exit tickets, by April 2027.*
 
-That single sentence tells the substitute teacher exactly what materials Luis has, exactly what skill to teach, exactly what level of mastery to target, exactly how consistently the skill must be shown, exactly how often the team checks the data, and exactly what tool they use to measure. Nothing is left to interpretation.
+That single sentence tells the substitute teacher exactly what materials Luis has, exactly what skill to teach, exactly where Luis is starting, exactly where Luis is expected to land, exactly how consistently the skill must be shown, exactly how often the team checks the data, and exactly what tool they use to measure. Nothing is left to interpretation.
 
 ## The seven parts of a goal that passes
 
@@ -38,15 +38,15 @@ Every strong annual goal has seven parts. Look for all seven when you read your 
 
 1. **Condition, setting, or materials.** "Given a 4-function calculator..." names what the student has access to while working on the goal. Without this, the team can disagree later about what supports were intended.
 2. **Student name.** "Luis will..." anchors the goal to a specific child, not a class or category.
-3. **Observable skill or behavior.** "Solve one-step equations" uses a measurable verb. Solve, write, count, identify, initiate are observable. Improve, understand, demonstrate awareness of, engage with are not.
-4. **Extent.** "With 90% accuracy" sets the level of mastery. Some goals use rubric levels (for example, "at a Level 3 on the writing rubric") instead of percentages.
-5. **Frequency.** "In 4 of 5 consecutive sessions" sets how consistently Luis must show the skill before the team can call it mastered.
+3. **Observable skill or behavior.** "Increase his accuracy in solving one-step equations" uses a measurable verb. Solve, write, count, identify, increase, initiate are observable. Improve, understand, demonstrate awareness of, engage with are not.
+4. **Extent (from baseline to target).** "From 40% to 90%" names both the current performance and the target the child is expected to reach. A strong goal always shows the trajectory. "With 90% accuracy" alone is not enough. Some goals use rubric levels ("from a Level 1 to a Level 3 on the writing rubric") instead of percentages, but the same from-to pattern applies.
+5. **Frequency.** "Across 4 of 5 consecutive sessions" sets how consistently Luis must show the skill before the team can call it mastered.
 6. **Evaluation schedule.** "Weekly" sets how often the team checks the data.
 7. **Measurement tool.** "Evaluated by exit tickets" names what the team will use to measure. Without this, progress is whatever the case manager remembers.
 
 If any one of those seven parts is missing from your child's annual goals, the goal cannot be measured, cannot be taught reliably across teachers, and cannot prove progress. Each gap is grounds for a request to rewrite the goal.
 
-The starting point that anchors this goal does not live in the goal itself. It lives in the IEP's Present Levels of Academic Achievement and Functional Performance section. Without a measurable baseline there, even a perfect seven-part goal floats free of a starting line. The next section is about that.
+The baseline that anchors the trajectory (the "from 40%" in the Luis goal above) is drawn directly from the IEP's Present Levels of Academic Achievement and Functional Performance section. If Present Levels does not name a current measurable number, the goal has nothing to anchor to. The next section is about that.
 
 ## What baselines have to do with it (and why so few IEPs have them)
 
