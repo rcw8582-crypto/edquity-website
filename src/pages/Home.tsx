@@ -110,7 +110,7 @@ export default function Home() {
           </motion.div>
         </div>
         <div className="rg-hero-img">
-          <img src="/images/hero-family.png" alt="Family preparing for IEP meeting"
+          <img src="/images/hero-family.jpg" alt="Family preparing for IEP meeting"
             style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, #122C54 0%, rgba(18,44,84,0.15) 35%, transparent 60%)" }} />
         </div>

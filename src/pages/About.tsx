@@ -96,7 +96,7 @@ export default function About() {
               She holds a Doctor of Education in Learning Organizations and Strategic Change from Lipscomb University, a Master of Science in Instructional Leadership from Union University, and a Bachelor of Science in Exceptional Education from Florida Atlantic University. She is the author of the F.L.O.W. equity-centered coaching framework.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Her certifications include Tennessee K-6 Elementary Education, Tennessee K-12 Special Education, and Tennessee Educational Administration. She has held roles at LEAD Public Schools, TNTP, Western Governors University, and the Nashville Teacher Residency, where she currently serves as Program Specialist and Manager of Resident Development.
+              Her certifications include Tennessee K-6 Elementary Education, Tennessee K-12 Special Education, and Tennessee Educational Administration. She has held roles at LEAD Public Schools, TNTP, Western Governors University, and the Nashville Teacher Residency. She currently serves as Program Specialist at Diverse Learners Cooperative.
             </p>
             <a
               href="/Clarke-Wedderburn-CV.pdf"
