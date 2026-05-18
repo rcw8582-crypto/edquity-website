@@ -26,27 +26,35 @@ Weak goals share a few common patterns. They use language like:
 
 Each of those phrases sounds reasonable until you sit down to teach. Improve from what to what? Progress in math at what skill, at what level, measured how? Better behavior compared to what baseline? Engage more is a feeling, not a target.
 
-A goal like "Jordan will improve reading" gives the substitute teacher nothing to work with. A complete goal pairs a measurable baseline with a measurable target. For example: "Given a March 2026 baseline of 42 words per minute and 8 errors per grade-level passage, Jordan will read aloud a grade-level passage at 80 words per minute with no more than 5 errors, across 4 of 5 attempts, by April 2027." That tells the substitute exactly where Jordan is starting, exactly what to teach, exactly what to measure, and exactly how to know when Jordan has met the goal.
+A goal like "Jordan will improve reading" gives the substitute teacher nothing to work with. A complete goal has seven parts and reads something like this:
 
-## The five parts of a goal that passes
+> *Given a 4-function calculator, Luis will solve one-step equations with 90% accuracy in 4 of 5 consecutive sessions, weekly, evaluated by exit tickets.*
 
-Every strong annual goal has five parts. Look for all five when you read your child's IEP.
+That single sentence tells the substitute teacher exactly what materials Luis has, exactly what skill to teach, exactly what level of mastery to target, exactly how consistently the skill must be shown, exactly how often the team checks the data, and exactly what tool they use to measure. Nothing is left to interpretation.
 
-1. **A measurable baseline.** "Given a March 2026 baseline of 42 words per minute and 8 errors per grade-level passage..." names where the child is starting from. Without a baseline, no one can measure whether progress happened.
-2. **Who does what.** "Jordan will read aloud..." names the student and the action.
-3. **Under what conditions.** "...a grade-level passage..." names the materials or setting.
-4. **At what level of mastery.** "...at 80 words per minute with no more than 5 errors..." gives the measurable target.
-5. **By when, and how often it must be shown.** "...across 4 of 5 attempts, by April 2027" sets the timeline and the consistency required.
+## The seven parts of a goal that passes
 
-If any one of those five parts is missing from your child's annual goals, the goal cannot be measured, cannot be taught reliably, and cannot prove progress. That gap is grounds for a request to rewrite the goal.
+Every strong annual goal has seven parts. Look for all seven when you read your child's IEP, using the Luis example above:
+
+1. **Condition, setting, or materials.** "Given a 4-function calculator..." names what the student has access to while working on the goal. Without this, the team can disagree later about what supports were intended.
+2. **Student name.** "Luis will..." anchors the goal to a specific child, not a class or category.
+3. **Observable skill or behavior.** "Solve one-step equations" uses a measurable verb. Solve, write, count, identify, initiate are observable. Improve, understand, demonstrate awareness of, engage with are not.
+4. **Extent.** "With 90% accuracy" sets the level of mastery. Some goals use rubric levels (for example, "at a Level 3 on the writing rubric") instead of percentages.
+5. **Frequency.** "In 4 of 5 consecutive sessions" sets how consistently Luis must show the skill before the team can call it mastered.
+6. **Evaluation schedule.** "Weekly" sets how often the team checks the data.
+7. **Measurement tool.** "Evaluated by exit tickets" names what the team will use to measure. Without this, progress is whatever the case manager remembers.
+
+If any one of those seven parts is missing from your child's annual goals, the goal cannot be measured, cannot be taught reliably across teachers, and cannot prove progress. Each gap is grounds for a request to rewrite the goal.
+
+The starting point that anchors this goal does not live in the goal itself. It lives in the IEP's Present Levels of Academic Achievement and Functional Performance section. Without a measurable baseline there, even a perfect seven-part goal floats free of a starting line. The next section is about that.
 
 ## What baselines have to do with it (and why so few IEPs have them)
 
-Every strong annual goal needs a starting point. The IEP's Present Levels of Academic Achievement and Functional Performance section is where the baseline lives. A complete baseline reads something like "On three grade-level passages administered in March 2026, Jordan read aloud at an average of 42 words per minute with 8 errors per passage." That number is the starting line the annual goal pushes the child from.
+Every strong annual goal needs a starting point. The IEP's Present Levels of Academic Achievement and Functional Performance section is where the baseline lives. A complete baseline for Luis's math goal would read something like "On three sets of 10 one-step equations administered in March 2026 using a 4-function calculator, Luis solved an average of 4 of 10 correctly." That number is the starting line the annual goal pushes the child from.
 
 Most IEPs we audit do not have one.
 
-The Present Levels section is almost always the weakest section of the document. Schools write things like "Jordan reads below grade level" or "Jordan struggles with reading fluency" or "Jordan is performing significantly below same-age peers." Each of those sentences sounds informative until you ask what number they are based on. Below grade level by how much? Struggles compared to what data? Significantly below what assessment? Without a number, there is no baseline. Without a baseline, the annual goal has no starting line.
+The Present Levels section is almost always the weakest section of the document. Schools write things like "Luis is below grade level in math" or "Luis struggles with algebraic reasoning" or "Luis is performing significantly below same-age peers." Each of those sentences sounds informative until you ask what number they are based on. Below grade level by how much? Struggles compared to what data? Significantly below what assessment? Without a number, there is no baseline. Without a baseline, the annual goal has no starting line.
 
 Why does this happen so often? Three structural reasons:
 
@@ -72,8 +80,8 @@ Most schools will not push back on a direct, written request for an assessment t
 
 ## What to do at your next meeting
 
-Walk into the meeting with your child's current IEP. Read each annual goal out loud at the table. Ask the team: "What is the baseline for this goal? What is the measurable target? Could a substitute teacher work from this goal as written?" If the team cannot answer one of those questions, ask for the goal to be rewritten so they can.
+Walk into the meeting with your child's current IEP. Read each annual goal out loud at the table. Ask the team: "What is the baseline for this goal in Present Levels? Does this goal have all seven parts? Could a substitute teacher work from this goal as written?" If the team cannot answer one of those questions, ask for the goal to be rewritten so they can.
 
-This is what our IEP Document Analysis does in writing before the meeting. We score every goal against the stranger test and the four-part structure, identify which baselines are missing, and tell you exactly what to ask for. Across the seven families we served in our first year, every IEP failed the stranger test on at least one goal, and several had every goal fail.
+This is what our IEP Document Analysis does in writing before the meeting. We score every goal against the stranger test and the seven-part structure, identify which baselines are missing from Present Levels, and tell you exactly what to ask for. Across the seven families we served in our first year, every IEP failed the stranger test on at least one goal, and several had every goal fail.
 
 The system does not improve on its own. Families have to ask, in plain language, for goals that work.
