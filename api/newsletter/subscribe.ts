@@ -3,21 +3,24 @@
  *
  * Receives a newsletter signup, validates email, and creates the
  * contact in Resend tagged with the "website subscribers" segment.
- * If that segment does not yet exist in the Resend account, it is
- * created automatically on first use.
  *
  * Required environment variable:
  *   RESEND_API_KEY
+ *
+ * Optional environment variable:
+ *   RESEND_WEBSITE_SEGMENT_ID  (overrides the default segment id
+ *   below; useful if the segment is ever recreated in Resend)
  */
 
 import { Resend } from "resend";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const SEGMENT_NAME = "website subscribers";
 
-// Cached so we hit Resend's segments.list only once per cold start
-// instead of on every signup request.
-let cachedSegmentId: string | null = null;
+// The "website subscribers" segment created in Reba's Resend account.
+// Override with the RESEND_WEBSITE_SEGMENT_ID env var if the segment
+// is ever recreated and gets a new UUID.
+const WEBSITE_SUBSCRIBERS_SEGMENT_ID =
+  process.env.RESEND_WEBSITE_SEGMENT_ID || "147ab7ac-e9a4-4564-9d2b-62d251146ef9";
 
 type Body = {
   email?: unknown;
@@ -34,39 +37,6 @@ function isValidEmail(v: unknown): v is string {
 function isOptionalString(v: unknown, maxLen: number): v is string | undefined {
   if (v === undefined || v === null || v === "") return true;
   return typeof v === "string" && v.trim().length <= maxLen;
-}
-
-/**
- * Resolve the "website subscribers" segment ID. Looks it up by name,
- * creates it if missing, caches the result for subsequent calls.
- */
-async function getOrCreateWebsiteSegmentId(resend: Resend): Promise<string | null> {
-  if (cachedSegmentId) return cachedSegmentId;
-
-  try {
-    const list = await resend.segments.list();
-    const existing = list.data?.data?.find(
-      (s) => s.name.toLowerCase() === SEGMENT_NAME.toLowerCase()
-    );
-    if (existing) {
-      cachedSegmentId = existing.id;
-      return cachedSegmentId;
-    }
-
-    const created = await resend.segments.create({ name: SEGMENT_NAME });
-    if (created.error) {
-      console.error("[subscribe] segment create error:", created.error);
-      return null;
-    }
-    if (created.data?.id) {
-      cachedSegmentId = created.data.id;
-      return cachedSegmentId;
-    }
-    return null;
-  } catch (err) {
-    console.error("[subscribe] segment resolve threw:", err);
-    return null;
-  }
 }
 
 export default async function handler(req: Request): Promise<Response> {
@@ -105,33 +75,30 @@ export default async function handler(req: Request): Promise<Response> {
       : undefined;
 
   const resend = new Resend(RESEND_API_KEY);
-  const segmentId = await getOrCreateWebsiteSegmentId(resend);
 
   try {
     const result = await resend.contacts.create({
       email: cleanEmail,
       firstName: cleanFirstName,
       unsubscribed: false,
-      // Tag the new contact with the website subscribers segment so
-      // Reba can target them in broadcasts separately from contacts
-      // who reached us through other channels.
-      ...(segmentId ? { segments: [{ id: segmentId }] } : {}),
+      segments: [{ id: WEBSITE_SUBSCRIBERS_SEGMENT_ID }],
     });
 
     // Treat duplicate signup as success so a returning subscriber
-    // never sees an error.
+    // never sees an error. If the contact already exists, we still
+    // try to add them to the segment via the contact-segments add
+    // API, since the create call would have noop'd the segment
+    // membership.
     if (result.error) {
       const errMessage = String(result.error.message ?? "").toLowerCase();
       if (errMessage.includes("already exists") || errMessage.includes("duplicate")) {
-        // If the contact already exists, still try to add them to the
-        // segment via the contact-segments add API. Silent on failure
-        // since the primary signup goal is met.
-        if (segmentId) {
-          try {
-            await resend.contacts.segments.add({ email: cleanEmail, segmentId });
-          } catch {
-            // ignore: existing contact was the goal; segment add is bonus
-          }
+        try {
+          await resend.contacts.segments.add({
+            email: cleanEmail,
+            segmentId: WEBSITE_SUBSCRIBERS_SEGMENT_ID,
+          });
+        } catch {
+          // ignore: primary signup goal is met regardless of segment update
         }
         return Response.json({ ok: true, alreadySubscribed: true });
       }
