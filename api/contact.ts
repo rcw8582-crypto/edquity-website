@@ -12,7 +12,7 @@
 import { Resend } from "resend";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const FROM = "EDquity Website <noreply@edquityatthemargins.org>";
+const FROM = "EDquity Contact Form <forms@edquityatthemargins.org>";
 const TO = "info@edquityatthemargins.org";
 
 type Body = {
