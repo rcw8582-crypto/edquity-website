@@ -7,11 +7,25 @@ export default function Navbar() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    // Respect users who have requested reduced motion in their OS or browser
+    // accessibility settings (WCAG 2.1, iOS/Android Reduce Motion).
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(motionQuery.matches);
+    const onMotionChange = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    motionQuery.addEventListener("change", onMotionChange);
+
+    // Threshold of 100px prevents flicker on small touch-scroll movements
+    // before the user has committed to scrolling into content.
+    const handleScroll = () => setIsScrolled(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      motionQuery.removeEventListener("change", onMotionChange);
+    };
   }, []);
 
   const navLinks = [
@@ -26,7 +40,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 ${
+        prefersReducedMotion ? "" : "transition-all duration-300"
+      } ${
         isScrolled ? "bg-white shadow-md py-3" : "bg-white/95 backdrop-blur-sm py-5"
       }`}
     >
