@@ -1,284 +1,427 @@
 /**
  * /tools/iep-goal-checker
  *
- * Interactive seven-part MAG Builder for parents. Parents enter the
- * components of their child's IEP annual goal, and the tool reports
- * which components are present, missing, or vague, plus the exact
- * language they can use at their next IEP meeting to ask for what
- * is missing.
+ * Paste-and-parse MAG analyzer. A parent pastes their child's IEP
+ * annual goal exactly as written. The tool extracts each of the
+ * seven MAG components using regex heuristics, flags weak language,
+ * scores the goal, and outputs the exact questions to take to the
+ * next IEP meeting.
  *
  * Design notes:
- *   - Pure client-side. No data is sent anywhere.
- *   - Form on the left, live analysis on the right (desktop).
- *     Stacked on mobile.
- *   - Vague-language detection flags common weak phrasings.
- *   - "Copy analysis" button puts the full report on the clipboard.
+ *   - Pure client-side. No data sent anywhere.
+ *   - When the parser cannot find a component, that itself is a
+ *     signal: if a reasonable reader cannot extract the component
+ *     from the goal as written, neither can a substitute teacher.
+ *     The feedback frames missing components as "the goal is
+ *     unclear about this," not "you typed it wrong."
+ *   - Weak-language detection runs on whatever the parser extracts.
  */
 
 import { useMemo, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Check, X, AlertTriangle, Copy, RotateCcw, ArrowLeft, CheckCheck } from "lucide-react";
+import { Check, X, AlertTriangle, Copy, RotateCcw, ArrowLeft, CheckCheck, ClipboardPaste } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-interface GoalFields {
-  childName: string;
-  condition: string;
-  skill: string;
-  baseline: string;
-  target: string;
-  frequency: string;
-  schedule: string;
-  tool: string;
-  byDate: string;
+interface ParsedGoal {
+  condition: string | null;
+  studentName: string | null;
+  skill: string | null;
+  baseline: string | null;
+  target: string | null;
+  frequency: string | null;
+  schedule: string | null;
+  tool: string | null;
+  byDate: string | null;
 }
 
-interface ComponentCheck {
-  key: keyof GoalFields;
+interface ComponentResult {
+  key: keyof ParsedGoal;
   label: string;
-  value: string;
-  present: boolean;
+  value: string | null;
   weak: boolean;
   weakReason?: string;
-  prompt: string; // language to ask for at the meeting if missing
+  prompt: string;
 }
 
-const EMPTY_GOAL: GoalFields = {
-  childName: "",
-  condition: "",
-  skill: "",
-  baseline: "",
-  target: "",
-  frequency: "",
-  schedule: "",
-  tool: "",
-  byDate: "",
-};
+// =================================================================
+// Parsing helpers
+// =================================================================
 
-// Vague-language patterns that flag a component as weak even when filled.
-// Each pattern carries a plain-language explanation the parent can act on.
-const WEAK_PATTERNS: Record<string, { pattern: RegExp; reason: string }[]> = {
+function clean(text: string): string {
+  // Normalize quotes, collapse whitespace, drop trailing periods.
+  return text
+    .replace(/[“”]/g, '"')
+    .replace(/[‘’]/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function extractCondition(text: string): string | null {
+  // Pattern A: "Given X," at start.
+  const a = text.match(/^Given\s+([^,]+?),/i);
+  if (a) return a[1].trim();
+
+  // Pattern B: "using X" before "will".
+  const b = text.match(/\busing\s+([^,]+?)(?:,|\s+(?:will|and)\b)/i);
+  if (b) return `using ${b[1].trim()}`;
+
+  // Pattern C: "with [tool/support/accommodation]".
+  const c = text.match(/\bwith\s+(?:access\s+to\s+)?([^,]+?)\s+(?:support|access|accommodations?|prompts?|assistance)\b/i);
+  if (c) return c[0].trim();
+
+  return null;
+}
+
+function extractStudent(text: string): string | null {
+  // Pattern A: "[Name] will" — capture first capitalized word before "will".
+  const a = text.match(/\b([A-Z][a-z]+)\s+will\b/);
+  if (a && a[1] !== "Given") return a[1];
+
+  // Pattern B: "the student" generic reference.
+  if (/\bthe student\s+will\b/i.test(text)) return "the student";
+
+  return null;
+}
+
+function extractSkill(text: string): string | null {
+  // Capture everything between "will" (optionally followed by "increase his/her/their accuracy in")
+  // and the next major component marker.
+  const stopWord = /\s+(?:from\s|to\s+\d|to\s+a\s+Level|with\s+\d|in\s+\d+\s+of\s+\d|across\s+\d+\s+of|on\s+\d+\s+of|by\s+\d|by\s+(?:Spring|Fall|Winter|Summer|January|February|March|April|May|June|July|August|September|October|November|December|the\s+end)|evaluated\s+by|as\s+measured\s+by|measured\s+by|assessed\s+by|scored\s+by|weekly|daily|bi-?weekly|monthly|quarterly|every\s+\w+)/i;
+  const m = text.match(/\bwill\s+(?:increase\s+(?:his|her|their)?\s*(?:accuracy\s+in\s+)?)?([^,]+?)(?=\s+from\s|\s+to\s+\d|\s+to\s+a\s+Level|\s+with\s+\d|\s+in\s+\d+\s+of\s+\d|\s+across\s+\d+\s+of|\s+on\s+\d+\s+of|\s+by\s+\d|\s+by\s+(?:Spring|Fall|Winter|Summer|January|February|March|April|May|June|July|August|September|October|November|December|the\s+end)|\s+evaluated\s+by|\s+as\s+measured\s+by|\s+measured\s+by|\s+assessed\s+by|\s+scored\s+by|\s+weekly|\s+daily|\s+bi-?weekly|\s+monthly|\s+quarterly|\s+every\s+\w+|,|\.|$)/i);
+  if (m) return m[1].trim();
+  // Fallback: capture until end of sentence
+  const fallback = text.match(/\bwill\s+(.+?)(?:[\.,]|$)/i);
+  if (fallback) return fallback[1].trim();
+  return null;
+}
+
+function extractBaseline(text: string): string | null {
+  // "from X%" or "from N" or "from Level N" or "from N out of M"
+  const a = text.match(/\bfrom\s+(?:a\s+)?(?:Level\s+\d+|\d+(?:\.\d+)?%?(?:\s+out\s+of\s+\d+)?)/i);
+  if (a) return a[0].replace(/^from\s+/i, "").trim();
+
+  // "currently X" or "current performance of X"
+  const b = text.match(/\bcurrent(?:ly)?\s+(?:performance\s+(?:of\s+|at\s+))?(?:a\s+)?(?:Level\s+\d+|\d+(?:\.\d+)?%?)/i);
+  if (b) return b[0].replace(/^current(?:ly)?\s+(?:performance\s+(?:of\s+|at\s+))?/i, "").trim();
+
+  // Vague phrase fallback: "below grade level," "near grade level"
+  const c = text.match(/\b(below grade level|near grade level|significantly below|some difficulty|struggles)\b/i);
+  if (c) return c[1];
+
+  return null;
+}
+
+function extractTarget(text: string): string | null {
+  // "to X%" or "to Level N" — but only after a "from X" so we know it's a range, not a destination
+  const range = text.match(/\bfrom\s+[^,]+?\s+to\s+(?:a\s+)?(?:Level\s+\d+|\d+(?:\.\d+)?%?(?:\s+out\s+of\s+\d+)?)/i);
+  if (range) {
+    const inner = range[0].match(/\bto\s+(?:a\s+)?(.+)$/i);
+    if (inner) return inner[1].trim();
+  }
+
+  // "with X% accuracy"
+  const a = text.match(/\bwith\s+(\d+(?:\.\d+)?%?)\s+accuracy/i);
+  if (a) return a[1].trim();
+
+  // "at X% accuracy" or "at Level N"
+  const b = text.match(/\bat\s+(?:a\s+)?(?:Level\s+\d+|\d+(?:\.\d+)?%?)/i);
+  if (b) return b[0].replace(/^at\s+(?:a\s+)?/i, "").trim();
+
+  // Vague target fallback
+  const c = text.match(/\b(at\s+grade\s+level|grade\s+level|appropriate\s+for\s+grade|mastery)\b/i);
+  if (c) return c[1];
+
+  return null;
+}
+
+function extractFrequency(text: string): string | null {
+  // "in N of M sessions/trials/etc"
+  const a = text.match(/\b(?:in|across|on|during|over)\s+(\d+\s+of\s+\d+\s+(?:consecutive\s+)?(?:sessions|trials|opportunities|attempts|weeks|days|observations|probes|chances))/i);
+  if (a) return a[1].trim();
+
+  // "X% of trials/opportunities"
+  const b = text.match(/\b(\d+%\s+of\s+(?:trials|opportunities|sessions|attempts))/i);
+  if (b) return b[1].trim();
+
+  return null;
+}
+
+function extractSchedule(text: string): string | null {
+  const m = text.match(/\b(daily|weekly|bi-?weekly|monthly|quarterly|annually|every\s+(?:other\s+)?(?:week|day|month|grading\s+period|two\s+weeks))/i);
+  if (m) return m[1].trim();
+  return null;
+}
+
+function extractTool(text: string): string | null {
+  // "evaluated/measured/assessed/scored by X"
+  const m = text.match(/(?:evaluated|measured|assessed|scored)\s+by\s+([^.,]+?)(?=\s+by\s+[A-Z]|\.|,(?:\s+by\s+)|$)/i);
+  if (m) return m[1].trim();
+
+  // "as measured by X"
+  const a = text.match(/\bas\s+measured\s+by\s+([^.,]+?)(?=\.|,|$)/i);
+  if (a) return a[1].trim();
+
+  return null;
+}
+
+function extractByDate(text: string): string | null {
+  // "by Month Year" or "by Year" or "by the end of [year/term]"
+  const a = text.match(/\bby\s+(the\s+end\s+of\s+(?:Spring\s+|Fall\s+|Winter\s+|Summer\s+)?\d{4})/i);
+  if (a) return a[1].trim();
+
+  const b = text.match(/\bby\s+([A-Z][a-z]+\s+\d{4})/);
+  if (b) return b[1].trim();
+
+  const c = text.match(/\bby\s+(\d{4})\b/);
+  if (c) return c[1].trim();
+
+  return null;
+}
+
+function parseGoal(raw: string): ParsedGoal {
+  const text = clean(raw);
+  if (!text) {
+    return {
+      condition: null,
+      studentName: null,
+      skill: null,
+      baseline: null,
+      target: null,
+      frequency: null,
+      schedule: null,
+      tool: null,
+      byDate: null,
+    };
+  }
+  return {
+    condition: extractCondition(text),
+    studentName: extractStudent(text),
+    skill: extractSkill(text),
+    baseline: extractBaseline(text),
+    target: extractTarget(text),
+    frequency: extractFrequency(text),
+    schedule: extractSchedule(text),
+    tool: extractTool(text),
+    byDate: extractByDate(text),
+  };
+}
+
+// =================================================================
+// Weak-language detection
+// =================================================================
+
+const WEAK_PATTERNS: Partial<Record<keyof ParsedGoal, { pattern: RegExp; reason: string }[]>> = {
   skill: [
     {
       pattern: /\b(improve|understand|demonstrate awareness|engage with|appreciate|show interest|be aware|develop)\b/i,
       reason:
-        "Verbs like 'improve,' 'understand,' or 'demonstrate awareness' are not observable. Ask for a measurable verb such as solve, write, read, identify, initiate, complete, or produce.",
+        "Verbs like 'improve,' 'understand,' or 'demonstrate awareness' are not observable. Ask the team to rewrite the goal using a measurable verb such as solve, write, read, identify, initiate, complete, or produce.",
     },
   ],
   baseline: [
     {
       pattern: /^(below grade level|struggles|significantly below|near grade level|making progress|some difficulty)\b/i,
       reason:
-        "Phrases like 'below grade level' or 'struggles' are not measurable. Ask for a current number (a percent, a score, or a count).",
+        "Phrases like 'below grade level' or 'struggles' are not measurable. Ask the team to update Present Levels with a current number (percent, score, or count).",
     },
   ],
   target: [
     {
-      pattern: /^(grade level|on grade level|appropriate|mastery)\b/i,
+      pattern: /^(at\s+)?(grade level|on grade level|appropriate for grade|mastery)\b/i,
       reason:
-        "A target like 'grade level' or 'mastery' without a number is not measurable. Ask for a percent, score, or rubric level.",
+        "A target like 'grade level' or 'mastery' without a number is not measurable. Ask the team to specify a percent, score, or rubric level.",
     },
   ],
   tool: [
     {
-      pattern: /^(exit tickets?|classroom observations?|teacher report|teacher observation|informal observation)\.?$/i,
+      pattern: /^(exit tickets?|classroom observations?|teacher report|teacher observation|informal observation|observation)\.?$/i,
       reason:
-        "This tool is too vague. A strong measurement tool names the structure (number of items, scoring criteria) and the setting (for example, 'independent practice level'). Exit tickets in particular reflect what the student did during instruction, not what they have retained.",
+        "This tool is too vague. A strong measurement tool names the structure (number of items, scoring criteria) and the setting (for example, 'independent practice level'). Exit tickets in particular reflect what the student did during the lesson, not what they have retained.",
     },
   ],
 };
 
-function isPresent(value: string): boolean {
-  return value.trim().length > 0;
-}
-
-function detectWeakness(key: keyof GoalFields, value: string): { weak: boolean; reason?: string } {
-  if (!isPresent(value)) return { weak: false };
-  const patterns = WEAK_PATTERNS[key as string];
+function detectWeakness(key: keyof ParsedGoal, value: string | null): { weak: boolean; reason?: string } {
+  if (!value) return { weak: false };
+  const patterns = WEAK_PATTERNS[key];
   if (!patterns) return { weak: false };
   for (const { pattern, reason } of patterns) {
-    if (pattern.test(value.trim())) return { weak: true, reason };
+    if (pattern.test(value)) return { weak: true, reason };
   }
   return { weak: false };
 }
 
-function buildSentence(g: GoalFields): string {
-  const parts: string[] = [];
-  if (g.condition) parts.push(`Given ${g.condition.replace(/^given\s+/i, "")}`);
-  const subject = g.childName.trim() || "the student";
-  if (g.skill) {
-    const verb = g.baseline && g.target ? "will increase" : "will";
-    const action =
-      g.baseline && g.target
-        ? `${g.skill.replace(/^will\s+/i, "")} from ${g.baseline} to ${g.target}`
-        : g.skill.replace(/^will\s+/i, "");
-    parts.push(`${subject} ${verb} ${action}`);
-  } else if (g.baseline && g.target) {
-    parts.push(`${subject} will increase from ${g.baseline} to ${g.target}`);
-  }
-  if (g.frequency) parts.push(g.frequency.replace(/^,\s*/, ""));
-  if (g.schedule) parts.push(g.schedule);
-  if (g.tool) parts.push(`evaluated by ${g.tool.replace(/^evaluated by\s+/i, "")}`);
-  if (g.byDate) parts.push(`by ${g.byDate.replace(/^by\s+/i, "")}`);
-  if (parts.length === 0) return "";
-  return parts.join(", ") + ".";
-}
+// =================================================================
+// Component definitions
+// =================================================================
 
-const COMPONENT_DEFINITIONS: Array<{
-  key: keyof GoalFields;
+const COMPONENTS: Array<{
+  key: keyof ParsedGoal;
   label: string;
-  helperText: string;
-  placeholder: string;
-  meetingPrompt: (childName: string) => string;
-  weakFallbackPrompt: (childName: string) => string;
+  description: string;
+  missingPrompt: (name: string) => string;
+  weakPrompt: (name: string) => string;
 }> = [
   {
     key: "condition",
     label: "Condition, setting, or materials",
-    helperText:
-      "What does your child have access to during instruction or assessment? Examples: a calculator, a graphic organizer, a small group, an audiobook version, sensory tools.",
-    placeholder: "a 4-function calculator",
-    meetingPrompt: (n) =>
-      `What materials, settings, or supports will ${n || "my child"} have access to while working on this goal? That language needs to be in the goal itself.`,
-    weakFallbackPrompt: (n) =>
-      `What materials, settings, or supports will ${n || "my child"} have access to while working on this goal? The current language is not specific.`,
+    description: "What the student has access to while working on the goal (calculator, graphic organizer, small group, audiobook, etc.).",
+    missingPrompt: (n) =>
+      `The goal does not name a condition, setting, or materials. What will ${n || "my child"} have access to while working on this goal? That language needs to be in the goal itself.`,
+    weakPrompt: (n) =>
+      `The condition language is vague. Please name the specific materials, setting, or supports ${n || "my child"} will use.`,
+  },
+  {
+    key: "studentName",
+    label: "Student name",
+    description: "The specific child the goal is written for.",
+    missingPrompt: () =>
+      `The goal does not name the student. A measurable goal should name the specific child it applies to.`,
+    weakPrompt: () => "",
   },
   {
     key: "skill",
     label: "Observable skill or behavior",
-    helperText:
-      "Use a measurable verb like 'solve,' 'write,' 'read,' 'identify,' or 'initiate.' Avoid 'understand,' 'engage with,' or 'demonstrate awareness.'",
-    placeholder: "solve one-step equations",
-    meetingPrompt: (n) =>
-      `What is the specific, observable skill this goal targets for ${n || "my child"}? Please rewrite it using a measurable verb.`,
-    weakFallbackPrompt: (n) =>
-      `The verb in this goal is not observable. What is ${n || "my child"} actually expected to do in a way a substitute teacher could see and measure?`,
+    description: "The specific skill the goal targets, using a measurable verb (solve, write, read, identify, initiate).",
+    missingPrompt: (n) =>
+      `The goal does not name a specific observable skill or behavior. What is ${n || "my child"} actually expected to do?`,
+    weakPrompt: (n) =>
+      `The verb in this goal is not observable. What is ${n || "my child"} expected to do in a way a substitute teacher could see and measure?`,
   },
   {
     key: "baseline",
     label: "Baseline (current performance)",
-    helperText:
-      "Your child's current measurable performance, drawn from the Present Levels section of the IEP. Examples: 40%, 4 out of 10, a Level 1 on the rubric, 42 words per minute.",
-    placeholder: "40%",
-    meetingPrompt: (n) =>
-      `I do not see a measurable baseline for this goal. What is ${n || "my child"}'s current performance on this skill, drawn from a current assessment? That number needs to be in Present Levels.`,
-    weakFallbackPrompt: (n) =>
-      `The baseline for this goal is not measurable. What specific score, percent, or count represents ${n || "my child"}'s current performance?`,
+    description: "Where the child is starting from, drawn from Present Levels. Examples: 40%, 4 out of 10, Level 1, 42 words per minute.",
+    missingPrompt: (n) =>
+      `I do not see a measurable baseline for this goal. What is ${n || "my child"}'s current performance on this skill, based on a current assessment? That number belongs in Present Levels.`,
+    weakPrompt: (n) =>
+      `The baseline is not measurable. What specific score, percent, or count represents ${n || "my child"}'s current performance?`,
   },
   {
     key: "target",
-    label: "Target performance",
-    helperText:
-      "Where the goal expects your child to land. Examples: 90%, 8 out of 10, a Level 3 on the rubric, 80 words per minute.",
-    placeholder: "90%",
-    meetingPrompt: (n) =>
-      `What is the measurable target this goal expects ${n || "my child"} to reach? Please write it as a percent, score, or rubric level.`,
-    weakFallbackPrompt: (n) =>
-      `The target for this goal is not measurable. What specific number represents the level of mastery ${n || "my child"} is expected to achieve?`,
+    label: "Target (level of mastery)",
+    description: "Where the goal expects the child to land. Examples: 90%, 8 out of 10, Level 3, 80 words per minute.",
+    missingPrompt: (n) =>
+      `The goal does not name a measurable target. What is ${n || "my child"} expected to achieve, written as a percent, score, or rubric level?`,
+    weakPrompt: (n) =>
+      `The target is not measurable. What specific number represents the level of mastery ${n || "my child"} is expected to reach?`,
   },
   {
     key: "frequency",
     label: "Frequency (how consistently)",
-    helperText:
-      "How consistently must your child show the skill before it counts as mastered? Examples: in 4 of 5 consecutive sessions, across 3 of 4 trials.",
-    placeholder: "in 4 of 5 consecutive sessions",
-    meetingPrompt: (n) =>
-      `How consistently does ${n || "my child"} need to show this skill before the team considers it mastered? That criterion needs to be in the goal.`,
-    weakFallbackPrompt: (n) => "",
+    description: "How consistently the skill must be shown. Examples: in 4 of 5 consecutive sessions, across 3 of 4 trials.",
+    missingPrompt: (n) =>
+      `The goal does not say how consistently ${n || "my child"} must show the skill before the team calls it mastered. Please add that criterion to the goal.`,
+    weakPrompt: () => "",
   },
   {
     key: "schedule",
     label: "Evaluation schedule",
-    helperText:
-      "How often is the data checked? Examples: weekly, bi-weekly, every grading period.",
-    placeholder: "weekly",
-    meetingPrompt: (n) =>
-      `How often will the team collect and review data on this goal? Please write the evaluation schedule into the goal itself.`,
-    weakFallbackPrompt: (n) => "",
+    description: "How often the data is checked. Examples: weekly, bi-weekly, every grading period.",
+    missingPrompt: () =>
+      `The goal does not name an evaluation schedule. How often will the team collect and review data on this goal?`,
+    weakPrompt: () => "",
   },
   {
     key: "tool",
     label: "Measurement tool",
-    helperText:
-      "What does the team use to measure? Strong tools name the structure (number of items, scoring criteria) and the setting. Example: 'a 10-problem one-step equation probe administered at independent practice level.' Avoid bare tools like 'exit tickets' or 'observations.'",
-    placeholder: "a 10-problem one-step equation probe administered at independent practice level",
-    meetingPrompt: (n) =>
-      `What specific measurement tool will the team use to track ${n || "my child"}'s progress? The tool needs to name what is on it, how it is scored, and the setting in which it is administered.`,
-    weakFallbackPrompt: (n) =>
-      `The measurement tool named in this goal is too vague to track progress reliably. What specific tool, with named structure and administration setting, will the team use?`,
+    description: "What the team uses to measure. Strong tools name structure (number of items, scoring criteria) and administration setting.",
+    missingPrompt: (n) =>
+      `The goal does not name a measurement tool. What specific tool will the team use to track ${n || "my child"}'s progress? It should name what is on it, how it is scored, and the setting in which it is administered.`,
+    weakPrompt: (n) =>
+      `The measurement tool is too vague. What specific tool, with named structure and administration setting, will the team use to track ${n || "my child"}'s progress?`,
   },
 ];
 
+// =================================================================
+// Component
+// =================================================================
+
+const SAMPLE_GOAL =
+  "Given a 4-function calculator, Luis will increase his accuracy in solving one-step equations from 40% to 90%, across 4 of 5 consecutive sessions, weekly, evaluated by a 10-problem one-step equation probe administered at independent practice level, by April 2027.";
+
 export default function IEPGoalChecker() {
-  const [goal, setGoal] = useState<GoalFields>(EMPTY_GOAL);
+  const [goalText, setGoalText] = useState("");
+  const [overrideName, setOverrideName] = useState("");
   const [copied, setCopied] = useState(false);
 
-  const checks: ComponentCheck[] = useMemo(() => {
-    return COMPONENT_DEFINITIONS.map((def) => {
-      const value = goal[def.key];
-      const present = isPresent(value);
+  const parsed = useMemo(() => parseGoal(goalText), [goalText]);
+
+  const childName = useMemo(() => {
+    const fromOverride = overrideName.trim();
+    if (fromOverride) return fromOverride;
+    const fromParse = parsed.studentName;
+    if (fromParse && fromParse !== "the student") return fromParse;
+    return "";
+  }, [overrideName, parsed.studentName]);
+
+  const results: ComponentResult[] = useMemo(() => {
+    return COMPONENTS.map((def) => {
+      const value = parsed[def.key];
       const weakness = detectWeakness(def.key, value);
+      const present = !!value;
+      let prompt = "";
+      if (!present) prompt = def.missingPrompt(childName);
+      else if (weakness.weak) prompt = def.weakPrompt(childName);
+
       return {
         key: def.key,
         label: def.label,
         value,
-        present,
         weak: weakness.weak,
         weakReason: weakness.reason,
-        prompt: present
-          ? weakness.weak
-            ? def.weakFallbackPrompt(goal.childName.trim())
-            : ""
-          : def.meetingPrompt(goal.childName.trim()),
+        prompt,
       };
     });
-  }, [goal]);
+  }, [parsed, childName]);
 
-  const sentence = useMemo(() => buildSentence(goal), [goal]);
-  const presentCount = checks.filter((c) => c.present).length;
-  const missingCount = checks.filter((c) => !c.present).length;
-  const weakCount = checks.filter((c) => c.weak).length;
-  const totalParts = checks.length;
+  const presentCount = results.filter((r) => !!r.value).length;
+  const weakCount = results.filter((r) => r.weak).length;
+  const strongCount = results.filter((r) => r.value && !r.weak).length;
+  const totalParts = results.length;
 
-  const handleChange =
-    (key: keyof GoalFields) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setGoal((prev) => ({ ...prev, [key]: e.target.value }));
-    };
+  const handleLoadSample = () => {
+    setGoalText(SAMPLE_GOAL);
+  };
 
   const handleReset = () => {
-    setGoal(EMPTY_GOAL);
+    setGoalText("");
+    setOverrideName("");
     setCopied(false);
   };
 
   const buildReport = (): string => {
-    const child = goal.childName.trim() || "[child's name]";
+    const child = childName || "[child's name]";
     const lines: string[] = [];
     lines.push(`IEP Goal Analysis for ${child}`);
+    lines.push(`Generated by EDquity at the Margins IEP Goal Checker`);
     lines.push("");
-    lines.push("Components present:");
-    for (const c of checks) {
-      const tag = c.present ? (c.weak ? "[weak]" : "[present]") : "[missing]";
-      lines.push(`  ${tag} ${c.label}${c.present ? `: ${c.value}` : ""}`);
+    lines.push("Goal as entered:");
+    lines.push(`  ${goalText.trim() || "(none)"}`);
+    lines.push("");
+    lines.push("Components detected:");
+    for (const r of results) {
+      const tag = !r.value ? "[missing]" : r.weak ? "[vague]" : "[present]";
+      lines.push(`  ${tag} ${r.label}${r.value ? `: ${r.value}` : ""}`);
+      if (r.weakReason) lines.push(`      ${r.weakReason}`);
     }
     lines.push("");
-    if (sentence) {
-      lines.push("Auto-generated goal sentence:");
-      lines.push(`  ${sentence}`);
-      lines.push("");
-    }
-    const prompts = checks.filter((c) => c.prompt).map((c) => c.prompt);
+    lines.push(`Score: ${strongCount} of ${totalParts} parts present and clearly written.`);
+    if (weakCount > 0) lines.push(`       ${weakCount} additional part${weakCount === 1 ? "" : "s"} present but vague.`);
+    lines.push("");
+    const prompts = results.filter((r) => r.prompt).map((r) => r.prompt);
     if (prompts.length > 0) {
       lines.push("Language to ask for at the IEP meeting:");
       for (const p of prompts) lines.push(`  - ${p}`);
     } else {
-      lines.push("This goal has all seven parts and no obvious weak language. Ask the team to confirm the baseline is current and the measurement tool is used consistently across data points.");
+      lines.push("All seven parts are present and clearly written. Ask the team to confirm the baseline is drawn from a recent assessment and the measurement tool is used consistently across data points.");
     }
     lines.push("");
-    lines.push("Generated by EDquity at the Margins IEP Goal Checker");
     lines.push("https://edquityatthemargins.org/tools/iep-goal-checker");
     return lines.join("\n");
   };
@@ -307,11 +450,13 @@ export default function IEPGoalChecker() {
     }
   };
 
+  const showResults = goalText.trim().length > 0;
+
   return (
     <div className="pt-20">
       <PageMeta
         title="IEP Goal Checker for Families"
-        description="Free interactive tool for families. Enter the components of your child's IEP annual goal and instantly see which of the seven parts are present, missing, or vague, plus the exact language to ask for at your next IEP meeting."
+        description="Free interactive tool for families. Paste your child's IEP annual goal as written and instantly see which of the seven parts are present, missing, or vague, plus the exact language to ask for at your next IEP meeting."
       />
 
       {/* Header */}
@@ -327,110 +472,101 @@ export default function IEPGoalChecker() {
             IEP Goal Checker
           </h1>
           <p className="text-lg text-primary-foreground/85 leading-relaxed max-w-3xl">
-            Paste the components of your child's annual goal from the IEP. We will show you
-            which of the seven parts are present, which are missing, which are too vague to
-            measure, and the exact language to ask for at your next meeting.
+            Paste your child's annual goal exactly as written in the IEP. We will sort it into
+            the seven Measurable Annual Goal components, flag what is missing or too vague to
+            measure, and give you the exact language to ask for at your next meeting.
           </p>
           <p className="text-sm text-primary-foreground/60 mt-3">
-            Everything you type stays on this device. Nothing is sent to us or to anyone else.
+            Everything you paste stays on this device. Nothing is sent to us or to anyone else.
           </p>
         </div>
       </section>
 
       {/* Tool body */}
       <section className="py-12 md:py-16 bg-background">
-        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {/* Input panel */}
-            <div>
-              <h2 className="text-2xl font-bold text-primary mb-6">Enter the goal</h2>
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+          {/* Input */}
+          <div className="mb-10">
+            <Label htmlFor="goal-text" className="text-base font-semibold text-primary">
+              Paste your child's IEP annual goal
+            </Label>
+            <p className="text-sm text-muted-foreground mt-1 mb-3">
+              One goal at a time. Copy the full sentence directly from the IEP document.
+            </p>
+            <Textarea
+              id="goal-text"
+              value={goalText}
+              onChange={(e) => setGoalText(e.target.value)}
+              placeholder="Example: Given a 4-function calculator, Luis will increase his accuracy in solving one-step equations from 40% to 90%, across 4 of 5 consecutive sessions, weekly, evaluated by a 10-problem one-step equation probe administered at independent practice level, by April 2027."
+              rows={5}
+              className="text-base leading-relaxed"
+            />
 
-              <div className="space-y-5">
-                <div>
-                  <Label htmlFor="child-name" className="text-sm font-semibold">
-                    Child's first name (optional)
-                  </Label>
-                  <Input
-                    id="child-name"
-                    value={goal.childName}
-                    onChange={handleChange("childName")}
-                    placeholder="Used in the generated questions, never sent anywhere."
-                    className="mt-1"
-                  />
-                </div>
-
-                {COMPONENT_DEFINITIONS.map((def, idx) => {
-                  const useTextarea = def.key === "tool" || def.key === "skill";
-                  return (
-                    <div key={def.key}>
-                      <Label htmlFor={`field-${def.key}`} className="text-sm font-semibold">
-                        {idx + 1}. {def.label}
-                      </Label>
-                      <p className="text-xs text-muted-foreground mt-1 mb-2 leading-relaxed">
-                        {def.helperText}
-                      </p>
-                      {useTextarea ? (
-                        <Textarea
-                          id={`field-${def.key}`}
-                          value={goal[def.key]}
-                          onChange={handleChange(def.key)}
-                          placeholder={def.placeholder}
-                          rows={2}
-                        />
-                      ) : (
-                        <Input
-                          id={`field-${def.key}`}
-                          value={goal[def.key]}
-                          onChange={handleChange(def.key)}
-                          placeholder={def.placeholder}
-                        />
-                      )}
-                    </div>
-                  );
-                })}
-
-                <div>
-                  <Label htmlFor="by-date" className="text-sm font-semibold">
-                    By when (optional but recommended)
-                  </Label>
-                  <p className="text-xs text-muted-foreground mt-1 mb-2 leading-relaxed">
-                    The annual review date the goal is targeting. Example: April 2027.
-                  </p>
-                  <Input
-                    id="by-date"
-                    value={goal.byDate}
-                    onChange={handleChange("byDate")}
-                    placeholder="April 2027"
-                  />
-                </div>
-
-                <div className="flex gap-3 pt-2">
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={handleReset}
-                    className="rounded-full"
-                  >
-                    <RotateCcw size={14} className="mr-2" aria-hidden="true" /> Reset
-                  </Button>
-                </div>
-              </div>
+            <div className="mt-4 flex flex-wrap gap-3 items-center">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={handleLoadSample}
+                className="rounded-full"
+              >
+                <ClipboardPaste size={14} className="mr-2" aria-hidden="true" /> Load sample goal
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={handleReset}
+                className="rounded-full"
+                disabled={!goalText && !overrideName}
+              >
+                <RotateCcw size={14} className="mr-2" aria-hidden="true" /> Reset
+              </Button>
             </div>
 
-            {/* Analysis panel */}
-            <div>
-              <h2 className="text-2xl font-bold text-primary mb-6">Live analysis</h2>
+            {/* Optional name override */}
+            {showResults && !parsed.studentName && (
+              <div className="mt-6 p-4 bg-muted/30 border border-border rounded-xl">
+                <Label htmlFor="override-name" className="text-sm font-semibold">
+                  Optional: enter your child's first name
+                </Label>
+                <p className="text-xs text-muted-foreground mt-1 mb-2">
+                  The tool could not detect a student name in the goal. Adding a name here personalizes the meeting questions. Never sent anywhere.
+                </p>
+                <Input
+                  id="override-name"
+                  value={overrideName}
+                  onChange={(e) => setOverrideName(e.target.value)}
+                  placeholder="Luis"
+                />
+              </div>
+            )}
+          </div>
 
+          {!showResults && (
+            <div className="rounded-2xl border border-dashed border-border bg-muted/20 p-12 text-center">
+              <p className="text-muted-foreground">
+                Paste a goal above to see the analysis. Or click <strong>Load sample goal</strong> to see what a complete seven-part goal looks like.
+              </p>
+            </div>
+          )}
+
+          {showResults && (
+            <>
               {/* Score summary */}
-              <div className="rounded-2xl border border-border bg-muted/30 p-6 mb-6">
+              <div className="rounded-2xl border border-border bg-muted/30 p-6 mb-8">
                 <div className="flex flex-wrap gap-6 items-center justify-between">
                   <div>
                     <p className="text-3xl font-bold text-primary">
-                      {presentCount} <span className="text-base font-normal text-muted-foreground">of {totalParts} parts present</span>
+                      {strongCount}
+                      <span className="text-base font-normal text-muted-foreground"> of {totalParts} parts clearly written</span>
                     </p>
                     {weakCount > 0 && (
                       <p className="text-sm text-amber-700 mt-1">
-                        {weakCount} component{weakCount === 1 ? "" : "s"} flagged as vague
+                        {weakCount} additional part{weakCount === 1 ? "" : "s"} present but vague
+                      </p>
+                    )}
+                    {presentCount < totalParts && (
+                      <p className="text-sm text-red-700 mt-1">
+                        {totalParts - presentCount} part{totalParts - presentCount === 1 ? "" : "s"} not detected in the goal
                       </p>
                     )}
                   </div>
@@ -438,7 +574,6 @@ export default function IEPGoalChecker() {
                     type="button"
                     onClick={handleCopy}
                     className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full"
-                    disabled={presentCount === 0}
                     aria-label={copied ? "Analysis copied to clipboard" : "Copy analysis to clipboard"}
                   >
                     {copied ? (
@@ -450,83 +585,100 @@ export default function IEPGoalChecker() {
                 </div>
               </div>
 
-              {/* Generated sentence */}
-              {sentence && (
-                <motion.div
-                  initial={{ opacity: 0, y: 4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="rounded-2xl border border-accent/40 bg-accent/5 p-5 mb-6"
-                >
-                  <p className="text-xs font-bold text-accent uppercase tracking-widest mb-2">Auto-generated goal sentence</p>
-                  <p className="text-base text-primary leading-relaxed italic">{sentence}</p>
-                </motion.div>
-              )}
-
               {/* Component checklist */}
-              <div className="space-y-3 mb-6">
-                {checks.map((c) => (
-                  <div
-                    key={c.key}
+              <h2 className="text-xl font-bold text-primary mb-4">What we found in your goal</h2>
+              <div className="space-y-3 mb-8">
+                {results.map((r) => (
+                  <motion.div
+                    key={r.key}
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.2 }}
                     className={`flex items-start gap-3 p-4 rounded-xl border ${
-                      !c.present
+                      !r.value
                         ? "border-red-200 bg-red-50"
-                        : c.weak
+                        : r.weak
                           ? "border-amber-200 bg-amber-50"
                           : "border-green-200 bg-green-50"
                     }`}
                   >
                     <div className="mt-0.5 shrink-0">
-                      {!c.present ? (
+                      {!r.value ? (
                         <X size={18} className="text-red-600" aria-hidden="true" />
-                      ) : c.weak ? (
+                      ) : r.weak ? (
                         <AlertTriangle size={18} className="text-amber-600" aria-hidden="true" />
                       ) : (
                         <Check size={18} className="text-green-600" aria-hidden="true" />
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-primary text-sm">{c.label}</p>
-                      {c.present && (
-                        <p className="text-sm text-foreground mt-1 break-words">"{c.value}"</p>
+                      <div className="flex flex-wrap items-baseline gap-x-2">
+                        <p className="font-semibold text-primary text-sm">{r.label}</p>
+                        {!r.value && (
+                          <span className="text-xs text-red-700 font-medium">Not detected</span>
+                        )}
+                        {r.value && r.weak && (
+                          <span className="text-xs text-amber-800 font-medium">Present but vague</span>
+                        )}
+                        {r.value && !r.weak && (
+                          <span className="text-xs text-green-700 font-medium">Present</span>
+                        )}
+                      </div>
+                      {r.value && (
+                        <p className="text-sm text-foreground mt-1 break-words italic">"{r.value}"</p>
                       )}
-                      {c.weak && c.weakReason && (
-                        <p className="text-xs text-amber-800 mt-2 leading-relaxed">{c.weakReason}</p>
+                      {!r.value && (
+                        <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                          {COMPONENTS.find((c) => c.key === r.key)?.description}
+                        </p>
+                      )}
+                      {r.weakReason && (
+                        <p className="text-xs text-amber-800 mt-2 leading-relaxed">{r.weakReason}</p>
                       )}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
               {/* Meeting questions */}
-              {checks.some((c) => c.prompt) && (
-                <div className="rounded-2xl border border-border bg-white p-6">
-                  <h3 className="text-lg font-bold text-primary mb-4">Take these questions to your meeting</h3>
+              {results.some((r) => r.prompt) && (
+                <div className="rounded-2xl border border-border bg-white p-6 mb-8 shadow-sm">
+                  <h2 className="text-xl font-bold text-primary mb-2">Take these questions to your meeting</h2>
+                  <p className="text-sm text-muted-foreground mb-5">
+                    For each missing or vague component, here is the exact language you can use at the IEP meeting.
+                  </p>
                   <ul className="space-y-3 list-disc pl-5">
-                    {checks
-                      .filter((c) => c.prompt)
-                      .map((c) => (
-                        <li key={c.key} className="text-sm text-foreground leading-relaxed">
-                          {c.prompt}
+                    {results
+                      .filter((r) => r.prompt)
+                      .map((r) => (
+                        <li key={r.key} className="text-sm text-foreground leading-relaxed">
+                          {r.prompt}
                         </li>
                       ))}
                   </ul>
-                  <p className="text-xs text-muted-foreground mt-5">
-                    Print this page, or use the Copy Analysis button to put the report on your clipboard so you can paste it into an email, notes app, or document.
-                  </p>
                 </div>
               )}
 
               {presentCount === totalParts && weakCount === 0 && (
-                <div className="rounded-2xl border border-green-300 bg-green-50 p-6 text-sm text-green-900 leading-relaxed">
-                  <p className="font-bold mb-2">All seven parts are present and none are flagged.</p>
+                <div className="rounded-2xl border border-green-300 bg-green-50 p-6 text-sm text-green-900 leading-relaxed mb-8">
+                  <p className="font-bold mb-2">All seven parts are present and clearly written.</p>
                   <p>
-                    Ask the team to confirm that the baseline is current (drawn from an assessment administered in the last six months) and that the measurement tool is used consistently across data points. If they cannot confirm both, the goal still needs work.
+                    Ask the team to confirm two things on the spot: that the baseline number was drawn from an assessment administered within the last six months, and that the measurement tool will be used consistently across every data point. If they cannot confirm both, the goal still needs work.
                   </p>
                 </div>
               )}
-            </div>
-          </div>
+
+              {/* If parser failed to detect anything, show a hint */}
+              {presentCount === 0 && goalText.trim().length > 20 && (
+                <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 text-sm text-amber-900 leading-relaxed mb-8">
+                  <p className="font-bold mb-2">We could not detect any of the seven components in this text.</p>
+                  <p>
+                    If a reasonable reader cannot extract these components from the goal as written, a substitute teacher cannot either. That itself is a reason to ask the team to rewrite the goal. Take the questions above to your meeting and ask for each component to be written explicitly.
+                  </p>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </section>
 
