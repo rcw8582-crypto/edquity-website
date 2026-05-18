@@ -7,7 +7,7 @@
  *   1. Emails info@edquityatthemargins.org with the volunteer's
  *      name, email, area of interest, and optional message so Reba
  *      can follow up directly.
- *   2. Adds the volunteer to the Resend volunteers segment so they
+ *   2. Adds the volunteer to the Resend Volunteers segment so they
  *      can be included in future broadcasts to volunteers.
  *
  * Required environment variable:
@@ -152,7 +152,7 @@ export default async function handler(req: Request): Promise<Response> {
           }
           <p style="color: #64748b; font-size: 12px; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
             Reply to this email to respond directly to ${escapeHtml(cleanFirstName)}.<br />
-            ${escapeHtml(cleanFirstName)} has also been added to the volunteers segment in Resend.<br />
+            ${escapeHtml(cleanFirstName)} has also been added to the Volunteers segment in Resend.<br />
             Submitted via the volunteer form on edquityatthemargins.org.
           </p>
         </div>
@@ -165,7 +165,7 @@ Area of interest: ${cleanInterest}
 
 ${cleanMessage ? `Message:\n${cleanMessage}\n\n` : "No additional message provided.\n\n"}---
 Reply to this email to respond directly to ${cleanFirstName}.
-${cleanFirstName} has also been added to the volunteers segment in Resend.
+${cleanFirstName} has also been added to the Volunteers segment in Resend.
 Submitted via the volunteer form on edquityatthemargins.org.`,
     }),
     resend.contacts.create({
