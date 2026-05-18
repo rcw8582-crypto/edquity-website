@@ -137,6 +137,7 @@ export default function Footer() {
               <li><Link href="/donate" className="text-primary-foreground/80 hover:text-accent transition-colors">Donate</Link></li>
               <li><Link href="/volunteer" className="text-primary-foreground/80 hover:text-accent transition-colors">Volunteer</Link></li>
               <li><Link href="/resources" className="text-primary-foreground/80 hover:text-accent transition-colors">Free Resources</Link></li>
+              <li><Link href="/tools/iep-goal-checker" className="text-primary-foreground/80 hover:text-accent transition-colors">IEP Goal Checker</Link></li>
               <li><Link href="/events" className="text-primary-foreground/80 hover:text-accent transition-colors">Events</Link></li>
             </ul>
           </div>

@@ -82,6 +82,8 @@ Most schools will not push back on a direct, written request for an assessment t
 
 Walk into the meeting with your child's current IEP. Read each annual goal out loud at the table. Ask the team: "What is the baseline for this goal in Present Levels? Does this goal have all seven parts? Could a substitute teacher work from this goal as written?" If the team cannot answer one of those questions, ask for the goal to be rewritten so they can.
 
-This is what our IEP Document Analysis does in writing before the meeting. We score every goal against the stranger test and the seven-part structure, identify which baselines are missing from Present Levels, and tell you exactly what to ask for. Across the seven families we served in our first year, every IEP failed the stranger test on at least one goal, and several had every goal fail.
+If you want to check a goal yourself right now, we built a free interactive [IEP Goal Checker](/tools/iep-goal-checker). Enter the components of your child's annual goal and the tool tells you which of the seven parts are present, which are missing, which are too vague to measure, and the exact language to ask for at your next meeting. Nothing you enter is sent to us.
+
+For a deeper, professional review, our IEP Document Analysis scores every goal against the stranger test and the seven-part structure, identifies which baselines are missing from Present Levels, and tells you exactly what to ask for. Across the seven families we served in our first year, every IEP failed the stranger test on at least one goal, and several had every goal fail.
 
 The system does not improve on its own. Families have to ask, in plain language, for goals that work.
