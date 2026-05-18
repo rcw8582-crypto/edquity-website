@@ -39,11 +39,35 @@ Every strong annual goal has four parts. Look for all four when you read your ch
 
 If any one of those four parts is missing from your child's annual goals, the goal cannot be measured, cannot be taught reliably, and cannot prove progress. That gap is grounds for a request to rewrite the goal.
 
-## What baselines have to do with it
+## What baselines have to do with it (and why so few IEPs have them)
 
-A strong goal needs a starting point. The IEP's Present Levels of Academic Achievement and Functional Performance section is where the baseline lives. If the present levels say "Jordan reads below grade level" without a current number, your child has no baseline. A goal without a baseline is a goal without a starting line. You can never tell whether progress happened.
+Every strong annual goal needs a starting point. The IEP's Present Levels of Academic Achievement and Functional Performance section is where the baseline lives. A complete baseline reads something like "On three grade-level passages administered in March 2026, Jordan read aloud at an average of 42 words per minute with 8 errors per passage." That number is the starting line the annual goal pushes the child from.
 
-A complete baseline reads something like "On three grade-level passages administered in March 2026, Jordan read aloud at an average of 42 words per minute with 8 errors per passage." That number is the starting line the annual goal pushes the child from.
+Most IEPs we audit do not have one.
+
+The Present Levels section is almost always the weakest section of the document. Schools write things like "Jordan reads below grade level" or "Jordan struggles with reading fluency" or "Jordan is performing significantly below same-age peers." Each of those sentences sounds informative until you ask what number they are based on. Below grade level by how much? Struggles compared to what data? Significantly below what assessment? Without a number, there is no baseline. Without a baseline, the annual goal has no starting line.
+
+Why does this happen so often? Three structural reasons:
+
+1. **Schools copy and paste.** District IEP templates carry generic present-levels language across many students. The phrase "below grade level" is in the template before the meeting starts. Filling in a specific number requires the evaluator to administer a recent assessment, score it, and write up the result. The vague language survives because nobody has the time to write the specific version.
+
+2. **Recent assessments are not always done.** Federal law requires re-evaluation at least every three years, with annual progress monitoring in between. In practice, many IEP teams roll forward present-levels language from the previous IEP without administering a fresh assessment. By year three of a child's IEP, the baseline might be a number from two years ago that no longer reflects the child's current performance.
+
+3. **Vague language hides the lack of progress.** A baseline of "below grade level" can be used to justify the same vague goal year after year. If the goal stays "improve reading" and the baseline stays "below grade level," nobody on paper has to admit the child has not made progress. The goal looks reasonable on paper while the child loses years of instruction.
+
+### What this costs the child
+
+Without a baseline, there is no way to measure whether instruction is working. Without measurement, there is no trigger for the team to change the approach. A child can spend an entire IEP cycle in interventions that are not moving the needle while every progress report says "making progress toward goal" because nobody set a target the progress could fail to reach.
+
+This is what we see in the data. Across the seven families we served in our first year, every single IEP had at least one annual goal with no measurable baseline. Several had no measurable baselines at all. None of the families had ever been told this was a problem before we walked them through it.
+
+### What to do when you spot a missing baseline
+
+- **Say the word at the meeting.** "I do not see a measurable baseline for this goal. What number is the goal pushing my child from?"
+- **Ask for the assessment.** "When was the most recent assessment that supports this present-levels statement? May I see the score?"
+- **Put it in writing.** Send a follow-up email after the meeting that says: "As I understood the meeting, the present-levels statement for this goal does not include a measurable baseline. I am requesting that the team administer a current assessment and update the present-levels statement to include the specific score before I sign the IEP."
+
+Most schools will not push back on a direct, written request for an assessment they were legally required to do anyway. The teams that push back are the teams that need the most pushing.
 
 ## What to do at your next meeting
 
