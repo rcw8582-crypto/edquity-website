@@ -37,33 +37,33 @@ const guides = [
     icon: <FileText size={28} color="#22C55E" />,
     title: "IEP Rights Checklist",
     desc: "A plain-language checklist of what federal law requires your child's IEP to include, and what questions to ask if anything is missing.",
-    badge: "Most Downloaded",
-    badgeColor: "#22C55E",
-    file: "/resources/iep-rights-checklist.pdf",
+    badge: "Coming Soon",
+    badgeColor: "#94a3b8",
+    file: null,
   },
   {
     icon: <BookOpen size={28} color="#14B8A6" />,
     title: "Meeting Preparation Template",
     desc: "A structured template for organizing your concerns, data, and questions before your next IEP meeting so you walk in fully prepared.",
-    badge: "High Impact",
-    badgeColor: "#14B8A6",
-    file: "/resources/meeting-prep-template.pdf",
+    badge: "Coming Soon",
+    badgeColor: "#94a3b8",
+    file: null,
   },
   {
     icon: <MessageSquare size={28} color="#FBbf24" />,
     title: "Complaint Letter Starter",
     desc: "A fill-in-the-blank template for writing a formal complaint when the school is not implementing your child's IEP as written.",
-    badge: "Advocacy Tool",
-    badgeColor: "#FBbf24",
-    file: "/resources/complaint-letter-starter.pdf",
+    badge: "Coming Soon",
+    badgeColor: "#94a3b8",
+    file: null,
   },
   {
     icon: <Search size={28} color="#8B5CF6" />,
     title: "Understanding Your Child's Evaluation",
     desc: "A guide to the most common special education assessments, what each one measures, and how to interpret the results in plain language.",
-    badge: "New",
-    badgeColor: "#8B5CF6",
-    file: "/resources/understanding-evaluations.pdf",
+    badge: "Coming Soon",
+    badgeColor: "#94a3b8",
+    file: null,
   },
 ];
 
@@ -189,22 +189,21 @@ export default function Resources() {
                   <h3 style={{ fontSize: 18, fontWeight: 800, color: "#122C54", margin: "0 0 10px" }}>{guide.title}</h3>
                   <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>{guide.desc}</p>
                 </div>
-                <a
-                  href={guide.file}
-                  download
+                <div
                   style={{
                     marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-                    background: "#122C54", color: "#fff", padding: "12px 20px", borderRadius: 8,
-                    fontWeight: 700, fontSize: 14, textDecoration: "none",
+                    background: "#e2e8f0", color: "#64748b", padding: "12px 20px", borderRadius: 8,
+                    fontWeight: 700, fontSize: 14, cursor: "not-allowed",
                   }}
+                  aria-label="Download not yet available"
                 >
-                  <Download size={15} /> Download PDF
-                </a>
+                  <Download size={15} aria-hidden="true" /> Coming Soon
+                </div>
               </motion.div>
             ))}
           </div>
           <p style={{ fontSize: 13, color: "#94a3b8", marginTop: 32, textAlign: "center" }}>
-            All guides are free. No email required. Share with any family who needs them.
+            We are finalizing each guide for release. Subscribe to the newsletter at the bottom of any page to hear the moment a guide goes live.
           </p>
         </div>
       </section>
