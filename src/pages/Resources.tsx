@@ -1,8 +1,36 @@
 import { motion } from "framer-motion";
-import { Download, ExternalLink, FileText, BookOpen, MessageSquare, Search } from "lucide-react";
+import { Link } from "wouter";
+import { Download, ExternalLink, FileText, BookOpen, MessageSquare, Search, Layers, Target, Newspaper, ArrowRight } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
 const CALENDLY = "https://calendly.com/dr-reba/discovery";
+
+const interactiveTools = [
+  {
+    icon: <Layers size={28} color="#22C55E" />,
+    title: "Our Methodology",
+    desc: "The six areas we review in every IEP, in plain language. Use it as a guide when you read your child's IEP or prepare for the next meeting.",
+    href: "/our-methodology",
+    badge: "Methodology",
+    badgeColor: "#22C55E",
+  },
+  {
+    icon: <Target size={28} color="#14B8A6" />,
+    title: "IEP Goal Checker",
+    desc: "Paste your child's annual goal exactly as written. The tool sorts it into the seven required components, flags vague language, and gives you the exact questions to ask at your next meeting.",
+    href: "/tools/iep-goal-checker",
+    badge: "Interactive Tool",
+    badgeColor: "#14B8A6",
+  },
+  {
+    icon: <Newspaper size={28} color="#8B5CF6" />,
+    title: "Blog and Insights",
+    desc: "Plain-language articles on IEP rights, the stranger test, the difference between MTSS, 504, and IEP, and how families can advocate effectively.",
+    href: "/news",
+    badge: "Articles",
+    badgeColor: "#8B5CF6",
+  },
+];
 
 const guides = [
   {
@@ -84,6 +112,50 @@ export default function Resources() {
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.75)", lineHeight: 1.75, margin: 0, maxWidth: 600, marginInline: "auto" }}>
             Every guide below was written with one goal: giving you the specific knowledge you need to advocate effectively for your child. Download freely, share widely.
           </p>
+        </div>
+      </section>
+
+      <section className="sp" style={{ background: "#fff" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px", letterSpacing: "-0.5px" }}>Interactive Tools and Methodology</h2>
+          <p style={{ fontSize: 16, color: "#64748b", margin: "0 0 40px", lineHeight: 1.65, maxWidth: 720 }}>
+            Use these tools right now to read your child's IEP with sharper eyes. Everything below is free and works on your phone, tablet, or laptop.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 24 }}>
+            {interactiveTools.map((tool, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 32, display: "flex", flexDirection: "column", gap: 16, position: "relative" }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                  <div style={{ width: 52, height: 52, borderRadius: 12, background: "#f8fafc", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    {tool.icon}
+                  </div>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: tool.badgeColor, background: `${tool.badgeColor}18`, padding: "4px 12px", borderRadius: 999 }}>
+                    {tool.badge}
+                  </span>
+                </div>
+                <div>
+                  <h3 style={{ fontSize: 18, fontWeight: 800, color: "#122C54", margin: "0 0 10px" }}>{tool.title}</h3>
+                  <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>{tool.desc}</p>
+                </div>
+                <Link
+                  href={tool.href}
+                  style={{
+                    marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                    background: "#22C55E", color: "#122C54", padding: "12px 20px", borderRadius: 8,
+                    fontWeight: 700, fontSize: 14, textDecoration: "none",
+                  }}
+                >
+                  Open <ArrowRight size={15} />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
