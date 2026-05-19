@@ -105,7 +105,6 @@ const SUBSIDY_CRITERIA = [
   { id: "language_barrier", label: "Non-English primary home language with limited access to language-appropriate advocacy resources" },
   { id: "rural", label: "Rural or tribal community with limited local special education support" },
   { id: "urgent", label: "Child facing a time-sensitive IEP crisis requiring immediate support" },
-  { id: "bipoc", label: "Child identifies as Black, Indigenous, or a Person of Color (BIPOC)" },
 ];
 
 const CATEGORIES = ["Education", "Advocacy", "Policy", "Community", "Events"];

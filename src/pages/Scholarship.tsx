@@ -3,16 +3,6 @@ import { Link } from "wouter";
 import { CheckCircle2, ArrowRight, Heart, Shield, Users, Home, BookOpen, AlertCircle, Globe, MapPin, ChevronDown, ChevronUp } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
-const BIPOC_IDENTITIES = [
-  "Black or African American",
-  "Indigenous / American Indian or Alaska Native",
-  "Hispanic or Latino/a/x",
-  "Asian or Asian American",
-  "Native Hawaiian or Pacific Islander",
-  "Middle Eastern or North African",
-  "Multiracial (including at least one BIPOC identity)",
-];
-
 const CRITERIA = [
   { id: "income", label: "Low income", description: "Household income at or below 200% of the Federal Poverty Level." },
   { id: "assistance", label: "Public assistance", description: "Currently receiving SNAP, Medicaid or CHIP, WIC, TANF, or federal housing assistance." },
@@ -50,9 +40,6 @@ export default function Scholarship() {
     childFirstName: "", childAge: "", school: "", district: "", state: "",
     situation: "", criteriaSelected: [] as string[],
   });
-  const [bipocIdentities, setBipocIdentities] = useState<string[]>([]);
-  const toggleBipoc = (id: string) =>
-    setBipocIdentities(p => p.includes(id) ? p.filter(x => x !== id) : [...p, id]);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -71,12 +58,8 @@ export default function Scholarship() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (bipocIdentities.length === 0) {
-      setError("Please select your child's racial or ethnic identity. BIPOC status is required to apply.");
-      return;
-    }
     if (form.criteriaSelected.length === 0) {
-      setError("Please select at least one additional eligibility criterion.");
+      setError("Please select at least one eligibility criterion that describes your family's situation.");
       return;
     }
     setSubmitting(true);
@@ -85,10 +68,7 @@ export default function Scholarship() {
       const r = await fetch("/api/scholarship/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...form,
-          criteriaSelected: [...bipocIdentities.map(id => `bipoc:${id}`), ...form.criteriaSelected],
-        }),
+        body: JSON.stringify(form),
       });
       if (!r.ok) {
         const d = await r.json();
@@ -215,38 +195,10 @@ export default function Scholarship() {
               <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: "clamp(24px,5vw,40px) clamp(20px,5vw,36px)", marginBottom: 24 }}>
                 <h2 style={{ fontSize: 20, fontWeight: 900, color: "#122C54", margin: "0 0 6px" }}>Eligibility criteria</h2>
                 <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 24px", lineHeight: 1.6 }}>
-                  BIPOC identity is a required criterion for this scholarship. You must also meet at least one of the additional criteria listed below.
+                  This scholarship is need-based. Select every criterion that describes your family's situation. You must select at least one. No documentation is required; the standard is honesty, not paperwork.
                 </p>
 
-                <div style={{ marginBottom: 28 }}>
-                  <p style={{ fontSize: 11, fontWeight: 800, color: "#dc2626", letterSpacing: 1.5, textTransform: "uppercase", margin: "0 0 6px" }}>Required — select all that apply</p>
-                  <p style={{ fontSize: 13, color: "#64748b", margin: "0 0 14px", lineHeight: 1.55 }}>
-                    This scholarship is reserved for BIPOC children. Select every identity that applies to your child. This information is confidential and will not be shared with your child's school.
-                  </p>
-                  <div style={{ display: "grid", gap: 10 }}>
-                    {BIPOC_IDENTITIES.map(identity => (
-                      <label
-                        key={identity}
-                        style={{
-                          display: "flex", alignItems: "center", gap: 14, padding: "14px 18px",
-                          borderRadius: 10, cursor: "pointer", transition: "all 0.15s",
-                          border: `2px solid ${bipocIdentities.includes(identity) ? "#22C55E" : "#e2e8f0"}`,
-                          background: bipocIdentities.includes(identity) ? "#f0fdf4" : "#fafafa",
-                        }}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={bipocIdentities.includes(identity)}
-                          onChange={() => toggleBipoc(identity)}
-                          style={{ width: 17, height: 17, accentColor: "#22C55E", flexShrink: 0 }}
-                        />
-                        <span style={{ fontSize: 15, fontWeight: 600, color: "#122C54" }}>{identity}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                <p style={{ fontSize: 11, fontWeight: 800, color: "#475569", letterSpacing: 1.5, textTransform: "uppercase", margin: "0 0 10px" }}>Select at least one additional criterion</p>
+                <p style={{ fontSize: 11, fontWeight: 800, color: "#475569", letterSpacing: 1.5, textTransform: "uppercase", margin: "0 0 10px" }}>Select all that apply</p>
                 <div style={{ display: "grid", gap: 12 }}>
                   {CRITERIA.map(c => (
                     <label
