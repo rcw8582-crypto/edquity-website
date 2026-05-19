@@ -103,7 +103,7 @@ const externalLinks = [
   },
   {
     label: "Office of Special Education Programs (OSEP)",
-    url: "https://sites.ed.gov/osep/",
+    url: "https://www.ed.gov/about/ed-offices/osers/osep",
     note: "U.S. Department of Education",
   },
 ];
