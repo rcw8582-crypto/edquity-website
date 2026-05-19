@@ -35,35 +35,35 @@ const interactiveTools = [
 const guides = [
   {
     icon: <FileText size={28} color="#22C55E" />,
-    title: "IEP Rights Checklist",
-    desc: "A plain-language checklist of what federal law requires your child's IEP to include, and what questions to ask if anything is missing.",
-    badge: "Coming Soon",
-    badgeColor: "#94a3b8",
-    file: null,
+    title: "Pre-Evaluation Eligibility Checklist",
+    desc: "Use this checklist before you request a special education evaluation. Organizes your child's school history, the educational impact you have observed, and the language to use in your formal written request.",
+    badge: "Worksheet",
+    badgeColor: "#22C55E",
+    file: "/resources/EDATM_IEP_Eligibility_Checklist.pdf",
   },
   {
     icon: <BookOpen size={28} color="#14B8A6" />,
-    title: "Meeting Preparation Template",
-    desc: "A structured template for organizing your concerns, data, and questions before your next IEP meeting so you walk in fully prepared.",
-    badge: "Coming Soon",
-    badgeColor: "#94a3b8",
-    file: null,
-  },
-  {
-    icon: <MessageSquare size={28} color="#FBbf24" />,
-    title: "Complaint Letter Starter",
-    desc: "A fill-in-the-blank template for writing a formal complaint when the school is not implementing your child's IEP as written.",
-    badge: "Coming Soon",
-    badgeColor: "#94a3b8",
-    file: null,
+    title: "IDEA vs. Section 504 Reference Card",
+    desc: "A side-by-side comparison of IDEA (IEP) and Section 504, with decision guidance and the four most common misconceptions corrected.",
+    badge: "Reference Card",
+    badgeColor: "#14B8A6",
+    file: "/resources/EDATM_IDEA_vs_504_Reference_Card.pdf",
   },
   {
     icon: <Search size={28} color="#8B5CF6" />,
-    title: "Understanding Your Child's Evaluation",
-    desc: "A guide to the most common special education assessments, what each one measures, and how to interpret the results in plain language.",
-    badge: "Coming Soon",
-    badgeColor: "#94a3b8",
-    file: null,
+    title: "The 13 IDEA Disability Categories",
+    desc: "A plain-language reference card for all 13 federally recognized disability categories, with notes for parents and a key principle: the category gets your child in the room, not what they receive there.",
+    badge: "Reference Card",
+    badgeColor: "#8B5CF6",
+    file: "/resources/EDATM_13_IDEA_Disability_Categories.pdf",
+  },
+  {
+    icon: <MessageSquare size={28} color="#FBbf24" />,
+    title: "IEP Team Member Directory Template",
+    desc: "A printable template for keeping every member of your child's school, district, and personal support team in one place, plus a communication tracker for every email, call, and meeting.",
+    badge: "Template",
+    badgeColor: "#FBbf24",
+    file: "/resources/EDATM_IEP_Team_Directory.pdf",
   },
 ];
 
@@ -189,21 +189,22 @@ export default function Resources() {
                   <h3 style={{ fontSize: 18, fontWeight: 800, color: "#122C54", margin: "0 0 10px" }}>{guide.title}</h3>
                   <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>{guide.desc}</p>
                 </div>
-                <div
+                <a
+                  href={guide.file}
+                  download
                   style={{
                     marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-                    background: "#e2e8f0", color: "#64748b", padding: "12px 20px", borderRadius: 8,
-                    fontWeight: 700, fontSize: 14, cursor: "not-allowed",
+                    background: "#122C54", color: "#fff", padding: "12px 20px", borderRadius: 8,
+                    fontWeight: 700, fontSize: 14, textDecoration: "none",
                   }}
-                  aria-label="Download not yet available"
                 >
-                  <Download size={15} aria-hidden="true" /> Coming Soon
-                </div>
+                  <Download size={15} aria-hidden="true" /> Download PDF
+                </a>
               </motion.div>
             ))}
           </div>
           <p style={{ fontSize: 13, color: "#94a3b8", marginTop: 32, textAlign: "center" }}>
-            We are finalizing each guide for release. Subscribe to the newsletter at the bottom of any page to hear the moment a guide goes live.
+            All guides are free. No email required. Share with any family who needs them.
           </p>
         </div>
       </section>
