@@ -89,7 +89,7 @@ export default function Services() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: "#122C54", background: "#fff" }}>
       <PageMeta
         title="IEP Document Analysis, Advocacy Coaching, and Family Support Services"
-        description="Independent IEP document analysis, advocacy coaching, MTSS navigation, 504 plan reviews, and Child Find consultations for BIPOC families. Delivered virtually nationwide by Dr. Reba Clarke-Wedderburn."
+        description="Independent IEP document analysis, advocacy coaching, MTSS navigation, 504 plan reviews, and Child Find consultations for families. Delivered virtually nationwide by Dr. Reba Clarke-Wedderburn."
       />
 
       {/* Hero */}

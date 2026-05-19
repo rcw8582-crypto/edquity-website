@@ -7,7 +7,7 @@ export default function About() {
     <div className="pt-20">
       <PageMeta
         title="About Dr. Reba Clarke-Wedderburn and Our Mission"
-        description="Meet Dr. Reba Clarke-Wedderburn and learn how EDquity at the Margins demystifies the special education system for BIPOC families to advocate for their child's federally guaranteed IEP rights."
+        description="Meet Dr. Reba Clarke-Wedderburn and learn how EDquity at the Margins demystifies the special education system for families to advocate for their child's federally guaranteed IEP rights."
       />
       {/* Header */}
       <section className="sp" style={{ background: "#f8fafc" }}>
