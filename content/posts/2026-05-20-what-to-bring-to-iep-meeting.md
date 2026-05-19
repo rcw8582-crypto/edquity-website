@@ -53,4 +53,10 @@ Within 24 hours, send the case manager an email summarizing what you understood 
 
 If the team's written meeting summary or amended IEP disagrees with what you understood was decided, do not sign the IEP until the document matches the conversation. You have the right to take the IEP home and review it before signing.
 
-If you want a coach in your corner for any of this, our Meeting Prep Session walks through your specific IEP, prepares you for what the team may contest, and sends a written summary of talking points after the call. The session is $150, with scholarship-funded options for families with financial constraints.
+## A free tool to take into the meeting
+
+We built a printable **IEP Meeting Notecatcher** that organizes everything in this post into one document you can write on during the meeting. Space for the three questions and the team's answers. A goal-by-goal tracker. A commitments table with dates. An after-meeting checklist.
+
+[Download the IEP Meeting Notecatcher (PDF)](/resources/EDATM_IEP_Meeting_Notecatcher.pdf)
+
+If you want a coach in your corner before the meeting, our Meeting Prep Session walks through your specific IEP, prepares you for what the team may contest, and sends a written summary of talking points after the call. The session is $150.

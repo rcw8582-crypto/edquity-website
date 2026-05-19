@@ -27,7 +27,7 @@ const tiers = [
     color: "#14B8A6",
     featured: true,
     includes: [
-      "Funds a cohort of families through the full advocacy program",
+      "Funds 20–100 IEP Document Analysis scholarships for families who cannot pay",
       "Co-branded acknowledgment on website",
       "Quarterly impact reports with de-identified outcome data",
       "Invitation to community education events",

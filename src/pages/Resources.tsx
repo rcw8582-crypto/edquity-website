@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Download, ExternalLink, FileText, BookOpen, MessageSquare, Search, Layers, Target, Newspaper, ArrowRight } from "lucide-react";
+import { Download, ExternalLink, FileText, BookOpen, MessageSquare, Search, Layers, Target, Newspaper, ArrowRight, ClipboardList } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
 const CALENDLY = "https://calendly.com/dr-reba/discovery";
@@ -64,6 +64,14 @@ const guides = [
     badge: "Template",
     badgeColor: "#FBbf24",
     file: "/resources/EDATM_IEP_Team_Directory.pdf",
+  },
+  {
+    icon: <ClipboardList size={28} color="#EC4899" />,
+    title: "IEP Meeting Notecatcher",
+    desc: "A printable worksheet to take into your child's IEP meeting. Captures the three questions every family should ask, a goal-by-goal tracker, a commitments table with dates, and a before-you-sign checklist.",
+    badge: "Worksheet",
+    badgeColor: "#EC4899",
+    file: "/resources/EDATM_IEP_Meeting_Notecatcher.pdf",
   },
 ];
 

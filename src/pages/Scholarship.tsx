@@ -86,18 +86,18 @@ export default function Scholarship() {
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif" }}>
       <PageMeta
-        title="Scholarship Program"
-        description="Apply for a full or partial scholarship to receive IEP advocacy services from EDquity at the Margins at reduced or no cost."
+        title="Families First Scholarship — IEP Document Analysis"
+        description="Apply for a full or partial Families First scholarship to receive an EDquity at the Margins IEP Document Analysis at reduced or no cost."
       />
 
       <section className="sp" style={{ background: "#122C54" }}>
         <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
-          <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 14px" }}>Scholarship Program</p>
+          <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 14px" }}>Families First Scholarship</p>
           <h1 style={{ fontSize: "clamp(28px,4vw,48px)", fontWeight: 900, color: "#fff", margin: "0 0 18px", letterSpacing: "-1px", lineHeight: 1.1 }}>
-            Every family deserves expert advocacy, regardless of income.
+            Every family deserves to know what is in their child's IEP, regardless of income.
           </h1>
           <p style={{ fontSize: 17, color: "rgba(255,255,255,0.75)", lineHeight: 1.75, margin: 0 }}>
-            Our Year 1 goal is to serve 50 families completely free of charge. Submit your application below and Dr. Clarke-Wedderburn will review it and respond within 3 business days.
+            The Families First scholarship subsidizes our $250 IEP Document Analysis for families with financial constraints. Our Year 1 goal is to provide 50 families with a complete IEP Document Analysis at no cost. Submit your application below and Dr. Clarke-Wedderburn will review it and respond within 3 business days.
           </p>
         </div>
       </section>

@@ -7,25 +7,17 @@ published: true
 publishedAt: "2026-05-22"
 ---
 
-EDquity at the Margins charges below-market rates for IEP advocacy because access is the point. A $250 IEP Document Analysis is well under the $100 to $300 hourly rate private advocates charge nationally. Even at our prices, some families still cannot afford the work their child needs. The Families First scholarship pool exists for those families.
+EDquity at the Margins charges below-market rates for IEP advocacy because access is the point. A $250 IEP Document Analysis is well under the $100 to $300 hourly rate private advocates charge nationally. Even at our prices, some families still cannot afford the analysis their child needs to know what is missing from their plan. The Families First scholarship pool exists for those families.
 
-This post explains what the scholarship covers, how we decide who receives subsidized services, and how a family can request consideration.
+This post explains what the scholarship covers, how we decide who receives subsidized analysis, and how a family can request consideration.
 
 ## What the scholarship covers
 
-A Families First scholarship can subsidize any service we offer, in full or in part:
+The Families First scholarship subsidizes one service: the **IEP Document Analysis ($250)**, in full or in part.
 
-- IEP Document Analysis ($250)
-- IEP Meeting Prep Session ($150)
-- Progress Monitoring Review ($100)
-- Additional IEP Document Review ($125)
-- Comprehensive IEP Coaching Package ($350)
-- MTSS Navigation Consultation ($125)
-- 504 Plan Review ($100)
-- Child Find & Evaluation Consultation ($125)
-- Comprehensive Student Support Package ($300)
+We chose to focus the scholarship on the analysis because it is the foundational service. The written report tells a family exactly what is missing or inadequate in their child's plan, with the language to ask for what their child needs at the next meeting. Every family we work with starts here. Other services we offer — Meeting Prep, Advocacy Coaching, Progress Monitoring Reviews — are coaching and follow-through services that build on the foundation the analysis establishes. Scholarship funding is concentrated where it does the most diagnostic work for the largest number of families.
 
-A family receiving a scholarship pays whatever portion they can comfortably afford, which is sometimes zero. The remaining cost is funded by individual donors and grants. Every $250 donation fully funds one family's complete IEP analysis. Every $500 supports a full month of advocacy coaching for a family in a complex dispute.
+A family receiving a scholarship for an IEP Document Analysis pays whatever portion they can comfortably afford, which is sometimes zero. The remaining cost is funded by individual donors and grants. Every $250 donation fully funds one family's complete IEP analysis and 30-minute debrief call.
 
 ## How we decide
 
@@ -55,6 +47,6 @@ We respond within 24 to 48 business hours with a recommendation. If a full schol
 
 ## How donors make this work
 
-Every dollar that families do not pay comes from a donor. If you have ever wondered whether your donation matters, this is where the line is drawn. A $25 gift mails a resource guide to a family without reliable internet access. A $75 gift subsidizes one IEP Document Analysis for a scholarship family. A $250 gift fully funds one family's complete IEP analysis and debrief call. A $500 gift supports a full month of advocacy coaching for a family in a complex dispute. There is no overhead leak in this math. We do not pay program staff yet. Every dollar moves into family service directly.
+Every dollar that families do not pay for the IEP Document Analysis comes from a donor. If you have ever wondered whether your donation matters, this is where the line is drawn. A $25 gift mails a printed resource guide to a family without reliable internet access. A $75 gift subsidizes a partial scholarship for one family's IEP Document Analysis. A $250 gift fully funds one family's complete IEP analysis and debrief call. There is no overhead leak in this math. We do not pay program staff yet. Every dollar moves into family service directly.
 
-If you want to fund a family's IEP work this month, the donation page is at edquityatthemargins.org/donate. If you want to apply for a scholarship for your own family, the contact information is above. Either way, the work moves forward because someone showed up.
+If you want to fund a family's IEP analysis this month, the donation page is at edquityatthemargins.org/donate. If you want to apply for a scholarship for your own family's IEP Document Analysis, the contact information is above. Either way, the work moves forward because someone showed up.

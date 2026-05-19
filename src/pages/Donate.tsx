@@ -73,10 +73,10 @@ export default function Donate() {
           <h2 style={{ fontSize: "clamp(22px,2.5vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 40px", textAlign: "center", letterSpacing: "-0.5px" }}>What your donation funds</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20 }}>
             {[
-              { amount: "$25", label: "covers a resource guide printed and mailed to a family without reliable internet access" },
-              { amount: "$75", label: "subsidizes one IEP Document Analysis session for a scholarship family" },
-              { amount: "$250", label: "fully funds one family's complete IEP analysis and debrief call" },
-              { amount: "$500", label: "supports a full month of Advocacy Coaching for a family in a complex dispute" },
+              { amount: "$25", label: "covers a printed resource guide mailed to a family without reliable internet access" },
+              { amount: "$75", label: "subsidizes a partial scholarship for one family's IEP Document Analysis" },
+              { amount: "$250", label: "fully funds one family's complete IEP Document Analysis and 30-minute debrief call" },
+              { amount: "$500", label: "fully funds two families' complete IEP Document Analyses through the Families First scholarship" },
             ].map((item, i) => (
               <div key={i} style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 22px", textAlign: "center" }}>
                 <p style={{ fontSize: 32, fontWeight: 900, color: "#22C55E", margin: "0 0 10px", letterSpacing: "-1px" }}>{item.amount}</p>
