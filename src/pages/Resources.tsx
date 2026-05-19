@@ -84,6 +84,11 @@ const externalLinks = [
     note: "Parent Center Hub",
   },
   {
+    label: "Defining the Teddy Bear and Stranger Test (Tipsheet)",
+    url: "https://wso2-gateway.tnedu.gov/tn-tan/1.0/sites/default/files/tn-tan/documents/2025-01/Defining_Teddy_Bear_and_Stranger_Test%20%281%29%20%281%29.pdf",
+    note: "Tennessee Department of Education / Vanderbilt TRIAD",
+  },
+  {
     label: "Wrightslaw: Special Education Law & Advocacy",
     url: "https://www.wrightslaw.com/",
     note: "Wrightslaw.com",

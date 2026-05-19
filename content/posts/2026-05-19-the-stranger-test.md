@@ -15,6 +15,8 @@ Here is the test. Read your child's annual goal out loud. Now imagine handing th
 
 If the answer is yes, the goal is strong. If the answer is no, the goal is too vague to do its job. The Individuals with Disabilities Education Act requires measurable annual goals for exactly this reason. Goals exist so that any qualified educator can pick up the IEP and pick up where the last teacher left off.
 
+The Stranger Test has a sister concept used in behavior analysis: the **Teddy Bear Test**. The Teddy Bear Test asks whether a teddy bear could perform the behavior described in a goal. If yes, the behavior is not measurable. "Being quiet," "sitting still," "not yelling" all fail the Teddy Bear Test because a teddy bear can do them. A goal written in these terms cannot tell the team whether your child is actually doing anything. The Tennessee Department of Education and Vanderbilt Kennedy Center publish a [one-page tipsheet defining both tests](https://wso2-gateway.tnedu.gov/tn-tan/1.0/sites/default/files/tn-tan/documents/2025-01/Defining_Teddy_Bear_and_Stranger_Test%20%281%29%20%281%29.pdf) that you can save and bring to your next meeting.
+
 ## What weak goals look like
 
 Weak goals share a few common patterns. They use language like:
