@@ -77,8 +77,13 @@ const guides = [
 
 const externalLinks = [
   {
-    label: "IDEA: Individuals with Disabilities Education Act (Full Text)",
+    label: "IDEA: Individuals with Disabilities Education Act",
     url: "https://sites.ed.gov/idea/",
+    note: "U.S. Department of Education",
+  },
+  {
+    label: "Office of Special Education Programs (OSEP)",
+    url: "https://www.ed.gov/about/ed-offices/osers/osep",
     note: "U.S. Department of Education",
   },
   {
@@ -87,24 +92,24 @@ const externalLinks = [
     note: "Parent Center Hub",
   },
   {
-    label: "Procedural Safeguards Notice Explanation",
-    url: "https://www.parentcenterhub.org/safeguards/",
-    note: "Parent Center Hub",
+    label: "Procedural Safeguards Notice (34 CFR § 300.504)",
+    url: "https://www.law.cornell.edu/cfr/text/34/300.504",
+    note: "Cornell Law School — Legal Information Institute",
+  },
+  {
+    label: "Wrightslaw: Special Education Law & Advocacy",
+    url: "https://www.wrightslaw.com/",
+    note: "Wrightslaw",
+  },
+  {
+    label: "Yellow Pages for Kids with Disabilities",
+    url: "https://www.yellowpagesforkids.com/",
+    note: "State-by-state directory of advocates, evaluators, therapists, and attorneys",
   },
   {
     label: "Defining the Teddy Bear and Stranger Test (Tipsheet)",
     url: "https://wso2-gateway.tnedu.gov/tn-tan/1.0/sites/default/files/tn-tan/documents/2025-01/Defining_Teddy_Bear_and_Stranger_Test%20%281%29%20%281%29.pdf",
     note: "Tennessee Department of Education / Vanderbilt TRIAD",
-  },
-  {
-    label: "Wrightslaw: Special Education Law & Advocacy",
-    url: "https://www.wrightslaw.com/",
-    note: "Wrightslaw.com",
-  },
-  {
-    label: "Office of Special Education Programs (OSEP)",
-    url: "https://www.ed.gov/about/ed-offices/osers/osep",
-    note: "U.S. Department of Education",
   },
 ];
 
