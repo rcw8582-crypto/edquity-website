@@ -82,9 +82,14 @@ const externalLinks = [
     note: "U.S. Department of Education",
   },
   {
+    label: "Office of Special Education and Rehabilitative Services (OSERS)",
+    url: "https://www.ed.gov/about/ed-offices/osers",
+    note: "U.S. Department of Education — umbrella office for OSEP and RSA",
+  },
+  {
     label: "Office of Special Education Programs (OSEP)",
     url: "https://www.ed.gov/about/ed-offices/osers/osep",
-    note: "U.S. Department of Education",
+    note: "U.S. Department of Education — serves children with disabilities birth through 21",
   },
   {
     label: "Find Your State's Parent Training & Information Center (PTI)",
