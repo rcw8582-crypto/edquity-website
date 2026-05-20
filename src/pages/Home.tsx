@@ -13,7 +13,7 @@ const CALENDLY = "https://calendly.com/dr-reba/discovery";
 // Update these numbers as the organization grows
 const STATS = [
   { value: 21, suffix: "+", label: "Years of Expertise", labelEs: "Años de Experiencia" },
-  { value: 50, suffix: "", label: "Year 1 Scholarship Goal", labelEs: "Meta de Becas, Año 1" },
+  { value: 50, suffix: "", label: "Families to serve at no cost in Year 1", labelEs: "Familias para servir sin costo en el Año 1" },
   { value: 100, suffix: "%", label: "Free for Scholarship Recipients", labelEs: "Gratis para Familias Becadas" },
 ];
 
