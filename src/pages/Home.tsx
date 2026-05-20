@@ -11,10 +11,10 @@ import PageMeta from "@/components/PageMeta";
 const CALENDLY = "https://calendly.com/dr-reba/discovery";
 
 // Update these numbers as the organization grows
-const STATS = [
+const STATS: Array<{ value: number | string; suffix: string; label: string; labelEs: string }> = [
   { value: 21, suffix: "+", label: "Years of Expertise", labelEs: "Años de Experiencia" },
   { value: 50, suffix: "", label: "Families to serve at no cost in Year 1", labelEs: "Familias para servir sin costo en el Año 1" },
-  { value: 100, suffix: "%", label: "Free for Scholarship Recipients", labelEs: "Gratis para Familias Becadas" },
+  { value: "IDEA", suffix: "", label: "The federal law behind every IEP", labelEs: "La ley federal detrás de cada IEP" },
 ];
 
 const TESTIMONIALS = [
@@ -41,23 +41,25 @@ const TESTIMONIALS = [
   },
 ];
 
-function AnimatedStat({ value, suffix }: { value: number; suffix: string }) {
+function AnimatedStat({ value, suffix }: { value: number | string; suffix: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
 
   useEffect(() => {
+    if (typeof value !== "number") return;
     const el = ref.current;
     if (!el) return;
+    const numericValue = value;
     const obs = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && !started.current) {
         started.current = true;
         let start = 0;
-        const step = Math.ceil(value / 40);
+        const step = Math.ceil(numericValue / 40);
         const interval = setInterval(() => {
-          start = Math.min(start + step, value);
+          start = Math.min(start + step, numericValue);
           setCount(start);
-          if (start >= value) clearInterval(interval);
+          if (start >= numericValue) clearInterval(interval);
         }, 35);
       }
     }, { threshold: 0.5 });
@@ -65,6 +67,9 @@ function AnimatedStat({ value, suffix }: { value: number; suffix: string }) {
     return () => obs.disconnect();
   }, [value]);
 
+  if (typeof value === "string") {
+    return <span>{value}{suffix}</span>;
+  }
   return <span ref={ref}>{count}{suffix}</span>;
 }
 
