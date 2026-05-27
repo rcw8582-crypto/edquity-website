@@ -4,7 +4,7 @@ import { CheckCircle2, ArrowRight, Heart, Shield, Users, Home, BookOpen, AlertCi
 import PageMeta from "@/components/PageMeta";
 
 const CRITERIA = [
-  { id: "income", label: "Low income", description: "Household income at or below 200% of the Federal Poverty Level." },
+  { id: "income", label: "Economically disadvantaged", description: "Household income at or below 200% of the Federal Poverty Level." },
   { id: "assistance", label: "Public assistance", description: "Currently receiving SNAP, Medicaid or CHIP, WIC, TANF, or federal housing assistance." },
   { id: "single_parent", label: "Single-parent household", description: "You are the sole parent or legal guardian in your household." },
   { id: "foster", label: "Foster or kinship family", description: "Child is in foster care, was adopted from foster care, or is in a kinship placement." },

@@ -100,7 +100,7 @@ export default function Funders() {
           <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#122C54", margin: "0 0 48px", textAlign: "center" }}>The Problem We Solve</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24, marginBottom: 48 }}>
             {[
-              { icon: <TrendingUp size={24} color="#22C55E" />, title: "A documented disparity", text: "Research consistently shows that Black, Brown, low-income, and rural families receive fewer and less appropriate special education services than their white, higher-income peers, despite identical legal protections." },
+              { icon: <TrendingUp size={24} color="#22C55E" />, title: "A documented disparity", text: "Research consistently shows that Black, Brown, economically disadvantaged, and rural families receive fewer and less appropriate special education services than their white, higher-income peers, despite identical legal protections." },
               { icon: <Shield size={24} color="#14B8A6" />, title: "A legal solution that exists", text: "The Individuals with Disabilities Education Act already guarantees every eligible child a free and appropriate public education. The gap is enforcement capacity, not law." },
               { icon: <Users size={24} color="#FBbf24" />, title: "A market that fails families", text: "Private special education advocates charge $100–$300/hour nationally. The families who most need advocacy are the least able to pay market rates." },
             ].map((card, i) => (

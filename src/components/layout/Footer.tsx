@@ -193,8 +193,11 @@ export default function Footer() {
         <div className="mt-16 pt-8 border-t border-primary-foreground/10 text-sm text-primary-foreground/60 space-y-2">
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-1">
             <span>&copy; {currentYear} EDquity at the Margins. All rights reserved.</span>
-            <span>EIN: 42-2295582</span>
-            <span>SOS Control #: 002109529</span>
+            <span>501(c)(3) Public Charity · EIN 42-2295582</span>
+            <span>TN SOS Control #002109529</span>
+          </div>
+          <div className="text-center text-xs text-primary-foreground/50 pt-1">
+            Contributions are tax-deductible to the extent allowed by law.
           </div>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
             <Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>

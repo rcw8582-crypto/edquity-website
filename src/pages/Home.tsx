@@ -81,7 +81,7 @@ export default function Home() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: "#122C54" }}>
       <PageMeta
         title="IEP Advocacy for Marginalized Families"
-        description="EDquity at the Margins helps Black, Brown, low-income, and rural families understand and enforce their children's federally guaranteed IEP rights. Book a free discovery call."
+        description="EDquity at the Margins helps Black, Brown, economically disadvantaged, and rural families understand and enforce their children's federally guaranteed IEP rights. Book a free discovery call."
       />
 
       {/* Hero */}
@@ -158,7 +158,7 @@ export default function Home() {
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: "0 0 28px" }}>
             {isEs
               ? "Eso no es un accidente. Los procesos del IEP están diseñados para la conveniencia institucional, y las familias que pagan el precio más alto son las familias negras, latinas, de bajos ingresos y rurales que carecen del conocimiento técnico para cuestionar."
-              : "That is not an accident. IEP processes are designed around institutional convenience, and the families who pay the highest price for that design are Black, Brown, low-income, and rural families who lack the technical knowledge to push back."}
+              : "That is not an accident. IEP processes are designed around institutional convenience, and the families who pay the highest price for that design are Black, Brown, economically disadvantaged, and rural families who lack the technical knowledge to push back."}
           </p>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: "0 0 28px" }}>
             {isEs
