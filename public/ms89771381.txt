@@ -1,0 +1,5 @@
+{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "edquityatthemargins.org",
+  "Id": "3adc88c4-9086-4b5b-9fbe-6f4d1de54c06"
+}
