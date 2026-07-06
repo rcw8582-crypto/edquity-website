@@ -25,7 +25,6 @@ const Events = lazy(() => import("@/pages/Events"));
 const Transparency = lazy(() => import("@/pages/Transparency"));
 const Funders = lazy(() => import("@/pages/Funders"));
 const Press = lazy(() => import("@/pages/Press"));
-const Scholarship = lazy(() => import("@/pages/Scholarship"));
 const Accessibility = lazy(() => import("@/pages/Accessibility"));
 const IEPGoalChecker = lazy(() => import("@/pages/IEPGoalChecker"));
 const Methodology = lazy(() => import("@/pages/Methodology"));
@@ -78,7 +77,6 @@ function Router() {
           <Route path="/transparency" component={Transparency} />
           <Route path="/funders" component={Funders} />
           <Route path="/press" component={Press} />
-          <Route path="/scholarship" component={Scholarship} />
           <Route path="/accessibility" component={Accessibility} />
           <Route path="/tools/iep-goal-checker" component={IEPGoalChecker} />
           <Route path="/our-methodology" component={Methodology} />

@@ -10,7 +10,7 @@ const consents = [
   {
     id: 2,
     title: "Consent 2: Document Review and Service Authorization",
-    text: "By submitting this form and completing payment, I authorize Edquity at the Margins and its staff to receive, review, and retain my child's Individualized Education Program and any related educational documents I provide for the purpose of IEP document analysis, family advocacy coaching, and related educational equity services. I understand that these documents contain sensitive and personally identifiable information protected under the Family Educational Rights and Privacy Act and that Edquity at the Margins will not share, publish, or distribute these documents or their contents to any third party without my explicit written consent. This consent covers all services I may receive from Edquity at the Margins, including but not limited to IEP document analysis, family advocacy coaching, family education workshops, and meeting preparation support.",
+    text: "By submitting this form, I authorize Edquity at the Margins and its staff to receive, review, and retain my child's Individualized Education Program and any related educational documents I provide for the purpose of the IEP Audit and related educational equity services. I understand that these documents contain sensitive and personally identifiable information protected under the Family Educational Rights and Privacy Act and that Edquity at the Margins will not share, publish, or distribute these documents or their contents to any third party without my explicit written consent. This consent covers all services I may receive from Edquity at the Margins, including but not limited to the IEP Audit, the Advocacy Toolkit, and meeting preparation support.",
   },
   {
     id: 3,
@@ -23,11 +23,6 @@ const consents = [
     id: 4,
     title: "Consent 4: Communication Authorization",
     text: "I give Edquity at the Margins permission to contact me at the phone number and email address provided in this form regarding my child's case, service updates, scheduling, and any follow-up related to services I have requested.",
-  },
-  {
-    id: 5,
-    title: "Consent 5: Fee and Refund Policy",
-    text: "I understand that the $125 intake fee covers a comprehensive review of my child's IEP document and a written summary of findings with recommended next steps. I understand that this fee is non-refundable once the document review has begun. I understand that submission of this form and payment does not guarantee availability and that Edquity at the Margins will confirm my appointment within 48 hours of receipt.",
   },
 ];
 
@@ -73,9 +68,9 @@ export default function IntakeConsent() {
           </div>
 
           <div className="mt-12 bg-primary text-primary-foreground rounded-2xl p-8">
-            <h2 className="text-xl font-bold mb-3">IEP Document Analysis Fee: $125</h2>
+            <h2 className="text-xl font-bold mb-3">Your IEP Audit is free</h2>
             <p className="text-primary-foreground/80 leading-relaxed">
-              Thank you for completing your intake form. You will receive a confirmation email at the address you provided within 48 hours. Please reply to that confirmation email with your child's IEP document attached. Dr. Clarke-Wedderburn will confirm your document review appointment at that time.
+              Thank you for completing your intake form. You will receive a confirmation email at the address you provided within 48 hours. Please reply to that confirmation email with your child's IEP document attached. Dr. Clarke-Wedderburn will confirm your IEP Audit appointment at that time.
             </p>
           </div>
 

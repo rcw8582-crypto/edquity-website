@@ -111,7 +111,7 @@ export default function Methodology() {
             How we review your child's IEP
           </h1>
           <p className="text-lg text-primary-foreground/85 leading-relaxed mb-4">
-            When we review your child's IEP, whether through a free discovery call, an IEP Document Analysis, or a coaching session, we look at six areas. Each is grounded in the requirements of the Individuals with Disabilities Education Act (IDEA, 34 CFR Part 300) and in peer-reviewed research on what makes an IEP work for the child it serves.
+            When we review your child's IEP, whether through a free discovery call or the free IEP Audit, we look at six areas. Each is grounded in the requirements of the Individuals with Disabilities Education Act (IDEA, 34 CFR Part 300) and in peer-reviewed research on what makes an IEP work for the child it serves.
           </p>
           <p className="text-base text-primary-foreground/70 leading-relaxed">
             Use this guide when you read your child's IEP at home, when you prepare for the next meeting, or when you are deciding whether to book a deeper audit with us.
@@ -218,7 +218,7 @@ export default function Methodology() {
             Want all six areas reviewed for your child's IEP?
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-8">
-            Every EDquity at the Margins IEP Document Analysis covers all six areas above, applied to your child's specific document. The result is a written report that names exactly what is missing or inadequate, with the language to ask for what your child needs at the next meeting. $250, with scholarship-funded access for families with financial constraints.
+            Every EDquity at the Margins IEP Audit covers all six areas above, applied to your child's specific document. The result is a written report that names exactly what is missing or inadequate, with the language to ask for what your child needs at the next meeting. The IEP Audit is free for every family.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a href={CALENDLY} target="_blank" rel="noopener noreferrer">

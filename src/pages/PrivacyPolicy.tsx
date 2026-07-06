@@ -29,15 +29,12 @@ export default function PrivacyPolicy() {
             <p>When you complete our inquiry form, parent intake form, or contact us directly, we collect personal information, including your name, email address, phone number, and mailing address. Through our intake process, we also collect information about your child, including their name, date of birth, disability category, school district, current services, and educational history. You may also voluntarily upload your child's Individualized Education Program and related educational documents.</p>
             <h3>1.2 Information Collected Automatically</h3>
             <p>When you visit our website, we may collect standard technical information, including your IP address, browser type, pages visited, and time spent on the site. This information is collected through standard web analytics tools and is used solely to improve the performance and accessibility of our website.</p>
-            <h3>1.3 Payment Information</h3>
-            <p>Payment information collected through our intake form is processed directly by Stripe, our payment processor. Edquity at the Margins does not store your credit card number, bank account information, or any other financial account data. Stripe's privacy policy governs the handling of your payment information and is available at <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">stripe.com/privacy</a>.</p>
 
             <h2>2. How We Use Your Information</h2>
             <p>Edquity at the Margins uses the information you provide for the following purposes:</p>
             <ul>
-              <li>To deliver IEP document analysis, family advocacy coaching, family education workshops, and related services</li>
+              <li>To deliver the IEP Audit, the Advocacy Toolkit, and related free services</li>
               <li>To communicate with you about your child's case, service scheduling, and follow-up</li>
-              <li>To process payment for services rendered</li>
               <li>To maintain client records necessary for service delivery and organizational accountability</li>
               <li>To conduct de-identified program evaluation and produce annual impact reports</li>
               <li>To develop de-identified case studies, policy advocacy materials, and peer-reviewed research, subject to your separate research consent</li>
@@ -55,7 +52,7 @@ export default function PrivacyPolicy() {
             <h2>6. Sharing of Information</h2>
             <p>Edquity at the Margins does not sell, rent, or trade your personal information. We do not share your information with third parties except in the following limited circumstances:</p>
             <ul>
-              <li>With service providers who assist in our operations, such as our form platform and payment processor, who are bound by confidentiality obligations</li>
+              <li>With service providers who assist in our operations, such as our form platform, who are bound by confidentiality obligations</li>
               <li>When required by law, court order, or government regulation</li>
               <li>To protect the rights, safety, or property of Edquity at the Margins, our staff, or the public</li>
             </ul>

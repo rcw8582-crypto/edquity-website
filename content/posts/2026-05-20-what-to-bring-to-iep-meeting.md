@@ -59,4 +59,4 @@ We built a printable **IEP Meeting Notecatcher** that organizes everything in th
 
 [Download the IEP Meeting Notecatcher (PDF)](/resources/EDATM_IEP_Meeting_Notecatcher.pdf)
 
-If you want a coach in your corner before the meeting, our Meeting Prep Session walks through your specific IEP, prepares you for what the team may contest, and sends a written summary of talking points after the call. The session is $150.
+If you want an expert in your corner before the meeting, our free IEP Audit walks through your specific IEP, identifies what the team may contest, and gives you a written report and a debrief call so you know exactly what to ask. It costs your family nothing.

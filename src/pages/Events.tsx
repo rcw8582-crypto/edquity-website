@@ -59,7 +59,7 @@ export default function Events() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif" }}>
       <PageMeta
         title="Events & Workshops"
-        description="Free and low-cost workshops, webinars, and live Q&A sessions for families navigating special education, hosted by Dr. Reba Clarke-Wedderburn."
+        description="Free workshops, webinars, and live Q&A sessions for families navigating special education, hosted by Dr. Reba Clarke-Wedderburn."
       />
 
       <section className="sp" style={{ background: "#122C54" }}>

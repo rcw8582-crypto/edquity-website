@@ -62,4 +62,4 @@ This is one of the most common reasons families come to us. A child placed in Ti
 
 If you suspect your child is in the wrong system, the family has the right to request a comprehensive evaluation in writing. The school must respond, usually within a state-specific timeline of 30 to 60 days. The evaluation answers, in writing, whether your child qualifies for an IEP, a 504 plan, or continued MTSS support.
 
-If you want help making that request or understanding which system your child belongs in, we offer MTSS Navigation Consultations, 504 Plan Reviews, and Child Find & Evaluation Consultations. Each is $100 to $125. Scholarship-funded sessions are available for families with financial constraints.
+If you want help making that request or understanding which system your child belongs in, start with a free discovery call, and once your child has an IEP, our free IEP Audit reviews it across six research-grounded domains at no cost. You can also explore our free Advocacy Toolkit for template letters and plain-language guides.

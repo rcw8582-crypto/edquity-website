@@ -23,21 +23,21 @@ const TESTIMONIALS = [
     quoteEs: "Entré a la reunión del IEP sabiendo exactamente qué preguntar y qué le correspondía hacer al distrito. Por primera vez en tres años, los objetivos de mi hijo realmente reflejaban lo que él necesita. La Dra. Clarke-Wedderburn cambió cómo veo mi propio papel en esa sala.",
     name: "Parent of a 9-year-old",
     location: "Georgia",
-    service: "IEP Document Analysis",
+    service: "IEP Audit",
   },
   {
     quote: "We had been told for two years that our daughter was 'progressing appropriately.' The review showed us she hadn't met a single measurable goal. That report gave us the language and the evidence to go back in and demand what the law requires.",
     quoteEs: "Durante dos años nos dijeron que nuestra hija 'progresaba adecuadamente.' El análisis nos mostró que no había alcanzado ni un solo objetivo medible. Ese informe nos dio el lenguaje y la evidencia para volver a exigir lo que la ley requiere.",
     name: "Family of a child with autism",
     location: "Florida",
-    service: "IEP Document Analysis",
+    service: "IEP Audit",
   },
   {
     quote: "I'm a single father and I had no idea what an IEP was supposed to look like. Dr. Clarke-Wedderburn walked me through every line, explained what was legally required, and helped me understand that I had real power in that meeting. I just didn't know it yet.",
     quoteEs: "Soy padre soltero y no sabía cómo debía verse un IEP. La Dra. Clarke-Wedderburn me explicó cada línea, me aclaró qué es requerido por ley, y me ayudó a entender que yo tenía poder real en esa reunión. Solo no lo sabía todavía.",
     name: "Single father",
     location: "Kentucky",
-    service: "Advocacy Coaching",
+    service: "IEP Audit",
   },
 ];
 
@@ -205,7 +205,7 @@ export default function Home() {
               {isEs ? "Lo Que Hacemos" : "What We Do"}
             </p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>
-              {isEs ? "Tres servicios. Un propósito." : "Three services. One purpose."}
+              {isEs ? "Dos servicios gratuitos. Un propósito." : "Two free services. One purpose."}
             </h2>
             <p style={{ fontSize: 18, color: "#64748b", maxWidth: 580, margin: "0 auto", lineHeight: 1.65 }}>
               {isEs
@@ -213,11 +213,10 @@ export default function Home() {
                 : "Every service targets a specific point where marginalized families lose ground in the IEP process."}
             </p>
           </div>
-          <div className="rg-3">
+          <div className="rg-2">
             {[
-              { icon: <FileText size={28} color="#22C55E" />, title: "IEP Document Analysis", price: "$250", desc: "We review your child's IEP across six research-grounded domains, identify what is missing or legally inadequate, and deliver a plain-language written report with specific next steps before your next meeting.", tag: "Entry Point", tagColor: "#22C55E" },
-              { icon: <Target size={28} color="#14B8A6" />, title: "Advocacy Coaching", price: "$100–$150 per session", desc: "We prepare you for IEP meetings, help you interpret progress data throughout the year, and build the sustained advocacy capacity that a single document review cannot produce.", tag: "Ongoing Support", tagColor: "#14B8A6" },
-              { icon: <Users size={28} color="#FBbf24" />, title: "Year-Long Partnership", price: "Package pricing", desc: "For families navigating complex situations or adversarial teams, we provide a full annual coaching relationship from meeting preparation through progress monitoring across every IEP interaction.", tag: "Best Value", tagColor: "#FBbf24" },
+              { icon: <FileText size={28} color="#22C55E" />, title: isEs ? "Auditoría del IEP" : "IEP Audit", price: isEs ? "Gratis" : "Free", desc: isEs ? "Revisamos el IEP de su hijo en seis dominios fundamentados en investigación, identificamos qué falta o es legalmente inadecuado, y entregamos un informe escrito en lenguaje sencillo con próximos pasos específicos antes de su próxima reunión." : "We review your child's IEP across six research-grounded domains, identify what is missing or legally inadequate, and deliver a plain-language written report with specific next steps before your next meeting.", tag: isEs ? "Gratis" : "Free", tagColor: "#22C55E", href: "/intake" },
+              { icon: <BookOpen size={28} color="#14B8A6" />, title: isEs ? "Kit de Herramientas de Defensa" : "Advocacy Toolkit", price: isEs ? "Gratis" : "Free", desc: isEs ? "Nuestra biblioteca de recursos gratuitos y descargables: guías en lenguaje sencillo sobre la IDEA, listas de preguntas, cartas modelo y herramientas que le ayudan a leer el IEP de su hijo como una experta y prepararse para cualquier reunión." : "Our library of free, downloadable resources: plain-language guides to the IDEA, question checklists, template letters, and tools that help you read your child's IEP like an expert and prepare for any meeting.", tag: isEs ? "Gratis" : "Free", tagColor: "#14B8A6", href: "/resources" },
             ].map((service, i) => (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -231,15 +230,15 @@ export default function Home() {
                   <p style={{ fontSize: 14, fontWeight: 700, color: "#22C55E", margin: "0 0 12px" }}>{service.price}</p>
                   <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>{service.desc}</p>
                 </div>
-                <Link href="/services"
+                <Link href={service.href}
                   style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "#122C54", fontWeight: 600, textDecoration: "none", fontSize: 14, marginTop: "auto" }}>
-                  Learn more <ArrowRight size={14} />
+                  {isEs ? "Más información" : "Learn more"} <ArrowRight size={14} />
                 </Link>
               </motion.div>
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: 48 }}>
-            <p style={{ fontSize: 15, color: "#64748b", margin: "0 0 20px" }}>Comparable private advocates charge $100 to $300 per hour nationally. Our rates are set below market because access is the point.</p>
+            <p style={{ fontSize: 15, color: "#64748b", margin: "0 0 20px" }}>{isEs ? "Ambos servicios son completamente gratuitos. El acceso es el objetivo." : "Both services are completely free. Access is the point."}</p>
             <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
               style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "14px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16 }}>
               Book a Free Discovery Call

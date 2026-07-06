@@ -35,7 +35,7 @@ export default function Donate() {
       <section className="sp" style={{ background: "#f8fafc" }}>
         <div style={{ textAlign: "center", marginBottom: 40, padding: "0 24px" }}>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px", letterSpacing: "-0.5px" }}>Make a Donation</h2>
-          <p style={{ fontSize: 16, color: "#64748b", margin: 0 }}>100% of donations support direct family services and scholarship access.</p>
+          <p style={{ fontSize: 16, color: "#64748b", margin: 0 }}>100% of donations fund free IEP Audits and advocacy resources for families.</p>
         </div>
 
         <div data-testid="donorbox-widget-container" style={{ maxWidth: 920, margin: "0 auto", padding: "0 16px" }}>
@@ -74,9 +74,9 @@ export default function Donate() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20 }}>
             {[
               { amount: "$25", label: "covers a printed resource guide mailed to a family without reliable internet access" },
-              { amount: "$75", label: "subsidizes a partial scholarship for one family's IEP Document Analysis" },
-              { amount: "$250", label: "fully funds one family's complete IEP Document Analysis and 30-minute debrief call" },
-              { amount: "$500", label: "fully funds two families' complete IEP Document Analyses through the Families First scholarship" },
+              { amount: "$75", label: "helps cover the cost of delivering one family's free IEP Audit" },
+              { amount: "$250", label: "funds one family's complete free IEP Audit and 30-minute debrief call" },
+              { amount: "$500", label: "funds free IEP Audits for two families who could never afford independent advocacy" },
             ].map((item, i) => (
               <div key={i} style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 22px", textAlign: "center" }}>
                 <p style={{ fontSize: 32, fontWeight: 900, color: "#22C55E", margin: "0 0 10px", letterSpacing: "-1px" }}>{item.amount}</p>

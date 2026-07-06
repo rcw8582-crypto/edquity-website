@@ -6,8 +6,8 @@ const milestones = [
   { year: "2026", text: "EDquity at the Margins founded by Dr. Reba Clarke-Wedderburn" },
   { year: "2026", text: "Incorporated as a Tennessee charitable corporation" },
   { year: "2026", text: "Filed for 501(c)(3) tax-exempt status with the IRS (determination pending)" },
-  { year: "2026", text: "Launched IEP Document Analysis service and online intake portal" },
-  { year: "2026", text: "Year 1 goal: serve 50 families at no cost through our scholarship program" },
+  { year: "2026", text: "Launched the free IEP Audit service and online intake portal" },
+  { year: "2026", text: "Year 1 goal: serve 50 families at no cost" },
 ];
 
 const spending = [
@@ -17,7 +17,7 @@ const spending = [
 ];
 
 const principles = [
-  "We do not charge families more than they can afford. Sliding-scale and scholarship slots are available.",
+  "We do not charge families for our services. Both the IEP Audit and the Advocacy Toolkit are free.",
   "We do not receive funding from school districts or state education agencies. Our only loyalty is to families.",
   "We publish our EIN and organizational filings so anyone can verify our nonprofit status.",
   "We will never sell subscriber data or family information to any third party.",

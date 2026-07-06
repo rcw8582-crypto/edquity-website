@@ -4,10 +4,10 @@ import { CheckCircle2, TrendingUp, Users, Shield } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
 const outcomes = [
-  { stat: "50", label: "families to serve free in Year 1 through our scholarship program" },
-  { stat: "$0", label: "charged to scholarship families. Access is the model, not a marketing phrase." },
+  { stat: "50", label: "families to serve free in Year 1" },
+  { stat: "$0", label: "charged to families. Access is the model, not a marketing phrase." },
   { stat: "21+", label: "years of Dr. Clarke-Wedderburn's special education expertise" },
-  { stat: "100%", label: "of scholarship recipients pay nothing, regardless of service level" },
+  { stat: "100%", label: "of families pay nothing for the IEP Audit and Advocacy Toolkit" },
 ];
 
 const tiers = [
@@ -16,7 +16,7 @@ const tiers = [
     range: "$1,000 – $4,999",
     color: "#22C55E",
     includes: [
-      "Funds 4–20 IEP Document Analysis sessions for scholarship families",
+      "Funds 4–20 free IEP Audits for families who cannot pay for advocacy",
       "Named acknowledgment in annual report",
       "Impact update letter at year's end",
     ],
@@ -27,7 +27,7 @@ const tiers = [
     color: "#14B8A6",
     featured: true,
     includes: [
-      "Funds 20–100 IEP Document Analysis scholarships for families who cannot pay",
+      "Funds 20–100 free IEP Audits for families who cannot pay for advocacy",
       "Co-branded acknowledgment on website",
       "Quarterly impact reports with de-identified outcome data",
       "Invitation to community education events",
@@ -38,7 +38,7 @@ const tiers = [
     range: "$25,000+",
     color: "#122C54",
     includes: [
-      "Funds organizational capacity and scholarship program for an entire year",
+      "Funds organizational capacity and free family services for an entire year",
       "Named sponsorship of a specific program or cohort",
       "Annual site visit or program briefing with Dr. Clarke-Wedderburn",
       "Full outcome report with case-level narrative summaries",

@@ -687,7 +687,7 @@ export default function IEPGoalChecker() {
         <div className="container mx-auto px-4 md:px-6 max-w-3xl text-center">
           <h2 className="text-2xl font-bold text-primary mb-3">Want a professional audit of your child's IEP?</h2>
           <p className="text-muted-foreground mb-6 leading-relaxed">
-            Our IEP Document Analysis reviews every annual goal against the seven-part framework, scores Present Levels for measurable baselines, and identifies which procedural safeguards the district may have skipped. The full report and 30-minute debrief call costs $250, with scholarship-funded access for families with financial constraints.
+            Our free IEP Audit reviews every annual goal against the seven-part framework, scores Present Levels for measurable baselines, and identifies which procedural safeguards the district may have skipped. The full report and 30-minute debrief call are provided at no cost to your family.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link href="/services">

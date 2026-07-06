@@ -37,22 +37,30 @@ type FormData = {
   schoolDistrict: string;
   state: string;
   disabilityCategory: string;
-  serviceInterest: string;
+  meetingTiming: string;
   situation: string;
   hearAboutUs: string;
   consent1: boolean;
   consent2: boolean;
   consent3Research: boolean;
   consent4Communication: boolean;
-  consent5Fee: boolean;
 };
 
 const EMPTY: FormData = {
   parentName: "", email: "", phone: "", address: "",
   childFirstName: "", childDob: "", childGrade: "", schoolDistrict: "", state: "", disabilityCategory: "",
-  serviceInterest: "", situation: "", hearAboutUs: "",
-  consent1: false, consent2: false, consent3Research: false, consent4Communication: false, consent5Fee: false,
+  meetingTiming: "", situation: "", hearAboutUs: "",
+  consent1: false, consent2: false, consent3Research: false, consent4Communication: false,
 };
+
+const MEETING_TIMING = [
+  "Within the next 7 days",
+  "Within the next 2 weeks",
+  "Within the next 30 days",
+  "More than 30 days away",
+  "No meeting scheduled yet",
+  "Not sure",
+];
 
 const inputStyle = {
   width: "100%", padding: "12px 14px", border: "1.5px solid #e2e8f0",
@@ -84,8 +92,8 @@ export default function Intake() {
 
   const step1Valid = form.parentName && form.email && form.phone;
   const step2Valid = form.childFirstName && form.childDob && form.childGrade && form.schoolDistrict && form.state && form.disabilityCategory;
-  const step3Valid = form.serviceInterest && form.situation.length >= 20;
-  const step4Valid = form.consent1 && form.consent2 && form.consent4Communication && form.consent5Fee;
+  const step3Valid = form.meetingTiming && form.situation.length >= 20;
+  const step4Valid = form.consent1 && form.consent2 && form.consent4Communication;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -126,19 +134,19 @@ export default function Intake() {
     );
   }
 
-  const steps = ["Parent Info", "Child Info", "Service", "Consents"];
+  const steps = ["Parent Info", "Child Info", "Your Situation", "Consents"];
 
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", background: "#f8fafc", minHeight: "100vh" }}>
       {/* Header */}
       <section style={{ background: "#122C54", padding: "48px 24px" }}>
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
-          <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Parent Intake Form</p>
+          <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Free IEP Audit Intake</p>
           <h1 style={{ fontSize: "clamp(24px,3.5vw,38px)", fontWeight: 900, color: "#fff", margin: "0 0 16px", letterSpacing: "-0.5px" }}>
-            Let's get started.
+            Start your free IEP Audit.
           </h1>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.65)", lineHeight: 1.7, maxWidth: 500, margin: "0 auto" }}>
-            This form takes about 5 minutes to complete. Dr. Clarke-Wedderburn will review your submission and respond within 48 hours.
+            This form takes about 5 minutes to complete, and the IEP Audit is free. Dr. Clarke-Wedderburn will review your submission and respond within 48 hours. Families with an imminent IEP meeting are prioritized.
           </p>
         </div>
       </section>
@@ -221,17 +229,17 @@ export default function Intake() {
               </div>
             )}
 
-            {/* Step 3: Service */}
+            {/* Step 3: Your Situation */}
             {step === 3 && (
               <div>
-                <h2 style={sectionHead}>Service Request</h2>
-                <Field label="What service are you interested in?" required>
-                  <select style={inputStyle} value={form.serviceInterest} onChange={e => set("serviceInterest", e.target.value)} required>
-                    <option value="">Select a service</option>
-                    <option value="IEP Document Analysis ($125)">IEP Document Analysis ($125)</option>
-                    <option value="Family Advocacy Coaching (Year-Long)">Family Advocacy Coaching (Year-Long)</option>
-                    <option value="Family Education Workshop">Family Education Workshop</option>
-                    <option value="Not sure, need guidance">Not sure, need guidance</option>
+                <h2 style={sectionHead}>Your Situation</h2>
+                <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px", lineHeight: 1.6 }}>
+                  Your free IEP Audit includes a written report across six review domains and a 30-minute debrief call. Tell us how soon your next meeting is so we can prioritize families with imminent meetings.
+                </p>
+                <Field label="When is your next IEP meeting?" required hint="If a meeting is coming up soon, we do our best to prioritize your audit.">
+                  <select style={inputStyle} value={form.meetingTiming} onChange={e => set("meetingTiming", e.target.value)} required>
+                    <option value="">Select timing</option>
+                    {MEETING_TIMING.map(m => <option key={m} value={m}>{m}</option>)}
                   </select>
                 </Field>
                 <Field label="Briefly describe your child's situation" required hint="What's happening at school? What do you need help with? The more specific you are, the better Dr. Clarke-Wedderburn can prepare. (Minimum 20 characters)">
@@ -257,7 +265,7 @@ export default function Intake() {
               <div>
                 <h2 style={sectionHead}>Consent and Authorization</h2>
                 <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: "0 0 24px" }}>
-                  Please read each statement carefully. Consents 1, 2, 4, and 5 are required to proceed. Consent 3 is optional and has no effect on your access to services.
+                  Please read each statement carefully. Consents 1, 2, and 4 are required to proceed. Consent 3 is optional and has no effect on your access to services.
                 </p>
 
                 {[
@@ -270,7 +278,7 @@ export default function Intake() {
                   {
                     key: "consent2" as const,
                     label: "Consent 2: Document Review and Service Authorization",
-                    text: "By submitting this form and completing payment, I authorize Edquity at the Margins and its staff to receive, review, and retain my child's Individualized Education Program and any related educational documents I provide for the purpose of IEP document analysis, family advocacy coaching, and related educational equity services. I understand that these documents will not be shared with any third party without my explicit written consent.",
+                    text: "By submitting this form, I authorize Edquity at the Margins and its staff to receive, review, and retain my child's Individualized Education Program and any related educational documents I provide for the purpose of the IEP Audit and related educational equity services. I understand that these documents will not be shared with any third party without my explicit written consent.",
                     required: true,
                   },
                   {
@@ -283,12 +291,6 @@ export default function Intake() {
                     key: "consent4Communication" as const,
                     label: "Consent 4: Communication Authorization",
                     text: "I give Edquity at the Margins permission to contact me at the phone number and email address provided in this form regarding my child's case, service updates, scheduling, and any follow-up related to services I have requested.",
-                    required: true,
-                  },
-                  {
-                    key: "consent5Fee" as const,
-                    label: "Consent 5: Fee and Refund Policy",
-                    text: "I understand that the $125 intake fee covers a comprehensive review of my child's IEP document and a written summary of findings with recommended next steps. I understand that this fee is non-refundable once the document review has begun. Submission of this form and payment does not guarantee availability. EDquity at the Margins will confirm my appointment within 48 hours of receipt.",
                     required: true,
                   },
                 ].map(consent => (
