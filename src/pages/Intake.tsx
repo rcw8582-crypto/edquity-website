@@ -156,7 +156,7 @@ export default function Intake() {
         <div style={{ maxWidth: 700, margin: "0 auto", display: "flex" }}>
           {steps.map((s, i) => (
             <div key={s} style={{ flex: 1, padding: "16px 0", textAlign: "center", borderBottom: step === i + 1 ? "3px solid #22C55E" : "3px solid transparent", cursor: "default" }}>
-              <span style={{ fontSize: 13, fontWeight: step === i + 1 ? 800 : 500, color: step === i + 1 ? "#122C54" : step > i + 1 ? "#22C55E" : "#94a3b8" }}>
+              <span style={{ fontSize: 13, fontWeight: step === i + 1 ? 800 : 500, color: step === i + 1 ? "#122C54" : step > i + 1 ? "#22C55E" : "#64748b" }}>
                 {step > i + 1 ? "✓ " : ""}{s}
               </span>
             </div>
@@ -352,7 +352,7 @@ export default function Intake() {
             </div>
           </div>
 
-          <p style={{ fontSize: 12, color: "#94a3b8", textAlign: "center", marginTop: 20 }}>
+          <p style={{ fontSize: 12, color: "#64748b", textAlign: "center", marginTop: 20 }}>
             Your information is protected under FERPA. We never share your data without your explicit written consent. &nbsp;
             <Link href="/privacy-policy" style={{ color: "#14B8A6" }}>Privacy Policy</Link>
           </p>

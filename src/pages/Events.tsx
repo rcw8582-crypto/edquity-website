@@ -139,7 +139,7 @@ export default function Events() {
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 14, color: "#94a3b8", marginTop: 24 }}>
+          <p style={{ fontSize: 14, color: "#64748b", marginTop: 24 }}>
             Can't make a live session? Many recordings are available to clients and subscribers.
           </p>
         </div>

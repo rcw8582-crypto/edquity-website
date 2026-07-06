@@ -1,6 +1,7 @@
 import { useEffect, lazy, Suspense } from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { MotionConfig } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -101,13 +102,17 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <LanguageProvider>
-          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-            <Router />
-          </WouterRouter>
-        </LanguageProvider>
-        <Toaster />
-        <Analytics />
+        {/* reducedMotion="user" makes every framer-motion animation respect the
+            OS/browser "reduce motion" setting (WCAG 2.1 SC 2.3.3). */}
+        <MotionConfig reducedMotion="user">
+          <LanguageProvider>
+            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+              <Router />
+            </WouterRouter>
+          </LanguageProvider>
+          <Toaster />
+          <Analytics />
+        </MotionConfig>
       </TooltipProvider>
     </QueryClientProvider>
   );

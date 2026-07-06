@@ -27,7 +27,7 @@ export default function Donate() {
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.85)", lineHeight: 1.8, margin: "8px 0 20px", fontStyle: "italic" }}>
             We had been told for two years that our daughter was progressing appropriately. The IEP review showed she hadn't met a single measurable goal. That report gave us the language and the evidence to go back in and demand what the law requires, and we got it.
           </p>
-          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", margin: 0, fontWeight: 600, letterSpacing: 0.3 }}>FAMILY SUPPORTED BY EDquity · FLORIDA</p>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", margin: 0, fontWeight: 600, letterSpacing: 0.3 }}>FAMILY SUPPORTED BY EDquity · FLORIDA</p>
         </div>
       </section>
 
@@ -51,7 +51,7 @@ export default function Donate() {
           />
         </div>
         <div style={{ textAlign: "center", marginTop: 20, padding: "0 24px" }}>
-          <p style={{ fontSize: 13, color: "#94a3b8", margin: "0 0 10px" }}>Prefer to donate directly on Donorbox?</p>
+          <p style={{ fontSize: 13, color: "#64748b", margin: "0 0 10px" }}>Prefer to donate directly on Donorbox?</p>
           <a
             href="https://donorbox.org/iep-advocacy-at-the-margins"
             target="_blank"
@@ -62,7 +62,7 @@ export default function Donate() {
           </a>
         </div>
 
-        <p style={{ fontSize: 13, color: "#94a3b8", textAlign: "center", marginTop: 20, lineHeight: 1.6, padding: "0 24px" }}>
+        <p style={{ fontSize: 13, color: "#64748b", textAlign: "center", marginTop: 20, lineHeight: 1.6, padding: "0 24px" }}>
           EDquity at the Margins is a Tennessee charitable corporation (EIN 42-2295582) with a 501(c)(3) application pending before the IRS. Donations may be tax-deductible once our determination is received. Please consult your tax advisor for your specific situation.
         </p>
       </section>

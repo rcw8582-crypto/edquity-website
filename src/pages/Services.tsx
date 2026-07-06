@@ -107,7 +107,7 @@ export default function Services() {
               </div>
               <h3 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#fff", margin: "0 0 8px", letterSpacing: "-0.5px" }}>IEP Audit</h3>
               <p style={{ fontSize: 24, fontWeight: 900, color: "#22C55E", margin: "0 0 6px" }}>Free</p>
-              <p style={{ fontSize: 14, color: "rgba(255,255,255,0.4)", margin: "0 0 24px" }}>Written report delivered within 10 business days</p>
+              <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "0 0 24px" }}>Written report delivered within 10 business days</p>
               <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, margin: "0 0 32px" }}>
                 Most families receive their child's IEP with no independent guidance on whether it meets the legal standard of a free and appropriate public education. This service closes that gap. Dr. Clarke-Wedderburn reviews your child's IEP across six research-grounded domains, identifies missing or inadequate services, and delivers a plain-language written report with specific recommended next steps before your next meeting.
               </p>
@@ -192,6 +192,8 @@ export default function Services() {
           <div style={{ background: "#fff", borderRadius: 14, border: "1px solid #e2e8f0", marginBottom: 8, overflow: "hidden" }}>
             <button
               onClick={() => setLawsOpen(!lawsOpen)}
+              aria-expanded={lawsOpen}
+              aria-controls="federal-law-panel"
               style={{
                 width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center",
                 padding: "20px 28px", background: "none", border: "none", cursor: "pointer",
@@ -199,10 +201,10 @@ export default function Services() {
               }}
             >
               <span>The federal law behind your child's rights</span>
-              {lawsOpen ? <ChevronUp size={20} color="#122C54" /> : <ChevronDown size={20} color="#122C54" />}
+              {lawsOpen ? <ChevronUp size={20} color="#122C54" aria-hidden="true" /> : <ChevronDown size={20} color="#122C54" aria-hidden="true" />}
             </button>
             {lawsOpen && (
-              <div className="rg-4" style={{ padding: "0 28px 28px" }}>
+              <div id="federal-law-panel" className="rg-4" style={{ padding: "0 28px 28px" }}>
                 <LawBox citation="20 U.S.C. § 7801(33): ESSA" title="Every Student Succeeds Act" text="Defines Multi-Tiered System of Supports and requires schools to use evidence-based interventions for all students, funded through Title I." />
                 <LawBox citation="34 C.F.R. § 300.226: IDEA" title="Early Intervening Services" text="Allows schools to use up to 15% of special education funds to provide coordinated support for students not yet identified as needing special education who need additional academic or behavioral help." />
                 <LawBox citation="34 C.F.R. § 104.33: Section 504" title="Rehabilitation Act of 1973" text="Requires schools to provide a Free Appropriate Public Education to students with disabilities, including those who do not qualify for an IEP." />
@@ -258,18 +260,18 @@ export default function Services() {
               <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 16, padding: 32 }}>
                 <div style={{ fontSize: 40, color: "#22C55E", lineHeight: 1, marginBottom: 16, fontFamily: "Georgia, serif", opacity: 0.6 }}>"</div>
                 <p style={{ fontSize: 15, color: "rgba(255,255,255,0.85)", lineHeight: 1.75, margin: "0 0 20px", fontStyle: "italic" }}>{t.quote}</p>
-                <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", margin: 0, fontWeight: 600, letterSpacing: 0.3 }}>{t.attribution}</p>
+                <p style={{ fontSize: 12, color: "rgba(255,255,255,0.7)", margin: 0, fontWeight: 600, letterSpacing: 0.3 }}>{t.attribution}</p>
               </div>
             ))}
           </div>
-          <p style={{ textAlign: "center", fontSize: 12, color: "rgba(255,255,255,0.3)", marginTop: 28 }}>Details anonymized. Shared with permission.</p>
+          <p style={{ textAlign: "center", fontSize: 12, color: "rgba(255,255,255,0.7)", marginTop: 28 }}>Details anonymized. Shared with permission.</p>
         </div>
       </section>
 
       {/* Legal Disclaimer */}
       <section className="sp" style={{ background: "#fff", borderTop: "1px solid #e2e8f0" }}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
-          <p style={{ fontSize: 13, color: "#94a3b8", lineHeight: 1.7, margin: 0, textAlign: "center" }}>
+          <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.7, margin: 0, textAlign: "center" }}>
             EDquity at the Margins provides independent educational expertise, not legal advice. Dr. Clarke-Wedderburn is not an attorney and does not provide legal representation. Families who believe their child's rights have been violated under IDEA are encouraged to consult a special education attorney or contact their state's Parent Training and Information Center at{" "}
             <a href="https://parentcenterhub.org" target="_blank" rel="noopener noreferrer" style={{ color: "#14B8A6", textDecoration: "none" }}>parentcenterhub.org</a>.
           </p>

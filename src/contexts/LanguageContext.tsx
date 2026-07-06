@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 export type Lang = "en" | "es";
 
@@ -14,6 +14,14 @@ const LanguageContext = createContext<LanguageContextType>({
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>("en");
+
+  // Keep the document language in sync with the active UI language so that
+  // assistive technology (screen readers, translation tools) announces the
+  // page in the correct language. WCAG 2.1 SC 3.1.1 / 3.1.2.
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
       {children}

@@ -221,7 +221,7 @@ export default function Resources() {
               </motion.div>
             ))}
           </div>
-          <p style={{ fontSize: 13, color: "#94a3b8", marginTop: 32, textAlign: "center" }}>
+          <p style={{ fontSize: 13, color: "#64748b", marginTop: 32, textAlign: "center" }}>
             All guides are free. No email required. Share with any family who needs them.
           </p>
         </div>
@@ -250,7 +250,7 @@ export default function Resources() {
               >
                 <div>
                   <p style={{ fontSize: 15, fontWeight: 600, color: "#122C54", margin: 0 }}>{link.label}</p>
-                  <p style={{ fontSize: 12, color: "#94a3b8", margin: "3px 0 0" }}>{link.note}</p>
+                  <p style={{ fontSize: 12, color: "#64748b", margin: "3px 0 0" }}>{link.note}</p>
                 </div>
                 <ExternalLink size={16} color="#22C55E" style={{ flexShrink: 0 }} />
               </a>

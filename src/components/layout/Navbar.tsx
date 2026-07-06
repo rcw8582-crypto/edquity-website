@@ -95,15 +95,17 @@ export default function Navbar() {
             className="xl:hidden text-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             data-testid="mobile-menu-toggle"
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-nav"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
       </div>
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden absolute top-full left-0 right-0 bg-white border-t border-border shadow-lg animate-in slide-in-from-top-2">
+        <div id="mobile-nav" className="xl:hidden absolute top-full left-0 right-0 bg-white border-t border-border shadow-lg animate-in slide-in-from-top-2">
           <div className="flex flex-col py-4 px-6 space-y-4">
             {navLinks.map((link) => (
               <Link

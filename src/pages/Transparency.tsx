@@ -85,7 +85,7 @@ export default function Transparency() {
                   </motion.div>
                 ))}
               </div>
-              <p style={{ fontSize: 13, color: "#94a3b8", marginTop: 24, lineHeight: 1.6 }}>
+              <p style={{ fontSize: 13, color: "#64748b", marginTop: 24, lineHeight: 1.6 }}>
                 Percentages reflect projected Year 1 program allocations. As a newly founded organization, actual spending will be reported annually. Full financial statements will be posted with each annual 990 filing.
               </p>
               <div style={{ marginTop: 24 }}>

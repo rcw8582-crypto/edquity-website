@@ -13,7 +13,7 @@ const CALENDLY = "https://calendly.com/dr-reba/discovery";
 // Update these numbers as the organization grows
 const STATS: Array<{ value: number | string; suffix: string; label: string; labelEs: string }> = [
   { value: 21, suffix: "+", label: "Years of Expertise", labelEs: "Años de Experiencia" },
-  { value: 50, suffix: "", label: "Families to serve at no cost in Year 1", labelEs: "Familias para servir sin costo en el Año 1" },
+  { value: 50, suffix: "", label: "Families we aim to serve in Year 1", labelEs: "Familias que buscamos servir en el Año 1" },
   { value: "IDEA", suffix: "", label: "The federal law behind every IEP", labelEs: "La ley federal detrás de cada IEP" },
 ];
 
@@ -103,14 +103,14 @@ export default function Home() {
                 : "Your child's IEP meeting is not a formality. The decisions made in that room follow your child through every year of their education."}
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+              <Link href="/intake"
                 style={{ background: "#22C55E", color: "#122C54", padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
-                {isEs ? "Reserve una Llamada Gratuita" : "Book a Free Discovery Call"}
-              </a>
-              <Link href="/services"
-                style={{ background: "transparent", color: "#fff", padding: "15px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(255,255,255,0.45)" }}>
-                {isEs ? "Cómo Ayudamos" : "How We Help"}
+                {isEs ? "Comience su Auditoría del IEP Gratuita" : "Start Your Free IEP Audit"}
               </Link>
+              <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+                style={{ background: "transparent", color: "#fff", padding: "15px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(255,255,255,0.45)" }}>
+                {isEs ? "O Reserve una Llamada Gratuita" : "Or Book a Free Discovery Call"}
+              </a>
             </div>
           </motion.div>
         </div>
@@ -239,10 +239,16 @@ export default function Home() {
           </div>
           <div style={{ textAlign: "center", marginTop: 48 }}>
             <p style={{ fontSize: 15, color: "#64748b", margin: "0 0 20px" }}>{isEs ? "Ambos servicios son completamente gratuitos. El acceso es el objetivo." : "Both services are completely free. Access is the point."}</p>
-            <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "14px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16 }}>
-              Book a Free Discovery Call
-            </a>
+            <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+              <Link href="/intake"
+                style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "14px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16 }}>
+                {isEs ? "Comience su Auditoría del IEP Gratuita" : "Start Your Free IEP Audit"}
+              </Link>
+              <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+                style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "14px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(18,44,84,0.4)" }}>
+                {isEs ? "O Reserve una Llamada Gratuita" : "Or Book a Free Discovery Call"}
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -297,12 +303,12 @@ export default function Home() {
                 </p>
                 <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: 16 }}>
                   <p style={{ fontSize: 14, fontWeight: 700, color: "#fff", margin: "0 0 4px" }}>{t.name}</p>
-                  <p style={{ fontSize: 12, color: "rgba(255,255,255,0.45)", margin: 0 }}>{t.location} · {t.service}</p>
+                  <p style={{ fontSize: 12, color: "rgba(255,255,255,0.7)", margin: 0 }}>{t.location} · {t.service}</p>
                 </div>
               </motion.div>
             ))}
           </div>
-          <p style={{ textAlign: "center", fontSize: 13, color: "rgba(255,255,255,0.35)", marginTop: 32 }}>
+          <p style={{ textAlign: "center", fontSize: 13, color: "rgba(255,255,255,0.7)", marginTop: 32 }}>
             Family details are anonymized to protect privacy. Shared with permission.
           </p>
         </div>
@@ -333,7 +339,7 @@ export default function Home() {
           </div>
           <div className="rg-3">
             {[
-              { icon: <BookOpen size={22} color="#22C55E" />, title: "Meeting Prep", text: "Need specific, strategic questions to ask the team to prompt necessary changes before their child loses another year." },
+              { icon: <BookOpen size={22} color="#22C55E" />, title: "Meeting Ready", text: "Need specific, strategic questions to ask the team to prompt necessary changes before their child loses another year." },
               { icon: <Users size={22} color="#22C55E" />, title: "Partnership", text: "Want to transition from passive participants to active, informed advocates for their child throughout the school year." },
             ].map((card, i) => (
               <motion.div key={i}
@@ -394,16 +400,16 @@ export default function Home() {
       <section className="sp" style={{ background: "#22C55E" }}>
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, color: "#122C54", margin: "0 0 16px", letterSpacing: "-1px" }}>Your child's IEP meeting is not a formality.</h2>
-          <p style={{ fontSize: 18, color: "rgba(18,44,84,0.75)", lineHeight: 1.65, margin: "0 0 36px" }}>Schedule a free discovery call to discuss your child's situation. Dr. Clarke-Wedderburn will help you understand your options and identify the right first step.</p>
+          <p style={{ fontSize: 18, color: "rgba(18,44,84,0.75)", lineHeight: 1.65, margin: "0 0 36px" }}>Start your free IEP Audit, or book a free discovery call to talk through your child's situation first. Dr. Clarke-Wedderburn will help you understand your options and identify the right first step.</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+            <Link href="/intake"
               style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>
-              Book a Free Discovery Call
-            </a>
-            <Link href="/services"
-              style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "16px 36px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 17, border: "2px solid rgba(18,44,84,0.4)" }}>
-              See All Services
+              Start Your Free IEP Audit
             </Link>
+            <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+              style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "16px 36px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 17, border: "2px solid rgba(18,44,84,0.4)" }}>
+              Or Book a Free Discovery Call
+            </a>
           </div>
         </div>
       </section>

@@ -42,7 +42,7 @@ export default function ClientPortal() {
             <ExternalLink size={20} />
             Open EDquity360 Portal
           </a>
-          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", margin: "14px 0 0" }}>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", margin: "14px 0 0" }}>
             Opens in a new tab: portal.edquityatthemargins.org
           </p>
         </div>
