@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { Mail, MapPin, Phone, Facebook, Twitter, Instagram, Linkedin, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Phone, Facebook, Twitter, Instagram, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 function NewsletterSignup() {
@@ -120,10 +120,9 @@ export default function Footer() {
               We translate institutional special education practices into plain language so families can engage with schools as true, empowered partners.
             </p>
             <div className="flex gap-4">
-              <a href="#" aria-label="EDquity at the Margins on Facebook" className="inline-flex items-center justify-center p-1 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-facebook"><Facebook size={20} aria-hidden="true" /></a>
-              <a href="#" aria-label="EDquity at the Margins on X" className="inline-flex items-center justify-center p-1 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-twitter"><Twitter size={20} aria-hidden="true" /></a>
-              <a href="#" aria-label="EDquity at the Margins on Instagram" className="inline-flex items-center justify-center p-1 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-instagram"><Instagram size={20} aria-hidden="true" /></a>
-              <a href="#" aria-label="EDquity at the Margins on LinkedIn" className="inline-flex items-center justify-center p-1 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-linkedin"><Linkedin size={20} aria-hidden="true" /></a>
+              <a href="https://www.facebook.com/EDQATM" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on Facebook" className="inline-flex items-center justify-center p-1 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-facebook"><Facebook size={20} aria-hidden="true" /></a>
+              <a href="https://x.com/edquityatm" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on X" className="inline-flex items-center justify-center p-1 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-twitter"><Twitter size={20} aria-hidden="true" /></a>
+              <a href="https://www.instagram.com/edqatm/" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on Instagram" className="inline-flex items-center justify-center p-1 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-instagram"><Instagram size={20} aria-hidden="true" /></a>
             </div>
           </div>
 
