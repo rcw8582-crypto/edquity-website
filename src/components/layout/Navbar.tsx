@@ -43,7 +43,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 ${
         prefersReducedMotion ? "" : "transition-all duration-300"
       } ${
-        isScrolled ? "bg-white shadow-md py-3" : "bg-white/95 backdrop-blur-sm py-5"
+        isScrolled ? "bg-white shadow-md py-5" : "bg-white/95 backdrop-blur-sm py-5"
       }`}
     >
       <div className="site-gutter flex items-center justify-between">
