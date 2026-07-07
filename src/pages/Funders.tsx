@@ -121,7 +121,7 @@ export default function Funders() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 20px", textAlign: "center" }}>
-                <p style={{ fontSize: 36, fontWeight: 900, color: "#22C55E", margin: "0 0 8px", letterSpacing: "-1px" }}>{o.stat}</p>
+                <p style={{ fontSize: 36, fontWeight: 900, color: "#15803D", margin: "0 0 8px", letterSpacing: "-1px" }}>{o.stat}</p>
                 <p style={{ fontSize: 13, color: "#64748b", margin: 0, lineHeight: 1.5 }}>{o.label}</p>
               </motion.div>
             ))}

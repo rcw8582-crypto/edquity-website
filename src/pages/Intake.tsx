@@ -354,7 +354,7 @@ export default function Intake() {
 
           <p style={{ fontSize: 12, color: "#64748b", textAlign: "center", marginTop: 20 }}>
             Your information is protected under FERPA. We never share your data without your explicit written consent. &nbsp;
-            <Link href="/privacy-policy" style={{ color: "#14B8A6" }}>Privacy Policy</Link>
+            <Link href="/privacy-policy" style={{ color: "#0F766E" }}>Privacy Policy</Link>
           </p>
         </div>
       </form>

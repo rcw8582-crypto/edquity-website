@@ -92,7 +92,7 @@ export default function About() {
       <section className="sp" style={{ background: "#fff" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div className="max-w-4xl mx-auto">
-            <p style={{ fontSize: 13, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", marginBottom: 12 }}>Founder</p>
+            <p style={{ fontSize: 13, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", marginBottom: 12 }}>Founder</p>
             <h2 className="text-3xl font-bold text-primary mb-6">Dr. Reba Clarke-Wedderburn</h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               Dr. Clarke-Wedderburn is an instructional coach, curriculum developer, and educator preparation specialist with 21 years of experience across K-12 teaching, instructional coaching, and higher education. She designs and facilitates graduate-level special education licensure coursework, coaches pre-service and in-service teachers through competency-based development, and builds standards-aligned curriculum grounded in equity, disability advocacy, and special education policy.

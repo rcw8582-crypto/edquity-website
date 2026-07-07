@@ -79,7 +79,7 @@ export default function Donate() {
               { amount: "$500", label: "funds free IEP Audits for two families who could never afford independent advocacy" },
             ].map((item, i) => (
               <div key={i} style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 22px", textAlign: "center" }}>
-                <p style={{ fontSize: 32, fontWeight: 900, color: "#22C55E", margin: "0 0 10px", letterSpacing: "-1px" }}>{item.amount}</p>
+                <p style={{ fontSize: 32, fontWeight: 900, color: "#15803D", margin: "0 0 10px", letterSpacing: "-1px" }}>{item.amount}</p>
                 <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.6, margin: 0 }}>{item.label}</p>
               </div>
             ))}

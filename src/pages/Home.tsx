@@ -201,7 +201,7 @@ export default function Home() {
       <section className="sp-lg" style={{ background: "#f8fafc", color: "#122C54" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>
               {isEs ? "Lo Que Hacemos" : "What We Do"}
             </p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>
@@ -227,7 +227,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 style={{ fontSize: 20, fontWeight: 800, margin: "0 0 6px", color: "#122C54" }}>{service.title}</h3>
-                  <p style={{ fontSize: 14, fontWeight: 700, color: "#22C55E", margin: "0 0 12px" }}>{service.price}</p>
+                  <p style={{ fontSize: 14, fontWeight: 700, color: "#15803D", margin: "0 0 12px" }}>{service.price}</p>
                   <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>{service.desc}</p>
                 </div>
                 <Link href={service.href}
@@ -257,7 +257,7 @@ export default function Home() {
       <section className="sp-lg" style={{ background: "#fff", color: "#122C54" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 64 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>How It Works</p>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>How It Works</p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>From your first call to your next meeting</h2>
           </div>
           <div className="rg-steps">
@@ -318,7 +318,7 @@ export default function Home() {
       <section className="sp-lg" style={{ background: "#f8fafc", color: "#122C54" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Who We Serve</p>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Who We Serve</p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, margin: "0 0 20px", color: "#122C54", letterSpacing: "-1px" }}>Is this for your family?</h2>
             <p style={{ fontSize: 18, color: "#64748b", maxWidth: 600, margin: "0 auto", lineHeight: 1.65 }}>Our service is specifically designed for families navigating the special education system without independent support.</p>
           </div>

@@ -10,7 +10,7 @@ interface LawBoxProps { citation: string; title: string; text: string; }
 function LawBox({ citation, title, text }: LawBoxProps) {
   return (
     <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 12, padding: 24 }}>
-      <p style={{ fontSize: 11, fontWeight: 700, color: "#14B8A6", letterSpacing: 1.5, textTransform: "uppercase", margin: "0 0 6px" }}>{citation}</p>
+      <p style={{ fontSize: 11, fontWeight: 700, color: "#0F766E", letterSpacing: 1.5, textTransform: "uppercase", margin: "0 0 6px" }}>{citation}</p>
       <p style={{ fontSize: 15, fontWeight: 700, color: "#122C54", margin: "0 0 8px" }}>{title}</p>
       <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.65, margin: 0 }}>{text}</p>
     </div>
@@ -57,7 +57,7 @@ export default function Services() {
       <section className="sp" style={{ background: "#f0fdf4", borderBottom: "1px solid #bbf7d0" }}>
         <div className="rg-2" style={{ maxWidth: 900, margin: "0 auto", alignItems: "center" }}>
           <div>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Start Here</p>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Start Here</p>
             <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-0.5px" }}>Free 30-Minute Discovery Call</h2>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 28px" }}>
               Not sure where to begin? Book a free discovery call with Dr. Clarke-Wedderburn. She will listen to your situation, answer your first questions, and identify what your child needs right now, with no obligation to continue.
@@ -88,7 +88,7 @@ export default function Services() {
       <section className="sp" style={{ background: "#fff" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ marginBottom: 56 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>What We Offer</p>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>What We Offer</p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>Two free services. One purpose.</h2>
             <p style={{ fontSize: 18, color: "#64748b", maxWidth: 680, lineHeight: 1.65, margin: 0 }}>
               The school district arrives at that meeting with a full professional team. These services exist because you should not have to sit across from that team without independent support, and you should never have to pay for it.
@@ -156,10 +156,10 @@ export default function Services() {
             style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 20, padding: "clamp(28px,4vw,44px)" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(20,184,166,0.12)", borderRadius: 8, padding: "6px 14px", marginBottom: 20 }}>
               <BookOpen size={16} color="#14B8A6" />
-              <span style={{ fontSize: 12, fontWeight: 700, color: "#14B8A6", letterSpacing: 1, textTransform: "uppercase" }}>Free Service</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1, textTransform: "uppercase" }}>Free Service</span>
             </div>
             <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>Advocacy Toolkit</h3>
-            <p style={{ fontSize: 24, fontWeight: 900, color: "#22C55E", margin: "0 0 20px" }}>Free</p>
+            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 20px" }}>Free</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
               Every family deserves the tools to prepare on their own terms. The Advocacy Toolkit is our library of free, downloadable resources: plain-language guides to the IDEA, an IEP meeting notecatcher, question checklists, template letters, and tools that help you read your child's IEP like an expert and walk into any meeting ready. Download whatever you need, whenever you need it, at no cost.
             </p>
@@ -181,7 +181,7 @@ export default function Services() {
       <section id="track-two" className="sp" style={{ background: "#f8fafc" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ marginBottom: 32 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#14B8A6", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>No IEP Yet?</p>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>No IEP Yet?</p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>Your Child Does Not Need an IEP for the School to Have Legal Obligations</h2>
             <p style={{ fontSize: 18, color: "#64748b", maxWidth: 720, lineHeight: 1.65, margin: 0 }}>
               Federal law requires schools to identify children with suspected disabilities, provide appropriate support at every tier, and intensify intervention when a student is not making progress, regardless of whether a formal disability designation is in place. If your child does not yet have an IEP, start with a free discovery call, and use the free Advocacy Toolkit to understand your rights.
@@ -231,7 +231,7 @@ export default function Services() {
               </a>
             </div>
             <div>
-              <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>About Your Advocate</p>
+              <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>About Your Advocate</p>
               <h2 style={{ fontSize: "clamp(22px,2.5vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 20px", letterSpacing: "-0.5px" }}>Every service is delivered personally by Dr. Clarke-Wedderburn.</h2>
               <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 16px" }}>
                 Dr. Reba Clarke-Wedderburn holds a doctorate in education and brings years of experience as a special education professional, teacher preparation program developer, and parent of a child with a disability. She founded EDquity at the Margins after years of watching families navigate a system that was not designed to include them, and after navigating it herself.
@@ -273,7 +273,7 @@ export default function Services() {
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.7, margin: 0, textAlign: "center" }}>
             EDquity at the Margins provides independent educational expertise, not legal advice. Dr. Clarke-Wedderburn is not an attorney and does not provide legal representation. Families who believe their child's rights have been violated under IDEA are encouraged to consult a special education attorney or contact their state's Parent Training and Information Center at{" "}
-            <a href="https://parentcenterhub.org" target="_blank" rel="noopener noreferrer" style={{ color: "#14B8A6", textDecoration: "none" }}>parentcenterhub.org</a>.
+            <a href="https://parentcenterhub.org" target="_blank" rel="noopener noreferrer" style={{ color: "#0F766E", textDecoration: "none" }}>parentcenterhub.org</a>.
           </p>
         </div>
       </section>

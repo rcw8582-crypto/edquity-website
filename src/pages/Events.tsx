@@ -134,7 +134,7 @@ export default function Events() {
                 <p style={{ fontSize: 15, fontWeight: 700, color: "#122C54", margin: "0 0 8px" }}>{p.title}</p>
                 <div style={{ display: "flex", gap: 16 }}>
                   <span style={{ fontSize: 12, color: "#64748b" }}>{p.date}</span>
-                  <span style={{ fontSize: 12, color: "#22C55E", fontWeight: 600 }}>{p.attendees}</span>
+                  <span style={{ fontSize: 12, color: "#15803D", fontWeight: 600 }}>{p.attendees}</span>
                 </div>
               </div>
             ))}

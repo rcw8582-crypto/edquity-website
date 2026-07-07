@@ -53,7 +53,7 @@ export default function Transparency() {
               { label: "Founded", value: "2026" },
             ].map((item, i) => (
               <div key={i} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 28px" }}>
-                <p style={{ fontSize: 11, fontWeight: 700, color: "#22C55E", textTransform: "uppercase", letterSpacing: 1.5, margin: "0 0 8px" }}>{item.label}</p>
+                <p style={{ fontSize: 11, fontWeight: 700, color: "#15803D", textTransform: "uppercase", letterSpacing: 1.5, margin: "0 0 8px" }}>{item.label}</p>
                 <p style={{ fontSize: 22, fontWeight: 900, color: "#122C54", margin: 0, fontFamily: "monospace" }}>{item.value}</p>
               </div>
             ))}
@@ -90,7 +90,7 @@ export default function Transparency() {
               </p>
               <div style={{ marginTop: 24 }}>
                 <a href="https://apps.irs.gov/app/eos/" target="_blank" rel="noopener noreferrer"
-                  style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "#22C55E", fontWeight: 600, fontSize: 14, textDecoration: "none" }}>
+                  style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "#15803D", fontWeight: 600, fontSize: 14, textDecoration: "none" }}>
                   Verify our IRS status <ExternalLink size={13} />
                 </a>
               </div>
