@@ -30,7 +30,7 @@ export function eventColor(index: number): string {
   return CARD_COLORS[index % CARD_COLORS.length];
 }
 
-export async function fetchEvents(): Promise<EdatmEvent[]> {
+async function fetchAdminEvents(): Promise<EdatmEvent[]> {
   const params = new URLSearchParams({
     select: "id,title,event_type,description,location,start_local,end_local,time_zone,rsvp_url",
     is_published: "eq.true",
@@ -44,6 +44,40 @@ export async function fetchEvents(): Promise<EdatmEvent[]> {
   });
   if (!res.ok) throw new Error(`Events fetch failed: ${res.status}`);
   return (await res.json()) as EdatmEvent[];
+}
+
+/**
+ * Events from Reba's published Outlook "Events" calendar, proxied
+ * through the portal (the Outlook feed itself has no CORS headers).
+ */
+async function fetchOutlookEvents(): Promise<EdatmEvent[]> {
+  const res = await fetch("https://www.edquity360.com/api/outlook-events");
+  if (!res.ok) return [];
+  return (await res.json()) as EdatmEvent[];
+}
+
+/**
+ * Merges both sources. When the same event exists in both (same title
+ * on the same day), the admin version wins because it carries the
+ * parent-facing description and RSVP link.
+ */
+export async function fetchEvents(): Promise<EdatmEvent[]> {
+  const [adminResult, outlookResult] = await Promise.allSettled([
+    fetchAdminEvents(),
+    fetchOutlookEvents(),
+  ]);
+  const admin = adminResult.status === "fulfilled" ? adminResult.value : [];
+  const outlook = outlookResult.status === "fulfilled" ? outlookResult.value : [];
+  if (adminResult.status === "rejected" && outlookResult.status === "rejected") {
+    throw new Error("Both event sources failed");
+  }
+
+  const dayKey = (e: EdatmEvent) =>
+    `${e.title.trim().toLowerCase()}|${e.start_local.slice(0, 10)}`;
+  const seen = new Set(admin.map(dayKey));
+  const merged = [...admin, ...outlook.filter((e) => !seen.has(dayKey(e)))];
+  merged.sort((a, b) => a.start_local.localeCompare(b.start_local));
+  return merged;
 }
 
 /** Current wall-clock time in the event's zone, as "YYYY-MM-DDTHH:MM". */
