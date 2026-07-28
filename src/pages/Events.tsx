@@ -136,12 +136,19 @@ export default function Events() {
         </div>
       </section>
 
-      <section className="sp" style={{ background: "#fff" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px", letterSpacing: "-0.5px" }}>Events Calendar</h2>
-          <p style={{ fontSize: 15, color: "#475569", margin: "0 0 28px", lineHeight: 1.65 }}>
-            Browse by month. Click any highlighted day to see that day&apos;s session details.
-          </p>
+      <section style={{ background: "#fff", padding: "clamp(40px,6vw,64px) 24px" }}>
+        <div style={{ maxWidth: 980, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "clamp(24px,4vw,48px)", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ flex: "1 1 340px", maxWidth: 440 }}>
+            <h2 style={{ fontSize: "clamp(22px,2.5vw,30px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px", letterSpacing: "-0.5px" }}>Browse the calendar</h2>
+            <p style={{ fontSize: 15, color: "#475569", margin: "0 0 16px", lineHeight: 1.7 }}>
+              Days with a session are highlighted in green. Click one to see the details, and use
+              the arrows to look ahead to coming months.
+            </p>
+            <p style={{ fontSize: 14, color: "#64748b", margin: 0, lineHeight: 1.7 }}>
+              Want our events on your own calendar? Every session card above has an Add to
+              Calendar button for Google, Apple, and Outlook.
+            </p>
+          </div>
           <EventsCalendar events={events ?? []} />
         </div>
       </section>
