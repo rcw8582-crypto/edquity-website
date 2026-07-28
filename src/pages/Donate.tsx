@@ -31,29 +31,29 @@ export default function Donate() {
         </div>
       </section>
 
-      {/* Donorbox Widget */}
+      {/* Zeffy Widget */}
       <section className="sp" style={{ background: "#f8fafc" }}>
         <div style={{ textAlign: "center", marginBottom: 40, padding: "0 24px" }}>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px", letterSpacing: "-0.5px" }}>Make a Donation</h2>
           <p style={{ fontSize: 16, color: "#64748b", margin: 0 }}>100% of donations fund free IEP Audits and advocacy resources for families.</p>
         </div>
 
-        <div data-testid="donorbox-widget-container" style={{ maxWidth: 920, margin: "0 auto", padding: "0 16px" }}>
+        <div data-testid="zeffy-widget-container" style={{ maxWidth: 920, margin: "0 auto", padding: "0 16px" }}>
           <iframe
-            src="https://donorbox.org/embed/iep-advocacy-at-the-margins?show_content=true"
-            name="donorbox"
+            src="https://www.zeffy.com/embed/donation-form/support-edquity-at-the-margins"
+            name="zeffy"
             allow="payment"
             seamless
             frameBorder={0}
             scrolling="yes"
-            style={{ width: "100%", minWidth: 250, height: "100vh", border: "none", borderRadius: 12, display: "block" }}
+            style={{ width: "100%", minWidth: 250, height: "100vh", minHeight: 760, border: "none", borderRadius: 12, display: "block" }}
             title="Donate to EDquity at the Margins"
           />
         </div>
         <div style={{ textAlign: "center", marginTop: 20, padding: "0 24px" }}>
-          <p style={{ fontSize: 13, color: "#64748b", margin: "0 0 10px" }}>Prefer to donate directly on Donorbox?</p>
+          <p style={{ fontSize: 13, color: "#64748b", margin: "0 0 10px" }}>Prefer to open the donation form in a new tab?</p>
           <a
-            href="https://donorbox.org/iep-advocacy-at-the-margins"
+            href="https://www.zeffy.com/en-US/donation-form/support-edquity-at-the-margins"
             target="_blank"
             rel="noopener noreferrer"
             style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "11px 26px", borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: "none" }}
@@ -63,7 +63,7 @@ export default function Donate() {
         </div>
 
         <p style={{ fontSize: 13, color: "#64748b", textAlign: "center", marginTop: 20, lineHeight: 1.6, padding: "0 24px" }}>
-          EDquity at the Margins is a Tennessee charitable corporation (EIN 42-2295582) with a 501(c)(3) application pending before the IRS. Donations may be tax-deductible once our determination is received. Please consult your tax advisor for your specific situation.
+          EDquity at the Margins is a Tennessee nonprofit corporation and an IRS-recognized 501(c)(3) public charity (EIN 42-2295582). Your donation is tax-deductible to the extent allowed by law. Please consult your tax advisor for your specific situation.
         </p>
       </section>
 
