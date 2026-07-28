@@ -1,3 +1,4 @@
+import { BOOKING_URL } from "@/lib/booking";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, Calendar, CheckCircle2 } from "lucide-react";
@@ -198,7 +199,7 @@ export default function Contact() {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   A free 30-minute discovery call via Zoom or phone is the most direct way to assess whether our services fit your child's current situation.
                 </p>
-                <a href="https://calendly.com/dr-reba/discovery" target="_blank" rel="noopener noreferrer" data-testid="contact-book-call">
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" data-testid="contact-book-call">
                   <Button className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full">
                     Book Your Call
                   </Button>

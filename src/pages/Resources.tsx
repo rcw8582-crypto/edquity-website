@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Download, ExternalLink, FileText, BookOpen, MessageSquare, Search, Layers, Target, Newspaper, ArrowRight, ClipboardList } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
-const CALENDLY = "https://calendly.com/dr-reba/discovery";
+import { BOOKING_URL } from "@/lib/booking";
 
 const interactiveTools = [
   {
@@ -267,7 +267,7 @@ export default function Resources() {
           <p style={{ fontSize: 17, color: "rgba(18,44,84,0.75)", lineHeight: 1.65, margin: "0 0 36px" }}>
             A checklist tells you what to look for. Dr. Clarke-Wedderburn tells you what it means for your specific child and what to do about it.
           </p>
-          <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
             style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
             Book a Free Discovery Call
           </a>

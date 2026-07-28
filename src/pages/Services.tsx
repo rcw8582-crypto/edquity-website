@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, FileText, BookOpen, ChevronDown, ChevronUp } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
-const CALENDLY = "https://calendly.com/dr-reba/discovery";
+import { BOOKING_URL } from "@/lib/booking";
 
 interface LawBoxProps { citation: string; title: string; text: string; }
 function LawBox({ citation, title, text }: LawBoxProps) {
@@ -41,7 +41,7 @@ export default function Services() {
             Serving families across the greater Metro Nashville area and, through our virtual delivery model, anywhere in the country.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
               style={{ background: "#22C55E", color: "#122C54", padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
               Book a Free Discovery Call
             </a>
@@ -62,7 +62,7 @@ export default function Services() {
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 28px" }}>
               Not sure where to begin? Book a free discovery call with Dr. Clarke-Wedderburn. She will listen to your situation, answer your first questions, and identify what your child needs right now, with no obligation to continue.
             </p>
-            <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
               style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
               Schedule Your Free Call
             </a>
@@ -225,7 +225,7 @@ export default function Services() {
               </div>
               <p style={{ fontSize: 18, fontWeight: 800, color: "#fff", margin: "0 0 4px" }}>Dr. Reba Clarke-Wedderburn</p>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", margin: "0 0 20px" }}>Founder & Executive Director</p>
-              <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
                 style={{ display: "block", background: "#22C55E", color: "#122C54", padding: "12px 20px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 14 }}>
                 Book a Free Call
               </a>
@@ -285,7 +285,7 @@ export default function Services() {
           <p style={{ fontSize: 18, color: "rgba(18,44,84,0.75)", lineHeight: 1.65, margin: "0 0 36px" }}>
             Book a free 30-minute discovery call. Dr. Clarke-Wedderburn will help you understand your options and identify the right first step for your child.
           </p>
-          <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
             style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>
             Book Your Free Discovery Call
           </a>

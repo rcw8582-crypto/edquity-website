@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { ExternalLink, Mail, Phone, Calendar } from "lucide-react";
 
 const PORTAL_URL = "https://portal.edquityatthemargins.org/";
-const CALENDLY = "https://calendly.com/dr-reba/discovery";
+import { BOOKING_URL } from "@/lib/booking";
 
 export default function ClientPortal() {
   return (
@@ -73,7 +73,7 @@ export default function ClientPortal() {
                 icon: <Calendar size={24} color="#14B8A6" />,
                 title: "Schedule a session",
                 body: "Book a debrief call, prep session, or follow-up appointment.",
-                cta: { label: "Open Calendly", href: CALENDLY, external: true },
+                cta: { label: "Book a Call", href: BOOKING_URL, external: true },
               },
             ].map((card, i) => (
               <div key={i} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 28, display: "flex", flexDirection: "column", gap: 14 }}>
@@ -106,7 +106,7 @@ export default function ClientPortal() {
             Start with a free 30-minute discovery call. Dr. Clarke-Wedderburn will review your child's situation and recommend the right next step.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
               style={{ background: "#22C55E", color: "#122C54", padding: "13px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 15 }}>
               Book a Free Discovery Call
             </a>
