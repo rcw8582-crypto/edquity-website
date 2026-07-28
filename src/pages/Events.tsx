@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, Clock, MapPin, CalendarPlus, Download, ArrowRight } from "lucide-react";
+import { Clock, MapPin, CalendarPlus, Download, ArrowRight } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import EventsCalendar from "@/components/EventsCalendar";
 import {
@@ -70,21 +70,14 @@ export default function Events() {
               )}
 
               {!loading && upcoming.length === 0 && (
-                <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: "clamp(24px,4vw,36px)" }}>
-                  <Calendar size={32} color="#122C54" style={{ marginBottom: 14 }} />
-                  <p style={{ fontSize: 18, fontWeight: 800, color: "#122C54", margin: "0 0 10px" }}>
-                    The next workshops are being scheduled now.
-                  </p>
-                  <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 20px" }}>
-                    New dates are posted here as soon as they are confirmed. If you want to hear
-                    about the next session directly, reach out and we will make sure you get the
-                    details.
-                  </p>
-                  <a href="/contact"
-                    style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "#122C54", color: "#fff", padding: "12px 24px", borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>
-                    Ask about the next session <ArrowRight size={14} />
-                  </a>
-                </div>
+                <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>
+                  The next workshops are being scheduled now, and new dates appear here as soon as
+                  they are confirmed. Want to hear about the next session directly?{" "}
+                  <a href="/contact" style={{ color: "#122C54", fontWeight: 700 }}>
+                    Reach out
+                  </a>{" "}
+                  and we will make sure you get the details.
+                </p>
               )}
 
               <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
