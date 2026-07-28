@@ -59,32 +59,35 @@ export default function Events() {
 
       <section className="sp" style={{ background: "#f8fafc" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#122C54", margin: "0 0 48px", letterSpacing: "-0.5px" }}>Upcoming Events</h2>
+          <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#122C54", margin: "0 0 32px", letterSpacing: "-0.5px" }}>Upcoming Events</h2>
 
-          {loading && (
-            <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 40, textAlign: "center", color: "#64748b", fontSize: 15 }}>
-              Loading events…
-            </div>
-          )}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 24, alignItems: "flex-start" }}>
+            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
+              {loading && (
+                <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 40, textAlign: "center", color: "#64748b", fontSize: 15 }}>
+                  Loading events…
+                </div>
+              )}
 
-          {!loading && upcoming.length === 0 && (
-            <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: "clamp(24px,5vw,40px)", textAlign: "center" }}>
-              <Calendar size={36} color="#122C54" style={{ margin: "0 auto 16px" }} />
-              <p style={{ fontSize: 18, fontWeight: 800, color: "#122C54", margin: "0 0 10px" }}>
-                The next workshops are being scheduled now.
-              </p>
-              <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, maxWidth: 560, margin: "0 auto 24px" }}>
-                New dates are posted here as soon as they are confirmed. If you want to hear about
-                the next session directly, reach out and we will make sure you get the details.
-              </p>
-              <a href="/contact"
-                style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "#122C54", color: "#fff", padding: "12px 24px", borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>
-                Ask about the next session <ArrowRight size={14} />
-              </a>
-            </div>
-          )}
+              {!loading && upcoming.length === 0 && (
+                <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: "clamp(24px,4vw,36px)" }}>
+                  <Calendar size={32} color="#122C54" style={{ marginBottom: 14 }} />
+                  <p style={{ fontSize: 18, fontWeight: 800, color: "#122C54", margin: "0 0 10px" }}>
+                    The next workshops are being scheduled now.
+                  </p>
+                  <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 20px" }}>
+                    New dates are posted here as soon as they are confirmed. If you want to hear
+                    about the next session directly, reach out and we will make sure you get the
+                    details.
+                  </p>
+                  <a href="/contact"
+                    style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "#122C54", color: "#fff", padding: "12px 24px", borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>
+                    Ask about the next session <ArrowRight size={14} />
+                  </a>
+                </div>
+              )}
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
             {upcoming.map((event, i) => (
               <motion.div
                 key={event.id}
@@ -132,24 +135,13 @@ export default function Events() {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
+              </div>
+            </div>
 
-      <section style={{ background: "#fff", padding: "clamp(40px,6vw,64px) 24px" }}>
-        <div style={{ maxWidth: 980, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: "clamp(24px,4vw,48px)", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ flex: "1 1 340px", maxWidth: 440 }}>
-            <h2 style={{ fontSize: "clamp(22px,2.5vw,30px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px", letterSpacing: "-0.5px" }}>Browse the calendar</h2>
-            <p style={{ fontSize: 15, color: "#475569", margin: "0 0 16px", lineHeight: 1.7 }}>
-              Days with a session are highlighted in green. Click one to see the details, and use
-              the arrows to look ahead to coming months.
-            </p>
-            <p style={{ fontSize: 14, color: "#64748b", margin: 0, lineHeight: 1.7 }}>
-              Want our events on your own calendar? Every session card above has an Add to
-              Calendar button for Google, Apple, and Outlook.
-            </p>
+            <div style={{ flex: "0 1 420px", minWidth: 320 }}>
+              <EventsCalendar events={events ?? []} />
+            </div>
           </div>
-          <EventsCalendar events={events ?? []} />
         </div>
       </section>
 
