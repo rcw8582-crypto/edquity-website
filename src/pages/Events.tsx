@@ -82,8 +82,12 @@ export default function Events() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#122C54", margin: "0 0 32px", letterSpacing: "-0.5px" }}>Upcoming Events</h2>
 
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 24, alignItems: "flex-start" }}>
-            <div style={{ flex: "1 1 480px", minWidth: 0 }}>
+          <div>
+            <div style={{ marginBottom: 32 }}>
+              <EventsCalendar events={events ?? []} />
+            </div>
+
+            <div>
               {loading && (
                 <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 40, textAlign: "center", color: "#64748b", fontSize: 15 }}>
                   Loading events…
@@ -167,9 +171,6 @@ export default function Events() {
               </div>
             </div>
 
-            <div style={{ flex: "0 1 420px", minWidth: 320 }}>
-              <EventsCalendar events={events ?? []} />
-            </div>
           </div>
         </div>
       </section>

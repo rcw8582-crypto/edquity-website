@@ -14,11 +14,13 @@ import { ChevronLeft, ChevronRight, MapPin, Clock } from "lucide-react";
 import { eventColor, formatWhen, type EdatmEvent } from "@/content/events";
 
 /**
- * Compact month calendar for the Events page, fed by the same merged
+ * Full-width month calendar for the Events page, fed by the same merged
  * event list as the cards (Outlook "Events" calendar + the portal's
- * events table). Event days get a dot and a tinted fill; clicking one
- * shows that day's details beneath the grid. Starts on the month of
- * the next upcoming event so the default view is never empty.
+ * events table). Event titles render as colored pills inside their day
+ * cell with wrapping text; every cell keeps the same fixed height, so a
+ * day that overflows shows "+N more" instead of growing. Clicking a day
+ * with events shows full details beneath the grid. Starts on the month
+ * of the next upcoming event so the default view is never empty.
  */
 export default function EventsCalendar({ events }: { events: EdatmEvent[] }) {
   const [month, setMonth] = useState(() => {
@@ -42,9 +44,9 @@ export default function EventsCalendar({ events }: { events: EdatmEvent[] }) {
   const selectedEvents = selectedDay ? eventsOn(selectedDay) : [];
 
   return (
-    <div style={{ maxWidth: 480, background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 20 }}>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
-        <p style={{ fontSize: 16, fontWeight: 800, color: "#122C54", margin: 0 }}>
+    <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, overflow: "hidden" }}>
+      <div style={{ background: "#122C54", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 18px" }}>
+        <p style={{ fontSize: 17, fontWeight: 800, color: "#fff", margin: 0 }}>
           {format(month, "MMMM yyyy")}
         </p>
         <div style={{ display: "flex", gap: 6 }}>
@@ -67,9 +69,9 @@ export default function EventsCalendar({ events }: { events: EdatmEvent[] }) {
         </div>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 2 }}>
-        {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => (
-          <div key={i} style={{ textAlign: "center", fontSize: 11, fontWeight: 700, color: "#94a3b8", padding: "2px 0" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)" }}>
+        {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map((d) => (
+          <div key={d} style={{ textAlign: "center", fontSize: 11, fontWeight: 700, color: "#94a3b8", padding: "8px 0", borderBottom: "1px solid #e2e8f0" }}>
             {d}
           </div>
         ))}
@@ -79,6 +81,8 @@ export default function EventsCalendar({ events }: { events: EdatmEvent[] }) {
           const inMonth = isSameMonth(day, month);
           const isToday = isSameDay(day, new Date());
           const isSelected = selectedDay ? isSameDay(day, selectedDay) : false;
+          const shown = dayEvents.slice(0, 2);
+          const extra = dayEvents.length - shown.length;
           return (
             <button
               key={day.toISOString()}
@@ -90,36 +94,74 @@ export default function EventsCalendar({ events }: { events: EdatmEvent[] }) {
                   : undefined
               }
               style={{
-                aspectRatio: "1",
-                border: isSelected ? "2px solid #122C54" : "1px solid transparent",
-                borderRadius: 8,
-                background: hasEvents ? "#22C55E22" : "transparent",
+                height: 100,
+                overflow: "hidden",
+                border: "none",
+                borderBottom: "1px solid #f1f5f9",
+                borderRight: "1px solid #f1f5f9",
+                outline: isSelected ? "2px solid #122C54" : "none",
+                outlineOffset: -2,
+                background: !inMonth ? "#fafbfc" : "transparent",
                 cursor: hasEvents ? "pointer" : "default",
                 fontFamily: "inherit",
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 2,
-                padding: 0,
+                alignItems: "stretch",
+                textAlign: "left",
+                gap: 3,
+                padding: 6,
               }}
             >
               <span
                 style={{
-                  fontSize: 13,
-                  fontWeight: isToday || hasEvents ? 800 : 500,
+                  alignSelf: "flex-start",
+                  fontSize: 12,
+                  fontWeight: hasEvents ? 800 : 600,
                   color: !inMonth ? "#cbd5e1" : hasEvents ? "#122C54" : "#475569",
-                  textDecoration: isToday ? "underline" : "none",
-                  textUnderlineOffset: 3,
+                  ...(isToday
+                    ? {
+                        width: 20,
+                        height: 20,
+                        borderRadius: 999,
+                        background: "#FBBF24",
+                        color: "#122C54",
+                        fontWeight: 800,
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }
+                    : {}),
                 }}
               >
                 {format(day, "d")}
               </span>
-              {hasEvents && (
-                <span style={{ display: "flex", gap: 2 }}>
-                  {dayEvents.slice(0, 3).map((e, i) => (
-                    <span key={e.id} style={{ width: 5, height: 5, borderRadius: 999, background: eventColor(i) }} />
-                  ))}
+              {shown.map((e, i) => (
+                <span
+                  key={e.id}
+                  style={{
+                    display: "-webkit-box",
+                    WebkitBoxOrient: "vertical",
+                    // One event gets four wrapped lines; two share the cell
+                    // with two lines each, so every cell stays 100px tall.
+                    WebkitLineClamp: shown.length === 1 ? 4 : 2,
+                    overflow: "hidden",
+                    fontSize: 10.5,
+                    fontWeight: 700,
+                    lineHeight: 1.25,
+                    padding: "2px 6px",
+                    borderRadius: 6,
+                    color: "#fff",
+                    background: eventColor(i),
+                    whiteSpace: "normal",
+                    overflowWrap: "break-word",
+                  }}
+                >
+                  {e.title}
+                </span>
+              ))}
+              {extra > 0 && (
+                <span style={{ fontSize: 10, fontWeight: 700, color: "#64748b" }}>
+                  +{extra} more
                 </span>
               )}
             </button>
@@ -127,7 +169,7 @@ export default function EventsCalendar({ events }: { events: EdatmEvent[] }) {
         })}
       </div>
 
-      <div style={{ borderTop: "1px solid #e2e8f0", marginTop: 12, paddingTop: 12 }}>
+      <div style={{ borderTop: "1px solid #e2e8f0", padding: "12px 18px 16px" }}>
         {selectedEvents.length > 0 ? (
           selectedEvents.map((e) => (
             <div key={e.id} style={{ marginBottom: 8 }}>
@@ -146,7 +188,7 @@ export default function EventsCalendar({ events }: { events: EdatmEvent[] }) {
           <p style={{ fontSize: 13, color: "#64748b", margin: 0 }}>
             {monthEvents.length === 0
               ? `No sessions in ${format(month, "MMMM")} yet.`
-              : "Click a highlighted day to see session details."}
+              : "Click a day with a session to see its details."}
           </p>
         )}
       </div>
@@ -160,9 +202,9 @@ const navBtn: React.CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  background: "#fff",
-  border: "1px solid #cbd5e1",
+  background: "rgba(255,255,255,0.15)",
+  border: "none",
   borderRadius: 8,
-  color: "#122C54",
+  color: "#fff",
   cursor: "pointer",
 };
