@@ -37,6 +37,27 @@ export default function Events() {
   const loading = events === null && !failed;
   const { upcoming, past } = splitUpcomingPast(events ?? []);
 
+  // A repeating series (same title, many dates) renders as ONE card
+  // showing the next session, with the later dates listed small.
+  // The month calendar still marks every individual date.
+  const series: EdatmEvent[][] = [];
+  {
+    const byTitle = new Map<string, EdatmEvent[]>();
+    for (const e of upcoming) {
+      const key = e.title.trim().toLowerCase();
+      const group = byTitle.get(key);
+      if (group) group.push(e);
+      else {
+        const fresh = [e];
+        byTitle.set(key, fresh);
+        series.push(fresh);
+      }
+    }
+  }
+
+  const shortDay = (e: EdatmEvent) =>
+    new Date(`${e.start_local}:00`).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif" }}>
       <PageMeta
@@ -81,7 +102,10 @@ export default function Events() {
               )}
 
               <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-            {upcoming.map((event, i) => (
+            {series.map((group, i) => {
+              const event = group[0];
+              const isSeries = group.length > 1;
+              return (
               <motion.div
                 key={event.id}
                 initial={{ opacity: 0, y: 16 }}
@@ -97,15 +121,19 @@ export default function Events() {
               >
                 <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10, marginBottom: 6 }}>
                   <h3 style={{ fontSize: 20, fontWeight: 800, color: "#122C54", margin: 0 }}>{event.title}</h3>
-                  <span style={{ fontSize: 11, fontWeight: 700, color: eventColor(i), background: `${eventColor(i)}18`, padding: "3px 12px", borderRadius: 999 }}>{event.event_type}</span>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: eventColor(i), background: `${eventColor(i)}18`, padding: "3px 12px", borderRadius: 999 }}>
+                    {isSeries ? "Monthly series" : event.event_type}
+                  </span>
                 </div>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 16, marginBottom: 12 }}>
                   <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, color: "#64748b" }}>
-                    <Clock size={13} /> {formatWhen(event)}
+                    <Clock size={13} /> {isSeries ? "Next session: " : ""}{formatWhen(event)}
                   </span>
-                  <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, color: "#64748b" }}>
-                    <MapPin size={13} /> {event.location}
-                  </span>
+                  {event.location && (
+                    <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, color: "#64748b" }}>
+                      <MapPin size={13} /> {event.location}
+                    </span>
+                  )}
                 </div>
                 {event.description && (
                   <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.65, margin: "0 0 16px" }}>{event.description}</p>
@@ -126,8 +154,16 @@ export default function Events() {
                     <Download size={14} /> Apple / Outlook (.ics)
                   </button>
                 </div>
+                {isSeries && (
+                  <p style={{ fontSize: 13, color: "#64748b", margin: "14px 0 0", lineHeight: 1.7 }}>
+                    Later dates:{" "}
+                    {group.slice(1, 6).map(shortDay).join(" · ")}
+                    {group.length > 6 ? ` · and ${group.length - 6} more on the calendar` : ""}
+                  </p>
+                )}
               </motion.div>
-            ))}
+              );
+            })}
               </div>
             </div>
 
