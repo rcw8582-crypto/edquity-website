@@ -57,6 +57,18 @@ async function fetchOutlookEvents(): Promise<EdatmEvent[]> {
 }
 
 /**
+ * Teams webinar links arrive from Outlook as
+ * teams.microsoft.com/l/virtualevent/<id>, which routes visitors
+ * through the Teams app launcher and a sign-in wall. The same id on
+ * events.teams.microsoft.com/event/<id> is the public registration
+ * page that opens in any browser with no sign-in, so rewrite to that.
+ */
+function normalizeRsvp(url: string | null): string | null {
+  const m = url?.match(/teams\.microsoft\.com\/l\/virtualevent\/([^/?#]+)/i);
+  return m ? `https://events.teams.microsoft.com/event/${m[1]}` : url;
+}
+
+/**
  * Merges both sources. When the same event exists in both (same title
  * on the same day), the admin version wins because it carries the
  * parent-facing description and RSVP link.
@@ -75,7 +87,9 @@ export async function fetchEvents(): Promise<EdatmEvent[]> {
   const dayKey = (e: EdatmEvent) =>
     `${e.title.trim().toLowerCase()}|${e.start_local.slice(0, 10)}`;
   const seen = new Set(admin.map(dayKey));
-  const merged = [...admin, ...outlook.filter((e) => !seen.has(dayKey(e)))];
+  const merged = [...admin, ...outlook.filter((e) => !seen.has(dayKey(e)))].map(
+    (e) => ({ ...e, rsvp_url: normalizeRsvp(e.rsvp_url) })
+  );
   merged.sort((a, b) => a.start_local.localeCompare(b.start_local));
   return merged;
 }
