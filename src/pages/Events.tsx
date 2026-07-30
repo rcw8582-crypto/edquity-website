@@ -48,10 +48,6 @@ export default function Events() {
     else months.push({ label, rows: [e] });
   }
 
-  // The series description shows once, above the list, instead of
-  // repeating in every row.
-  const intro = upcoming.find((e) => e.description)?.description;
-
   const timeRange = (e: EdatmEvent) => {
     const t = (s: string) =>
       new Date(`${s}:00`).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
@@ -103,12 +99,6 @@ export default function Events() {
                     Reach out
                   </a>{" "}
                   and we will make sure you get the details.
-                </p>
-              )}
-
-              {intro && upcoming.length > 0 && (
-                <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 20px", maxWidth: 640 }}>
-                  {intro}
                 </p>
               )}
 
