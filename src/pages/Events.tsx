@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Clock, MapPin, CalendarPlus, Download, ArrowRight } from "lucide-react";
+import { Clock, CalendarPlus, Download, ArrowRight } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import EventsCalendar from "@/components/EventsCalendar";
 import {
   fetchEvents,
   splitUpcomingPast,
-  formatWhen,
   formatDay,
-  eventColor,
   googleCalendarUrl,
   icsFileContents,
   type EdatmEvent,
@@ -37,26 +35,29 @@ export default function Events() {
   const loading = events === null && !failed;
   const { upcoming, past } = splitUpcomingPast(events ?? []);
 
-  // A repeating series (same title, many dates) renders as ONE card
-  // showing the next session, with the later dates listed small.
-  // The month calendar still marks every individual date.
-  const series: EdatmEvent[][] = [];
-  {
-    const byTitle = new Map<string, EdatmEvent[]>();
-    for (const e of upcoming) {
-      const key = e.title.trim().toLowerCase();
-      const group = byTitle.get(key);
-      if (group) group.push(e);
-      else {
-        const fresh = [e];
-        byTitle.set(key, fresh);
-        series.push(fresh);
-      }
-    }
+  // Agenda list: every upcoming session is a slim row, grouped by
+  // month. Any event on the calendar, this series or a one-off,
+  // slots in by date automatically.
+  const monthLabel = (e: EdatmEvent) =>
+    new Date(`${e.start_local}:00`).toLocaleDateString("en-US", { month: "long", year: "numeric" });
+  const months: { label: string; rows: EdatmEvent[] }[] = [];
+  for (const e of upcoming) {
+    const label = monthLabel(e);
+    const last = months[months.length - 1];
+    if (last && last.label === label) last.rows.push(e);
+    else months.push({ label, rows: [e] });
   }
 
-  const shortDay = (e: EdatmEvent) =>
-    new Date(`${e.start_local}:00`).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  // The series description shows once, above the list, instead of
+  // repeating in every row.
+  const intro = upcoming.find((e) => e.description)?.description;
+
+  const timeRange = (e: EdatmEvent) => {
+    const t = (s: string) =>
+      new Date(`${s}:00`).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+    const zone = e.time_zone === "America/Chicago" ? " CT" : e.time_zone === "America/New_York" ? " ET" : "";
+    return `${t(e.start_local)}–${t(e.end_local)}${zone}`;
+  };
 
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif" }}>
@@ -105,69 +106,79 @@ export default function Events() {
                 </p>
               )}
 
-              <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-            {series.map((group, i) => {
-              const event = group[0];
-              const isSeries = group.length > 1;
-              return (
-              <motion.div
-                key={event.id}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="event-card"
-                style={{
-                  background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16,
-                  padding: "clamp(20px,4vw,28px) clamp(16px,4vw,32px)",
-                  borderLeft: `4px solid ${eventColor(i)}`,
-                }}
-              >
-                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10, marginBottom: 6 }}>
-                  <h3 style={{ fontSize: 20, fontWeight: 800, color: "#122C54", margin: 0 }}>{event.title}</h3>
-                  <span style={{ fontSize: 11, fontWeight: 700, color: eventColor(i), background: `${eventColor(i)}18`, padding: "3px 12px", borderRadius: 999 }}>
-                    {isSeries ? "Monthly series" : event.event_type}
-                  </span>
-                </div>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 16, marginBottom: 12 }}>
-                  <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, color: "#64748b" }}>
-                    <Clock size={13} /> {isSeries ? "Next session: " : ""}{formatWhen(event)}
-                  </span>
-                  {event.location && (
-                    <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, color: "#64748b" }}>
-                      <MapPin size={13} /> {event.location}
-                    </span>
-                  )}
-                </div>
-                {event.description && (
-                  <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.65, margin: "0 0 16px" }}>{event.description}</p>
-                )}
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-                  <a href={event.rsvp_url ?? "/contact"}
-                    target={event.rsvp_url ? "_blank" : undefined}
-                    rel={event.rsvp_url ? "noopener noreferrer" : undefined}
-                    style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "#122C54", color: "#fff", padding: "10px 20px", borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>
-                    RSVP <ArrowRight size={14} />
-                  </a>
-                  <a href={googleCalendarUrl(event)} target="_blank" rel="noopener noreferrer"
-                    style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "#fff", color: "#122C54", border: "1px solid #cbd5e1", padding: "10px 20px", borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>
-                    <CalendarPlus size={14} /> Add to Google Calendar
-                  </a>
-                  <button onClick={() => downloadIcs(event)}
-                    style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "#fff", color: "#122C54", border: "1px solid #cbd5e1", padding: "10px 20px", borderRadius: 8, fontWeight: 700, fontSize: 14, cursor: "pointer", fontFamily: "inherit" }}>
-                    <Download size={14} /> Apple / Outlook (.ics)
-                  </button>
-                </div>
-                {isSeries && (
-                  <p style={{ fontSize: 13, color: "#64748b", margin: "14px 0 0", lineHeight: 1.7 }}>
-                    Later dates:{" "}
-                    {group.slice(1, 6).map(shortDay).join(" · ")}
-                    {group.length > 6 ? ` · and ${group.length - 6} more on the calendar` : ""}
-                  </p>
-                )}
-              </motion.div>
-              );
-            })}
+              {intro && upcoming.length > 0 && (
+                <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 20px", maxWidth: 640 }}>
+                  {intro}
+                </p>
+              )}
+
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                {months.map((month, mi) => (
+                  <div key={month.label}>
+                    <p style={{ fontSize: 12, fontWeight: 800, letterSpacing: 1.5, textTransform: "uppercase", color: "#64748b", margin: `${mi === 0 ? 0 : 18}px 0 8px` }}>
+                      {month.label}
+                    </p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                      {month.rows.map((event) => {
+                        const isNext = event.id === upcoming[0].id;
+                        return (
+                          <motion.div
+                            key={event.id}
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4 }}
+                            style={{
+                              display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap",
+                              background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12,
+                              padding: "14px 18px",
+                              boxShadow: isNext ? "0 0 0 2px #22C55E55" : "none",
+                            }}
+                          >
+                            <div style={{ flex: "0 0 56px", textAlign: "center", background: "#122C54", color: "#fff", borderRadius: 10, padding: "8px 0" }}>
+                              <span style={{ display: "block", fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: "#22C55E" }}>
+                                {new Date(`${event.start_local}:00`).toLocaleDateString("en-US", { weekday: "short" }).toUpperCase()}
+                              </span>
+                              <span style={{ display: "block", fontSize: 20, fontWeight: 900, lineHeight: 1.15 }}>
+                                {new Date(`${event.start_local}:00`).getDate()}
+                              </span>
+                            </div>
+                            <div style={{ flex: "1 1 200px", minWidth: 0 }}>
+                              <p style={{ fontSize: 16, fontWeight: 800, color: "#122C54", margin: 0 }}>{event.title}</p>
+                              <p style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 6, fontSize: 13, color: "#64748b", margin: "3px 0 0" }}>
+                                <Clock size={12} /> {timeRange(event)} · {event.location || "Online"} · Free
+                              </p>
+                              {isNext && (
+                                <p style={{ display: "flex", flexWrap: "wrap", gap: 14, margin: "6px 0 0", fontSize: 12.5 }}>
+                                  <a href={googleCalendarUrl(event)} target="_blank" rel="noopener noreferrer"
+                                    style={{ display: "inline-flex", alignItems: "center", gap: 4, color: "#122C54", fontWeight: 700 }}>
+                                    <CalendarPlus size={12} /> Add to Google Calendar
+                                  </a>
+                                  <button onClick={() => downloadIcs(event)}
+                                    style={{ display: "inline-flex", alignItems: "center", gap: 4, color: "#122C54", fontWeight: 700, background: "none", border: "none", padding: 0, cursor: "pointer", fontFamily: "inherit", fontSize: 12.5 }}>
+                                    <Download size={12} /> Apple / Outlook (.ics)
+                                  </button>
+                                </p>
+                              )}
+                            </div>
+                            <a href={event.rsvp_url ?? "/contact"}
+                              target={event.rsvp_url ? "_blank" : undefined}
+                              rel={event.rsvp_url ? "noopener noreferrer" : undefined}
+                              style={{
+                                display: "inline-flex", alignItems: "center", gap: 6,
+                                background: isNext ? "#122C54" : "#fff",
+                                color: isNext ? "#fff" : "#122C54",
+                                border: isNext ? "none" : "1px solid #cbd5e1",
+                                padding: "9px 18px", borderRadius: 8, fontWeight: 700, fontSize: 13.5, textDecoration: "none",
+                              }}>
+                              {isNext ? "Save my seat" : "RSVP"} <ArrowRight size={13} />
+                            </a>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
