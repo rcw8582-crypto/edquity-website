@@ -74,9 +74,9 @@ export default function Donate() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20 }}>
             {[
               { amount: "$25", label: "covers a printed resource guide mailed to a family without reliable internet access" },
-              { amount: "$75", label: "helps cover the cost of delivering one family's free IEP Audit" },
-              { amount: "$250", label: "funds one family's complete free IEP Audit and 30-minute debrief call" },
-              { amount: "$500", label: "funds free IEP Audits for two families who could never afford independent advocacy" },
+              { amount: "$100", label: "equips a hands-on workshop with the toolkits and meeting notecatchers families take home" },
+              { amount: "$250", label: "funds half of one family's expert IEP Audit, paired with another donor's gift" },
+              { amount: "$500", label: "sponsors one family's complete IEP Audit and written report, a $500 professional value, free to a family who could never afford independent advocacy" },
             ].map((item, i) => (
               <div key={i} style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 22px", textAlign: "center" }}>
                 <p style={{ fontSize: 32, fontWeight: 900, color: "#15803D", margin: "0 0 10px", letterSpacing: "-1px" }}>{item.amount}</p>
