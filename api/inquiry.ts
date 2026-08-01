@@ -135,7 +135,7 @@ export default async function handler(req: Request): Promise<Response> {
       from: FROM,
       to: TO,
       replyTo: email,
-      subject: `[For Schools Inquiry] ${service}: ${organization}`,
+      subject: `[Consulting Inquiry] ${service}: ${organization}`,
       html: internalHtml,
       text: `New institutional inquiry from ${name} <${email}>, ${organization}. Service: ${service}. ${message}`,
     });

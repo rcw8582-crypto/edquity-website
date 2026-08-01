@@ -110,7 +110,7 @@ export default function Fellowship() {
       {/* Hero */}
       <section className="sp" style={{ background: NAVY }}>
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
-          <p style={{ fontSize: 12, fontWeight: 700, color: GREEN, letterSpacing: 2, textTransform: "uppercase", margin: "0 0 20px" }}>For Schools</p>
+          <p style={{ fontSize: 12, fontWeight: 700, color: GREEN, letterSpacing: 2, textTransform: "uppercase", margin: "0 0 20px" }}>Consulting Services</p>
           <h1 style={{ fontSize: "clamp(32px,4.5vw,52px)", fontWeight: 900, lineHeight: 1.08, color: "#fff", margin: "0 0 24px", letterSpacing: "-1.5px" }}>
             The EDquity Leader Fellowship
           </h1>

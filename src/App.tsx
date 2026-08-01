@@ -94,6 +94,7 @@ function Router() {
           <Route path="/admin" component={Admin} />
           <Route path="/intake" component={Intake} />
           <Route path="/fellowship" component={Fellowship} />
+          <Route path="/consulting" component={ForSchools} />
           <Route path="/for-schools" component={ForSchools} />
           <Route component={NotFound} />
         </Switch>
