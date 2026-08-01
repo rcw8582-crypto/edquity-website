@@ -132,7 +132,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li><Link href="/" className="text-primary-foreground/80 hover:text-accent transition-colors">Home</Link></li>
               <li><Link href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link href="/services" className="text-primary-foreground/80 hover:text-accent transition-colors">Our Services</Link></li>
+              <li><Link href="/services" className="text-primary-foreground/80 hover:text-accent transition-colors">Free Family Services</Link></li>
               <li><Link href="/news" className="text-primary-foreground/80 hover:text-accent transition-colors">News & Updates</Link></li>
               <li><Link href="/donate" className="text-primary-foreground/80 hover:text-accent transition-colors">Donate</Link></li>
               <li><Link href="/volunteer" className="text-primary-foreground/80 hover:text-accent transition-colors">Volunteer</Link></li>

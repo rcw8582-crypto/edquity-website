@@ -73,7 +73,7 @@ export default function ForSchools() {
             Rubric-based, independent review of your IEPs, leadership development for the people who sign them, and professional development built from your own data. Delivered entirely remotely, with IDEA-compliant and FERPA-protected data handling in every engagement.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 36px" }}>
-            Every institutional engagement helps sustain our free advocacy services for families.
+            We are a family-first organization. Every consulting engagement supports meaningful outcomes for students at the margins and helps sustain our free family services.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <a href="#inquire" style={{ background: GREEN, color: NAVY, padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>

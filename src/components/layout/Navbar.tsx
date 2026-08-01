@@ -30,7 +30,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
+    { href: "/services", label: "Free Family Services" },
     { href: "/consulting", label: "Consulting" },
     { href: "/events", label: "Events" },
     { href: "/about", label: "About" },

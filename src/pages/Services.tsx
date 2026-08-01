@@ -30,7 +30,7 @@ export default function Services() {
       {/* Hero */}
       <section className="sp" style={{ background: "#122C54" }}>
         <div style={{ maxWidth: 860, margin: "0 auto", textAlign: "center" }}>
-          <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 20px" }}>Services</p>
+          <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 20px" }}>Free Family Services</p>
           <h1 style={{ fontSize: "clamp(32px,4.5vw,52px)", fontWeight: 900, lineHeight: 1.08, color: "#fff", margin: "0 0 24px", letterSpacing: "-1.5px" }}>
             Independent IEP Support for Families Who Deserve More Than a Form Letter
           </h1>
