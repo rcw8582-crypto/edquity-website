@@ -165,7 +165,7 @@ export default async function handler(req: Request): Promise<Response> {
       <h2 style="color: #122C54; margin: 0 0 16px; font-size: 18px;">Your EDquity Leader Fellowship application has been received</h2>
       <p>Hi ${escapeHtml(fullName)},</p>
       <p>Thank you for applying to the founding cohort of the EDquity Leader Fellowship. We have received your profile and institutional information.</p>
-      <p>Because the founding cohort is strictly limited to five schools to protect our evaluation and coaching capacity, selection is competitive, and every submission is reviewed uniformly against our published criteria.</p>
+      <p>Because seats in the founding cohort are strictly limited to protect our evaluation and coaching capacity, selection is competitive, and every submission is reviewed uniformly against our published criteria.</p>
       <p style="margin: 16px 0 6px;"><strong>Key dates</strong></p>
       <ul style="margin: 0 0 16px; padding-left: 20px;">
         <li>Application review: September 5 to 11, 2026</li>

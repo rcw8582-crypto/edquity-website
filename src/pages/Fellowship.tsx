@@ -130,7 +130,7 @@ export default function Fellowship() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 14, maxWidth: 920, margin: "0 auto" }}>
             <Fact label="Applications" value="Close September 4, 2026" />
-            <Fact label="Founding cohort" value="Capped at five schools" />
+            <Fact label="Founding cohort" value="Seats are limited" />
             <Fact label="Investment" value="$6,500 per seat" />
             <Fact label="Eligible funding" value="Title II-A and IDEA Part B" />
           </div>
@@ -250,7 +250,7 @@ export default function Fellowship() {
             <li>Priority for Title I schools, high-poverty charters, and settings serving multilingual families and students of color with disabilities</li>
           </ul>
           <p style={{ fontSize: 14, color: "#64748b", lineHeight: 1.7, margin: 0 }}>
-            The fellowship runs one year per school and is non-renewable, and the founding cohort is capped at five schools. The seat fee is non-refundable, and the Certified IEP Quality Improvement Leader credential is conferred only when the fellow completes the full program, including the final impact project. Schools that want continued independent evaluation afterward engage our standard audit service, and schools that want internal evaluation capacity license the platform.
+            The fellowship runs one year per school and is non-renewable, and seats in the founding cohort are limited. The seat fee is non-refundable, and the Certified IEP Quality Improvement Leader credential is conferred only when the fellow completes the full program, including the final impact project. Schools that want continued independent evaluation afterward engage our standard audit service, and schools that want internal evaluation capacity license the platform.
           </p>
         </div>
       </section>
