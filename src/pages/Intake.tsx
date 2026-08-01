@@ -265,7 +265,8 @@ export default function Intake() {
               <div>
                 <h2 style={sectionHead}>Consent and Authorization</h2>
                 <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: "0 0 24px" }}>
-                  Please read each statement carefully. Consents 1, 2, and 4 are required to proceed. Consent 3 is optional and has no effect on your access to services.
+                  Please read each statement carefully. Consents 1, 2, and 4 are required to proceed. Consent 3 is optional and has no effect on your access to services. You can read the full text of all four authorizations on our{" "}
+                  <a href="/intake-consent" target="_blank" rel="noopener noreferrer" style={{ color: "#14B8A6", fontWeight: 600 }}>Consent and Authorization page</a>.
                 </p>
 
                 {[
