@@ -117,7 +117,7 @@ export default function Funders() {
           <h2 style={{ fontSize: "clamp(22px,2.5vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 24px" }}>How the Work Sustains Itself</h2>
           <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: 28, marginBottom: 64 }}>
             <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.75, margin: "0 0 12px" }}>
-              We are a family-first organization with a two-sided model. Schools and systems pay for our consulting services, independent blind IEP quality audits, the EDquity Leader Fellowship, and educator professional development, and a standing share of every consulting fee is designated to the Family Audit Fund, which keeps our family services free. Earned revenue is the floor under this work; it does not disappear when a grant cycle ends.
+              We are a family-first organization with a two-sided model. Schools and systems pay for our consulting services, independent blind IEP quality audits, the EDquity Leader Fellowship, and educator professional development, and ten percent of every consulting fee is designated to the Family Audit Fund, which keeps our family services free. Earned revenue is the floor under this work; it does not disappear when a grant cycle ends.
             </p>
             <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.75, margin: 0 }}>
               Philanthropy is how the work reaches further than earned revenue alone can carry it: funding free audits beyond what the fund covers, and sponsoring fellowship seats for under-resourced schools whose leaders could never otherwise access them. Your dollars do not keep the lights on; they extend the reach.
