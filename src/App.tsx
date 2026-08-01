@@ -39,6 +39,7 @@ const ClientPortal = lazy(() => import("@/pages/ClientPortal"));
 const NewsPost = lazy(() => import("@/pages/NewsPost"));
 const Admin = lazy(() => import("@/pages/Admin"));
 const Intake = lazy(() => import("@/pages/Intake"));
+const Fellowship = lazy(() => import("@/pages/Fellowship"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 const queryClient = new QueryClient();
@@ -91,6 +92,7 @@ function Router() {
           <Route path="/news/:slug" component={NewsPost} />
           <Route path="/admin" component={Admin} />
           <Route path="/intake" component={Intake} />
+          <Route path="/fellowship" component={Fellowship} />
           <Route component={NotFound} />
         </Switch>
       </Suspense>
