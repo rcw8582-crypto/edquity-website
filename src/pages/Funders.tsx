@@ -28,6 +28,7 @@ const tiers = [
     featured: true,
     includes: [
       "Funds 20–100 free IEP Audits for families who cannot pay for advocacy",
+      "Sponsors a Leader Fellowship seat for an under-resourced school ($6,500 funds the full year, including donated evaluation services)",
       "Co-branded acknowledgment on website",
       "Quarterly impact reports with de-identified outcome data",
       "Invitation to community education events",
@@ -39,7 +40,8 @@ const tiers = [
     color: "#122C54",
     includes: [
       "Funds organizational capacity and free family services for an entire year",
-      "Named sponsorship of a specific program or cohort",
+      "Named sponsorship of a specific program or cohort, including fellowship seats for under-resourced schools",
+      "Invitation to the annual Impact Expo, where fellows present their schools' measured results",
       "Annual site visit or program briefing with Dr. Clarke-Wedderburn",
       "Full outcome report with case-level narrative summaries",
       "Input on program evaluation design",
@@ -110,6 +112,16 @@ export default function Funders() {
                 <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>{card.text}</p>
               </div>
             ))}
+          </div>
+
+          <h2 style={{ fontSize: "clamp(22px,2.5vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 24px" }}>How the Work Sustains Itself</h2>
+          <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: 28, marginBottom: 64 }}>
+            <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.75, margin: "0 0 12px" }}>
+              We are a family-first organization with a two-sided model. Schools and systems pay for our consulting services, independent blind IEP quality audits, the EDquity Leader Fellowship, and educator professional development, and a standing share of every consulting fee is designated to the Family Audit Fund, which keeps our family services free. Earned revenue is the floor under this work; it does not disappear when a grant cycle ends.
+            </p>
+            <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.75, margin: 0 }}>
+              Philanthropy is how the work reaches further than earned revenue alone can carry it: funding free audits beyond what the fund covers, and sponsoring fellowship seats for under-resourced schools whose leaders could never otherwise access them. Your dollars do not keep the lights on; they extend the reach.
+            </p>
           </div>
 
           <h2 style={{ fontSize: "clamp(22px,2.5vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 32px" }}>Our Outcomes</h2>
@@ -198,6 +210,7 @@ export default function Funders() {
                   <option value="">Select a level…</option>
                   <option value="Community Funder ($1,000–$4,999)">Community Funder ($1,000–$4,999)</option>
                   <option value="Program Sponsor ($5,000–$24,999)">Program Sponsor ($5,000–$24,999)</option>
+                  <option value="Fellowship Seat Sponsorship ($6,500)">Fellowship Seat Sponsorship ($6,500)</option>
                   <option value="Founding Partner ($25,000+)">Founding Partner ($25,000+)</option>
                   <option value="General / Other">General / Other</option>
                 </select>
