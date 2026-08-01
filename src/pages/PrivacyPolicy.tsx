@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
             <ArrowLeft size={16} /> Back to Home
           </Link>
           <h1 className="text-3xl md:text-4xl font-bold text-primary">Privacy Policy</h1>
-          <p className="text-muted-foreground mt-2">Edquity at the Margins &nbsp;|&nbsp; Effective Date: May 2, 2026</p>
+          <p className="text-muted-foreground mt-2">Edquity at the Margins &nbsp;|&nbsp; Effective Date: August 1, 2026</p>
         </div>
       </section>
 
@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
 
             <h2>1. Information We Collect</h2>
             <h3>1.1 Information You Provide Directly</h3>
-            <p>When you complete our inquiry form, parent intake form, or contact us directly, we collect personal information, including your name, email address, phone number, and mailing address. Through our intake process, we also collect information about your child, including their name, date of birth, disability category, school district, current services, and educational history. You may also voluntarily upload your child's Individualized Education Program and related educational documents.</p>
+            <p>When you complete our inquiry form, parent intake form, or contact us directly, we collect personal information, including your name, email address, phone number, and mailing address. Through our intake process, we also collect information about your child, including their name, date of birth, disability category, school district, current services, and educational history. You may also voluntarily share your child's Individualized Education Program and related educational documents by email or secure upload. If you subscribe to our newsletter, we collect your email address and, optionally, your first name. If you submit a consulting inquiry, a fellowship application, or a funder inquiry on behalf of an organization, we collect your professional contact information and information about your organization.</p>
             <h3>1.2 Information Collected Automatically</h3>
             <p>When you visit our website, we may collect standard technical information, including your IP address, browser type, pages visited, and time spent on the site. This information is collected through standard web analytics tools and is used solely to improve the performance and accessibility of our website.</p>
 
@@ -41,10 +41,10 @@ export default function PrivacyPolicy() {
             </ul>
 
             <h2>3. Children's Educational Records and FERPA</h2>
-            <p>Edquity at the Margins handles educational records, including Individualized Education Programs, with the utmost care and in accordance with the Family Educational Rights and Privacy Act (FERPA). Educational records you share with us are used exclusively to provide the services you have requested. We do not share, sell, or disclose your child's educational records to any third party without your explicit written consent, except as required by law. All staff and contractors who access educational records are required to maintain strict confidentiality.</p>
+            <p>Edquity at the Margins handles educational records, including Individualized Education Programs, with the utmost care and in accordance with the Family Educational Rights and Privacy Act (FERPA). Educational records you share with us are used exclusively to provide the services you have requested. We do not share, sell, or disclose your child's educational records to any third party without your explicit written consent, except as required by law. All staff and contractors who access educational records are required to maintain strict confidentiality. In our consulting engagements with schools and local education agencies, we accept only documents from which the institution has removed all personally identifiable information before submission, so no family's identifying information reaches us through institutional work.</p>
 
             <h2>4. Data Storage and Security</h2>
-            <p>Personal information and educational documents submitted through our intake form are stored securely through Tally, our form platform, which uses industry-standard encryption. We implement reasonable administrative, technical, and physical safeguards to protect your information against unauthorized access, disclosure, or destruction. No method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security, but we are committed to protecting your information to the best of our ability.</p>
+            <p>Information submitted through our website forms is transmitted over encrypted connections and delivered to us through our email service provider; educational documents are stored in access-controlled, encrypted cloud storage. We implement reasonable administrative, technical, and physical safeguards to protect your information against unauthorized access, disclosure, or destruction. No method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security, but we are committed to protecting your information to the best of our ability.</p>
 
             <h2>5. Data Retention</h2>
             <p>We retain client records, including intake forms and educational documents, for a minimum of three years following the conclusion of services, consistent with standard nonprofit recordkeeping practices and applicable law. After that period, records are securely deleted or destroyed. You may request deletion of your records at any time by contacting us at <a href="mailto:info@edquityatthemargins.org">info@edquityatthemargins.org</a>, subject to any legal retention requirements.</p>
@@ -52,7 +52,7 @@ export default function PrivacyPolicy() {
             <h2>6. Sharing of Information</h2>
             <p>Edquity at the Margins does not sell, rent, or trade your personal information. We do not share your information with third parties except in the following limited circumstances:</p>
             <ul>
-              <li>With service providers who assist in our operations, such as our form platform, who are bound by confidentiality obligations</li>
+              <li>With service providers who assist in our operations, such as our website hosting, email delivery, and cloud storage providers, who are bound by confidentiality obligations</li>
               <li>When required by law, court order, or government regulation</li>
               <li>To protect the rights, safety, or property of Edquity at the Margins, our staff, or the public</li>
             </ul>

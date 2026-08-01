@@ -15,7 +15,7 @@ export default function TermsOfService() {
             <ArrowLeft size={16} /> Back to Home
           </Link>
           <h1 className="text-3xl md:text-4xl font-bold text-primary">Terms of Service</h1>
-          <p className="text-muted-foreground mt-2">Edquity at the Margins &nbsp;|&nbsp; Effective Date: May 2, 2026</p>
+          <p className="text-muted-foreground mt-2">Edquity at the Margins &nbsp;|&nbsp; Effective Date: August 1, 2026</p>
         </div>
       </section>
 
@@ -25,14 +25,14 @@ export default function TermsOfService() {
             <p>These Terms of Service govern your use of the services provided by Edquity at the Margins, a Tennessee nonprofit corporation. By submitting an intake form, you agree to these terms.</p>
 
             <h2>1. Services Provided</h2>
-            <p>Edquity at the Margins provides two free services to marginalized families of children with disabilities: the IEP Audit and the Advocacy Toolkit. Both services are provided at no cost. The specific services delivered to each family are determined through the intake process and confirmed in writing prior to service delivery.</p>
+            <p>Edquity at the Margins provides free services to marginalized families of children with disabilities, including the IEP Audit, the Advocacy Toolkit, and community workshops. All family services are provided at no cost. The specific services delivered to each family are determined through the intake process and confirmed in writing prior to service delivery. Edquity at the Margins also provides consulting services to schools, districts, and local education agencies, including independent blind IEP quality audits, the EDquity Leader Fellowship, and educator professional development; those engagements are governed by separate written agreements, and these Terms of Service apply to family services and general use of this website.</p>
             <h3>1.1 IEP Audit</h3>
             <p>The IEP Audit is a free service consisting of a comprehensive review of your child's Individualized Education Program by a trained advocate, followed by a written summary of findings and recommended next steps. This service does not constitute legal advice and does not create an attorney-client relationship. Edquity at the Margins is not a law firm and does not provide legal representation.</p>
             <h3>1.2 Advocacy Toolkit</h3>
             <p>The Advocacy Toolkit is a free library of downloadable resources covering IDEA rights, IEP interpretation, meeting preparation, and related topics. The Advocacy Toolkit is available at no cost and does not require completion of the IEP Audit.</p>
 
             <h2>2. No Fees</h2>
-            <p>Both the IEP Audit and the Advocacy Toolkit are provided free of charge. Edquity at the Margins does not charge families for its services. The organization is supported by donations and grant funding rather than family fees.</p>
+            <p>Both the IEP Audit and the Advocacy Toolkit are provided free of charge. Edquity at the Margins never charges families for its services. The organization is supported by donations, grants, and revenue from its consulting services to schools and systems, and a share of every consulting fee is designated to keep family services free.</p>
 
             <h2>3. Not Legal Advice</h2>
             <p>The services provided by Edquity at the Margins are educational and advocacy in nature and do not constitute legal advice. Nothing in any written summary, toolkit resource, or communication from Edquity at the Margins should be construed as legal advice or as establishing an attorney-client relationship. Families who require legal representation in special education proceedings should consult a licensed attorney.</p>
