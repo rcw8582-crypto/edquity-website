@@ -30,8 +30,8 @@ function Step({ n, title, text }: StepProps) {
 const CALENDAR: Array<[string, string]> = [
   ["September", "The year opens with the full-day virtual Launch Institute."],
   ["December", "The full-day virtual Data Summit turns your fall data into your school's professional development plan."],
-  ["January to May", "Your fellow leads the plan in your building while the independent blind evaluation continues."],
-  ["June", "Fellows present their measured results at the in-person Impact Expo, location to be determined, and the credential is conferred."],
+  ["January to May", "Your fellow leads their impact project in your building, intervening on the data each month while the independent blind evaluation continues."],
+  ["June", "Fellows present their impact projects at the in-person Impact Expo, location to be determined, and the credential is conferred."],
 ];
 
 const inputStyle: React.CSSProperties = {
@@ -130,7 +130,7 @@ export default function Fellowship() {
           </div>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <Fact label="Application window" value="August 1 to September 4, 2026" />
-            <Fact label="Founding cohort" value="Capped at 3 to 4 schools" />
+            <Fact label="Founding cohort" value="Capped at five schools" />
             <Fact label="Investment" value="$6,500 per seat" />
             <Fact label="Eligible funding" value="Title II-A and IDEA Part B" />
           </div>
@@ -164,7 +164,7 @@ export default function Fellowship() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20, marginBottom: 40 }}>
             <Step n="1" title="Blind submission" text="By the fifth business day of each month, your school submits 5 redacted IEPs following our secure, FERPA-protected Redaction Guidance." />
             <Step n="2" title="Objective evaluation" text="EDquity blind-evaluates the documents against the 38-condition master rubric to surface systemic, school-wide trends." />
-            <Step n="3" title="Real-time reporting" text="Your fellow receives the reports before that month's working session, so the case material is always your school's current reality." />
+            <Step n="3" title="Monthly strategy seminar" text="After the reports go out, the cohort meets virtually to work the trends and data together as leaders, turning each month's findings into strategy for their buildings." />
           </div>
           <div className="rg-2" style={{ maxWidth: 900, margin: "0 auto" }}>
             <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: 28 }}>
@@ -174,9 +174,9 @@ export default function Fellowship() {
               </p>
             </div>
             <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: 28 }}>
-              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL, margin: "0 0 10px", textTransform: "uppercase", letterSpacing: 1 }}>Spring: Execution and Impact</p>
+              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL, margin: "0 0 10px", textTransform: "uppercase", letterSpacing: 1 }}>Spring: The Impact Project</p>
               <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>
-                From January, your fellow executes the plan: training staff, running pre-signature rubric checks on draft IEPs, and coaching teams, while the blind evaluation continues uninterrupted. Because every score all year is EDquity's independent blind score, the June fall-versus-spring comparison is objective by construction. Your school sees exactly how much IEP quality moved.
+                From January, your fellow leads a structured impact project, action research adapted for school leaders. The fall data and the research literature define the problem, your fellow intervenes each month with staff training, pre-signature rubric checks, and team coaching, documenting evidence of every intervention, and the continuing blind evaluation measures whether the data moves. Because every score all year is EDquity's independent blind score, the outcome is objective by construction.
               </p>
             </div>
           </div>
@@ -191,7 +191,7 @@ export default function Fellowship() {
             <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>The year at a glance</h2>
           </div>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 22px" }}>
-            Four anchors carry the year. Between them, fellows meet virtually and receive individual coaching, and selected fellows receive the full session calendar at onboarding.
+            Four anchors carry the year, with a monthly virtual strategy seminar after each round of reports and individual coaching throughout. Selected fellows receive the full session calendar at onboarding.
           </p>
           <div style={{ border: "1px solid #e2e8f0", borderRadius: 12, overflow: "hidden" }}>
             {CALENDAR.map(([month, session], i) => (
@@ -250,7 +250,7 @@ export default function Fellowship() {
             <li>Priority for Title I schools, high-poverty charters, and settings serving multilingual families and students of color with disabilities</li>
           </ul>
           <p style={{ fontSize: 14, color: "#64748b", lineHeight: 1.7, margin: 0 }}>
-            The fellowship runs one year per school and is non-renewable, and the founding cohort is capped at 3 to 4 schools. Schools that want continued independent evaluation afterward engage our standard audit service, and schools that want internal evaluation capacity license the platform.
+            The fellowship runs one year per school and is non-renewable, and the founding cohort is capped at five schools. The seat fee is non-refundable, and the Certified IEP Quality Improvement Leader credential is conferred only when the fellow completes the full program, including the final impact project. Schools that want continued independent evaluation afterward engage our standard audit service, and schools that want internal evaluation capacity license the platform.
           </p>
         </div>
       </section>
