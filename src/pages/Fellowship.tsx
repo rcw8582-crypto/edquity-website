@@ -9,9 +9,9 @@ const GREEN = "#22C55E";
 interface FactProps { label: string; value: string; }
 function Fact({ label, value }: FactProps) {
   return (
-    <div style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: 12, padding: "16px 20px", minWidth: 190 }}>
-      <p style={{ fontSize: 11, fontWeight: 700, color: GREEN, letterSpacing: 1.5, textTransform: "uppercase", margin: "0 0 6px" }}>{label}</p>
-      <p style={{ fontSize: 15, fontWeight: 700, color: "#fff", margin: 0, lineHeight: 1.4 }}>{value}</p>
+    <div style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: 12, padding: "18px 20px", textAlign: "center" }}>
+      <p style={{ fontSize: 10.5, fontWeight: 600, color: GREEN, letterSpacing: 1.2, textTransform: "uppercase", margin: "0 0 8px" }}>{label}</p>
+      <p style={{ fontSize: 16, fontWeight: 800, color: "#fff", margin: 0, lineHeight: 1.35 }}>{value}</p>
     </div>
   );
 }
@@ -128,8 +128,8 @@ export default function Fellowship() {
               Download the Commitment Letter
             </a>
           </div>
-          <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <Fact label="Application window" value="August 1 to September 4, 2026" />
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 14, maxWidth: 920, margin: "0 auto" }}>
+            <Fact label="Applications" value="Close September 4, 2026" />
             <Fact label="Founding cohort" value="Capped at five schools" />
             <Fact label="Investment" value="$6,500 per seat" />
             <Fact label="Eligible funding" value="Title II-A and IDEA Part B" />
