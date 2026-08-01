@@ -47,6 +47,26 @@ function escapeHtml(s: string): string {
     .replace(/'/g, "&#39;");
 }
 
+/**
+ * Renders a one-row HTML table whose cell order matches the matching tab
+ * in "EDATM Website Form Submissions.xlsx". Copying the row out of the
+ * email and pasting it into Excel lands each value in its own column, so
+ * submissions can be logged without retyping every field.
+ */
+function pasteRow(tab: string, values: string[]): string {
+  const cells = values
+    .map(
+      (v) =>
+        `<td style="border: 1px solid #cbd5e1; padding: 4px 8px; font-size: 12px;">${escapeHtml(v)}</td>`
+    )
+    .join("");
+  return `
+    <h3 style="font-size: 14px; margin: 22px 0 4px;">Copy this row into the workbook</h3>
+    <p style="color: #64748b; font-size: 12px; margin: 0 0 8px;">Select the row below, copy it, then paste into the <strong>${escapeHtml(tab)}</strong> tab of EDATM Website Form Submissions.xlsx. Excel puts each value in its own column. Leave the remaining tracking columns for your own notes.</p>
+    <table style="border-collapse: collapse;"><tr>${cells}</tr></table>
+  `;
+}
+
 function row(label: string, value: string): string {
   return `<tr>
     <td style="padding: 6px 0; color: #64748b; width: 190px; vertical-align: top;"><strong>${label}</strong></td>
@@ -152,7 +172,24 @@ export default async function handler(req: Request): Promise<Response> {
       to: TO,
       replyTo: email,
       subject: `[Parent Intake] ${parentName}: ${childFirstName}, ${schoolDistrict || state || "no district given"}`,
-      html: internalHtml,
+      html:
+        internalHtml +
+        pasteRow("Parent Intake", [
+          submittedAt.slice(0, 10),
+          parentName,
+          email,
+          phone,
+          childFirstName,
+          childGrade,
+          schoolDistrict,
+          state,
+          disabilityCategory,
+          meetingTiming,
+          consent1 ? "Yes" : "No",
+          consent2 ? "Yes" : "No",
+          consent3Research ? "Yes" : "No",
+          consent4Communication ? "Yes" : "No",
+        ]),
       text: `New parent intake from ${parentName} <${email}>. Child: ${childFirstName}. Consents: 1=${consent1}, 2=${consent2}, 3(research)=${consent3Research}, 4=${consent4Communication}. Submitted ${submittedAt}. ${situation}`,
     });
     if (internal.error) {

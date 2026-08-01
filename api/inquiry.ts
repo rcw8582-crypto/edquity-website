@@ -55,6 +55,30 @@ function escapeHtml(s: string): string {
     .replace(/'/g, "&#39;");
 }
 
+function short(s: string, max = 140): string {
+  return s.length > max ? s.slice(0, max - 3) + "\u2026" : s;
+}
+
+/**
+ * Renders a one-row HTML table whose cell order matches the matching tab
+ * in "EDATM Website Form Submissions.xlsx". Copying the row out of the
+ * email and pasting it into Excel lands each value in its own column, so
+ * submissions can be logged without retyping every field.
+ */
+function pasteRow(tab: string, values: string[]): string {
+  const cells = values
+    .map(
+      (v) =>
+        `<td style="border: 1px solid #cbd5e1; padding: 4px 8px; font-size: 12px;">${escapeHtml(v)}</td>`
+    )
+    .join("");
+  return `
+    <h3 style="font-size: 14px; margin: 22px 0 4px;">Copy this row into the workbook</h3>
+    <p style="color: #64748b; font-size: 12px; margin: 0 0 8px;">Select the row below, copy it, then paste into the <strong>${escapeHtml(tab)}</strong> tab of EDATM Website Form Submissions.xlsx. Excel puts each value in its own column. Leave the remaining tracking columns for your own notes.</p>
+    <table style="border-collapse: collapse;"><tr>${cells}</tr></table>
+  `;
+}
+
 function row(label: string, value: string): string {
   return `<tr>
     <td style="padding: 6px 0; color: #64748b; width: 180px; vertical-align: top;"><strong>${label}</strong></td>
@@ -136,7 +160,20 @@ export default async function handler(req: Request): Promise<Response> {
       to: TO,
       replyTo: email,
       subject: `[Consulting Inquiry] ${service}: ${organization}`,
-      html: internalHtml,
+      html:
+        internalHtml +
+        pasteRow("Consulting Inquiries", [
+          new Date().toISOString().slice(0, 10),
+          name,
+          title,
+          organization,
+          orgType,
+          email,
+          phone,
+          service,
+          iepVolume,
+          short(message),
+        ]),
       text: `New institutional inquiry from ${name} <${email}>, ${organization}. Service: ${service}. ${message}`,
     });
     if (internal.error) {
