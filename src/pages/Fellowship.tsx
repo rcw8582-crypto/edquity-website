@@ -27,17 +27,11 @@ function Step({ n, title, text }: StepProps) {
   );
 }
 
-const CALENDAR: Array<[string, string, string]> = [
-  ["September", "Launch Institute (full day)", "FAPE architecture, the Endrew F. standard, the Leader Rubric, baseline Report 1"],
-  ["October", "Seminar + coaching", "Present levels of performance, 34 CFR 300.320(a)(1)"],
-  ["November", "Seminar", "Measurable goals and progress monitoring, 300.320(a)(2) and (3)"],
-  ["December", "Data Summit (full day)", "Services and LRE; four-month trend synthesis; the PD plan is built and presented"],
-  ["January", "Seminar + coaching", "Launching the plan; parent participation and prior written notice"],
-  ["February", "Seminar", "Pre-signature review workflow; secondary transition"],
-  ["March", "Seminar", "Mid-course corrections; ESY, discipline, manifestation determination"],
-  ["April", "Seminar + coaching", "Honest data interpretation and capstone framing"],
-  ["May", "Proficiency check (asynchronous)", "Private Leader Rubric accuracy verification; final data month; impact report"],
-  ["June", "Impact Expo (half day, in person)", "Fellow presentations, panel, and the credentialing ceremony; location to be determined"],
+const CALENDAR: Array<[string, string]> = [
+  ["September", "The year opens with the full-day virtual Launch Institute."],
+  ["December", "The full-day virtual Data Summit turns your fall data into your school's professional development plan."],
+  ["January to May", "Your fellow leads the plan in your building while the independent blind evaluation continues."],
+  ["June", "Fellows present their measured results at the in-person Impact Expo, location to be determined, and the credential is conferred."],
 ];
 
 const inputStyle: React.CSSProperties = {
@@ -170,7 +164,7 @@ export default function Fellowship() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20, marginBottom: 40 }}>
             <Step n="1" title="Blind submission" text="By the fifth business day of each month, your school submits 5 redacted IEPs following our secure, FERPA-protected Redaction Guidance." />
             <Step n="2" title="Objective evaluation" text="EDquity blind-evaluates the documents against the 38-condition master rubric to surface systemic, school-wide trends." />
-            <Step n="3" title="Real-time reporting" text="Your fellow receives the reports before the monthly seminar, so the case material is always your school's current reality." />
+            <Step n="3" title="Real-time reporting" text="Your fellow receives the reports before that month's working session, so the case material is always your school's current reality." />
           </div>
           <div className="rg-2" style={{ maxWidth: 900, margin: "0 auto" }}>
             <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: 28 }}>
@@ -197,14 +191,13 @@ export default function Fellowship() {
             <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>The year at a glance</h2>
           </div>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 22px" }}>
-            Approximately 40 contact hours: two full-day virtual institutes, six 90-minute virtual seminars, three individual coaching sessions, the asynchronous May proficiency check, and the half-day Impact Expo in June, which will be in person, location to be determined.
+            Four anchors carry the year. Between them, fellows meet virtually and receive individual coaching, and selected fellows receive the full session calendar at onboarding.
           </p>
           <div style={{ border: "1px solid #e2e8f0", borderRadius: 12, overflow: "hidden" }}>
-            {CALENDAR.map(([month, session, focus], i) => (
+            {CALENDAR.map(([month, session], i) => (
               <div key={month} style={{ display: "flex", flexWrap: "wrap", gap: 6, padding: "13px 18px", background: i % 2 ? "#f8fafc" : "#fff", borderTop: i ? "1px solid #eef2f7" : "none" }}>
-                <span style={{ fontWeight: 800, fontSize: 14, width: 96, flexShrink: 0 }}>{month}</span>
-                <span style={{ fontWeight: 700, fontSize: 14, color: TEAL, width: 250, flexShrink: 0 }}>{session}</span>
-                <span style={{ fontSize: 14, color: "#475569", flex: 1, minWidth: 220 }}>{focus}</span>
+                <span style={{ fontWeight: 800, fontSize: 14, width: 170, flexShrink: 0 }}>{month}</span>
+                <span style={{ fontWeight: 700, fontSize: 14, color: TEAL, flex: 1, minWidth: 220 }}>{session}</span>
               </div>
             ))}
           </div>
