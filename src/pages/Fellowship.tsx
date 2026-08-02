@@ -131,7 +131,7 @@ export default function Fellowship() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 14, maxWidth: 920, margin: "0 auto" }}>
             <Fact label="Applications" value="Open January 2027" />
             <Fact label="Founding cohort" value="July 2027 to May 2028" />
-            <Fact label="Investment" value="$6,500 per seat" />
+            <Fact label="Investment" value="$8,000 per seat" />
             <Fact label="Eligible funding" value="Title II-A and IDEA Part B" />
           </div>
         </div>
@@ -226,7 +226,7 @@ export default function Fellowship() {
             ))}
           </div>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.6)", textAlign: "center", margin: "30px auto 0", maxWidth: 720, lineHeight: 1.7 }}>
-            The investment is $6,500 per seat, typically funded through PD budgets, Title II-A, or IDEA Part B professional development allocations, so it never needs to touch local operating funds. Confirm allowability with your special education finance coordinator or state education agency.
+            The investment is $8,000 per seat, typically funded through PD budgets, Title II-A, or IDEA Part B professional development allocations, so it never needs to touch local operating funds. Confirm allowability with your special education finance coordinator or state education agency.
           </p>
         </div>
       </section>
@@ -353,7 +353,7 @@ export default function Fellowship() {
               <p style={{ fontSize: 13, fontWeight: 800, color: TEAL, textTransform: "uppercase", letterSpacing: 1, margin: "26px 0 16px" }}>Part 4: Required certifications</p>
               <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "#475569", lineHeight: 1.6, marginBottom: 12, cursor: "pointer" }}>
                 <input type="checkbox" name="institutionalSignOff" required style={{ marginTop: 3 }} />
-                I certify that my school leadership understands the $6,500 seat fee, agrees to release time for the program's contact hours, and consents to the presentation of anonymized campus findings at the June Impact Expo. *
+                I certify that my school leadership understands the $8,000 seat fee, agrees to release time for the program's contact hours, and consents to the presentation of anonymized campus findings at the June Impact Expo. *
               </label>
               <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "#475569", lineHeight: 1.6, marginBottom: 20, cursor: "pointer" }}>
                 <input type="checkbox" name="dataAgreement" required style={{ marginTop: 3 }} />

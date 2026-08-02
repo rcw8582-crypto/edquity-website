@@ -28,7 +28,7 @@ const tiers = [
     featured: true,
     includes: [
       "Funds 20–100 free IEP Audits for families who cannot pay for advocacy",
-      "Sponsors a Leader Fellowship seat for an under-resourced school ($6,500 funds the full year, including donated evaluation services)",
+      "Sponsors a Leader Fellowship seat for an under-resourced school ($8,000 funds the full year, including donated evaluation services)",
       "Co-branded acknowledgment on website",
       "Quarterly impact reports with de-identified outcome data",
       "Invitation to community education events",
@@ -210,7 +210,7 @@ export default function Funders() {
                   <option value="">Select a level…</option>
                   <option value="Community Funder ($1,000–$4,999)">Community Funder ($1,000–$4,999)</option>
                   <option value="Program Sponsor ($5,000–$24,999)">Program Sponsor ($5,000–$24,999)</option>
-                  <option value="Fellowship Seat Sponsorship ($6,500)">Fellowship Seat Sponsorship ($6,500)</option>
+                  <option value="Fellowship Seat Sponsorship ($8,000)">Fellowship Seat Sponsorship ($8,000)</option>
                   <option value="Founding Partner ($25,000+)">Founding Partner ($25,000+)</option>
                   <option value="General / Other">General / Other</option>
                 </select>
