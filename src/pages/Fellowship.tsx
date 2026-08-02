@@ -28,10 +28,10 @@ function Step({ n, title, text }: StepProps) {
 }
 
 const CALENDAR: Array<[string, string]> = [
-  ["September", "The year opens with the full-day virtual Launch Institute."],
-  ["December", "The full-day virtual Data Summit turns your fall data into your school's professional development plan."],
-  ["January to May", "Your fellow leads their impact project in your building, intervening on the data each month while the independent blind evaluation continues."],
-  ["June", "Fellows present their impact projects at the in-person Impact Expo, location to be determined, and the credential is conferred."],
+  ["July 2027", "The year opens with the full-day virtual Launch Institute, held in summer when your leader has the calendar for it."],
+  ["December 2027", "The full-day virtual Data Summit turns your fall data into your school's professional development plan."],
+  ["January to May 2028", "Your fellow leads their impact project in your building, intervening on the data each month while the independent blind evaluation continues."],
+  ["June 2028", "Fellows present their impact projects at the in-person Impact Expo, location to be determined, and the credential is conferred."],
 ];
 
 const inputStyle: React.CSSProperties = {
@@ -104,7 +104,7 @@ export default function Fellowship() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
         title="The EDquity Leader Fellowship for School SPED Leaders"
-        description="A selective, year-long virtual fellowship that develops special education coordinators into Certified IEP Quality Improvement Leaders, powered by monthly blind IEP evaluations. Founding cohort applications close September 4, 2026."
+        description="A selective, year-long virtual fellowship that develops special education coordinators into Certified IEP Quality Improvement Leaders, powered by monthly blind IEP evaluations. Founding cohort applications open January 2027 for the 2027-28 school year."
       />
 
       {/* Hero */}
@@ -122,15 +122,15 @@ export default function Fellowship() {
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap", marginBottom: 40 }}>
             <a href="#apply" style={{ background: GREEN, color: NAVY, padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
-              Apply for the Founding Cohort
+              Register Your Interest
             </a>
             <a href="/fellowship/EDquity-Leader-Fellowship-Commitment-Letter.docx" style={{ background: "transparent", color: "#fff", padding: "15px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(255,255,255,0.4)" }}>
               Download the Commitment Letter
             </a>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 14, maxWidth: 920, margin: "0 auto" }}>
-            <Fact label="Applications" value="Close September 4, 2026" />
-            <Fact label="Founding cohort" value="Seats are limited" />
+            <Fact label="Applications" value="Open January 2027" />
+            <Fact label="Founding cohort" value="July 2027 to May 2028" />
             <Fact label="Investment" value="$6,500 per seat" />
             <Fact label="Eligible funding" value="Title II-A and IDEA Part B" />
           </div>
@@ -159,7 +159,7 @@ export default function Fellowship() {
           <p style={{ fontSize: 12, fontWeight: 700, color: TEAL, letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px", textAlign: "center" }}>How It Works</p>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, textAlign: "center", margin: "0 0 14px" }}>The monthly diagnostic loop</h2>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.7, textAlign: "center", maxWidth: 760, margin: "0 auto 34px" }}>
-            Every month from September through May, your school submits five redacted IEPs and EDquity blind-evaluates them against our proprietary 38-condition master rubric. That is 45 independent evaluations across the year, a diagnostic service valued at $29,385 on our standard rate card, donated in full to fellowship schools.
+            Every month from September 2027 through May 2028, your school submits five redacted IEPs and EDquity blind-evaluates them against our proprietary 38-condition master rubric. That is 45 independent evaluations across the year, a diagnostic service valued at $29,385 on our standard rate card, donated in full to fellowship schools.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20, marginBottom: 40 }}>
             <Step n="1" title="Blind submission" text="By the fifth business day of each month, your school submits 5 redacted IEPs following our secure, FERPA-protected Redaction Guidance." />
@@ -258,17 +258,17 @@ export default function Fellowship() {
       {/* Application */}
       <section id="apply" className="sp" style={{ background: "#f8fafc", borderTop: "1px solid #e2e8f0" }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
-          <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, textAlign: "center", margin: "0 0 10px" }}>Apply for the founding cohort</h2>
+          <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, textAlign: "center", margin: "0 0 10px" }}>Register interest in the founding cohort</h2>
           <p style={{ fontSize: 15, color: "#475569", textAlign: "center", lineHeight: 1.7, margin: "0 0 30px" }}>
-            Applications close September 4, 2026. Cohort announcements follow in mid-September.
+            Applications open in January 2027 and close March 31, 2027, timed so schools can commit from their 2027-28 budgets. Cohort announcements follow in April. Register your interest below and we will contact you when applications open.
           </p>
 
           {status === "sent" ? (
             <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: 12, padding: 28, textAlign: "center" }}>
               <CheckCircle2 size={34} color={GREEN} style={{ margin: "0 auto 12px" }} />
-              <p style={{ fontSize: 17, fontWeight: 800, margin: "0 0 8px" }}>Application received.</p>
+              <p style={{ fontSize: 17, fontWeight: 800, margin: "0 0 8px" }}>Interest registered.</p>
               <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>
-                Check your inbox for a confirmation with key dates. One required step remains: email your signed School Leader Commitment Letter to info@edquityatthemargins.org. Your application is complete once we receive it.
+                Check your inbox for a confirmation with the key dates. We will contact you when applications open in January 2027, ahead of the public announcement. Nothing further is needed from you now.
               </p>
             </div>
           ) : (
@@ -376,7 +376,7 @@ export default function Fellowship() {
                 disabled={status === "sending"}
                 style={{ background: status === "sending" ? "#94a3b8" : GREEN, color: NAVY, padding: "15px 34px", borderRadius: 8, fontWeight: 800, fontSize: 16, border: "none", cursor: status === "sending" ? "wait" : "pointer", width: "100%" }}
               >
-                {status === "sending" ? "Submitting..." : "Submit Application"}
+                {status === "sending" ? "Submitting..." : "Register My Interest"}
               </button>
             </form>
           )}

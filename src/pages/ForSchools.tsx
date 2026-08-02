@@ -131,7 +131,7 @@ export default function ForSchools() {
               <p style={{ fontSize: 15, fontWeight: 800, margin: 0 }}>The EDquity Leader Fellowship</p>
             </div>
             <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.65, margin: "0 0 14px" }}>
-              A selective, year-long program that develops your SPED leader into a Certified IEP Quality Improvement Leader, pairing monthly blind evaluations of your school's own IEPs with data-driven strategy seminars and a leadership impact project. Founding cohort applications close September 4, 2026.
+              A selective, year-long program that develops your SPED leader into a Certified IEP Quality Improvement Leader, pairing monthly blind evaluations of your school's own IEPs with data-driven strategy seminars and a leadership impact project. The founding cohort runs July 2027 through May 2028, with applications opening January 2027.
             </p>
             <Link href="/fellowship" style={{ color: TEAL, fontWeight: 800, fontSize: 14, textDecoration: "none" }}>
               Learn more and apply
