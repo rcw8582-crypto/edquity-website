@@ -217,7 +217,6 @@ export default function Fellowship() {
               "A data-driven professional development plan in December, built from your school's own trend data",
               "Measured, independently scored quality improvement by June",
               "A credentialed Certified IEP Quality Improvement Leader on staff",
-              "Eligibility to license the EDquity scoring platform, which requires a credentialed leader",
             ].map((t) => (
               <div key={t} style={{ display: "flex", gap: 12, alignItems: "flex-start", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, padding: "18px 20px" }}>
                 <CheckCircle2 size={20} color={GREEN} style={{ flexShrink: 0, marginTop: 2 }} />
@@ -250,7 +249,7 @@ export default function Fellowship() {
             <li>Priority for Title I schools, high-poverty charters, and settings serving multilingual families and students of color with disabilities</li>
           </ul>
           <p style={{ fontSize: 14, color: "#64748b", lineHeight: 1.7, margin: 0 }}>
-            The fellowship runs one year per school and is non-renewable, and seats in the founding cohort are limited. The seat fee is non-refundable, and the Certified IEP Quality Improvement Leader credential is conferred only when the fellow completes the full program, including the final impact project. Schools that want continued independent evaluation afterward engage our standard audit service, and schools that want internal evaluation capacity license the platform.
+            The fellowship runs one year per school and is non-renewable, and seats in the founding cohort are limited. The seat fee is non-refundable, and the Certified IEP Quality Improvement Leader credential is conferred only when the fellow completes the full program, including the final impact project. Schools that want continued independent evaluation afterward engage our standard audit service.
           </p>
         </div>
       </section>
