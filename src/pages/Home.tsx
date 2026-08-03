@@ -88,9 +88,16 @@ export default function Home() {
       <section className="rg-hero" style={{ background: "#122C54" }}>
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "clamp(48px,8vw,80px) clamp(20px,6vw,72px)" }}>
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            {/* Says plainly what the organization does, above the headline
+                that says why it matters. A visitor who reads nothing else
+                still learns that the IEP support here is free and who it is
+                for, which is also what an Ad Grants reviewer looks for. */}
+            <p style={{ fontSize: 13, fontWeight: 700, color: "#22C55E", letterSpacing: 2.2, textTransform: "uppercase", margin: "0 0 18px" }}>
+              {isEs ? "Apoyo gratuito del IEP para familias marginadas" : "Free IEP support for marginalized families"}
+            </p>
             <h1 style={{ fontSize: "clamp(38px,5vw,58px)", fontWeight: 900, lineHeight: 1.08, margin: "0 0 28px", color: "#fff", letterSpacing: "-1.5px" }}>
-              {isEs ? <>Su hijo<br />merece<br />un IEP que<br /><span style={{ color: "#22C55E" }}>realmente funcione.</span></> :
-                       <>Your child<br />deserves<br />an IEP that<br /><span style={{ color: "#22C55E" }}>actually works.</span></>}
+              {isEs ? <>Su hijo tiene<br />derecho a una<br /><span style={{ color: "#22C55E" }}>educación significativa.</span></> :
+                       <>Your child has<br />the right to a<br /><span style={{ color: "#22C55E" }}>meaningful education.</span></>}
             </h1>
             <p style={{ fontSize: 19, color: "rgba(255,255,255,0.82)", lineHeight: 1.7, maxWidth: 480, margin: "0 0 16px" }}>
               {isEs
