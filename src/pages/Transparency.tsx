@@ -5,20 +5,15 @@ import PageMeta from "@/components/PageMeta";
 const milestones = [
   { year: "2026", text: "EDquity at the Margins founded by Dr. Reba Clarke-Wedderburn" },
   { year: "2026", text: "Incorporated as a Tennessee charitable corporation" },
-  { year: "2026", text: "Filed for 501(c)(3) tax-exempt status with the IRS (determination pending)" },
+  { year: "2026", text: "Received 501(c)(3) tax-exempt determination from the IRS" },
   { year: "2026", text: "Launched the free IEP Audit service and online intake portal" },
-  { year: "2026", text: "Year 1 goal: serve 50 families at no cost" },
-];
-
-const spending = [
-  { label: "Direct Family Services", pct: 82, color: "#22C55E" },
-  { label: "Community Education", pct: 10, color: "#14B8A6" },
-  { label: "Operations & Admin", pct: 8, color: "#94a3b8" },
+  { year: "2026", text: "Delivered our first parent workshop at Gallatin Public Library" },
+  { year: "2026", text: "First fiscal year goal: 31 families served at no cost" },
 ];
 
 const principles = [
-  "We do not charge families for our services. Both the IEP Audit and the Advocacy Toolkit are free.",
-  "We do not receive funding from school districts or state education agencies. Our only loyalty is to families.",
+  "We do not charge families for anything. Our independent IEP Audit and our parent workshops are free, and our Advocacy Toolkit and My Child's Playbook are free to download.",
+  "We never accept payment from a school district in connection with an individual child's case. Districts that engage us purchase reviews of their own IEP quality across their system, and no family service is ever funded by the district whose documents we review.",
   "We publish our EIN and organizational filings so anyone can verify our nonprofit status.",
   "We will never sell subscriber data or family information to any third party.",
 ];
@@ -49,7 +44,7 @@ export default function Transparency() {
             {[
               { label: "EIN", value: "42-2295582" },
               { label: "SOS Control #", value: "002109529" },
-              { label: "IRS Status", value: "501(c)(3) Pending" },
+              { label: "IRS Status", value: "501(c)(3) Approved" },
               { label: "Founded", value: "2026" },
             ].map((item, i) => (
               <div key={i} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 28px" }}>
@@ -62,31 +57,8 @@ export default function Transparency() {
           <div className="md-grid-split">
             <div>
               <h2 style={{ fontSize: "clamp(22px,2.5vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 32px", letterSpacing: "-0.5px" }}>How We Spend</h2>
-              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                {spending.map((s, i) => (
-                  <motion.div key={i}
-                    initial={{ opacity: 0, x: -16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}>
-                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
-                      <span style={{ fontSize: 14, fontWeight: 600, color: "#475569" }}>{s.label}</span>
-                      <span style={{ fontSize: 15, fontWeight: 800, color: "#122C54" }}>{s.pct}%</span>
-                    </div>
-                    <div style={{ height: 10, background: "#e2e8f0", borderRadius: 999, overflow: "hidden" }}>
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${s.pct}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: i * 0.1 }}
-                        style={{ height: "100%", background: s.color, borderRadius: 999 }}
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              <p style={{ fontSize: 13, color: "#64748b", marginTop: 24, lineHeight: 1.6 }}>
-                Percentages reflect projected Year 1 program allocations. As a newly founded organization, actual spending will be reported annually. Full financial statements will be posted with each annual 990 filing.
+              <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.7, margin: 0 }}>
+                Family services stay free because paid work with schools and systems underwrites them, and because our founder contributes the majority of the professional time the organization runs on without pay. As a newly founded organization, we will publish our full financial statements with each annual 990 filing rather than post projections before we have a year of actual spending to report.
               </p>
               <div style={{ marginTop: 24 }}>
                 <a href="https://apps.irs.gov/app/eos/" target="_blank" rel="noopener noreferrer"
