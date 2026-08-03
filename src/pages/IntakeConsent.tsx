@@ -75,7 +75,7 @@ export default function IntakeConsent() {
           <div className="mt-12 bg-primary text-primary-foreground rounded-2xl p-8">
             <h2 className="text-xl font-bold mb-3">Your IEP Audit is free</h2>
             <p className="text-primary-foreground/80 leading-relaxed">
-              Thank you for completing your intake form. You will receive a confirmation email at the address you provided within 48 hours. Please reply to that confirmation email with your child's IEP document attached. Dr. Clarke-Wedderburn will confirm your IEP Audit appointment at that time.
+              Thank you for completing your intake form. We email a sign-in link to the address you provided, which opens your secure portal with everything you already typed saved. There you answer a few questions about your family, complete a short baseline survey, and upload your child's IEP directly rather than sending it by email. Please upload the document through the portal rather than attaching it to a message.
             </p>
           </div>
 

@@ -4,24 +4,37 @@
  * Receives the Parent Intake Form (including Section 7 consents),
  * validates it, then:
  *
- *   1. Emails info@edquityatthemargins.org with the full intake and a
+ *   1. Registers the family in the EDquity360 portal by posting to its
+ *      /api/public/intake endpoint, which creates the account, the child
+ *      record, the Box folders, and a free audit in pending_upload, then
+ *      emails the family a sign-in link. This replaces the old flow where
+ *      every website intake had to be retyped into the portal by hand.
+ *   2. Emails info@edquityatthemargins.org with the full intake and a
  *      timestamped record of exactly which consents were given. This
  *      email is the durable consent/authorization record — file it.
- *   2. Sends the parent the confirmation the consent page promises,
- *      telling them Dr. Clarke-Wedderburn will confirm the appointment
- *      within 48 hours and to reply with the IEP only after that
- *      confirmation.
+ *
+ * The portal owns the Supabase, Box, and encryption credentials; this
+ * function holds only the shared secret that lets it call the endpoint.
+ *
+ * The portal sends the family their welcome email because it carries the
+ * magic link. When that call or that email fails, this function falls back
+ * to its own acknowledgment so a family is never left with silence, and
+ * says so loudly in the internal email.
  *
  * Consents 1, 2, and 4 are required; consent 3 (research) is optional
  * and must never gate services.
  *
- * Required environment variable:
- *   RESEND_API_KEY  (set in Vercel project settings)
+ * Required environment variables:
+ *   RESEND_API_KEY         (set in Vercel project settings)
+ *   PORTAL_INTAKE_URL      portal endpoint, e.g. https://portal.edquityatthemargins.org/api/public/intake
+ *   PORTAL_INTAKE_SECRET   shared secret matching the portal's WEBSITE_INTAKE_SECRET
  */
 
 import { Resend } from "resend";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const PORTAL_INTAKE_URL = process.env.PORTAL_INTAKE_URL;
+const PORTAL_INTAKE_SECRET = process.env.PORTAL_INTAKE_SECRET;
 const FROM = "EDquity Parent Intake <forms@edquityatthemargins.org>";
 const TO = "info@edquityatthemargins.org";
 
@@ -99,10 +112,11 @@ export default async function handler(req: Request): Promise<Response> {
   const phone = str(body.phone, 60);
   const address = str(body.address, 400);
   const childFirstName = str(body.childFirstName, 100);
-  const childDob = str(body.childDob, 30);
+  const childLastName = str(body.childLastName, 100);
+  const yearOfBirth = str(body.yearOfBirth, 4);
   const childGrade = str(body.childGrade, 40);
   const schoolDistrict = str(body.schoolDistrict, 200);
-  const state = str(body.state, 60);
+  const state = str(body.state, 2).toUpperCase();
   const disabilityCategory = str(body.disabilityCategory, 100);
   const meetingTiming = str(body.meetingTiming, 100);
   const situation = str(body.situation, 8000);
@@ -112,8 +126,11 @@ export default async function handler(req: Request): Promise<Response> {
   const consent3Research = body.consent3Research === true;
   const consent4Communication = body.consent4Communication === true;
 
-  if (!parentName || !email || !childFirstName || !situation) {
+  if (!parentName || !email || !childFirstName || !childLastName || !yearOfBirth || !situation) {
     return Response.json({ error: "Please complete all required fields." }, { status: 400 });
+  }
+  if (!/^\d{4}$/.test(yearOfBirth)) {
+    return Response.json({ error: "Please choose your child's year of birth." }, { status: 400 });
   }
   if (!consent1 || !consent2 || !consent4Communication) {
     return Response.json(
@@ -126,10 +143,87 @@ export default async function handler(req: Request): Promise<Response> {
   const consentLine = (given: boolean, label: string) =>
     row(label, given ? `GIVEN at ${submittedAt}` : "NOT given");
 
+  // ─── Register the family in the portal ──────────────────────
+  // A failure here must not lose the intake: the notification email below
+  // still carries everything, so the submission is recoverable by hand.
+  // What changes is what the parent is told, since the portal is what
+  // sends the sign-in link.
+  let portalResult:
+    | { ok: true; referenceCode: string; existingAccount: boolean; emailSent: boolean }
+    | { ok: false; reason: string } = { ok: false, reason: "Portal registration was not attempted." };
+
+  if (!PORTAL_INTAKE_URL || !PORTAL_INTAKE_SECRET) {
+    console.error("[intake] PORTAL_INTAKE_URL or PORTAL_INTAKE_SECRET not configured");
+    portalResult = { ok: false, reason: "Portal endpoint is not configured on the website project." };
+  } else {
+    try {
+      const portalRes = await fetch(PORTAL_INTAKE_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-edatm-intake-secret": PORTAL_INTAKE_SECRET,
+        },
+        body: JSON.stringify({
+          parentName,
+          parentEmail: email,
+          parentPhone: phone,
+          state,
+          childFirstName,
+          childLastName,
+          yearOfBirth: Number(yearOfBirth),
+          childGrade,
+          disabilityCategory,
+          schoolDistrict,
+          meetingTiming,
+          situation,
+          hearAboutUs,
+          consentResearch: consent3Research,
+        }),
+      });
+      const portalBody = (await portalRes.json().catch(() => ({}))) as Record<string, unknown>;
+      if (portalRes.ok && portalBody.ok === true) {
+        portalResult = {
+          ok: true,
+          referenceCode: String(portalBody.referenceCode ?? ""),
+          existingAccount: portalBody.existingAccount === true,
+          emailSent: portalBody.emailSent === true,
+        };
+      } else {
+        portalResult = {
+          ok: false,
+          reason: `Portal returned ${portalRes.status}: ${String(portalBody.error ?? "no detail")}`,
+        };
+        console.error("[intake] portal registration failed:", portalResult.reason);
+      }
+    } catch (err) {
+      portalResult = { ok: false, reason: `Could not reach the portal: ${String(err)}` };
+      console.error("[intake] portal registration threw:", err);
+    }
+  }
+
+  // The portal's welcome email carries the magic link, so it is the one the
+  // family should get. Fall back to our own only when it did not go out.
+  const needsFallbackAck = !portalResult.ok || !portalResult.emailSent;
+
+  const portalStatusBlock = portalResult.ok
+    ? `<div style="border-left: 4px solid ${portalResult.existingAccount ? "#FBBF24" : "#22C55E"}; background: ${portalResult.existingAccount ? "#fffbeb" : "#f0fdf4"}; padding: 12px 14px; margin: 0 0 18px;">
+        <strong>Portal record created: ${escapeHtml(portalResult.referenceCode)}</strong><br/>
+        ${portalResult.existingAccount
+          ? "This email already had a portal account, so the child was added to it. Check that this is the same family and not a mistyped address before the audit proceeds."
+          : "New family account created."}<br/>
+        Welcome email with sign-in link: ${portalResult.emailSent ? "sent" : "NOT SENT — share portal access from the admin side."}
+      </div>`
+    : `<div style="border-left: 4px solid #ef4444; background: #fef2f2; padding: 12px 14px; margin: 0 0 18px;">
+        <strong>Portal registration FAILED. Nothing was created in the portal.</strong><br/>
+        ${escapeHtml(portalResult.reason)}<br/>
+        Register this family by hand from Admin → Families → Register a family. The parent was told we received the form and will be in touch.
+      </div>`;
+
   const internalHtml = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #122C54; max-width: 680px; margin: 0 auto; padding: 24px;">
       <h2 style="color: #122C54; margin: 0 0 6px; font-size: 18px;">New parent intake: ${escapeHtml(childFirstName)} (${escapeHtml(schoolDistrict || "district not given")})</h2>
       <p style="color: #64748b; font-size: 13px; margin: 0 0 16px;">Submitted ${submittedAt}. This email is the consent and authorization record for this family. Keep it.</p>
+      ${portalStatusBlock}
       <h3 style="font-size: 14px; margin: 16px 0 4px;">Parent</h3>
       <table style="width: 100%; border-collapse: collapse;">
         ${row("Name", parentName)}
@@ -141,7 +235,8 @@ export default async function handler(req: Request): Promise<Response> {
       <h3 style="font-size: 14px; margin: 16px 0 4px;">Child</h3>
       <table style="width: 100%; border-collapse: collapse;">
         ${row("First name", childFirstName)}
-        ${row("Date of birth", childDob || "Not provided")}
+        ${row("Last name", childLastName)}
+        ${row("Year of birth", yearOfBirth)}
         ${row("Grade", childGrade || "Not provided")}
         ${row("School district", schoolDistrict || "Not provided")}
         ${row("State", state || "Not provided")}
@@ -180,6 +275,8 @@ export default async function handler(req: Request): Promise<Response> {
           email,
           phone,
           childFirstName,
+          childLastName,
+          yearOfBirth,
           childGrade,
           schoolDistrict,
           state,
@@ -200,26 +297,34 @@ export default async function handler(req: Request): Promise<Response> {
       );
     }
 
-    const ack = await resend.emails.send({
-      from: FROM,
-      to: email,
-      subject: "We received your intake form, EDquity at the Margins",
-      html: `
-        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #122C54; max-width: 620px; margin: 0 auto; padding: 24px; line-height: 1.65;">
-          <p>Hi ${escapeHtml(parentName)},</p>
-          <p>Thank you for trusting EDquity at the Margins with your child's education. We received your intake form, including your consent and authorization selections.</p>
-          <p>Dr. Clarke-Wedderburn will review your submission and confirm your free IEP Audit appointment by email within 48 hours. <strong>Please wait for that confirmation before sending any documents.</strong> When it arrives, reply to it with your child's IEP attached.</p>
-          <p>Your IEP Audit is free. That is the model, not a promotion.</p>
-          <p>Dr. Reba Clarke-Wedderburn<br />Founder and Executive Director, EDquity at the Margins</p>
-        </div>
-      `,
-      text: `Hi ${parentName}, we received your intake form, including your consent selections. Dr. Clarke-Wedderburn will confirm your free IEP Audit appointment by email within 48 hours. Please wait for that confirmation before sending any documents, then reply to it with your child's IEP attached.`,
-    });
-    if (ack.error) {
-      console.error("[intake] acknowledgment email failed:", ack.error);
+    // Only when the portal's welcome email (which carries the sign-in link)
+    // did not go out. Otherwise the family would get two messages telling
+    // them different things about what happens next.
+    if (needsFallbackAck) {
+      const ack = await resend.emails.send({
+        from: FROM,
+        to: email,
+        subject: "We received your intake form, EDquity at the Margins",
+        html: `
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #122C54; max-width: 620px; margin: 0 auto; padding: 24px; line-height: 1.65;">
+            <p>Hi ${escapeHtml(parentName)},</p>
+            <p>Thank you for trusting EDquity at the Margins with your child's education. We received your intake form, including your consent and authorization selections.</p>
+            <p>Dr. Clarke-Wedderburn will set up your secure portal access and email it to you within 48 hours. <strong>Please wait for that email before sending any documents.</strong> It will carry a sign-in link where you can upload your child's IEP safely.</p>
+            <p>Your IEP Audit is free. That is the model, not a promotion.</p>
+            <p>Dr. Reba Clarke-Wedderburn<br />Founder and Executive Director, EDquity at the Margins</p>
+          </div>
+        `,
+        text: `Hi ${parentName}, we received your intake form, including your consent selections. Dr. Clarke-Wedderburn will set up your secure portal access and email it to you within 48 hours. Please wait for that email before sending any documents.`,
+      });
+      if (ack.error) {
+        console.error("[intake] fallback acknowledgment email failed:", ack.error);
+      }
     }
 
-    return Response.json({ ok: true });
+    return Response.json({
+      ok: true,
+      referenceCode: portalResult.ok ? portalResult.referenceCode : "",
+    });
   } catch (err) {
     console.error("[intake] unexpected error:", err);
     return Response.json(

@@ -5,7 +5,35 @@ import PageMeta from "@/components/PageMeta";
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 
-const US_STATES = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming","Washington D.C."];
+/**
+ * Two-letter codes, because the portal stores profiles.state that way and
+ * uses it to pick the state overlay that drives scoring and report
+ * language. Sending a full state name here would fail validation on the
+ * portal's intake endpoint.
+ */
+const US_STATES: { code: string; name: string }[] = [
+  { code: "AL", name: "Alabama" }, { code: "AK", name: "Alaska" }, { code: "AZ", name: "Arizona" },
+  { code: "AR", name: "Arkansas" }, { code: "CA", name: "California" }, { code: "CO", name: "Colorado" },
+  { code: "CT", name: "Connecticut" }, { code: "DE", name: "Delaware" }, { code: "DC", name: "Washington D.C." },
+  { code: "FL", name: "Florida" }, { code: "GA", name: "Georgia" }, { code: "HI", name: "Hawaii" },
+  { code: "ID", name: "Idaho" }, { code: "IL", name: "Illinois" }, { code: "IN", name: "Indiana" },
+  { code: "IA", name: "Iowa" }, { code: "KS", name: "Kansas" }, { code: "KY", name: "Kentucky" },
+  { code: "LA", name: "Louisiana" }, { code: "ME", name: "Maine" }, { code: "MD", name: "Maryland" },
+  { code: "MA", name: "Massachusetts" }, { code: "MI", name: "Michigan" }, { code: "MN", name: "Minnesota" },
+  { code: "MS", name: "Mississippi" }, { code: "MO", name: "Missouri" }, { code: "MT", name: "Montana" },
+  { code: "NE", name: "Nebraska" }, { code: "NV", name: "Nevada" }, { code: "NH", name: "New Hampshire" },
+  { code: "NJ", name: "New Jersey" }, { code: "NM", name: "New Mexico" }, { code: "NY", name: "New York" },
+  { code: "NC", name: "North Carolina" }, { code: "ND", name: "North Dakota" }, { code: "OH", name: "Ohio" },
+  { code: "OK", name: "Oklahoma" }, { code: "OR", name: "Oregon" }, { code: "PA", name: "Pennsylvania" },
+  { code: "RI", name: "Rhode Island" }, { code: "SC", name: "South Carolina" }, { code: "SD", name: "South Dakota" },
+  { code: "TN", name: "Tennessee" }, { code: "TX", name: "Texas" }, { code: "UT", name: "Utah" },
+  { code: "VT", name: "Vermont" }, { code: "VA", name: "Virginia" }, { code: "WA", name: "Washington" },
+  { code: "WV", name: "West Virginia" }, { code: "WI", name: "Wisconsin" }, { code: "WY", name: "Wyoming" },
+];
+
+const CURRENT_YEAR = new Date().getFullYear();
+/** Matches the portal's year-of-birth range (school age plus a margin). */
+const BIRTH_YEARS = Array.from({ length: 26 }, (_, i) => CURRENT_YEAR - i);
 
 const GRADES = ["Pre-K","Kindergarten","1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","Post-Secondary"];
 
@@ -33,7 +61,8 @@ type FormData = {
   phone: string;
   address: string;
   childFirstName: string;
-  childDob: string;
+  childLastName: string;
+  yearOfBirth: string;
   childGrade: string;
   schoolDistrict: string;
   state: string;
@@ -49,7 +78,7 @@ type FormData = {
 
 const EMPTY: FormData = {
   parentName: "", email: "", phone: "", address: "",
-  childFirstName: "", childDob: "", childGrade: "", schoolDistrict: "", state: "", disabilityCategory: "",
+  childFirstName: "", childLastName: "", yearOfBirth: "", childGrade: "", schoolDistrict: "", state: "", disabilityCategory: "",
   meetingTiming: "", situation: "", hearAboutUs: "",
   consent1: false, consent2: false, consent3Research: false, consent4Communication: false,
 };
@@ -93,12 +122,13 @@ export default function Intake() {
   const [step, setStep] = useState(1);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [referenceCode, setReferenceCode] = useState("");
   const [error, setError] = useState("");
 
   const set = (k: keyof FormData, v: string | boolean) => setForm(f => ({ ...f, [k]: v }));
 
   const step1Valid = form.parentName && form.email && form.phone;
-  const step2Valid = form.childFirstName && form.childDob && form.childGrade && form.schoolDistrict && form.state && form.disabilityCategory;
+  const step2Valid = form.childFirstName && form.childLastName && form.yearOfBirth && form.childGrade && form.schoolDistrict && form.state && form.disabilityCategory;
   const step3Valid = form.meetingTiming && form.situation.length >= 20;
   const step4Valid = form.consent1 && form.consent2 && form.consent4Communication;
 
@@ -112,7 +142,9 @@ export default function Intake() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error("Submission failed");
+      const data = (await res.json().catch(() => ({}))) as { referenceCode?: string; error?: string };
+      if (!res.ok) throw new Error(data.error || "Submission failed");
+      setReferenceCode(data.referenceCode ?? "");
       setSubmitted(true);
     } catch {
       setError("Something went wrong. Please try again or email us directly at info@edquityatthemargins.org.");
@@ -126,12 +158,14 @@ export default function Intake() {
       <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", minHeight: "100vh", background: "#f8fafc" }}>
         <div style={{ maxWidth: 600, margin: "0 auto", padding: "80px 24px", textAlign: "center" }}>
           <CheckCircle size={56} color="#22C55E" style={{ marginBottom: 24 }} />
-          <h1 style={{ fontSize: 32, fontWeight: 900, color: "#122C54", margin: "0 0 16px" }}>Intake form received.</h1>
+          <h1 style={{ fontSize: 32, fontWeight: 900, color: "#122C54", margin: "0 0 16px" }}>Your review is open.</h1>
           <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.7, margin: "0 0 12px" }}>
-            Thank you for trusting EDquity at the Margins with your child's education. Dr. Clarke-Wedderburn will review your submission and confirm your appointment by email within 48 hours.
+            Thank you for trusting EDquity at the Margins with your child's education.
+            {referenceCode ? <> Your reference number is <strong>{referenceCode}</strong>.</> : null} Check your email:
+            we just sent you a sign-in link that picks up exactly where you left off, with everything you typed already saved.
           </p>
           <p style={{ fontSize: 15, color: "#64748b", lineHeight: 1.6, margin: "0 0 36px" }}>
-            Once you receive that confirmation, please reply with your child's IEP document attached. Do not send the document before receiving confirmation.
+            That link takes you through a few questions about your family and a short baseline survey, and then you can upload your child's IEP straight into the secure portal. If the email has not arrived in a few minutes, check your spam folder or write to info@edquityatthemargins.org.
           </p>
           <Link href="/" style={{ background: "#22C55E", color: "#122C54", padding: "14px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
             Back to Home
@@ -154,7 +188,7 @@ export default function Intake() {
             Start your free IEP Audit.
           </h1>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.65)", lineHeight: 1.7, maxWidth: 500, margin: "0 auto" }}>
-            This form takes about 5 minutes to complete, and the IEP Audit is free. Dr. Clarke-Wedderburn will review your submission and respond within 48 hours. Families with an imminent IEP meeting are prioritized.
+            This form takes about 5 minutes to complete, and the IEP Audit is free. When you submit it we email you a sign-in link to your secure portal, where you upload your child's IEP and later read your report. Families with an imminent IEP meeting are prioritized.
           </p>
         </div>
       </section>
@@ -201,30 +235,36 @@ export default function Intake() {
               <div>
                 <h2 style={sectionHead}>Child Information</h2>
                 <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px", lineHeight: 1.6 }}>
-                  For privacy, we only collect your child's first name. All information is handled in accordance with FERPA.
+                  Your child's name is encrypted and stored apart from the review itself, so the document we score carries a code name rather than your child's. We ask for the year of birth only, never the full date. All information is handled in accordance with FERPA.
                 </p>
                 <div className="form-row-2">
                   <Field label="Child's first name" required>
-                    <input style={inputStyle} value={form.childFirstName} onChange={e => set("childFirstName", e.target.value)} placeholder="First name only" required />
+                    <input style={inputStyle} value={form.childFirstName} onChange={e => set("childFirstName", e.target.value)} required />
                   </Field>
-                  <Field label="Date of birth" required>
-                    <input style={inputStyle} type="date" value={form.childDob} onChange={e => set("childDob", e.target.value)} required />
+                  <Field label="Child's last name" required>
+                    <input style={inputStyle} value={form.childLastName} onChange={e => set("childLastName", e.target.value)} required />
                   </Field>
                 </div>
                 <div className="form-row-2">
+                  <Field label="Year of birth" required>
+                    <select style={inputStyle} value={form.yearOfBirth} onChange={e => set("yearOfBirth", e.target.value)} required>
+                      <option value="">Select year</option>
+                      {BIRTH_YEARS.map(y => <option key={y} value={String(y)}>{y}</option>)}
+                    </select>
+                  </Field>
                   <Field label="Current grade" required>
                     <select style={inputStyle} value={form.childGrade} onChange={e => set("childGrade", e.target.value)} required>
                       <option value="">Select grade</option>
                       {GRADES.map(g => <option key={g} value={g}>{g}</option>)}
                     </select>
                   </Field>
-                  <Field label="State" required>
-                    <select style={inputStyle} value={form.state} onChange={e => set("state", e.target.value)} required>
-                      <option value="">Select state</option>
-                      {US_STATES.map(s => <option key={s} value={s}>{s}</option>)}
-                    </select>
-                  </Field>
                 </div>
+                <Field label="State" required>
+                  <select style={inputStyle} value={form.state} onChange={e => set("state", e.target.value)} required>
+                    <option value="">Select state</option>
+                    {US_STATES.map(s => <option key={s.code} value={s.code}>{s.name}</option>)}
+                  </select>
+                </Field>
                 <Field label="School district" required>
                   <input style={inputStyle} value={form.schoolDistrict} onChange={e => set("schoolDistrict", e.target.value)} placeholder="e.g. Nashville Metro Schools" required />
                 </Field>
