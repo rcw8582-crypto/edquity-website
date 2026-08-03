@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { CheckCircle, AlertCircle, ChevronRight, ChevronLeft } from "lucide-react";
+import PageMeta from "@/components/PageMeta";
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -81,6 +82,12 @@ function Field({ label, required, children, hint }: { label: string; required?: 
   );
 }
 
+const META = {
+  title: "Start Your Free IEP Audit",
+  description:
+    "Request your free IEP Audit from EDquity at the Margins. Tell us about your child, upload a redacted IEP, and receive a plain-language written report within 10 business days at no cost.",
+};
+
 export default function Intake() {
   const [form, setForm] = useState<FormData>(EMPTY);
   const [step, setStep] = useState(1);
@@ -138,6 +145,7 @@ export default function Intake() {
 
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", background: "#f8fafc", minHeight: "100vh" }}>
+      <PageMeta {...META} />
       {/* Header */}
       <section style={{ background: "#122C54", padding: "48px 24px" }}>
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>

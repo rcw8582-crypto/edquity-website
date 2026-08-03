@@ -223,7 +223,7 @@ export default function Home() {
                 style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 36, display: "flex", flexDirection: "column", gap: 16 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                   <div style={{ width: 52, height: 52, borderRadius: 12, background: "#f8fafc", display: "flex", alignItems: "center", justifyContent: "center" }}>{service.icon}</div>
-                  <span style={{ fontSize: 11, fontWeight: 700, color: service.tagColor, background: `${service.tagColor}18`, padding: "4px 12px", borderRadius: 999, letterSpacing: 0.5 }}>{service.tag}</span>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: service.tagColor, background: `${service.tagColor}18`, padding: "4px 12px", borderRadius: 999, letterSpacing: 0.5 }}>{service.tag}</span>
                 </div>
                 <div>
                   <h3 style={{ fontSize: 20, fontWeight: 800, margin: "0 0 6px", color: "#122C54" }}>{service.title}</h3>

@@ -158,7 +158,7 @@ export default function Resources() {
                   <div style={{ width: 52, height: 52, borderRadius: 12, background: "#f8fafc", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     {tool.icon}
                   </div>
-                  <span style={{ fontSize: 11, fontWeight: 700, color: tool.badgeColor, background: `${tool.badgeColor}18`, padding: "4px 12px", borderRadius: 999 }}>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: tool.badgeColor, background: `${tool.badgeColor}18`, padding: "4px 12px", borderRadius: 999 }}>
                     {tool.badge}
                   </span>
                 </div>
@@ -199,7 +199,7 @@ export default function Resources() {
                   <div style={{ width: 52, height: 52, borderRadius: 12, background: "#f8fafc", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     {guide.icon}
                   </div>
-                  <span style={{ fontSize: 11, fontWeight: 700, color: guide.badgeColor, background: `${guide.badgeColor}18`, padding: "4px 12px", borderRadius: 999 }}>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: guide.badgeColor, background: `${guide.badgeColor}18`, padding: "4px 12px", borderRadius: 999 }}>
                     {guide.badge}
                   </span>
                 </div>

@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+/* Outfit is loaded by the preconnected <link> in index.html, which covers
+   weights 300-900. Importing it here too cost a second, serial round trip:
+   the browser could not discover the font request until this stylesheet had
+   already downloaded. */
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -364,6 +367,18 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+  }
+
+  /* Prerendered pages ship the scroll-reveal sections at opacity:0, because
+     framer-motion renders its initial state on the server and only animates
+     them in once the page hydrates. Where scripting is unavailable that reveal
+     never fires, so reveal the content instead of leaving half the page blank.
+     Scoped to (scripting: none), this can never affect a normal visitor. */
+  @media (scripting: none) {
+    #root [style*="opacity:0"] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
   }
 
   /* Honor prefers-reduced-motion across all animations */

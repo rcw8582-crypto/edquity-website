@@ -126,7 +126,7 @@ export default function Events() {
                             }}
                           >
                             <div style={{ flex: "0 0 56px", textAlign: "center", background: "#122C54", color: "#fff", borderRadius: 10, padding: "8px 0" }}>
-                              <span style={{ display: "block", fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: "#22C55E" }}>
+                              <span style={{ display: "block", fontSize: 12, letterSpacing: 1.5, fontWeight: 800, color: "#22C55E" }}>
                                 {new Date(`${event.start_local}:00`).toLocaleDateString("en-US", { weekday: "short" }).toUpperCase()}
                               </span>
                               <span style={{ display: "block", fontSize: 20, fontWeight: 900, lineHeight: 1.15 }}>

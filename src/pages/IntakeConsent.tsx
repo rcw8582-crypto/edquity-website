@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { ArrowLeft, CheckSquare } from "lucide-react";
+import PageMeta from "@/components/PageMeta";
 
 const consents = [
   {
@@ -29,6 +30,10 @@ const consents = [
 export default function IntakeConsent() {
   return (
     <div className="pt-20">
+      <PageMeta
+        title="Parent Intake Consent and Authorization"
+        description="The full text of every consent in the EDquity at the Margins parent intake form, covering guardian authorization, FERPA-protected document review, communication, and optional research use."
+      />
       <section className="bg-muted/50 py-12">
         <div className="container mx-auto px-4 md:px-6">
           <Link href="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent mb-6 transition-colors" data-testid="back-home">

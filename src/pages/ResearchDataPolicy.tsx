@@ -1,9 +1,14 @@
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
+import PageMeta from "@/components/PageMeta";
 
 export default function ResearchDataPolicy() {
   return (
     <div className="pt-20">
+      <PageMeta
+        title="Research Data Use Policy"
+        description="How EDquity at the Margins uses de-identified service data for program evaluation, impact reporting, case studies, and peer-reviewed research, and how families withdraw that consent."
+      />
       <section className="bg-muted/50 py-12">
         <div className="container mx-auto px-4 md:px-6">
           <Link href="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent mb-6 transition-colors" data-testid="back-home">

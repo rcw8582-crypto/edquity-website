@@ -105,7 +105,16 @@ function Router() {
   );
 }
 
-function App() {
+interface AppProps {
+  /**
+   * Route to render when the app runs outside a browser. The prerender pass
+   * (scripts/prerender.mjs) passes one path per page so wouter resolves the
+   * right route without a window.location to read.
+   */
+  ssrPath?: string;
+}
+
+function App({ ssrPath }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -113,7 +122,7 @@ function App() {
             OS/browser "reduce motion" setting (WCAG 2.1 SC 2.3.3). */}
         <MotionConfig reducedMotion="user">
           <LanguageProvider>
-            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")} ssrPath={ssrPath}>
               <Router />
             </WouterRouter>
           </LanguageProvider>

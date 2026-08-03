@@ -10,7 +10,7 @@ interface LawBoxProps { citation: string; title: string; text: string; }
 function LawBox({ citation, title, text }: LawBoxProps) {
   return (
     <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 12, padding: 24 }}>
-      <p style={{ fontSize: 11, fontWeight: 700, color: "#0F766E", letterSpacing: 1.5, textTransform: "uppercase", margin: "0 0 6px" }}>{citation}</p>
+      <p style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1.5, textTransform: "uppercase", margin: "0 0 6px" }}>{citation}</p>
       <p style={{ fontSize: 15, fontWeight: 700, color: "#122C54", margin: "0 0 8px" }}>{title}</p>
       <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.65, margin: 0 }}>{text}</p>
     </div>

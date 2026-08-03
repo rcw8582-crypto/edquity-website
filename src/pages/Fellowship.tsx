@@ -10,7 +10,7 @@ interface FactProps { label: string; value: string; }
 function Fact({ label, value }: FactProps) {
   return (
     <div style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: 12, padding: "18px 20px", textAlign: "center" }}>
-      <p style={{ fontSize: 10.5, fontWeight: 600, color: GREEN, letterSpacing: 1.2, textTransform: "uppercase", margin: "0 0 8px" }}>{label}</p>
+      <p style={{ fontSize: 12, fontWeight: 600, color: GREEN, letterSpacing: 1.2, textTransform: "uppercase", margin: "0 0 8px" }}>{label}</p>
       <p style={{ fontSize: 16, fontWeight: 800, color: "#fff", margin: 0, lineHeight: 1.35 }}>{value}</p>
     </div>
   );

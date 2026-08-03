@@ -71,7 +71,7 @@ export default function EventsCalendar({ events }: { events: EdatmEvent[] }) {
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)" }}>
         {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map((d) => (
-          <div key={d} style={{ textAlign: "center", fontSize: 11, fontWeight: 700, color: "#94a3b8", padding: "8px 0", borderBottom: "1px solid #e2e8f0" }}>
+          <div key={d} style={{ textAlign: "center", fontSize: 12, fontWeight: 700, color: "#94a3b8", padding: "8px 0", borderBottom: "1px solid #e2e8f0" }}>
             {d}
           </div>
         ))}
@@ -145,7 +145,7 @@ export default function EventsCalendar({ events }: { events: EdatmEvent[] }) {
                     // with two lines each, so every cell stays 100px tall.
                     WebkitLineClamp: shown.length === 1 ? 4 : 2,
                     overflow: "hidden",
-                    fontSize: 10.5,
+                    fontSize: 12,
                     fontWeight: 700,
                     lineHeight: 1.25,
                     padding: "2px 6px",
@@ -160,7 +160,7 @@ export default function EventsCalendar({ events }: { events: EdatmEvent[] }) {
                 </span>
               ))}
               {extra > 0 && (
-                <span style={{ fontSize: 10, fontWeight: 700, color: "#64748b" }}>
+                <span style={{ fontSize: 12, fontWeight: 700, color: "#64748b" }}>
                   +{extra} more
                 </span>
               )}

@@ -3,10 +3,15 @@ import { ExternalLink, Mail, Phone, Calendar } from "lucide-react";
 
 const PORTAL_URL = "https://portal.edquityatthemargins.org/";
 import { BOOKING_URL } from "@/lib/booking";
+import PageMeta from "@/components/PageMeta";
 
 export default function ClientPortal() {
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", background: "#fff", color: "#122C54", minHeight: "100vh" }}>
+      <PageMeta
+        title="Client Portal"
+        description="Sign in to the secure EDquity360 portal to access your documents, session notes, and IEP Audit reports, or reach Dr. Clarke-Wedderburn for help getting in."
+      />
 
       {/* Header */}
       <section className="sp" style={{ background: "#122C54" }}>

@@ -48,7 +48,7 @@ export default function Transparency() {
               { label: "Founded", value: "2026" },
             ].map((item, i) => (
               <div key={i} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 28px" }}>
-                <p style={{ fontSize: 11, fontWeight: 700, color: "#15803D", textTransform: "uppercase", letterSpacing: 1.5, margin: "0 0 8px" }}>{item.label}</p>
+                <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", textTransform: "uppercase", letterSpacing: 1.5, margin: "0 0 8px" }}>{item.label}</p>
                 <p style={{ fontSize: 22, fontWeight: 900, color: "#122C54", margin: 0, fontFamily: "monospace" }}>{item.value}</p>
               </div>
             ))}
@@ -80,7 +80,7 @@ export default function Transparency() {
                     style={{ display: "flex", gap: 16, paddingBottom: i < milestones.length - 1 ? 24 : 0, position: "relative" }}>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}>
                       <div style={{ width: 36, height: 36, borderRadius: "50%", background: "#122C54", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <span style={{ fontSize: 11, fontWeight: 900, color: "#22C55E" }}>{m.year}</span>
+                        <span style={{ fontSize: 12, fontWeight: 900, color: "#22C55E" }}>{m.year}</span>
                       </div>
                       {i < milestones.length - 1 && (
                         <div style={{ width: 2, flex: 1, background: "#e2e8f0", marginTop: 6 }} />

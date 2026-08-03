@@ -42,7 +42,7 @@ function NewsletterSignup() {
 
   return (
     <div style={{ background: "#0d1f3c", borderRadius: 20, padding: "clamp(32px,5vw,48px) clamp(20px,5vw,40px)", marginBottom: 56, textAlign: "center" }}>
-      <p style={{ fontSize: 11, fontWeight: 700, color: "#22C55E", letterSpacing: 2.5, textTransform: "uppercase", margin: "0 0 14px" }}>Stay Connected</p>
+      <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2.5, textTransform: "uppercase", margin: "0 0 14px" }}>Stay Connected</p>
       <h3 style={{ fontSize: "clamp(22px,2.5vw,30px)", fontWeight: 900, color: "#fff", margin: "0 auto 10px", lineHeight: 1.2, maxWidth: 520 }}>
         IEP updates, resources, and events, straight to your inbox.
       </h3>
