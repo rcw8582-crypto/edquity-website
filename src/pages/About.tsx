@@ -17,6 +17,12 @@ export default function About() {
             <p className="text-xl text-muted-foreground leading-relaxed">
               We pursue an education system in which marginalized families feel empowered and prepared to advocate for their child's federally guaranteed rights.
             </p>
+            <p className="mt-6 text-base text-muted-foreground leading-relaxed">
+              EDquity at the Margins is a Tennessee nonprofit corporation and an IRS-recognized{" "}
+              <strong className="text-primary">501(c)(3) public charity</strong>, EIN 42-2295582. Every
+              service we provide to families is free, funded by donations and by our paid work with
+              schools and school systems.
+            </p>
           </div>
         </div>
       </section>
