@@ -238,7 +238,15 @@ export default function Home() {
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: 48 }}>
-            <p style={{ fontSize: 15, color: "#64748b", margin: "0 0 20px" }}>{isEs ? "Ambos servicios son completamente gratuitos. El acceso es el objetivo." : "Both services are completely free. Access is the point."}</p>
+            <p style={{ fontSize: 15, color: "#64748b", margin: "0 0 12px" }}>{isEs ? "Ambos servicios son completamente gratuitos. El acceso es el objetivo." : "Both services are completely free. Access is the point."}</p>
+            {/* Nonprofit status stated on the landing page, not only in the
+                footer and on inner pages. Google Ad Grants asks that a
+                nonprofit's status be prominently displayed, and this is the
+                page a reviewer lands on. */}
+            <p style={{ fontSize: 15, color: "#475569", margin: "0 auto 24px", maxWidth: 620, lineHeight: 1.6 }}>
+              EDquity at the Margins is a <strong style={{ color: "#122C54" }}>501(c)(3) nonprofit organization</strong> (EIN 42-2295582).
+              Our work is funded by donations and by paid engagements with schools, never by the families we serve.
+            </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/intake"
                 style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "14px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16 }}>
