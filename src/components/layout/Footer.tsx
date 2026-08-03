@@ -191,9 +191,14 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-primary-foreground/10 text-sm text-primary-foreground/60 space-y-2">
+          {/* Nonprofit status is set brighter than the rest of the legal row
+              on purpose: it appears on every page and is the sitewide answer
+              to the Ad Grants requirement that status be prominently shown. */}
+          <p className="text-center text-base font-semibold text-primary-foreground/90">
+            EDquity at the Margins is a registered 501(c)(3) nonprofit organization · EIN 42-2295582
+          </p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-1">
             <span>&copy; {currentYear} EDquity at the Margins. All rights reserved.</span>
-            <span>501(c)(3) Public Charity · EIN 42-2295582</span>
             <span>TN SOS Control #002109529</span>
           </div>
           <div className="text-center text-xs text-primary-foreground/50 pt-1">
