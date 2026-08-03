@@ -161,11 +161,11 @@ export default function Fellowship() {
           <p style={{ fontSize: 12, fontWeight: 700, color: TEAL, letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px", textAlign: "center" }}>How It Works</p>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, textAlign: "center", margin: "0 0 14px" }}>The monthly diagnostic loop</h2>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.7, textAlign: "center", maxWidth: 760, margin: "0 auto 34px" }}>
-            Every month from September 2027 through May 2028, your school submits five redacted IEPs and EDquity blind-evaluates them against our proprietary 38-condition master rubric. That is 45 independent evaluations across the year, a diagnostic service valued at $29,385 on our standard rate card, donated in full to fellowship schools.
+            Every month from September 2027 through May 2028, your school submits five redacted IEPs and EDquity blind-evaluates them against our proprietary 40-condition master rubric. That is 45 independent evaluations across the year, a diagnostic service valued at $29,385 on our standard rate card, donated in full to fellowship schools.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20, marginBottom: 40 }}>
             <Step n="1" title="Blind submission" text="By the fifth business day of each month, your school submits 5 redacted IEPs following our secure, FERPA-protected Redaction Guidance." />
-            <Step n="2" title="Objective evaluation" text="EDquity blind-evaluates the documents against the 38-condition master rubric to surface systemic, school-wide trends." />
+            <Step n="2" title="Objective evaluation" text="EDquity blind-evaluates the documents against the 40-condition master rubric to surface systemic, school-wide trends." />
             <Step n="3" title="Monthly strategy seminar" text="After the reports go out, the cohort meets virtually to work the trends and data together as leaders, turning each month's findings into strategy for their buildings." />
           </div>
           <div className="rg-2" style={{ maxWidth: 900, margin: "0 auto" }}>
