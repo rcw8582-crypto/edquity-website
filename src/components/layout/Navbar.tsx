@@ -48,8 +48,8 @@ export default function Navbar() {
         isScrolled ? "bg-white shadow-md py-5" : "bg-white/95 backdrop-blur-sm py-5"
       }`}
     >
-      <div className="site-gutter flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group" data-testid="nav-logo" aria-label="EDquity at the Margins, home">
+      <div className="site-gutter flex items-center justify-between gap-8">
+          <Link href="/" className="flex shrink-0 items-center gap-2 group" data-testid="nav-logo" aria-label="EDquity at the Margins, home">
             <img
               src="/images/logo-dark.png"
               alt=""
@@ -58,7 +58,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden xl:flex items-center gap-6">
+          <div className="hidden 2xl:flex items-center gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -94,7 +94,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="xl:hidden text-primary"
+            className="2xl:hidden text-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             data-testid="mobile-menu-toggle"
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -107,7 +107,7 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div id="mobile-nav" className="xl:hidden absolute top-full left-0 right-0 bg-white border-t border-border shadow-lg animate-in slide-in-from-top-2">
+        <div id="mobile-nav" className="2xl:hidden absolute top-full left-0 right-0 bg-white border-t border-border shadow-lg animate-in slide-in-from-top-2">
           <div className="flex flex-col py-4 px-6 space-y-4">
             {navLinks.map((link) => (
               <Link
