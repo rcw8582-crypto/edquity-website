@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { CheckCircle2, FileText, BookOpen, ChevronDown, ChevronUp } from "lucide-react";
+import { CheckCircle2, FileText, BookOpen, Users, ChevronDown, ChevronUp } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
 import { BOOKING_URL } from "@/lib/booking";
@@ -23,8 +23,8 @@ export default function Services() {
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: "#122C54", background: "#fff" }}>
       <PageMeta
-        title="Free IEP Audit and Advocacy Toolkit for Families"
-        description="Two free services for families of children with disabilities: an independent IEP Audit and a downloadable Advocacy Toolkit. Delivered virtually nationwide by Dr. Reba Clarke-Wedderburn."
+        title="Free IEP Audit and Parent Workshops for Families"
+        description="Two free services for families of children with disabilities: an independent IEP Audit and parent workshops. Delivered virtually nationwide by Dr. Reba Clarke-Wedderburn."
       />
 
       {/* Hero */}
@@ -150,26 +150,47 @@ export default function Services() {
             </div>
           </motion.div>
 
-          {/* Advocacy Toolkit */}
+          {/* Parent Workshops */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 20, padding: "clamp(28px,4vw,44px)" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(20,184,166,0.12)", borderRadius: 8, padding: "6px 14px", marginBottom: 20 }}>
-              <BookOpen size={16} color="#14B8A6" />
+              <Users size={16} color="#14B8A6" />
               <span style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1, textTransform: "uppercase" }}>Free Service</span>
             </div>
-            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>Advocacy Toolkit</h3>
-            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 20px" }}>Free</p>
+            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>Parent Workshops</h3>
+            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free</p>
+            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>One in-person session and one webinar every month</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              Every family deserves the tools to prepare on their own terms. The Advocacy Toolkit is our library of free, downloadable resources: plain-language guides to the IDEA, an IEP meeting notecatcher, question checklists, template letters, and tools that help you read your child's IEP like an expert and walk into any meeting ready. Download whatever you need, whenever you need it, at no cost.
+              Reading your child's IEP is one skill, and walking into the meeting knowing what to ask for is another. Our workshops teach the second one. Dr. Clarke-Wedderburn covers what the law entitles your child to, how to read the document the school hands you, what to say when services are cut, and how to put a request in writing so the district has to answer it. Every session is plain language, no cost, and open to any family.
+            </p>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+              <Link href="/events"
+                style={{ display: "inline-block", background: "#14B8A6", color: "#fff", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
+                See Upcoming Workshops
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Free resources, not services */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 20, padding: "clamp(24px,3vw,36px)", marginTop: 32 }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(251,191,36,0.14)", borderRadius: 8, padding: "6px 14px", marginBottom: 18 }}>
+              <BookOpen size={16} color="#B45309" />
+              <span style={{ fontSize: 12, fontWeight: 700, color: "#B45309", letterSpacing: 1, textTransform: "uppercase" }}>Free Resources</span>
+            </div>
+            <h3 style={{ fontSize: "clamp(20px,2.2vw,26px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px", letterSpacing: "-0.5px" }}>Take these with you, no appointment needed</h3>
+            <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
+              Alongside our two services, we publish tools you can download and use on your own: the Advocacy Toolkit with plain-language IDEA guides, meeting notecatchers, question checklists, and template letters; My Child's Playbook for bringing your child's own voice into the meeting; and the IEP Goal Checker for testing whether a goal is actually measurable.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <Link href="/resources"
-                style={{ display: "inline-block", background: "#14B8A6", color: "#fff", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
+                style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "13px 26px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15, border: "2px solid #e2e8f0" }}>
                 Explore the Advocacy Toolkit
               </Link>
               <Link href="/tools/iep-goal-checker"
-                style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "14px 28px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid #e2e8f0" }}>
+                style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "13px 26px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15, border: "2px solid #e2e8f0" }}>
                 Try the IEP Goal Checker
               </Link>
             </div>
