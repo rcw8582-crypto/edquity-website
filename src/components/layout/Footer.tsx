@@ -120,46 +120,46 @@ export default function Footer() {
               We translate institutional special education practices into plain language so families can engage with schools as true, empowered partners.
             </p>
             <div className="flex gap-4">
-              <a href="https://www.facebook.com/EDQATM" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on Facebook" className="inline-flex items-center justify-center p-1 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-facebook"><Facebook size={20} aria-hidden="true" /></a>
-              <a href="https://x.com/edquityatm" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on X" className="inline-flex items-center justify-center p-1 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-twitter"><Twitter size={20} aria-hidden="true" /></a>
-              <a href="https://www.instagram.com/edqatm/" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on Instagram" className="inline-flex items-center justify-center p-1 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-instagram"><Instagram size={20} aria-hidden="true" /></a>
-              <a href="https://www.linkedin.com/company/edqatm/" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on LinkedIn" className="inline-flex items-center justify-center p-1 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-linkedin"><Linkedin size={20} aria-hidden="true" /></a>
+              <a href="https://www.facebook.com/EDQATM" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on Facebook" className="inline-flex items-center justify-center p-3 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-facebook"><Facebook size={20} aria-hidden="true" /></a>
+              <a href="https://x.com/edquityatm" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on X" className="inline-flex items-center justify-center p-3 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-twitter"><Twitter size={20} aria-hidden="true" /></a>
+              <a href="https://www.instagram.com/edqatm/" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on Instagram" className="inline-flex items-center justify-center p-3 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-instagram"><Instagram size={20} aria-hidden="true" /></a>
+              <a href="https://www.linkedin.com/company/edqatm/" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on LinkedIn" className="inline-flex items-center justify-center p-3 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-linkedin"><Linkedin size={20} aria-hidden="true" /></a>
             </div>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-6">Navigate</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/" className="text-primary-foreground/80 hover:text-accent transition-colors">Home</Link></li>
-              <li><Link href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link href="/services" className="text-primary-foreground/80 hover:text-accent transition-colors">Free Family Services</Link></li>
-              <li><Link href="/news" className="text-primary-foreground/80 hover:text-accent transition-colors">News & Updates</Link></li>
-              <li><Link href="/donate" className="text-primary-foreground/80 hover:text-accent transition-colors">Donate</Link></li>
-              <li><Link href="/volunteer" className="text-primary-foreground/80 hover:text-accent transition-colors">Volunteer</Link></li>
-              <li><Link href="/resources" className="text-primary-foreground/80 hover:text-accent transition-colors">Free Resources &amp; Tools</Link></li>
-              <li><Link href="/events" className="text-primary-foreground/80 hover:text-accent transition-colors">Events</Link></li>
+              <li><Link href="/" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Home</Link></li>
+              <li><Link href="/about" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
+              <li><Link href="/services" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Free Family Services</Link></li>
+              <li><Link href="/news" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">News & Updates</Link></li>
+              <li><Link href="/donate" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Donate</Link></li>
+              <li><Link href="/volunteer" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Volunteer</Link></li>
+              <li><Link href="/resources" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Free Resources &amp; Tools</Link></li>
+              <li><Link href="/events" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Events</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-6">Organization</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/transparency" className="text-primary-foreground/80 hover:text-accent transition-colors">Transparency</Link></li>
-              <li><Link href="/funders" className="text-primary-foreground/80 hover:text-accent transition-colors">For Funders</Link></li>
-              <li><Link href="/press" className="text-primary-foreground/80 hover:text-accent transition-colors">Press & Media</Link></li>
-              <li><Link href="/client-portal" className="text-primary-foreground/80 hover:text-accent transition-colors">EDquity360 Portal</Link></li>
+              <li><Link href="/transparency" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Transparency</Link></li>
+              <li><Link href="/funders" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">For Funders</Link></li>
+              <li><Link href="/press" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Press & Media</Link></li>
+              <li><Link href="/client-portal" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">EDquity360 Portal</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-6">Legal</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/privacy-policy" className="text-primary-foreground/80 hover:text-accent transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms-of-service" className="text-primary-foreground/80 hover:text-accent transition-colors">Terms of Service</Link></li>
-              <li><Link href="/ferpa-compliance" className="text-primary-foreground/80 hover:text-accent transition-colors">FERPA Compliance</Link></li>
-              <li><Link href="/research-data-policy" className="text-primary-foreground/80 hover:text-accent transition-colors">Research Data Use</Link></li>
-              <li><Link href="/intake-consent" className="text-primary-foreground/80 hover:text-accent transition-colors">Intake Consent</Link></li>
-              <li><Link href="/accessibility" className="text-primary-foreground/80 hover:text-accent transition-colors">Accessibility</Link></li>
+              <li><Link href="/privacy-policy" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms-of-service" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Terms of Service</Link></li>
+              <li><Link href="/ferpa-compliance" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">FERPA Compliance</Link></li>
+              <li><Link href="/research-data-policy" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Research Data Use</Link></li>
+              <li><Link href="/intake-consent" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Intake Consent</Link></li>
+              <li><Link href="/accessibility" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Accessibility</Link></li>
             </ul>
           </div>
 
@@ -172,16 +172,16 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-primary-foreground/80">
                 <Phone size={20} className="shrink-0 text-accent" />
-                <a href="tel:+17868106178" className="hover:text-accent transition-colors">(786) 810-6178</a>
+                <a href="tel:+17868106178" className="inline-block py-2 hover:text-accent transition-colors">(786) 810-6178</a>
               </li>
               <li className="flex items-center gap-3 text-primary-foreground/80">
                 <Mail size={20} className="shrink-0 text-accent" />
-                <a href="mailto:info@edquityatthemargins.org" className="hover:text-accent transition-colors">info@edquityatthemargins.org</a>
+                <a href="mailto:info@edquityatthemargins.org" className="inline-block py-2 hover:text-accent transition-colors">info@edquityatthemargins.org</a>
               </li>
             </ul>
             <div className="mt-6">
               <Link href="/contact" data-testid="footer-cta-contact">
-                <Button variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-primary-foreground transition-colors">
+                <Button variant="outline" className="w-full min-h-11 border-accent text-accent hover:bg-accent hover:text-primary-foreground transition-colors">
                   Contact Us
                 </Button>
               </Link>
@@ -200,15 +200,15 @@ export default function Footer() {
             Contributions are tax-deductible to the extent allowed by law.
           </div>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
-            <Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
+            <Link href="/privacy-policy" className="inline-block py-2 hover:text-accent transition-colors">Privacy Policy</Link>
             <span>·</span>
-            <Link href="/terms-of-service" className="hover:text-accent transition-colors">Terms of Service</Link>
+            <Link href="/terms-of-service" className="inline-block py-2 hover:text-accent transition-colors">Terms of Service</Link>
             <span>·</span>
-            <Link href="/ferpa-compliance" className="hover:text-accent transition-colors">FERPA Compliance</Link>
+            <Link href="/ferpa-compliance" className="inline-block py-2 hover:text-accent transition-colors">FERPA Compliance</Link>
             <span>·</span>
-            <Link href="/transparency" className="hover:text-accent transition-colors">Transparency</Link>
+            <Link href="/transparency" className="inline-block py-2 hover:text-accent transition-colors">Transparency</Link>
             <span>·</span>
-            <Link href="/intake-consent" className="hover:text-accent transition-colors">Intake Consent</Link>
+            <Link href="/intake-consent" className="inline-block py-2 hover:text-accent transition-colors">Intake Consent</Link>
           </div>
         </div>
       </div>

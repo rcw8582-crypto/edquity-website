@@ -94,7 +94,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="2xl:hidden text-primary"
+            className="2xl:hidden inline-flex items-center justify-center min-h-11 min-w-11 -mr-2 text-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             data-testid="mobile-menu-toggle"
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}

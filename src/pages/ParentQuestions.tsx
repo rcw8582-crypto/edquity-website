@@ -2,6 +2,7 @@ import { useState, FormEvent } from "react";
 import { Link } from "wouter";
 import { CheckCircle } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
+import { trackQuestionsSubmitted } from "@/lib/analytics";
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -64,6 +65,7 @@ export default function ParentQuestions() {
         setErrorMsg(typeof json.error === "string" ? json.error : "Something went wrong. Please email info@edquityatthemargins.org.");
         return;
       }
+      trackQuestionsSubmitted();
       setStatus("sent");
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {

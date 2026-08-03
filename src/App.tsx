@@ -7,6 +7,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Layout from "@/components/layout/Layout";
+import { BOOKING_URL } from "@/lib/booking";
+import { trackBookingClick } from "@/lib/analytics";
 
 // Home stays eager-loaded since it is the most common entry point
 // and lazy-loading it would delay the first paint for first-time visitors.
@@ -54,6 +56,28 @@ function ScrollToTop() {
   return null;
 }
 
+/**
+ * Counts clicks on the booking link wherever it appears.
+ *
+ * Booking happens on Microsoft Bookings, off our domain, so this click is
+ * the last thing we can observe. One delegated listener beats editing the
+ * six pages that link to it, and it cannot be forgotten when a seventh
+ * link is added, since it matches on the shared BOOKING_URL constant.
+ */
+function TrackBookingClicks() {
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      const anchor = (e.target as HTMLElement | null)?.closest?.("a");
+      if (!anchor || anchor.getAttribute("href") !== BOOKING_URL) return;
+      trackBookingClick(window.location.pathname);
+    };
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
+  }, []);
+
+  return null;
+}
+
 function RouteFallback() {
   return (
     <div className="min-h-[60vh] flex items-center justify-center" role="status" aria-live="polite">
@@ -67,6 +91,7 @@ function Router() {
   return (
     <Layout>
       <ScrollToTop />
+      <TrackBookingClicks />
       <Suspense fallback={<RouteFallback />}>
         <Switch>
           <Route path="/" component={Home} />

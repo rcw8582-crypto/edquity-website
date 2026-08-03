@@ -2,6 +2,7 @@ import { useState, FormEvent } from "react";
 import { Link } from "wouter";
 import { CheckCircle2, FileSearch, GraduationCap, Users } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
+import { trackInquirySubmitted } from "@/lib/analytics";
 
 const NAVY = "#122C54";
 const TEAL = "#14B8A6";
@@ -47,6 +48,7 @@ export default function ForSchools() {
         setErrorMsg(typeof json.error === "string" ? json.error : "Something went wrong. Please email info@edquityatthemargins.org.");
         return;
       }
+      trackInquirySubmitted("consulting");
       setStatus("sent");
       form.reset();
     } catch {

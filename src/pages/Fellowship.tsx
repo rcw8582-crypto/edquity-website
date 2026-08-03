@@ -1,6 +1,7 @@
 import { useState, FormEvent } from "react";
 import { CheckCircle2, Download, CalendarDays, ShieldCheck } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
+import { trackInquirySubmitted } from "@/lib/analytics";
 
 const NAVY = "#122C54";
 const TEAL = "#14B8A6";
@@ -91,6 +92,7 @@ export default function Fellowship() {
         setErrorMsg(typeof json.error === "string" ? json.error : "Something went wrong. Please email info@edquityatthemargins.org.");
         return;
       }
+      trackInquirySubmitted("fellowship");
       setStatus("sent");
       form.reset();
       setNeeds([]);

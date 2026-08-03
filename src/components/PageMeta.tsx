@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 import { collectHead } from "@/lib/head";
+import { trackPageview } from "@/lib/analytics";
 
 interface PageMetaProps {
   title: string;
@@ -61,10 +62,15 @@ export default function PageMeta({ title, description }: PageMetaProps) {
     }
     link.setAttribute("href", canonical);
 
+    // After the title is set, so GA4 records this page rather than the
+    // previous one. The first call is swallowed inside trackPageview,
+    // because index.html already counted the initial load.
+    trackPageview(location);
+
     return () => {
       document.title = SITE;
     };
-  }, [fullTitle, description, canonical]);
+  }, [fullTitle, description, canonical, location]);
 
   return null;
 }

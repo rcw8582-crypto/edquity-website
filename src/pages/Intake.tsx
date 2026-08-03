@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { CheckCircle, AlertCircle, ChevronRight, ChevronLeft } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
+import { trackIntakeSubmitted } from "@/lib/analytics";
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -144,6 +145,7 @@ export default function Intake() {
       });
       const data = (await res.json().catch(() => ({}))) as { referenceCode?: string; error?: string };
       if (!res.ok) throw new Error(data.error || "Submission failed");
+      trackIntakeSubmitted(data.referenceCode);
       setReferenceCode(data.referenceCode ?? "");
       setSubmitted(true);
     } catch {
