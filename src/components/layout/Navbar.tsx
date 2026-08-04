@@ -38,7 +38,6 @@ export default function Navbar() {
     { href: "/events", label: "Events" },
     { href: "/about", label: "About" },
     { href: "/news", label: "News" },
-    { href: "/donate", label: "Donate" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -46,6 +45,7 @@ export default function Navbar() {
   const mobileLinks = [
     { href: "/", label: "Home" },
     ...navLinks,
+    { href: "/donate", label: "Donate" },
     { href: "/volunteer", label: "Get Involved" },
     { href: "/client-portal", label: "EDquity360 Portal" },
   ];
@@ -83,6 +83,18 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Giving is its own visible action rather than one more text link
+                in the row, so the path to support the work is obvious without
+                competing with the primary family-facing call. */}
+            <Link href="/donate" data-testid="nav-cta-donate">
+              <Button
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-white font-semibold rounded-full px-4 xl:px-5 text-sm xl:text-base whitespace-nowrap"
+              >
+                Donate
+              </Button>
+            </Link>
 
             <Link href="/contact" data-testid="nav-cta-consultation">
               <Button className="bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full px-5 xl:px-6 text-sm xl:text-base whitespace-nowrap">
