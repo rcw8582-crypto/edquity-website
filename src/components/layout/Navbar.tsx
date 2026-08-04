@@ -28,16 +28,26 @@ export default function Navbar() {
     };
   }, []);
 
+  // Kept short enough to fit on a 1024px laptop without collapsing into the
+  // hamburger, since a nav that is visible only above 1536px reads as no nav
+  // at all on the screens most visitors and reviewers actually use. Volunteer
+  // and the portal login live in the footer; the logo covers Home.
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/services", label: "Free Family Services" },
-    { href: "/consulting", label: "Consulting" },
+    { href: "/services", label: "Free Services" },
+    { href: "/resources", label: "Resources" },
     { href: "/events", label: "Events" },
     { href: "/about", label: "About" },
     { href: "/news", label: "News" },
     { href: "/donate", label: "Donate" },
-    { href: "/volunteer", label: "Get Involved" },
     { href: "/contact", label: "Contact" },
+  ];
+
+  // The mobile sheet has vertical room to spare, so it carries the full set.
+  const mobileLinks = [
+    { href: "/", label: "Home" },
+    ...navLinks,
+    { href: "/volunteer", label: "Get Involved" },
+    { href: "/client-portal", label: "EDquity360 Portal" },
   ];
 
   return (
@@ -58,12 +68,12 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden 2xl:flex items-center gap-5">
+          <div className="hidden lg:flex items-center gap-3.5 xl:gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-base transition-colors hover:text-accent relative pb-1 ${
+                className={`text-sm xl:text-base whitespace-nowrap transition-colors hover:text-accent relative pb-1 ${
                   location === link.href
                     ? "text-accent font-bold border-b-2 border-accent"
                     : "text-primary font-semibold"
@@ -73,20 +83,9 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/client-portal"
-              className={`text-base transition-colors hover:text-accent relative pb-1 ${
-                location === "/client-portal"
-                  ? "text-accent font-bold border-b-2 border-accent"
-                  : "text-primary font-semibold"
-              }`}
-              data-testid="nav-link-client-portal"
-            >
-              EDquity360 Portal
-            </Link>
 
             <Link href="/contact" data-testid="nav-cta-consultation">
-              <Button className="bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full px-6">
+              <Button className="bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full px-5 xl:px-6 text-sm xl:text-base whitespace-nowrap">
                 Book a Free Consultation
               </Button>
             </Link>
@@ -94,7 +93,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="2xl:hidden inline-flex items-center justify-center min-h-11 min-w-11 -mr-2 text-primary"
+            className="lg:hidden inline-flex items-center justify-center min-h-11 min-w-11 -mr-2 text-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             data-testid="mobile-menu-toggle"
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -107,9 +106,9 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div id="mobile-nav" className="2xl:hidden absolute top-full left-0 right-0 bg-white border-t border-border shadow-lg animate-in slide-in-from-top-2">
+        <div id="mobile-nav" className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-border shadow-lg animate-in slide-in-from-top-2">
           <div className="flex flex-col py-4 px-6 space-y-4">
-            {navLinks.map((link) => (
+            {mobileLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -122,15 +121,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/client-portal"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`text-base font-medium transition-colors hover:text-accent ${
-                location === "/client-portal" ? "text-accent" : "text-primary"
-              }`}
-            >
-              EDquity360 Portal
-            </Link>
             <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} data-testid="mobile-nav-cta-consultation">
               <Button className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full">
                 Book a Free Consultation

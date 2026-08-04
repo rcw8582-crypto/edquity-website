@@ -29,7 +29,12 @@ if (!existsSync(ssrEntry)) {
 }
 
 const template = await readFile(templatePath, "utf8");
-const { render, allRoutes } = await import(pathToFileURL(ssrEntry).href);
+const { render, allRoutes, prefetchEvents } = await import(pathToFileURL(ssrEntry).href);
+
+// Loaded before any route renders so the Events page prerenders with real
+// sessions listed rather than an empty calendar and a loading panel.
+const events = await prefetchEvents();
+console.log(`loaded ${events.length} event(s) for prerender`);
 
 const escapeAttribute = (value) =>
   value
@@ -61,9 +66,7 @@ function setMetaContent(html, selectorAttr, selectorValue, content) {
  * existing links keep working, and the alias points its canonical at the real
  * one so search engines index a single page rather than a duplicate pair.
  */
-const CANONICAL_ALIASES = {
-  "/for-schools": "/consulting",
-};
+const CANONICAL_ALIASES = {};
 
 function buildPage(route, head, appHtml) {
   const canonicalRoute = CANONICAL_ALIASES[route] ?? route;
@@ -86,6 +89,18 @@ function buildPage(route, head, appHtml) {
     "</head>",
     `    <link rel="canonical" href="${escapeAttribute(canonical)}" />\n  </head>`,
   );
+
+  // The Events page is the only route that reads the schedule, so only it
+  // carries the inlined copy. Hydration reads the same array the server
+  // rendered from, which keeps the client from replacing a populated calendar
+  // with an empty one on mount.
+  if (route === "/events") {
+    const payload = JSON.stringify(events).replace(/</g, "\\u003c");
+    html = html.replace(
+      "</head>",
+      `    <script>window.__EDATM_EVENTS__=${payload}</script>\n  </head>`,
+    );
+  }
 
   return html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
 }
@@ -115,14 +130,12 @@ const SITEMAP_WEIGHTS = {
   "/donate": { changefreq: "monthly", priority: "0.8" },
   "/tools/iep-goal-checker": { changefreq: "monthly", priority: "0.7" },
   "/tell-us-about-your-child": { changefreq: "monthly", priority: "0.7" },
-  "/consulting": { changefreq: "monthly", priority: "0.7" },
   "/fellowship": { changefreq: "monthly", priority: "0.7" },
   "/volunteer": { changefreq: "monthly", priority: "0.7" },
   "/funders": { changefreq: "monthly", priority: "0.7" },
   "/contact": { changefreq: "monthly", priority: "0.7" },
   "/press": { changefreq: "monthly", priority: "0.6" },
   "/transparency": { changefreq: "monthly", priority: "0.6" },
-  "/client-portal": { changefreq: "monthly", priority: "0.5" },
   "/accessibility": { changefreq: "yearly", priority: "0.3" },
   "/privacy-policy": { changefreq: "yearly", priority: "0.3" },
   "/terms-of-service": { changefreq: "yearly", priority: "0.3" },
@@ -133,8 +146,11 @@ const SITEMAP_WEIGHTS = {
 
 const SITEMAP_DEFAULT = { changefreq: "monthly", priority: "0.6" };
 
-/** /for-schools is an alias of /consulting, so only the canonical one is listed. */
-const SITEMAP_EXCLUDE = new Set(["/for-schools"]);
+/**
+ * /client-portal is a sign-in gate with nothing to index, and it is disallowed
+ * in robots.txt, so listing it would contradict that.
+ */
+const SITEMAP_EXCLUDE = new Set(["/client-portal"]);
 
 function buildSitemap(routeList) {
   const entries = routeList

@@ -12,6 +12,10 @@
       ]
     }
   ],
+  "redirects": [
+    { "source": "/consulting", "destination": "/", "permanent": true },
+    { "source": "/for-schools", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]

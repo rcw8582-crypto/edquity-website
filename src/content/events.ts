@@ -24,6 +24,35 @@ export type EdatmEvent = {
   rsvp_url: string | null;
 };
 
+/**
+ * Build-time snapshot.
+ *
+ * The Events page used to render an empty calendar and a "Loading events…"
+ * panel until two client-side fetches resolved, one of them a cross-site
+ * proxy that takes over a second. Anyone arriving on the page, including an
+ * Ad Grants reviewer, saw a nonprofit with no events. The prerender pass now
+ * fetches the schedule once, renders it into the static HTML, and serializes
+ * the same array into the page under EVENTS_SNAPSHOT_KEY, so the first paint
+ * already lists real sessions and the client hydrates against identical
+ * markup. The live fetch still runs afterwards to pick up anything published
+ * since the last deploy.
+ */
+export const EVENTS_SNAPSHOT_KEY = "__EDATM_EVENTS__";
+
+let ssrSnapshot: EdatmEvent[] | null = null;
+
+/** Called by the prerender pass before any route renders. */
+export function setEventsSnapshot(events: EdatmEvent[]): void {
+  ssrSnapshot = events;
+}
+
+/** Snapshot for the first render: module state on the server, the inlined array in the browser. */
+export function initialEvents(): EdatmEvent[] | null {
+  if (typeof window === "undefined") return ssrSnapshot;
+  const inlined = (window as unknown as Record<string, unknown>)[EVENTS_SNAPSHOT_KEY];
+  return Array.isArray(inlined) ? (inlined as EdatmEvent[]) : null;
+}
+
 const CARD_COLORS = ["#22C55E", "#14B8A6", "#FBBF24", "#8B5CF6"];
 
 export function eventColor(index: number): string {

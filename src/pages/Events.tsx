@@ -5,6 +5,7 @@ import PageMeta from "@/components/PageMeta";
 import EventsCalendar from "@/components/EventsCalendar";
 import {
   fetchEvents,
+  initialEvents,
   splitUpcomingPast,
   formatDay,
   googleCalendarUrl,
@@ -23,10 +24,14 @@ function downloadIcs(event: EdatmEvent) {
 }
 
 export default function Events() {
-  const [events, setEvents] = useState<EdatmEvent[] | null>(null);
+  // Starts from the build-time snapshot, so the calendar and agenda are
+  // populated on first paint instead of after two network round trips.
+  const [events, setEvents] = useState<EdatmEvent[] | null>(initialEvents);
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
+    // Refresh against the live sources. A failure here leaves the snapshot on
+    // screen rather than emptying a page that was already showing sessions.
     fetchEvents()
       .then(setEvents)
       .catch(() => setFailed(true));

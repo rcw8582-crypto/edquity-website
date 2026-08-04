@@ -104,7 +104,12 @@ export default function Funders() {
             {[
               { icon: <TrendingUp size={24} color="#22C55E" />, title: "A documented disparity", text: "Research consistently shows that Black, Brown, economically disadvantaged, and rural families receive fewer and less appropriate special education services than their white, higher-income peers, despite identical legal protections." },
               { icon: <Shield size={24} color="#14B8A6" />, title: "A legal solution that exists", text: "The Individuals with Disabilities Education Act already guarantees every eligible child a free and appropriate public education. The gap is enforcement capacity, not law." },
-              { icon: <Users size={24} color="#FBbf24" />, title: "A market that fails families", text: "Private special education advocates charge $100–$300/hour nationally. The families who most need advocacy are the least able to pay market rates." },
+              // Stated without dollar figures on purpose. The hourly range that
+              // used to sit here described what private advocates charge, not
+              // what we charge, and it read to reviewers and AI summarizers as
+              // our own rate card on a page that also says we charge families
+              // nothing.
+              { icon: <Users size={24} color="#FBbf24" />, title: "A market that fails families", text: "Private special education advocates bill by the hour at rates well beyond the reach of most households. The families who most need advocacy are the least able to pay market rates, so we charge them nothing." },
             ].map((card, i) => (
               <div key={i} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: 28 }}>
                 <div style={{ width: 48, height: 48, borderRadius: 10, background: "#f8fafc", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>{card.icon}</div>

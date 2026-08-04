@@ -42,7 +42,10 @@ const TESTIMONIALS = [
 ];
 
 function AnimatedStat({ value, suffix }: { value: number | string; suffix: string }) {
-  const [count, setCount] = useState(0);
+  // Seeded with the real figure rather than zero so the prerendered HTML
+  // carries "21+" and "50" instead of "0+" and "0". The count-up is an
+  // enhancement layered on top, never the only way the number appears.
+  const [count, setCount] = useState(value);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
 
@@ -51,6 +54,11 @@ function AnimatedStat({ value, suffix }: { value: number | string; suffix: strin
     const el = ref.current;
     if (!el) return;
     const numericValue = value;
+    // A stat already on screen at mount keeps its real value; resetting it to
+    // zero to animate would replace a correct number with a wrong one under
+    // someone who is already reading it.
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
+    setCount(0);
     const obs = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && !started.current) {
         started.current = true;

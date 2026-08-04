@@ -43,7 +43,6 @@ const Admin = lazy(() => import("@/pages/Admin"));
 const Intake = lazy(() => import("@/pages/Intake"));
 const ParentQuestions = lazy(() => import("@/pages/ParentQuestions"));
 const Fellowship = lazy(() => import("@/pages/Fellowship"));
-const ForSchools = lazy(() => import("@/pages/ForSchools"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 const queryClient = new QueryClient();
@@ -121,8 +120,6 @@ function Router() {
           <Route path="/intake" component={Intake} />
           <Route path="/tell-us-about-your-child" component={ParentQuestions} />
           <Route path="/fellowship" component={Fellowship} />
-          <Route path="/consulting" component={ForSchools} />
-          <Route path="/for-schools" component={ForSchools} />
           <Route component={NotFound} />
         </Switch>
       </Suspense>

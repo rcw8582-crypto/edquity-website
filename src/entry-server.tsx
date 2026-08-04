@@ -13,6 +13,7 @@ import { renderToPipeableStream } from "react-dom/server";
 import App from "./App";
 import { takeCollectedHead, type CollectedHead } from "./lib/head";
 import { getAllPublishedPosts } from "./lib/posts";
+import { fetchEvents, setEventsSnapshot, type EdatmEvent } from "./content/events";
 
 /** Every public route that gets its own prerendered HTML file. */
 export const STATIC_ROUTES: string[] = [
@@ -20,8 +21,6 @@ export const STATIC_ROUTES: string[] = [
   "/about",
   "/services",
   "/our-methodology",
-  "/consulting",
-  "/for-schools",
   "/fellowship",
   "/resources",
   "/tools/iep-goal-checker",
@@ -51,6 +50,23 @@ export const STATIC_ROUTES: string[] = [
 export function allRoutes(): string[] {
   const posts = getAllPublishedPosts().map((post) => `/news/${post.slug}`);
   return [...STATIC_ROUTES, ...posts];
+}
+
+/**
+ * Loads the event schedule once and hands it to the renderer, so the Events
+ * page prerenders with real sessions in it. A source outage must not break a
+ * deploy, so a failure here degrades to an empty schedule and the page falls
+ * back to fetching on the client exactly as it did before.
+ */
+export async function prefetchEvents(): Promise<EdatmEvent[]> {
+  try {
+    const events = await fetchEvents();
+    setEventsSnapshot(events);
+    return events;
+  } catch {
+    setEventsSnapshot([]);
+    return [];
+  }
 }
 
 export interface RenderResult {
