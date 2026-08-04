@@ -13,8 +13,8 @@
     }
   ],
   "redirects": [
-    { "source": "/consulting", "destination": "/", "permanent": true },
-    { "source": "/for-schools", "destination": "/", "permanent": true }
+    { "source": "/consulting", "destination": "/iep-quality-improvement", "permanent": true },
+    { "source": "/for-schools", "destination": "/iep-quality-improvement", "permanent": true }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
