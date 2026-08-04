@@ -131,6 +131,7 @@ const SITEMAP_WEIGHTS = {
   "/tools/iep-goal-checker": { changefreq: "monthly", priority: "0.7" },
   "/tell-us-about-your-child": { changefreq: "monthly", priority: "0.7" },
   "/fellowship": { changefreq: "monthly", priority: "0.7" },
+  "/iep-quality-improvement": { changefreq: "monthly", priority: "0.7" },
   "/volunteer": { changefreq: "monthly", priority: "0.7" },
   "/funders": { changefreq: "monthly", priority: "0.7" },
   "/contact": { changefreq: "monthly", priority: "0.7" },
