@@ -437,6 +437,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Support CTA. Every other action on this page asks a family to start an
+          audit or book a call, which left a visitor who wants to fund or share
+          the work with nowhere to go. Placed last on purpose, so the family
+          path stays the primary one and giving follows it. */}
+      <section className="sp" style={{ background: "#122C54" }}>
+        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
+          <h2 style={{ fontSize: "clamp(26px,3.2vw,38px)", fontWeight: 900, color: "#fff", margin: "0 0 16px", letterSpacing: "-0.8px" }}>
+            {isEs ? "Apoye la equidad educativa" : "Support educational equity"}
+          </h2>
+          <p style={{ fontSize: 17, color: "rgba(255,255,255,0.72)", lineHeight: 1.7, margin: "0 0 36px" }}>
+            {isEs
+              ? "Cada niño merece una educación significativa, y la ley federal se lo garantiza. Su contribución deducible de impuestos mantiene la Auditoría del IEP y el Kit de Herramientas gratuitos para las familias que más los necesitan."
+              : "Every child deserves a meaningful education, and federal law already guarantees it. Your tax-deductible contribution keeps the IEP Audit and the Advocacy Toolkit free for the families who need them most."}
+          </p>
+          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+            <Link href="/donate"
+              style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>
+              {isEs ? "Donar" : "Donate"}
+            </Link>
+            <Link href="/resources"
+              style={{ display: "inline-block", background: "transparent", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 17, border: "2px solid rgba(255,255,255,0.35)" }}>
+              {isEs ? "Descargar el Kit Gratuito" : "Download the Free Toolkit"}
+            </Link>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
