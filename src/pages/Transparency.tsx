@@ -13,7 +13,7 @@ const milestones = [
 
 const principles = [
   "We do not charge families for anything. Our independent IEP Audit and our parent workshops are free, and our Advocacy Toolkit and My Child's Playbook are free to download.",
-  "We never accept payment from a school district in connection with an individual child's case. Districts that engage us purchase reviews of their own IEP quality across their system, and no family service is ever funded by the district whose documents we review.",
+  "We never accept payment from a school district in connection with an individual child's case. Schools and districts that enroll in our IEP Quality Improvement Program are purchasing a review of their own IEP quality across their system, and no family service is ever funded by the district whose documents we review.",
   "We publish our EIN and organizational filings so anyone can verify our nonprofit status.",
   "We will never sell subscriber data or family information to any third party.",
 ];
