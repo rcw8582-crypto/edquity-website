@@ -10,10 +10,19 @@ import PageMeta from "@/components/PageMeta";
 
 import { BOOKING_URL } from "@/lib/booking";
 
-// Update these numbers as the organization grows
+/**
+ * Facts a parent can use, not credentials the organization is proud of.
+ *
+ * This row used to lead with years of experience and with the number of
+ * families we hoped to reach in year one. The first was a credential that
+ * belongs in the founder bio on About, and the second published a goal rather
+ * than a result, which told a visitor the organization was small and had not
+ * done it yet. Every figure here is verifiable elsewhere on the site and
+ * answers a question the reader actually has.
+ */
 const STATS: Array<{ value: number | string; suffix: string; label: string; labelEs: string }> = [
-  { value: 21, suffix: "+", label: "Years of Expertise", labelEs: "Años de Experiencia" },
-  { value: 50, suffix: "", label: "Families we aim to serve in Year 1", labelEs: "Familias que buscamos servir en el Año 1" },
+  { value: "$0", suffix: "", label: "What families pay. The audit, the toolkit, and every workshop", labelEs: "Lo que pagan las familias. La auditoría, el kit y cada taller" },
+  { value: 6, suffix: "", label: "Research-grounded domains we review in your child's IEP", labelEs: "Dominios basados en investigación que revisamos en el IEP de su hijo" },
   { value: "IDEA", suffix: "", label: "The federal law behind every IEP", labelEs: "La ley federal detrás de cada IEP" },
 ];
 
