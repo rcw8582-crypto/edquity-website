@@ -27,7 +27,7 @@ export default function IepQualityImprovement() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
         title="The IEP Quality Improvement Program"
-        description="A year-long program for schools and systems: independent blind review of your own IEPs against 38 research-grounded conditions, with monthly reports that show where quality is improving and where it is not."
+        description="A year-long program for schools and systems: independent blind review of your own IEPs against forty research-grounded conditions drawn from IDEA 34 CFR Part 300, with monthly reports that show where quality is improving and where it is not."
       />
 
       {/* Hero */}
@@ -39,11 +39,10 @@ export default function IepQualityImprovement() {
           <h1 style={{ fontSize: "clamp(32px,4.5vw,50px)", fontWeight: 900, lineHeight: 1.08, color: "#fff", margin: "0 0 24px", letterSpacing: "-1.5px" }}>
             The IEP Quality Improvement Program
           </h1>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 720, margin: "0 auto" }}>
-            Teachers write IEPs and administrators sign them, yet gaps in compliance and substance
-            stay invisible until a complaint, a due process filing, or a monitoring review makes them
-            visible. The Program gives participating schools an independent answer to a question no
-            one inside the building can ask.
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 760, margin: "0 auto" }}>
+            Rubric-based independent review of a fixed sample of individualized education programs,
+            scored against forty research-grounded conditions drawn from IDEA 34 CFR Part 300 and
+            the peer-reviewed literature on IEP quality.
           </p>
         </div>
       </section>
@@ -52,14 +51,15 @@ export default function IepQualityImprovement() {
       <section className="sp-lg" style={{ background: "#fff" }}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, margin: "0 0 20px", letterSpacing: "-0.5px" }}>
-            What the review covers
+            Monthly IEP Quality Audits
           </h2>
           <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.8, margin: "0 0 32px" }}>
-            Each month we conduct a blind, rubric-based review of a sample of your redacted IEPs,
-            scoring every document against 38 research-grounded conditions drawn from IDEA
-            (34 CFR Part 300) and the peer-reviewed literature on IEP quality. Reviewers never know
-            which school or author produced a document, which is what makes the scores comparable
-            month over month. All handling is remote and FERPA-protected.
+            Twenty-one of the forty conditions test compliance, the requirements IDEA places on what
+            an IEP must contain. The remaining nineteen test substance, whether what the document
+            contains is specific and measurable enough to be worth anything to the student. Reviewers
+            never know which school or which author produced a document, and the sample size holds
+            steady month to month, so the scores are comparable across the year. All handling is
+            remote and FERPA-protected.
           </p>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
