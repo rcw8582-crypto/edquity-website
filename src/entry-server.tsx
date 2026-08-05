@@ -57,6 +57,30 @@ export function allRoutes(): string[] {
   return [...STATIC_ROUTES, ...posts, ...resources];
 }
 
+export interface FeedItem {
+  title: string;
+  slug: string;
+  excerpt: string;
+  category: string;
+  publishedAt: string | null;
+}
+
+/**
+ * The published posts, for the RSS feed the prerender pass writes.
+ *
+ * Read from the same loader the pages use, so the feed can never advertise a
+ * post that does not exist or miss one that does.
+ */
+export function feedItems(): FeedItem[] {
+  return getAllPublishedPosts().map(({ title, slug, excerpt, category, publishedAt }) => ({
+    title,
+    slug,
+    excerpt,
+    category,
+    publishedAt,
+  }));
+}
+
 /**
  * Loads the event schedule once and hands it to the renderer, so the Events
  * page prerenders with real sessions in it. A source outage must not break a
