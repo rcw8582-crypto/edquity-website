@@ -239,7 +239,7 @@ export default function Resources() {
               style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
               Start Your Free IEP Audit
             </Link>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
+            <a href={BOOKING_URL}
               style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "16px 36px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(18,44,84,0.4)" }}>
               Or Book a Free Discovery Call
             </a>
