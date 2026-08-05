@@ -5,7 +5,6 @@ import { MotionConfig } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { LanguageProvider } from "@/contexts/LanguageContext";
 import Layout from "@/components/layout/Layout";
 import { BOOKING_URL } from "@/lib/booking";
 import { trackBookingClick } from "@/lib/analytics";
@@ -145,11 +144,9 @@ function App({ ssrPath }: AppProps) {
         {/* reducedMotion="user" makes every framer-motion animation respect the
             OS/browser "reduce motion" setting (WCAG 2.1 SC 2.3.3). */}
         <MotionConfig reducedMotion="user">
-          <LanguageProvider>
-            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")} ssrPath={ssrPath}>
-              <Router />
-            </WouterRouter>
-          </LanguageProvider>
+          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")} ssrPath={ssrPath}>
+            <Router />
+          </WouterRouter>
           <Toaster />
           <Analytics />
         </MotionConfig>

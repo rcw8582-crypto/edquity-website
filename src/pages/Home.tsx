@@ -5,7 +5,6 @@ import {
   ArrowRight, Shield, CheckCircle2, Lightbulb, Target,
   BookOpen, Users, FileText, Scale, Quote,
 } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 import PageMeta from "@/components/PageMeta";
 
 import { BOOKING_URL } from "@/lib/booking";
@@ -20,30 +19,27 @@ import { BOOKING_URL } from "@/lib/booking";
  * done it yet. Every figure here is verifiable elsewhere on the site and
  * answers a question the reader actually has.
  */
-const STATS: Array<{ value: number | string; suffix: string; label: string; labelEs: string }> = [
-  { value: "$0", suffix: "", label: "What families pay. The audit, the toolkit, and every workshop", labelEs: "Lo que pagan las familias. La auditoría, el kit y cada taller" },
-  { value: 6, suffix: "", label: "Research-grounded domains we review in your child's IEP", labelEs: "Dominios basados en investigación que revisamos en el IEP de su hijo" },
-  { value: "IDEA", suffix: "", label: "The federal law behind every IEP", labelEs: "La ley federal detrás de cada IEP" },
+const STATS: Array<{ value: number | string; suffix: string; label: string }> = [
+  { value: "$0", suffix: "", label: "What families pay. The audit, the toolkit, and every workshop" },
+  { value: 6, suffix: "", label: "Research-grounded domains we review in your child's IEP" },
+  { value: "IDEA", suffix: "", label: "The federal law behind every IEP" },
 ];
 
 const TESTIMONIALS = [
   {
     quote: "I went into our IEP meeting knowing exactly what to ask and what the district was required to do. For the first time in three years, my son's goals actually reflected what he needs. Dr. Clarke-Wedderburn changed how I see my own role in that room.",
-    quoteEs: "Entré a la reunión del IEP sabiendo exactamente qué preguntar y qué le correspondía hacer al distrito. Por primera vez en tres años, los objetivos de mi hijo realmente reflejaban lo que él necesita. La Dra. Clarke-Wedderburn cambió cómo veo mi propio papel en esa sala.",
     name: "Parent of a 9-year-old",
     location: "Georgia",
     service: "IEP Audit",
   },
   {
     quote: "We had been told for two years that our daughter was 'progressing appropriately.' The review showed us she hadn't met a single measurable goal. That report gave us the language and the evidence to go back in and demand what the law requires.",
-    quoteEs: "Durante dos años nos dijeron que nuestra hija 'progresaba adecuadamente.' El análisis nos mostró que no había alcanzado ni un solo objetivo medible. Ese informe nos dio el lenguaje y la evidencia para volver a exigir lo que la ley requiere.",
     name: "Family of a child with autism",
     location: "Florida",
     service: "IEP Audit",
   },
   {
     quote: "I'm a single father and I had no idea what an IEP was supposed to look like. Dr. Clarke-Wedderburn walked me through every line, explained what was legally required, and helped me understand that I had real power in that meeting. I just didn't know it yet.",
-    quoteEs: "Soy padre soltero y no sabía cómo debía verse un IEP. La Dra. Clarke-Wedderburn me explicó cada línea, me aclaró qué es requerido por ley, y me ayudó a entender que yo tenía poder real en esa reunión. Solo no lo sabía todavía.",
     name: "Single father",
     location: "Kentucky",
     service: "IEP Audit",
@@ -91,9 +87,6 @@ function AnimatedStat({ value, suffix }: { value: number | string; suffix: strin
 }
 
 export default function Home() {
-  const { lang } = useLanguage();
-  const isEs = lang === "es";
-
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: "#122C54" }}>
       <PageMeta
@@ -110,30 +103,25 @@ export default function Home() {
                 still learns that the IEP support here is free and who it is
                 for, which is also what an Ad Grants reviewer looks for. */}
             <p style={{ fontSize: 13, fontWeight: 700, color: "#22C55E", letterSpacing: 2.2, textTransform: "uppercase", margin: "0 0 18px" }}>
-              {isEs ? "Apoyo gratuito del IEP para familias marginadas" : "Free IEP support for marginalized families"}
+              {"Free IEP support for marginalized families"}
             </p>
             <h1 style={{ fontSize: "clamp(38px,5vw,58px)", fontWeight: 900, lineHeight: 1.08, margin: "0 0 28px", color: "#fff", letterSpacing: "-1.5px" }}>
-              {isEs ? <>Su hijo tiene<br />derecho a una<br /><span style={{ color: "#22C55E" }}>educación significativa.</span></> :
-                       <>Your child has<br />the right to a<br /><span style={{ color: "#22C55E" }}>meaningful education.</span></>}
+              Your child has<br />the right to a<br /><span style={{ color: "#22C55E" }}>meaningful education.</span>
             </h1>
             <p style={{ fontSize: 19, color: "rgba(255,255,255,0.82)", lineHeight: 1.7, maxWidth: 480, margin: "0 0 16px" }}>
-              {isEs
-                ? "La mayoría de las familias entran a las reuniones del IEP sin preparación y sin nadie en la sala cuyo trabajo sea representar a su hijo. La Dra. Clarke-Wedderburn es esa persona."
-                : "Most families walk into IEP meetings unprepared, outnumbered, and without anyone in the room whose job is to represent their child. Dr. Clarke-Wedderburn is that person."}
+              {"Most families walk into IEP meetings unprepared, outnumbered, and without anyone in the room whose job is to represent their child. Dr. Clarke-Wedderburn is that person."}
             </p>
             <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, maxWidth: 460, margin: "0 0 44px" }}>
-              {isEs
-                ? "La reunión del IEP de su hijo no es una formalidad. Las decisiones que se toman allí acompañan a su hijo durante todos los años de su educación."
-                : "Your child's IEP meeting is not a formality. The decisions made in that room follow your child through every year of their education."}
+              {"Your child's IEP meeting is not a formality. The decisions made in that room follow your child through every year of their education."}
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <Link href="/intake"
                 style={{ background: "#22C55E", color: "#122C54", padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
-                {isEs ? "Comience su Auditoría del IEP Gratuita" : "Start Your Free IEP Audit"}
+                {"Start Your Free IEP Audit"}
               </Link>
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
                 style={{ background: "transparent", color: "#fff", padding: "15px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(255,255,255,0.45)" }}>
-                {isEs ? "O Reserve una Llamada Gratuita" : "Or Book a Free Discovery Call"}
+                {"Or Book a Free Discovery Call"}
               </a>
             </div>
           </motion.div>
@@ -155,7 +143,7 @@ export default function Home() {
                   <AnimatedStat value={s.value} suffix={s.suffix} />
                 </p>
                 <p style={{ fontSize: 13, fontWeight: 600, color: "rgba(18,44,84,0.7)", margin: 0, textTransform: "uppercase", letterSpacing: 0.5 }}>
-                  {isEs ? s.labelEs : s.label}
+                  {s.label}
                 </p>
               </div>
             ))}
@@ -169,30 +157,22 @@ export default function Home() {
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, border: "1.5px solid rgba(255,255,255,0.2)", borderRadius: 999, padding: "8px 20px", marginBottom: 36 }}>
             <Scale size={16} color="rgba(255,255,255,0.7)" />
             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: 2, color: "rgba(255,255,255,0.7)", textTransform: "uppercase" }}>
-              {isEs ? "La Realidad" : "The Reality"}
+              {"The Reality"}
             </span>
           </div>
           <motion.h2
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             style={{ fontSize: "clamp(32px,4vw,48px)", fontWeight: 900, lineHeight: 1.1, margin: "0 0 40px", color: "#fff", letterSpacing: "-1px" }}>
-            {isEs
-              ? <>El distrito escolar llega<br />con un equipo. <span style={{ color: "#22C55E" }}>Usted llega solo.</span></>
-              : <>The school district arrives<br />with a team. <span style={{ color: "#22C55E" }}>You arrive alone.</span></>}
+            The school district arrives<br />with a team. <span style={{ color: "#22C55E" }}>You arrive alone.</span>
           </motion.h2>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: "0 0 28px" }}>
-            {isEs
-              ? "Eso no es un accidente. Los procesos del IEP están diseñados para la conveniencia institucional, y las familias que pagan el precio más alto son las familias negras, latinas, de bajos ingresos y rurales que carecen del conocimiento técnico para cuestionar."
-              : "That is not an accident. IEP processes are designed around institutional convenience, and the families who pay the highest price for that design are Black, Brown, economically disadvantaged, and rural families who lack the technical knowledge to push back."}
+            {"That is not an accident. IEP processes are designed around institutional convenience, and the families who pay the highest price for that design are Black, Brown, economically disadvantaged, and rural families who lack the technical knowledge to push back."}
           </p>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: "0 0 28px" }}>
-            {isEs
-              ? "La ley federal ya garantiza a su hijo una educación pública, gratuita y apropiada en el entorno menos restrictivo posible. La brecha no está en la ley. Está entre lo que la ley exige y lo que las escuelas entregan cuando nadie las hace responsables."
-              : "Federal law already guarantees your child a free and appropriate public education in the least restrictive environment. The gap is not in the law. The gap is between what the law requires and what schools deliver when no one is holding them accountable."}
+            {"Federal law already guarantees your child a free and appropriate public education in the least restrictive environment. The gap is not in the law. The gap is between what the law requires and what schools deliver when no one is holding them accountable."}
           </p>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: 0 }}>
-            {isEs
-              ? "EDquity at the Margins existe para cerrar esa brecha, brindando a las familias marginadas el conocimiento técnico, la preparación para la defensa y el apoyo de entrenamiento sostenido que necesitan."
-              : "EDquity at the Margins exists to close that gap, providing marginalized families with the technical knowledge, advocacy preparation, and sustained coaching support they need to enforce the rights federal law already guarantees their children."}
+            {"EDquity at the Margins exists to close that gap, providing marginalized families with the technical knowledge, advocacy preparation, and sustained coaching support they need to enforce the rights federal law already guarantees their children."}
           </p>
         </div>
       </section>
@@ -226,21 +206,19 @@ export default function Home() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>
-              {isEs ? "Lo Que Hacemos" : "What We Do"}
+              {"What We Do"}
             </p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>
-              {isEs ? "Dos servicios gratuitos. Un propósito." : "Two free services. One purpose."}
+              {"Two free services. One purpose."}
             </h2>
             <p style={{ fontSize: 18, color: "#64748b", maxWidth: 580, margin: "0 auto", lineHeight: 1.65 }}>
-              {isEs
-                ? "Cada servicio apunta a un momento específico donde las familias marginadas pierden terreno en el proceso del IEP."
-                : "Every service targets a specific point where marginalized families lose ground in the IEP process."}
+              {"Every service targets a specific point where marginalized families lose ground in the IEP process."}
             </p>
           </div>
           <div className="rg-2">
             {[
-              { icon: <FileText size={28} color="#22C55E" />, title: isEs ? "Auditoría del IEP" : "IEP Audit", price: isEs ? "Gratis" : "Free", desc: isEs ? "Revisamos el IEP de su hijo en seis dominios fundamentados en investigación, identificamos qué falta o es legalmente inadecuado, y entregamos un informe escrito en lenguaje sencillo con próximos pasos específicos antes de su próxima reunión." : "We review your child's IEP across six research-grounded domains, identify what is missing or legally inadequate, and deliver a plain-language written report with specific next steps before your next meeting.", tag: isEs ? "Gratis" : "Free", tagColor: "#22C55E", href: "/intake" },
-              { icon: <BookOpen size={28} color="#14B8A6" />, title: isEs ? "Kit de Herramientas de Defensa" : "Advocacy Toolkit", price: isEs ? "Gratis" : "Free", desc: isEs ? "Nuestra biblioteca de recursos gratuitos y descargables: guías en lenguaje sencillo sobre la IDEA, listas de preguntas, cartas modelo y herramientas que le ayudan a leer el IEP de su hijo como una experta y prepararse para cualquier reunión." : "Our library of free, downloadable resources: plain-language guides to the IDEA, question checklists, template letters, and tools that help you read your child's IEP like an expert and prepare for any meeting.", tag: isEs ? "Gratis" : "Free", tagColor: "#14B8A6", href: "/resources" },
+              { icon: <FileText size={28} color="#22C55E" />, title: "IEP Audit", price: "Free", desc: "We review your child's IEP across six research-grounded domains, identify what is missing or legally inadequate, and deliver a plain-language written report with specific next steps before your next meeting.", tag: "Free", tagColor: "#22C55E", href: "/intake" },
+              { icon: <BookOpen size={28} color="#14B8A6" />, title: "Advocacy Toolkit", price: "Free", desc: "Our library of free, downloadable resources: plain-language guides to the IDEA, question checklists, template letters, and tools that help you read your child's IEP like an expert and prepare for any meeting.", tag: "Free", tagColor: "#14B8A6", href: "/resources" },
             ].map((service, i) => (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -256,13 +234,13 @@ export default function Home() {
                 </div>
                 <Link href={service.href}
                   style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "#122C54", fontWeight: 600, textDecoration: "none", fontSize: 14, marginTop: "auto" }}>
-                  {isEs ? "Más información" : "Learn more"} <ArrowRight size={14} />
+                  {"Learn more"} <ArrowRight size={14} />
                 </Link>
               </motion.div>
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: 48 }}>
-            <p style={{ fontSize: 15, color: "#64748b", margin: "0 0 12px" }}>{isEs ? "Ambos servicios son completamente gratuitos. El acceso es el objetivo." : "Both services are completely free. Access is the point."}</p>
+            <p style={{ fontSize: 15, color: "#64748b", margin: "0 0 12px" }}>{"Both services are completely free. Access is the point."}</p>
             {/* Nonprofit status stated on the landing page, not only in the
                 footer and on inner pages. Google Ad Grants asks that a
                 nonprofit's status be prominently displayed, and this is the
@@ -274,11 +252,11 @@ export default function Home() {
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/intake"
                 style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "14px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16 }}>
-                {isEs ? "Comience su Auditoría del IEP Gratuita" : "Start Your Free IEP Audit"}
+                {"Start Your Free IEP Audit"}
               </Link>
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
                 style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "14px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(18,44,84,0.4)" }}>
-                {isEs ? "O Reserve una Llamada Gratuita" : "Or Book a Free Discovery Call"}
+                {"Or Book a Free Discovery Call"}
               </a>
             </div>
           </div>
@@ -318,10 +296,10 @@ export default function Home() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
             <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>
-              {isEs ? "Familias que Hemos Servido" : "Families We've Served"}
+              {"Families We've Served"}
             </p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, color: "#fff", margin: 0, letterSpacing: "-1px", lineHeight: 1.1 }}>
-              {isEs ? "Lo que dicen las familias." : "What families say."}
+              {"What families say."}
             </h2>
           </div>
           <div className="rg-3">
@@ -331,7 +309,7 @@ export default function Home() {
                 style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 16, padding: 32, display: "flex", flexDirection: "column", gap: 20 }}>
                 <Quote size={28} color="#22C55E" style={{ opacity: 0.7 }} />
                 <p style={{ fontSize: 15, color: "rgba(255,255,255,0.85)", lineHeight: 1.75, margin: 0, fontStyle: "italic", flex: 1 }}>
-                  {isEs ? t.quoteEs : t.quote}
+                  {t.quote}
                 </p>
                 <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: 16 }}>
                   <p style={{ fontSize: 14, fontWeight: 700, color: "#fff", margin: "0 0 4px" }}>{t.name}</p>
@@ -453,21 +431,19 @@ export default function Home() {
       <section className="sp" style={{ background: "#122C54" }}>
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(26px,3.2vw,38px)", fontWeight: 900, color: "#fff", margin: "0 0 16px", letterSpacing: "-0.8px" }}>
-            {isEs ? "Apoye la equidad educativa" : "Support educational equity"}
+            {"Support educational equity"}
           </h2>
           <p style={{ fontSize: 17, color: "rgba(255,255,255,0.72)", lineHeight: 1.7, margin: "0 0 36px" }}>
-            {isEs
-              ? "Cada niño merece una educación significativa, y la ley federal se lo garantiza. Su contribución deducible de impuestos mantiene la Auditoría del IEP y el Kit de Herramientas gratuitos para las familias que más los necesitan."
-              : "Every child deserves a meaningful education, and federal law already guarantees it. Your tax-deductible contribution keeps the IEP Audit and the Advocacy Toolkit free for the families who need them most."}
+            {"Every child deserves a meaningful education, and federal law already guarantees it. Your tax-deductible contribution keeps the IEP Audit and the Advocacy Toolkit free for the families who need them most."}
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/donate"
               style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>
-              {isEs ? "Donar" : "Donate"}
+              {"Donate"}
             </Link>
             <Link href="/resources"
               style={{ display: "inline-block", background: "transparent", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 17, border: "2px solid rgba(255,255,255,0.35)" }}>
-              {isEs ? "Descargar el Kit Gratuito" : "Download the Free Toolkit"}
+              {"Download the Free Toolkit"}
             </Link>
           </div>
         </div>
