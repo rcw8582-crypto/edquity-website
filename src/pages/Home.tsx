@@ -119,7 +119,7 @@ export default function Home() {
                 style={{ background: "#22C55E", color: "#122C54", padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
                 {"Start Your Free IEP Audit"}
               </Link>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
+              <a href={BOOKING_URL}
                 style={{ background: "transparent", color: "#fff", padding: "15px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(255,255,255,0.45)" }}>
                 {"Or Book a Free Discovery Call"}
               </a>
@@ -254,7 +254,7 @@ export default function Home() {
                 style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "14px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16 }}>
                 {"Start Your Free IEP Audit"}
               </Link>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
+              <a href={BOOKING_URL}
                 style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "14px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(18,44,84,0.4)" }}>
                 {"Or Book a Free Discovery Call"}
               </a>
@@ -365,7 +365,7 @@ export default function Home() {
               style={{ background: "#122C54", borderRadius: 14, padding: 36, display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <h3 style={{ fontSize: 20, fontWeight: 800, margin: "0 0 12px", color: "#fff" }}>Ready to stop guessing?</h3>
               <p style={{ fontSize: 15, color: "rgba(255,255,255,0.7)", lineHeight: 1.6, margin: "0 0 24px" }}>Book a free 30-minute discovery call. No obligation and no pressure.</p>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
+              <a href={BOOKING_URL}
                 style={{ background: "#22C55E", color: "#122C54", padding: "14px 24px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 15, textAlign: "center", display: "block" }}>
                 Book a Free Call
               </a>
@@ -416,7 +416,7 @@ export default function Home() {
               style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>
               Start Your Free IEP Audit
             </Link>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
+            <a href={BOOKING_URL}
               style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "16px 36px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 17, border: "2px solid rgba(18,44,84,0.4)" }}>
               Or Book a Free Discovery Call
             </a>
