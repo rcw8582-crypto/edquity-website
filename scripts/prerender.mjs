@@ -28,8 +28,11 @@ if (!existsSync(ssrEntry)) {
   throw new Error("dist-ssr/entry-server.js is missing. Run the SSR build first.");
 }
 
+/** Canonical origin. Every absolute URL the build emits is built from this. */
+const SITE = "https://www.edquityatthemargins.org";
+
 const template = await readFile(templatePath, "utf8");
-const { render, allRoutes, prefetchEvents } = await import(pathToFileURL(ssrEntry).href);
+const { render, allRoutes, prefetchEvents, feedItems } = await import(pathToFileURL(ssrEntry).href);
 
 // Loaded before any route renders so the Events page prerenders with real
 // sessions listed rather than an empty calendar and a loading panel.
@@ -195,6 +198,55 @@ for (const route of routes) {
 // can never list a URL that does not exist or miss one that does.
 await writeFile(path.join(distDir, "sitemap.xml"), buildSitemap(routes), "utf8");
 console.log(`wrote sitemap.xml with ${routes.length - SITEMAP_EXCLUDE.size} URLs`);
+
+/**
+ * RSS 2.0 feed of the blog.
+ *
+ * Exists so posts can be pushed to social accounts automatically rather than
+ * copied by hand. Built from the same post loader the pages use, so the feed
+ * cannot advertise a post that does not exist.
+ *
+ * pubDate must be RFC 822 for readers to sort correctly. Post dates carry no
+ * time, so each is pinned to noon UTC: any fixed hour works, and midnight is
+ * the one to avoid, since a reader in a negative UTC offset would show the
+ * post on the previous day.
+ */
+function buildFeed(items) {
+  const rfc822 = (date) =>
+    date ? new Date(`${date}T12:00:00Z`).toUTCString() : new Date().toUTCString();
+
+  const entries = items.map((item) => {
+    const url = `${SITE}/news/${item.slug}`;
+    return `    <item>
+      <title>${escapeText(item.title)}</title>
+      <link>${url}</link>
+      <guid isPermaLink="true">${url}</guid>
+      <pubDate>${rfc822(item.publishedAt)}</pubDate>
+      <category>${escapeText(item.category)}</category>
+      <description>${escapeText(item.excerpt)}</description>
+    </item>`;
+  });
+
+  const latest = items.find((item) => item.publishedAt)?.publishedAt ?? null;
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EDquity at the Margins</title>
+    <link>${SITE}/news</link>
+    <atom:link href="${SITE}/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Plain-language guidance on IEPs and special education rights for families who deserve a seat at the table.</description>
+    <language>en-us</language>
+    <lastBuildDate>${rfc822(latest)}</lastBuildDate>
+${entries.join("\n")}
+  </channel>
+</rss>
+`;
+}
+
+const feed = feedItems();
+await writeFile(path.join(distDir, "rss.xml"), buildFeed(feed), "utf8");
+console.log(`wrote rss.xml with ${feed.length} post(s)`);
 
 // The SSR bundle is a build artifact, not something to deploy.
 await rm(path.join(root, "dist-ssr"), { recursive: true, force: true });
