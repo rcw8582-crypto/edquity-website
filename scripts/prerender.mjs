@@ -122,7 +122,7 @@ const SITEMAP_WEIGHTS = {
   "/": { changefreq: "weekly", priority: "1.0" },
   "/services": { changefreq: "monthly", priority: "0.9" },
   "/about": { changefreq: "monthly", priority: "0.9" },
-  "/resources": { changefreq: "monthly", priority: "0.8" },
+  "/resources": { changefreq: "monthly", priority: "0.9" },
   "/our-methodology": { changefreq: "monthly", priority: "0.8" },
   "/intake": { changefreq: "monthly", priority: "0.8" },
   "/news": { changefreq: "weekly", priority: "0.8" },
@@ -147,6 +147,11 @@ const SITEMAP_WEIGHTS = {
 
 const SITEMAP_DEFAULT = { changefreq: "monthly", priority: "0.6" };
 
+/** Every /resources/<slug> page carries the same weight as the hub's siblings. */
+const SITEMAP_PREFIX_WEIGHTS = [
+  { prefix: "/resources/", weight: { changefreq: "monthly", priority: "0.8" } },
+];
+
 /**
  * /client-portal is a sign-in gate with nothing to index, and it is disallowed
  * in robots.txt, so listing it would contradict that.
@@ -157,7 +162,10 @@ function buildSitemap(routeList) {
   const entries = routeList
     .filter((route) => !SITEMAP_EXCLUDE.has(route))
     .map((route) => {
-      const weight = SITEMAP_WEIGHTS[route] ?? SITEMAP_DEFAULT;
+      const weight =
+        SITEMAP_WEIGHTS[route] ??
+        SITEMAP_PREFIX_WEIGHTS.find((entry) => route.startsWith(entry.prefix))?.weight ??
+        SITEMAP_DEFAULT;
       const loc = `https://www.edquityatthemargins.org${route === "/" ? "/" : route}`;
       return `  <url><loc>${loc}</loc><changefreq>${weight.changefreq}</changefreq><priority>${weight.priority}</priority></url>`;
     });

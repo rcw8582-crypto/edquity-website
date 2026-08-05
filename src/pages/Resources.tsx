@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Download, ExternalLink, FileText, BookOpen, MessageSquare, Search, Layers, Target, Newspaper, ArrowRight, ClipboardList } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
+import { RESOURCES } from "@/content/resources";
 
 import { BOOKING_URL } from "@/lib/booking";
 
@@ -29,49 +30,6 @@ const interactiveTools = [
     href: "/news",
     badge: "Articles",
     badgeColor: "#8B5CF6",
-  },
-];
-
-const guides = [
-  {
-    icon: <FileText size={28} color="#22C55E" />,
-    title: "Pre-Evaluation Eligibility Checklist",
-    desc: "Use this checklist before you request a special education evaluation. Organizes your child's school history, the educational impact you have observed, and the language to use in your formal written request.",
-    badge: "Worksheet",
-    badgeColor: "#22C55E",
-    file: "/resources/EDATM_IEP_Eligibility_Checklist.pdf",
-  },
-  {
-    icon: <BookOpen size={28} color="#14B8A6" />,
-    title: "IDEA vs. Section 504 Reference Card",
-    desc: "A side-by-side comparison of IDEA (IEP) and Section 504, with decision guidance and the four most common misconceptions corrected.",
-    badge: "Reference Card",
-    badgeColor: "#14B8A6",
-    file: "/resources/EDATM_IDEA_vs_504_Reference_Card.pdf",
-  },
-  {
-    icon: <Search size={28} color="#8B5CF6" />,
-    title: "The 13 IDEA Disability Categories",
-    desc: "A plain-language reference card for all 13 federally recognized disability categories, with notes for parents and a key principle: the category gets your child in the room, not what they receive there.",
-    badge: "Reference Card",
-    badgeColor: "#8B5CF6",
-    file: "/resources/EDATM_13_IDEA_Disability_Categories.pdf",
-  },
-  {
-    icon: <MessageSquare size={28} color="#FBbf24" />,
-    title: "IEP Team Member Directory Template",
-    desc: "A printable template for keeping every member of your child's school, district, and personal support team in one place, plus a communication tracker for every email, call, and meeting.",
-    badge: "Template",
-    badgeColor: "#FBbf24",
-    file: "/resources/EDATM_IEP_Team_Directory.pdf",
-  },
-  {
-    icon: <ClipboardList size={28} color="#EC4899" />,
-    title: "IEP Meeting Notecatcher",
-    desc: "A printable worksheet to take into your child's IEP meeting. Captures the three questions every family should ask, a goal-by-goal tracker, a commitments table with dates, and a before-you-sign checklist.",
-    badge: "Worksheet",
-    badgeColor: "#EC4899",
-    file: "/resources/EDATM_IEP_Meeting_Notecatcher.pdf",
   },
 ];
 
@@ -186,38 +144,47 @@ export default function Resources() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#122C54", margin: "0 0 48px", letterSpacing: "-0.5px" }}>Downloadable Guides</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 24 }}>
-            {guides.map((guide, i) => (
+            {RESOURCES.map((guide, i) => (
               <motion.div
-                key={i}
+                key={guide.slug}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 32, display: "flex", flexDirection: "column", gap: 16, position: "relative" }}
+                style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 32, display: "flex", flexDirection: "column", gap: 16 }}
               >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                  <div style={{ width: 52, height: 52, borderRadius: 12, background: "#f8fafc", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    {guide.icon}
-                  </div>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: guide.badgeColor, background: `${guide.badgeColor}18`, padding: "4px 12px", borderRadius: 999 }}>
-                    {guide.badge}
+                <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: guide.accent, background: `${guide.accent}18`, padding: "4px 12px", borderRadius: 999 }}>
+                    {guide.kind}
                   </span>
                 </div>
                 <div>
                   <h3 style={{ fontSize: 18, fontWeight: 800, color: "#122C54", margin: "0 0 10px" }}>{guide.title}</h3>
-                  <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>{guide.desc}</p>
+                  <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>{guide.summary}</p>
                 </div>
-                <a
-                  href={guide.file}
-                  download
-                  style={{
-                    marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-                    background: "#122C54", color: "#fff", padding: "12px 20px", borderRadius: 8,
-                    fontWeight: 700, fontSize: 14, textDecoration: "none",
-                  }}
-                >
-                  <Download size={15} aria-hidden="true" /> Download PDF
-                </a>
+                <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: 10 }}>
+                  <Link
+                    href={`/resources/${guide.slug}`}
+                    style={{
+                      display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                      background: "#122C54", color: "#fff", padding: "12px 20px", borderRadius: 8,
+                      fontWeight: 700, fontSize: 14, textDecoration: "none",
+                    }}
+                  >
+                    What's inside <ArrowRight size={15} aria-hidden="true" />
+                  </Link>
+                  <a
+                    href={guide.file}
+                    download
+                    style={{
+                      display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                      color: "#122C54", padding: "10px 20px", borderRadius: 8, border: "1px solid #cbd5e1",
+                      fontWeight: 700, fontSize: 13.5, textDecoration: "none",
+                    }}
+                  >
+                    <Download size={14} aria-hidden="true" /> Download PDF
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>

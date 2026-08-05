@@ -13,6 +13,7 @@ import { renderToPipeableStream } from "react-dom/server";
 import App from "./App";
 import { takeCollectedHead, type CollectedHead } from "./lib/head";
 import { getAllPublishedPosts } from "./lib/posts";
+import { RESOURCES } from "./content/resources";
 import { fetchEvents, setEventsSnapshot, type EdatmEvent } from "./content/events";
 
 /** Every public route that gets its own prerendered HTML file. */
@@ -45,12 +46,14 @@ export const STATIC_ROUTES: string[] = [
 ];
 
 /**
- * Full route list, including one entry per published blog post. Posts are
- * bundled at build time by src/lib/posts.ts, so their slugs are known here.
+ * Full route list, including one entry per published blog post and one per free
+ * resource. Both sets are bundled at build time, so their slugs are known here
+ * and neither the sitemap nor the prerender pass can drift from the content.
  */
 export function allRoutes(): string[] {
   const posts = getAllPublishedPosts().map((post) => `/news/${post.slug}`);
-  return [...STATIC_ROUTES, ...posts];
+  const resources = RESOURCES.map((resource) => `/resources/${resource.slug}`);
+  return [...STATIC_ROUTES, ...posts, ...resources];
 }
 
 /**

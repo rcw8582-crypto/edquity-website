@@ -39,6 +39,7 @@ const IntakeConsent = lazy(() => import("@/pages/IntakeConsent"));
 const DonorPortal = lazy(() => import("@/pages/DonorPortal"));
 const ClientPortal = lazy(() => import("@/pages/ClientPortal"));
 const NewsPost = lazy(() => import("@/pages/NewsPost"));
+const ResourceDetail = lazy(() => import("@/pages/ResourceDetail"));
 const Admin = lazy(() => import("@/pages/Admin"));
 const Intake = lazy(() => import("@/pages/Intake"));
 const ParentQuestions = lazy(() => import("@/pages/ParentQuestions"));
@@ -117,6 +118,7 @@ function Router() {
           <Route path="/donor" component={DonorPortal} />
           <Route path="/client-portal" component={ClientPortal} />
           <Route path="/news/:slug" component={NewsPost} />
+          <Route path="/resources/:slug" component={ResourceDetail} />
           <Route path="/admin" component={Admin} />
           <Route path="/intake" component={Intake} />
           <Route path="/tell-us-about-your-child" component={ParentQuestions} />
