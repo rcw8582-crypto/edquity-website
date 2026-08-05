@@ -62,7 +62,7 @@ export default function Services() {
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 28px" }}>
               Not sure where to begin? Book a free discovery call with Dr. Clarke-Wedderburn. She will listen to your situation, answer your first questions, and identify what your child needs right now, with no obligation to continue.
             </p>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
+            <a href={BOOKING_URL}
               style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
               Schedule Your Free Call
             </a>
@@ -246,7 +246,7 @@ export default function Services() {
               </div>
               <p style={{ fontSize: 18, fontWeight: 800, color: "#fff", margin: "0 0 4px" }}>Dr. Reba Clarke-Wedderburn</p>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", margin: "0 0 20px" }}>Founder & Executive Director</p>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
+              <a href={BOOKING_URL}
                 style={{ display: "block", background: "#22C55E", color: "#122C54", padding: "12px 20px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 14 }}>
                 Book a Free Call
               </a>
@@ -312,7 +312,7 @@ export default function Services() {
               style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>
               Start Your Free IEP Audit
             </Link>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
+            <a href={BOOKING_URL}
               style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "16px 36px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 17, border: "2px solid rgba(18,44,84,0.4)" }}>
               Or Book a Free Call
             </a>
