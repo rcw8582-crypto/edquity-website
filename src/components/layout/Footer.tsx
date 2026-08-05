@@ -137,6 +137,8 @@ export default function Footer() {
               <li><Link href="/donate" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Donate</Link></li>
               <li><Link href="/volunteer" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Volunteer</Link></li>
               <li><Link href="/resources" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Free Resources &amp; Tools</Link></li>
+              <li><Link href="/tools/iep-goal-checker" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">IEP Goal Checker</Link></li>
+              <li><Link href="/our-methodology" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Our Methodology</Link></li>
               <li><Link href="/events" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Events</Link></li>
             </ul>
           </div>
@@ -147,6 +149,7 @@ export default function Footer() {
               <li><Link href="/transparency" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Transparency</Link></li>
               <li><Link href="/funders" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">For Funders</Link></li>
               <li><Link href="/iep-quality-improvement" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">IEP Quality Improvement Program</Link></li>
+              <li><Link href="/fellowship" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Leader Fellowship</Link></li>
               <li><Link href="/press" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Press & Media</Link></li>
               <li><Link href="/client-portal" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">EDquity360 Portal</Link></li>
             </ul>
