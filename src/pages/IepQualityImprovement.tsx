@@ -54,9 +54,12 @@ export default function IepQualityImprovement() {
             Monthly IEP Quality Audits
           </h2>
           <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.8, margin: "0 0 32px" }}>
-            Twenty-one of the forty conditions test compliance, the requirements IDEA places on what
-            an IEP must contain. The remaining nineteen test substance, whether what the document
-            contains is specific and measurable enough to be worth anything to the student. Reviewers
+            Twenty-one of the forty are compliance conditions, the requirements IDEA places on what
+            an IEP must contain. The remaining nineteen are substantive conditions, holding the
+            document to the standard the Supreme Court set in Endrew F. v. Douglas County School
+            District RE-1 (2017): an IEP must be reasonably calculated to enable a child to make
+            progress appropriate in light of the child's circumstances, and its goals must be
+            appropriately ambitious rather than merely more than de minimis. Reviewers
             never know which school or which author produced a document, and the sample size holds
             steady month to month, so the scores are comparable across the year. All handling is
             remote and FERPA-protected.
