@@ -1,24 +1,25 @@
 // Single source of truth for the booking links.
 // To change booking tools again, update these constants.
 
-const BOOKINGS_USER =
-  "https://outlook.office.com/bookwithme/user/42aef0dba4314fce8ba5e03a5331578d@edquityatthemargins.org";
-
 /**
- * The parent-facing link: Microsoft Bookings "New Families Getting Started
- * Call" (30 min, free). Deep-links straight to that one meeting type, so a
- * family never has to choose. Verified working as a guest.
- */
-export const BOOKING_URL = `${BOOKINGS_USER}/meetingtype/i1PD01VF5E6o5zC7O08JjA2?anonymous&ismsaljsauthenabled&ep=mlink`;
-
-/**
- * The whole booking page, listing every meeting type.
+ * The Microsoft Bookings shared page, listing both services:
+ * "New Family Registration" for families starting a free IEP Audit, and
+ * "Partnership and Engagement Inquiry" for schools and organizations.
  *
- * Used where the right meeting type depends on who is asking. The client
- * portal's "Schedule a session" card previously pointed at the new-families
- * call, so an existing family booking a debrief landed on the intake call for
- * people who are not clients yet. Sending them to the chooser lets them pick
- * the right one. When a purpose-built session type exists in Bookings, give
- * that one its own deep link here and point the portal at it instead.
+ * This replaced a personal "Bookings with me" link, which sat behind a
+ * "Sign in or continue as guest" interstitial. This page has none: it opens
+ * straight on the service list. It can also be framed, which is what /book
+ * does.
  */
-export const BOOKING_PAGE_URL = `${BOOKINGS_USER}/?anonymous&ismsaljsauthenabled&ep=mlink`;
+export const BOOKING_PAGE_URL =
+  "https://outlook.office.com/book/EDquityattheMargins1@edquityatthemargins.org/";
+
+/**
+ * Where every booking button on the site points.
+ *
+ * Deliberately our own URL rather than the Microsoft one. /book frames the
+ * page above, so a visitor never leaves the domain, and the click becomes a
+ * page view we can actually measure instead of an outbound link we lose track
+ * of the moment it is followed.
+ */
+export const BOOKING_URL = "/book";
