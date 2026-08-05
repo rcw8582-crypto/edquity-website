@@ -221,9 +221,14 @@ export default function Methodology() {
             Every EDquity at the Margins IEP Audit covers all six areas above, applied to your child's specific document. The result is a written report that names exactly what is missing or inadequate, with the language to ask for what your child needs at the next meeting. The IEP Audit is free for every family.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+            <Link href="/intake">
               <Button className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full px-6">
-                Book a free discovery call
+                Start your free IEP Audit
+              </Button>
+            </Link>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="rounded-full px-6">
+                Or book a free discovery call
               </Button>
             </a>
             <Link href="/services">

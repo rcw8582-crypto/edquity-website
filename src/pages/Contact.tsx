@@ -1,7 +1,8 @@
 import { BOOKING_URL } from "@/lib/booking";
 import { useState } from "react";
+import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Mail, Phone, Calendar, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, Calendar, CheckCircle2, FileSearch } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -182,6 +183,32 @@ export default function Contact() {
                 >
                   info@edquityatthemargins.org
                 </a>
+              </motion.div>
+
+              {/* The audit is the primary action everywhere else on the site, and
+                  this page previously offered only the call, so a family who
+                  arrived here ready to start had no way to. */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.05 }}
+                className="bg-white border border-border rounded-2xl p-7 space-y-4 shadow-sm"
+                data-testid="contact-audit-card"
+              >
+                <div className="bg-muted w-12 h-12 rounded-xl flex items-center justify-center">
+                  <FileSearch size={24} className="text-accent" />
+                </div>
+                <h3 className="text-lg font-bold text-primary">Free IEP Audit</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Already have your child's IEP? Start the audit and Dr. Clarke-Wedderburn will review
+                  it and send you a written report in plain language. Families pay nothing.
+                </p>
+                <Link href="/intake" data-testid="contact-start-audit">
+                  <Button className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full">
+                    Start Your Free Audit
+                  </Button>
+                </Link>
               </motion.div>
 
               <motion.div

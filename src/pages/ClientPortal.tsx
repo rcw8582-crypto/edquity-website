@@ -108,17 +108,18 @@ export default function ClientPortal() {
         <div style={{ maxWidth: 580, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(18px,2.5vw,24px)", fontWeight: 800, margin: "0 0 12px", color: "#122C54" }}>Not a client yet?</h2>
           <p style={{ fontSize: 15, color: "#64748b", lineHeight: 1.7, margin: "0 0 28px" }}>
-            Start with a free 30-minute discovery call. Dr. Clarke-Wedderburn will review your child's situation and recommend the right next step.
+            Start your free IEP Audit and Dr. Clarke-Wedderburn will review your child's document and
+            send you a written report. If you would rather talk first, book a free call instead.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
+            <Link href="/intake"
               style={{ background: "#22C55E", color: "#122C54", padding: "13px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 15 }}>
-              Book a Free Discovery Call
-            </a>
-            <Link href="/services"
-              style={{ background: "transparent", color: "#122C54", padding: "13px 28px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15, border: "2px solid #e2e8f0" }}>
-              See Services
+              Start Your Free IEP Audit
             </Link>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
+              style={{ background: "transparent", color: "#122C54", padding: "13px 28px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15, border: "2px solid #e2e8f0" }}>
+              Or Book a Free Call
+            </a>
           </div>
         </div>
       </section>

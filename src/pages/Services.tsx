@@ -41,10 +41,10 @@ export default function Services() {
             Serving families across the greater Metro Nashville area and, through our virtual delivery model, anywhere in the country.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
+            <Link href="/intake"
               style={{ background: "#22C55E", color: "#122C54", padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
-              Book a Free Discovery Call
-            </a>
+              Start Your Free IEP Audit
+            </Link>
             <a href="#track-two"
               style={{ background: "transparent", color: "#fff", padding: "15px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(255,255,255,0.4)" }}>
               No IEP Yet? Start Here
@@ -304,12 +304,19 @@ export default function Services() {
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(26px,3vw,38px)", fontWeight: 900, color: "#122C54", margin: "0 0 16px", letterSpacing: "-0.5px" }}>Ready to get started?</h2>
           <p style={{ fontSize: 18, color: "rgba(18,44,84,0.75)", lineHeight: 1.65, margin: "0 0 36px" }}>
-            Book a free 30-minute discovery call. Dr. Clarke-Wedderburn will help you understand your options and identify the right first step for your child.
+            Start your free IEP Audit and Dr. Clarke-Wedderburn will review your child's document and send
+            you a written report. If you would rather talk it through first, book a free call instead.
           </p>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
-            style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>
-            Book Your Free Discovery Call
-          </a>
+          <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
+            <Link href="/intake"
+              style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>
+              Start Your Free IEP Audit
+            </Link>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
+              style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "16px 36px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 17, border: "2px solid rgba(18,44,84,0.4)" }}>
+              Or Book a Free Call
+            </a>
+          </div>
         </div>
       </section>
 
