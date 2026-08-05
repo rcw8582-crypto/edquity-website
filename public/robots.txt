@@ -2,7 +2,6 @@ User-agent: *
 Allow: /
 
 Disallow: /admin
-Disallow: /donor
 Disallow: /client-portal
 
 Sitemap: https://www.edquityatthemargins.org/sitemap.xml

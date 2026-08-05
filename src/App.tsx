@@ -36,7 +36,6 @@ const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const FerpaCompliance = lazy(() => import("@/pages/FerpaCompliance"));
 const ResearchDataPolicy = lazy(() => import("@/pages/ResearchDataPolicy"));
 const IntakeConsent = lazy(() => import("@/pages/IntakeConsent"));
-const DonorPortal = lazy(() => import("@/pages/DonorPortal"));
 const ClientPortal = lazy(() => import("@/pages/ClientPortal"));
 const NewsPost = lazy(() => import("@/pages/NewsPost"));
 const ResourceDetail = lazy(() => import("@/pages/ResourceDetail"));
@@ -115,7 +114,6 @@ function Router() {
           <Route path="/ferpa-compliance" component={FerpaCompliance} />
           <Route path="/research-data-policy" component={ResearchDataPolicy} />
           <Route path="/intake-consent" component={IntakeConsent} />
-          <Route path="/donor" component={DonorPortal} />
           <Route path="/client-portal" component={ClientPortal} />
           <Route path="/news/:slug" component={NewsPost} />
           <Route path="/resources/:slug" component={ResourceDetail} />

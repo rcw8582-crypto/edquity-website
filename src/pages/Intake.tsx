@@ -169,9 +169,22 @@ export default function Intake() {
           <p style={{ fontSize: 15, color: "#64748b", lineHeight: 1.6, margin: "0 0 36px" }}>
             That link takes you through a few questions about your family and a short baseline survey, and then you can upload your child's IEP straight into the secure portal. If the email has not arrived in a few minutes, check your spam folder or write to info@edquityatthemargins.org.
           </p>
-          <Link href="/" style={{ background: "#22C55E", color: "#122C54", padding: "14px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
-            Back to Home
-          </Link>
+          {/* The strongest moment to ask for more detail is right after someone
+              has committed, not weeks later by email. Everything written here
+              goes into preparing the audit, so this is the primary action and
+              home is the secondary one. */}
+          <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
+            <Link href="/tell-us-about-your-child" style={{ background: "#22C55E", color: "#122C54", padding: "14px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
+              Tell us about your child
+            </Link>
+            <Link href="/" style={{ background: "transparent", color: "#122C54", padding: "14px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid #cbd5e1" }}>
+              Back to Home
+            </Link>
+          </div>
+          <p style={{ fontSize: 14, color: "#64748b", lineHeight: 1.6, margin: "18px 0 0" }}>
+            The questions take about fifteen minutes and you can stop and come back. What you write
+            goes straight into preparing your child's audit.
+          </p>
         </div>
       </div>
     );
