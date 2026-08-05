@@ -1,6 +1,8 @@
+import { useState, FormEvent } from "react";
 import { Link } from "wouter";
-import { FileSearch, ClipboardCheck, CalendarClock, GraduationCap } from "lucide-react";
+import { FileSearch, ClipboardCheck, CalendarClock, GraduationCap, CheckCircle2 } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
+import { trackInquirySubmitted } from "@/lib/analytics";
 
 /**
  * The IEP Quality Improvement Program.
@@ -12,17 +14,69 @@ import PageMeta from "@/components/PageMeta";
  * enroll in rather than a service they buy, which is how a 501(c)(3) should
  * present earned-revenue work in the first place.
  *
- * Deliberately absent: fee figures, an inquiry form, and engagement terms.
- * Schools reach us through the ordinary contact page. "Partner" is avoided
- * throughout because it already means funders on /funders and community
- * organizations on /events.
+ * Deliberately absent: fee figures and engagement terms. The inquiry form asks
+ * five plain questions and no qualifying ones. "Partner" is avoided throughout
+ * because it already means funders on /funders and community organizations
+ * on /events.
  */
 
 const NAVY = "#122C54";
 const GREEN = "#22C55E";
 const TEAL = "#14B8A6";
 
+const inputStyle: React.CSSProperties = {
+  width: "100%", padding: "12px 14px", borderRadius: 8, border: "1px solid rgba(255,255,255,0.25)",
+  fontSize: 15.5, color: "#fff", background: "rgba(255,255,255,0.07)", fontFamily: "inherit",
+};
+const labelStyle: React.CSSProperties = {
+  display: "block", fontSize: 13.5, fontWeight: 700, color: "rgba(255,255,255,0.85)", margin: "0 0 7px",
+};
+const fieldWrap: React.CSSProperties = { marginBottom: 18 };
+
 export default function IepQualityImprovement() {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setStatus("sending");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          title: data.get("title"),
+          organization: data.get("organization"),
+          email: data.get("email"),
+          message: data.get("message"),
+          // The endpoint still requires a subject line for the email it sends
+          // Reba. There is no picker on this form, so the page names itself.
+          service: "IEP Quality Improvement Program",
+        }),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setStatus("error");
+        setErrorMsg(
+          typeof json.error === "string"
+            ? json.error
+            : "Something went wrong. Please email info@edquityatthemargins.org."
+        );
+        return;
+      }
+      trackInquirySubmitted("program");
+      setStatus("sent");
+      form.reset();
+    } catch {
+      setStatus("error");
+      setErrorMsg("Something went wrong. Please email us at info@edquityatthemargins.org.");
+    }
+  }
+
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
@@ -165,22 +219,75 @@ export default function IepQualityImprovement() {
         </div>
       </section>
 
-      {/* Contact */}
+      {/* Inquiry. Deliberately five plain fields. The consulting page this
+          replaced asked for organization type, service tier, and how many IEPs
+          were in the program, which is how a vendor qualifies a lead rather
+          than how a nonprofit answers a question. Anyone who wants to know
+          more can ask without being sorted first. */}
       <section className="sp" style={{ background: NAVY }}>
-        <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
-          <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#fff", margin: "0 0 16px", letterSpacing: "-0.5px" }}>
-            Interested in enrolling your school?
+        <div style={{ maxWidth: 640, margin: "0 auto" }}>
+          <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#fff", margin: "0 0 14px", letterSpacing: "-0.5px", textAlign: "center" }}>
+            Ask us about the Program
           </h2>
-          <p style={{ fontSize: 17, color: "rgba(255,255,255,0.72)", lineHeight: 1.7, margin: "0 0 34px" }}>
-            Reach out and we will talk through what a monthly sample looks like for your IEP
-            population and what the year would cover.
+          <p style={{ fontSize: 17, color: "rgba(255,255,255,0.72)", lineHeight: 1.7, margin: "0 0 32px", textAlign: "center" }}>
+            Tell us what you would like to know and we will reply within two business days. You can
+            also email us at{" "}
+            <a href="mailto:info@edquityatthemargins.org" style={{ color: GREEN, fontWeight: 700 }}>
+              info@edquityatthemargins.org
+            </a>.
           </p>
-          <Link
-            href="/contact"
-            style={{ display: "inline-block", background: GREEN, color: NAVY, padding: "16px 36px", borderRadius: 8, fontWeight: 800, fontSize: 16.5, textDecoration: "none" }}
-          >
-            Contact Us
-          </Link>
+
+          {status === "sent" ? (
+            <div style={{ background: "rgba(34,197,94,0.12)", border: `1px solid ${GREEN}`, borderRadius: 12, padding: "26px 28px", textAlign: "center" }}>
+              <CheckCircle2 size={30} color={GREEN} style={{ margin: "0 auto 12px", display: "block" }} />
+              <p style={{ fontSize: 17, fontWeight: 800, color: "#fff", margin: "0 0 8px" }}>Thank you, your question is on its way.</p>
+              <p style={{ fontSize: 15, color: "rgba(255,255,255,0.7)", lineHeight: 1.6, margin: 0 }}>
+                We will reply within two business days. A confirmation is in your inbox.
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={onSubmit} noValidate>
+              <div style={fieldWrap}>
+                <label style={labelStyle} htmlFor="iq-name">Your name *</label>
+                <input style={inputStyle} id="iq-name" name="name" required maxLength={200} autoComplete="name" />
+              </div>
+              <div style={fieldWrap}>
+                <label style={labelStyle} htmlFor="iq-role">Your role</label>
+                <input style={inputStyle} id="iq-role" name="title" maxLength={200} placeholder="Special education director, principal, coordinator" />
+              </div>
+              <div style={fieldWrap}>
+                <label style={labelStyle} htmlFor="iq-org">School or organization *</label>
+                <input style={inputStyle} id="iq-org" name="organization" required maxLength={300} autoComplete="organization" />
+              </div>
+              <div style={fieldWrap}>
+                <label style={labelStyle} htmlFor="iq-email">Email *</label>
+                <input style={inputStyle} id="iq-email" name="email" type="email" required maxLength={254} autoComplete="email" />
+              </div>
+              <div style={fieldWrap}>
+                <label style={labelStyle} htmlFor="iq-message">What would you like to know? *</label>
+                <textarea style={{ ...inputStyle, minHeight: 130, resize: "vertical" }} id="iq-message" name="message" required maxLength={5000} />
+              </div>
+
+              {status === "error" && (
+                <p role="alert" style={{ fontSize: 14.5, color: "#FBBF24", lineHeight: 1.6, margin: "0 0 18px" }}>
+                  {errorMsg}
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                style={{
+                  width: "100%", background: GREEN, color: NAVY, padding: "16px 24px",
+                  borderRadius: 8, fontWeight: 800, fontSize: 16.5, border: "none",
+                  fontFamily: "inherit", cursor: status === "sending" ? "default" : "pointer",
+                  opacity: status === "sending" ? 0.7 : 1,
+                }}
+              >
+                {status === "sending" ? "Sending…" : "Send my question"}
+              </button>
+            </form>
+          )}
         </div>
       </section>
     </div>
