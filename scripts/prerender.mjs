@@ -73,7 +73,7 @@ const CANONICAL_ALIASES = {};
 
 function buildPage(route, head, appHtml) {
   const canonicalRoute = CANONICAL_ALIASES[route] ?? route;
-  const canonical = `https://www.edquityatthemargins.org${canonicalRoute === "/" ? "/" : canonicalRoute}`;
+  const canonical = `${SITE}${canonicalRoute === "/" ? "/" : canonicalRoute}`;
   let html = template;
 
   if (head?.title) {
@@ -170,7 +170,7 @@ function buildSitemap(routeList) {
         SITEMAP_WEIGHTS[route] ??
         SITEMAP_PREFIX_WEIGHTS.find((entry) => route.startsWith(entry.prefix))?.weight ??
         SITEMAP_DEFAULT;
-      const loc = `https://www.edquityatthemargins.org${route === "/" ? "/" : route}`;
+      const loc = `${SITE}${route === "/" ? "/" : route}`;
       return `  <url><loc>${loc}</loc><changefreq>${weight.changefreq}</changefreq><priority>${weight.priority}</priority></url>`;
     });
 
