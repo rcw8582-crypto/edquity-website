@@ -1,12 +1,11 @@
 /**
  * Vercel serverless function: POST /api/inquiry
  *
- * Receives an institutional services inquiry (blind IEP quality audits,
- * the Leader Fellowship, or educator PD) from the For Schools page,
+ * Receives a school inquiry from the IEP Quality Improvement Program page,
  * validates input, then:
  *
  *   1. Emails info@edquityatthemargins.org with the inquiry so Reba
- *      can follow up with engagement details and pricing.
+ *      can follow up.
  *   2. Sends the requester a short acknowledgment.
  *
  * Required environment variable:
@@ -16,7 +15,7 @@
 import { Resend } from "resend";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const FROM = "EDquity Institutional Services <forms@edquityatthemargins.org>";
+const FROM = "EDquity at the Margins <forms@edquityatthemargins.org>";
 const TO = "info@edquityatthemargins.org";
 
 type Body = {
@@ -116,10 +115,10 @@ export default async function handler(req: Request): Promise<Response> {
     return Response.json({ error: "Please provide a valid email address." }, { status: 400 });
   }
   if (!isNonEmptyString(body.service, 100)) {
-    return Response.json({ error: "Please select the service you are interested in." }, { status: 400 });
+    return Response.json({ error: "Please tell us which program you are asking about." }, { status: 400 });
   }
   if (!isNonEmptyString(body.message, 5000)) {
-    return Response.json({ error: "Please tell us briefly about your needs." }, { status: 400 });
+    return Response.json({ error: "Please tell us what you would like to know." }, { status: 400 });
   }
 
   const name = (body.name as string).trim();
@@ -136,20 +135,20 @@ export default async function handler(req: Request): Promise<Response> {
 
   const internalHtml = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #122C54; max-width: 660px; margin: 0 auto; padding: 24px;">
-      <h2 style="color: #122C54; margin: 0 0 16px; font-size: 18px;">New institutional services inquiry</h2>
+      <h2 style="color: #122C54; margin: 0 0 16px; font-size: 18px;">New school inquiry</h2>
       <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px;">
         ${row("Contact", `${name} <${email}>`)}
         ${row("Title", title || "Not provided")}
         ${row("Organization", organization)}
         ${row("Organization type", orgType || "Not provided")}
         ${row("Phone", phone || "Not provided")}
-        ${row("Service of interest", service)}
+        ${row("Asking about", service)}
         ${row("IEPs in program", iepVolume || "Not provided")}
       </table>
       <div style="border-top: 1px solid #e2e8f0; padding-top: 16px; white-space: pre-wrap; line-height: 1.6;">${escapeHtml(message)}</div>
       <p style="color: #64748b; font-size: 12px; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
-        Reply to this email to respond directly to ${escapeHtml(name)}. Follow up with engagement details and pricing.<br />
-        Submitted via the For Schools inquiry form on edquityatthemargins.org.
+        Reply to this email to respond directly to ${escapeHtml(name)}.<br />
+        Submitted via the IEP Quality Improvement Program inquiry form on edquityatthemargins.org.
       </p>
     </div>
   `;
@@ -159,7 +158,7 @@ export default async function handler(req: Request): Promise<Response> {
       from: FROM,
       to: TO,
       replyTo: email,
-      subject: `[Consulting Inquiry] ${service}: ${organization}`,
+      subject: `[School Inquiry] ${service}: ${organization}`,
       html:
         internalHtml +
         pasteRow("Consulting Inquiries", [
@@ -174,7 +173,7 @@ export default async function handler(req: Request): Promise<Response> {
           iepVolume,
           short(message),
         ]),
-      text: `New institutional inquiry from ${name} <${email}>, ${organization}. Service: ${service}. ${message}`,
+      text: `New school inquiry from ${name} <${email}>, ${organization}. Asking about: ${service}. ${message}`,
     });
     if (internal.error) {
       console.error("[inquiry] internal email failed:", internal.error);
@@ -187,15 +186,15 @@ export default async function handler(req: Request): Promise<Response> {
     const ack = await resend.emails.send({
       from: FROM,
       to: email,
-      subject: "We received your inquiry, EDquity at the Margins",
+      subject: "We received your question, EDquity at the Margins",
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #122C54; max-width: 620px; margin: 0 auto; padding: 24px; line-height: 1.65;">
           <p>Hi ${escapeHtml(name)},</p>
-          <p>Thank you for your interest in EDquity at the Margins' institutional services. We received your inquiry about ${escapeHtml(service)} and will follow up within two business days with engagement details tailored to ${escapeHtml(organization)}.</p>
+          <p>Thank you for reaching out about the ${escapeHtml(service)}. We received your question and will reply within two business days.</p>
           <p>Dr. Reba Clarke-Wedderburn<br />Founder and Executive Director, EDquity at the Margins</p>
         </div>
       `,
-      text: `Hi ${name}, thank you for your interest in EDquity at the Margins' institutional services. We received your inquiry about ${service} and will follow up within two business days.`,
+      text: `Hi ${name}, thank you for reaching out about the ${service}. We received your question and will reply within two business days.`,
     });
     if (ack.error) {
       console.error("[inquiry] acknowledgment email failed:", ack.error);
