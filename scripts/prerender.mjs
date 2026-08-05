@@ -135,6 +135,7 @@ const SITEMAP_WEIGHTS = {
   "/volunteer": { changefreq: "monthly", priority: "0.7" },
   "/funders": { changefreq: "monthly", priority: "0.7" },
   "/contact": { changefreq: "monthly", priority: "0.7" },
+  "/book": { changefreq: "monthly", priority: "0.8" },
   "/press": { changefreq: "monthly", priority: "0.6" },
   "/transparency": { changefreq: "monthly", priority: "0.6" },
   "/accessibility": { changefreq: "yearly", priority: "0.3" },
