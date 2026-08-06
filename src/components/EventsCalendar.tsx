@@ -117,7 +117,7 @@ export default function EventsCalendar({ events }: { events: EdatmEvent[] }) {
                   alignSelf: "flex-start",
                   fontSize: 12,
                   fontWeight: hasEvents ? 800 : 600,
-                  color: !inMonth ? "#7C8899" : hasEvents ? "#122C54" : "#475569",
+                  color: !inMonth ? "#64748B" : hasEvents ? "#122C54" : "#475569",
                   ...(isToday
                     ? {
                         width: 20,
