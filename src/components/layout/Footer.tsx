@@ -114,6 +114,10 @@ export default function Footer() {
             <img
               src="/images/logo-white.png"
               alt="EDquity at the Margins"
+              width={400}
+              height={129}
+              loading="lazy"
+              decoding="async"
               className="h-12 w-auto"
             />
             <p className="text-primary-foreground/80 leading-relaxed text-sm">

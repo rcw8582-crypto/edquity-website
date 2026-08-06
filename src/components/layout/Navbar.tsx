@@ -68,6 +68,9 @@ export default function Navbar() {
             <img
               src="/images/logo-dark.png"
               alt=""
+              width={400}
+              height={129}
+              fetchPriority="high"
               className="h-10 w-auto group-hover:scale-105 transition-transform duration-300"
             />
           </Link>
