@@ -14,7 +14,7 @@ const tiers = [
   {
     title: "Community Funder",
     range: "$1,000 – $4,999",
-    color: "#22C55E",
+    color: "#15803D",
     includes: [
       "Funds 4–20 free IEP Audits for families who cannot pay for advocacy",
       "Named acknowledgment in annual report",
@@ -24,7 +24,7 @@ const tiers = [
   {
     title: "Program Sponsor",
     range: "$5,000 – $24,999",
-    color: "#0F766E",
+    color: "#14B8A6",
     featured: true,
     includes: [
       "Funds 20–100 free IEP Audits for families who cannot pay for advocacy",
