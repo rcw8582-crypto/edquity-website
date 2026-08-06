@@ -1,25 +1,149 @@
+import { useState, useEffect } from "react";
 import { useRoute, Link } from "wouter";
-import { ArrowLeft, Download, FileText } from "lucide-react";
+import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import NotFound from "@/pages/not-found";
-import { roleBySlug, rolePdf } from "@/content/board-roles";
+import {
+  initialRoles, fetchRoles, roleBySlug, sharedFor,
+  type RolesSnapshot, type BoardRole, type RoleShared,
+} from "@/content/board-roles";
 
 /**
- * One position description, rendered as the PDF itself.
+ * One position description, rendered as HTML.
  *
- * The page deliberately holds no copy of the description. Reba maintains the
- * Word document, saves it as a PDF over public/board-roles/<slug>.pdf, and
- * this page shows the new version with nothing else to update. Repeating the
- * text in JSX would mean every edit had to happen twice, and the second one
- * would eventually get missed.
+ * Every word comes from the portal, where Reba edits each section. The page
+ * previously embedded a PDF, which showed some visitors a black rectangle and
+ * gave a phone nothing worth reading. Real markup also means a search engine
+ * and a screen reader get the content instead of a binary attachment.
  */
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section className="border-t border-border pt-8 mt-8">
+      <h2 className="text-xs font-bold uppercase tracking-widest text-accent mb-4">{title}</h2>
+      {children}
+    </section>
+  );
+}
+
+function Bullets({ items }: { items: string[] }) {
+  if (!items?.length) return null;
+  return (
+    <ul className="space-y-3">
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-3 text-muted-foreground leading-relaxed">
+          <CheckCircle2 size={19} className="text-accent shrink-0 mt-1" aria-hidden="true" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function RoleBody({ role, shared }: { role: BoardRole; shared?: RoleShared }) {
+  const who = role.kind === "director" ? "director" : "council member";
+  return (
+    <>
+      <Section title="Purpose of the position">
+        <p className="text-muted-foreground text-lg leading-relaxed">{role.purpose}</p>
+      </Section>
+
+      <Section title="Responsibilities of this position">
+        <Bullets items={role.responsibilities} />
+      </Section>
+
+      {shared && shared.shared_responsibilities.length > 0 && (
+        <Section title={`Responsibilities shared by every ${who}`}>
+          <Bullets items={shared.shared_responsibilities} />
+        </Section>
+      )}
+
+      <Section title="Required qualifications">
+        <Bullets items={role.required} />
+      </Section>
+
+      {role.preferred.length > 0 && (
+        <Section title="Preferred qualifications">
+          <Bullets items={role.preferred} />
+        </Section>
+      )}
+
+      {shared && (
+        <Section title="Time commitment">
+          <Bullets items={shared.time_commitment} />
+          {role.additional_commitment && (
+            <p className="text-muted-foreground leading-relaxed mt-5">{role.additional_commitment}</p>
+          )}
+        </Section>
+      )}
+
+      {shared && (
+        <Section title="Reports to">
+          <p className="text-muted-foreground leading-relaxed">{shared.reports_to}</p>
+        </Section>
+      )}
+
+      {shared && (
+        <Section title="Term">
+          <p className="text-muted-foreground leading-relaxed">{shared.term}</p>
+        </Section>
+      )}
+
+      {shared && (
+        <Section title="Scope of the role">
+          <p className="text-muted-foreground leading-relaxed">{shared.boundary}</p>
+          {shared.governance_note && (
+            <p className="text-muted-foreground leading-relaxed mt-4">{shared.governance_note}</p>
+          )}
+        </Section>
+      )}
+
+      {shared && (
+        <Section title="Compensation">
+          <p className="text-muted-foreground leading-relaxed">{shared.compensation}</p>
+        </Section>
+      )}
+
+      {shared && shared.provided.length > 0 && (
+        <Section title="What we provide">
+          <Bullets items={shared.provided} />
+        </Section>
+      )}
+    </>
+  );
+}
+
 export default function BoardRole() {
   const [, params] = useRoute("/board/roles/:slug");
-  const role = params?.slug ? roleBySlug(params.slug) : undefined;
+  const [snapshot, setSnapshot] = useState<RolesSnapshot | null>(initialRoles());
+
+  useEffect(() => {
+    let live = true;
+    fetchRoles().then((fresh) => {
+      if (live && fresh.roles.length > 0) setSnapshot(fresh);
+    });
+    return () => {
+      live = false;
+    };
+  }, []);
+
+  if (!params?.slug) return <NotFound />;
+
+  const role = snapshot ? roleBySlug(snapshot, params.slug) : undefined;
+
+  // Nothing loaded yet on a cold client navigation. A spinner beats a 404 the
+  // reader has to back out of.
+  if (!snapshot) {
+    return (
+      <div className="pt-20 min-h-[60vh] flex items-center justify-center" role="status" aria-live="polite">
+        <span className="sr-only">Loading the position description</span>
+        <div className="h-8 w-8 rounded-full border-2 border-accent border-t-transparent animate-spin" aria-hidden="true" />
+      </div>
+    );
+  }
 
   if (!role) return <NotFound />;
 
-  const pdf = rolePdf(role);
+  const shared = sharedFor(snapshot, role.kind);
   const kind = role.kind === "director" ? "Board of Directors" : "Advisory Council";
 
   return (
@@ -45,9 +169,7 @@ export default function BoardRole() {
               <span className="text-xs font-bold uppercase tracking-wider text-accent">{kind}</span>
               <span
                 className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
-                  role.status === "open"
-                    ? "bg-accent/15 text-accent"
-                    : "bg-muted text-muted-foreground"
+                  role.status === "open" ? "bg-accent/15 text-accent" : "bg-muted text-muted-foreground"
                 }`}
                 data-testid="role-status"
               >
@@ -58,81 +180,44 @@ export default function BoardRole() {
             <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">{role.title}</h1>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">{role.summary}</p>
 
-            <div className="flex flex-wrap gap-3">
-              <a
-                href={pdf}
-                download
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold rounded-full px-6 py-3 text-sm hover:bg-primary/90 transition-colors"
-                data-testid="download-pdf"
+            {role.status === "open" && (
+              <Link
+                href="/board"
+                className="inline-flex items-center gap-2 bg-accent text-primary-foreground font-semibold rounded-full px-6 py-3 text-sm hover:bg-accent/90 transition-colors"
+                data-testid="apply-cta"
               >
-                <Download size={16} aria-hidden="true" />
-                Download the position description
-              </a>
-              {role.status === "open" && (
-                <Link
-                  href="/board"
-                  className="inline-flex items-center gap-2 bg-accent text-primary-foreground font-semibold rounded-full px-6 py-3 text-sm hover:bg-accent/90 transition-colors"
-                  data-testid="apply-cta"
-                >
-                  Apply for this position
-                </Link>
-              )}
-            </div>
+                Apply for this position
+              </Link>
+            )}
           </div>
         </div>
       </section>
 
-      <section className="sp" style={{ background: "#fff", borderTop: "1px solid #e2e8f0" }}>
+      <section className="sp" style={{ background: "#fff" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          {/* An <iframe> rather than an <object>. Chrome renders a PDF inside
-              an object as an empty black rectangle, which is what shipped the
-              first time. The iframe hands the file to the browser's own PDF
-              viewer instead.
-
-              Phones mostly refuse to render an embedded PDF at all, so the
-              frame is hidden below the medium breakpoint and those visitors
-              get the download card underneath. An iframe cannot carry
-              fallback children the way an object can, so the fallback is a
-              real element rather than nested content. */}
-          {/* The link comes first and always renders. Browsers disagree about
-              embedded PDFs, and a phone usually refuses outright, so a page
-              that depends on the frame is a page that shows some visitors a
-              blank rectangle. The frame below is an enhancement. */}
-          <div className="bg-white border border-border rounded-xl p-8 text-center mb-6">
-            <p className="text-muted-foreground mb-5">
-              The full position description for {role.title} opens as a PDF.
+          <article className="max-w-3xl" data-testid="role-body">
+            <p className="text-muted-foreground leading-relaxed">
+              EDquity at the Margins is a Tennessee nonprofit corporation and an IRS-recognized 501(c)(3) public charity, EIN 42-2295582. We review IEPs for families who cannot afford an advocate and we deliver free workshops on parent rights. Every family service is free.
             </p>
-            <a
-              href={pdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold rounded-full px-7 py-3.5 text-sm hover:bg-primary/90 transition-colors"
-              data-testid="open-pdf"
-            >
-              <FileText size={16} aria-hidden="true" />
-              Open the position description
-            </a>
-          </div>
 
-          <iframe
-            src={`${pdf}#view=FitH`}
-            title={`${role.title} position description`}
-            className="hidden md:block w-full rounded-xl border border-border bg-white"
-            style={{ height: "min(1100px, 130vh)" }}
-            data-testid="pdf-embed"
-          />
+            <RoleBody role={role} shared={shared} />
 
-          <p className="text-sm text-muted-foreground mt-4">
-            Prefer to read it offline?{" "}
-            <a href={pdf} download className="text-accent font-semibold underline">
-              Download the PDF
-            </a>
-            . Questions go to{" "}
-            <a href="mailto:info@edquityatthemargins.org" className="text-accent font-semibold underline">
-              info@edquityatthemargins.org
-            </a>
-            .
-          </p>
+            <Section title="How to apply">
+              <p className="text-muted-foreground leading-relaxed mb-5">
+                One application covers the board and the advisory council. Questions go to{" "}
+                <a href="mailto:info@edquityatthemargins.org" className="text-accent font-semibold underline">
+                  info@edquityatthemargins.org
+                </a>
+                .
+              </p>
+              <Link
+                href="/board"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold rounded-full px-6 py-3 text-sm hover:bg-primary/90 transition-colors"
+              >
+                Go to the application
+              </Link>
+            </Section>
+          </article>
         </div>
       </section>
     </div>
