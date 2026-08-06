@@ -39,7 +39,7 @@ Districts are generally able to produce this, because staff collect it to write 
 
 Endrew F. v. Douglas County School District RE-1 (2017) requires an IEP reasonably calculated to enable a child to make progress appropriate in light of the child's circumstances, and the Court rejected merely more than de minimis progress as the standard.
 
-A progress report is where that standard becomes checkable during the year rather than after it. If the data shows your child moving at a rate that will not reach the goal, the IEP is not currently working as written, and the team can reconvene. You can request an IEP meeting at any time. You do not have to wait for the annual review.
+A progress report is where that standard becomes checkable during the year rather than after it. If the data shows your child moving at a rate that will not reach the goal, the IEP is not currently working as written. Under 34 C.F.R. § 300.324(b)(1)(ii)(A), the IEP team must revise the IEP to address any lack of expected progress toward the annual goals. The regulation sets no deadline for that revision and does not spell out a parent's right to call a meeting, so put the request in writing and cite the data.
 
 ## What to do with a report that shows too little
 
@@ -60,6 +60,8 @@ Our free IEP Audit reviews your child's IEP across six research-grounded areas, 
 ## References
 
 Assistance to States for the Education of Children With Disabilities, 34 C.F.R. § 300.320 (2017).
+
+Assistance to States for the Education of Children With Disabilities, 34 C.F.R. § 300.324 (2017).
 
 Endrew F. v. Douglas County School District RE-1, 580 U.S. 386 (2017).
 
