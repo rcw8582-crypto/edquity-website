@@ -328,7 +328,7 @@ export default function Home() {
           <div className="rg-3" style={{ marginBottom: 20 }}>
             {[
               { icon: <Lightbulb size={22} color="#22C55E" />, title: "Need Clarity", text: "Feel overwhelmed by institutional jargon and want a plain-language translation of what the IEP actually says." },
-              { icon: <Target size={22} color="#22C55E" />, title: "Spotting Gaps", text: "Suspect their child's current plan is missing crucial supports or failing to address documented needs." },
+              { icon: <Target size={22} color="#22C55E" />, title: "Spotting Gaps", text: "Suspect their child's current IEP is missing crucial supports or failing to address documented needs." },
               { icon: <Shield size={22} color="#22C55E" />, title: "Independent Eyes", text: "Want an expert, objective opinion outside of the school district's perspective before signing anything." },
             ].map((card, i) => (
               <motion.div key={i}

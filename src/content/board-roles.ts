@@ -64,7 +64,7 @@ export const DIRECTOR_COMMON = {
   provided: [
     "Orientation and an onboarding packet covering the bylaws, the conflict of interest policy, and the board agreement",
     "Meeting materials distributed in advance of every meeting",
-    "A background check at our expense, completed before you are seated",
+    "We pay for your background check. You complete it before you are seated",
   ],
 } as const;
 
@@ -86,7 +86,7 @@ export const ADVISORY_COMMON = {
     "Council members do not consult on individual cases. We do not send you a child's file or ask you to advise a family. The exception is volunteer activity at a conference or community event, where a council member may talk with parents and explain what we offer.",
   provided: [
     "Orientation to our review methodology and the materials you will be asked to read",
-    "A background check at our expense, completed before you are appointed",
+    "We pay for your background check. You complete it before you are appointed",
   ],
   governanceNote:
     "Advisory council members hold no vote and carry no fiduciary duty. Under Article V of our bylaws, committee membership is limited to directors, so council members do not sit on board committees. They work with the Executive Director, and their input reaches the board through her report.",
