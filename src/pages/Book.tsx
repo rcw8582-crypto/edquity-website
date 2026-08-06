@@ -100,11 +100,11 @@ export default function Book() {
               <ExternalLink size={17} aria-hidden="true" />
             </a>
             <p style={{ fontSize: 14, color: "#64748b", margin: "14px 0 0" }}>
-              Opens in a new tab. You can also use the calendar below, or email{" "}
+              Opens in a new tab. You can also use the calendar below, email{" "}
               <a href="mailto:info@edquityatthemargins.org" style={{ color: NAVY, fontWeight: 700 }}>
                 info@edquityatthemargins.org
-              </a>{" "}
-              or call{" "}
+              </a>
+              , or call or text{" "}
               <a href="tel:+17868106178" style={{ color: NAVY, fontWeight: 700 }}>
                 (786) 810-6178
               </a>
