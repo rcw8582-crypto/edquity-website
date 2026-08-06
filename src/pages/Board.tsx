@@ -599,15 +599,15 @@ export default function Board() {
                     <Label htmlFor="cityState">City and state</Label>
                     <Input id="cityState" name="cityState" required placeholder="Nashville, TN" value={form.cityState} onChange={handleChange} data-testid="input-city-state" />
                   </div>
-                  <Select id="track" label="Which role are you applying for?" options={TRACKS} />
+                  <Select {...sel("track")} label="Which role are you applying for?" options={TRACKS} />
                   {directorTrack && (
-                    <Select id="seatInterest" label="Which seat interests you?" options={SEAT_INTERESTS} />
+                    <Select {...sel("seatInterest")} label="Which seat interests you?" options={SEAT_INTERESTS} />
                   )}
                   {advisoryTrack && (
-                    <Select id="advisoryRole" label="Which advisory role fits you?" options={ADVISORY_ROLE_OPTIONS} />
+                    <Select {...sel("advisoryRole")} label="Which advisory role fits you?" options={ADVISORY_ROLE_OPTIONS} />
                   )}
                   <Select
-                    id="isParent"
+                    {...sel("isParent")}
                     label="Are you the parent of a child with a disability, ages birth through 26?"
                     options={["Yes", "No"]}
                   />
@@ -615,9 +615,9 @@ export default function Board() {
 
                 <div className="space-y-6 border-t border-border pt-8">
                   <h3 className="text-lg font-bold text-primary">Nonprofit experience</h3>
-                  <Select id="nonprofitBoardService" label="Nonprofit board service" options={NONPROFIT_BOARD_SERVICE} />
-                  <CheckGroup legend="Roles you have held" options={NONPROFIT_ROLES} selected={nonprofitRoles} setter={setNonprofitRoles} />
-                  <CheckGroup legend="Where you have working competence" options={NONPROFIT_COMPETENCIES} selected={nonprofitCompetencies} setter={setNonprofitCompetencies} />
+                  <Select {...sel("nonprofitBoardService")} label="Nonprofit board service" options={NONPROFIT_BOARD_SERVICE} />
+                  <CheckGroup legend="Roles you have held" options={NONPROFIT_ROLES} selected={nonprofitRoles} onToggle={(v) => toggle(setNonprofitRoles, v)} />
+                  <CheckGroup legend="Where you have working competence" options={NONPROFIT_COMPETENCIES} selected={nonprofitCompetencies} onToggle={(v) => toggle(setNonprofitCompetencies, v)} />
                   <div className="space-y-2">
                     <Label htmlFor="nonprofitExperience">Describe your most relevant nonprofit experience</Label>
                     <Textarea id="nonprofitExperience" name="nonprofitExperience" rows={3} value={form.nonprofitExperience} onChange={handleChange} data-testid="input-nonprofit-experience" />
@@ -626,16 +626,16 @@ export default function Board() {
 
                 <div className="space-y-6 border-t border-border pt-8">
                   <h3 className="text-lg font-bold text-primary">Education sector experience</h3>
-                  <CheckGroup legend="Settings you have worked in" options={EDUCATION_SETTINGS} selected={educationSettings} setter={setEducationSettings} />
-                  <CheckGroup legend="How you have worked in education" options={EDUCATION_ROLES} selected={educationRoles} setter={setEducationRoles} />
-                  <Select id="spedYears" label="Years working in or with special education" options={SPED_YEARS} />
+                  <CheckGroup legend="Settings you have worked in" options={EDUCATION_SETTINGS} selected={educationSettings} onToggle={(v) => toggle(setEducationSettings, v)} />
+                  <CheckGroup legend="How you have worked in education" options={EDUCATION_ROLES} selected={educationRoles} onToggle={(v) => toggle(setEducationRoles, v)} />
+                  <Select {...sel("spedYears")} label="Years working in or with special education" options={SPED_YEARS} />
                 </div>
 
                 <div className="space-y-6 border-t border-border pt-8">
                   <h3 className="text-lg font-bold text-primary">Knowledge of education law</h3>
-                  <Select id="ideaFamiliarity" label="Your familiarity with IDEA" options={FAMILIARITY} />
-                  <Select id="section504Familiarity" label="Your familiarity with Section 504 and the ADA" options={FAMILIARITY} />
-                  <CheckGroup legend="Dispute resolution experience" options={DISPUTE_EXPERIENCE} selected={disputeExperience} setter={setDisputeExperience} />
+                  <Select {...sel("ideaFamiliarity")} label="Your familiarity with IDEA" options={FAMILIARITY} />
+                  <Select {...sel("section504Familiarity")} label="Your familiarity with Section 504 and the ADA" options={FAMILIARITY} />
+                  <CheckGroup legend="Dispute resolution experience" options={DISPUTE_EXPERIENCE} selected={disputeExperience} onToggle={(v) => toggle(setDisputeExperience, v)} />
                   <div className="space-y-2">
                     <Label htmlFor="lawKnowledgeSource">Where your knowledge of education law comes from (optional)</Label>
                     <Textarea id="lawKnowledgeSource" name="lawKnowledgeSource" rows={2} value={form.lawKnowledgeSource} onChange={handleChange} data-testid="input-law-source" />
@@ -645,7 +645,7 @@ export default function Board() {
                 {directorTrack && (
                   <div className="space-y-6 border-t border-border pt-8">
                     <h3 className="text-lg font-bold text-primary">Fundraising</h3>
-                    <Select id="fundraisingExperience" label="Have you raised money for a nonprofit before?" options={FUNDRAISING_EXPERIENCE} />
+                    <Select {...sel("fundraisingExperience")} label="Have you raised money for a nonprofit before?" options={FUNDRAISING_EXPERIENCE} />
                     <div className="space-y-2">
                       <Label htmlFor="networks">Describe the networks or communities you could open to us</Label>
                       <Textarea id="networks" name="networks" rows={3} value={form.networks} onChange={handleChange} data-testid="input-networks" />
@@ -655,7 +655,7 @@ export default function Board() {
 
                 <div className="space-y-6 border-t border-border pt-8">
                   <h3 className="text-lg font-bold text-primary">About you</h3>
-                  <Select id="primaryContribution" label="What is your primary contribution to this board?" options={PRIMARY_CONTRIBUTION} />
+                  <Select {...sel("primaryContribution")} label="What is your primary contribution to this board?" options={PRIMARY_CONTRIBUTION} />
                   <div className="space-y-2">
                     <Label htmlFor="currentRoleOrg">Current role and organization</Label>
                     <Input id="currentRoleOrg" name="currentRoleOrg" required value={form.currentRoleOrg} onChange={handleChange} data-testid="input-current-role" />
@@ -690,7 +690,7 @@ export default function Board() {
                     <Input id="linkUrl" name="linkUrl" type="url" placeholder="https://" value={form.linkUrl} onChange={handleChange} data-testid="input-link" />
                   </div>
                   <Select
-                    id="disabilityIdentify"
+                    {...sel("disabilityIdentify")}
                     label="Do you identify as a person with a disability? (optional)"
                     options={["Yes", "No"]}
                     required={false}
