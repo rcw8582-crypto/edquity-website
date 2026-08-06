@@ -149,7 +149,7 @@ export default function ParentQuestions() {
                 <input type="checkbox" name="confirmed" required style={{ marginTop: 4, width: 18, height: 18, flexShrink: 0 }} />
                 <span style={{ fontSize: 14.5, color: "#475569", lineHeight: 1.6 }}>
                   I am the parent or legal guardian of this child, and I have completed EDquity at the Margins' intake form and consents. What I share here is covered by those same consents and our{" "}
-                  <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: "#14B8A6", fontWeight: 600 }}>Privacy Policy</a>.
+                  <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: "#0F766E", fontWeight: 600 }}>Privacy Policy</a>.
                 </span>
               </label>
             </div>
@@ -166,7 +166,7 @@ export default function ParentQuestions() {
               {status === "sending" ? "Sending..." : "Send My Answers"}
             </button>
             <p style={{ fontSize: 13, color: "#64748b", textAlign: "center", margin: "14px 0 0", lineHeight: 1.6 }}>
-              Prefer to talk it through? Email <a href="mailto:info@edquityatthemargins.org" style={{ color: "#14B8A6" }}>info@edquityatthemargins.org</a> and we will set up a call instead.
+              Prefer to talk it through? Email <a href="mailto:info@edquityatthemargins.org" style={{ color: "#0F766E" }}>info@edquityatthemargins.org</a> and we will set up a call instead.
             </p>
           </form>
         </div>
