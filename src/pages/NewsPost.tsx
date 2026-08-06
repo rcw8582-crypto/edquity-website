@@ -1,6 +1,6 @@
 import { useParams, Link } from "wouter";
 import { motion } from "framer-motion";
-import { Calendar, ArrowLeft, Tag } from "lucide-react";
+import { Calendar, ArrowLeft, Tag, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageMeta from "@/components/PageMeta";
 import ShareWidget from "@/components/ShareWidget";
@@ -48,7 +48,7 @@ export default function NewsPost() {
         <h1 className="text-3xl font-bold text-primary">Article not found.</h1>
         <Link href="/news">
           <Button className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full">
-            Back to News
+            All posts
           </Button>
         </Link>
       </div>
@@ -62,7 +62,7 @@ export default function NewsPost() {
       <section className="bg-primary text-primary-foreground py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <Link href="/news" className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground text-sm mb-8 transition-colors">
-            <ArrowLeft size={16} /> Back to News
+            <ArrowLeft size={16} /> In the Margins
           </Link>
           <div className="flex items-center gap-3 mb-6">
             <span className={`text-xs font-semibold px-3 py-1 rounded-full ${categoryColors[post.category] || "bg-gray-100 text-gray-700"}`}>
@@ -112,12 +112,41 @@ export default function NewsPost() {
             />
 
             <ShareWidget title={post.title} description={post.excerpt} />
+
+            {/* Someone who has just read to the bottom is the likeliest person
+                on the site to follow. Sharing was offered here and following
+                was not, and the footer icons carried no invitation at all. */}
+            <div className="mt-10 rounded-2xl bg-muted/40 border border-border p-6">
+              <p className="font-bold text-primary mb-1">Get the next one</p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                We publish plain-language guidance on IEP rights and announce free parent workshops.
+                Follow along on any of these, or subscribe below for email.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { label: "Facebook", href: "https://www.facebook.com/EDQATM" },
+                  { label: "Instagram", href: "https://www.instagram.com/edqatm/" },
+                  { label: "LinkedIn", href: "https://www.linkedin.com/company/edqatm/" },
+                  { label: "X", href: "https://x.com/edquityatm" },
+                ].map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-4 py-2 text-sm font-semibold text-primary hover:border-accent hover:text-accent transition-colors"
+                  >
+                    {s.label} <ExternalLink size={13} aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
           <div className="mt-16 pt-10 border-t border-border flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
             <Link href="/news">
               <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                <ArrowLeft size={16} className="mr-2" /> Back to News
+                <ArrowLeft size={16} className="mr-2" /> All posts
               </Button>
             </Link>
             <Link href="/book">
