@@ -31,6 +31,7 @@ export const STATIC_ROUTES: string[] = [
   "/news",
   "/donate",
   "/volunteer",
+  "/board",
   "/funders",
   "/press",
   "/transparency",
