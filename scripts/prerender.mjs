@@ -156,10 +156,15 @@ const SITEMAP_PREFIX_WEIGHTS = [
 ];
 
 /**
- * /client-portal is a sign-in gate with nothing to index, and it is disallowed
- * in robots.txt, so listing it would contradict that.
+ * Prerendered so the URL resolves, but kept out of the sitemap because both are
+ * disallowed in robots.txt and listing them would contradict that.
+ *
+ * /client-portal is a sign-in gate with nothing to index. /intake is the
+ * exception path for families who do not do a registration call, so it has to
+ * keep working when Reba sends it directly, without being something a visitor
+ * or a crawler finds on its own.
  */
-const SITEMAP_EXCLUDE = new Set(["/client-portal"]);
+const SITEMAP_EXCLUDE = new Set(["/client-portal", "/intake"]);
 
 function buildSitemap(routeList) {
   const entries = routeList
