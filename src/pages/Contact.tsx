@@ -201,7 +201,7 @@ export default function Contact() {
                 </div>
                 <h3 className="text-lg font-bold text-primary">Free IEP Audit</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Already have your child's IEP? Start the audit and Dr. Clarke-Wedderburn will review
+                  Already have your child's IEP? Start the audit and we will review
                   it and send you a written report in plain language. Families pay nothing.
                 </p>
                 <Link href="/book" data-testid="contact-start-audit">

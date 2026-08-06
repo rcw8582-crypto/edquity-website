@@ -6,7 +6,7 @@ import PageMeta from "@/components/PageMeta";
 const outcomes = [
   { stat: "50", label: "families to serve free in Year 1" },
   { stat: "$0", label: "charged to families. Access is the model, not a marketing phrase." },
-  { stat: "21+", label: "years of Dr. Clarke-Wedderburn's special education expertise" },
+  { stat: "21+", label: "years of special education expertise behind every review" },
   { stat: "100%", label: "of families pay nothing for the IEP Audit and Advocacy Toolkit" },
 ];
 
@@ -42,7 +42,7 @@ const tiers = [
       "Funds organizational capacity and free family services for an entire year",
       "Named sponsorship of a specific program or cohort, including fellowship seats for under-resourced schools",
       "Invitation to the annual Impact Expo, where fellows present their schools' measured results",
-      "Annual site visit or program briefing with Dr. Clarke-Wedderburn",
+      "Annual site visit or program briefing with our Executive Director",
       "Full outcome report with case-level narrative summaries",
       "Input on program evaluation design",
     ],
@@ -180,7 +180,7 @@ export default function Funders() {
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px", letterSpacing: "-0.5px" }}>Letter of Inquiry</h2>
           <p style={{ fontSize: 16, color: "#64748b", margin: "0 0 40px", lineHeight: 1.65 }}>
-            Interested in supporting our work? Submit a brief letter of inquiry below and Dr. Clarke-Wedderburn will respond within 5 business days.
+            Interested in supporting our work? Submit a brief letter of inquiry below and we will respond within 5 business days.
           </p>
 
           {status === "sent" ? (

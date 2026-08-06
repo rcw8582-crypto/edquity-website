@@ -109,7 +109,7 @@ export default function Home() {
               Your child has<br />the right to a<br /><span style={{ color: "#22C55E" }}>meaningful education.</span>
             </h1>
             <p style={{ fontSize: 19, color: "rgba(255,255,255,0.82)", lineHeight: 1.7, maxWidth: 480, margin: "0 0 16px" }}>
-              {"Most families walk into IEP meetings unprepared, outnumbered, and without anyone in the room whose job is to represent their child. Dr. Clarke-Wedderburn is that person."}
+              {"Most families walk into IEP meetings unprepared, outnumbered, and without anyone in the room whose job is to represent their child. That is the job we do."}
             </p>
             <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, maxWidth: 460, margin: "0 0 44px" }}>
               {"Your child's IEP meeting is not a formality. The decisions made in that room follow your child through every year of their education."}
@@ -264,10 +264,10 @@ export default function Home() {
           </div>
           <div className="rg-steps">
             {[
-              { step: "01", title: "Book a free discovery call", desc: "Dr. Clarke-Wedderburn listens to your situation and identifies the right first step for your child. No obligation." },
+              { step: "01", title: "Book a free discovery call", desc: "We listen to your situation and identify the right first step for your child. No obligation." },
               { step: "02", title: "Submit your IEP securely", desc: "Upload your redacted IEP through our secure portal. Step-by-step redaction instructions are provided at intake." },
               { step: "03", title: "Receive your written report", desc: "Within 10 business days, you receive a plain-language report identifying compliance gaps and recommended next steps." },
-              { step: "04", title: "Walk in prepared", desc: "Dr. Clarke-Wedderburn walks you through every finding on a 30-minute debrief call so you know exactly what to ask, what to contest, and what the school is required to change before you sit down at that table." },
+              { step: "04", title: "Walk in prepared", desc: "We walk you through every finding on a 30-minute debrief call so you know exactly what to ask, what to contest, and what the school is required to change before you sit down at that table." },
             ].map((item, i) => (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -402,7 +402,7 @@ export default function Home() {
       <section className="sp" style={{ background: "#22C55E" }}>
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, color: "#122C54", margin: "0 0 16px", letterSpacing: "-1px" }}>Your child's IEP meeting is not a formality.</h2>
-          <p style={{ fontSize: 18, color: "rgba(18,44,84,0.75)", lineHeight: 1.65, margin: "0 0 36px" }}>Start your free IEP Audit, or book a free discovery call to talk through your child's situation first. Dr. Clarke-Wedderburn will help you understand your options and identify the right first step.</p>
+          <p style={{ fontSize: 18, color: "rgba(18,44,84,0.75)", lineHeight: 1.65, margin: "0 0 36px" }}>Start your free IEP Audit, or book a free discovery call to talk through your child's situation first. We will help you understand your options and identify the right first step.</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/book"
               style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>

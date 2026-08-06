@@ -10,7 +10,7 @@ const NAVY = "#122C54";
 const GREEN = "#22C55E";
 
 /**
- * The twelve questions Dr. Clarke-Wedderburn asks on an intake call.
+ * The twelve questions we ask on an intake call.
  * Families who cannot get on a call answer them here instead. Order and
  * wording match the call script so the two paths produce the same record.
  */
@@ -82,7 +82,7 @@ export default function ParentQuestions() {
           <CheckCircle size={56} color={GREEN} style={{ marginBottom: 24 }} />
           <h1 style={{ fontSize: 32, fontWeight: 900, color: NAVY, margin: "0 0 16px" }}>Thank you. We have your answers.</h1>
           <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.7, margin: "0 0 12px" }}>
-            Dr. Clarke-Wedderburn will read through everything you shared and follow up by email. What you wrote here goes straight into preparing for your child's audit and your next IEP meeting.
+            We will read through everything you shared and follow up by email. What you wrote here goes straight into preparing for your child's audit and your next IEP meeting.
           </p>
           <Link href="/" style={{ background: GREEN, color: NAVY, padding: "14px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16, display: "inline-block", marginTop: 20 }}>
             Back to Home
@@ -96,7 +96,7 @@ export default function ParentQuestions() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", background: "#f8fafc", minHeight: "100vh" }}>
       <PageMeta
         title="Tell Us About Your Child"
-        description="Answer the questions Dr. Clarke-Wedderburn would ask on an intake call, in your own time and your own words."
+        description="Answer the questions we would ask on an intake call, in your own time and your own words."
       />
 
       <section style={{ background: NAVY, padding: "48px 24px" }}>

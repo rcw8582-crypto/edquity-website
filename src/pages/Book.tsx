@@ -50,7 +50,7 @@ export default function Book() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
         title="Book a Call"
-        description="Book a free call with Dr. Reba Clarke-Wedderburn. Families can register for a free IEP Audit, and schools and organizations can ask about the IEP Quality Improvement Program or the Leader Fellowship."
+        description="Book a free call with EDquity at the Margins. Families can register for a free IEP Audit, and schools and organizations can ask about the IEP Quality Improvement Program or the Leader Fellowship."
       />
 
       <section className="sp" style={{ background: NAVY, paddingBottom: 44 }}>

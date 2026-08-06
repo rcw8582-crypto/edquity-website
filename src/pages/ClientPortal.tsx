@@ -10,7 +10,7 @@ export default function ClientPortal() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", background: "#fff", color: "#122C54", minHeight: "100vh" }}>
       <PageMeta
         title="Client Portal"
-        description="Sign in to the secure EDquity360 portal to access your documents, session notes, and IEP Audit reports, or reach Dr. Clarke-Wedderburn for help getting in."
+        description="Sign in to the secure EDquity360 portal to access your documents, session notes, and IEP Audit reports, or reach us for help getting in."
       />
 
       {/* Header */}
@@ -65,7 +65,7 @@ export default function ClientPortal() {
               {
                 icon: <Mail size={24} color="#22C55E" />,
                 title: "Email",
-                body: "For document requests or questions about your report, email Dr. Clarke-Wedderburn directly.",
+                body: "For document requests or questions about your report, email us directly.",
                 cta: { label: "info@edquityatthemargins.org", href: "mailto:info@edquityatthemargins.org" },
               },
               {
@@ -110,7 +110,7 @@ export default function ClientPortal() {
         <div style={{ maxWidth: 580, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(18px,2.5vw,24px)", fontWeight: 800, margin: "0 0 12px", color: "#122C54" }}>Not a client yet?</h2>
           <p style={{ fontSize: 15, color: "#64748b", lineHeight: 1.7, margin: "0 0 28px" }}>
-            Start your free IEP Audit and Dr. Clarke-Wedderburn will review your child's document and
+            Start your free IEP Audit and we will review your child's document and
             send you a written report. If you would rather talk first, book a free call instead.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>

@@ -24,7 +24,7 @@ export default function Services() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: "#122C54", background: "#fff" }}>
       <PageMeta
         title="Free IEP Audit and Parent Workshops for Families"
-        description="Two free services for families of children with disabilities: an independent IEP Audit and parent workshops. Delivered virtually nationwide by Dr. Reba Clarke-Wedderburn."
+        description="Two free services for families of children with disabilities: an independent IEP Audit and parent workshops. Delivered virtually nationwide."
       />
 
       {/* Hero */}
@@ -35,7 +35,7 @@ export default function Services() {
             Independent IEP Support for Families Who Deserve More Than a Form Letter
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, maxWidth: 680, margin: "0 auto 16px" }}>
-            We offer two services, and both are free. Every service is delivered virtually by Dr. Reba Clarke-Wedderburn, Founder and Executive Director of EDquity at the Margins. Access is the point, so families never pay to understand or enforce their child's rights.
+            We offer two services, and both are free. Every service is delivered virtually. Access is the point, so families never pay to understand or enforce their child's rights.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 40px" }}>
             Serving families across the greater Metro Nashville area and, through our virtual delivery model, anywhere in the country.
@@ -60,7 +60,7 @@ export default function Services() {
             <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Start Here</p>
             <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-0.5px" }}>Free 30-Minute Discovery Call</h2>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 28px" }}>
-              Not sure where to begin? Book a free discovery call with Dr. Clarke-Wedderburn. She will listen to your situation, answer your first questions, and identify what your child needs right now, with no obligation to continue.
+              Not sure where to begin? Book a free discovery call. We will listen to your situation, answer your first questions, and identify what your child needs right now, with no obligation to continue.
             </p>
             <a href={BOOKING_URL}
               style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
@@ -68,7 +68,7 @@ export default function Services() {
             </a>
           </div>
           <div style={{ background: "#fff", borderRadius: 16, padding: 36, border: "1px solid #bbf7d0" }}>
-            <p style={{ fontSize: 15, fontWeight: 700, color: "#122C54", margin: "0 0 16px" }}>On the call, Dr. Clarke-Wedderburn will:</p>
+            <p style={{ fontSize: 15, fontWeight: 700, color: "#122C54", margin: "0 0 16px" }}>On the call, we will:</p>
             {[
               "Listen to your child's specific situation without judgment",
               "Explain how the free IEP Audit addresses your most immediate need",
@@ -109,7 +109,7 @@ export default function Services() {
               <p style={{ fontSize: 24, fontWeight: 900, color: "#22C55E", margin: "0 0 6px" }}>Free</p>
               <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "0 0 24px" }}>Written report delivered within 10 business days</p>
               <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, margin: "0 0 32px" }}>
-                Most families receive their child's IEP with no independent guidance on whether it meets the legal standard of a free and appropriate public education. This service closes that gap. Dr. Clarke-Wedderburn reviews your child's IEP across six research-grounded domains, identifies missing or inadequate services, and delivers a plain-language written report with specific recommended next steps before your next meeting.
+                Most families receive their child's IEP with no independent guidance on whether it meets the legal standard of a free and appropriate public education. This service closes that gap. We review your child's IEP across six research-grounded domains, identifies missing or inadequate services, and delivers a plain-language written report with specific recommended next steps before your next meeting.
               </p>
               <Link href="/book"
                 style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
@@ -162,7 +162,7 @@ export default function Services() {
             <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free</p>
             <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>One in-person session and one webinar every month</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              Reading your child's IEP is one skill, and walking into the meeting knowing what to ask for is another. Our workshops teach the second one. Dr. Clarke-Wedderburn covers what the law entitles your child to, how to read the document the school hands you, what to say when services are cut, and how to put a request in writing so the district has to answer it. Every session is plain language, no cost, and open to any family.
+              Reading your child's IEP is one skill, and walking into the meeting knowing what to ask for is another. Our workshops teach the second one. We cover what the law entitles your child to, how to read the document the school hands you, what to say when services are cut, and how to put a request in writing so the district has to answer it. Every session is plain language, no cost, and open to any family.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <Link href="/events"
@@ -253,7 +253,7 @@ export default function Services() {
             </div>
             <div>
               <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>About Your Advocate</p>
-              <h2 style={{ fontSize: "clamp(22px,2.5vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 20px", letterSpacing: "-0.5px" }}>Every service is delivered personally by Dr. Clarke-Wedderburn.</h2>
+              <h2 style={{ fontSize: "clamp(22px,2.5vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 20px", letterSpacing: "-0.5px" }}>Every service is delivered by a credentialed special education reviewer.</h2>
               <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 16px" }}>
                 Dr. Reba Clarke-Wedderburn holds a doctorate in education and brings years of experience as a special education professional, teacher preparation program developer, and parent of a child with a disability. She founded EDquity at the Margins after years of watching families navigate a system that was not designed to include them, and after navigating it herself.
               </p>
@@ -293,7 +293,7 @@ export default function Services() {
       <section className="sp" style={{ background: "#fff", borderTop: "1px solid #e2e8f0" }}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.7, margin: 0, textAlign: "center" }}>
-            EDquity at the Margins provides independent educational expertise, not legal advice. Dr. Clarke-Wedderburn is not an attorney and does not provide legal representation. Families who believe their child's rights have been violated under IDEA are encouraged to consult a special education attorney or contact their state's Parent Training and Information Center at{" "}
+            EDquity at the Margins provides independent educational expertise, not legal advice. We are not attorneys and do not provide legal representation. Families who believe their child's rights have been violated under IDEA are encouraged to consult a special education attorney or contact their state's Parent Training and Information Center at{" "}
             <a href="https://parentcenterhub.org" target="_blank" rel="noopener noreferrer" style={{ color: "#0F766E", textDecoration: "none" }}>parentcenterhub.org</a>.
           </p>
         </div>
@@ -304,7 +304,7 @@ export default function Services() {
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(26px,3vw,38px)", fontWeight: 900, color: "#122C54", margin: "0 0 16px", letterSpacing: "-0.5px" }}>Ready to get started?</h2>
           <p style={{ fontSize: 18, color: "rgba(18,44,84,0.75)", lineHeight: 1.65, margin: "0 0 36px" }}>
-            Start your free IEP Audit and Dr. Clarke-Wedderburn will review your child's document and send
+            Start your free IEP Audit and we will review your child's document and send
             you a written report. If you would rather talk it through first, book a free call instead.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>

@@ -305,7 +305,7 @@ export default function Intake() {
                     {MEETING_TIMING.map(m => <option key={m} value={m}>{m}</option>)}
                   </select>
                 </Field>
-                <Field label="Briefly describe your child's situation" required hint="What's happening at school? What do you need help with? The more specific you are, the better Dr. Clarke-Wedderburn can prepare. (Minimum 20 characters)">
+                <Field label="Briefly describe your child's situation" required hint="What's happening at school? What do you need help with? The more specific you are, the better we can prepare. (Minimum 20 characters)">
                   <textarea
                     style={{ ...inputStyle, minHeight: 140, resize: "vertical" }}
                     value={form.situation}
