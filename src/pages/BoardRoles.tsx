@@ -1,7 +1,8 @@
 import { Link } from "wouter";
 import { FileText } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
-import { BOARD_ROLES, type BoardRole } from "@/content/board-roles";
+import { useState, useEffect } from "react";
+import { initialRoles, fetchRoles, type BoardRole, type RolesSnapshot } from "@/content/board-roles";
 
 /**
  * The permanent index of every position description.
@@ -38,14 +39,25 @@ function RoleCard({ role }: { role: BoardRole }) {
 }
 
 export default function BoardRoles() {
-  const directors = BOARD_ROLES.filter((role) => role.kind === "director");
-  const advisors = BOARD_ROLES.filter((role) => role.kind === "advisory");
+  const [snapshot, setSnapshot] = useState<RolesSnapshot | null>(initialRoles());
+
+  useEffect(() => {
+    let live = true;
+    fetchRoles().then((fresh) => {
+      if (live && fresh.roles.length > 0) setSnapshot(fresh);
+    });
+    return () => { live = false; };
+  }, []);
+
+  const roles = snapshot?.roles ?? [];
+  const directors = roles.filter((role) => role.kind === "director");
+  const advisors = roles.filter((role) => role.kind === "advisory");
 
   return (
     <div className="pt-20">
       <PageMeta
         title="Board and Advisory Council Position Descriptions"
-        description="Position descriptions for every board and advisory council role at EDquity at the Margins. Each description is available as a downloadable PDF."
+        description="Position descriptions for every board and advisory council role at EDquity at the Margins, covering purpose, responsibilities, qualifications, and time commitment."
       />
 
       <section className="sp" style={{ background: "#f8fafc" }}>
@@ -56,7 +68,7 @@ export default function BoardRoles() {
               Every board and advisory council role carries a written position description. Each one states the purpose of the seat, the responsibilities, the qualifications, and the time commitment.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Descriptions stay published whether or not the seat is open. Download any of them as a PDF.{" "}
+              Descriptions stay published whether or not the seat is open.{" "}
               <Link href="/board" className="text-accent font-semibold underline">
                 See which seats we are recruiting for now
               </Link>
