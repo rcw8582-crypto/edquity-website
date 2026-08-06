@@ -13,7 +13,7 @@ const interactiveTools = [
     desc: "The six areas we review in every IEP, in plain language. Use it as a guide when you read your child's IEP or prepare for the next meeting.",
     href: "/our-methodology",
     badge: "Methodology",
-    badgeColor: "#22C55E",
+    badgeColor: "#15803D",
   },
   {
     icon: <Target size={28} color="#14B8A6" />,
