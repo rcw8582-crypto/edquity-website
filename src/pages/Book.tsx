@@ -6,18 +6,18 @@ import { BOOKING_PAGE_URL } from "@/lib/booking";
 /**
  * Booking.
  *
- * The Microsoft Bookings page is framed below, but it is never the only way
- * through. The frame renders blank on some loads and fine on the next, which
- * is what a third-party booking app does when a browser partitions or blocks
- * its storage, and it cannot be detected from here because the frame is
- * cross-origin and its failure looks identical to its success from the
- * outside. So the two services are described in our own markup and the direct
- * link sits above the frame rather than beneath it. A visitor who sees a blank
- * box has already passed a button that works.
+ * This page used to frame the Microsoft Bookings calendar. The frame rendered
+ * blank on most loads, which a third-party booking app does when a browser
+ * partitions or blocks its storage, and nothing here could detect it: the
+ * frame is cross-origin, so a failed render is indistinguishable from a
+ * working one. It also repeated the page, since the widget lists the same two
+ * services described above it, and its own layout is a narrow column that left
+ * most of the width empty.
  *
- * Describing the services here also means the page carries real content of its
- * own instead of being a wrapper around someone else's iframe, which is what
- * gets a page indexed.
+ * So the calendar opens in its own tab and this page does the part it can do
+ * reliably: say what the two calls are, who each is for, and how long they
+ * run, then hand off. That also gives the page real content of its own rather
+ * than wrapping someone else's iframe, which is what gets it indexed.
  */
 
 const NAVY = "#122C54";
@@ -100,7 +100,7 @@ export default function Book() {
               <ExternalLink size={17} aria-hidden="true" />
             </a>
             <p style={{ fontSize: 14, color: "#64748b", margin: "14px 0 0" }}>
-              Opens in a new tab. You can also use the calendar below, email{" "}
+              Opens in a new tab. You can also email{" "}
               <a href="mailto:info@edquityatthemargins.org" style={{ color: NAVY, fontWeight: 700 }}>
                 info@edquityatthemargins.org
               </a>
@@ -114,23 +114,6 @@ export default function Book() {
         </div>
       </section>
 
-      <section style={{ background: "#f8fafc", padding: "28px 16px 56px" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <iframe
-            src={`${BOOKING_PAGE_URL}?ismsaljsauthenabled`}
-            title="Booking calendar for EDquity at the Margins"
-            scrolling="yes"
-            style={{
-              width: "100%",
-              height: "clamp(1150px, 165vh, 1800px)",
-              border: "1px solid #e2e8f0",
-              borderRadius: 12,
-              background: "#fff",
-              display: "block",
-            }}
-          />
-        </div>
-      </section>
     </div>
   );
 }
