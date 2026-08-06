@@ -41,11 +41,15 @@ export default function Navbar() {
     { href: "/contact", label: "Contact" },
   ];
 
-  // The mobile sheet has vertical room to spare, so it carries the full set.
-  const mobileLinks = [
-    { href: "/", label: "Home" },
-    ...navLinks,
-    { href: "/donate", label: "Donate" },
+  /**
+   * Shown below a divider in the mobile sheet, smaller than the primary links.
+   *
+   * The sheet used to hold its own longer list in its own order, so the phone
+   * and the desktop header read as two different menus rather than one. The
+   * primary links now match the header exactly, and these sit apart as
+   * utilities: reached deliberately rather than browsed.
+   */
+  const utilityLinks = [
     { href: "/volunteer", label: "Get Involved" },
     { href: "/client-portal", label: "EDquity360 Portal" },
   ];
@@ -119,25 +123,57 @@ export default function Navbar() {
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
         <div id="mobile-nav" className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-border shadow-lg animate-in slide-in-from-top-2">
-          <div className="flex flex-col py-4 px-6 space-y-4">
-            {mobileLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-base font-medium transition-colors hover:text-accent ${
-                  location === link.href ? "text-accent" : "text-primary"
-                }`}
-                data-testid={`mobile-nav-link-${link.label.toLowerCase()}`}
-              >
-                {link.label}
+          <div className="flex flex-col py-4 px-6">
+            {/* The same six links the header shows, in the same order. */}
+            <div className="flex flex-col space-y-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-base font-medium transition-colors hover:text-accent ${
+                    location === link.href ? "text-accent" : "text-primary"
+                  }`}
+                  data-testid={`mobile-nav-link-${link.label.toLowerCase()}`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-5 pt-4 border-t border-border flex flex-col space-y-3">
+              {utilityLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-sm transition-colors hover:text-accent ${
+                    location === link.href ? "text-accent font-medium" : "text-muted-foreground"
+                  }`}
+                  data-testid={`mobile-nav-link-${link.label.toLowerCase()}`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* Both header buttons, in the header's order, so the phone offers
+                the same two actions rather than only one of them. */}
+            <div className="mt-5 pt-4 border-t border-border flex flex-col gap-3">
+              <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)} data-testid="mobile-nav-cta-donate">
+                <Button
+                  variant="outline"
+                  className="w-full border-primary text-primary hover:bg-primary hover:text-white font-semibold rounded-full"
+                >
+                  Donate
+                </Button>
               </Link>
-            ))}
-            <Link href="/book" onClick={() => setIsMobileMenuOpen(false)} data-testid="mobile-nav-cta-consultation">
-              <Button className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full">
-                Book a Free Consultation
-              </Button>
-            </Link>
+              <Link href="/book" onClick={() => setIsMobileMenuOpen(false)} data-testid="mobile-nav-cta-consultation">
+                <Button className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full">
+                  Book a Free Consultation
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       )}
