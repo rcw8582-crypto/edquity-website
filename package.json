@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:client && npm run build:ssr && npm run prerender",
+    "build": "npm run build:client && npm run build:ssr && npm run prerender && npm run check",
     "build:client": "vite build",
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist-ssr",
     "prerender": "node scripts/prerender.mjs",
     "preview": "vite preview",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "check": "node scripts/check-site.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

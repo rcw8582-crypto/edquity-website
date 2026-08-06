@@ -695,7 +695,7 @@ export default function IEPGoalChecker() {
                 See all services
               </Button>
             </Link>
-            <Link href="/contact">
+            <Link href="/book">
               <Button variant="outline" className="rounded-full px-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                 Book a free discovery call
               </Button>

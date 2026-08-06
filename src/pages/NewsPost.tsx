@@ -120,7 +120,7 @@ export default function NewsPost() {
                 <ArrowLeft size={16} className="mr-2" /> Back to News
               </Button>
             </Link>
-            <Link href="/contact">
+            <Link href="/book">
               <Button className="bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full px-8">
                 Book a Free Consultation
               </Button>
