@@ -220,7 +220,7 @@ export default function Footer() {
             <span>&copy; {currentYear} EDquity at the Margins. All rights reserved.</span>
             <span>TN SOS Control #002109529</span>
           </div>
-          <div className="text-center text-xs text-primary-foreground/50 pt-1">
+          <div className="text-center text-xs text-primary-foreground/75 pt-1">
             Contributions are tax-deductible to the extent allowed by law.
           </div>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
