@@ -202,7 +202,7 @@ export default function Home() {
       <section className="sp-lg" style={{ background: "#f8fafc", color: "#122C54" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>
               {"What We Do"}
             </p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>
@@ -261,7 +261,7 @@ export default function Home() {
       <section className="sp-lg" style={{ background: "#fff", color: "#122C54" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 64 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>How It Works</p>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>How It Works</p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>From your first call to your next meeting</h2>
           </div>
           <div className="rg-steps">
@@ -289,7 +289,7 @@ export default function Home() {
       <section className="sp-lg" style={{ background: "#0d1f3c" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>
               {"Families We've Served"}
             </p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, color: "#fff", margin: 0, letterSpacing: "-1px", lineHeight: 1.1 }}>
@@ -378,7 +378,7 @@ export default function Home() {
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16 }}>
             <div style={{ height: 1, width: 40, background: "#22C55E", opacity: 0.6 }} />
             <div>
-              <p style={{ fontSize: 15, fontWeight: 800, color: "#15803D", margin: 0 }}>Shirley Chisholm</p>
+              <p style={{ fontSize: 15, fontWeight: 800, color: "#22C55E", margin: 0 }}>Shirley Chisholm</p>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", margin: "4px 0 0" }}>First Black congresswoman and presidential candidate</p>
             </div>
             <div style={{ height: 1, width: 40, background: "#22C55E", opacity: 0.6 }} />
