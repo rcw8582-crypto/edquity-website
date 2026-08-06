@@ -57,7 +57,7 @@ export default function Services() {
       <section className="sp" style={{ background: "#f0fdf4", borderBottom: "1px solid #bbf7d0" }}>
         <div className="rg-2" style={{ maxWidth: 900, margin: "0 auto", alignItems: "center" }}>
           <div>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Start Here</p>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Start Here</p>
             <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-0.5px" }}>Free 30-Minute Discovery Call</h2>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 28px" }}>
               Not sure where to begin? Book a free discovery call. We will listen to your situation, answer your first questions, and identify what your child needs right now, with no obligation to continue.
@@ -103,10 +103,10 @@ export default function Services() {
             <div>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(34,197,94,0.15)", borderRadius: 8, padding: "6px 14px", marginBottom: 24 }}>
                 <FileText size={16} color="#22C55E" />
-                <span style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 1, textTransform: "uppercase" }}>Free Service</span>
+                <span style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 1, textTransform: "uppercase" }}>Free Service</span>
               </div>
               <h3 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#fff", margin: "0 0 8px", letterSpacing: "-0.5px" }}>IEP Audit</h3>
-              <p style={{ fontSize: 24, fontWeight: 900, color: "#22C55E", margin: "0 0 6px" }}>Free</p>
+              <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free</p>
               <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "0 0 24px" }}>Written report delivered within 10 business days</p>
               <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, margin: "0 0 32px" }}>
                 Most families receive their child's IEP with no independent guidance on whether it meets the legal standard of a free and appropriate public education. This service closes that gap. We review your child's IEP across six research-grounded domains, identifies missing or inadequate services, and delivers a plain-language written report with specific recommended next steps before your next meeting.
@@ -118,7 +118,7 @@ export default function Services() {
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ background: "rgba(255,255,255,0.06)", borderRadius: 14, padding: 28 }}>
-                <p style={{ fontSize: 13, fontWeight: 700, color: "#22C55E", letterSpacing: 1, textTransform: "uppercase", margin: "0 0 14px" }}>The Six Review Domains</p>
+                <p style={{ fontSize: 13, fontWeight: 700, color: "#15803D", letterSpacing: 1, textTransform: "uppercase", margin: "0 0 14px" }}>The Six Review Domains</p>
                 {[
                   "Present Levels of Academic Achievement and Functional Performance",
                   "Measurable Annual Goals",
@@ -269,7 +269,7 @@ export default function Services() {
       <section style={{ background: "#0d1f3c", padding: "80px 24px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 52 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Families We've Served</p>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Families We've Served</p>
             <h2 style={{ fontSize: "clamp(26px,3vw,38px)", fontWeight: 900, color: "#fff", margin: 0, letterSpacing: "-0.5px" }}>What families say about working with us.</h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))", gap: 24 }}>
@@ -279,7 +279,7 @@ export default function Services() {
               { quote: "My son's goals finally reflect what he actually needs. For the first time in three years, the team heard us. Dr. Clarke-Wedderburn changed how I see my role in that room.", attribution: "Parent, Georgia · IEP Audit" },
             ].map((t, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 16, padding: 32 }}>
-                <div style={{ fontSize: 40, color: "#22C55E", lineHeight: 1, marginBottom: 16, fontFamily: "Georgia, serif", opacity: 0.6 }}>"</div>
+                <div style={{ fontSize: 40, color: "#15803D", lineHeight: 1, marginBottom: 16, fontFamily: "Georgia, serif", opacity: 0.6 }}>"</div>
                 <p style={{ fontSize: 15, color: "rgba(255,255,255,0.85)", lineHeight: 1.75, margin: "0 0 20px", fontStyle: "italic" }}>{t.quote}</p>
                 <p style={{ fontSize: 12, color: "rgba(255,255,255,0.7)", margin: 0, fontWeight: 600, letterSpacing: 0.3 }}>{t.attribution}</p>
               </div>
@@ -303,7 +303,7 @@ export default function Services() {
       <section className="sp-lg" style={{ background: "#22C55E" }}>
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(26px,3vw,38px)", fontWeight: 900, color: "#122C54", margin: "0 0 16px", letterSpacing: "-0.5px" }}>Ready to get started?</h2>
-          <p style={{ fontSize: 18, color: "rgba(18,44,84,0.75)", lineHeight: 1.65, margin: "0 0 36px" }}>
+          <p style={{ fontSize: 18, color: "#122C54", lineHeight: 1.65, margin: "0 0 36px" }}>
             Start your free IEP Audit and we will review your child's document and send
             you a written report. If you would rather talk it through first, book a free call instead.
           </p>
