@@ -106,7 +106,7 @@ export default function News() {
                       </div>
                       <Link
                         href={`/news/${post.slug}`}
-                        className="text-accent font-semibold text-sm flex items-center gap-1 hover:underline"
+                        className="text-accent-ink font-semibold text-sm flex items-center gap-1 hover:underline"
                         data-testid={`article-read-more-${post.id}`}
                       >
                         Read more <ArrowRight size={14} />
@@ -121,7 +121,7 @@ export default function News() {
           <div className="mt-16 text-center">
             <p className="text-muted-foreground mb-6">Want updates delivered to your inbox?</p>
             <Link href="/volunteer">
-              <Button className="bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full px-8" data-testid="news-subscribe-cta">
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full px-8" data-testid="news-subscribe-cta">
                 Subscribe to Our Newsletter
               </Button>
             </Link>
