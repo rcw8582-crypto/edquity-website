@@ -71,7 +71,7 @@ export default function EventsCalendar({ events }: { events: EdatmEvent[] }) {
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)" }}>
         {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map((d) => (
-          <div key={d} style={{ textAlign: "center", fontSize: 12, fontWeight: 700, color: "#94a3b8", padding: "8px 0", borderBottom: "1px solid #e2e8f0" }}>
+          <div key={d} style={{ textAlign: "center", fontSize: 12, fontWeight: 700, color: "#64748B", padding: "8px 0", borderBottom: "1px solid #e2e8f0" }}>
             {d}
           </div>
         ))}
@@ -117,7 +117,7 @@ export default function EventsCalendar({ events }: { events: EdatmEvent[] }) {
                   alignSelf: "flex-start",
                   fontSize: 12,
                   fontWeight: hasEvents ? 800 : 600,
-                  color: !inMonth ? "#cbd5e1" : hasEvents ? "#122C54" : "#475569",
+                  color: !inMonth ? "#7C8899" : hasEvents ? "#122C54" : "#475569",
                   ...(isToday
                     ? {
                         width: 20,
