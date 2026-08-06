@@ -123,11 +123,21 @@ export default function Footer() {
             <p className="text-primary-foreground/80 leading-relaxed text-sm">
               We translate institutional special education practices into plain language so families can engage with schools as true, empowered partners.
             </p>
-            <div className="flex gap-4">
+            {/* Labelled rather than four bare icons. Unlabelled glyphs read as
+                decoration, so nothing on the site actually asked anyone to
+                follow. The handle is spelled out because people search for it
+                as often as they click. */}
+            <div>
+              <p className="text-sm font-semibold text-primary-foreground mb-1">Follow us</p>
+              <p className="text-xs text-primary-foreground/60 mb-3">
+                IEP rights explained in plain language, plus workshop announcements. We post as @edqatm.
+              </p>
+              <div className="flex gap-4 -ml-3">
               <a href="https://www.facebook.com/EDQATM" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on Facebook" className="inline-flex items-center justify-center p-3 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-facebook"><Facebook size={20} aria-hidden="true" /></a>
               <a href="https://x.com/edquityatm" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on X" className="inline-flex items-center justify-center p-3 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-twitter"><Twitter size={20} aria-hidden="true" /></a>
               <a href="https://www.instagram.com/edqatm/" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on Instagram" className="inline-flex items-center justify-center p-3 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-instagram"><Instagram size={20} aria-hidden="true" /></a>
               <a href="https://www.linkedin.com/company/edqatm/" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on LinkedIn" className="inline-flex items-center justify-center p-3 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-linkedin"><Linkedin size={20} aria-hidden="true" /></a>
+              </div>
             </div>
           </div>
 

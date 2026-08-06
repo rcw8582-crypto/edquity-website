@@ -350,8 +350,13 @@ export default async function handler(req: Request): Promise<Response> {
   if (!isOptionalString(b.professionalLicense, 200)) {
     return Response.json({ error: "Invalid license or credential." }, { status: 400 });
   }
-  if (!isOptionalString(b.linkUrl, 500)) {
-    return Response.json({ error: "Invalid profile or resume link." }, { status: 400 });
+  if (!isNonEmptyString(b.linkedinUrl, 500)) {
+    return Response.json({ error: "Please provide your LinkedIn profile URL." }, { status: 400 });
+  }
+  // The path is minted by /api/board-upload, never by the browser, so a value
+  // that does not look like one means the upload step was skipped or faked.
+  if (!isNonEmptyString(b.resumePath, 300) || !/^[0-9a-f-]{36}\/[A-Za-z0-9._-]+$/.test(b.resumePath.trim())) {
+    return Response.json({ error: "Please upload your resume before submitting." }, { status: 400 });
   }
   if (!isFromList(b.disabilityIdentify, YES_NO, false)) {
     return Response.json({ error: "Invalid self-identification response." }, { status: 400 });
@@ -418,7 +423,8 @@ export default async function handler(req: Request): Promise<Response> {
     prior_board_service: optional(b.priorBoardService, "") || null,
     primary_contribution: b.primaryContribution as string,
     professional_license: optional(b.professionalLicense, "") || null,
-    link_url: optional(b.linkUrl, "") || null,
+    linkedin_url: (b.linkedinUrl as string).trim(),
+    resume_path: (b.resumePath as string).trim(),
     how_heard: optional(b.howHeard, "") || null,
     commitment_confirmed: b.commitmentConfirmed === true,
     fundraising_confirmed: b.fundraisingConfirmed === true,
@@ -452,6 +458,38 @@ export default async function handler(req: Request): Promise<Response> {
     console.warn("[board] SUPABASE_SERVICE_ROLE_KEY not set, application not stored");
   }
 
+  // A signed link rather than an attachment, so the resume stays in the
+  // private bucket and the link stops working once it expires. Thirty days
+  // covers a rolling review without leaving a live URL in an old email
+  // forever.
+  let resumeLink = "";
+  if (SUPABASE_SERVICE_ROLE_KEY) {
+    try {
+      const signed = await fetch(
+        `${SUPABASE_URL}/storage/v1/object/sign/board-resumes/${app.resume_path}`,
+        {
+          method: "POST",
+          headers: {
+            apikey: SUPABASE_SERVICE_ROLE_KEY,
+            Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ expiresIn: 60 * 60 * 24 * 30 }),
+        }
+      );
+      if (signed.ok) {
+        const payload = (await signed.json()) as { signedURL?: string };
+        if (payload.signedURL) {
+          resumeLink = `${SUPABASE_URL}/storage/v1${payload.signedURL.startsWith("/") ? "" : "/"}${payload.signedURL}`;
+        }
+      } else {
+        console.error("[board] resume sign failed:", signed.status, await signed.text());
+      }
+    } catch (error) {
+      console.error("[board] resume sign threw:", error);
+    }
+  }
+
   const submittedOn = new Date().toISOString().slice(0, 10);
 
   // Column order is the contract with the Power Automate flow and with the
@@ -479,7 +517,8 @@ export default async function handler(req: Request): Promise<Response> {
     app.fundraising_experience ?? "",
     app.current_role_org,
     app.professional_license ?? "",
-    app.link_url ?? "",
+    app.linkedin_url,
+    app.resume_path,
     app.disability_identify ?? "",
     app.how_heard ?? "",
     app.commitment_confirmed ? "Yes" : "No",
@@ -554,12 +593,19 @@ export default async function handler(req: Request): Promise<Response> {
         <table style="width: 100%; border-collapse: collapse;">
           ${row("Current role", app.current_role_org)}
           ${row("License or credential", app.professional_license ?? "Not provided")}
-          ${row("Profile or resume", app.link_url ?? "Not provided")}
+          ${row("LinkedIn", app.linkedin_url)}
+          ${row("Resume", resumeLink ? "Signed link below, valid 30 days" : `Stored at ${app.resume_path}`)}
           ${row("How they heard about us", app.how_heard ?? "Not provided")}
         </table>
         ${block("Why EDquity at the Margins", app.why_edatm)}
         ${block("District, LEA, or vendor relationships", app.conflicts)}
         ${app.prior_board_service ? block("Prior board or committee service", app.prior_board_service) : ""}
+
+        ${
+          resumeLink
+            ? `<p style="margin: 18px 0 0;"><a href="${resumeLink}" style="background: #122C54; color: #fff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 14px;">Download resume</a> <span style="color: #94a3b8; font-size: 12px;">link expires in 30 days</span></p>`
+            : ""
+        }
 
         <p style="color: #64748b; font-size: 12px; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
           Reply to this email to respond directly to ${escapeHtml(app.full_name)}.<br />
@@ -606,7 +652,8 @@ ${directorTrack ? `FUNDRAISING\nHas raised money before: ${app.fundraising_exper
 NARRATIVE AND SCREENING
 Current role: ${app.current_role_org}
 License or credential: ${app.professional_license ?? "Not provided"}
-Profile or resume: ${app.link_url ?? "Not provided"}
+LinkedIn: ${app.linkedin_url}
+Resume: ${resumeLink || `stored at ${app.resume_path}`}
 How they heard about us: ${app.how_heard ?? "Not provided"}
 
 Why EDquity at the Margins:

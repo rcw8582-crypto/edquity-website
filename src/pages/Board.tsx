@@ -194,7 +194,7 @@ interface FormState {
   conflicts: string;
   priorBoardService: string;
   professionalLicense: string;
-  linkUrl: string;
+  linkedinUrl: string;
   disabilityIdentify: string;
   howHeard: string;
 }
@@ -205,7 +205,7 @@ const EMPTY_FORM: FormState = {
   spedYears: "", ideaFamiliarity: "", section504Familiarity: "", lawKnowledgeSource: "",
   fundraisingExperience: "", networks: "", primaryContribution: "", currentRoleOrg: "",
   whyEdatm: "", conflicts: "", priorBoardService: "", professionalLicense: "",
-  linkUrl: "", disabilityIdentify: "", howHeard: "",
+  linkedinUrl: "", disabilityIdentify: "", howHeard: "",
 };
 
 const selectClass =
@@ -295,6 +295,56 @@ export default function Board() {
   const [disputeExperience, setDisputeExperience] = useState<string[]>([]);
   const [commitmentConfirmed, setCommitmentConfirmed] = useState(false);
   const [fundraisingConfirmed, setFundraisingConfirmed] = useState(false);
+  const [resumePath, setResumePath] = useState("");
+  const [resumeName, setResumeName] = useState("");
+  const [resumeStatus, setResumeStatus] = useState<"idle" | "uploading" | "done" | "error">("idle");
+  const [resumeError, setResumeError] = useState("");
+
+  /**
+   * Uploads straight to private storage the moment a file is chosen, rather
+   * than bundling it into the submit. The applicant sees the failure while
+   * they are still looking at the field, and a five megabyte document never
+   * goes near the JSON body of the application post.
+   */
+  const handleResumeChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    setResumePath("");
+    setResumeError("");
+    if (!file) {
+      setResumeStatus("idle");
+      return;
+    }
+    setResumeName(file.name);
+    setResumeStatus("uploading");
+    try {
+      const ticket = await fetch("/api/board-upload", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ filename: file.name, contentType: file.type, size: file.size }),
+      });
+      const data = await ticket.json();
+      if (!ticket.ok) {
+        setResumeError(data.error || "We could not upload that file.");
+        setResumeStatus("error");
+        return;
+      }
+      const put = await fetch(data.uploadUrl, {
+        method: "PUT",
+        headers: { "Content-Type": file.type },
+        body: file,
+      });
+      if (!put.ok) {
+        setResumeError("The upload did not finish. Please try again.");
+        setResumeStatus("error");
+        return;
+      }
+      setResumePath(data.path);
+      setResumeStatus("done");
+    } catch {
+      setResumeError("Network error during upload. Please try again.");
+      setResumeStatus("error");
+    }
+  };
 
   // "Either" shows both sets, because someone who does not yet know where
   // they fit should not have to guess before reading what each role is.
@@ -316,6 +366,14 @@ export default function Board() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!resumePath) {
+      setError(
+        resumeStatus === "uploading"
+          ? "Your resume is still uploading. Give it a moment and try again."
+          : "Please upload your resume before submitting."
+      );
+      return;
+    }
     setSubmitting(true);
     setError("");
     try {
@@ -324,6 +382,7 @@ export default function Board() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...form,
+          resumePath,
           nonprofitRoles,
           nonprofitCompetencies,
           educationSettings,
@@ -686,8 +745,32 @@ export default function Board() {
                     <Input id="professionalLicense" name="professionalLicense" value={form.professionalLicense} onChange={handleChange} data-testid="input-license" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="linkUrl">LinkedIn profile or resume link (optional)</Label>
-                    <Input id="linkUrl" name="linkUrl" type="url" placeholder="https://" value={form.linkUrl} onChange={handleChange} data-testid="input-link" />
+                    <Label htmlFor="linkedinUrl">LinkedIn profile</Label>
+                    <Input
+                      id="linkedinUrl" name="linkedinUrl" type="url" required
+                      placeholder="https://www.linkedin.com/in/..."
+                      value={form.linkedinUrl} onChange={handleChange} data-testid="input-linkedin"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="resume">Resume</Label>
+                    <input
+                      id="resume"
+                      name="resume"
+                      type="file"
+                      required
+                      accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                      onChange={handleResumeChange}
+                      className="w-full text-sm text-muted-foreground file:mr-4 file:rounded-md file:border-0 file:bg-primary file:px-4 file:py-2 file:text-sm file:font-semibold file:text-primary-foreground hover:file:bg-primary/90"
+                      data-testid="input-resume"
+                    />
+                    <p className="text-xs text-muted-foreground">
+                      {resumeStatus === "uploading" && "Uploading…"}
+                      {resumeStatus === "done" && `Uploaded: ${resumeName}`}
+                      {resumeStatus === "error" && <span className="text-red-600">{resumeError}</span>}
+                      {resumeStatus === "idle" && "PDF or Word document, 5 MB maximum."}
+                    </p>
                   </div>
                   <Select
                     {...sel("disabilityIdentify")}
