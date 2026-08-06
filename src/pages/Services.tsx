@@ -57,7 +57,7 @@ export default function Services() {
       <section className="sp" style={{ background: "#f0fdf4", borderBottom: "1px solid #bbf7d0" }}>
         <div className="rg-2" style={{ maxWidth: 900, margin: "0 auto", alignItems: "center" }}>
           <div>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Start Here</p>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Start Here</p>
             <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-0.5px" }}>Free 30-Minute Discovery Call</h2>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 28px" }}>
               Not sure where to begin? Book a free discovery call. We will listen to your situation, answer your first questions, and identify what your child needs right now, with no obligation to continue.
