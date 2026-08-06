@@ -25,7 +25,7 @@ function RoleCard({ role }: { role: BoardRole }) {
         <span
           className={`text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 ${
             role.status === "open"
-              ? "bg-accent/15 text-accent"
+              ? "bg-accent/15 text-accent-ink"
               : "bg-muted text-muted-foreground"
           }`}
         >
@@ -69,7 +69,7 @@ export default function BoardRoles() {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Descriptions stay published whether or not the seat is open.{" "}
-              <Link href="/board" className="text-accent font-semibold underline">
+              <Link href="/board" className="text-accent-ink font-semibold underline">
                 See which seats we are recruiting for now
               </Link>
               .
