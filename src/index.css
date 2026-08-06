@@ -198,10 +198,25 @@
 
 /* Hero: single col on mobile → 2-col split on md+ */
 .rg-hero { display: grid; grid-template-columns: 1fr; }
+
+/* The hero photograph is a decorative second column that only exists at 768px
+   and up; on a phone the hero is the navy panel alone. It is painted as a
+   background rather than an <img> because a browser skips background images on
+   a display:none element but still downloads an <img> inside one. As an <img>
+   every phone fetched a 116 KB file it never showed, which competed with the
+   text for bandwidth and pushed Largest Contentful Paint out. */
 .rg-hero-img { display: none; }
 @media (min-width: 768px) {
   .rg-hero { grid-template-columns: 1fr 1fr; min-height: 92vh; }
-  .rg-hero-img { display: block; position: relative; overflow: hidden; }
+  .rg-hero-img {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-image: url("/images/hero-family.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
 }
 
 /* 2-column grid */
