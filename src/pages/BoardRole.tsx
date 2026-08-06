@@ -19,7 +19,7 @@ import {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="border-t border-border pt-8 mt-8">
-      <h2 className="text-xs font-bold uppercase tracking-widest text-accent mb-4">{title}</h2>
+      <h2 className="text-xs font-bold uppercase tracking-widest text-accent-ink mb-4">{title}</h2>
       {children}
     </section>
   );
@@ -158,7 +158,7 @@ export default function BoardRole() {
           <div className="max-w-3xl">
             <Link
               href="/board/roles"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent-ink transition-colors mb-6"
               data-testid="back-to-roles"
             >
               <ArrowLeft size={16} aria-hidden="true" />
@@ -166,10 +166,10 @@ export default function BoardRole() {
             </Link>
 
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-accent">{kind}</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-accent-ink">{kind}</span>
               <span
                 className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
-                  role.status === "open" ? "bg-accent/15 text-accent" : "bg-muted text-muted-foreground"
+                  role.status === "open" ? "bg-accent/15 text-accent-ink" : "bg-muted text-muted-foreground"
                 }`}
                 data-testid="role-status"
               >
@@ -183,7 +183,7 @@ export default function BoardRole() {
             {role.status === "open" && (
               <Link
                 href="/board"
-                className="inline-flex items-center gap-2 bg-accent text-primary-foreground font-semibold rounded-full px-6 py-3 text-sm hover:bg-accent/90 transition-colors"
+                className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-semibold rounded-full px-6 py-3 text-sm hover:bg-accent/90 transition-colors"
                 data-testid="apply-cta"
               >
                 Apply for this position
@@ -205,7 +205,7 @@ export default function BoardRole() {
             <Section title="How to apply">
               <p className="text-muted-foreground leading-relaxed mb-5">
                 One application covers the board and the advisory council. Questions go to{" "}
-                <a href="mailto:info@edquityatthemargins.org" className="text-accent font-semibold underline">
+                <a href="mailto:info@edquityatthemargins.org" className="text-accent-ink font-semibold underline">
                   info@edquityatthemargins.org
                 </a>
                 .
