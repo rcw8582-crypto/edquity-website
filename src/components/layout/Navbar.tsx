@@ -51,6 +51,7 @@ export default function Navbar() {
    */
   const utilityLinks = [
     { href: "/volunteer", label: "Get Involved" },
+    { href: "/board", label: "Join Our Board" },
     { href: "/client-portal", label: "EDquity360 Portal" },
   ];
 
