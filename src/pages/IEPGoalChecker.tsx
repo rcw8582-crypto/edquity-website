@@ -573,7 +573,7 @@ export default function IEPGoalChecker() {
                   <Button
                     type="button"
                     onClick={handleCopy}
-                    className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full"
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full"
                     aria-label={copied ? "Analysis copied to clipboard" : "Copy analysis to clipboard"}
                   >
                     {copied ? (
@@ -691,7 +691,7 @@ export default function IEPGoalChecker() {
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link href="/services">
-              <Button className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full px-6">
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6">
                 See all services
               </Button>
             </Link>
