@@ -222,7 +222,7 @@ export default function Methodology() {
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link href="/book">
-              <Button className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full px-6">
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6">
                 Start your free IEP Audit
               </Button>
             </Link>
