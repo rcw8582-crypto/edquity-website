@@ -96,7 +96,7 @@ export default function Navbar() {
               </Button>
             </Link>
 
-            <Link href="/contact" data-testid="nav-cta-consultation">
+            <Link href="/book" data-testid="nav-cta-consultation">
               <Button className="bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full px-5 xl:px-6 text-sm xl:text-base whitespace-nowrap">
                 Book a Free Consultation
               </Button>
@@ -133,7 +133,7 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} data-testid="mobile-nav-cta-consultation">
+            <Link href="/book" onClick={() => setIsMobileMenuOpen(false)} data-testid="mobile-nav-cta-consultation">
               <Button className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full">
                 Book a Free Consultation
               </Button>
