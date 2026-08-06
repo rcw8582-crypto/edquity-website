@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
 export default function Donate() {
@@ -38,28 +39,28 @@ export default function Donate() {
           <p style={{ fontSize: 16, color: "#64748b", margin: 0 }}>100% of donations fund free IEP Audits and advocacy resources for families.</p>
         </div>
 
-        <div data-testid="zeffy-widget-container" style={{ maxWidth: 920, margin: "0 auto", padding: "0 16px" }}>
-          <iframe
-            src="https://www.zeffy.com/embed/donation-form/support-edquity-at-the-margins"
-            name="zeffy"
-            allow="payment"
-            seamless
-            frameBorder={0}
-            scrolling="yes"
-            style={{ width: "100%", minWidth: 250, height: "100vh", minHeight: 760, border: "none", borderRadius: 12, display: "block" }}
-            title="Donate to EDquity at the Margins"
-          />
-        </div>
-        <div style={{ textAlign: "center", marginTop: 20, padding: "0 24px" }}>
-          <p style={{ fontSize: 13, color: "#64748b", margin: "0 0 10px" }}>Prefer to open the donation form in a new tab?</p>
+        {/* Linked rather than framed. The Zeffy form works at its own URL but
+            rendered blank when embedded here, which a third-party payment form
+            does when a browser partitions or blocks its storage in a frame. It
+            is cross-origin, so nothing here can detect the failure and swap in
+            a fallback, and a blank box on a donation page costs a gift and is
+            named in the Ad Grants policy as a reason to reject a site. */}
+        <div style={{ textAlign: "center", padding: "0 24px" }}>
           <a
             href="https://www.zeffy.com/en-US/donation-form/support-edquity-at-the-margins"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "11px 26px", borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: "none" }}
+            data-testid="donate-primary"
+            style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#22C55E", color: "#122C54", padding: "18px 44px", borderRadius: 10, fontWeight: 900, fontSize: 19, textDecoration: "none" }}
           >
-            Open Donation Page
+            Donate now
+            <ExternalLink size={19} aria-hidden="true" />
           </a>
+          <p style={{ fontSize: 14, color: "#64748b", margin: "16px 0 0", lineHeight: 1.7 }}>
+            Opens our secure donation form in a new tab. One-time, monthly, quarterly, or yearly.
+            You will receive a tax receipt. Zeffy passes on one hundred percent of your gift, so
+            nothing is taken out in processing fees.
+          </p>
         </div>
 
         <p style={{ fontSize: 13, color: "#64748b", textAlign: "center", marginTop: 20, lineHeight: 1.6, padding: "0 24px" }}>
