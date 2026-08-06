@@ -40,7 +40,7 @@ export default function About() {
             >
               <h2 className="text-3xl font-bold text-primary border-b-4 border-accent inline-block pb-2">Our Mission</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                EDquity at the Margins exists to demystify the special education system for marginalized families. We translate institutional special education practices into plain language so families can engage with schools as true, empowered partners. We provide direct advocacy, education, and support to ensure children receive the Free Appropriate Public Education (FAPE) they are legally guaranteed.
+                EDquity at the Margins exists to demystify the special education system for marginalized families. We translate institutional special education practices into plain language so families can engage with schools as true, empowered partners. We provide advocacy, education, and support to families to ensure children receive the Free Appropriate Public Education (FAPE) that they are legally guaranteed.
               </p>
             </motion.div>
             
@@ -139,7 +139,7 @@ export default function About() {
                 School districts arrive at IEP meetings with teams of professionals, evaluators, and administrators whose command of specialized terminology and procedural rules creates a structural disadvantage for families who lack equivalent training. For families of color, economically disadvantaged families, and non-native English speakers, that disadvantage is compounded by documented patterns of racial and economic disparity in special education identification, placement, and service delivery.
               </p>
               <p>
-                <strong>EDquity at the Margins addresses that gap directly.</strong> Parents hold knowledge about their children that no evaluation instrument can replicate, and our work translates that knowledge into legally binding educational plans through technical coaching, document analysis, and sustained advocacy support.
+                <strong>EDquity at the Margins addresses that gap directly.</strong> Parents hold knowledge about their children that no evaluation instrument can replicate, and our work translates that knowledge into legally binding educational plans through document analysis and sustained advocacy support.
               </p>
             </div>
           </div>

@@ -123,15 +123,17 @@ export default function Home() {
           </motion.div>
         </div>
         <div className="rg-hero-img">
-          {/* The hero is the Largest Contentful Paint element, so it decides the
-              mobile performance score. A phone gets the 900px file rather than
-              the desktop one, fetchpriority tells the browser to start it
-              before the JavaScript, and the intrinsic size lets it reserve the
-              space so nothing shifts while it loads. */}
+          {/* .rg-hero-img is display:none below 768px, so this image is only
+              ever shown on tablet and desktop. The source list reflects that:
+              the 900px file covers the narrow end of the range where it does
+              appear, and no phone-sized entry exists because no phone displays
+              it. Above 768px it is the Largest Contentful Paint element, so it
+              carries fetchpriority, and intrinsic dimensions so the column
+              reserves its space rather than shifting as the file arrives. */}
           <img
             src="/images/hero-family.jpg"
             srcSet="/images/hero-family-900.jpg 900w, /images/hero-family.jpg 1600w"
-            sizes="(max-width: 900px) 100vw, 55vw"
+            sizes="(max-width: 1100px) 50vw, 55vw"
             width={1600}
             height={1067}
             fetchPriority="high"
@@ -182,7 +184,7 @@ export default function Home() {
             {"Federal law already guarantees your child a free and appropriate public education in the least restrictive environment. The gap is not in the law. The gap is between what the law requires and what schools deliver when no one is holding them accountable."}
           </p>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: 0 }}>
-            {"EDquity at the Margins exists to close that gap, providing marginalized families with the technical knowledge, advocacy preparation, and sustained coaching support they need to enforce the rights federal law already guarantees their children."}
+            {"EDquity at the Margins exists to close that gap, providing marginalized families with the technical knowledge and sustained advocacy support they need to enforce the rights federal law already guarantees their children."}
           </p>
         </div>
       </section>
