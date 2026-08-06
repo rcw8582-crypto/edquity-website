@@ -105,7 +105,7 @@ export default function Navbar() {
             </Link>
 
             <Link href="/book" data-testid="nav-cta-consultation">
-              <Button className="bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full px-5 xl:px-6 text-sm xl:text-base whitespace-nowrap">
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full px-5 xl:px-6 text-sm xl:text-base whitespace-nowrap">
                 Book a Free Consultation
               </Button>
             </Link>
@@ -173,7 +173,7 @@ export default function Navbar() {
                 </Button>
               </Link>
               <Link href="/book" onClick={() => setIsMobileMenuOpen(false)} data-testid="mobile-nav-cta-consultation">
-                <Button className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full">
+                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full">
                   Book a Free Consultation
                 </Button>
               </Link>
