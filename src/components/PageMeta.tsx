@@ -48,11 +48,11 @@ export default function PageMeta({ title, description }: PageMetaProps) {
     setMeta('meta[property="og:description"]', "content", description);
     setMeta('meta[property="og:type"]', "content", "website");
     setMeta('meta[property="og:url"]', "content", canonical);
-    setMeta('meta[property="og:image"]', "content", `${BASE_URL}/images/og-card.png`);
+    setMeta('meta[property="og:image"]', "content", `${BASE_URL}/images/og-card.jpg`);
     setMeta('meta[name="twitter:card"]', "content", "summary_large_image");
     setMeta('meta[name="twitter:title"]', "content", fullTitle);
     setMeta('meta[name="twitter:description"]', "content", description);
-    setMeta('meta[name="twitter:image"]', "content", `${BASE_URL}/images/og-card.png`);
+    setMeta('meta[name="twitter:image"]', "content", `${BASE_URL}/images/og-card.jpg`);
 
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {
