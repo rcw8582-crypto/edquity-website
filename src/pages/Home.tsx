@@ -217,7 +217,7 @@ export default function Home() {
           </div>
           <div className="rg-2">
             {[
-              { icon: <FileText size={28} color="#22C55E" />, title: "IEP Audit", price: "Free", desc: "We review your child's IEP across six research-grounded domains, identify what is missing or legally inadequate, and deliver a plain-language written report with specific next steps before your next meeting.", tag: "Free", tagColor: "#22C55E", href: "/intake" },
+              { icon: <FileText size={28} color="#22C55E" />, title: "IEP Audit", price: "Free", desc: "We review your child's IEP across six research-grounded domains, identify what is missing or legally inadequate, and deliver a plain-language written report with specific next steps before your next meeting.", tag: "Free", tagColor: "#22C55E", href: "/book" },
               { icon: <BookOpen size={28} color="#14B8A6" />, title: "Advocacy Toolkit", price: "Free", desc: "Our library of free, downloadable resources: plain-language guides to the IDEA, question checklists, template letters, and tools that help you read your child's IEP like an expert and prepare for any meeting.", tag: "Free", tagColor: "#14B8A6", href: "/resources" },
             ].map((service, i) => (
               <motion.div key={i}
