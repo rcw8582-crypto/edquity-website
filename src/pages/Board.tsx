@@ -262,7 +262,7 @@ export default function Board() {
                 <CheckCircle2 size={56} className="text-accent mx-auto mb-6" />
                 <h3 className="text-2xl font-bold text-primary mb-3">We received your application.</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  The board reviews applications on a rolling basis, and we will be in touch about next steps. If you would like to add anything, reply to the confirmation of this page at info@edquityatthemargins.org.
+                  The board reviews applications on a rolling basis, and we will be in touch about next steps. If you would like to add anything, email us at info@edquityatthemargins.org.
                 </p>
               </motion.div>
             ) : (
