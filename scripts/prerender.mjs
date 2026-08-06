@@ -148,6 +148,7 @@ const SITEMAP_WEIGHTS = {
   "/iep-quality-improvement": { changefreq: "monthly", priority: "0.7" },
   "/volunteer": { changefreq: "monthly", priority: "0.7" },
   "/board": { changefreq: "monthly", priority: "0.7" },
+  "/board/roles": { changefreq: "monthly", priority: "0.6" },
   "/funders": { changefreq: "monthly", priority: "0.7" },
   "/contact": { changefreq: "monthly", priority: "0.7" },
   "/book": { changefreq: "monthly", priority: "0.8" },
@@ -166,6 +167,7 @@ const SITEMAP_DEFAULT = { changefreq: "monthly", priority: "0.6" };
 /** Every /resources/<slug> page carries the same weight as the hub's siblings. */
 const SITEMAP_PREFIX_WEIGHTS = [
   { prefix: "/resources/", weight: { changefreq: "monthly", priority: "0.8" } },
+  { prefix: "/board/roles/", weight: { changefreq: "yearly", priority: "0.5" } },
 ];
 
 /**
