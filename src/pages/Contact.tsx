@@ -148,7 +148,7 @@ export default function Contact() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full"
+                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full"
                     data-testid="button-contact-submit"
                     disabled={submitting}
                   >
@@ -205,7 +205,7 @@ export default function Contact() {
                   it and send you a written report in plain language. Families pay nothing.
                 </p>
                 <Link href="/book" data-testid="contact-start-audit">
-                  <Button className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full">
+                  <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full">
                     Start Your Free Audit
                   </Button>
                 </Link>
@@ -227,7 +227,7 @@ export default function Contact() {
                   A free 30-minute discovery call via Zoom or phone is the most direct way to assess whether our services fit your child's current situation.
                 </p>
                 <a href={BOOKING_URL} data-testid="contact-book-call">
-                  <Button className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full">
+                  <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full">
                     Book Your Call
                   </Button>
                 </a>
