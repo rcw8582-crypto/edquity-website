@@ -5,6 +5,8 @@ import { trackInquirySubmitted } from "@/lib/analytics";
 
 const NAVY = "#122C54";
 const TEAL = "#14B8A6";
+/** Passes 4.5:1 on white and slate. #14B8A6 measures 2.49 and fails. */
+const TEAL_TEXT = "#0F766E";
 const GREEN = "#22C55E";
 
 interface FactProps { label: string; value: string; }
@@ -21,7 +23,7 @@ interface StepProps { n: string; title: string; text: string; }
 function Step({ n, title, text }: StepProps) {
   return (
     <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 12, padding: 24 }}>
-      <p style={{ fontSize: 12, fontWeight: 800, color: TEAL, margin: "0 0 8px" }}>STEP {n}</p>
+      <p style={{ fontSize: 12, fontWeight: 800, color: TEAL_TEXT, margin: "0 0 8px" }}>STEP {n}</p>
       <p style={{ fontSize: 16, fontWeight: 700, color: NAVY, margin: "0 0 8px" }}>{title}</p>
       <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.65, margin: 0 }}>{text}</p>
     </div>
@@ -142,7 +144,7 @@ export default function Fellowship() {
       {/* The problem */}
       <section className="sp" style={{ background: "#fff" }}>
         <div style={{ maxWidth: 820, margin: "0 auto" }}>
-          <p style={{ fontSize: 12, fontWeight: 700, color: TEAL, letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>The Problem</p>
+          <p style={{ fontSize: 12, fontWeight: 700, color: TEAL_TEXT, letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>The Problem</p>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, lineHeight: 1.2, margin: "0 0 18px" }}>
             A signed IEP is not a compliant IEP.
           </h2>
@@ -158,7 +160,7 @@ export default function Fellowship() {
       {/* How it works */}
       <section className="sp" style={{ background: "#f8fafc", borderTop: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <p style={{ fontSize: 12, fontWeight: 700, color: TEAL, letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px", textAlign: "center" }}>How It Works</p>
+          <p style={{ fontSize: 12, fontWeight: 700, color: TEAL_TEXT, letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px", textAlign: "center" }}>How It Works</p>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, textAlign: "center", margin: "0 0 14px" }}>The monthly diagnostic loop</h2>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.7, textAlign: "center", maxWidth: 760, margin: "0 auto 34px" }}>
             Every month from September 2027 through May 2028, your school submits five redacted IEPs and EDquity blind-evaluates them against our proprietary 40-condition master rubric. That is 45 independent evaluations across the year, a diagnostic service valued at $29,385 on our standard rate card, donated in full to fellowship schools.
@@ -170,13 +172,13 @@ export default function Fellowship() {
           </div>
           <div className="rg-2" style={{ maxWidth: 900, margin: "0 auto" }}>
             <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: 28 }}>
-              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL, margin: "0 0 10px", textTransform: "uppercase", letterSpacing: 1 }}>Fall: Training and Diagnosis</p>
+              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL_TEXT, margin: "0 0 10px", textTransform: "uppercase", letterSpacing: 1 }}>Fall: Training and Diagnosis</p>
               <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>
                 Your fellow learns the federal law behind every condition, anchored in Endrew F. v. Douglas County (2017), and trains hands-on with the EDquity Leader Rubric. By December, four months of blind trend data show exactly which conditions your school's documents consistently miss, and the December Data Summit converts that trend into a targeted professional development plan, presented to you the same day.
               </p>
             </div>
             <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: 28 }}>
-              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL, margin: "0 0 10px", textTransform: "uppercase", letterSpacing: 1 }}>Spring: The Impact Project</p>
+              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL_TEXT, margin: "0 0 10px", textTransform: "uppercase", letterSpacing: 1 }}>Spring: The Impact Project</p>
               <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>
                 From January, your fellow leads a structured impact project, action research adapted for school leaders. The fall data and the research literature define the problem, your fellow intervenes each month with staff training, pre-signature rubric checks, and team coaching, documenting evidence of every intervention, and the continuing blind evaluation measures whether the data moves. Because every score all year is EDquity's independent blind score, the outcome is objective by construction.
               </p>
@@ -199,7 +201,7 @@ export default function Fellowship() {
             {CALENDAR.map(([month, session], i) => (
               <div key={month} style={{ display: "flex", flexWrap: "wrap", gap: 6, padding: "13px 18px", background: i % 2 ? "#f8fafc" : "#fff", borderTop: i ? "1px solid #eef2f7" : "none" }}>
                 <span style={{ fontWeight: 800, fontSize: 14, width: 170, flexShrink: 0 }}>{month}</span>
-                <span style={{ fontWeight: 700, fontSize: 14, color: TEAL, flex: 1, minWidth: 220 }}>{session}</span>
+                <span style={{ fontWeight: 700, fontSize: 14, color: TEAL_TEXT, flex: 1, minWidth: 220 }}>{session}</span>
               </div>
             ))}
           </div>
@@ -274,7 +276,7 @@ export default function Fellowship() {
             </div>
           ) : (
             <form onSubmit={onSubmit} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: "28px 26px" }}>
-              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL, textTransform: "uppercase", letterSpacing: 1, margin: "0 0 16px" }}>Part 1: Applicant profile</p>
+              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL_TEXT, textTransform: "uppercase", letterSpacing: 1, margin: "0 0 16px" }}>Part 1: Applicant profile</p>
               <div className="rg-2">
                 <div style={fieldWrap}>
                   <label style={labelStyle} htmlFor="fullName">Full name *</label>
@@ -303,7 +305,7 @@ export default function Fellowship() {
                 </select>
               </div>
 
-              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL, textTransform: "uppercase", letterSpacing: 1, margin: "26px 0 16px" }}>Part 2: Institutional information</p>
+              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL_TEXT, textTransform: "uppercase", letterSpacing: 1, margin: "26px 0 16px" }}>Part 2: Institutional information</p>
               <div className="rg-2">
                 <div style={fieldWrap}>
                   <label style={labelStyle} htmlFor="schoolName">School or LEA name *</label>
@@ -341,7 +343,7 @@ export default function Fellowship() {
                 ))}
               </div>
 
-              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL, textTransform: "uppercase", letterSpacing: 1, margin: "26px 0 16px" }}>Part 3: Short answers (250 words each)</p>
+              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL_TEXT, textTransform: "uppercase", letterSpacing: 1, margin: "26px 0 16px" }}>Part 3: Short answers (250 words each)</p>
               <div style={fieldWrap}>
                 <label style={labelStyle} htmlFor="missionCase">The mission case: why does IEP quality matter for the specific student population your campus serves? *</label>
                 <textarea style={{ ...inputStyle, minHeight: 130, resize: "vertical" }} id="missionCase" name="missionCase" required maxLength={4000} />
@@ -351,7 +353,7 @@ export default function Fellowship() {
                 <textarea style={{ ...inputStyle, minHeight: 130, resize: "vertical" }} id="operationalCase" name="operationalCase" required maxLength={4000} />
               </div>
 
-              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL, textTransform: "uppercase", letterSpacing: 1, margin: "26px 0 16px" }}>Part 4: Required certifications</p>
+              <p style={{ fontSize: 13, fontWeight: 800, color: TEAL_TEXT, textTransform: "uppercase", letterSpacing: 1, margin: "26px 0 16px" }}>Part 4: Required certifications</p>
               <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "#475569", lineHeight: 1.6, marginBottom: 12, cursor: "pointer" }}>
                 <input type="checkbox" name="institutionalSignOff" required style={{ marginTop: 3 }} />
                 I certify that my school leadership understands the $8,000 seat fee, agrees to release time for the program's contact hours, and consents to the presentation of anonymized campus findings at the June Impact Expo. *
@@ -364,7 +366,7 @@ export default function Fellowship() {
               <div style={{ background: "#f8fafc", border: "1px dashed #cbd5e1", borderRadius: 10, padding: "14px 16px", marginBottom: 22, display: "flex", gap: 10, alignItems: "flex-start" }}>
                 <Download size={18} color={TEAL} style={{ flexShrink: 0, marginTop: 2 }} />
                 <p style={{ fontSize: 13.5, color: "#475569", lineHeight: 1.6, margin: 0 }}>
-                  Required attachment: <a href="/fellowship/EDquity-Leader-Fellowship-Commitment-Letter.docx" style={{ color: TEAL, fontWeight: 700 }}>download the School Leader Commitment Letter</a>, have your principal or authorizing official sign it, and email the signed copy to info@edquityatthemargins.org. Your application is complete once we receive it.
+                  Required attachment: <a href="/fellowship/EDquity-Leader-Fellowship-Commitment-Letter.docx" style={{ color: TEAL_TEXT, fontWeight: 700 }}>download the School Leader Commitment Letter</a>, have your principal or authorizing official sign it, and email the signed copy to info@edquityatthemargins.org. Your application is complete once we receive it.
                 </p>
               </div>
 
