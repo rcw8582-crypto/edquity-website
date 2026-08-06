@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Link } from "wouter";
+import { BOARD_ROLES } from "@/content/board-roles";
 
 /**
  * Every list below is validated server-side against an identical list in
@@ -128,6 +130,7 @@ const PRIMARY_CONTRIBUTION = [
 const SEATS = [
   {
     title: "Treasurer",
+    slug: "treasurer",
     flag: "Priority seat",
     icon: <Scale size={28} className="text-accent" />,
     body: "You would oversee financial reporting, budgeting, and audit readiness as the organization grows from startup to operational scale, and you would chair the Finance Committee that you help establish in your first year. The work runs through reviewing monthly financial statements with the Executive Director, leading the annual budget process alongside the President, structuring restricted and unrestricted fund tracking for grant compliance, supporting Form 990 preparation and timely filing, and setting financial policies covering expense reimbursement, signature authority, and reserve targets.",
@@ -135,6 +138,7 @@ const SEATS = [
   },
   {
     title: "Development and Institutional Partnerships",
+    slug: "development-and-institutional-partnerships",
     flag: "Priority seat",
     icon: <Landmark size={28} className="text-accent" />,
     body: "You would chair the Development Committee from its first meeting and own the founding-year fundraising plan alongside the Executive Director. The work runs through building the funder pipeline and grant calendar, opening doors to education foundations, school system leaders, and individual donors, advising the board on how school systems budget and procure so our institutional services are designed against how districts actually operate, and leading board giving. This seat carries no role in scoring and no preview of audit findings, because the independence of the review is what makes it worth buying.",
@@ -142,6 +146,7 @@ const SEATS = [
   },
   {
     title: "Secretary",
+    slug: "secretary",
     flag: null,
     icon: <CalendarDays size={28} className="text-accent" />,
     body: "You would maintain the official record of every board and committee meeting, covering agendas, minutes, attendance, and votes, and you would serve as custodian of the governance documents, including the bylaws, the conflict of interest policy, and board resolutions. The role also carries timely distribution of meeting notices and materials, tracking of director terms and annual disclosures, compliance with Tennessee nonprofit corporation law and 501(c)(3) reporting obligations, coordination of the annual board self-assessment and new director onboarding, and signing official corporate documents alongside the President as the bylaws require.",
@@ -149,6 +154,7 @@ const SEATS = [
   },
   {
     title: "At-Large Director, Family Law or Disability Rights",
+    slug: "family-law-or-disability-rights",
     flag: null,
     icon: <Scale size={28} className="text-accent" />,
     body: "You would provide strategic guidance on our family-facing services, our published guidance to families, and our legal compliance posture, and you would help shape program design so that our IEP reviews and family workshops reflect current IDEA case law, state special education regulations, and best practices in disability rights. You would review family-facing materials, including workshop curricula, report templates, and consent forms, for legal accuracy and accessibility. Beyond the materials, this seat opens doors, cultivating relationships with disability rights groups, family law clinics, and education advocacy networks.",
@@ -156,6 +162,7 @@ const SEATS = [
   },
   {
     title: "Parent Director",
+    slug: "parent-director",
     flag: null,
     icon: <Users size={28} className="text-accent" />,
     body: "You would bring the perspective of a family who has been through the IEP process into every governance decision the board makes, which is why these seats hold the majority of the votes. The work includes reviewing family-facing materials before they reach families, judging whether programs are reaching the families they are meant to reach, serving on a standing committee, and referring other parents into the recruitment pipeline.",
@@ -487,7 +494,14 @@ export default function Board() {
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">{seat.body}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">{seat.who}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{seat.who}</p>
+                <Link
+                  href={`/board/roles/${seat.slug}`}
+                  className="text-sm font-semibold text-accent underline"
+                  data-testid={`seat-description-${seat.slug}`}
+                >
+                  Read the full position description
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -537,6 +551,12 @@ export default function Board() {
             <h3 className="text-xl font-bold text-primary mb-3">The commitment</h3>
             <p className="text-muted-foreground leading-relaxed">
               A one-year renewable appointment, roughly two to four hours a quarter. The council convenes twice a year, and the rest of the work happens when a material needs your eyes.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mt-4">
+              <Link href="/board/roles" className="text-accent font-semibold underline">
+                Read the position description for every council role
+              </Link>
+              .
             </p>
           </div>
         </div>
