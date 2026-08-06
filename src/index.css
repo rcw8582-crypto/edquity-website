@@ -37,6 +37,9 @@
 
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
+  /* Green dark enough to pass AA as text on white. The brand green,
+     --accent, is 2.28:1 on white and must never carry small text. */
+  --color-accent-ink: hsl(var(--accent-ink));
   --color-accent-border: var(--accent-border);
 
   --color-destructive: hsl(var(--destructive));
@@ -88,6 +91,7 @@
 
   --accent: 142 71% 45%;
   --accent-foreground: 216 65% 20%;
+  --accent-ink: 142 72% 29%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
@@ -160,7 +164,8 @@
   --popover-border: 217 41% 20%; 
 
   --primary: 210 40% 98%; 
-  --primary-foreground: 221 48% 9%; 
+  --primary-foreground: 221 48% 9%;
+  --accent-ink: 142 71% 45%; 
 
   --secondary: 217 41% 20%; 
   --secondary-foreground: 210 40% 98%; 
