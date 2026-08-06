@@ -145,6 +145,77 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Programs. Named here because Ad Grants lists Programs among the key
+          pages a reviewer reads, and because About previously described the
+          mission and the founder without ever saying what we actually run. */}
+      <section className="sp" style={{ background: "#f8fafc" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary mb-8">Our Programs</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-bold text-primary mb-2">Free IEP Audit</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  We review your child's IEP across six research-grounded domains, identify what is
+                  missing or legally inadequate, and deliver a plain-language written report with
+                  specific next steps before your next meeting. Families pay nothing.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-primary mb-2">Free Parent Workshops</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Live sessions covering what the law entitles your child to, how to read the document
+                  the school hands you, what to say when services are cut, and how to put a request in
+                  writing so the district has to answer it. They run online on the third Thursday of
+                  each month at 7:00 PM Central, and we partner with libraries and community
+                  organizations to bring sessions in person.
+                </p>
+              </div>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Alongside both, our{" "}
+                <Link href="/resources" className="text-primary font-semibold hover:underline">Advocacy Toolkit</Link>{" "}
+                is a free library you can download and use on your own, covering the thirteen IDEA
+                disability categories, eligibility, the difference between IDEA and Section 504, who
+                sits on an IEP team, and a notecatcher for the meeting itself.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Governance. The board page carries the detail; this states the facts a
+          reviewer or a funder checks first and points at it, since neither this
+          page nor Transparency linked to it before. */}
+      <section className="sp" style={{ background: "#fff" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary mb-8">Governance and Accountability</h2>
+            <div className="space-y-5">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                EDquity at the Margins is a Tennessee nonprofit corporation and an IRS-recognized{" "}
+                <strong className="text-primary">501(c)(3) public charity</strong>, EIN 42-2295582,
+                headquartered in Gallatin, Tennessee. The IRS recognized our exempt status in May 2026.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We are governed by a board of seven. Two directors are seated, one election is pending,
+                and most of the remaining seats are reserved for parents of children with disabilities.
+                Directors do not have to live in Tennessee.{" "}
+                <Link href="/board" className="text-primary font-semibold hover:underline">
+                  Read how the board is being built and how to join
+                </Link>
+                .
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We never charge families for anything. We never accept payment from a school district in
+                connection with an individual child's case. Schools that engage us purchase reviews of
+                their own IEP quality across their system, and ten percent of every school engagement fee
+                is designated to the Family Audit Fund, which keeps family services free.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

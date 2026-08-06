@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { CheckCircle2, ExternalLink } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
@@ -60,7 +61,17 @@ export default function Transparency() {
               <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.7, margin: 0 }}>
                 Family services stay free because paid work with schools and systems underwrites them, and because our founder contributes the majority of the professional time the organization runs on without pay. As a newly founded organization, we will publish our full financial statements with each annual 990 filing rather than post projections before we have a year of actual spending to report.
               </p>
-              <div style={{ marginTop: 24 }}>
+              {/* A page about accountability that never said who governs the
+                  organization. The board page carries the detail. */}
+              <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.7, margin: "16px 0 0" }}>
+                We are governed by a board of seven. Two directors are seated, one election is pending,
+                and most of the remaining seats are reserved for parents of children with disabilities.
+              </p>
+              <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 10 }}>
+                <Link href="/board"
+                  style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "#15803D", fontWeight: 600, fontSize: 14, textDecoration: "none" }}>
+                  How our board is built, and how to join
+                </Link>
                 <a href="https://apps.irs.gov/app/eos/" target="_blank" rel="noopener noreferrer"
                   style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "#15803D", fontWeight: 600, fontSize: 14, textDecoration: "none" }}>
                   Verify our IRS status <ExternalLink size={13} />
