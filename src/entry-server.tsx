@@ -14,6 +14,7 @@ import App from "./App";
 import { takeCollectedHead, type CollectedHead } from "./lib/head";
 import { getAllPublishedPosts } from "./lib/posts";
 import { RESOURCES } from "./content/resources";
+import { ROLE_ROUTES } from "./content/board-roles";
 import { fetchEvents, setEventsSnapshot, type EdatmEvent } from "./content/events";
 
 /** Every public route that gets its own prerendered HTML file. */
@@ -32,6 +33,7 @@ export const STATIC_ROUTES: string[] = [
   "/donate",
   "/volunteer",
   "/board",
+  "/board/roles",
   "/funders",
   "/press",
   "/transparency",
@@ -55,7 +57,7 @@ export const STATIC_ROUTES: string[] = [
 export function allRoutes(): string[] {
   const posts = getAllPublishedPosts().map((post) => `/news/${post.slug}`);
   const resources = RESOURCES.map((resource) => `/resources/${resource.slug}`);
-  return [...STATIC_ROUTES, ...posts, ...resources];
+  return [...STATIC_ROUTES, ...ROLE_ROUTES, ...posts, ...resources];
 }
 
 export interface FeedItem {
