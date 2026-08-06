@@ -208,7 +208,7 @@ export default function About() {
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 We never charge families for anything. We never accept payment from a school district in
-                connection with an individual child's case. Schools that engage us purchase reviews of
+                connection with an individual child's case. Schools that engage us pay for reviews of
                 their own IEP quality across their system, and ten percent of every school engagement fee
                 is designated to the Family Audit Fund, which keeps family services free.
               </p>
