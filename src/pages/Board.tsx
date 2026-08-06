@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Link } from "wouter";
-import { BOARD_ROLES } from "@/content/board-roles";
 
 /**
  * Every list below is validated server-side against an identical list in
