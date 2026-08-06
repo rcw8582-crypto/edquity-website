@@ -3,5 +3,6 @@ Allow: /
 
 Disallow: /admin
 Disallow: /client-portal
+Disallow: /intake
 
 Sitemap: https://www.edquityatthemargins.org/sitemap.xml
