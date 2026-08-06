@@ -294,7 +294,7 @@ export default function Services() {
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.7, margin: 0, textAlign: "center" }}>
             EDquity at the Margins provides independent educational expertise, not legal advice. We are not attorneys and do not provide legal representation. Families who believe their child's rights have been violated under IDEA are encouraged to consult a special education attorney or contact their state's Parent Training and Information Center at{" "}
-            <a href="https://parentcenterhub.org" target="_blank" rel="noopener noreferrer" style={{ color: "#0F766E", textDecoration: "none" }}>parentcenterhub.org</a>.
+            <a href="https://parentcenterhub.org" target="_blank" rel="noopener noreferrer" style={{ color: "#0F766E", textDecoration: "underline" }}>parentcenterhub.org</a>.
           </p>
         </div>
       </section>
