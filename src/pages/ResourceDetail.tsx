@@ -137,7 +137,7 @@ export default function ResourceDetail() {
           <h2 style={{ fontSize: "clamp(23px,2.9vw,34px)", fontWeight: 900, color: NAVY, margin: "0 0 16px", letterSpacing: "-0.5px" }}>
             A worksheet tells you what to look for. An audit tells you what your child's IEP actually says.
           </h2>
-          <p style={{ fontSize: 17, color: "rgba(18,44,84,0.75)", lineHeight: 1.7, margin: "0 0 32px" }}>
+          <p style={{ fontSize: 17, color: "#122C54", lineHeight: 1.7, margin: "0 0 32px" }}>
             We review your child's IEP across six research-grounded domains and send you a plain-language
             report with the specific questions to ask. Families pay nothing.
           </p>
