@@ -1,120 +1,107 @@
 /**
- * The board and advisory council role bank.
+ * Board and advisory council position descriptions, loaded from the EDquity
+ * portal's database.
  *
- * THE PDF IS THE SOURCE OF TRUTH. Nothing in this file duplicates the body
- * of a position description, and nothing should. Reba maintains the Word
- * document on her Desktop, saves it as a PDF over the matching file in
- * public/board-roles, and the page updates on the next deploy. One edit in
- * one place.
+ * Reba edits every section at edquity360.com/admin/board-roles. The website
+ * renders what she saves as real HTML. Nothing here duplicates the text, and
+ * no PDF sits between the reader and the content.
  *
- * What lives here is only what a link needs: the slug that names the PDF,
- * the title, whether the role is a director seat or a council appointment,
- * whether it is currently open, and one line of summary for the index card
- * and the page description.
- *
- * `status` is the only field that tracks the current moment. Flip it to
- * "filled" when a seat is taken. Do not delete the entry. A filled role
- * stays in the bank so the description is still there the next time the
- * seat turns over.
- *
- * Adding a role means dropping a PDF into public/board-roles and adding an
- * entry here. The index page, the role pages, the sitemap, and the
- * prerender pass all read from this array.
+ * This mirrors content/events.ts: a build-time snapshot inlined into the
+ * prerendered HTML so the first paint carries real content, plus a live
+ * fetch afterwards to pick up anything published since the last deploy.
  */
+
+const SUPABASE_URL = "https://erggxchftkpczoshcfii.supabase.co";
+// Publishable read-only key. Row-level security limits it to published roles.
+const SUPABASE_ANON_KEY = "sb_publishable_QKhsSgXSYmlhtOv0vfIJ4Q_c5uau4Yn";
 
 export type RoleStatus = "open" | "filled";
 export type RoleKind = "director" | "advisory";
 
 export interface BoardRole {
-  /** Also the PDF filename: public/board-roles/<slug>.pdf */
   slug: string;
   title: string;
   kind: RoleKind;
   status: RoleStatus;
-  /** One line for the index card and the meta description. */
+  sort_order: number;
   summary: string;
+  purpose: string;
+  responsibilities: string[];
+  required: string[];
+  preferred: string[];
+  additional_commitment: string | null;
 }
 
-export const BOARD_ROLES: BoardRole[] = [
-  {
-    slug: "treasurer",
-    title: "Treasurer",
-    kind: "director",
-    status: "open",
-    summary: "Leads the board's financial oversight and chairs the Finance Committee.",
-  },
-  {
-    slug: "development-and-institutional-partnerships",
-    title: "Development and Institutional Partnerships Director",
-    kind: "director",
-    status: "open",
-    summary: "Chairs the Development Committee and leads the board's fundraising.",
-  },
-  {
-    slug: "secretary",
-    title: "Secretary",
-    kind: "director",
-    status: "open",
-    summary: "Keeps the governance record accurate and the organization's compliance current.",
-  },
-  {
-    slug: "family-law-or-disability-rights",
-    title: "At-Large Director, Family Law or Disability Rights",
-    kind: "director",
-    status: "open",
-    summary: "Brings legal and policy judgment to program design and compliance.",
-  },
-  {
-    slug: "parent-director",
-    title: "Parent Director",
-    kind: "director",
-    status: "open",
-    summary: "Brings the lived experience of the IEP process into every board decision.",
-  },
-  {
-    slug: "advisor-behavior-analysis",
-    title: "Advisory Council Member, Behavior Analysis",
-    kind: "advisory",
-    status: "open",
-    summary: "Advises on behavior intervention plans, functional assessments, and behavior goals.",
-  },
-  {
-    slug: "advisor-speech-and-language",
-    title: "Advisory Council Member, Speech and Language",
-    kind: "advisory",
-    status: "open",
-    summary: "Advises on communication goals, speech and language services, and augmentative communication.",
-  },
-  {
-    slug: "advisor-school-psychology",
-    title: "Advisory Council Member, School Psychology",
-    kind: "advisory",
-    status: "open",
-    summary: "Advises on evaluation, eligibility, and how assessment data should be read.",
-  },
-  {
-    slug: "advisor-low-incidence-disabilities",
-    title: "Advisory Council Member, Low-Incidence Disabilities",
-    kind: "advisory",
-    status: "open",
-    summary: "Advises on programming and service intensity for students with significant support needs.",
-  },
-  {
-    slug: "advisor-education-policy-and-law",
-    title: "Advisory Council Member, Education Policy and Law",
-    kind: "advisory",
-    status: "open",
-    summary: "Advises on policy content and on how state regulation differs from the federal floor.",
-  },
-];
-
-export function roleBySlug(slug: string): BoardRole | undefined {
-  return BOARD_ROLES.find((role) => role.slug === slug);
+export interface RoleShared {
+  kind: RoleKind;
+  reports_to: string;
+  term: string;
+  compensation: string;
+  time_commitment: string[];
+  shared_responsibilities: string[];
+  boundary: string;
+  provided: string[];
+  governance_note: string | null;
 }
 
-export function rolePdf(role: BoardRole): string {
-  return `/board-roles/${role.slug}.pdf`;
+export interface RolesSnapshot {
+  roles: BoardRole[];
+  shared: RoleShared[];
 }
 
-/** Route paths for the prerender pass and the sitemap. */
-export const ROLE_ROUTES = BOARD_ROLES.map((role) => `/board/roles/${role.slug}`);
+export const ROLES_SNAPSHOT_KEY = "__EDATM_BOARD_ROLES__";
+
+const EMPTY: RolesSnapshot = { roles: [], shared: [] };
+
+let ssrSnapshot: RolesSnapshot | null = null;
+
+/** Called by the prerender pass before any route renders. */
+export function setRolesSnapshot(snapshot: RolesSnapshot): void {
+  ssrSnapshot = snapshot;
+}
+
+/** Snapshot for the first render: module state on the server, the inlined object in the browser. */
+export function initialRoles(): RolesSnapshot | null {
+  if (typeof window === "undefined") return ssrSnapshot;
+  const inlined = (window as unknown as Record<string, unknown>)[ROLES_SNAPSHOT_KEY];
+  if (!inlined || typeof inlined !== "object") return null;
+  const snapshot = inlined as RolesSnapshot;
+  return Array.isArray(snapshot.roles) ? snapshot : null;
+}
+
+async function read<T>(table: string, query: string): Promise<T[]> {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?${query}`, {
+    headers: {
+      apikey: SUPABASE_ANON_KEY,
+      Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+    },
+  });
+  if (!res.ok) throw new Error(`${table} read failed: ${res.status}`);
+  return (await res.json()) as T[];
+}
+
+/**
+ * Fetches both tables. A failure returns empty rather than throwing, because
+ * a page that renders its heading and no roles is recoverable, and a page
+ * that throws during prerender fails the whole build.
+ */
+export async function fetchRoles(): Promise<RolesSnapshot> {
+  try {
+    const [roles, shared] = await Promise.all([
+      read<BoardRole>("board_roles", "select=*&published=eq.true&order=sort_order.asc"),
+      read<RoleShared>("board_role_shared", "select=*"),
+    ]);
+    return { roles, shared };
+  } catch (error) {
+    console.error("[board-roles] fetch failed:", error);
+    return EMPTY;
+  }
+}
+
+export function sharedFor(snapshot: RolesSnapshot, kind: RoleKind): RoleShared | undefined {
+  return snapshot.shared.find((entry) => entry.kind === kind);
+}
+
+export function roleBySlug(snapshot: RolesSnapshot, slug: string): BoardRole | undefined {
+  return snapshot.roles.find((role) => role.slug === slug);
+}
