@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QC92GW0HZD"></script>
+    <!-- Google tag (gtag.js).
+         The tag file is 167 KB and was downloading while the hero image, which
+         is the Largest Contentful Paint element, waited its turn for a phone's
+         bandwidth. Fetching it after load costs nothing: the calls below queue
+         on dataLayer and gtag.js replays them the moment it arrives. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-QC92GW0HZD');
+      addEventListener('load', function () {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-QC92GW0HZD';
+        document.head.appendChild(s);
+      });
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
