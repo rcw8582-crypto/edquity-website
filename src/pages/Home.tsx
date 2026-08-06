@@ -122,25 +122,10 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-        <div className="rg-hero-img">
-          {/* .rg-hero-img is display:none below 768px, so this image is only
-              ever shown on tablet and desktop. The source list reflects that:
-              the 900px file covers the narrow end of the range where it does
-              appear, and no phone-sized entry exists because no phone displays
-              it. Above 768px it is the Largest Contentful Paint element, so it
-              carries fetchpriority, and intrinsic dimensions so the column
-              reserves its space rather than shifting as the file arrives. */}
-          <img
-            src="/images/hero-family.jpg"
-            srcSet="/images/hero-family-900.jpg 900w, /images/hero-family.jpg 1600w"
-            sizes="(max-width: 1100px) 50vw, 55vw"
-            width={1600}
-            height={1067}
-            fetchPriority="high"
-            decoding="async"
-            alt="Family preparing for IEP meeting"
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
-          />
+        {/* The photograph itself lives in .rg-hero-img as a background image,
+            scoped to the media query that shows this column at all, so a phone
+            never downloads a picture it never displays. See index.css. */}
+        <div className="rg-hero-img" role="img" aria-label="Family preparing for an IEP meeting">
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, #122C54 0%, rgba(18,44,84,0.15) 35%, transparent 60%)" }} />
         </div>
       </section>
