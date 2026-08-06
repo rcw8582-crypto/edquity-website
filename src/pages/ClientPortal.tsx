@@ -118,10 +118,6 @@ export default function ClientPortal() {
               style={{ background: "#22C55E", color: "#122C54", padding: "13px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 15 }}>
               Start Your Free IEP Audit
             </Link>
-            <a href={BOOKING_URL}
-              style={{ background: "transparent", color: "#122C54", padding: "13px 28px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15, border: "2px solid #e2e8f0" }}>
-              Or Book a Free Call
-            </a>
           </div>
         </div>
       </section>

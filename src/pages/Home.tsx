@@ -119,10 +119,6 @@ export default function Home() {
                 style={{ background: "#22C55E", color: "#122C54", padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
                 {"Start Your Free IEP Audit"}
               </Link>
-              <a href={BOOKING_URL}
-                style={{ background: "transparent", color: "#fff", padding: "15px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(255,255,255,0.45)" }}>
-                {"Or Book a Free Discovery Call"}
-              </a>
             </div>
           </motion.div>
         </div>
@@ -217,7 +213,7 @@ export default function Home() {
           </div>
           <div className="rg-2">
             {[
-              { icon: <FileText size={28} color="#22C55E" />, title: "IEP Audit", price: "Free", desc: "We review your child's IEP across six research-grounded domains, identify what is missing or legally inadequate, and deliver a plain-language written report with specific next steps before your next meeting.", tag: "Free", tagColor: "#22C55E", href: "/book" },
+              { icon: <FileText size={28} color="#22C55E" />, title: "IEP Audit", price: "Free", desc: "We review your child's IEP across six research-grounded domains, identify what is missing or legally inadequate, and deliver a plain-language written report with specific next steps before your next meeting.", tag: "Free", tagColor: "#22C55E", href: "/services" },
               { icon: <BookOpen size={28} color="#14B8A6" />, title: "Advocacy Toolkit", price: "Free", desc: "Our library of free, downloadable resources: plain-language guides to the IDEA, question checklists, template letters, and tools that help you read your child's IEP like an expert and prepare for any meeting.", tag: "Free", tagColor: "#14B8A6", href: "/resources" },
             ].map((service, i) => (
               <motion.div key={i}
@@ -254,10 +250,6 @@ export default function Home() {
                 style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "14px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16 }}>
                 {"Start Your Free IEP Audit"}
               </Link>
-              <a href={BOOKING_URL}
-                style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "14px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(18,44,84,0.4)" }}>
-                {"Or Book a Free Discovery Call"}
-              </a>
             </div>
           </div>
         </div>
@@ -416,10 +408,6 @@ export default function Home() {
               style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>
               Start Your Free IEP Audit
             </Link>
-            <a href={BOOKING_URL}
-              style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "16px 36px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 17, border: "2px solid rgba(18,44,84,0.4)" }}>
-              Or Book a Free Discovery Call
-            </a>
           </div>
         </div>
       </section>

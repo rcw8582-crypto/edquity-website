@@ -226,11 +226,6 @@ export default function Methodology() {
                 Start your free IEP Audit
               </Button>
             </Link>
-            <a href={BOOKING_URL}>
-              <Button variant="outline" className="rounded-full px-6">
-                Or book a free discovery call
-              </Button>
-            </a>
             <Link href="/services">
               <Button
                 variant="outline"
