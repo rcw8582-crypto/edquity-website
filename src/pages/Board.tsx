@@ -131,7 +131,7 @@ const SEATS = [
     title: "Treasurer",
     slug: "treasurer",
     flag: "Priority seat",
-    icon: <Scale size={28} className="text-accent" />,
+    icon: <Scale size={28} className="text-accent-ink" />,
     body: "You would oversee financial reporting, budgeting, and audit readiness as the organization grows from startup to operational scale, and you would chair the Finance Committee that you help establish in your first year. The work runs through reviewing monthly financial statements with the Executive Director, leading the annual budget process alongside the President, structuring restricted and unrestricted fund tracking for grant compliance, supporting Form 990 preparation and timely filing, and setting financial policies covering expense reimbursement, signature authority, and reserve targets.",
     who: "We welcome candidates with experience in nonprofit finance, public accounting, foundation grants management, or corporate finance. CPA licensure is appreciated and not required. This seat should go to someone with no prior relationship to the organization or its leadership.",
   },
@@ -139,7 +139,7 @@ const SEATS = [
     title: "Development and Institutional Partnerships",
     slug: "development-and-institutional-partnerships",
     flag: "Priority seat",
-    icon: <Landmark size={28} className="text-accent" />,
+    icon: <Landmark size={28} className="text-accent-ink" />,
     body: "You would chair the Development Committee from its first meeting and own the founding-year fundraising plan alongside the Executive Director. The work runs through building the funder pipeline and grant calendar, opening doors to education foundations, school system leaders, and individual donors, advising the board on how school systems budget and procure so our institutional services are designed against how districts actually operate, and leading board giving. This seat carries no role in scoring and no preview of audit findings, because the independence of the review is what makes it worth buying.",
     who: "We welcome development professionals who have worked with education funders, people with foundation or grantmaking experience, former special education directors, and former district administrators. If you currently work for a school system or a foundation we might approach, that does not disqualify you, and it does mean we will define recusal in writing before you are seated.",
   },
@@ -147,7 +147,7 @@ const SEATS = [
     title: "Secretary",
     slug: "secretary",
     flag: null,
-    icon: <CalendarDays size={28} className="text-accent" />,
+    icon: <CalendarDays size={28} className="text-accent-ink" />,
     body: "You would maintain the official record of every board and committee meeting, covering agendas, minutes, attendance, and votes, and you would serve as custodian of the governance documents, including the bylaws, the conflict of interest policy, and board resolutions. The role also carries timely distribution of meeting notices and materials, tracking of director terms and annual disclosures, compliance with Tennessee nonprofit corporation law and 501(c)(3) reporting obligations, coordination of the annual board self-assessment and new director onboarding, and signing official corporate documents alongside the President as the bylaws require.",
     who: "We welcome candidates with experience in nonprofit governance, corporate paralegal work, executive administration, project management, or organizational compliance. Attention to detail, strong writing, and comfort with cloud-based document systems matter more here than any specific credential.",
   },
@@ -155,7 +155,7 @@ const SEATS = [
     title: "At-Large Director, Family Law or Disability Rights",
     slug: "family-law-or-disability-rights",
     flag: null,
-    icon: <Scale size={28} className="text-accent" />,
+    icon: <Scale size={28} className="text-accent-ink" />,
     body: "You would provide strategic guidance on our family-facing services, our published guidance to families, and our legal compliance posture, and you would help shape program design so that our IEP reviews and family workshops reflect current IDEA case law, state special education regulations, and best practices in disability rights. You would review family-facing materials, including workshop curricula, report templates, and consent forms, for legal accuracy and accessibility. Beyond the materials, this seat opens doors, cultivating relationships with disability rights groups, family law clinics, and education advocacy networks.",
     who: "We welcome practicing attorneys, retired judges, law school faculty, leaders of advocacy organizations, and experienced parent advocates, along with anyone whose background runs through special education law, family law, disability rights advocacy, parent training and information centers, or IDEA dispute resolution.",
   },
@@ -163,7 +163,7 @@ const SEATS = [
     title: "Parent Director",
     slug: "parent-director",
     flag: null,
-    icon: <Users size={28} className="text-accent" />,
+    icon: <Users size={28} className="text-accent-ink" />,
     body: "You would bring the perspective of a family who has been through the IEP process into every governance decision the board makes, which is why these seats hold the majority of the votes. The work includes reviewing family-facing materials before they reach families, judging whether programs are reaching the families they are meant to reach, serving on a standing committee, and referring other parents into the recruitment pipeline.",
     who: "This seat asks for lived experience as the parent or caregiver of a child with a disability ages birth through 26. No professional credential and no prior board service are required, and we will teach the governance side to anyone willing to learn it.",
   },
@@ -487,7 +487,7 @@ export default function Board() {
                   <div className="bg-muted w-12 h-12 rounded-xl flex items-center justify-center shrink-0">{seat.icon}</div>
                   <div>
                     {seat.flag && (
-                      <p className="text-xs font-bold uppercase tracking-wider text-accent mb-1">{seat.flag}</p>
+                      <p className="text-xs font-bold uppercase tracking-wider text-accent-ink mb-1">{seat.flag}</p>
                     )}
                     <h3 className="text-xl font-bold text-primary">{seat.title}</h3>
                   </div>
@@ -496,7 +496,7 @@ export default function Board() {
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">{seat.who}</p>
                 <Link
                   href={`/board/roles/${seat.slug}`}
-                  className="text-sm font-semibold text-accent underline"
+                  className="text-sm font-semibold text-accent-ink underline"
                   data-testid={`seat-description-${seat.slug}`}
                 >
                   Read the full position description
@@ -522,7 +522,7 @@ export default function Board() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div className="max-w-3xl mx-auto">
             <div className="bg-muted w-14 h-14 rounded-xl flex items-center justify-center mb-5">
-              <HeartHandshake size={30} className="text-accent" />
+              <HeartHandshake size={30} className="text-accent-ink" />
             </div>
             <h2 className="text-3xl font-bold text-primary mb-4">The Advisory Council</h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
@@ -541,7 +541,7 @@ export default function Board() {
             <ul className="space-y-3 mb-8">
               {ADVISORY_SEATS.map((role) => (
                 <li key={role} className="flex items-start gap-3 text-muted-foreground">
-                  <CheckCircle2 size={20} className="text-accent shrink-0 mt-0.5" aria-hidden="true" />
+                  <CheckCircle2 size={20} className="text-accent-ink shrink-0 mt-0.5" aria-hidden="true" />
                   <span>{role}</span>
                 </li>
               ))}
@@ -552,7 +552,7 @@ export default function Board() {
               A one-year renewable appointment, roughly two to four hours a quarter. The council convenes twice a year, and the rest of the work happens when a material needs your eyes.
             </p>
             <p className="text-muted-foreground leading-relaxed mt-4">
-              <Link href="/board/roles" className="text-accent font-semibold underline">
+              <Link href="/board/roles" className="text-accent-ink font-semibold underline">
                 Read the position description for every council role
               </Link>
               .
@@ -638,7 +638,7 @@ export default function Board() {
                 className="bg-accent/10 border border-accent/30 rounded-2xl p-10 text-center"
                 data-testid="board-success"
               >
-                <CheckCircle2 size={56} className="text-accent mx-auto mb-6" />
+                <CheckCircle2 size={56} className="text-accent-ink mx-auto mb-6" />
                 <h3 className="text-2xl font-bold text-primary mb-3">We received your application.</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   The board reviews applications on a rolling basis, and we will be in touch about next steps. If you would like to add anything, email us at info@edquityatthemargins.org.
@@ -842,7 +842,7 @@ export default function Board() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full"
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full"
                   data-testid="button-board-submit"
                   disabled={submitting}
                 >
