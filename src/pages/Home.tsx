@@ -214,7 +214,7 @@ export default function Home() {
           <div className="rg-2">
             {[
               { icon: <FileText size={28} color="#22C55E" />, title: "IEP Audit", price: "Free", desc: "We review your child's IEP across six research-grounded domains, identify what is missing or legally inadequate, and deliver a plain-language written report with specific next steps before your next meeting.", tag: "Free", tagColor: "#22C55E", href: "/services" },
-              { icon: <BookOpen size={28} color="#14B8A6" />, title: "Advocacy Toolkit", price: "Free", desc: "Our library of free, downloadable resources: plain-language guides to the IDEA, question checklists, template letters, and tools that help you read your child's IEP like an expert and prepare for any meeting.", tag: "Free", tagColor: "#14B8A6", href: "/resources" },
+              { icon: <Users size={28} color="#14B8A6" />, title: "Parent Workshops", price: "Free", desc: "Live sessions covering what the law entitles your child to, how to read the document the school hands you, what to say when services are cut, and how to put a request in writing so the district has to answer it. Plain language, no cost, open to any family.", tag: "Free", tagColor: "#14B8A6", href: "/events" },
             ].map((service, i) => (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
