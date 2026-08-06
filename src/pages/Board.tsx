@@ -31,12 +31,12 @@ const OPEN_SEATS = [
   {
     title: "Parent director",
     count: "Three seats",
-    body: "Parents of children with disabilities ages birth through 26. These seats hold the governing majority, because the people who have sat on the wrong side of an IEP table should hold most of the votes.",
+    body: "Parents of children with disabilities ages birth through 26. These seats hold the majority of the votes on the board.",
   },
   {
     title: "Treasurer",
     count: "One seat",
-    body: "Finance, accounting, or audit background, with no prior relationship to the organization or its leadership. Candidates who are also parents of children with disabilities are especially encouraged, since that combination strengthens the board twice over.",
+    body: "Finance, accounting, or audit background, with no prior relationship to the organization or its leadership. Parents of children with disabilities are welcome to apply for this seat.",
   },
 ];
 
@@ -140,7 +140,7 @@ export default function Board() {
     <div className="pt-20">
       <PageMeta
         title="Join Our Board"
-        description="EDquity at the Margins is seating its founding board of directors and a national advisory council. Parent directors, a treasurer, and clinical and policy advisors are being recruited nationally."
+        description="EDquity at the Margins is seating its founding board of directors and an advisory council. We are recruiting parent directors, a treasurer, and clinical and policy advisors from across the country."
       />
 
       <section className="sp" style={{ background: "#f8fafc" }}>
@@ -148,7 +148,7 @@ export default function Board() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Join Our Board</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We audit IEPs for families who cannot afford an advocate, scoring every document blind against a 38-condition rubric grounded in IDEA and the Endrew F. standard. Families already reach us across state lines, so the board governing that work should reflect the same reach.
+              We review IEPs for families who cannot afford an advocate. Families come to us from more than one state, so the board that governs this work should not sit entirely in Tennessee.
             </p>
           </div>
         </div>
@@ -159,10 +159,10 @@ export default function Board() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-primary mb-4">Where the board stands</h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              Two directors are seated and one more is pending election, which leaves four open seats on a board of seven. Directors need not live in Tennessee, and we would rather they did not all live here.
+              Two directors are seated and one more is pending election, which leaves four open seats on a board of seven. Directors do not have to live in Tennessee.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              A majority of the board are parents of children with disabilities. That is a deliberate governance choice rather than a slogan, and it is why most of the open seats are reserved for parents.
+              A majority of the board are parents of children with disabilities, which is why most of the open seats are reserved for parents.
             </p>
           </div>
         </div>
@@ -205,7 +205,7 @@ export default function Board() {
             </div>
             <h2 className="text-3xl font-bold text-primary mb-4">The Advisory Council</h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Our programming needs clinical and policy depth that no seven-person board can hold on its own. The advisory council is where that expertise lives, and we are seating it nationally alongside the board. Council members shape programming, review materials, and advise on practice, without a fiduciary term or a vote.
+              A board of seven cannot hold every kind of expertise our programming needs, so the clinical and policy expertise sits on an advisory council instead. We are recruiting for it alongside the board. Council members advise on programming and review materials, and they carry no vote and no fiduciary duty.
             </p>
             <ul className="space-y-3 mb-6">
               {ADVISORY_ROLES.map((role) => (
@@ -216,7 +216,7 @@ export default function Board() {
               ))}
             </ul>
             <p className="text-muted-foreground leading-relaxed">
-              Advisory council members are not directors and hold no vote. That distinction is deliberate, because it lets us bring in the right expertise without asking clinicians to carry governance duties they did not sign up for.
+              Advisory council members are not directors. Keeping the two roles separate means clinicians can contribute their expertise without taking on governance duties.
             </p>
           </div>
         </div>
@@ -230,13 +230,13 @@ export default function Board() {
             </div>
             <h2 className="text-3xl font-bold text-primary mb-4">What We Ask</h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              Directors serve a three-year term and meet remotely four times a year, including an annual meeting in the first quarter. Every director completes a conflict of interest disclosure each year and is expected to ask hard questions of an organization that audits other people's compliance and should withstand the same scrutiny itself.
+              Directors serve a three-year term and meet remotely four times a year, including an annual meeting in the first quarter. Every director completes a conflict of interest disclosure each year.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
               Advisory council members serve a one-year renewable appointment with a lighter commitment and no fiduciary duty.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              These are unpaid volunteer roles. The current board reviews every application, election to the board is recorded in the minutes, and new directors then complete an onboarding packet covering the conflict of interest disclosure, the board agreement, and the confidentiality agreement.
+              These are unpaid volunteer roles. The current board reviews every application. Election to the board is recorded in the minutes, and new directors then complete an onboarding packet with the conflict of interest disclosure, the board agreement, and the confidentiality agreement.
             </p>
           </div>
         </div>
