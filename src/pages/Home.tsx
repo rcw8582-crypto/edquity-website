@@ -91,7 +91,7 @@ export default function Home() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: "#122C54" }}>
       <PageMeta
         title="IEP Advocacy for Marginalized Families"
-        description="EDquity at the Margins helps Black, Brown, economically disadvantaged, and rural families understand and enforce their children's federally guaranteed IEP rights. Book a free discovery call."
+        description="EDquity at the Margins helps Black, Brown, economically disadvantaged, and rural families understand and enforce their children's federally guaranteed IEP rights. The IEP Audit is free."
       />
 
       {/* Hero */}
@@ -268,7 +268,7 @@ export default function Home() {
               { step: "01", title: "Book a free discovery call", desc: "We listen to your situation and identify the right first step for your child. No obligation." },
               { step: "02", title: "Submit your IEP securely", desc: "Upload your redacted IEP through our secure portal. Step-by-step redaction instructions are provided at intake." },
               { step: "03", title: "Receive your written report", desc: "Within 10 business days, you receive a plain-language report identifying compliance gaps and recommended next steps." },
-              { step: "04", title: "Walk in prepared", desc: "We walk you through every finding on a 30-minute debrief call so you know exactly what to ask, what to contest, and what the school is required to change before you sit down at that table." },
+              { step: "04", title: "Advocate with confidence", desc: "We walk you through every finding on a 30-minute debrief call so you know exactly what to ask, what to contest, and what the school is required to change before you sit down at that table." },
             ].map((item, i) => (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
