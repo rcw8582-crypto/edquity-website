@@ -373,7 +373,7 @@ export default function Board() {
                     data-testid="input-conflicts"
                   />
                   <p className="text-xs text-muted-foreground">
-                    We ask because our audits have to stay independent of the institutions they evaluate. A relationship here does not disqualify you. It tells us where recusal applies.
+                    We ask because our reviews have to stay independent of the institutions they evaluate. A relationship here does not disqualify you; it tells us where recusal applies.
                   </p>
                 </div>
 
