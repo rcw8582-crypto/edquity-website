@@ -227,7 +227,7 @@ export default function Volunteer() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full"
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full"
                   data-testid="button-volunteer-submit"
                   disabled={submitting}
                 >
