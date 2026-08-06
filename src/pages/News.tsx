@@ -38,13 +38,13 @@ export default function News() {
   return (
     <div className="pt-20">
       <PageMeta
-        title="News & Updates"
+        title="In the Margins"
         description="Resources, advocacy guidance, and updates from EDquity at the Margins on special education law, IEP rights, and the families doing this work."
       />
       <section className="sp" style={{ background: "#f8fafc" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">News & Updates</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">In the Margins</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Resources, advocacy guidance, and updates from our team on special education law, IEP rights, and the families doing this work.
             </p>

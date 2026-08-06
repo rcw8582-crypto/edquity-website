@@ -236,7 +236,7 @@ function buildFeed(items) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>EDquity News &amp; Updates</title>
+    <title>In the Margins</title>
     <link>${SITE}/news</link>
     <atom:link href="${SITE}/rss.xml" rel="self" type="application/rss+xml" />
     <description>Plain-language guidance on IEPs and special education rights for families who deserve a seat at the table.</description>
