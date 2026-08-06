@@ -202,7 +202,7 @@ export default function Home() {
       <section className="sp-lg" style={{ background: "#f8fafc", color: "#122C54" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>
               {"What We Do"}
             </p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>
@@ -226,7 +226,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 style={{ fontSize: 20, fontWeight: 800, margin: "0 0 6px", color: "#122C54" }}>{service.title}</h3>
-                  <p style={{ fontSize: 14, fontWeight: 700, color: "#15803D", margin: "0 0 12px" }}>{service.price}</p>
+                  <p style={{ fontSize: 14, fontWeight: 700, color: "#22C55E", margin: "0 0 12px" }}>{service.price}</p>
                   <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>{service.desc}</p>
                 </div>
                 <Link href={service.href}
@@ -261,7 +261,7 @@ export default function Home() {
       <section className="sp-lg" style={{ background: "#fff", color: "#122C54" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 64 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>How It Works</p>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>How It Works</p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>From your first call to your next meeting</h2>
           </div>
           <div className="rg-steps">
@@ -275,7 +275,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
                 style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                 <div style={{ width: 48, height: 48, borderRadius: "50%", background: "#122C54", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <span style={{ fontSize: 14, fontWeight: 900, color: "#22C55E" }}>{item.step}</span>
+                  <span style={{ fontSize: 14, fontWeight: 900, color: "#15803D" }}>{item.step}</span>
                 </div>
                 <h3 style={{ fontSize: 17, fontWeight: 800, margin: 0, color: "#122C54", lineHeight: 1.3 }}>{item.title}</h3>
                 <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
@@ -289,7 +289,7 @@ export default function Home() {
       <section className="sp-lg" style={{ background: "#0d1f3c" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>
               {"Families We've Served"}
             </p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, color: "#fff", margin: 0, letterSpacing: "-1px", lineHeight: 1.1 }}>
@@ -371,14 +371,14 @@ export default function Home() {
       {/* External Quote */}
       <section className="sp" style={{ background: "#122C54" }}>
         <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
-          <div style={{ fontSize: 72, color: "#22C55E", lineHeight: 1, marginBottom: 16, fontFamily: "Georgia, serif", fontWeight: 900, opacity: 0.6 }}>"</div>
+          <div style={{ fontSize: 72, color: "#15803D", lineHeight: 1, marginBottom: 16, fontFamily: "Georgia, serif", fontWeight: 900, opacity: 0.6 }}>"</div>
           <p style={{ fontSize: "clamp(22px,3vw,32px)", fontWeight: 700, color: "#fff", lineHeight: 1.5, margin: "0 0 32px", fontStyle: "italic", letterSpacing: "-0.3px" }}>
             You don't make progress by standing on the sidelines, whimpering and complaining. You make progress by implementing ideas.
           </p>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16 }}>
             <div style={{ height: 1, width: 40, background: "#22C55E", opacity: 0.6 }} />
             <div>
-              <p style={{ fontSize: 15, fontWeight: 800, color: "#22C55E", margin: 0 }}>Shirley Chisholm</p>
+              <p style={{ fontSize: 15, fontWeight: 800, color: "#15803D", margin: 0 }}>Shirley Chisholm</p>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", margin: "4px 0 0" }}>First Black congresswoman and presidential candidate</p>
             </div>
             <div style={{ height: 1, width: 40, background: "#22C55E", opacity: 0.6 }} />
@@ -392,7 +392,7 @@ export default function Home() {
           <motion.h2
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             style={{ fontSize: "clamp(28px,4vw,52px)", fontWeight: 900, lineHeight: 1.1, margin: "0 0 48px", color: "#fff", letterSpacing: "-1.5px" }}>
-            Securing what children<br />are <span style={{ color: "#22C55E" }}>already owed.</span>
+            Securing what children<br />are <span style={{ color: "#15803D" }}>already owed.</span>
           </motion.h2>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: "0 0 28px" }}>EDquity at the Margins was founded to address the gap between the federal protections guaranteed to families of children with disabilities and the educational experiences those families actually receive.</p>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: "0 0 28px" }}>The Individuals with Disabilities Education Act entitles every eligible child to a free and appropriate public education in the least restrictive environment, yet the families covered by that law frequently lack the position to enforce its provisions, because navigating implementation systems demands levels of knowledge, documentation, and advocacy capacity that race, income, language, and geography distribute unequally.</p>
@@ -404,7 +404,7 @@ export default function Home() {
       <section className="sp" style={{ background: "#22C55E" }}>
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, color: "#122C54", margin: "0 0 16px", letterSpacing: "-1px" }}>Your child's IEP meeting is not a formality.</h2>
-          <p style={{ fontSize: 18, color: "rgba(18,44,84,0.75)", lineHeight: 1.65, margin: "0 0 36px" }}>Start your free IEP Audit, or book a free discovery call to talk through your child's situation first. We will help you understand your options and identify the right first step.</p>
+          <p style={{ fontSize: 18, color: "#122C54", lineHeight: 1.65, margin: "0 0 36px" }}>Start your free IEP Audit, or book a free discovery call to talk through your child's situation first. We will help you understand your options and identify the right first step.</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <Link href="/book"
               style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>
