@@ -14,7 +14,7 @@ import App from "./App";
 import { takeCollectedHead, type CollectedHead } from "./lib/head";
 import { getAllPublishedPosts } from "./lib/posts";
 import { RESOURCES } from "./content/resources";
-import { ROLE_ROUTES } from "./content/board-roles";
+import { fetchRoles, setRolesSnapshot, type RolesSnapshot } from "./content/board-roles";
 import { fetchEvents, setEventsSnapshot, type EdatmEvent } from "./content/events";
 
 /** Every public route that gets its own prerendered HTML file. */
@@ -54,10 +54,20 @@ export const STATIC_ROUTES: string[] = [
  * resource. Both sets are bundled at build time, so their slugs are known here
  * and neither the sitemap nor the prerender pass can drift from the content.
  */
+let roleRoutes: string[] = [];
+
+/** Called by the prerender pass before allRoutes(), so role pages exist. */
+export async function prefetchRoles(): Promise<RolesSnapshot> {
+  const snapshot = await fetchRoles();
+  setRolesSnapshot(snapshot);
+  roleRoutes = snapshot.roles.map((role) => `/board/roles/${role.slug}`);
+  return snapshot;
+}
+
 export function allRoutes(): string[] {
   const posts = getAllPublishedPosts().map((post) => `/news/${post.slug}`);
   const resources = RESOURCES.map((resource) => `/resources/${resource.slug}`);
-  return [...STATIC_ROUTES, ...ROLE_ROUTES, ...posts, ...resources];
+  return [...STATIC_ROUTES, ...roleRoutes, ...posts, ...resources];
 }
 
 export interface FeedItem {
