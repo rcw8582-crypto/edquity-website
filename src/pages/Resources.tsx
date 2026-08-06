@@ -235,7 +235,7 @@ export default function Resources() {
             A checklist tells you what to look for. Dr. Clarke-Wedderburn tells you what it means for your specific child and what to do about it.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/intake"
+            <Link href="/book"
               style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
               Start Your Free IEP Audit
             </Link>

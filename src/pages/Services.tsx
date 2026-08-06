@@ -41,7 +41,7 @@ export default function Services() {
             Serving families across the greater Metro Nashville area and, through our virtual delivery model, anywhere in the country.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/intake"
+            <Link href="/book"
               style={{ background: "#22C55E", color: "#122C54", padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
               Start Your Free IEP Audit
             </Link>
@@ -111,7 +111,7 @@ export default function Services() {
               <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, margin: "0 0 32px" }}>
                 Most families receive their child's IEP with no independent guidance on whether it meets the legal standard of a free and appropriate public education. This service closes that gap. Dr. Clarke-Wedderburn reviews your child's IEP across six research-grounded domains, identifies missing or inadequate services, and delivers a plain-language written report with specific recommended next steps before your next meeting.
               </p>
-              <Link href="/intake"
+              <Link href="/book"
                 style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
                 Start Your Free IEP Audit
               </Link>
@@ -308,7 +308,7 @@ export default function Services() {
             you a written report. If you would rather talk it through first, book a free call instead.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/intake"
+            <Link href="/book"
               style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>
               Start Your Free IEP Audit
             </Link>

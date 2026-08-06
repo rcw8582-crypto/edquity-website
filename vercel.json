@@ -15,7 +15,8 @@
   "redirects": [
     { "source": "/consulting", "destination": "/iep-quality-improvement", "permanent": true },
     { "source": "/for-schools", "destination": "/iep-quality-improvement", "permanent": true },
-    { "source": "/donor", "destination": "/donate", "permanent": true }
+    { "source": "/donor", "destination": "/donate", "permanent": true },
+    { "source": "/intake", "destination": "/book", "permanent": true }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

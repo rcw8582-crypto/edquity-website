@@ -204,7 +204,7 @@ export default function Contact() {
                   Already have your child's IEP? Start the audit and Dr. Clarke-Wedderburn will review
                   it and send you a written report in plain language. Families pay nothing.
                 </p>
-                <Link href="/intake" data-testid="contact-start-audit">
+                <Link href="/book" data-testid="contact-start-audit">
                   <Button className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full">
                     Start Your Free Audit
                   </Button>

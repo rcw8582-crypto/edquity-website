@@ -142,7 +142,7 @@ export default function ResourceDetail() {
             report with the specific questions to ask. Families pay nothing.
           </p>
           <Link
-            href="/intake"
+            href="/book"
             style={{ display: "inline-block", background: NAVY, color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, fontSize: 16.5, textDecoration: "none" }}
           >
             Start your free IEP Audit

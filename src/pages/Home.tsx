@@ -115,7 +115,7 @@ export default function Home() {
               {"Your child's IEP meeting is not a formality. The decisions made in that room follow your child through every year of their education."}
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <Link href="/intake"
+              <Link href="/book"
                 style={{ background: "#22C55E", color: "#122C54", padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
                 {"Start Your Free IEP Audit"}
               </Link>
@@ -250,7 +250,7 @@ export default function Home() {
               Our work is funded by donations and by paid engagements with schools, never by the families we serve.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-              <Link href="/intake"
+              <Link href="/book"
                 style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "14px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16 }}>
                 {"Start Your Free IEP Audit"}
               </Link>
@@ -412,7 +412,7 @@ export default function Home() {
           <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, color: "#122C54", margin: "0 0 16px", letterSpacing: "-1px" }}>Your child's IEP meeting is not a formality.</h2>
           <p style={{ fontSize: 18, color: "rgba(18,44,84,0.75)", lineHeight: 1.65, margin: "0 0 36px" }}>Start your free IEP Audit, or book a free discovery call to talk through your child's situation first. Dr. Clarke-Wedderburn will help you understand your options and identify the right first step.</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/intake"
+            <Link href="/book"
               style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>
               Start Your Free IEP Audit
             </Link>

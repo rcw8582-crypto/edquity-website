@@ -114,7 +114,7 @@ export default function ClientPortal() {
             send you a written report. If you would rather talk first, book a free call instead.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/intake"
+            <Link href="/book"
               style={{ background: "#22C55E", color: "#122C54", padding: "13px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 15 }}>
               Start Your Free IEP Audit
             </Link>

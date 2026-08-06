@@ -127,7 +127,6 @@ const SITEMAP_WEIGHTS = {
   "/about": { changefreq: "monthly", priority: "0.9" },
   "/resources": { changefreq: "monthly", priority: "0.9" },
   "/our-methodology": { changefreq: "monthly", priority: "0.8" },
-  "/intake": { changefreq: "monthly", priority: "0.8" },
   "/news": { changefreq: "weekly", priority: "0.8" },
   "/events": { changefreq: "weekly", priority: "0.8" },
   "/donate": { changefreq: "monthly", priority: "0.8" },
