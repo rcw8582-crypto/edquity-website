@@ -231,7 +231,7 @@ export default function Resources() {
           <h2 style={{ fontSize: "clamp(24px,3vw,38px)", fontWeight: 900, color: "#122C54", margin: "0 0 16px", letterSpacing: "-0.5px" }}>
             Resources give you a starting point. Expert guidance tells you what a specific IEP means for a specific child.
           </h2>
-          <p style={{ fontSize: 17, color: "rgba(18,44,84,0.75)", lineHeight: 1.65, margin: "0 0 36px" }}>
+          <p style={{ fontSize: 17, color: "#122C54", lineHeight: 1.65, margin: "0 0 36px" }}>
             A checklist tells you what to look for. We tell you what it means for your specific child and what to do about it.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
