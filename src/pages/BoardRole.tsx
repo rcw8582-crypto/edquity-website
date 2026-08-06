@@ -84,27 +84,38 @@ export default function BoardRole() {
 
       <section className="sp" style={{ background: "#fff", borderTop: "1px solid #e2e8f0" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          {/* An <object> rather than an <iframe> so the fallback inside it
-              renders on the phones and readers that will not display an
-              embedded PDF at all. Those visitors get the download link
-              instead of an empty grey rectangle. */}
-          <object
-            data={pdf}
-            type="application/pdf"
-            className="w-full rounded-xl border border-border"
-            style={{ height: "min(1100px, 140vw)" }}
-            aria-label={`${role.title} position description`}
+          {/* An <iframe> rather than an <object>. Chrome renders a PDF inside
+              an object as an empty black rectangle, which is what shipped the
+              first time. The iframe hands the file to the browser's own PDF
+              viewer instead.
+
+              Phones mostly refuse to render an embedded PDF at all, so the
+              frame is hidden below the medium breakpoint and those visitors
+              get the download card underneath. An iframe cannot carry
+              fallback children the way an object can, so the fallback is a
+              real element rather than nested content. */}
+          <iframe
+            src={`${pdf}#view=FitH`}
+            title={`${role.title} position description`}
+            className="hidden md:block w-full rounded-xl border border-border bg-white"
+            style={{ height: "min(1100px, 130vh)" }}
             data-testid="pdf-embed"
+          />
+
+          <div
+            className="md:hidden bg-white border border-border rounded-xl p-8 text-center"
+            data-testid="pdf-mobile-fallback"
           >
-            <div className="p-8 text-center">
-              <p className="text-muted-foreground mb-4">
-                Your browser will not display the document on this page.
-              </p>
-              <a href={pdf} download className="text-accent font-semibold underline">
-                Download the {role.title} position description
-              </a>
-            </div>
-          </object>
+            <p className="text-muted-foreground mb-5">
+              Position descriptions open as a PDF. Tap below to read the full description for {role.title}.
+            </p>
+            <a
+              href={pdf}
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold rounded-full px-6 py-3 text-sm"
+            >
+              Open the PDF
+            </a>
+          </div>
 
           <p className="text-sm text-muted-foreground mt-4">
             Prefer to read it offline?{" "}
