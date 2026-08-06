@@ -93,6 +93,18 @@ function buildPage(route, head, appHtml) {
     `    <link rel="canonical" href="${escapeAttribute(canonical)}" />\n  </head>`,
   );
 
+  // Only the homepage shows the hero, so only the homepage preloads it, and
+  // the media query matches the stylesheet: .rg-hero-img is display:none below
+  // 768px, so a phone never displays this image and must not be told to fetch
+  // it early. Above that width it is the Largest Contentful Paint element.
+  if (route === "/") {
+    html = html.replace(
+      "</head>",
+      '    <link rel="preload" as="image" href="/images/hero-family.jpg" ' +
+        'media="(min-width: 768px)" fetchpriority="high" />\n  </head>',
+    );
+  }
+
   // The Events page is the only route that reads the schedule, so only it
   // carries the inlined copy. Hydration reads the same array the server
   // rendered from, which keeps the client from replacing a populated calendar
