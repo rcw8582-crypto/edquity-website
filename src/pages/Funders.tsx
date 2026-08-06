@@ -154,7 +154,7 @@ export default function Funders() {
                 position: "relative",
               }}>
                 {tier.featured && (
-                  <span style={{ position: "absolute", top: -14, left: 24, background: tier.color, color: "#fff", padding: "3px 16px", borderRadius: 999, fontSize: 12, fontWeight: 800 }}>
+                  <span style={{ position: "absolute", top: -14, left: 24, background: "#122C54", color: "#fff", padding: "3px 16px", borderRadius: 999, fontSize: 12, fontWeight: 800 }}>
                     Most Impactful
                   </span>
                 )}
