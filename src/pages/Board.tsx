@@ -172,7 +172,7 @@ export default function Board() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl font-bold text-primary mb-4">Open Director Seats</h2>
-            <p className="text-muted-foreground text-lg">Four seats, recruited nationally, each carrying a full vote.</p>
+            <p className="text-muted-foreground text-lg">Four seats are open, and each one carries a full vote.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {OPEN_SEATS.map((seat, idx) => (
