@@ -32,12 +32,16 @@ if (!existsSync(ssrEntry)) {
 const SITE = "https://www.edquityatthemargins.org";
 
 const template = await readFile(templatePath, "utf8");
-const { render, allRoutes, prefetchEvents, feedItems } = await import(pathToFileURL(ssrEntry).href);
+const { render, allRoutes, prefetchEvents, prefetchRoles, feedItems } = await import(pathToFileURL(ssrEntry).href);
 
 // Loaded before any route renders so the Events page prerenders with real
 // sessions listed rather than an empty calendar and a loading panel.
 const events = await prefetchEvents();
 console.log(`loaded ${events.length} event(s) for prerender`);
+
+// Loaded before allRoutes() so every published role gets its own page.
+const roles = await prefetchRoles();
+console.log(`loaded ${roles.roles.length} board role(s) for prerender`);
 
 const escapeAttribute = (value) =>
   value
@@ -109,6 +113,14 @@ function buildPage(route, head, appHtml) {
   // carries the inlined copy. Hydration reads the same array the server
   // rendered from, which keeps the client from replacing a populated calendar
   // with an empty one on mount.
+  if (route === "/board" || route.startsWith("/board/roles")) {
+    const payload = JSON.stringify(roles).replace(/</g, "\\u003c");
+    html = html.replace(
+      "</head>",
+      `    <script>window.__EDATM_BOARD_ROLES__=${payload}</script>\n  </head>`,
+    );
+  }
+
   if (route === "/events") {
     const payload = JSON.stringify(events).replace(/</g, "\\u003c");
     html = html.replace(
