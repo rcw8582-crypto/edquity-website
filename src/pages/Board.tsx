@@ -205,7 +205,7 @@ export default function Board() {
             </div>
             <h2 className="text-3xl font-bold text-primary mb-4">The Advisory Council</h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              A board of seven cannot hold every kind of expertise our programming needs, so the clinical and policy expertise sits on an advisory council instead. We are recruiting for it alongside the board. Council members advise on programming and review materials, and they carry no vote and no fiduciary duty.
+              A board of seven cannot hold every kind of expertise our programming needs, so the clinical and policy expertise sits on an advisory council instead, which we are recruiting for alongside the board. Council members advise on programming and review materials, and they carry no vote and no fiduciary duty.
             </p>
             <ul className="space-y-3 mb-6">
               {ADVISORY_ROLES.map((role) => (
