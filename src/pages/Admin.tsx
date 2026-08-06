@@ -283,7 +283,7 @@ export default function Admin() {
             </div>
             <Button
               type="submit"
-              className="w-full bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full"
+              className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full"
               disabled={loading}
             >
               {loading ? "Verifying…" : "Sign In"}
@@ -346,7 +346,7 @@ export default function Admin() {
                 <h2 className="text-xl font-bold text-primary">
                   {posts.length} {posts.length === 1 ? "Post" : "Posts"}
                 </h2>
-                <Button onClick={openCreate} className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full gap-2">
+                <Button onClick={openCreate} className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full gap-2">
                   <PlusCircle size={16} /> New Post
                 </Button>
               </div>
@@ -450,7 +450,7 @@ export default function Admin() {
                 <Button
                   onClick={savePost}
                   disabled={saving || !form.title || !form.slug || !form.excerpt}
-                  className="bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full px-8"
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full px-8"
                 >
                   {saving ? "Saving…" : editing ? "Save Changes" : "Create Post"}
                 </Button>
@@ -549,7 +549,7 @@ export default function Admin() {
                     <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-wrap">{sub.message}</p>
                     <div className="mt-4">
                       <a href={`mailto:${sub.email}?subject=Re: ${sub.subject || "Your inquiry"}`}>
-                        <Button size="sm" className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full gap-2 text-xs">
+                        <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full gap-2 text-xs">
                           <Mail size={12} /> Reply
                         </Button>
                       </a>
@@ -591,7 +591,7 @@ export default function Admin() {
                     )}
                     <div className="mt-4">
                       <a href={`mailto:${sub.email}?subject=Your volunteer application`}>
-                        <Button size="sm" className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full gap-2 text-xs">
+                        <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full gap-2 text-xs">
                           <Mail size={12} /> Reply
                         </Button>
                       </a>
@@ -632,7 +632,7 @@ export default function Admin() {
                     <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-wrap border-t border-border pt-3">{sub.situation}</p>
                     <div className="mt-4 flex gap-2">
                       <a href={`mailto:${sub.email}?subject=Your EDquity Intake Form`}>
-                        <Button size="sm" className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full gap-2 text-xs">
+                        <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full gap-2 text-xs">
                           <Mail size={12} /> Reply
                         </Button>
                       </a>
