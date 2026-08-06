@@ -47,7 +47,7 @@ export default function NewsPost() {
         />
         <h1 className="text-3xl font-bold text-primary">Article not found.</h1>
         <Link href="/news">
-          <Button className="bg-accent hover:bg-accent/90 text-primary-foreground rounded-full">
+          <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
             All posts
           </Button>
         </Link>
@@ -152,7 +152,7 @@ export default function NewsPost() {
               </Button>
             </Link>
             <Link href="/book">
-              <Button className="bg-accent hover:bg-accent/90 text-primary-foreground font-semibold rounded-full px-8">
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-full px-8">
                 Book a Free Consultation
               </Button>
             </Link>
