@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { Mail, MapPin, Phone, Facebook, Twitter, Instagram, Linkedin, CheckCircle2 } from "lucide-react";
+import { SiBluesky, SiThreads } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 
 function NewsletterSignup() {
@@ -99,6 +100,16 @@ function NewsletterSignup() {
   );
 }
 
+/** One list, used by the footer and mirrored in the structured data. */
+const SOCIALS = [
+  { label: "Facebook", href: "https://www.facebook.com/EDQATM", icon: <Facebook size={20} aria-hidden="true" /> },
+  { label: "Instagram", href: "https://www.instagram.com/edquityatmargins/", icon: <Instagram size={20} aria-hidden="true" /> },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/edqatm/", icon: <Linkedin size={20} aria-hidden="true" /> },
+  { label: "X", href: "https://x.com/edquityatm", icon: <Twitter size={20} aria-hidden="true" /> },
+  { label: "Bluesky", href: "https://bsky.app/profile/edquity.bsky.social", icon: <SiBluesky size={19} aria-hidden="true" /> },
+  { label: "Threads", href: "https://www.threads.com/@edquityatmargins", icon: <SiThreads size={19} aria-hidden="true" /> },
+];
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -130,13 +141,22 @@ export default function Footer() {
             <div>
               <p className="text-sm font-semibold text-primary-foreground mb-1">Follow us</p>
               <p className="text-xs text-primary-foreground/60 mb-3">
-                IEP rights explained in plain language, plus workshop announcements. We post as @edqatm.
+                IEP rights explained in plain language, plus workshop announcements.
               </p>
               <div className="flex gap-4 -ml-3">
-              <a href="https://www.facebook.com/EDQATM" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on Facebook" className="inline-flex items-center justify-center p-3 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-facebook"><Facebook size={20} aria-hidden="true" /></a>
-              <a href="https://x.com/edquityatm" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on X" className="inline-flex items-center justify-center p-3 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-twitter"><Twitter size={20} aria-hidden="true" /></a>
-              <a href="https://www.instagram.com/edqatm/" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on Instagram" className="inline-flex items-center justify-center p-3 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-instagram"><Instagram size={20} aria-hidden="true" /></a>
-              <a href="https://www.linkedin.com/company/edqatm/" target="_blank" rel="noopener noreferrer" aria-label="EDquity at the Margins on LinkedIn" className="inline-flex items-center justify-center p-3 text-primary-foreground/80 hover:text-accent transition-colors" data-testid="social-linkedin"><Linkedin size={20} aria-hidden="true" /></a>
+              {SOCIALS.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`EDquity at the Margins on ${s.label}`}
+                  className="inline-flex items-center justify-center p-3 text-primary-foreground/80 hover:text-accent transition-colors"
+                  data-testid={`social-${s.label.toLowerCase()}`}
+                >
+                  {s.icon}
+                </a>
+              ))}
               </div>
             </div>
           </div>
