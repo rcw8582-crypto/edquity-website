@@ -25,7 +25,7 @@ const interactiveTools = [
   },
   {
     icon: <Newspaper size={28} color="#8B5CF6" />,
-    title: "Blog and Insights",
+    title: "News & Updates",
     desc: "Plain-language articles on IEP rights, the stranger test, the difference between MTSS, 504, and IEP, and how families can advocate effectively.",
     href: "/news",
     badge: "Articles",

@@ -38,7 +38,7 @@ export default function News() {
   return (
     <div className="pt-20">
       <PageMeta
-        title="News and Updates"
+        title="News & Updates"
         description="Resources, advocacy guidance, and updates from EDquity at the Margins on special education law, IEP rights, and the families doing this work."
       />
       <section className="sp" style={{ background: "#f8fafc" }}>
