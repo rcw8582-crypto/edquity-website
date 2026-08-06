@@ -146,6 +146,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6">Organization</h3>
             <ul className="space-y-3 text-sm">
+              <li><Link href="/board" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Join Our Board</Link></li>
               <li><Link href="/transparency" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Transparency</Link></li>
               <li><Link href="/funders" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">For Funders</Link></li>
               <li><Link href="/iep-quality-improvement" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">IEP Quality Improvement Program</Link></li>
