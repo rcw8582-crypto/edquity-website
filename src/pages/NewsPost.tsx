@@ -125,9 +125,11 @@ export default function NewsPost() {
               <div className="flex flex-wrap gap-2">
                 {[
                   { label: "Facebook", href: "https://www.facebook.com/EDQATM" },
-                  { label: "Instagram", href: "https://www.instagram.com/edqatm/" },
+                  { label: "Instagram", href: "https://www.instagram.com/edquityatmargins/" },
                   { label: "LinkedIn", href: "https://www.linkedin.com/company/edqatm/" },
                   { label: "X", href: "https://x.com/edquityatm" },
+                  { label: "Bluesky", href: "https://bsky.app/profile/edquity.bsky.social" },
+                  { label: "Threads", href: "https://www.threads.com/@edquityatmargins" },
                 ].map((s) => (
                   <a
                     key={s.label}
