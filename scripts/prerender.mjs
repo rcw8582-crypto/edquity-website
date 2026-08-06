@@ -135,6 +135,7 @@ const SITEMAP_WEIGHTS = {
   "/fellowship": { changefreq: "monthly", priority: "0.7" },
   "/iep-quality-improvement": { changefreq: "monthly", priority: "0.7" },
   "/volunteer": { changefreq: "monthly", priority: "0.7" },
+  "/board": { changefreq: "monthly", priority: "0.7" },
   "/funders": { changefreq: "monthly", priority: "0.7" },
   "/contact": { changefreq: "monthly", priority: "0.7" },
   "/book": { changefreq: "monthly", priority: "0.8" },
