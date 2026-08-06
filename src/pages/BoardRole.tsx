@@ -1,5 +1,5 @@
 import { useRoute, Link } from "wouter";
-import { ArrowLeft, Download } from "lucide-react";
+import { ArrowLeft, Download, FileText } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import NotFound from "@/pages/not-found";
 import { roleBySlug, rolePdf } from "@/content/board-roles";
@@ -94,6 +94,26 @@ export default function BoardRole() {
               get the download card underneath. An iframe cannot carry
               fallback children the way an object can, so the fallback is a
               real element rather than nested content. */}
+          {/* The link comes first and always renders. Browsers disagree about
+              embedded PDFs, and a phone usually refuses outright, so a page
+              that depends on the frame is a page that shows some visitors a
+              blank rectangle. The frame below is an enhancement. */}
+          <div className="bg-white border border-border rounded-xl p-8 text-center mb-6">
+            <p className="text-muted-foreground mb-5">
+              The full position description for {role.title} opens as a PDF.
+            </p>
+            <a
+              href={pdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold rounded-full px-7 py-3.5 text-sm hover:bg-primary/90 transition-colors"
+              data-testid="open-pdf"
+            >
+              <FileText size={16} aria-hidden="true" />
+              Open the position description
+            </a>
+          </div>
+
           <iframe
             src={`${pdf}#view=FitH`}
             title={`${role.title} position description`}
@@ -101,21 +121,6 @@ export default function BoardRole() {
             style={{ height: "min(1100px, 130vh)" }}
             data-testid="pdf-embed"
           />
-
-          <div
-            className="md:hidden bg-white border border-border rounded-xl p-8 text-center"
-            data-testid="pdf-mobile-fallback"
-          >
-            <p className="text-muted-foreground mb-5">
-              Position descriptions open as a PDF. Tap below to read the full description for {role.title}.
-            </p>
-            <a
-              href={pdf}
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold rounded-full px-6 py-3 text-sm"
-            >
-              Open the PDF
-            </a>
-          </div>
 
           <p className="text-sm text-muted-foreground mt-4">
             Prefer to read it offline?{" "}

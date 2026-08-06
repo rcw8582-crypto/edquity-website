@@ -139,7 +139,7 @@ export default function Home() {
                 <p style={{ fontSize: "clamp(36px,4vw,52px)", fontWeight: 900, color: "#122C54", margin: "0 0 6px", letterSpacing: "-2px", lineHeight: 1 }}>
                   <AnimatedStat value={s.value} suffix={s.suffix} />
                 </p>
-                <p style={{ fontSize: 13, fontWeight: 600, color: "rgba(18,44,84,0.7)", margin: 0, textTransform: "uppercase", letterSpacing: 0.5 }}>
+                <p style={{ fontSize: 13, fontWeight: 600, color: "#0B2038", margin: 0, textTransform: "uppercase", letterSpacing: 0.5 }}>
                   {s.label}
                 </p>
               </div>
@@ -230,8 +230,9 @@ export default function Home() {
                   <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>{service.desc}</p>
                 </div>
                 <Link href={service.href}
+                  aria-label={`Learn more about the ${service.title}`}
                   style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "#122C54", fontWeight: 600, textDecoration: "none", fontSize: 14, marginTop: "auto" }}>
-                  {"Learn more"} <ArrowRight size={14} />
+                  Learn more about the {service.title} <ArrowRight size={14} aria-hidden="true" />
                 </Link>
               </motion.div>
             ))}
