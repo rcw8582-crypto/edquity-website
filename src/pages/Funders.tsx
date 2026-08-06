@@ -92,7 +92,7 @@ export default function Funders() {
             Funding us funds families<br />at the most critical moment.
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.75)", lineHeight: 1.75 }}>
-            EDquity at the Margins operates at the intersection of special education law, racial equity, and family empowerment. Every dollar we receive goes directly to closing a documented gap in who gets advocacy.
+            EDquity at the Margins operates at the intersection of special education law, racial equity, and what families are owed under it. Every dollar we receive goes directly to closing a documented gap in who gets advocacy.
           </p>
         </div>
       </section>
