@@ -193,24 +193,24 @@ export default function Funders() {
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               <div className="form-row-2">
                 <div>
-                  <label style={{ fontSize: 13, fontWeight: 600, color: "#122C54", display: "block", marginBottom: 6 }}>Your Name *</label>
-                  <input required value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                  <label style={{ fontSize: 13, fontWeight: 600, color: "#122C54", display: "block", marginBottom: 6 }} htmlFor="funder-name">Your Name *</label>
+                  <input id="funder-name" required value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                     style={{ width: "100%", border: "1px solid #e2e8f0", borderRadius: 8, padding: "10px 14px", fontSize: 15, outline: "none", boxSizing: "border-box" }} />
                 </div>
                 <div>
-                  <label style={{ fontSize: 13, fontWeight: 600, color: "#122C54", display: "block", marginBottom: 6 }}>Organization *</label>
-                  <input required value={form.org} onChange={e => setForm(f => ({ ...f, org: e.target.value }))}
+                  <label style={{ fontSize: 13, fontWeight: 600, color: "#122C54", display: "block", marginBottom: 6 }} htmlFor="funder-org">Organization *</label>
+                  <input id="funder-org" required value={form.org} onChange={e => setForm(f => ({ ...f, org: e.target.value }))}
                     style={{ width: "100%", border: "1px solid #e2e8f0", borderRadius: 8, padding: "10px 14px", fontSize: 15, outline: "none", boxSizing: "border-box" }} />
                 </div>
               </div>
               <div>
-                <label style={{ fontSize: 13, fontWeight: 600, color: "#122C54", display: "block", marginBottom: 6 }}>Email Address *</label>
-                <input required type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                <label style={{ fontSize: 13, fontWeight: 600, color: "#122C54", display: "block", marginBottom: 6 }} htmlFor="funder-email">Email Address *</label>
+                <input id="funder-email" required type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                   style={{ width: "100%", border: "1px solid #e2e8f0", borderRadius: 8, padding: "10px 14px", fontSize: 15, outline: "none", boxSizing: "border-box" }} />
               </div>
               <div>
-                <label style={{ fontSize: 13, fontWeight: 600, color: "#122C54", display: "block", marginBottom: 6 }}>Funding Interest *</label>
-                <select required value={form.interest} onChange={e => setForm(f => ({ ...f, interest: e.target.value }))}
+                <label style={{ fontSize: 13, fontWeight: 600, color: "#122C54", display: "block", marginBottom: 6 }} htmlFor="funder-interest">Funding Interest *</label>
+                <select id="funder-interest" required value={form.interest} onChange={e => setForm(f => ({ ...f, interest: e.target.value }))}
                   style={{ width: "100%", border: "1px solid #e2e8f0", borderRadius: 8, padding: "10px 14px", fontSize: 15, outline: "none", background: "#fff", boxSizing: "border-box" }}>
                   <option value="">Select a level…</option>
                   <option value="Community Funder ($1,000–$4,999)">Community Funder ($1,000–$4,999)</option>
@@ -221,8 +221,8 @@ export default function Funders() {
                 </select>
               </div>
               <div>
-                <label style={{ fontSize: 13, fontWeight: 600, color: "#122C54", display: "block", marginBottom: 6 }}>Tell us about your interest *</label>
-                <textarea required value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                <label style={{ fontSize: 13, fontWeight: 600, color: "#122C54", display: "block", marginBottom: 6 }} htmlFor="funder-message">Tell us about your interest *</label>
+                <textarea id="funder-message" required value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
                   rows={5} placeholder="Describe your organization, your giving priorities, and what draws you to this work…"
                   style={{ width: "100%", border: "1px solid #e2e8f0", borderRadius: 8, padding: "10px 14px", fontSize: 15, outline: "none", resize: "vertical", boxSizing: "border-box" }} />
               </div>
