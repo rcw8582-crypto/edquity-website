@@ -53,7 +53,7 @@ Sometimes the reply confirms everything and the year proceeds. Sometimes it come
 
 If that is where you land, ask for a meeting inside the first month rather than waiting for the first progress report. By then a quarter of the year is gone, and any services your child missed are already missed.
 
-It is also worth knowing whether the IEP itself is strong enough to implement. A document with vague goals and unmeasurable criteria is difficult for even a willing teacher to follow, and it is hard to enforce something that was never specific in the first place. Our free [IEP Audit](/intake) reviews your child's document across six research-grounded areas and returns a written report naming what is missing and what to ask for. Families pay nothing.
+It is also worth knowing whether the IEP itself is strong enough to implement. A document with vague goals and unmeasurable criteria is difficult for even a willing teacher to follow, and it is hard to enforce something that was never specific in the first place. Our free IEP Audit reviews your child's document across six research-grounded areas and returns a written report naming what is missing and what to ask for. Families pay nothing. [Book a New Family Registration call](/book) and we will walk you through how it works.
 
 ## References
 
