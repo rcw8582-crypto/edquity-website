@@ -53,7 +53,8 @@ export function initialEvents(): EdatmEvent[] | null {
   return Array.isArray(inlined) ? (inlined as EdatmEvent[]) : null;
 }
 
-const CARD_COLORS = ["#22C55E", "#14B8A6", "#FBBF24", "#8B5CF6"];
+/* Each carries white text in the calendar, so every one clears 4.5:1. */
+const CARD_COLORS = ["#15803D", "#0F766E", "#92400E", "#6D28D9"];
 
 export function eventColor(index: number): string {
   return CARD_COLORS[index % CARD_COLORS.length];
