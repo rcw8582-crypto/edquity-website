@@ -22,6 +22,8 @@ const News = lazy(() => import("@/pages/News"));
 const Donate = lazy(() => import("@/pages/Donate"));
 const Volunteer = lazy(() => import("@/pages/Volunteer"));
 const Board = lazy(() => import("@/pages/Board"));
+const BoardRoles = lazy(() => import("@/pages/BoardRoles"));
+const BoardRole = lazy(() => import("@/pages/BoardRole"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Resources = lazy(() => import("@/pages/Resources"));
 const Events = lazy(() => import("@/pages/Events"));
@@ -101,6 +103,8 @@ function Router() {
           <Route path="/news" component={News} />
           <Route path="/donate" component={Donate} />
           <Route path="/volunteer" component={Volunteer} />
+          <Route path="/board/roles/:slug" component={BoardRole} />
+          <Route path="/board/roles" component={BoardRoles} />
           <Route path="/board" component={Board} />
           <Route path="/contact" component={Contact} />
           <Route path="/resources" component={Resources} />
