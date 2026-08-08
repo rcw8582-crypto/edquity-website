@@ -8,7 +8,9 @@
  * next IEP meeting.
  *
  * Design notes:
- *   - Pure client-side. No data sent anywhere.
+ *   - The parsing is pure client-side. The goal a parent pastes never
+ *     leaves the browser. Two analytics events record only that a check
+ *     ran and that the questions were copied, never any goal content.
  *   - When the parser cannot find a component, that itself is a
  *     signal: if a reasonable reader cannot extract the component
  *     from the goal as written, neither can a substitute teacher.
@@ -17,11 +19,12 @@
  *   - Weak-language detection runs on whatever the parser extracts.
  */
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Check, X, AlertTriangle, Copy, RotateCcw, ArrowLeft, CheckCheck, ClipboardPaste } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
+import { trackGoalCheckCompleted, trackGoalQuestionsCopied } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
@@ -385,6 +388,21 @@ export default function IEPGoalChecker() {
   const strongCount = results.filter((r) => r.value && !r.weak).length;
   const totalParts = results.length;
 
+  /**
+   * Records that a parent got a real analysis, once per visit.
+   *
+   * Results recompute on every keystroke, so firing on each change would
+   * report hundreds of events for one goal. Two recognised components is
+   * the threshold where a genuine goal has been pasted rather than a
+   * stray word, and the ref makes sure it only ever counts once.
+   */
+  const checkCounted = useRef(false);
+  useEffect(() => {
+    if (checkCounted.current || presentCount < 2) return;
+    checkCounted.current = true;
+    trackGoalCheckCompleted();
+  }, [presentCount]);
+
   const handleLoadSample = () => {
     setGoalText(SAMPLE_GOAL);
   };
@@ -428,6 +446,7 @@ export default function IEPGoalChecker() {
 
   const handleCopy = async () => {
     const report = buildReport();
+    trackGoalQuestionsCopied();
     try {
       await navigator.clipboard.writeText(report);
       setCopied(true);
