@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, FileText, BookOpen, Users, ChevronDown, ChevronUp } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
-import { BOOKING_URL } from "@/lib/booking";
+import { BOOKING_URL, PORTAL_REGISTER_URL } from "@/lib/booking";
 
 interface LawBoxProps { citation: string; title: string; text: string; }
 function LawBox({ citation, title, text }: LawBoxProps) {
@@ -41,10 +41,10 @@ export default function Services() {
             Serving families across the greater Metro Nashville area and, through our virtual delivery model, anywhere in the country.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/book"
+            <a href={PORTAL_REGISTER_URL}
               style={{ background: "#22C55E", color: "#122C54", padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
               Start Your Free IEP Audit
-            </Link>
+            </a>
             <a href="#track-two"
               style={{ background: "transparent", color: "#fff", padding: "15px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(255,255,255,0.4)" }}>
               No IEP Yet? Start Here
@@ -111,10 +111,10 @@ export default function Services() {
               <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, margin: "0 0 32px" }}>
                 Most families receive their child's IEP with no independent guidance on whether it meets the legal standard of a free and appropriate public education. This service closes that gap. We review your child's IEP across six research-grounded domains, identifies missing or inadequate services, and delivers a plain-language written report with specific recommended next steps before your next meeting.
               </p>
-              <Link href="/book"
+              <a href={PORTAL_REGISTER_URL}
                 style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
                 Start Your Free IEP Audit
-              </Link>
+              </a>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ background: "rgba(255,255,255,0.06)", borderRadius: 14, padding: 28 }}>
@@ -308,10 +308,10 @@ export default function Services() {
             you a written report. If you would rather talk it through first, book a free call instead.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/book"
+            <a href={PORTAL_REGISTER_URL}
               style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 17 }}>
               Start Your Free IEP Audit
-            </Link>
+            </a>
           </div>
         </div>
       </section>
