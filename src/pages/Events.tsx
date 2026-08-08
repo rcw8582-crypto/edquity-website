@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Clock, CalendarPlus, Download, ArrowRight } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import EventsCalendar from "@/components/EventsCalendar";
+import { trackSeatClaimed } from "@/lib/analytics";
 import {
   fetchEvents,
   initialEvents,
@@ -159,6 +160,7 @@ export default function Events() {
                             <a href={event.rsvp_url ?? "/contact"}
                               target={event.rsvp_url ? "_blank" : undefined}
                               rel={event.rsvp_url ? "noopener noreferrer" : undefined}
+                              onClick={() => trackSeatClaimed(event.title)}
                               style={{
                                 display: "inline-flex", alignItems: "center", gap: 6,
                                 background: isNext ? "#122C54" : "#fff",
