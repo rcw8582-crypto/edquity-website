@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import { Button } from "@/components/ui/button";
 
-import { BOOKING_URL } from "@/lib/booking";
+import { BOOKING_URL, PORTAL_REGISTER_URL } from "@/lib/booking";
 
 interface SectionProps {
   number: string;
