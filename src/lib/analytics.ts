@@ -80,6 +80,46 @@ export function trackBookingClick(source: string): void {
   });
 }
 
+/**
+ * A visitor clicked an audit button and is on their way to create a portal
+ * account. Registration completes in the portal app, which reports the
+ * finish separately, so this counts the intent and that counts the outcome.
+ */
+export function trackPortalRegistrationStart(source: string): void {
+  gtag('event', 'portal_registration_start', {
+    event_category: 'family_services',
+    source,
+  });
+}
+
+/**
+ * A parent clicked through to claim a seat at a free workshop. The RSVP
+ * itself happens off our domain, so the click is the last thing we see.
+ */
+export function trackSeatClaimed(eventTitle: string): void {
+  gtag('event', 'workshop_seat_claimed', {
+    event_category: 'family_services',
+    event_title: eventTitle,
+  });
+}
+
+/**
+ * A parent pasted a goal into the IEP Goal Checker and got a real analysis
+ * back. Fired once per visit, because the results recompute on every
+ * keystroke and one event per character would be meaningless.
+ */
+export function trackGoalCheckCompleted(): void {
+  gtag('event', 'goal_check_completed', { event_category: 'family_services' });
+}
+
+/**
+ * A parent copied the questions the checker generated, which means they are
+ * taking them into a meeting. The strongest signal the tool produces.
+ */
+export function trackGoalQuestionsCopied(): void {
+  gtag('event', 'goal_questions_copied', { event_category: 'family_services' });
+}
+
 /** A family submitted the written intake questions instead of a call. */
 export function trackQuestionsSubmitted(): void {
   gtag('event', 'parent_questions_submitted', { event_category: 'family_services' });
