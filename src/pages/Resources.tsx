@@ -4,7 +4,7 @@ import { Download, ExternalLink, FileText, BookOpen, MessageSquare, Search, Laye
 import PageMeta from "@/components/PageMeta";
 import { RESOURCES } from "@/content/resources";
 
-import { BOOKING_URL } from "@/lib/booking";
+import { PORTAL_REGISTER_URL } from "@/lib/booking";
 
 const interactiveTools = [
   {
@@ -235,10 +235,10 @@ export default function Resources() {
             A checklist tells you what to look for. We tell you what it means for your specific child and what to do about it.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/book"
+            <a href={PORTAL_REGISTER_URL}
               style={{ display: "inline-block", background: "#122C54", color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
               Start Your Free IEP Audit
-            </Link>
+            </a>
           </div>
         </div>
       </section>
