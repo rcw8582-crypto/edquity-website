@@ -23,3 +23,18 @@ export const BOOKING_PAGE_URL =
  * of the moment it is followed.
  */
 export const BOOKING_URL = "/book";
+
+/**
+ * Where every "Start Your Free IEP Audit" button points.
+ *
+ * These used to point at BOOKING_URL, which sent families to the Microsoft
+ * Bookings "New Family Registration" service. Registering in the portal is
+ * the real first step, so the audit buttons go straight there and /book is
+ * now only for the discovery call.
+ *
+ * This is a different app on a subdomain, so it needs a plain anchor rather
+ * than a wouter Link. TrackBookingClicks in App.tsx matches on this exact
+ * string to count the click before the visitor leaves.
+ */
+export const PORTAL_REGISTER_URL =
+  "https://portal.edquityatthemargins.org/auth/register";
