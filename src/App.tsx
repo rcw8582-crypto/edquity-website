@@ -6,8 +6,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Layout from "@/components/layout/Layout";
-import { BOOKING_URL } from "@/lib/booking";
-import { trackBookingClick } from "@/lib/analytics";
+import { BOOKING_URL, PORTAL_REGISTER_URL } from "@/lib/booking";
+import { trackBookingClick, trackPortalRegistrationStart } from "@/lib/analytics";
 
 // Home stays eager-loaded since it is the most common entry point
 // and lazy-loading it would delay the first paint for first-time visitors.
@@ -60,18 +60,25 @@ function ScrollToTop() {
 }
 
 /**
- * Counts clicks on the booking link wherever it appears.
+ * Counts clicks on the two links that start a family's journey: booking a
+ * discovery call, and creating a portal account for the free IEP Audit.
  *
- * Booking happens on Microsoft Bookings, off our domain, so this click is
- * the last thing we can observe. One delegated listener beats editing the
- * six pages that link to it, and it cannot be forgotten when a seventh
- * link is added, since it matches on the shared BOOKING_URL constant.
+ * Both destinations sit outside what we can follow, Microsoft Bookings in
+ * one case and the portal app in the other, so the click is the last thing
+ * we can observe. One delegated listener beats editing the pages that link
+ * to them, and it cannot be forgotten when a new link is added, since it
+ * matches on the shared constants.
  */
 function TrackBookingClicks() {
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       const anchor = (e.target as HTMLElement | null)?.closest?.("a");
-      if (!anchor || anchor.getAttribute("href") !== BOOKING_URL) return;
+      const href = anchor?.getAttribute("href");
+      if (href === PORTAL_REGISTER_URL) {
+        trackPortalRegistrationStart(window.location.pathname);
+        return;
+      }
+      if (href !== BOOKING_URL) return;
       trackBookingClick(window.location.pathname);
     };
     document.addEventListener("click", onClick, true);
