@@ -3,6 +3,7 @@ import { Download, ArrowRight, ChevronRight, Check } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import NotFound from "@/pages/not-found";
 import { getResource, getRelated } from "@/content/resources";
+import { PORTAL_REGISTER_URL } from "@/lib/booking";
 
 /**
  * One page per free resource.
@@ -141,12 +142,12 @@ export default function ResourceDetail() {
             We review your child's IEP across six research-grounded domains and send you a plain-language
             report with the specific questions to ask. Families pay nothing.
           </p>
-          <Link
-            href="/book"
+          <a
+            href={PORTAL_REGISTER_URL}
             style={{ display: "inline-block", background: NAVY, color: "#fff", padding: "16px 36px", borderRadius: 8, fontWeight: 800, fontSize: 16.5, textDecoration: "none" }}
           >
             Start your free IEP Audit
-          </Link>
+          </a>
         </div>
       </section>
     </div>
