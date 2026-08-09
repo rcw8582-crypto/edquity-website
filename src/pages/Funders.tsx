@@ -12,8 +12,8 @@ const outcomes = [
 
 const tiers = [
   {
-    title: "Educational Equity Champion",
-    range: "Every funder is a champion for educational equity",
+    title: "EDquity Champion",
+    range: "A champion for education equity",
     color: "#14B8A6",
     featured: true,
     includes: [
@@ -200,7 +200,7 @@ export default function Funders() {
                 <select id="funder-interest" required value={form.interest} onChange={e => setForm(f => ({ ...f, interest: e.target.value }))}
                   style={{ width: "100%", border: "1px solid #e2e8f0", borderRadius: 8, padding: "10px 14px", fontSize: 15, outline: "none", background: "#fff", boxSizing: "border-box" }}>
                   <option value="">Select a level…</option>
-                  <option value="Educational Equity Champion (family audits)">Educational Equity Champion (family audits)</option>
+                  <option value="EDquity Champion (family audits)">EDquity Champion (family audits)</option>
                   <option value="Fellowship Seat, institutional ($8,000)">Fellowship Seat, institutional ($8,000)</option>
                   <option value="General / Other">General / Other</option>
                 </select>
