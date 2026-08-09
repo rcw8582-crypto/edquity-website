@@ -32,6 +32,7 @@ function Step({ n, title, text }: StepProps) {
 
 const CALENDAR: Array<[string, string]> = [
   ["July 2027", "The year opens with the full-day virtual Launch Institute, held in summer when your leader has the calendar for it."],
+  ["August 2027", "Your school makes its first blind submission of three redacted IEPs, and the monthly diagnostic loop begins."],
   ["December 2027", "The full-day virtual Data Summit turns your fall data into your school's professional development plan."],
   ["January to May 2028", "Your fellow leads their impact project in your building, intervening on the data each month while the independent blind evaluation continues."],
   ["June 2028", "Fellows present their impact projects at the in-person Impact Expo, location to be determined, and the credential is conferred."],
@@ -163,10 +164,10 @@ export default function Fellowship() {
           <p style={{ fontSize: 12, fontWeight: 700, color: TEAL_TEXT, letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px", textAlign: "center" }}>How It Works</p>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, textAlign: "center", margin: "0 0 14px" }}>The monthly diagnostic loop</h2>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.7, textAlign: "center", maxWidth: 760, margin: "0 auto 34px" }}>
-            Every month from September 2027 through May 2028, your school submits five redacted IEPs and EDquity blind-evaluates them against our proprietary 40-condition master rubric. That is 45 independent evaluations across the year, a diagnostic service valued at $29,385 on our standard rate card, donated in full to fellowship schools.
+            Every month from August 2027 through May 2028, your school submits three randomly selected, redacted IEPs, one at each complexity tier, and EDquity blind-evaluates them against our proprietary 40-condition master rubric. No document repeats month to month, so the year yields 30 unique IEPs independently evaluated, a diagnostic service valued at $29,950 on our standard rate card, donated in full to fellowship schools.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20, marginBottom: 40 }}>
-            <Step n="1" title="Blind submission" text="By the fifth business day of each month, your school submits 5 redacted IEPs following our secure, FERPA-protected Redaction Guidance." />
+            <Step n="1" title="Blind submission" text="By the fifth business day of each month, your school submits three redacted IEPs drawn at random, one simple, one moderate, one complex, never a document submitted before, following our secure, FERPA-protected Redaction Guidance." />
             <Step n="2" title="Objective evaluation" text="EDquity blind-evaluates the documents against the 40-condition master rubric to surface systemic, school-wide trends." />
             <Step n="3" title="Monthly strategy seminar" text="After the reports go out, the cohort meets virtually to work the trends and data together as leaders, turning each month's findings into strategy for their buildings." />
           </div>
@@ -174,7 +175,7 @@ export default function Fellowship() {
             <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: 28 }}>
               <p style={{ fontSize: 13, fontWeight: 800, color: TEAL_TEXT, margin: "0 0 10px", textTransform: "uppercase", letterSpacing: 1 }}>Fall: Training and Diagnosis</p>
               <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>
-                Your fellow learns the federal law behind every condition, anchored in Endrew F. v. Douglas County (2017), and trains hands-on with the EDquity Leader Rubric. By December, four months of blind trend data show exactly which conditions your school's documents consistently miss, and the December Data Summit converts that trend into a targeted professional development plan, presented to you the same day.
+                Your fellow learns the federal law behind every condition, anchored in Endrew F. v. Douglas County (2017), and trains hands-on with the EDquity Leader Rubric. By December, five months of blind trend data show exactly which conditions your school's documents consistently miss, and the December Data Summit converts that trend into a targeted professional development plan, presented to you the same day.
               </p>
             </div>
             <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: 28 }}>
@@ -216,7 +217,7 @@ export default function Fellowship() {
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", gap: 16 }}>
             {[
-              "45 of your own IEPs blind-evaluated across the year with full reports, a donated service valued at $29,385",
+              "30 of your own IEPs, randomly selected and blind-evaluated across the year with full monthly reports, a donated service valued at $29,950",
               "A leader trained on federal special education law and the EDquity Leader Rubric",
               "A data-driven professional development plan in December, built from your school's own trend data",
               "Measured, independently scored quality improvement by June",

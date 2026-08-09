@@ -169,7 +169,7 @@ export default function Home() {
             {"Federal law already guarantees your child a free and appropriate public education in the least restrictive environment. The gap is not in the law. The gap is between what the law requires and what schools deliver when no one is holding them accountable."}
           </p>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: 0 }}>
-            {"EDquity at the Margins exists to close that gap, providing marginalized families with the technical knowledge and sustained advocacy support they need to enforce the rights federal law already guarantees their children."}
+            {"EDquity at the Margins closes that gap through free independent IEP audits, parent workshops, and The EDquity IEP Advocacy Toolkit, so parents can advocate for their children in the language the system uses."}
           </p>
         </div>
       </section>

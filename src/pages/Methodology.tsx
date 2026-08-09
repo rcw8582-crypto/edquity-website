@@ -133,7 +133,7 @@ export default function Methodology() {
               "It explains how the disability affects learning in the classroom, in plain language.",
               "A teacher who has never met your child could read it and know what to teach next.",
             ]}
-            research="IDEA 34 CFR 300.320(a)(1); McKenna et al. (2024)"
+            research="IDEA 34 CFR 300.320(a)(1)"
             relatedReading={{ label: "The Stranger Test", href: "/news/the-stranger-test-strong-iep-goals" }}
           />
 
@@ -148,7 +148,7 @@ export default function Methodology() {
               "Every goal has a measurable target and a deadline.",
               "The progress measurement method is specific enough that any teacher could repeat it the same way.",
             ]}
-            research="Endrew F. v. Douglas County School District (2017); IDEA 34 CFR 300.320(a)(2); Kurth et al. (2022)"
+            research="Endrew F. v. Douglas County School District (2017); IDEA 34 CFR 300.320(a)(2)"
             relatedReading={{ label: "The Stranger Test", href: "/news/the-stranger-test-strong-iep-goals" }}
             relatedTool={{ label: "IEP Goal Checker", href: "/tools/iep-goal-checker" }}
           />
@@ -163,7 +163,7 @@ export default function Methodology() {
               "Accommodations differ by subject or setting where your child's needs differ.",
               "Classroom accommodations and testing accommodations match each other, so your child is not getting one set of supports during the lesson and a different set on the test.",
             ]}
-            research="IDEA 34 CFR 300.320(a)(6); Kurth et al. (2022)"
+            research="IDEA 34 CFR 300.320(a)(6)"
           />
 
           <MethodologySection
@@ -190,7 +190,7 @@ export default function Methodology() {
               "This year's course of study clearly connects to the postsecondary goals.",
               "Your child was invited to and participated in the transition planning.",
             ]}
-            research="IDEA 34 CFR 300.320(b); McKenna et al. (2024)"
+            research="IDEA 34 CFR 300.320(b)"
           />
 
           <MethodologySection
@@ -205,7 +205,7 @@ export default function Methodology() {
               "The IEP passes the stranger test: a teacher who has never met your child could carry out this IEP as written.",
               "The language is plain enough that your family can read and use the IEP without an interpreter or a special education degree.",
             ]}
-            research="IDEA 34 CFR 300.321, 300.322, 300.504; Kurth et al. (2022)"
+            research="IDEA 34 CFR 300.321, 300.322, 300.504"
             relatedReading={{ label: "The Stranger Test", href: "/news/the-stranger-test-strong-iep-goals" }}
           />
         </div>

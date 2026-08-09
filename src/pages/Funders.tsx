@@ -4,47 +4,24 @@ import { CheckCircle2, TrendingUp, Users, Shield } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
 const outcomes = [
-  { stat: "50", label: "families to serve free in Year 1" },
+  { stat: "100", label: "children is our Year 1 goal: complete independent IEP audits, free to every family" },
   { stat: "$0", label: "charged to families. Access is the model, not a marketing phrase." },
-  { stat: "21+", label: "years of special education expertise behind every review" },
-  { stat: "100%", label: "of families pay nothing for the IEP Audit and Advocacy Toolkit" },
+  { stat: "3 days", label: "median turnaround from request to written report" },
+  { stat: "100%", label: "of families pay nothing for the IEP Audit, the Advocacy Toolkit, or any parent workshop" },
 ];
 
 const tiers = [
   {
-    title: "Community Funder",
-    range: "$1,000 – $4,999",
-    color: "#15803D",
-    includes: [
-      "Funds 4–20 free IEP Audits for families who cannot pay for advocacy",
-      "Named acknowledgment in annual report",
-      "Impact update letter at year's end",
-    ],
-  },
-  {
-    title: "Program Sponsor",
-    range: "$5,000 – $24,999",
+    title: "Educational Equity Champion",
+    range: "Every funder is a champion for educational equity",
     color: "#14B8A6",
     featured: true,
     includes: [
-      "Funds 20–100 free IEP Audits for families who cannot pay for advocacy",
-      "Sponsors a Leader Fellowship seat for an under-resourced school ($8,000 funds the full year, including donated evaluation services)",
-      "Co-branded acknowledgment on website",
-      "Quarterly impact reports with de-identified outcome data",
-      "Invitation to community education events",
-    ],
-  },
-  {
-    title: "Founding Partner",
-    range: "$25,000+",
-    color: "#122C54",
-    includes: [
-      "Funds organizational capacity and free family services for an entire year",
-      "Named sponsorship of a specific program or cohort, including fellowship seats for under-resourced schools",
-      "Invitation to the annual Impact Expo, where fellows present their schools' measured results",
-      "Annual site visit or program briefing with our Executive Director",
-      "Full outcome report with case-level narrative summaries",
-      "Input on program evaluation design",
+      "$500 sponsors one child's complete IEP audit, written report, and walkthrough",
+      "$5,000 sponsors audits for ten children",
+      "$25,000 sponsors audits for fifty children",
+      "$50,000 completes our full first-year goal of 100 children",
+      "Every sponsor receives named acknowledgment on our website and in the annual report, along with the annual impact report",
     ],
   },
 ];
@@ -125,7 +102,7 @@ export default function Funders() {
               We are a family-first organization with a two-sided model. Schools and systems enroll in the <a href="/iep-quality-improvement" style={{ color: "#122C54", fontWeight: 700 }}>IEP Quality Improvement Program</a> and the EDquity Leader Fellowship, and ten percent of every school engagement fee is designated to the Family Audit Fund, which keeps our family services free. Earned revenue is the floor under this work; it does not disappear when a grant cycle ends.
             </p>
             <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.75, margin: 0 }}>
-              Philanthropy is how the work reaches further than earned revenue alone can carry it: funding free audits beyond what the fund covers, and sponsoring fellowship seats for under-resourced schools whose leaders could never otherwise access them. Your dollars do not keep the lights on; they extend the reach.
+              Philanthropy is how the work reaches further than earned revenue alone can carry it. Your dollars fund free audits beyond what the fund covers and build the capacity to deliver them: the secure portal families submit through, the workshops, and the published tools parents keep.
             </p>
           </div>
 
@@ -144,7 +121,10 @@ export default function Funders() {
             ))}
           </div>
 
-          <h2 style={{ fontSize: "clamp(22px,2.5vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 40px" }}>Partnership Levels</h2>
+          <h2 style={{ fontSize: "clamp(22px,2.5vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px" }}>Sponsor a Child's Audit</h2>
+          <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.75, margin: "0 0 40px", maxWidth: 720 }}>
+            Our first-year goal is 100 independent IEP audits for children in minority families. Each audit covers one child's IEP and is a $500 professional service we deliver at no cost to the family, so your gift translates directly into children served.
+          </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
             {tiers.map((tier, i) => (
               <div key={i} style={{
@@ -155,7 +135,7 @@ export default function Funders() {
               }}>
                 {tier.featured && (
                   <span style={{ position: "absolute", top: -14, left: 24, background: "#122C54", color: "#fff", padding: "3px 16px", borderRadius: 999, fontSize: 12, fontWeight: 800 }}>
-                    Most Impactful
+                    Family Services
                   </span>
                 )}
                 <div>
@@ -172,6 +152,13 @@ export default function Funders() {
                 </ul>
               </div>
             ))}
+          </div>
+
+          <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: 28, marginTop: 40 }}>
+            <h3 style={{ fontSize: 17, fontWeight: 800, color: "#122C54", margin: "0 0 10px" }}>Institutional Sponsorship</h3>
+            <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>
+              Separately from family sponsorships, funders may underwrite a Leader Fellowship seat for an under-resourced school. One seat is $8,000 and funds the full fellowship year, including the donated evaluation services the school receives. Seat sponsors are invited to the annual Impact Expo, where fellows present their schools' measured results.
+            </p>
           </div>
         </div>
       </section>
@@ -213,10 +200,8 @@ export default function Funders() {
                 <select id="funder-interest" required value={form.interest} onChange={e => setForm(f => ({ ...f, interest: e.target.value }))}
                   style={{ width: "100%", border: "1px solid #e2e8f0", borderRadius: 8, padding: "10px 14px", fontSize: 15, outline: "none", background: "#fff", boxSizing: "border-box" }}>
                   <option value="">Select a level…</option>
-                  <option value="Community Funder ($1,000–$4,999)">Community Funder ($1,000–$4,999)</option>
-                  <option value="Program Sponsor ($5,000–$24,999)">Program Sponsor ($5,000–$24,999)</option>
-                  <option value="Fellowship Seat Sponsorship ($8,000)">Fellowship Seat Sponsorship ($8,000)</option>
-                  <option value="Founding Partner ($25,000+)">Founding Partner ($25,000+)</option>
+                  <option value="Educational Equity Champion (family audits)">Educational Equity Champion (family audits)</option>
+                  <option value="Fellowship Seat, institutional ($8,000)">Fellowship Seat, institutional ($8,000)</option>
                   <option value="General / Other">General / Other</option>
                 </select>
               </div>
