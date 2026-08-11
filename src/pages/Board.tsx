@@ -376,7 +376,9 @@ export default function Board() {
       setError(
         resumeStatus === "uploading"
           ? "Your resume is still uploading. Give it a moment and try again."
-          : "Please upload your resume before submitting."
+          : resumeStatus === "error"
+            ? `Your resume did not upload, so we cannot accept the application yet. ${resumeError}`
+            : "Please upload your resume before submitting."
       );
       return;
     }
@@ -836,6 +838,16 @@ export default function Board() {
                         </span>
                       </label>
                     )}
+                  </div>
+                )}
+
+                {/* The same message renders at the top of the form, but this
+                    form is long enough that the top is off-screen when the
+                    applicant clicks Submit, and a rejection they cannot see
+                    reads as a dead button. */}
+                {error && (
+                  <div className="text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg px-4 py-3" role="alert">
+                    {error}
                   </div>
                 )}
 
