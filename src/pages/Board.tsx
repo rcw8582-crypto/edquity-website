@@ -370,8 +370,58 @@ export default function Board() {
     setter((prev) => (prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  /**
+   * Friendly names for the browser-validated controls, so the banner can say
+   * "Please complete: City and state" instead of relying on the browser's
+   * native tooltip, which shows on one field for a few seconds and vanishes.
+   * A real applicant read that as a dead Submit button (Aug 2026).
+   */
+  const FIELD_LABELS: Record<string, string> = {
+    fullName: "Full name",
+    email: "Email address",
+    cityState: "City and state",
+    track: "Which role you are applying for",
+    seatInterest: "Which seat interests you",
+    advisoryRole: "Which advisory role fits you",
+    isParent: "Whether you are the parent of a child with a disability",
+    nonprofitBoardService: "Nonprofit board service",
+    spedYears: "Years working in or with special education",
+    ideaFamiliarity: "Your familiarity with IDEA",
+    section504Familiarity: "Your familiarity with Section 504 and the ADA",
+    fundraisingExperience: "Whether you have raised money for a nonprofit",
+    primaryContribution: "Your primary contribution",
+    currentRoleOrg: "Current role and organization",
+    whyEdatm: "Why you want to serve",
+    conflicts: "District, LEA, or vendor relationships",
+    linkedinUrl: "LinkedIn profile",
+    resume: "Resume",
+    commitmentConfirmed: "The commitment checkbox",
+    fundraisingConfirmed: "The fundraising checkbox",
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formEl = e.currentTarget;
+    if (!formEl.checkValidity()) {
+      const invalid = Array.from(formEl.elements).filter(
+        (el): el is HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement =>
+          "checkValidity" in el && !(el as HTMLInputElement).checkValidity()
+      );
+      const names = Array.from(
+        new Set(
+          invalid.map((el) => {
+            const label = FIELD_LABELS[el.name || el.id] || el.name || el.id;
+            return el.type === "url" && (el as HTMLInputElement).validity.typeMismatch
+              ? `${label} (must be a full link starting with https://)`
+              : label;
+          })
+        )
+      );
+      setError(`Almost there. Please complete: ${names.join("; ")}.`);
+      invalid[0]?.scrollIntoView({ behavior: "smooth", block: "center" });
+      invalid[0]?.focus({ preventScroll: true });
+      return;
+    }
     if (!resumePath) {
       setError(
         resumeStatus === "uploading"
@@ -650,6 +700,7 @@ export default function Board() {
               <motion.form
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
+                noValidate
                 onSubmit={handleSubmit}
                 className="bg-white border border-border rounded-2xl p-8 shadow-sm space-y-8"
                 data-testid="board-form"
@@ -811,6 +862,7 @@ export default function Board() {
                     <label className="flex items-start gap-3 text-sm text-muted-foreground cursor-pointer">
                       <input
                         type="checkbox"
+                        name="commitmentConfirmed"
                         checked={commitmentConfirmed}
                         onChange={(e) => setCommitmentConfirmed(e.target.checked)}
                         required
@@ -827,6 +879,7 @@ export default function Board() {
                       <label className="flex items-start gap-3 text-sm text-muted-foreground cursor-pointer">
                         <input
                           type="checkbox"
+                          name="fundraisingConfirmed"
                           checked={fundraisingConfirmed}
                           onChange={(e) => setFundraisingConfirmed(e.target.checked)}
                           required
