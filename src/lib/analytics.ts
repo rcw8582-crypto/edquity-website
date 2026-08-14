@@ -125,7 +125,7 @@ export function trackQuestionsSubmitted(): void {
   gtag('event', 'parent_questions_submitted', { event_category: 'family_services' });
 }
 
-/** A school or district asked about the Program or the Fellowship. */
-export function trackInquirySubmitted(kind: 'program' | 'fellowship'): void {
+/** An inquiry or enrollment request for a named program came in. */
+export function trackInquirySubmitted(kind: 'program' | 'fellowship' | 'college-success'): void {
   gtag('event', 'institutional_inquiry', { event_category: 'institutional', kind });
 }

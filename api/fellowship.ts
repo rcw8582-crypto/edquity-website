@@ -192,9 +192,9 @@ export default async function handler(req: Request): Promise<Response> {
       <p>Because seats in the founding cohort are strictly limited to protect our evaluation and coaching capacity, selection is competitive, and every submission is reviewed uniformly against our published criteria.</p>
       <p style="margin: 16px 0 6px;"><strong>Key dates</strong></p>
       <ul style="margin: 0 0 16px; padding-left: 20px;">
-        <li>Application review: September 5 to 11, 2026</li>
-        <li>Cohort announcements: mid-September 2026</li>
-        <li>Launch Institute: late September 2026</li>
+        <li>Applications open January 2027 and close March 31, 2027</li>
+        <li>Cohort announcements: April 2027</li>
+        <li>Launch Institute: July 2027</li>
       </ul>
       <p><strong>One required step if you have not completed it:</strong> email your signed School Leader Commitment Letter to info@edquityatthemargins.org. Your application is not complete until we receive it.</p>
       <p>If we need clarifying details about your caseload or commitment letter, we will reach out directly. Thank you for your commitment to legally defensible, ambitious IEPs for our most vulnerable students.</p>
@@ -244,7 +244,7 @@ export default async function handler(req: Request): Promise<Response> {
       to: email,
       subject: "Your EDquity Fellowship application has been received",
       html: ackHtml,
-      text: `Hi ${fullName}, thank you for applying to the founding cohort of the EDquity Leader Fellowship. Application review runs September 5 to 11, 2026, with cohort announcements in mid-September. If you have not already done so, email your signed School Leader Commitment Letter to info@edquityatthemargins.org.`,
+      text: `Hi ${fullName}, thank you for applying to the founding cohort of the EDquity Leader Fellowship. Applications close March 31, 2027, with cohort announcements in April 2027 and the Launch Institute in July 2027. If you have not already done so, email your signed School Leader Commitment Letter to info@edquityatthemargins.org.`,
     });
     if (ack.error) {
       console.error("[fellowship] acknowledgment email failed:", ack.error);

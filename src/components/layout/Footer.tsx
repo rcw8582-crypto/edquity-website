@@ -167,6 +167,7 @@ export default function Footer() {
               <li><Link href="/" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Home</Link></li>
               <li><Link href="/about" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
               <li><Link href="/services" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Free Family Services</Link></li>
+              <li><Link href="/college-success" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">College Success Course</Link></li>
               <li><Link href="/news" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">In the Margins</Link></li>
               <li><Link href="/donate" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Donate</Link></li>
               <li><Link href="/volunteer" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Volunteer</Link></li>
