@@ -170,13 +170,13 @@ export default async function handler(req: Request): Promise<Response> {
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #122C54; max-width: 640px; margin: 0 auto; padding: 24px; line-height: 1.65;">
       <h2 style="color: #122C54; margin: 0 0 16px; font-size: 18px;">Your College Success seat request has been received</h2>
       <p>Hi ${escapeHtml(parentName)},</p>
-      <p>Thank you for requesting a seat for ${escapeHtml(studentName)} in the founding cohort of College Success. Nothing is due now; we confirm every seat by email, in the order requests arrive.</p>
-      <p style="margin: 16px 0 6px;"><strong>Cohort dates</strong></p>
+      <p>Thank you for requesting a College Success seat for ${escapeHtml(studentName)}. Nothing is due now; we confirm every seat by email, in the order requests arrive.</p>
+      <p style="margin: 16px 0 6px;"><strong>Cohort 1 dates</strong></p>
       <ul style="margin: 0 0 16px; padding-left: 20px;">
         <li>Parent and student orientation: Tuesday, January 12, 2027</li>
         <li>Six weekly virtual sessions: Tuesdays, January 19 through February 23, 2027</li>
       </ul>
-      <p>Every seat is sponsored and free to your student. We confirm seats as sponsorships are secured, on a first-come, first-served basis, and no payment is ever collected from families.</p>
+      <p>Every seat is sponsored and free to your student. We confirm seats as sponsorships are secured, on a first-come, first-served basis, and no payment is ever collected from families. If Cohort 1 fills before your request is confirmed, we confirm your student's seat in the next cohort of the year.</p>
       <p>If you told us about access needs, we will build for them from the start and follow up if we have questions.</p>
       <p style="margin-top: 20px;">EDquity at the Margins<br />
       <a href="https://edquityatthemargins.org/college-success" style="color: #14B8A6;">edquityatthemargins.org/college-success</a></p>
@@ -221,7 +221,7 @@ export default async function handler(req: Request): Promise<Response> {
       to: parentEmail,
       subject: "Your College Success seat request has been received",
       html: ackHtml,
-      text: `Hi ${parentName}, thank you for requesting a College Success seat for ${studentName}. Orientation is Tuesday, January 12, 2027, with six weekly virtual sessions Tuesdays, January 19 through February 23, 2027. We confirm every seat by email and nothing is due now.`,
+      text: `Hi ${parentName}, thank you for requesting a College Success seat for ${studentName}. Cohort 1 orientation is Tuesday, January 12, 2027, with six weekly virtual sessions Tuesdays, January 19 through February 23, 2027; if Cohort 1 fills, we confirm your student in the next cohort of the year. We confirm every seat by email and nothing is due now.`,
     });
     if (ack.error) {
       console.error("[college-success] acknowledgment email failed:", ack.error);

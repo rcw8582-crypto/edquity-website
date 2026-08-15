@@ -93,7 +93,7 @@ export default function CollegeSuccess() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
         title="College Success: A Transition Course for Students with IEPs"
-        description="A six-week virtual course that teaches college-bound high school juniors and seniors with an IEP how their rights change after graduation and how to advocate for themselves in college. Founding cohort January 2027; sponsored seats are free to students."
+        description="A six-week virtual course that teaches college-bound high school juniors and seniors with an IEP how their rights change after graduation and how to advocate for themselves in college. Cohort 1 begins January 2027; every seat is sponsored and free to students."
       />
 
       {/* Hero */}
@@ -118,7 +118,7 @@ export default function CollegeSuccess() {
             </a>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 14, maxWidth: 920, margin: "0 auto" }}>
-            <Fact label="Founding cohort" value="January 12 to February 23, 2027" />
+            <Fact label="Cohort 1" value="January 12 to February 23, 2027" />
             <Fact label="Format" value="Six weekly 75-minute virtual sessions" />
             <Fact label="Seats" value="Limited, first come, first served" />
             <Fact label="Cost to families" value="Free. Every seat is sponsored." />
@@ -168,10 +168,10 @@ export default function CollegeSuccess() {
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
             <CalendarDays size={22} color={TEAL} />
-            <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>The founding cohort schedule</h2>
+            <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>The Cohort 1 schedule</h2>
           </div>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 22px" }}>
-            One founding cohort, meeting live on Tuesday evenings. Enrollment is open now, seats are limited, and requests are confirmed by email on a first-come, first-served basis.
+            Cohort 1 begins in January and meets live on Tuesday evenings. Additional cohorts open later in the year as seats are funded, so a request that arrives after Cohort 1 fills is confirmed for the next cohort. Seats are limited, and requests are confirmed by email on a first-come, first-served basis.
           </p>
           <div style={{ border: "1px solid #e2e8f0", borderRadius: 12, overflow: "hidden" }}>
             {SESSIONS.map(([date, session], i) => (
@@ -192,7 +192,7 @@ export default function CollegeSuccess() {
             <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, color: "#fff", margin: 0 }}>How seats are funded</h2>
           </div>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.82)", lineHeight: 1.75, margin: "0 0 14px" }}>
-            Every seat is sponsored, and seats are always free to students. A seat costs $600 to deliver, sponsorships fund the seats, and we confirm seats as sponsorships are secured, so families can request a seat with no cost and no obligation. No payment is ever collected from families.
+            Every seat is sponsored, and seats are always free to students. A seat costs $600 to deliver, sponsorships fund the seats across the year's cohorts, and we confirm seats as sponsorships are secured, so families can request a seat with no cost and no obligation. No payment is ever collected from families.
           </p>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.82)", lineHeight: 1.75, margin: 0 }}>
             Individuals, businesses, and funders can sponsor a student for $600 or sponsor several seats at once. Email <a href="mailto:info@edquityatthemargins.org" style={{ color: GREEN, fontWeight: 700 }}>info@edquityatthemargins.org</a> to sponsor, or give through our <a href="/donate" style={{ color: GREEN, fontWeight: 700 }}>donation page</a> and note "College Success" with your gift.
@@ -205,7 +205,7 @@ export default function CollegeSuccess() {
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, textAlign: "center", margin: "0 0 10px" }}>Reserve a seat</h2>
           <p style={{ fontSize: 15, color: "#475569", textAlign: "center", lineHeight: 1.7, margin: "0 0 30px" }}>
-            Seats are limited and confirmed on a first-come, first-served basis. Submitting this form requests a seat; we confirm every seat by email, and nothing is ever due from your family.
+            Seats are limited and confirmed on a first-come, first-served basis. Submitting this form requests a seat in the next available cohort; we confirm every seat by email, and nothing is ever due from your family.
           </p>
 
           {status === "sent" ? (
