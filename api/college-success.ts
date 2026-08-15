@@ -27,7 +27,6 @@ type Body = {
   schoolName?: unknown;
   county?: unknown;
   state?: unknown;
-  seatType?: unknown;
   accessNeeds?: unknown;
   questions?: unknown;
   eligibilityConfirmed?: unknown;
@@ -129,9 +128,6 @@ export default async function handler(req: Request): Promise<Response> {
   if (!isNonEmptyString(body.state, 60)) {
     return Response.json({ error: "Please provide your state." }, { status: 400 });
   }
-  if (!isNonEmptyString(body.seatType, 120)) {
-    return Response.json({ error: "Please select a seat request option." }, { status: 400 });
-  }
   if (body.eligibilityConfirmed !== true) {
     return Response.json({ error: "The course is for college-bound juniors and seniors with a current IEP; please confirm eligibility." }, { status: 400 });
   }
@@ -144,7 +140,6 @@ export default async function handler(req: Request): Promise<Response> {
   const schoolName = (body.schoolName as string).trim();
   const county = (body.county as string).trim();
   const state = (body.state as string).trim();
-  const seatType = (body.seatType as string).trim();
   const accessNeeds = optionalString(body.accessNeeds, 2000);
   const questions = optionalString(body.questions, 2000);
 
@@ -160,13 +155,12 @@ export default async function handler(req: Request): Promise<Response> {
         ${row("Grade level", gradeLevel)}
         ${row("High school", schoolName)}
         ${row("County / State", `${county}, ${state}`)}
-        ${row("Seat request", seatType)}
         ${row("Access needs", accessNeeds || "None listed")}
         ${row("Questions", questions || "None")}
       </table>
       <p style="color: #64748b; font-size: 12px; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
         Eligibility confirmed: college-bound junior or senior with a current IEP.<br />
-        Cohort cap is 12; confirm seats by email in the order requests arrive.<br />
+        Seats are limited; confirm by email in the order requests arrive, as sponsorships allow.<br />
         Submitted via the College Success page on edquityatthemargins.org.
       </p>
     </div>
@@ -182,7 +176,7 @@ export default async function handler(req: Request): Promise<Response> {
         <li>Parent and student orientation: Tuesday, January 12, 2027</li>
         <li>Six weekly virtual sessions: Tuesdays, January 19 through February 23, 2027</li>
       </ul>
-      <p>If you requested a sponsored seat, it is free to your student, and we confirm sponsored seats as sponsorships are secured. If you chose to enroll at cost, we will send a $600 invoice by email after your seat is confirmed; no payment is collected on our website.</p>
+      <p>Every seat is sponsored and free to your student. We confirm seats as sponsorships are secured, on a first-come, first-served basis, and no payment is ever collected from families.</p>
       <p>If you told us about access needs, we will build for them from the start and follow up if we have questions.</p>
       <p style="margin-top: 20px;">EDquity at the Margins<br />
       <a href="https://edquityatthemargins.org/college-success" style="color: #14B8A6;">edquityatthemargins.org/college-success</a></p>
@@ -207,11 +201,10 @@ export default async function handler(req: Request): Promise<Response> {
           schoolName,
           county,
           state,
-          seatType,
           short(accessNeeds),
           short(questions),
         ]),
-      text: `New College Success seat request from ${parentName} <${parentEmail}> for ${studentName} (${gradeLevel}, ${schoolName}, ${county} County, ${state}). Seat request: ${seatType}. See HTML version for full detail.`,
+      text: `New College Success seat request from ${parentName} <${parentEmail}> for ${studentName} (${gradeLevel}, ${schoolName}, ${county} County, ${state}). See HTML version for full detail.`,
     });
     if (internal.error) {
       console.error("[college-success] internal email failed:", internal.error);

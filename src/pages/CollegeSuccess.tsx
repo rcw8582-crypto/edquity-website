@@ -62,7 +62,6 @@ export default function CollegeSuccess() {
       schoolName: data.get("schoolName"),
       county: data.get("county"),
       state: data.get("state"),
-      seatType: data.get("seatType"),
       accessNeeds: data.get("accessNeeds"),
       questions: data.get("questions"),
       eligibilityConfirmed: data.get("eligibilityConfirmed") === "on",
@@ -121,8 +120,8 @@ export default function CollegeSuccess() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 14, maxWidth: 920, margin: "0 auto" }}>
             <Fact label="Founding cohort" value="January 12 to February 23, 2027" />
             <Fact label="Format" value="Six weekly 75-minute virtual sessions" />
-            <Fact label="Seats" value="12 students" />
-            <Fact label="Cost to families" value="Sponsored seats are free; at-cost seats are $600" />
+            <Fact label="Seats" value="Limited, first come, first served" />
+            <Fact label="Cost to families" value="Free. Every seat is sponsored." />
           </div>
         </div>
       </section>
@@ -172,7 +171,7 @@ export default function CollegeSuccess() {
             <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>The founding cohort schedule</h2>
           </div>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 22px" }}>
-            One cohort, capped at 12 students, meeting live on Tuesday evenings. Enrollment is open now and seats are confirmed by email in the order requests arrive.
+            One founding cohort, meeting live on Tuesday evenings. Enrollment is open now, seats are limited, and requests are confirmed by email on a first-come, first-served basis.
           </p>
           <div style={{ border: "1px solid #e2e8f0", borderRadius: 12, overflow: "hidden" }}>
             {SESSIONS.map(([date, session], i) => (
@@ -193,7 +192,7 @@ export default function CollegeSuccess() {
             <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, color: "#fff", margin: 0 }}>How seats are funded</h2>
           </div>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.82)", lineHeight: 1.75, margin: "0 0 14px" }}>
-            A seat costs $600 to deliver, and families never pay more than that cost. Sponsored seats are free to students and are confirmed as sponsorships are secured, so families can request a sponsored seat with no obligation. Families who are able may also enroll at cost, which we invoice by email; no payment is collected on this website.
+            Every seat is sponsored, and seats are always free to students. A seat costs $600 to deliver, sponsorships fund the seats, and we confirm seats as sponsorships are secured, so families can request a seat with no cost and no obligation. No payment is ever collected from families.
           </p>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.82)", lineHeight: 1.75, margin: 0 }}>
             Individuals, businesses, and funders can sponsor a student for $600 or sponsor several seats at once. Email <a href="mailto:info@edquityatthemargins.org" style={{ color: GREEN, fontWeight: 700 }}>info@edquityatthemargins.org</a> to sponsor, or give through our <a href="/donate" style={{ color: GREEN, fontWeight: 700 }}>donation page</a> and note "College Success" with your gift.
@@ -206,7 +205,7 @@ export default function CollegeSuccess() {
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, textAlign: "center", margin: "0 0 10px" }}>Reserve a seat</h2>
           <p style={{ fontSize: 15, color: "#475569", textAlign: "center", lineHeight: 1.7, margin: "0 0 30px" }}>
-            The founding cohort is capped at 12 students. Submitting this form requests a seat; we confirm every seat by email, and nothing is due now.
+            Seats are limited and confirmed on a first-come, first-served basis. Submitting this form requests a seat; we confirm every seat by email, and nothing is ever due from your family.
           </p>
 
           {status === "sent" ? (
@@ -261,14 +260,6 @@ export default function CollegeSuccess() {
               <div style={fieldWrap}>
                 <label style={labelStyle} htmlFor="state">State *</label>
                 <input style={inputStyle} id="state" name="state" required maxLength={60} defaultValue="Tennessee" />
-              </div>
-              <div style={fieldWrap}>
-                <label style={labelStyle} htmlFor="seatType">Seat request *</label>
-                <select style={inputStyle} id="seatType" name="seatType" required defaultValue="">
-                  <option value="" disabled>Select one</option>
-                  <option>Request a sponsored seat (free to the student)</option>
-                  <option>Enroll at cost ($600, invoiced by email)</option>
-                </select>
               </div>
               <div style={fieldWrap}>
                 <label style={labelStyle} htmlFor="accessNeeds">Access needs</label>

@@ -205,8 +205,8 @@ export default function Services() {
               <span style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1, textTransform: "uppercase" }}>For High School Students</span>
             </div>
             <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>College Success</h3>
-            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Sponsored seats are free to students</p>
-            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Six weekly virtual sessions, founding cohort January 12 to February 23, 2027, capped at 12 students</p>
+            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free to students. Every seat is sponsored.</p>
+            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Six weekly virtual sessions, founding cohort January 12 to February 23, 2027. Seats are limited.</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
               The IEP does not go to college. This six-week course teaches college-bound juniors and seniors with an IEP how their rights change at graduation, how to register with a college disability services office, and how to advocate for themselves in their own words. Each student finishes with a transition portfolio and a one-to-one review of their own IEP transition file.
             </p>
