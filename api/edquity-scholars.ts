@@ -1,7 +1,7 @@
 /**
- * Vercel serverless function: POST /api/college-success
+ * Vercel serverless function: POST /api/edquity-scholars
  *
- * Receives a College Success course seat request, validates input,
+ * Receives an EDquity Scholars seat request, validates input,
  * then performs two actions:
  *
  *   1. Emails info@edquityatthemargins.org with the full request
@@ -15,7 +15,7 @@
 import { Resend } from "resend";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const FROM = "EDquity College Success <forms@edquityatthemargins.org>";
+const FROM = "EDquity Scholars <forms@edquityatthemargins.org>";
 const TO = "info@edquityatthemargins.org";
 
 type Body = {
@@ -93,7 +93,7 @@ export default async function handler(req: Request): Promise<Response> {
   }
 
   if (!RESEND_API_KEY) {
-    console.error("[college-success] RESEND_API_KEY not configured");
+    console.error("[edquity-scholars] RESEND_API_KEY not configured");
     return Response.json(
       { error: "Email service not configured. Please email your request directly to info@edquityatthemargins.org." },
       { status: 500 }
@@ -129,7 +129,7 @@ export default async function handler(req: Request): Promise<Response> {
     return Response.json({ error: "Please provide your state." }, { status: 400 });
   }
   if (body.eligibilityConfirmed !== true) {
-    return Response.json({ error: "The course is for college-bound juniors and seniors with a current IEP; please confirm eligibility." }, { status: 400 });
+    return Response.json({ error: "The course is for college-bound juniors and seniors with a current IEP or 504 plan; please confirm eligibility." }, { status: 400 });
   }
 
   const parentName = (body.parentName as string).trim();
@@ -147,7 +147,7 @@ export default async function handler(req: Request): Promise<Response> {
 
   const internalHtml = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #122C54; max-width: 680px; margin: 0 auto; padding: 24px;">
-      <h2 style="color: #122C54; margin: 0 0 16px; font-size: 18px;">New College Success seat request</h2>
+      <h2 style="color: #122C54; margin: 0 0 16px; font-size: 18px;">New EDquity Scholars seat request</h2>
       <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px;">
         ${row("Parent/guardian", `${parentName} <${parentEmail}>`)}
         ${row("Phone", parentPhone || "Not provided")}
@@ -159,18 +159,18 @@ export default async function handler(req: Request): Promise<Response> {
         ${row("Questions", questions || "None")}
       </table>
       <p style="color: #64748b; font-size: 12px; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
-        Eligibility confirmed: college-bound junior or senior with a current IEP.<br />
+        Eligibility confirmed: college-bound junior or senior with a current IEP or 504 plan.<br />
         Seats are limited; confirm by email in the order requests arrive, as sponsorships allow.<br />
-        Submitted via the College Success page on edquityatthemargins.org.
+        Submitted via the EDquity Scholars page on edquityatthemargins.org.
       </p>
     </div>
   `;
 
   const ackHtml = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #122C54; max-width: 640px; margin: 0 auto; padding: 24px; line-height: 1.65;">
-      <h2 style="color: #122C54; margin: 0 0 16px; font-size: 18px;">Your College Success seat request has been received</h2>
+      <h2 style="color: #122C54; margin: 0 0 16px; font-size: 18px;">Your EDquity Scholars seat request has been received</h2>
       <p>Hi ${escapeHtml(parentName)},</p>
-      <p>Thank you for requesting a College Success seat for ${escapeHtml(studentName)}. Nothing is due now; we confirm every seat by email, in the order requests arrive.</p>
+      <p>Thank you for requesting an EDquity Scholars seat for ${escapeHtml(studentName)}. Nothing is due now; we confirm every seat by email, in the order requests arrive.</p>
       <p style="margin: 16px 0 6px;"><strong>Inaugural cohort dates</strong></p>
       <ul style="margin: 0 0 16px; padding-left: 20px;">
         <li>Parent and student orientation: Tuesday, January 12, 2027</li>
@@ -179,7 +179,7 @@ export default async function handler(req: Request): Promise<Response> {
       <p>Every seat is sponsored and free to your student. We confirm seats as sponsorships are secured, on a first-come, first-served basis, and no payment is ever collected from families. If the inaugural cohort fills before your request is confirmed, we confirm your student's seat in the next cohort of the year.</p>
       <p>If you told us about access needs, we will build for them from the start and follow up if we have questions.</p>
       <p style="margin-top: 20px;">EDquity at the Margins<br />
-      <a href="https://edquityatthemargins.org/college-success" style="color: #14B8A6;">edquityatthemargins.org/college-success</a></p>
+      <a href="https://edquityatthemargins.org/edquity-scholars" style="color: #14B8A6;">edquityatthemargins.org/edquity-scholars</a></p>
     </div>
   `;
 
@@ -188,10 +188,10 @@ export default async function handler(req: Request): Promise<Response> {
       from: FROM,
       to: TO,
       replyTo: parentEmail,
-      subject: `[College Success Seat Request] ${studentName}, ${gradeLevel}, ${county} County`,
+      subject: `[EDquity Scholars Seat Request] ${studentName}, ${gradeLevel}, ${county} County`,
       html:
         internalHtml +
-        pasteRow("College Success Requests", [
+        pasteRow("EDquity Scholars Requests", [
           new Date().toISOString().slice(0, 10),
           parentName,
           parentEmail,
@@ -204,10 +204,10 @@ export default async function handler(req: Request): Promise<Response> {
           short(accessNeeds),
           short(questions),
         ]),
-      text: `New College Success seat request from ${parentName} <${parentEmail}> for ${studentName} (${gradeLevel}, ${schoolName}, ${county} County, ${state}). See HTML version for full detail.`,
+      text: `New EDquity Scholars seat request from ${parentName} <${parentEmail}> for ${studentName} (${gradeLevel}, ${schoolName}, ${county} County, ${state}). See HTML version for full detail.`,
     });
     if (internal.error) {
-      console.error("[college-success] internal email failed:", internal.error);
+      console.error("[edquity-scholars] internal email failed:", internal.error);
       return Response.json(
         { error: "We could not submit your request. Please email it to info@edquityatthemargins.org." },
         { status: 502 }
@@ -219,17 +219,17 @@ export default async function handler(req: Request): Promise<Response> {
     const ack = await resend.emails.send({
       from: FROM,
       to: parentEmail,
-      subject: "Your College Success seat request has been received",
+      subject: "Your EDquity Scholars seat request has been received",
       html: ackHtml,
-      text: `Hi ${parentName}, thank you for requesting a College Success seat for ${studentName}. Orientation for the inaugural cohort is Tuesday, January 12, 2027, with six weekly virtual sessions Tuesdays, January 19 through February 23, 2027; if the inaugural cohort fills, we confirm your student in the next cohort of the year. We confirm every seat by email and nothing is due now.`,
+      text: `Hi ${parentName}, thank you for requesting an EDquity Scholars seat for ${studentName}. Orientation for the inaugural cohort is Tuesday, January 12, 2027, with six weekly virtual sessions Tuesdays, January 19 through February 23, 2027; if the inaugural cohort fills, we confirm your student in the next cohort of the year. We confirm every seat by email and nothing is due now.`,
     });
     if (ack.error) {
-      console.error("[college-success] acknowledgment email failed:", ack.error);
+      console.error("[edquity-scholars] acknowledgment email failed:", ack.error);
     }
 
     return Response.json({ ok: true });
   } catch (err) {
-    console.error("[college-success] unexpected error:", err);
+    console.error("[edquity-scholars] unexpected error:", err);
     return Response.json(
       { error: "We could not submit your request. Please email it to info@edquityatthemargins.org." },
       { status: 502 }

@@ -126,6 +126,6 @@ export function trackQuestionsSubmitted(): void {
 }
 
 /** An inquiry or enrollment request for a named program came in. */
-export function trackInquirySubmitted(kind: 'program' | 'fellowship' | 'college-success'): void {
+export function trackInquirySubmitted(kind: 'program' | 'fellowship' | 'edquity-scholars'): void {
   gtag('event', 'institutional_inquiry', { event_category: 'institutional', kind });
 }

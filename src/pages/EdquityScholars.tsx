@@ -22,7 +22,7 @@ function Fact({ label, value }: FactProps) {
 const SESSIONS: Array<[string, string]> = [
   ["Tuesday, January 12, 2027", "Parent and student orientation: how the course works and what changes after high school."],
   ["Tuesday, January 19, 2027", "Session 1. Your rights change at graduation: IDEA ends, and college runs on Section 504 and the ADA."],
-  ["Tuesday, January 26, 2027", "Session 2. Your Summary of Performance: what it is and what to ask your IEP team for before you graduate."],
+  ["Tuesday, January 26, 2027", "Session 2. Your paper trail: the Summary of Performance for students with IEPs, and the records students with 504 plans should gather before graduation."],
   ["Tuesday, February 2, 2027", "Session 3. Registering with a college disability services office, step by step."],
   ["Tuesday, February 9, 2027", "Session 4. Talking about your disability: disclosure scripts for professors, advisors, and roommates."],
   ["Tuesday, February 16, 2027", "Session 5. Executive function for college: systems for time, tasks, and asking for help early."],
@@ -31,7 +31,7 @@ const SESSIONS: Array<[string, string]> = [
 
 const LEARN = [
   "How their rights and supports change the day they graduate",
-  "What to request from their IEP team before graduation, including the Summary of Performance",
+  "What to request from their IEP or 504 team before graduation",
   "How to register with a college disability services office and what documentation it will ask for",
   "How to talk about their disability and request accommodations in their own words",
   "Executive function systems that hold up without a case manager checking in",
@@ -45,7 +45,7 @@ const inputStyle: React.CSSProperties = {
 const labelStyle: React.CSSProperties = { display: "block", fontSize: 13, fontWeight: 700, color: NAVY, margin: "0 0 6px" };
 const fieldWrap: React.CSSProperties = { marginBottom: 18 };
 
-export default function CollegeSuccess() {
+export default function EdquityScholars() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -69,7 +69,7 @@ export default function CollegeSuccess() {
     setStatus("sending");
     setErrorMsg("");
     try {
-      const res = await fetch("/api/college-success", {
+      const res = await fetch("/api/edquity-scholars", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -80,7 +80,7 @@ export default function CollegeSuccess() {
         setErrorMsg(typeof json.error === "string" ? json.error : "Something went wrong. Please email info@edquityatthemargins.org.");
         return;
       }
-      trackInquirySubmitted("college-success");
+      trackInquirySubmitted("edquity-scholars");
       setStatus("sent");
       form.reset();
     } catch {
@@ -92,8 +92,8 @@ export default function CollegeSuccess() {
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
-        title="College Success: A Transition Course for Students with IEPs"
-        description="A six-week virtual course that teaches college-bound high school juniors and seniors with an IEP how their rights change after graduation and how to advocate for themselves in college. The inaugural cohort begins January 2027; every seat is sponsored and free to students."
+        title="EDquity Scholars: A College Transition Course"
+        description="EDquity Scholars is a free six-week virtual course that teaches college-bound high school juniors and seniors with an IEP or a 504 plan how their rights change after graduation and how to advocate for themselves in college. The inaugural cohort begins January 2027; every Scholar's seat is sponsored."
       />
 
       {/* Hero */}
@@ -101,10 +101,10 @@ export default function CollegeSuccess() {
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
           <p style={{ fontSize: 12, fontWeight: 700, color: GREEN, letterSpacing: 2, textTransform: "uppercase", margin: "0 0 20px" }}>For Students and Families</p>
           <h1 style={{ fontSize: "clamp(32px,4.5vw,52px)", fontWeight: 900, lineHeight: 1.08, color: "#fff", margin: "0 0 24px", letterSpacing: "-1.5px" }}>
-            College Success
+            EDquity Scholars
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 720, margin: "0 auto 12px" }}>
-            A six-week virtual course for college-bound high school juniors and seniors with an Individualized Education Program (IEP). Students learn how their rights change after graduation and how to advocate for themselves in college, because in college, the student carries the file.
+            A free six-week virtual course for college-bound high school juniors and seniors with an Individualized Education Program (IEP) or a Section 504 plan. Scholars learn how their rights change after graduation and how to advocate for themselves in college, because in college, the student carries the file.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 36px" }}>
             All sessions are virtual and live. A parent orientation opens the course.
@@ -137,7 +137,7 @@ export default function CollegeSuccess() {
             The Individuals with Disabilities Education Act ends at high school graduation. College runs on different laws, Section 504 and the ADA, and under those laws no one is required to find the student, evaluate the student, or write a program for the student. The student must disclose their disability, provide documentation, and request accommodations themselves.
           </p>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: 0 }}>
-            Most students with an IEP are never taught that the rules change, and their families find out after the first bad semester. This course teaches it before graduation, while the IEP team can still help.
+            The same shift catches students with 504 plans, whose high school plan does not follow them to campus either. Most students are never taught that the rules change, and their families find out after the first bad semester. This course teaches it before graduation, while the high school team can still help.
           </p>
         </div>
       </section>
@@ -195,7 +195,7 @@ export default function CollegeSuccess() {
             Every seat is sponsored, and seats are always free to students. A seat costs $600 to deliver, sponsorships fund the seats across the year's cohorts, and we confirm seats as sponsorships are secured, so families can request a seat with no cost and no obligation. No payment is ever collected from families.
           </p>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.82)", lineHeight: 1.75, margin: 0 }}>
-            Individuals, businesses, and funders can sponsor a student for $600 or sponsor several seats at once. Email <a href="mailto:info@edquityatthemargins.org" style={{ color: GREEN, fontWeight: 700 }}>info@edquityatthemargins.org</a> to sponsor, or give through our <a href="/donate" style={{ color: GREEN, fontWeight: 700 }}>donation page</a> and note "College Success" with your gift.
+            Individuals, businesses, and funders can sponsor an EDquity Scholar for $600 or sponsor several Scholars at once. Email <a href="mailto:info@edquityatthemargins.org" style={{ color: GREEN, fontWeight: 700 }}>info@edquityatthemargins.org</a> to sponsor, or give through our <a href="/donate" style={{ color: GREEN, fontWeight: 700 }}>donation page</a> and note "EDquity Scholars" with your gift.
           </p>
         </div>
       </section>
@@ -272,7 +272,7 @@ export default function CollegeSuccess() {
 
               <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "#475569", lineHeight: 1.6, marginBottom: 20, cursor: "pointer" }}>
                 <input type="checkbox" name="eligibilityConfirmed" required style={{ marginTop: 3 }} />
-                My student is a college-bound high school junior or senior with a current Individualized Education Program (IEP). *
+                My student is a college-bound high school junior or senior with a current Individualized Education Program (IEP) or Section 504 plan. *
               </label>
 
               {status === "error" && (

@@ -196,7 +196,7 @@ export default function Services() {
             </div>
           </motion.div>
 
-          {/* College Success course */}
+          {/* EDquity Scholars course */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 20, padding: "clamp(28px,4vw,44px)", marginTop: 32 }}>
@@ -204,14 +204,14 @@ export default function Services() {
               <GraduationCap size={16} color="#14B8A6" />
               <span style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1, textTransform: "uppercase" }}>For High School Students</span>
             </div>
-            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>College Success</h3>
-            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free to students. Every seat is sponsored.</p>
+            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>EDquity Scholars</h3>
+            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free to students. Every Scholar is sponsored.</p>
             <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Six weekly virtual sessions. The inaugural cohort begins January 12, 2027, and additional cohorts open during the year. Seats are limited.</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              The IEP does not go to college. This six-week course teaches college-bound juniors and seniors with an IEP how their rights change at graduation, how to register with a college disability services office, and how to advocate for themselves in their own words. Each student finishes with a transition portfolio and a one-to-one review of their own IEP transition file.
+              The IEP does not go to college, and neither does a 504 plan. This six-week course teaches college-bound juniors and seniors with an IEP or a 504 plan how their rights change at graduation, how to register with a college disability services office, and how to advocate for themselves in their own words. Every Scholar finishes with a transition portfolio and a one-to-one review of their own transition file.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <Link href="/college-success"
+              <Link href="/edquity-scholars"
                 style={{ display: "inline-block", background: "#14B8A6", color: "#fff", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
                 Learn More and Reserve a Seat
               </Link>
