@@ -206,7 +206,7 @@ export default function Services() {
             </div>
             <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>College Success</h3>
             <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free to students. Every seat is sponsored.</p>
-            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Six weekly virtual sessions. Cohort 1 begins January 12, 2027, and additional cohorts open during the year. Seats are limited.</p>
+            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Six weekly virtual sessions. The inaugural cohort begins January 12, 2027, and additional cohorts open during the year. Seats are limited.</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
               The IEP does not go to college. This six-week course teaches college-bound juniors and seniors with an IEP how their rights change at graduation, how to register with a college disability services office, and how to advocate for themselves in their own words. Each student finishes with a transition portfolio and a one-to-one review of their own IEP transition file.
             </p>

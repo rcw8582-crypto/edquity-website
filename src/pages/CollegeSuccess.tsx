@@ -93,7 +93,7 @@ export default function CollegeSuccess() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
         title="College Success: A Transition Course for Students with IEPs"
-        description="A six-week virtual course that teaches college-bound high school juniors and seniors with an IEP how their rights change after graduation and how to advocate for themselves in college. Cohort 1 begins January 2027; every seat is sponsored and free to students."
+        description="A six-week virtual course that teaches college-bound high school juniors and seniors with an IEP how their rights change after graduation and how to advocate for themselves in college. The inaugural cohort begins January 2027; every seat is sponsored and free to students."
       />
 
       {/* Hero */}
@@ -118,7 +118,7 @@ export default function CollegeSuccess() {
             </a>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 14, maxWidth: 920, margin: "0 auto" }}>
-            <Fact label="Cohort 1" value="January 12 to February 23, 2027" />
+            <Fact label="Inaugural cohort" value="January 12 to February 23, 2027" />
             <Fact label="Format" value="Six weekly 75-minute virtual sessions" />
             <Fact label="Seats" value="Limited, first come, first served" />
             <Fact label="Cost to families" value="Free. Every seat is sponsored." />
@@ -168,10 +168,10 @@ export default function CollegeSuccess() {
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
             <CalendarDays size={22} color={TEAL} />
-            <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>The Cohort 1 schedule</h2>
+            <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>The inaugural cohort schedule</h2>
           </div>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 22px" }}>
-            Cohort 1 begins in January and meets live on Tuesday evenings. Additional cohorts open later in the year as seats are funded, so a request that arrives after Cohort 1 fills is confirmed for the next cohort. Seats are limited, and requests are confirmed by email on a first-come, first-served basis.
+            The inaugural cohort begins in January and meets live on Tuesday evenings. Additional cohorts open later in the year as seats are funded, so a request that arrives after the inaugural cohort fills is confirmed for the next cohort. Seats are limited, and requests are confirmed by email on a first-come, first-served basis.
           </p>
           <div style={{ border: "1px solid #e2e8f0", borderRadius: 12, overflow: "hidden" }}>
             {SESSIONS.map(([date, session], i) => (
