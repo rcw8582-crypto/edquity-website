@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { CheckCircle2, FileText, BookOpen, Users, ChevronDown, ChevronUp } from "lucide-react";
+import { CheckCircle2, FileText, BookOpen, Users, ChevronDown, ChevronUp, GraduationCap } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
 import { BOOKING_URL, PORTAL_REGISTER_URL } from "@/lib/booking";
@@ -192,6 +192,28 @@ export default function Services() {
               <Link href="/tools/iep-goal-checker"
                 style={{ display: "inline-block", background: "transparent", color: "#122C54", padding: "13px 26px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15, border: "2px solid #e2e8f0" }}>
                 Try the IEP Goal Checker
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* College Success course */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 20, padding: "clamp(28px,4vw,44px)", marginTop: 32 }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(20,184,166,0.12)", borderRadius: 8, padding: "6px 14px", marginBottom: 20 }}>
+              <GraduationCap size={16} color="#14B8A6" />
+              <span style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1, textTransform: "uppercase" }}>For High School Students</span>
+            </div>
+            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>College Success</h3>
+            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Sponsored seats are free to students</p>
+            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Six weekly virtual sessions, founding cohort January 12 to February 23, 2027, capped at 12 students</p>
+            <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
+              The IEP does not go to college. This six-week course teaches college-bound juniors and seniors with an IEP how their rights change at graduation, how to register with a college disability services office, and how to advocate for themselves in their own words. Each student finishes with a transition portfolio and a one-to-one review of their own IEP transition file.
+            </p>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+              <Link href="/college-success"
+                style={{ display: "inline-block", background: "#14B8A6", color: "#fff", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
+                Learn More and Reserve a Seat
               </Link>
             </div>
           </motion.div>
