@@ -129,7 +129,7 @@ export default async function handler(req: Request): Promise<Response> {
     return Response.json({ error: "Please provide your state." }, { status: 400 });
   }
   if (body.eligibilityConfirmed !== true) {
-    return Response.json({ error: "The course is for college-bound juniors and seniors with a current IEP or 504 plan; please confirm eligibility." }, { status: 400 });
+    return Response.json({ error: "The course is for college-bound high school seniors with a current IEP or 504 plan; please confirm eligibility." }, { status: 400 });
   }
 
   const parentName = (body.parentName as string).trim();
@@ -159,7 +159,7 @@ export default async function handler(req: Request): Promise<Response> {
         ${row("Questions", questions || "None")}
       </table>
       <p style="color: #64748b; font-size: 12px; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
-        Eligibility confirmed: college-bound junior or senior with a current IEP or 504 plan.<br />
+        Eligibility confirmed: college-bound high school senior with a current IEP or 504 plan.<br />
         Seats are limited; confirm by email in the order requests arrive, as sponsorships allow.<br />
         Submitted via the EDquity Scholars page on edquityatthemargins.org.
       </p>
