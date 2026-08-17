@@ -141,8 +141,38 @@ export default function Scholarship() {
             The Families First Scholarship
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 680, margin: "0 auto" }}>
-            Cost should never decide which families learn to advocate. The Families First Scholarship covers tuition for the Parent IEP Advocacy Academy, Camp EDquity, EDquity Scholars, and paid workshops. The application takes about five minutes, low-income eligibility is checked automatically from two questions, and no documentation is ever required. The standard is honesty, not paperwork.
+            Cost should never decide which families learn to advocate. The Families First Scholarship covers tuition, in full or in part, for the Parent IEP Advocacy Academy, Camp EDquity, EDquity Scholars, and paid workshops. The application takes about five minutes, low-income eligibility is checked automatically from two questions, and no documentation is ever required. The standard is honesty, not paperwork. Scholarship seats are limited in each cohort and awarded in application order as donor funding allows, so applying early helps.
           </p>
+        </div>
+      </section>
+
+      {/* Award schedule */}
+      <section className="sp" style={{ background: "#fff", borderBottom: "1px solid #e2e8f0" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 900, margin: "0 0 10px" }}>How awards are decided</h2>
+          <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 20px" }}>
+            The same schedule applies to every family, using the answers in the application. Every award, full or half, is funded by donations: awards are granted in application order as funding allows, and when no scholarship funding is available, qualified applications wait in line until a gift opens the next seat.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: 12, padding: "16px 20px" }}>
+              <p style={{ fontSize: 16, fontWeight: 800, margin: "0 0 4px" }}>Full award: tuition covered completely</p>
+              <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.65, margin: 0 }}>
+                Household income at or below 200% of the federal poverty guidelines (checked automatically), or receiving public assistance, or a foster or kinship placement, or an urgent IEP situation.
+              </p>
+            </div>
+            <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 12, padding: "16px 20px" }}>
+              <p style={{ fontSize: 16, fontWeight: 800, margin: "0 0 4px" }}>Half award: tuition reduced by half</p>
+              <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.65, margin: 0 }}>
+                Household income between 200% and 400% of the guidelines, or any other qualifying situation: a single-parent household, recent hardship, a language barrier, or a rural community.
+              </p>
+            </div>
+            <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: "16px 20px" }}>
+              <p style={{ fontSize: 16, fontWeight: 800, margin: "0 0 4px" }}>Full tuition</p>
+              <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.65, margin: 0 }}>
+                Household income above 400% of the guidelines with no qualifying situations.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
