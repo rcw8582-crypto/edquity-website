@@ -162,7 +162,7 @@ export default function Services() {
             <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free</p>
             <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Live sessions on what the law entitles your child to</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              Walking into the meeting knowing what to ask for starts with knowing what the law entitles your child to. Our Know Your Rights workshops teach exactly that, in plain language, at no cost, open to any family. We also offer additional parent workshops, covering topics like reading the document the school hands you, responding when services are cut, and putting requests in writing so the district has to answer, for a per-seat fee with Families First Scholarship seats available; those appear on our events page as they are scheduled.
+              Walking into the meeting knowing what to ask for starts with knowing what the law entitles your child to. Our Know Your Rights workshops teach exactly that, in plain language, at no cost, open to any family. We also offer additional parent workshops, covering topics like reading the document the school hands you, responding when services are cut, and putting requests in writing so the district has to answer, for a per-seat fee; those appear on our events page as they are scheduled.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <Link href="/events"
@@ -217,10 +217,10 @@ export default function Services() {
               </div>
             </div>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
-              <a href={BOOKING_URL}
+              <Link href="/reserve"
                 style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
-                Book a Free Call to Enroll
-              </a>
+                Reserve a Seat
+              </Link>
               <Link href="/parent-academy"
                 style={{ display: "inline-block", background: "transparent", color: "#fff", padding: "13px 26px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15, border: "2px solid rgba(255,255,255,0.35)" }}>
                 See the Full Curriculum
@@ -292,10 +292,10 @@ export default function Services() {
               Students with IEPs sit through meetings about their own education without being taught how to speak in them. Across four camp days, campers learn what their IEP actually says, how to name what helps them learn, how to speak up in their own IEP meeting and ask for their accommodations in class, and the executive function systems for time, tasks, and asking for help early. Every camper finishes by presenting one page, in their own words, at their next IEP meeting.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
-              <a href={BOOKING_URL}
+              <Link href="/reserve"
                 style={{ display: "inline-block", background: "#14B8A6", color: "#fff", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
-                Book a Free Call to Enroll
-              </a>
+                Reserve a Seat
+              </Link>
             </div>
             <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.65, margin: "20px 0 0", maxWidth: 760 }}>
               The <Link href="/scholarship" style={{ color: "#0F766E", textDecoration: "underline" }}>Families First Scholarship</Link> awards full and partial tuition coverage for families who qualify, with seats limited by available funding. The application takes about five minutes, income eligibility is checked automatically, and no documentation is ever required.
