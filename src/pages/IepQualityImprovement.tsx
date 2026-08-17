@@ -210,12 +210,25 @@ export default function IepQualityImprovement() {
             Certified IEP Quality Improvement Leader through monthly blind evaluations of your own
             IEPs, data-driven strategy seminars, and a leadership impact project.
           </p>
-          <Link
-            href="/fellowship"
-            style={{ display: "inline-block", background: NAVY, color: "#fff", padding: "14px 30px", borderRadius: 8, fontWeight: 700, fontSize: 15.5, textDecoration: "none" }}
-          >
-            Learn about the Fellowship
-          </Link>
+          <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.8, margin: "0 0 22px" }}>
+            Schools that want to develop the whole staff can send teachers to our full-day
+            professional development sessions, built from the same forty-condition audit standard
+            and open to individuals, groups, and private district cohorts.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
+            <Link
+              href="/fellowship"
+              style={{ display: "inline-block", background: NAVY, color: "#fff", padding: "14px 30px", borderRadius: 8, fontWeight: 700, fontSize: 15.5, textDecoration: "none" }}
+            >
+              Learn about the Fellowship
+            </Link>
+            <Link
+              href="/professional-development"
+              style={{ display: "inline-block", background: "#fff", color: NAVY, border: `2px solid ${NAVY}`, padding: "12px 30px", borderRadius: 8, fontWeight: 700, fontSize: 15.5, textDecoration: "none" }}
+            >
+              See the PD sessions
+            </Link>
+          </div>
         </div>
       </section>
 
