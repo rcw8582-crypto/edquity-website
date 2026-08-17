@@ -166,7 +166,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li><Link href="/" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Home</Link></li>
               <li><Link href="/about" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link href="/services" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Free Family Services</Link></li>
+              <li><Link href="/services" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Family Services</Link></li>
               <li><Link href="/edquity-scholars" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">EDquity Scholars</Link></li>
               <li><Link href="/news" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">In the Margins</Link></li>
               <li><Link href="/donate" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Donate</Link></li>
