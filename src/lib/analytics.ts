@@ -25,6 +25,16 @@ declare global {
 
 const MEASUREMENT_ID = 'G-QC92GW0HZD';
 
+/**
+ * Google Ads conversion tracking. The AW config lives in index.html next to
+ * the GA4 config. Google's instructions say to paste the event snippet on a
+ * "conversion page", but the site routes on the client and has no separate
+ * thank-you URL, so the snippet fires here at the moment the sign-up
+ * completes instead. The label identifies the "Sign-up" conversion action in
+ * the Ads account; changing it breaks conversion recording silently.
+ */
+const ADS_SIGNUP_CONVERSION = 'AW-18376311257/dT5iCI3VoOEcENmDwbpE';
+
 /** No-ops when gtag is blocked or has not loaded, rather than throwing. */
 function gtag(...args: GtagArgs): void {
   if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
@@ -66,6 +76,7 @@ export function trackIntakeSubmitted(referenceCode?: string): void {
     event_category: 'family_services',
     has_reference_code: Boolean(referenceCode),
   });
+  gtag('event', 'conversion', { send_to: ADS_SIGNUP_CONVERSION });
 }
 
 /**
