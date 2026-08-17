@@ -28,7 +28,6 @@ const PROGRAMS = [
   "Parent IEP Advocacy Academy",
   "Camp EDquity (student, grades 6-10)",
   "EDquity Scholars (high school senior)",
-  "A paid parent workshop",
 ];
 
 const CRITERIA = [
@@ -141,7 +140,7 @@ export default function Scholarship() {
             The Families First Scholarship
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 680, margin: "0 auto" }}>
-            Cost should never decide which families learn to advocate. The Families First Scholarship covers tuition, in full or in part, for the Parent IEP Advocacy Academy, Camp EDquity, EDquity Scholars, and paid workshops. The application takes about five minutes, low-income eligibility is checked automatically from two questions, and no documentation is ever required. The standard is honesty, not paperwork. Scholarship seats are limited in each cohort and awarded in application order as donor funding allows, so applying early helps.
+            Cost should never decide which families learn to advocate. The Families First Scholarship covers tuition, in full or in part, for the Parent IEP Advocacy Academy, Camp EDquity, and EDquity Scholars. The application takes about five minutes, low-income eligibility is checked automatically from two questions, and no documentation is ever required. The standard is honesty, not paperwork. Scholarship seats are limited in each cohort and awarded in application order as donor funding allows, so applying early helps.
           </p>
         </div>
       </section>
