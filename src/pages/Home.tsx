@@ -245,7 +245,7 @@ export default function Home() {
                 page a reviewer lands on. */}
             <p style={{ fontSize: 15, color: "#475569", margin: "0 auto 24px", maxWidth: 620, lineHeight: 1.6 }}>
               EDquity at the Margins is a <strong style={{ color: "#122C54" }}>501(c)(3) nonprofit organization</strong> (EIN 42-2295582).
-              Our work is funded by donations, paid engagements with schools and districts, and tuition from families who can pay it. The Families First Scholarship covers tuition for families who qualify, so cost is never a barrier for the families we serve.
+              Our work is funded by donations, paid engagements with schools and districts, and tuition from families who can pay it. The Families First Scholarship funds seats for qualifying families as donations allow, and every gift adds a seat.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <a href={PORTAL_REGISTER_URL}
