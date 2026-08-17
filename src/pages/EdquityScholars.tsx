@@ -93,7 +93,7 @@ export default function EdquityScholars() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
         title="EDquity Scholars: A College Transition Course"
-        description="EDquity Scholars is a six-week virtual course that teaches college-bound high school juniors and seniors with an IEP or a 504 plan how their rights change after graduation and how to advocate for themselves in college. Tuition is $497, payment plans are available, and the inaugural cohort begins January 2027."
+        description="EDquity Scholars is a six-week virtual course that teaches college-bound high school seniors with an IEP or a 504 plan how their rights change after graduation and how to advocate for themselves in college. Tuition is $697, the Families First Scholarship covers tuition for families who qualify, and the inaugural cohort begins January 2027."
       />
 
       {/* Hero */}
@@ -104,7 +104,7 @@ export default function EdquityScholars() {
             EDquity Scholars
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 720, margin: "0 auto 12px" }}>
-            A six-week virtual course for college-bound high school juniors and seniors with an Individualized Education Program (IEP) or a Section 504 plan. Scholars learn how their rights change after graduation and how to advocate for themselves in college, because in college, the student carries the file.
+            A six-week virtual course for college-bound high school seniors with an Individualized Education Program (IEP) or a Section 504 plan. Scholars learn how their rights change after graduation and how to advocate for themselves in college, because in college, the student carries the file.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 36px" }}>
             All sessions are virtual and live. A parent orientation opens the course.
@@ -121,7 +121,7 @@ export default function EdquityScholars() {
             <Fact label="Inaugural cohort" value="January 12 to February 23, 2027" />
             <Fact label="Format" value="Six weekly 75-minute virtual sessions" />
             <Fact label="Seats" value="Limited, first come, first served" />
-            <Fact label="Tuition" value="$497, with reimbursement and need-based options" />
+            <Fact label="Tuition" value="$697 · Families First Scholarship available" />
           </div>
         </div>
       </section>
@@ -192,10 +192,10 @@ export default function EdquityScholars() {
             <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, color: "#fff", margin: 0 }}>How seats are funded</h2>
           </div>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.82)", lineHeight: 1.75, margin: "0 0 14px" }}>
-            Tuition is $497, and a seat costs about $600 to deliver; donations bridge the difference. Payment plans are available for every family, and as sponsorships are secured they fund seats for families for whom tuition is a barrier, so cost should never be the reason a student misses this course. Requesting a seat costs nothing and carries no obligation.
+            Tuition is $697, which covers the roughly $600 cost of delivering a seat and helps fund Families First Scholarship seats for other students. The <a href="/scholarship" style={{ color: GREEN, fontWeight: 700 }}>Families First Scholarship</a> covers tuition for families who qualify through low income (checked automatically from two questions), public assistance, single-parent households, foster or kinship care, recent hardship, language barriers, rural communities, or an urgent IEP situation. No documentation is required; the standard is honesty, not paperwork. Cost is never the reason a student misses this course, and requesting a seat costs nothing and carries no obligation.
           </p>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.82)", lineHeight: 1.75, margin: 0 }}>
-            Individuals, businesses, and funders can sponsor an EDquity Scholar for $600 or sponsor several Scholars at once. Email <a href="mailto:info@edquityatthemargins.org" style={{ color: GREEN, fontWeight: 700 }}>info@edquityatthemargins.org</a> to sponsor, or give through our <a href="/donate" style={{ color: GREEN, fontWeight: 700 }}>donation page</a> and note "EDquity Scholars" with your gift.
+            Individuals, businesses, and funders can sponsor an EDquity Scholar for $697, covering one student's full tuition, or sponsor several Scholars at once. Email <a href="mailto:info@edquityatthemargins.org" style={{ color: GREEN, fontWeight: 700 }}>info@edquityatthemargins.org</a> to sponsor, or give through our <a href="/donate" style={{ color: GREEN, fontWeight: 700 }}>donation page</a> and note "EDquity Scholars" with your gift.
           </p>
         </div>
       </section>
@@ -205,7 +205,7 @@ export default function EdquityScholars() {
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, textAlign: "center", margin: "0 0 10px" }}>Reserve a seat</h2>
           <p style={{ fontSize: 15, color: "#475569", textAlign: "center", lineHeight: 1.7, margin: "0 0 30px" }}>
-            Seats are limited and confirmed on a first-come, first-served basis. Submitting this form requests a seat in the next available cohort; no payment is collected with this form. We confirm every seat by email and walk through tuition, reimbursement, and need-based options with you.
+            Seats are limited and confirmed on a first-come, first-served basis. Submitting this form requests a seat in the next available cohort; no payment is collected with this form. We confirm every seat by email. If tuition is a barrier, apply for the Families First Scholarship, which covers tuition for families who qualify, with no documentation ever required.
           </p>
 
           {status === "sent" ? (
@@ -244,7 +244,6 @@ export default function EdquityScholars() {
                   <label style={labelStyle} htmlFor="gradeLevel">Grade level, 2026-27 school year *</label>
                   <select style={inputStyle} id="gradeLevel" name="gradeLevel" required defaultValue="">
                     <option value="" disabled>Select one</option>
-                    <option>Junior</option>
                     <option>Senior</option>
                   </select>
                 </div>
@@ -272,7 +271,7 @@ export default function EdquityScholars() {
 
               <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "#475569", lineHeight: 1.6, marginBottom: 20, cursor: "pointer" }}>
                 <input type="checkbox" name="eligibilityConfirmed" required style={{ marginTop: 3 }} />
-                My student is a college-bound high school junior or senior with a current Individualized Education Program (IEP) or Section 504 plan. *
+                My student is a college-bound high school senior with a current Individualized Education Program (IEP) or Section 504 plan. *
               </label>
 
               {status === "error" && (
