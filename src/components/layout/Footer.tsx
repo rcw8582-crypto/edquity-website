@@ -185,6 +185,7 @@ export default function Footer() {
               <li><Link href="/transparency" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Transparency</Link></li>
               <li><Link href="/funders" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">For Funders</Link></li>
               <li><Link href="/iep-quality-improvement" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">IEP Quality Improvement Program</Link></li>
+              <li><Link href="/professional-development" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Teacher Professional Development</Link></li>
               <li><Link href="/fellowship" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Leader Fellowship</Link></li>
               <li><Link href="/press" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Press & Media</Link></li>
               <li><Link href="/client-portal" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">EDquity360 Portal</Link></li>
