@@ -15,6 +15,7 @@ const GREEN = "#22C55E";
 interface Course {
   title: string;
   tagline: string;
+  date: string;
   audience: string;
   blurb: string;
   goal: string;
@@ -25,7 +26,8 @@ interface Course {
 const COURSES: Course[] = [
   {
     title: "Reading Your Child's IEP",
-    tagline: "Recommended September opener",
+    tagline: "The series opener",
+    date: "Fall semester series · Course 1",
     audience: "For every family with an IEP in hand · 90 minutes · in person or virtual",
     blurb:
       "The hands-on heart of the catalog. Bring your child's IEP, or work from our sample, and we decode it together: goals, services, minutes, and accommodations, so you know exactly what the school promised your child. This is where parents most often discover what was missing all along.",
@@ -43,6 +45,7 @@ const COURSES: Course[] = [
   {
     title: "Your Procedural Safeguards, Decoded",
     tagline: "The rights booklet, section by section",
+    date: "Fall semester series · Course 2",
     audience: "For every family who has ever been handed the rights booklet · 90 minutes · in person or virtual",
     blurb:
       "Every time the school evaluates your child, holds a meeting, or turns down a request, it hands you the procedural safeguards notice and asks you to sign that you received it. Researchers put that booklet at a college reading level. This workshop walks it section by section, in plain language, until the document you keep signing for becomes a document you can actually use.",
@@ -60,6 +63,7 @@ const COURSES: Course[] = [
   {
     title: "Is the IEP Working? Mid-Year Check-In",
     tagline: "Make the gap undeniable",
+    date: "Fall semester series · Course 3",
     audience: "For families half a year into an IEP · 90 minutes · in person or virtual",
     blurb:
       "By January the evidence is in. This workshop shows you how to use mid-year data to judge whether the services on paper are actually being delivered and actually working, and exactly how to respond when they are not.",
@@ -77,6 +81,7 @@ const COURSES: Course[] = [
   {
     title: "When You Disagree: Mediation, Complaints & Due Process",
     tagline: "Honest odds, ready record",
+    date: "Fall semester series · Course 4",
     audience: "For families at an impasse with the school · 90 minutes · in person or virtual",
     blurb:
       "When the team cannot agree, you still have options, and every one of them is explained here in plain language: from requesting another meeting through mediation, state complaints, and due process, including when an attorney matters and how to build the paper trail before you need it.",
@@ -112,7 +117,7 @@ export default function ParentAcademy() {
             Four workshops, sequenced across the school year, in a small cohort with fillable workbooks, live practice on real documents, and direct feedback. By your child's next annual IEP meeting, you have rehearsed every skill you will need in that room.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.6)", margin: "0 0 36px" }}>
-            $497 per year · Families First Scholarship available · Each session runs 90 minutes, in person or virtual
+            $497 per year · Families First Scholarship available · Each session runs 90 minutes, in person or virtual · The Academy meets across the fall semester, in person in Gallatin (Gallatin Public Library or the Gallatin Civic Center, announced at enrollment) or virtually
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <a href={BOOKING_URL}
@@ -135,7 +140,7 @@ export default function ParentAcademy() {
             <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 900, margin: 0, letterSpacing: "-0.5px" }}>The four courses</h2>
           </div>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.7, margin: "0 0 32px", maxWidth: 760 }}>
-            The Academy follows the rhythm of the school year: read the IEP in the fall, master your rights, judge the evidence at mid-year, and know every option if the team cannot agree.
+            The Academy follows the rhythm of the fall semester: read the IEP first, master your rights next, then judge the evidence as grades land, and finish knowing every option if the team cannot agree. Session dates are announced at enrollment.
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
@@ -145,6 +150,7 @@ export default function ParentAcademy() {
                   Course {i + 1} · {course.tagline}
                 </p>
                 <h3 style={{ fontSize: "clamp(20px,2.4vw,28px)", fontWeight: 900, margin: "0 0 6px", letterSpacing: "-0.5px" }}>{course.title}</h3>
+                <p style={{ fontSize: 14, fontWeight: 700, color: "#15803D", margin: "0 0 4px" }}>{course.date}</p>
                 <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 16px" }}>{course.audience}</p>
                 <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 16px" }}>{course.blurb}</p>
                 <p style={{ fontSize: 15, color: NAVY, lineHeight: 1.7, margin: "0 0 16px" }}>
