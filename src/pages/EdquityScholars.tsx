@@ -104,7 +104,7 @@ export default function EdquityScholars() {
             EDquity Scholars
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 720, margin: "0 auto 12px" }}>
-            A six-week virtual course for college-bound high school seniors with an Individualized Education Program (IEP) or a Section 504 plan. Scholars learn how their rights change after graduation and how to advocate for themselves in college, because in college, the student carries the file.
+            A six-week virtual course for college-bound high school seniors (12th graders) with an Individualized Education Program (IEP) or a Section 504 plan. Scholars learn how their rights change after graduation and how to advocate for themselves in college, because in college, the student carries the file.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 36px" }}>
             All sessions are virtual and live. A parent orientation opens the course.
@@ -244,7 +244,7 @@ export default function EdquityScholars() {
                   <label style={labelStyle} htmlFor="gradeLevel">Grade level, 2026-27 school year *</label>
                   <select style={inputStyle} id="gradeLevel" name="gradeLevel" required defaultValue="">
                     <option value="" disabled>Select one</option>
-                    <option>Senior</option>
+                    <option>High school senior (12th grade)</option>
                   </select>
                 </div>
                 <div style={fieldWrap}>
