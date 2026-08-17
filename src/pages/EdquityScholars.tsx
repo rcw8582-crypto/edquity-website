@@ -20,13 +20,13 @@ function Fact({ label, value }: FactProps) {
 }
 
 const SESSIONS: Array<[string, string]> = [
-  ["Orientation · the week before break", "Parent and student orientation: how the course works and what changes after high school."],
-  ["Day 1", "Session 1. Your rights change at graduation: IDEA ends, and college runs on Section 504 and the ADA."],
-  ["Day 2", "Session 2. Your paper trail: the Summary of Performance for students with IEPs, and the records students with 504 plans should gather before graduation."],
-  ["Day 3", "Session 3. Registering with a college disability services office, step by step."],
-  ["Day 4", "Session 4. Talking about your disability: disclosure scripts for professors, advisors, and roommates."],
-  ["Day 5", "Session 5. Executive function for college: systems for time, tasks, and asking for help early."],
-  ["Day 6", "Session 6. Capstone: each student presents their transition portfolio and leaves with a plan."],
+  ["Tuesday, January 12, 2027", "Parent and student orientation: how the course works and what changes after high school."],
+  ["Tuesday, January 19, 2027", "Session 1. Your rights change at graduation: IDEA ends, and college runs on Section 504 and the ADA."],
+  ["Tuesday, January 26, 2027", "Session 2. Your paper trail: the Summary of Performance for students with IEPs, and the records students with 504 plans should gather before graduation."],
+  ["Tuesday, February 2, 2027", "Session 3. Registering with a college disability services office, step by step."],
+  ["Tuesday, February 9, 2027", "Session 4. Talking about your disability: disclosure scripts for professors, advisors, and roommates."],
+  ["Tuesday, February 16, 2027", "Session 5. Executive function for college: systems for time, tasks, and asking for help early."],
+  ["Tuesday, February 23, 2027", "Session 6. Capstone: each student presents their transition portfolio and leaves with a plan."],
 ];
 
 const LEARN = [
@@ -93,7 +93,7 @@ export default function EdquityScholars() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
         title="EDquity Scholars: A College Transition Course"
-        description="EDquity Scholars is a six-week virtual course that teaches college-bound high school seniors with an IEP or a 504 plan how their rights change after graduation and how to advocate for themselves in college. Tuition is $697, the Families First Scholarship covers tuition for families who qualify, and the inaugural cohort runs during spring break 2027."
+        description="EDquity Scholars is a six-week virtual course that teaches college-bound high school seniors with an IEP or a 504 plan how their rights change after graduation and how to advocate for themselves in college. Tuition is $697, the Families First Scholarship covers tuition for families who qualify, and the inaugural cohort begins January 2027."
       />
 
       {/* Hero */}
@@ -118,8 +118,8 @@ export default function EdquityScholars() {
             </a>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 14, maxWidth: 920, margin: "0 auto" }}>
-            <Fact label="Inaugural cohort" value="Spring break 2027" />
-            <Fact label="Format" value="Six 75-minute virtual sessions across break week" />
+            <Fact label="Inaugural cohort" value="January 12 to February 23, 2027" />
+            <Fact label="Format" value="Six weekly 75-minute virtual sessions" />
             <Fact label="Seats" value="Limited, first come, first served" />
             <Fact label="Tuition" value="$697 · Families First Scholarship available" />
           </div>
@@ -168,10 +168,10 @@ export default function EdquityScholars() {
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
             <CalendarDays size={22} color={TEAL} />
-            <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>The spring break intensive, day by day</h2>
+            <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>The inaugural cohort schedule</h2>
           </div>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 22px" }}>
-            The cohort runs as an intensive during spring break week, one live session each day, with a parent and student orientation the week before. Additional cohorts open during the year, so a request that arrives after the inaugural cohort fills is confirmed for the next cohort. Seats are limited, and requests are confirmed by email on a first-come, first-served basis.
+            The inaugural cohort begins in January and meets live on Tuesday evenings. Additional cohorts open during the year, so a request that arrives after the inaugural cohort fills is confirmed for the next cohort. Seats are limited, and requests are confirmed by email on a first-come, first-served basis.
           </p>
           <div style={{ border: "1px solid #e2e8f0", borderRadius: 12, overflow: "hidden" }}>
             {SESSIONS.map(([date, session], i) => (
