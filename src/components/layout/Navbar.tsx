@@ -33,7 +33,7 @@ export default function Navbar() {
   // at all on the screens most visitors and reviewers actually use. Volunteer
   // and the portal login live in the footer; the logo covers Home.
   const navLinks = [
-    { href: "/services", label: "Free Services" },
+    { href: "/services", label: "Services" },
     { href: "/resources", label: "Resources" },
     { href: "/events", label: "Events" },
     { href: "/about", label: "About" },
