@@ -2,7 +2,6 @@ import { Link } from "wouter";
 import { CheckCircle2, Users } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
-import { BOOKING_URL } from "@/lib/booking";
 
 const NAVY = "#122C54";
 const GREEN = "#22C55E";
@@ -120,10 +119,10 @@ export default function ParentAcademy() {
             $497 per year · Families First Scholarship available · Each session runs 90 minutes, in person or virtual · The Academy meets across the fall semester, in person in Gallatin (Gallatin Public Library or the Gallatin Civic Center, announced at enrollment) or virtually
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={BOOKING_URL}
+            <Link href="/reserve"
               style={{ background: GREEN, color: NAVY, padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
-              Book a Free Call to Enroll
-            </a>
+              Reserve a Seat
+            </Link>
             <Link href="/scholarship"
               style={{ background: "transparent", color: "#fff", padding: "15px 32px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 16, border: "2px solid rgba(255,255,255,0.4)" }}>
               Apply for the Families First Scholarship
@@ -187,10 +186,10 @@ export default function ParentAcademy() {
             Schools and districts can bring the Academy to their families as family engagement programming; email{" "}
             <a href="mailto:info@edquityatthemargins.org" style={{ color: "#0F766E", textDecoration: "underline" }}>info@edquityatthemargins.org</a>.
           </p>
-          <a href={BOOKING_URL}
+          <Link href="/reserve"
             style={{ display: "inline-block", background: GREEN, color: NAVY, padding: "15px 34px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
-            Book a Free Call to Enroll
-          </a>
+            Reserve a Seat
+          </Link>
         </div>
       </section>
     </div>
