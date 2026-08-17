@@ -64,14 +64,6 @@ const AUDIENCES = [
   "Special Education Supervisors", "District Leaders",
 ];
 
-const CALENDAR = [
-  { date: "Tuesday, September 1", session: "Implementing High-Quality IEPs" },
-  { date: "Tuesday, September 15", session: "Data-Based Learner Profiles for Culturally Responsive Practice" },
-  { date: "Tuesday, September 22", session: "High-Quality IEP Writing" },
-  { date: "Tuesday, September 29", session: "Progress Monitoring with Rate of Improvement" },
-  { date: "Monthly, October through July", session: "Sessions announced by date" },
-];
-
 const PRICING = [
   { registration: "Individual seat", price: "$150 per seat per session" },
   { registration: "Group of more than 5 from one organization", price: "$135 per seat per session" },
@@ -89,7 +81,7 @@ const OFFERINGS: Offering[] = [
   {
     title: "High-Quality IEP Writing",
     blurb:
-      "The substantive standard first: what a meaningful IEP looks like under the Endrew F. decision, and how to write present levels, goals, and services that hold up. Participants work in redacted sample IEPs, rewriting weak sections against the forty-condition audit standard. Scheduled before everything else because every other session builds on it.",
+      "The substantive standard first: what a meaningful IEP looks like under the Endrew F. decision, and how to write present levels, goals, and services that hold up. Participants work in redacted sample IEPs, rewriting weak sections against the forty-condition audit standard. Most schools schedule this one first because every other session builds on it.",
     objectives: [
       "Distinguish compliance from substantive quality and explain the Endrew F. standard in plain language.",
       "Write present levels statements that connect evaluation data, classroom evidence, and student strengths to the goals that follow.",
@@ -122,7 +114,7 @@ const OFFERINGS: Offering[] = [
   {
     title: "Progress Monitoring with Rate of Improvement",
     blurb:
-      "Collection cadence, the aimline, expected versus attained growth, and progress reports that say something. Scheduled ahead of quarterly progress report windows so the skills land the week reports are due, and participants practice on real progress data.",
+      "Collection cadence, the aimline, expected versus attained growth, and progress reports that say something. Best scheduled ahead of a quarterly progress report window so the skills land the week reports are due, and participants practice on real progress data.",
     objectives: [
       "Set a data collection cadence that makes honest quarterly reporting sustainable.",
       "Compute rate of improvement: set the aimline from baseline and compare expected growth to attained growth.",
@@ -144,17 +136,16 @@ const OFFERINGS: Offering[] = [
 ];
 
 /**
- * Options for the reserve form's session picker. The four dated sessions
- * come from CALENDAR so the picker can never drift from the table above it.
+ * Options for the reserve form's session picker. Sessions are scheduled
+ * around each school's needs rather than a fixed public calendar, so the
+ * picker lists the offerings by name and the date gets worked out together.
+ * The first five come from OFFERINGS so the picker can never drift from
+ * the descriptions above it.
  */
 const SESSION_OPTIONS = [
-  ...CALENDAR.filter((row) => row.date.startsWith("Tuesday")).map(
-    (row) => `${row.session} (${row.date})`
-  ),
-  "The Co-Education Lifecycle (two-day series)",
+  ...OFFERINGS.map((offering) => offering.title),
   "Special Ed Summer Summit (summer 2027)",
-  "A later monthly session (October through July)",
-  "Private or customized session for our school or district",
+  "A combination of sessions for our school or district",
 ];
 
 /** Mirrors the pricing table, so the inquiry arrives with the tier named. */
@@ -164,8 +155,8 @@ const REGISTRATION_OPTIONS = PRICING.map(
 
 const CUSTOMIZATIONS = [
   "Which session(s) to run, or combine two half-day topics into one full day",
-  "The date and time (including non-Tuesday dates, weekends, or in-service days)",
-  "Delivery format: virtual (same as public sessions) or in-person/on-site at your district",
+  "The date and time (including weekends and in-service days)",
+  "Delivery format: virtual or in-person/on-site at your district",
   "Content emphasis, drawing on findings from your own IEP audits or district-identified needs where available",
 ];
 
@@ -224,7 +215,7 @@ export default function TeacherPD() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
         title="Teacher Professional Development"
-        description="Full-day virtual professional development for educators and districts, built from ongoing audits of real IEPs against a forty-condition standard grounded in IDEA and the Endrew F. substantive standard. Public sessions capped at 40 participants, with private and customized district sessions available."
+        description="Full-day professional development for educators and districts, built from ongoing audits of real IEPs against a forty-condition standard grounded in IDEA and the Endrew F. substantive standard. Sessions are capped at 40 participants and scheduled around each school's needs, delivered virtually or on-site."
       />
 
       {/* Hero */}
@@ -260,7 +251,7 @@ export default function TeacherPD() {
               {
                 icon: <Users size={24} color={TEAL} />,
                 title: "Capped at 40 participants",
-                text: "Every public session is capped at 40 participants, and every participant receives a certificate of completion.",
+                text: "Every session is capped at 40 participants, and every participant receives a certificate of completion.",
               },
               {
                 icon: <ClipboardCheck size={24} color={GREEN} />,
@@ -318,39 +309,19 @@ export default function TeacherPD() {
         </div>
       </section>
 
-      {/* Calendar */}
+      {/* Scheduling */}
       <section className="sp-lg" style={{ background: "#f8fafc" }}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
             <CalendarClock size={26} color={NAVY} />
             <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, margin: 0, letterSpacing: "-0.5px" }}>
-              2026–27 calendar
+              Scheduled around your needs
             </h2>
           </div>
-          <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.8, margin: "0 0 24px" }}>
-            Public session dates, capped at 40 participants each.
-          </p>
-          <div style={{ overflowX: "auto" }}>
-            <table style={{ width: "100%", borderCollapse: "collapse", background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12 }}>
-              <thead>
-                <tr>
-                  <th style={thStyle} scope="col">Date</th>
-                  <th style={thStyle} scope="col">Session</th>
-                </tr>
-              </thead>
-              <tbody>
-                {CALENDAR.map((row) => (
-                  <tr key={row.date}>
-                    <td style={{ ...tdStyle, fontWeight: 700, color: NAVY, whiteSpace: "nowrap" }}>{row.date}</td>
-                    <td style={tdStyle}>{row.session}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p style={{ fontSize: 15, color: "#64748b", lineHeight: 1.7, margin: "18px 0 0" }}>
-            The Co-Education Lifecycle (two-day series) and the Special Ed Summer Summit are
-            scheduled separately; both are described below.
+          <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.8, margin: 0 }}>
+            There is no fixed public calendar to wait for. You choose the session or combination
+            of sessions your staff needs, and we schedule the day together, on a date that works
+            for your school year, delivered virtually or on-site.
           </p>
         </div>
       </section>
@@ -383,7 +354,9 @@ export default function TeacherPD() {
             </table>
           </div>
           <p style={{ fontSize: 15.5, color: "#475569", lineHeight: 1.7, margin: "18px 0 0" }}>
-            Individuals register online; group and cohort bookings go through{" "}
+            Individual and group seats are virtual, and we schedule each session once enough
+            requests pool for it; nobody pays until a date is set. On-site delivery is available
+            for cohort and private bookings. Group and cohort bookings go through{" "}
             <a href="mailto:info@edquityatthemargins.org" style={{ color: NAVY, fontWeight: 700 }}>
               info@edquityatthemargins.org
             </a>.
@@ -459,10 +432,9 @@ export default function TeacherPD() {
             </h2>
           </div>
           <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.8, margin: "0 0 22px" }}>
-            Schools and districts do not have to wait for a date on the public calendar. Any of the
-            professional learning sessions above, or a combination of them, can be scheduled
-            privately for your own staff, on a date that works for your calendar, delivered
-            virtually or on-site.
+            Any of the professional learning sessions above, or a combination of them, can be
+            scheduled privately for your own staff, on a date that works for your calendar,
+            delivered virtually or on-site.
           </p>
           <p style={{ fontSize: 15, fontWeight: 700, color: "#64748b", textTransform: "uppercase", letterSpacing: 1, margin: "0 0 12px" }}>
             What districts can customize
@@ -556,7 +528,7 @@ export default function TeacherPD() {
                 </select>
               </div>
               <div style={fieldWrap}>
-                <label style={labelStyle} htmlFor="pd-message">How many seats, and anything else we should know? *</label>
+                <label style={labelStyle} htmlFor="pd-message">How many seats, and what timing works for you? *</label>
                 <textarea style={{ ...inputStyle, minHeight: 130, resize: "vertical" }} id="pd-message" name="message" required maxLength={5000} />
               </div>
 
