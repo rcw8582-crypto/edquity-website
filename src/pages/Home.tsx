@@ -206,7 +206,7 @@ export default function Home() {
               {"What We Do"}
             </p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>
-              {"Two free services. One purpose."}
+              {"Two free core services. One purpose."}
             </h2>
             <p style={{ fontSize: 18, color: "#64748b", maxWidth: 580, margin: "0 auto", lineHeight: 1.65 }}>
               {"Every service targets a specific point where marginalized families lose ground in the IEP process."}
@@ -238,14 +238,14 @@ export default function Home() {
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: 48 }}>
-            <p style={{ fontSize: 15, color: "#64748b", margin: "0 0 12px" }}>{"Both services are completely free. Access is the point."}</p>
+            <p style={{ fontSize: 15, color: "#64748b", margin: "0 0 12px" }}>{"Both core services are completely free. Access is the point."}</p>
             {/* Nonprofit status stated on the landing page, not only in the
                 footer and on inner pages. Google Ad Grants asks that a
                 nonprofit's status be prominently displayed, and this is the
                 page a reviewer lands on. */}
             <p style={{ fontSize: 15, color: "#475569", margin: "0 auto 24px", maxWidth: 620, lineHeight: 1.6 }}>
               EDquity at the Margins is a <strong style={{ color: "#122C54" }}>501(c)(3) nonprofit organization</strong> (EIN 42-2295582).
-              Our work is funded by donations and by paid engagements with schools, never by the families we serve.
+              Our work is funded by donations, paid engagements with schools and districts, and tuition from families who can pay it. The Families First Scholarship covers tuition for families who qualify, so cost is never a barrier for the families we serve.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <a href={PORTAL_REGISTER_URL}
