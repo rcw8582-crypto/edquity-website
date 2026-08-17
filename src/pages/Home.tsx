@@ -20,7 +20,7 @@ import { BOOKING_URL, PORTAL_REGISTER_URL } from "@/lib/booking";
  * answers a question the reader actually has.
  */
 const STATS: Array<{ value: number | string; suffix: string; label: string }> = [
-  { value: "$0", suffix: "", label: "What families pay. The audit, the toolkit, and every workshop" },
+  { value: "$0", suffix: "", label: "What families pay for the IEP audit, the toolkit, and Know Your Rights workshops" },
   { value: 6, suffix: "", label: "Research-grounded domains we review in your child's IEP" },
   { value: "IDEA", suffix: "", label: "The federal law behind every IEP" },
 ];
@@ -169,7 +169,7 @@ export default function Home() {
             {"Federal law already guarantees your child a free and appropriate public education in the least restrictive environment. The gap is not in the law. The gap is between what the law requires and what schools deliver when no one is holding them accountable."}
           </p>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: 0 }}>
-            {"EDquity at the Margins closes that gap through free independent IEP audits, parent workshops, and The EDquity IEP Advocacy Toolkit, so parents can advocate for their children in the language the system uses."}
+            {"EDquity at the Margins closes that gap through free independent IEP audits, Know Your Rights workshops, and The EDquity IEP Advocacy Toolkit, so parents can advocate for their children in the language the system uses."}
           </p>
         </div>
       </section>
@@ -215,7 +215,7 @@ export default function Home() {
           <div className="rg-2">
             {[
               { icon: <FileText size={28} color="#22C55E" />, title: "IEP Audit", price: "Free", desc: "We review your child's IEP across six research-grounded domains, identify what is missing or legally inadequate, and deliver a plain-language written report with specific next steps before your next meeting.", tag: "Free", tagColor: "#22C55E", href: "/services" },
-              { icon: <Users size={28} color="#14B8A6" />, title: "Parent Workshops", price: "Free", desc: "Live sessions covering what the law entitles your child to, how to read the document the school hands you, what to say when services are cut, and how to put a request in writing so the district has to answer it. Plain language, no cost, open to any family.", tag: "Free", tagColor: "#14B8A6", href: "/events" },
+              { icon: <Users size={28} color="#14B8A6" />, title: "Know Your Rights Workshops", price: "Free", desc: "Free live sessions covering what the law entitles your child to, in plain language, open to any family. Additional parent workshops on reading the IEP, responding to service cuts, and putting requests in writing carry a per-seat fee and are announced as they are scheduled.", tag: "Free", tagColor: "#14B8A6", href: "/events" },
             ].map((service, i) => (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
