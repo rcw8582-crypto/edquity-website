@@ -26,6 +26,8 @@ export const STATIC_ROUTES: string[] = [
   "/fellowship",
   "/edquity-scholars",
   "/iep-quality-improvement",
+  "/scholarship",
+  "/parent-academy",
   "/professional-development",
   "/resources",
   "/tools/iep-goal-checker",
