@@ -75,6 +75,8 @@ interface Offering {
   title: string;
   blurb: string;
   objectives: string[];
+  /** Zeffy registration form for this session. Payment confirms the seat. */
+  registerUrl: string;
 }
 
 const OFFERINGS: Offering[] = [
@@ -88,6 +90,7 @@ const OFFERINGS: Offering[] = [
       "Write measurable, ambitious annual goals and repair weak goals against common audit failure patterns.",
       "Align services, minutes, and accommodations to each goal so the IEP delivers what it promises.",
     ],
+    registerUrl: "https://www.zeffy.com/en-US/ticketing/high-quality-iep-writing",
   },
   {
     title: "Implementing High-Quality IEPs",
@@ -99,6 +102,7 @@ const OFFERINGS: Offering[] = [
       "Implement and document accommodations with fidelity across content areas.",
       "Coordinate delivery among general education, special education, and related services so nothing promised goes undelivered.",
     ],
+    registerUrl: "https://www.zeffy.com/en-US/ticketing/implementing-high-quality-ieps",
   },
   {
     title: "Data-Based Learner Profiles for Culturally Responsive Practice",
@@ -110,6 +114,7 @@ const OFFERINGS: Offering[] = [
       "Apply family and cultural context to instructional planning as data rather than background.",
       "Build a one-page, data-based profile for a student on their own roster.",
     ],
+    registerUrl: "https://www.zeffy.com/en-US/ticketing/data-based-learner-profiles-for-culturally-responsive-practice",
   },
   {
     title: "Progress Monitoring with Rate of Improvement",
@@ -121,6 +126,7 @@ const OFFERINGS: Offering[] = [
       "Decide when the trend shows sufficient progress and when the data demands a program change.",
       "Write progress reports that give families and the next teacher evidence rather than a routine mark.",
     ],
+    registerUrl: "https://www.zeffy.com/en-US/ticketing/progress-monitoring-with-rate-of-improvement",
   },
   {
     title: "The Co-Education Lifecycle: Plan Together, Teach Together, Assess Together",
@@ -132,6 +138,7 @@ const OFFERINGS: Offering[] = [
       "Share assessment and grading ownership across both teachers.",
       "Leave with a pair implementation plan for the first grading period.",
     ],
+    registerUrl: "https://www.zeffy.com/en-US/ticketing/the-co-education-lifecycle-plan-together-teach-together-assess-together",
   },
 ];
 
@@ -355,9 +362,11 @@ export default function TeacherPD() {
             </table>
           </div>
           <p style={{ fontSize: 15.5, color: "#475569", lineHeight: 1.7, margin: "18px 0 0" }}>
-            Individual and group seats are virtual, and we schedule each session once enough
-            requests pool for it; nobody pays until a date is set. On-site delivery is available
-            for cohort and private bookings. Group and cohort bookings go through{" "}
+            Individual and group seats are virtual. Register online for any session below, and we
+            schedule it once enough educators register: we confirm the date with you by email and
+            phone before anything is final, and if it does not work for you, we move your seat to
+            the next offering or refund you in full. On-site delivery is available for cohort and
+            private bookings, which go through{" "}
             <a href="mailto:info@edquityatthemargins.org" style={{ color: NAVY, fontWeight: 700 }}>
               info@edquityatthemargins.org
             </a>.
@@ -398,7 +407,7 @@ export default function TeacherPD() {
                 <p style={{ fontSize: 13, fontWeight: 700, color: "#64748b", textTransform: "uppercase", letterSpacing: 1, margin: "0 0 10px" }}>
                   Learning objectives: participants will
                 </p>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 8 }}>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 20px", display: "grid", gap: 8 }}>
                   {offering.objectives.map((objective) => (
                     <li key={objective} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
                       <CheckCircle2 size={17} color={TEAL} style={{ flexShrink: 0, marginTop: 3 }} />
@@ -406,6 +415,14 @@ export default function TeacherPD() {
                     </li>
                   ))}
                 </ul>
+                <a
+                  href={offering.registerUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: "inline-block", background: GREEN, color: NAVY, padding: "12px 26px", borderRadius: 8, fontWeight: 800, fontSize: 15, textDecoration: "none" }}
+                >
+                  Register online
+                </a>
               </div>
             ))}
 
@@ -469,12 +486,12 @@ export default function TeacherPD() {
       <section className="sp" style={{ background: NAVY }}>
         <div style={{ maxWidth: 640, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#fff", margin: "0 0 14px", letterSpacing: "-0.5px", textAlign: "center" }}>
-            Reserve your seat
+            Group bookings and questions
           </h2>
           <p style={{ fontSize: 17, color: "rgba(255,255,255,0.72)", lineHeight: 1.7, margin: "0 0 32px", textAlign: "center" }}>
-            Tell us which session you are interested in and how many seats you need, and we will
-            reply within two business days. Group registration, district cohort bookings, and
-            private or customized sessions can also reach us at{" "}
+            Booking more than five seats, a district cohort, or a private session, or do you want
+            to talk it through before registering? Tell us which session you are interested in and
+            we will reply within two business days. You can also reach us at{" "}
             <a href="mailto:info@edquityatthemargins.org" style={{ color: GREEN, fontWeight: 700 }}>
               info@edquityatthemargins.org
             </a>{" "}
