@@ -265,7 +265,7 @@ export default function Services() {
             </div>
             <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>EDquity Scholars</h3>
             <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>$697 tuition · Families First Scholarship available</p>
-            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Six virtual sessions, delivered as a spring break intensive. The inaugural cohort runs during spring break 2027, and additional cohorts open during the year. Seats are limited.</p>
+            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Six weekly virtual sessions. The inaugural cohort begins January 12, 2027, and additional cohorts open during the year. Seats are limited.</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
               The IEP does not go to college, and neither does a 504 plan. This six-week course teaches college-bound high school seniors with an IEP or a 504 plan how their rights change at graduation, how to register with a college disability services office, and how to advocate for themselves in their own words. Every Scholar finishes with a transition portfolio and a one-to-one review of their own transition file.
             </p>
@@ -287,7 +287,7 @@ export default function Services() {
             </div>
             <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>Camp EDquity</h3>
             <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>$497 · Families First Scholarship available</p>
-            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>A fall break camp for self-advocacy and executive function, grades 6 through 10 · One session each morning of break week</p>
+            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>A fall break camp for self-advocacy and executive function, grades 6 through 10 · In person in Gallatin, four camp days, 9:00 AM to 12:00 PM</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
               Students with IEPs sit through meetings about their own education without being taught how to speak in them. Across four camp days, campers learn what their IEP actually says, how to name what helps them learn, how to speak up in their own IEP meeting and ask for their accommodations in class, and the executive function systems for time, tasks, and asking for help early. Every camper finishes by presenting one page, in their own words, at their next IEP meeting.
             </p>
