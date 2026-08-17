@@ -26,7 +26,7 @@ function povertyGuideline(householdSize: number): number {
 
 const PROGRAMS = [
   "Parent IEP Advocacy Academy",
-  "My IEP, My Voice (student, grades 6-10)",
+  "Camp EDquity (student, grades 6-10)",
   "EDquity Scholars (high school senior)",
   "A paid parent workshop",
 ];
@@ -130,7 +130,7 @@ export default function Scholarship() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: "#122C54", background: "#fff" }}>
       <PageMeta
         title="Families First Scholarship"
-        description="Apply for the Families First Scholarship to attend the Parent IEP Advocacy Academy, My IEP My Voice, or EDquity Scholars at no cost. Low-income eligibility is checked automatically; no documentation is ever required."
+        description="Apply for the Families First Scholarship to attend the Parent IEP Advocacy Academy, Camp EDquity, or EDquity Scholars at no cost. Low-income eligibility is checked automatically; no documentation is ever required."
       />
 
       {/* Hero */}
@@ -141,7 +141,7 @@ export default function Scholarship() {
             The Families First Scholarship
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 680, margin: "0 auto" }}>
-            Cost should never decide which families learn to advocate. The Families First Scholarship covers tuition for the Parent IEP Advocacy Academy, My IEP, My Voice, EDquity Scholars, and paid workshops. The application takes about five minutes, low-income eligibility is checked automatically from two questions, and no documentation is ever required. The standard is honesty, not paperwork.
+            Cost should never decide which families learn to advocate. The Families First Scholarship covers tuition for the Parent IEP Advocacy Academy, Camp EDquity, EDquity Scholars, and paid workshops. The application takes about five minutes, low-income eligibility is checked automatically from two questions, and no documentation is ever required. The standard is honesty, not paperwork.
           </p>
         </div>
       </section>
