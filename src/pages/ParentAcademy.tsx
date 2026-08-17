@@ -181,7 +181,7 @@ export default function ParentAcademy() {
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 10px" }}>
             Tuition is $497 for the year and covers all four courses, workbooks, and quarterly open office hours between sessions. The{" "}
             <Link href="/scholarship" style={{ color: "#0F766E", textDecoration: "underline" }}>Families First Scholarship</Link>{" "}
-            covers tuition for families who qualify, with no documentation ever required.
+            awards full and partial tuition coverage for families who qualify, with seats limited by available funding and no documentation ever required. Each cohort is confirmed once minimum enrollment is reached.
           </p>
           <p style={{ fontSize: 15, color: "#64748b", lineHeight: 1.7, margin: "0 0 28px" }}>
             Schools and districts can bring the Academy to their families as family engagement programming; email{" "}
