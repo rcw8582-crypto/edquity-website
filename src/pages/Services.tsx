@@ -227,7 +227,7 @@ export default function Services() {
               </Link>
             </div>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, margin: "20px 0 0", maxWidth: 760 }}>
-              The <Link href="/scholarship" style={{ color: "#22C55E", textDecoration: "underline" }}>Families First Scholarship</Link> covers tuition for families who qualify. The application takes about five minutes, income eligibility is checked automatically, and no documentation is ever required. Schools and districts can also bring the Academy to their families as family engagement programming; email info@edquityatthemargins.org.
+              The <Link href="/scholarship" style={{ color: "#22C55E", textDecoration: "underline" }}>Families First Scholarship</Link> awards full and partial tuition coverage for families who qualify, with seats limited by available funding. The application takes about five minutes, income eligibility is checked automatically, and no documentation is ever required. Schools and districts can also bring the Academy to their families as family engagement programming; email info@edquityatthemargins.org.
             </p>
           </motion.div>
 
@@ -298,7 +298,7 @@ export default function Services() {
               </a>
             </div>
             <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.65, margin: "20px 0 0", maxWidth: 760 }}>
-              The <Link href="/scholarship" style={{ color: "#0F766E", textDecoration: "underline" }}>Families First Scholarship</Link> covers tuition for families who qualify. The application takes about five minutes, income eligibility is checked automatically, and no documentation is ever required.
+              The <Link href="/scholarship" style={{ color: "#0F766E", textDecoration: "underline" }}>Families First Scholarship</Link> awards full and partial tuition coverage for families who qualify, with seats limited by available funding. The application takes about five minutes, income eligibility is checked automatically, and no documentation is ever required.
             </p>
           </motion.div>
         </div>
