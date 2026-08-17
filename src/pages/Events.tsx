@@ -65,14 +65,14 @@ export default function Events() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif" }}>
       <PageMeta
         title="Events & Workshops"
-        description="Free parent workshops and community sessions on IEPs and special education rights, hosted by EDquity at the Margins."
+        description="Parent workshops and community sessions on IEPs and special education rights, hosted by EDquity at the Margins. Know Your Rights sessions are always free; other workshops have a per-seat fee."
       />
 
       <section className="sp" style={{ background: "#122C54" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
           <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 16px" }}>Events & Workshops</p>
           <h1 style={{ fontSize: "clamp(32px,4.5vw,52px)", fontWeight: 900, color: "#fff", margin: "0 0 20px", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
-            Learn with other families.<br />Every session is free.
+            Learn with other families.<br />Know Your Rights sessions are always free.
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.75)", lineHeight: 1.75, margin: 0 }}>
             Our workshops give parents specific, plain-language knowledge about IEPs and special
