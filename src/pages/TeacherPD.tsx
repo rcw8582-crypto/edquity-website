@@ -182,6 +182,7 @@ export default function TeacherPD() {
           // The inquiry endpoint takes one message string, so the two
           // pickers travel inside it rather than as new API fields.
           message: [
+            `Phone: ${data.get("phone")}`,
             `Session: ${data.get("session")}`,
             `Registration: ${data.get("registration")}`,
             "",
@@ -508,6 +509,10 @@ export default function TeacherPD() {
               <div style={fieldWrap}>
                 <label style={labelStyle} htmlFor="pd-email">Email *</label>
                 <input style={inputStyle} id="pd-email" name="email" type="email" required maxLength={254} autoComplete="email" />
+              </div>
+              <div style={fieldWrap}>
+                <label style={labelStyle} htmlFor="pd-phone">Phone *</label>
+                <input style={inputStyle} id="pd-phone" name="phone" type="tel" required maxLength={30} autoComplete="tel" placeholder="So we can reach you to confirm scheduling" />
               </div>
               <div style={fieldWrap}>
                 <label style={labelStyle} htmlFor="pd-session">Which session? *</label>
