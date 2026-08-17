@@ -182,7 +182,7 @@ export default function Services() {
             </div>
             <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#fff", margin: "0 0 8px", letterSpacing: "-0.5px" }}>Parent IEP Advocacy Academy</h3>
             <p style={{ fontSize: 24, fontWeight: 900, color: "#22C55E", margin: "0 0 6px" }}>$497 per year · Families First Scholarship available</p>
-            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "0 0 20px" }}>Four core workshops in a small cohort, sequenced across the school year</p>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "0 0 20px" }}>Four courses in a small cohort across the fall semester, in person in Gallatin or virtual</p>
             <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
               Our free Know Your Rights workshops stay free and open to everyone. The Academy goes deeper: four evidence-grounded courses sequenced across the school year, in a small cohort, with fillable workbooks, live practice on real documents, and direct feedback, so by your child's next annual IEP meeting you have rehearsed every skill you will need in that room.
             </p>
@@ -265,7 +265,7 @@ export default function Services() {
             </div>
             <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>EDquity Scholars</h3>
             <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>$697 tuition · Families First Scholarship available</p>
-            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Six weekly virtual sessions. The inaugural cohort begins January 12, 2027, and additional cohorts open during the year. Seats are limited.</p>
+            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Six virtual sessions, delivered as a spring break intensive. The inaugural cohort runs during spring break 2027, and additional cohorts open during the year. Seats are limited.</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
               The IEP does not go to college, and neither does a 504 plan. This six-week course teaches college-bound high school seniors with an IEP or a 504 plan how their rights change at graduation, how to register with a college disability services office, and how to advocate for themselves in their own words. Every Scholar finishes with a transition portfolio and a one-to-one review of their own transition file.
             </p>
@@ -277,7 +277,7 @@ export default function Services() {
             </div>
           </motion.div>
 
-          {/* My IEP, My Voice: student self-advocacy series */}
+          {/* Camp EDquity: fall break camp for self-advocacy and executive function */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 20, padding: "clamp(28px,4vw,44px)", marginTop: 32 }}>
@@ -285,11 +285,11 @@ export default function Services() {
               <GraduationCap size={16} color="#14B8A6" />
               <span style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1, textTransform: "uppercase" }}>For Middle and High School Students</span>
             </div>
-            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>My IEP, My Voice</h3>
+            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>Camp EDquity</h3>
             <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>$497 · Families First Scholarship available</p>
-            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Four live virtual sessions for students in grades 6 through 10</p>
+            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>A fall break camp for self-advocacy and executive function, grades 6 through 10 · One session each morning of break week</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              Students with IEPs sit through meetings about their own education without being taught how to speak in them. Across four sessions, students learn what their IEP actually says, how to name what helps them learn, how to speak up in their own IEP meeting, and how to ask for their accommodations in class. Every student finishes by presenting one page, in their own words, at their next IEP meeting.
+              Students with IEPs sit through meetings about their own education without being taught how to speak in them. Across four camp days, campers learn what their IEP actually says, how to name what helps them learn, how to speak up in their own IEP meeting and ask for their accommodations in class, and the executive function systems for time, tasks, and asking for help early. Every camper finishes by presenting one page, in their own words, at their next IEP meeting.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
               <a href={BOOKING_URL}
