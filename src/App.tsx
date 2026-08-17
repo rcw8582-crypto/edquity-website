@@ -48,7 +48,6 @@ const Fellowship = lazy(() => import("@/pages/Fellowship"));
 const EdquityScholars = lazy(() => import("@/pages/EdquityScholars"));
 const Book = lazy(() => import("@/pages/Book"));
 const IepQualityImprovement = lazy(() => import("@/pages/IepQualityImprovement"));
-const KatieBeckett = lazy(() => import("@/pages/KatieBeckett"));
 const TeacherPD = lazy(() => import("@/pages/TeacherPD"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
@@ -141,7 +140,6 @@ function Router() {
           <Route path="/college-success" component={EdquityScholars} />
           <Route path="/book" component={Book} />
           <Route path="/iep-quality-improvement" component={IepQualityImprovement} />
-          <Route path="/katie-beckett" component={KatieBeckett} />
           <Route path="/professional-development" component={TeacherPD} />
           <Route component={NotFound} />
         </Switch>
