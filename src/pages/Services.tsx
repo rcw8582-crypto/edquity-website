@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { CheckCircle2, FileText, BookOpen, Users, ChevronDown, ChevronUp, GraduationCap } from "lucide-react";
+import { CheckCircle2, FileText, BookOpen, Users, ChevronDown, ChevronUp, GraduationCap, Award } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 
 import { BOOKING_URL, PORTAL_REGISTER_URL } from "@/lib/booking";
@@ -24,7 +24,7 @@ export default function Services() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: "#122C54", background: "#fff" }}>
       <PageMeta
         title="Free IEP Audit and Parent Workshops for Families"
-        description="Two free services for families of children with disabilities: an independent IEP Audit and parent workshops. Delivered virtually nationwide."
+        description="Free services for families of children with disabilities: an independent IEP Audit and monthly parent workshops, plus the Parent IEP Advocacy Academy, a year-long training program. Delivered virtually nationwide."
       />
 
       {/* Hero */}
@@ -35,7 +35,7 @@ export default function Services() {
             Independent IEP Support for Families Who Deserve More Than a Form Letter
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, maxWidth: 680, margin: "0 auto 16px" }}>
-            We offer two services, and both are free. Every service is delivered virtually. Access is the point, so families never pay to understand or enforce their child's rights.
+            Our core services are free. The IEP Audit and our monthly parent workshops never cost a family anything, because access is the point. Families who want deeper, structured training across the school year can join the Parent IEP Advocacy Academy. Every service is delivered virtually.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 40px" }}>
             Serving families across the greater Metro Nashville area and, through our virtual delivery model, anywhere in the country.
@@ -170,6 +170,65 @@ export default function Services() {
                 See Upcoming Workshops
               </Link>
             </div>
+          </motion.div>
+
+          {/* Parent IEP Advocacy Academy */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            style={{ background: "#122C54", borderRadius: 20, padding: "clamp(28px,4vw,44px)", marginTop: 32 }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(251,191,36,0.18)", borderRadius: 8, padding: "6px 14px", marginBottom: 20 }}>
+              <Award size={16} color="#FBBF24" />
+              <span style={{ fontSize: 12, fontWeight: 700, color: "#FBBF24", letterSpacing: 1, textTransform: "uppercase" }}>Year-Long Program</span>
+            </div>
+            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#fff", margin: "0 0 8px", letterSpacing: "-0.5px" }}>Parent IEP Advocacy Academy</h3>
+            <p style={{ fontSize: 24, fontWeight: 900, color: "#22C55E", margin: "0 0 6px" }}>$497 per year</p>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "0 0 20px" }}>Four core workshops in a small cohort, sequenced across the school year</p>
+            <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
+              Our free monthly workshops stay free and open to everyone. The Academy is the deeper version: the same four core topics taught in order, in a small cohort, with fillable workbooks, live practice on sample documents, and direct feedback, so by your child's next annual IEP meeting you have rehearsed every skill you will need in that room.
+            </p>
+            <div className="rg-2" style={{ gap: 16, marginBottom: 24 }}>
+              <div style={{ background: "rgba(255,255,255,0.06)", borderRadius: 14, padding: 24 }}>
+                <p style={{ fontSize: 13, fontWeight: 700, color: "#22C55E", letterSpacing: 1, textTransform: "uppercase", margin: "0 0 14px" }}>The Four Workshops</p>
+                {[
+                  "Know the Law: What Your Child Is Entitled To",
+                  "Read the IEP Like a Reviewer",
+                  "When Services Change: What to Say and What to Ask For",
+                  "Put It in Writing: Requests the District Has to Answer",
+                ].map((w, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 10 }}>
+                    <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#22C55E", marginTop: 7, flexShrink: 0 }} />
+                    <p style={{ fontSize: 14, color: "rgba(255,255,255,0.75)", margin: 0, lineHeight: 1.5 }}>{w}</p>
+                  </div>
+                ))}
+              </div>
+              <div style={{ background: "rgba(255,255,255,0.06)", borderRadius: 14, padding: 24 }}>
+                <p style={{ fontSize: 13, fontWeight: 700, color: "#FBBF24", letterSpacing: 1, textTransform: "uppercase", margin: "0 0 14px" }}>Every Member Receives</p>
+                {[
+                  "All four workshops in a small-cohort format with live practice",
+                  "Fillable workbooks and letter templates to keep",
+                  "Quarterly open office hours between workshops",
+                  "A certificate of completion for each workshop and the full Academy",
+                ].map((item, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 10 }}>
+                    <CheckCircle2 size={15} color="#FBBF24" style={{ marginTop: 2, flexShrink: 0 }} />
+                    <p style={{ fontSize: 14, color: "rgba(255,255,255,0.75)", margin: 0, lineHeight: 1.5 }}>{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
+              <a href={BOOKING_URL}
+                style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
+                Book a Free Call to Enroll
+              </a>
+              <Link href="/katie-beckett"
+                style={{ display: "inline-block", background: "transparent", color: "#fff", padding: "13px 26px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15, border: "2px solid rgba(255,255,255,0.35)" }}>
+                Funding Options for Tennessee Families
+              </Link>
+            </div>
+            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, margin: "20px 0 0", maxWidth: 760 }}>
+              Sponsor-funded seats are available for families for whom the fee is a barrier. Tennessee families whose child is enrolled in the Katie Beckett program may be able to seek reimbursement for Academy tuition through the Family Caregiver Education and Training benefit, up to $500 per calendar year, subject to advance approval by the family's managed care organization. We provide the documentation needed for the request.
+            </p>
           </motion.div>
 
           {/* Free resources, not services */}
