@@ -23,19 +23,19 @@ export default function Services() {
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: "#122C54", background: "#fff" }}>
       <PageMeta
-        title="Free IEP Audit and Parent Workshops for Families"
-        description="Free services for families of children with disabilities: an independent IEP Audit and monthly parent workshops, plus the Parent IEP Advocacy Academy, a year-long training program. Delivered virtually nationwide."
+        title="Free IEP Audit and Know Your Rights Workshops for Families"
+        description="Free services for families of children with disabilities: an independent IEP Audit and Know Your Rights workshops, plus paid parent workshops, the Parent IEP Advocacy Academy, and student programs. Delivered virtually nationwide."
       />
 
       {/* Hero */}
       <section className="sp" style={{ background: "#122C54" }}>
         <div style={{ maxWidth: 860, margin: "0 auto", textAlign: "center" }}>
-          <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 20px" }}>Free Family Services</p>
+          <p style={{ fontSize: 12, fontWeight: 700, color: "#22C55E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 20px" }}>Family Services</p>
           <h1 style={{ fontSize: "clamp(32px,4.5vw,52px)", fontWeight: 900, lineHeight: 1.08, color: "#fff", margin: "0 0 24px", letterSpacing: "-1.5px" }}>
             Independent IEP Support for Families Who Deserve More Than a Form Letter
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, maxWidth: 680, margin: "0 auto 16px" }}>
-            Our core services are free. The IEP Audit and our monthly parent workshops never cost a family anything, because access is the point. Families who want deeper, structured training across the school year can join the Parent IEP Advocacy Academy. Every service is delivered virtually.
+            Our core services are free. The IEP Audit and our Know Your Rights workshops never cost a family anything, because access is the point. Families who want deeper, structured training across the school year can join the Parent IEP Advocacy Academy. Every service is delivered virtually.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 40px" }}>
             Serving families across the greater Metro Nashville area and, through our virtual delivery model, anywhere in the country.
@@ -89,9 +89,9 @@ export default function Services() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ marginBottom: 56 }}>
             <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>What We Offer</p>
-            <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>Two free services. One purpose.</h2>
+            <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>Two free core services. One purpose.</h2>
             <p style={{ fontSize: 18, color: "#64748b", maxWidth: 680, lineHeight: 1.65, margin: 0 }}>
-              The school district arrives at that meeting with a full professional team. These services exist because you should not have to sit across from that team without independent support, and you should never have to pay for it.
+              The school district arrives at that meeting with a full professional team. Our free core services exist because you should not have to sit across from that team without independent support, and deeper training programs are available for families and students who want more.
             </p>
           </div>
 
@@ -158,11 +158,11 @@ export default function Services() {
               <Users size={16} color="#14B8A6" />
               <span style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1, textTransform: "uppercase" }}>Free Service</span>
             </div>
-            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>Parent Workshops</h3>
+            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>Know Your Rights Workshops</h3>
             <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free</p>
-            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>One in-person session and one webinar every month</p>
+            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Live sessions on what the law entitles your child to</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              Reading your child's IEP is one skill, and walking into the meeting knowing what to ask for is another. Our workshops teach the second one. We cover what the law entitles your child to, how to read the document the school hands you, what to say when services are cut, and how to put a request in writing so the district has to answer it. Every session is plain language, no cost, and open to any family.
+              Walking into the meeting knowing what to ask for starts with knowing what the law entitles your child to. Our Know Your Rights workshops teach exactly that, in plain language, at no cost, open to any family. We also offer additional parent workshops, covering topics like reading the document the school hands you, responding when services are cut, and putting requests in writing so the district has to answer, for a per-seat fee; those appear on our events page as they are scheduled.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <Link href="/events"
@@ -221,13 +221,9 @@ export default function Services() {
                 style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
                 Book a Free Call to Enroll
               </a>
-              <Link href="/katie-beckett"
-                style={{ display: "inline-block", background: "transparent", color: "#fff", padding: "13px 26px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15, border: "2px solid rgba(255,255,255,0.35)" }}>
-                Funding Options for Tennessee Families
-              </Link>
             </div>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, margin: "20px 0 0", maxWidth: 760 }}>
-              Sponsor-funded seats are available for families for whom the fee is a barrier. Tennessee families whose child is enrolled in the Katie Beckett program may be able to seek reimbursement for Academy tuition through the Family Caregiver Education and Training benefit, up to $500 per calendar year, subject to advance approval by the family's managed care organization. We provide the documentation needed for the request.
+              Payment plans are available, and as sponsorships are secured they fund seats for families for whom the fee is a barrier.
             </p>
           </motion.div>
 
@@ -264,7 +260,7 @@ export default function Services() {
               <span style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1, textTransform: "uppercase" }}>For High School Students</span>
             </div>
             <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>EDquity Scholars</h3>
-            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free to students. Every Scholar is sponsored.</p>
+            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>$497 tuition, with reimbursement and need-based options</p>
             <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Six weekly virtual sessions. The inaugural cohort begins January 12, 2027, and additional cohorts open during the year. Seats are limited.</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
               The IEP does not go to college, and neither does a 504 plan. This six-week course teaches college-bound juniors and seniors with an IEP or a 504 plan how their rights change at graduation, how to register with a college disability services office, and how to advocate for themselves in their own words. Every Scholar finishes with a transition portfolio and a one-to-one review of their own transition file.
@@ -275,6 +271,31 @@ export default function Services() {
                 Learn More and Reserve a Seat
               </Link>
             </div>
+          </motion.div>
+
+          {/* My IEP, My Voice: student self-advocacy series */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 20, padding: "clamp(28px,4vw,44px)", marginTop: 32 }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(20,184,166,0.12)", borderRadius: 8, padding: "6px 14px", marginBottom: 20 }}>
+              <GraduationCap size={16} color="#14B8A6" />
+              <span style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1, textTransform: "uppercase" }}>For Middle and High School Students</span>
+            </div>
+            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>My IEP, My Voice</h3>
+            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>$497</p>
+            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Four live virtual sessions for students in grades 6 through 10</p>
+            <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
+              Students with IEPs sit through meetings about their own education without being taught how to speak in them. Across four sessions, students learn what their IEP actually says, how to name what helps them learn, how to speak up in their own IEP meeting, and how to ask for their accommodations in class. Every student finishes by presenting one page, in their own words, at their next IEP meeting.
+            </p>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
+              <a href={BOOKING_URL}
+                style={{ display: "inline-block", background: "#14B8A6", color: "#fff", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
+                Book a Free Call to Enroll
+              </a>
+            </div>
+            <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.65, margin: "20px 0 0", maxWidth: 760 }}>
+              Payment plans are available, and as sponsorships are secured they fund seats for families for whom the fee is a barrier.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -373,6 +394,9 @@ export default function Services() {
       {/* Legal Disclaimer */}
       <section className="sp" style={{ background: "#fff", borderTop: "1px solid #e2e8f0" }}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
+          <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.7, margin: "0 0 14px", textAlign: "center" }}>
+            EDquity at the Margins is a nonprofit organization. Every program fee and tuition payment directly funds our mission, including the free IEP Audit, free Know Your Rights workshops, and the free resources we publish for families.
+          </p>
           <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.7, margin: 0, textAlign: "center" }}>
             EDquity at the Margins provides independent educational expertise, not legal advice. We are not attorneys and do not provide legal representation. Families who believe their child's rights have been violated under IDEA are encouraged to consult a special education attorney or contact their state's Parent Training and Information Center at{" "}
             <a href="https://parentcenterhub.org" target="_blank" rel="noopener noreferrer" style={{ color: "#0F766E", textDecoration: "underline" }}>parentcenterhub.org</a>.
