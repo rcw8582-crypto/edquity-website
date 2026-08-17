@@ -143,6 +143,25 @@ const OFFERINGS: Offering[] = [
   },
 ];
 
+/**
+ * Options for the reserve form's session picker. The four dated sessions
+ * come from CALENDAR so the picker can never drift from the table above it.
+ */
+const SESSION_OPTIONS = [
+  ...CALENDAR.filter((row) => row.date.startsWith("Tuesday")).map(
+    (row) => `${row.session} (${row.date})`
+  ),
+  "The Co-Education Lifecycle (two-day series)",
+  "Special Ed Summer Summit (summer 2027)",
+  "A later monthly session (October through July)",
+  "Private or customized session for our school or district",
+];
+
+/** Mirrors the pricing table, so the inquiry arrives with the tier named. */
+const REGISTRATION_OPTIONS = PRICING.map(
+  (row) => `${row.registration}: ${row.price}`
+).concat("Private or customized session: quoted individually");
+
 const CUSTOMIZATIONS = [
   "Which session(s) to run, or combine two half-day topics into one full day",
   "The date and time (including non-Tuesday dates, weekends, or in-service days)",
@@ -169,7 +188,14 @@ export default function TeacherPD() {
           title: data.get("title"),
           organization: data.get("organization"),
           email: data.get("email"),
-          message: data.get("message"),
+          // The inquiry endpoint takes one message string, so the two
+          // pickers travel inside it rather than as new API fields.
+          message: [
+            `Session: ${data.get("session")}`,
+            `Registration: ${data.get("registration")}`,
+            "",
+            String(data.get("message") ?? ""),
+          ].join("\n"),
           // The endpoint requires a subject line for the email it sends
           // Reba. There is no picker on this form, so the page names itself.
           service: "Teacher Professional Development",
@@ -512,7 +538,25 @@ export default function TeacherPD() {
                 <input style={inputStyle} id="pd-email" name="email" type="email" required maxLength={254} autoComplete="email" />
               </div>
               <div style={fieldWrap}>
-                <label style={labelStyle} htmlFor="pd-message">Which session, and how many seats? *</label>
+                <label style={labelStyle} htmlFor="pd-session">Which session? *</label>
+                <select style={{ ...inputStyle, appearance: "auto" }} id="pd-session" name="session" required defaultValue="">
+                  <option value="" disabled style={{ color: NAVY }}>Choose a session</option>
+                  {SESSION_OPTIONS.map((option) => (
+                    <option key={option} value={option} style={{ color: NAVY }}>{option}</option>
+                  ))}
+                </select>
+              </div>
+              <div style={fieldWrap}>
+                <label style={labelStyle} htmlFor="pd-registration">Registration type *</label>
+                <select style={{ ...inputStyle, appearance: "auto" }} id="pd-registration" name="registration" required defaultValue="">
+                  <option value="" disabled style={{ color: NAVY }}>Choose a registration type</option>
+                  {REGISTRATION_OPTIONS.map((option) => (
+                    <option key={option} value={option} style={{ color: NAVY }}>{option}</option>
+                  ))}
+                </select>
+              </div>
+              <div style={fieldWrap}>
+                <label style={labelStyle} htmlFor="pd-message">How many seats, and anything else we should know? *</label>
                 <textarea style={{ ...inputStyle, minHeight: 130, resize: "vertical" }} id="pd-message" name="message" required maxLength={5000} />
               </div>
 
