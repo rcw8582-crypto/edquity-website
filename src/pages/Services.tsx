@@ -109,7 +109,7 @@ export default function Services() {
               <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free</p>
               <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "0 0 24px" }}>Written report delivered within 10 business days</p>
               <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, margin: "0 0 32px" }}>
-                Most families receive their child's IEP with no independent guidance on whether it meets the legal standard of a free and appropriate public education. This service closes that gap. We review your child's IEP across six research-grounded domains, identifies missing or inadequate services, and delivers a plain-language written report with specific recommended next steps before your next meeting.
+                Most families receive their child's IEP with no independent guidance on whether it meets the legal standard of a free and appropriate public education. This service closes that gap. We review your child's IEP across six research-grounded domains, identify missing or inadequate services, and deliver a plain-language written report with specific recommended next steps before your next meeting.
               </p>
               <a href={PORTAL_REGISTER_URL}
                 style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
@@ -162,7 +162,7 @@ export default function Services() {
             <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free</p>
             <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Live sessions on what the law entitles your child to</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              Walking into the meeting knowing what to ask for starts with knowing what the law entitles your child to. Our Know Your Rights workshops teach exactly that, in plain language, at no cost, open to any family. We also offer additional parent workshops, covering topics like reading the document the school hands you, responding when services are cut, and putting requests in writing so the district has to answer, for a per-seat fee; those appear on our events page as they are scheduled.
+              Walking into the meeting knowing what to ask for starts with knowing what the law entitles your child to. Our Know Your Rights workshops teach exactly that, in plain language, at no cost, open to any family. We also offer additional parent workshops, covering topics like reading the document the school hands you, responding when services are cut, and putting requests in writing so the district has to answer, for a per-seat fee with Families First Scholarship seats available; those appear on our events page as they are scheduled.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <Link href="/events"
@@ -181,19 +181,19 @@ export default function Services() {
               <span style={{ fontSize: 12, fontWeight: 700, color: "#FBBF24", letterSpacing: 1, textTransform: "uppercase" }}>Year-Long Program</span>
             </div>
             <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#fff", margin: "0 0 8px", letterSpacing: "-0.5px" }}>Parent IEP Advocacy Academy</h3>
-            <p style={{ fontSize: 24, fontWeight: 900, color: "#22C55E", margin: "0 0 6px" }}>$497 per year</p>
+            <p style={{ fontSize: 24, fontWeight: 900, color: "#22C55E", margin: "0 0 6px" }}>$497 per year · Families First Scholarship available</p>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "0 0 20px" }}>Four core workshops in a small cohort, sequenced across the school year</p>
             <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              Our free monthly workshops stay free and open to everyone. The Academy is the deeper version: the same four core topics taught in order, in a small cohort, with fillable workbooks, live practice on sample documents, and direct feedback, so by your child's next annual IEP meeting you have rehearsed every skill you will need in that room.
+              Our free Know Your Rights workshops stay free and open to everyone. The Academy goes deeper: four evidence-grounded courses sequenced across the school year, in a small cohort, with fillable workbooks, live practice on real documents, and direct feedback, so by your child's next annual IEP meeting you have rehearsed every skill you will need in that room.
             </p>
             <div className="rg-2" style={{ gap: 16, marginBottom: 24 }}>
               <div style={{ background: "rgba(255,255,255,0.06)", borderRadius: 14, padding: 24 }}>
-                <p style={{ fontSize: 13, fontWeight: 700, color: "#22C55E", letterSpacing: 1, textTransform: "uppercase", margin: "0 0 14px" }}>The Four Workshops</p>
+                <p style={{ fontSize: 13, fontWeight: 700, color: "#22C55E", letterSpacing: 1, textTransform: "uppercase", margin: "0 0 14px" }}>The Four Courses</p>
                 {[
-                  "Know the Law: What Your Child Is Entitled To",
-                  "Read the IEP Like a Reviewer",
-                  "When Services Change: What to Say and What to Ask For",
-                  "Put It in Writing: Requests the District Has to Answer",
+                  "Reading Your Child's IEP",
+                  "Your Procedural Safeguards, Decoded",
+                  "Is the IEP Working? Mid-Year Check-In",
+                  "When You Disagree: Mediation, Complaints & Due Process",
                 ].map((w, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 10 }}>
                     <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#22C55E", marginTop: 7, flexShrink: 0 }} />
@@ -221,9 +221,13 @@ export default function Services() {
                 style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
                 Book a Free Call to Enroll
               </a>
+              <Link href="/parent-academy"
+                style={{ display: "inline-block", background: "transparent", color: "#fff", padding: "13px 26px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15, border: "2px solid rgba(255,255,255,0.35)" }}>
+                See the Full Curriculum
+              </Link>
             </div>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, margin: "20px 0 0", maxWidth: 760 }}>
-              Payment plans are available, and as sponsorships are secured they fund seats for families for whom the fee is a barrier.
+              The <Link href="/scholarship" style={{ color: "#22C55E", textDecoration: "underline" }}>Families First Scholarship</Link> covers tuition for families who qualify. The application takes about five minutes, income eligibility is checked automatically, and no documentation is ever required. Schools and districts can also bring the Academy to their families as family engagement programming; email info@edquityatthemargins.org.
             </p>
           </motion.div>
 
@@ -260,10 +264,10 @@ export default function Services() {
               <span style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1, textTransform: "uppercase" }}>For High School Students</span>
             </div>
             <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>EDquity Scholars</h3>
-            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>$497 tuition, with reimbursement and need-based options</p>
+            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>$697 tuition · Families First Scholarship available</p>
             <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Six weekly virtual sessions. The inaugural cohort begins January 12, 2027, and additional cohorts open during the year. Seats are limited.</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              The IEP does not go to college, and neither does a 504 plan. This six-week course teaches college-bound juniors and seniors with an IEP or a 504 plan how their rights change at graduation, how to register with a college disability services office, and how to advocate for themselves in their own words. Every Scholar finishes with a transition portfolio and a one-to-one review of their own transition file.
+              The IEP does not go to college, and neither does a 504 plan. This six-week course teaches college-bound high school seniors with an IEP or a 504 plan how their rights change at graduation, how to register with a college disability services office, and how to advocate for themselves in their own words. Every Scholar finishes with a transition portfolio and a one-to-one review of their own transition file.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <Link href="/edquity-scholars"
@@ -282,7 +286,7 @@ export default function Services() {
               <span style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1, textTransform: "uppercase" }}>For Middle and High School Students</span>
             </div>
             <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>My IEP, My Voice</h3>
-            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>$497</p>
+            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>$497 · Families First Scholarship available</p>
             <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Four live virtual sessions for students in grades 6 through 10</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
               Students with IEPs sit through meetings about their own education without being taught how to speak in them. Across four sessions, students learn what their IEP actually says, how to name what helps them learn, how to speak up in their own IEP meeting, and how to ask for their accommodations in class. Every student finishes by presenting one page, in their own words, at their next IEP meeting.
@@ -294,7 +298,7 @@ export default function Services() {
               </a>
             </div>
             <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.65, margin: "20px 0 0", maxWidth: 760 }}>
-              Payment plans are available, and as sponsorships are secured they fund seats for families for whom the fee is a barrier.
+              The <Link href="/scholarship" style={{ color: "#0F766E", textDecoration: "underline" }}>Families First Scholarship</Link> covers tuition for families who qualify. The application takes about five minutes, income eligibility is checked automatically, and no documentation is ever required.
             </p>
           </motion.div>
         </div>
