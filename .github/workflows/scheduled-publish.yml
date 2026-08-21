@@ -1,0 +1,53 @@
+# Releases date-scheduled blog posts without anyone pushing a commit.
+#
+# Posts are baked into the site at build time, and src/lib/posts.ts hides any
+# post whose publishedAt date is later than the build date. A rebuild is
+# therefore what releases a scheduled post, so this workflow asks Vercel for a
+# fresh build once a day and each morning's build picks up whatever is due.
+#
+# Setup, one time:
+#   1. In Vercel, open the edquity-website project, then Settings, Git,
+#      Deploy Hooks. Create a hook named "daily-scheduled-publish" on the
+#      main branch and copy the URL it gives you.
+#   2. In GitHub, open the repository, then Settings, Secrets and variables,
+#      Actions. Add a repository secret named VERCEL_DEPLOY_HOOK_URL and paste
+#      the URL as its value.
+#
+# Nothing else is needed. Removing the secret switches the schedule off and
+# leaves every already-released post live.
+
+name: Scheduled publish
+
+on:
+  schedule:
+    # 12:00 UTC daily, which is 7:00 AM Central Daylight Time and 6:00 AM Central Standard Time.
+    - cron: "0 12 * * *"
+  # Lets you release a post immediately from the Actions tab instead of waiting.
+  workflow_dispatch:
+
+# Two runs rebuilding at once would waste a deploy and could race, so a new run
+# waits rather than starting alongside one already going.
+concurrency:
+  group: scheduled-publish
+  cancel-in-progress: false
+
+jobs:
+  trigger-rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ask Vercel for a fresh production build
+        env:
+          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK_URL" ]; then
+            echo "VERCEL_DEPLOY_HOOK_URL is not set, so there is nothing to trigger."
+            echo "Add the secret in Settings, Secrets and variables, Actions."
+            exit 1
+          fi
+
+          status=$(curl --silent --show-error --fail-with-body \
+            --output response.txt --write-out '%{http_code}' \
+            --request POST "$HOOK_URL")
+
+          echo "Vercel responded with HTTP $status"
+          cat response.txt
