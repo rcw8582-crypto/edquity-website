@@ -130,12 +130,34 @@ const ALL_POSTS: BlogPost[] = Object.entries(modules)
     return bd.localeCompare(ad);
   });
 
+/**
+ * Today's date as YYYY-MM-DD, fixed at build time.
+ *
+ * Posts are bundled into the static site, so "today" is the moment the site
+ * was built. A scheduled daily rebuild is what moves this forward and releases
+ * posts whose date has arrived (see .github/workflows/scheduled-publish.yml).
+ */
+const BUILD_DATE = new Date().toISOString().slice(0, 10);
+
+/**
+ * A post is live when it is marked published and its publishedAt date is not
+ * in the future. Dating a post ahead schedules it: it stays out of the news
+ * list, the sitemap, the RSS feed and its own URL until that morning's build.
+ *
+ * Dates are ISO YYYY-MM-DD, so a plain string comparison is a date comparison.
+ */
+function isLive(post: BlogPost): boolean {
+  if (!post.published) return false;
+  const date = post.publishedAt ?? post.createdAt.slice(0, 10);
+  return date <= BUILD_DATE;
+}
+
 export function getAllPublishedPosts(): BlogPost[] {
-  return ALL_POSTS.filter((p) => p.published);
+  return ALL_POSTS.filter(isLive);
 }
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
-  return ALL_POSTS.find((p) => p.slug === slug && p.published);
+  return ALL_POSTS.find((p) => p.slug === slug && isLive(p));
 }
 
 /**
