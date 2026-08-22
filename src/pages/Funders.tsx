@@ -5,9 +5,9 @@ import PageMeta from "@/components/PageMeta";
 
 const outcomes = [
   { stat: "100", label: "children is our Year 1 goal: complete independent IEP audits, free to every family" },
-  { stat: "$0", label: "charged to families. Access is the model, not a marketing phrase." },
+  { stat: "$0", label: "charged for the IEP Audit, the Advocacy Toolkit, and Know Your Rights workshops. Access is the model, not a marketing phrase." },
   { stat: "3 days", label: "median turnaround from request to written report" },
-  { stat: "100%", label: "of families pay nothing for the IEP Audit, the Advocacy Toolkit, or any parent workshop" },
+  { stat: "100%", label: "of families pay nothing for the IEP Audit, the Advocacy Toolkit, or our Know Your Rights workshops" },
 ];
 
 const tiers = [

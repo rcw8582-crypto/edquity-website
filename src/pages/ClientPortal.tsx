@@ -1,7 +1,7 @@
 import { ExternalLink, Mail, Phone, Calendar } from "lucide-react";
 
 const PORTAL_URL = "https://portal.edquityatthemargins.org/";
-import { BOOKING_PAGE_URL, PORTAL_REGISTER_URL } from "@/lib/booking";
+import { BOOKING_URL, PORTAL_REGISTER_URL } from "@/lib/booking";
 import PageMeta from "@/components/PageMeta";
 
 export default function ClientPortal() {
@@ -77,9 +77,10 @@ export default function ClientPortal() {
                 icon: <Calendar size={24} color="#14B8A6" />,
                 title: "Schedule a session",
                 body: "Book a debrief call, prep session, or follow-up appointment.",
-                // The full booking page rather than the new-families call, so an
-                // existing family picks the meeting type that fits.
-                cta: { label: "Book a Session", href: BOOKING_PAGE_URL, external: true },
+                // /book rather than a Calendly link directly. The two public
+                // event types are both intake calls, and the secret event
+                // types for enrolled families must not be published here.
+                cta: { label: "Book a Session", href: BOOKING_URL, external: false },
               },
             ].map((card, i) => (
               <div key={i} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 28, display: "flex", flexDirection: "column", gap: 14 }}>
