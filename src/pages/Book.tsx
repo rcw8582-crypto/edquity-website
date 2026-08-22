@@ -1,6 +1,8 @@
+import { useEffect, useRef } from "react";
 import { Users, Building2, ExternalLink } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import {
+  CALENDLY_PROFILE_URL,
   CALENDLY_FAMILY_CALL,
   CALENDLY_PARTNERSHIP_CALL,
   PORTAL_REGISTER_URL,
@@ -9,21 +11,35 @@ import {
 /**
  * Booking.
  *
- * Two public calls, both free, one for families and one for institutions.
- * The page describes each and links out, rather than framing a calendar.
- * See booking.ts for why nothing here is embedded.
+ * The two cards describe the calls, and the Calendly widget below them is
+ * where a visitor actually picks a time. The widget is pointed at the
+ * Calendly profile, so it lists every public event type and nothing else:
+ * the walkthrough and the two monitoring events are secret and stay out.
  *
  * The previous version of this page described a "New Family Registration"
  * and a "Partnership and Engagement Inquiry" that never existed on the
  * Microsoft tenant, and its one button pointed at a calendar that returned
- * 404. Both services and the calendar are now real, and named to match the
- * Calendly event types exactly so a visitor sees the same words on both
- * sides of the click.
+ * 404, so /book showed "Some error occurred" to every visitor.
+ *
+ * The direct links are kept below the widget on purpose. Two third-party
+ * embeds have already failed on this site: the Bookings iframe, and the
+ * Zeffy donation form (see Donate.tsx). Both render blank when a browser
+ * partitions storage in a frame, and because they are cross-origin nothing
+ * here can detect the failure and swap in a fallback. Calendly's widget is
+ * far more widely used than either, but a visible link costs one line and
+ * means a blank box can never cost us a booking.
  */
 
 const NAVY = "#122C54";
 const GREEN = "#22C55E";
 const TEAL = "#14B8A6";
+
+const CALENDLY_SCRIPT = "https://assets.calendly.com/assets/external/widget.js";
+
+/** Minimal shape of the global the widget script installs. */
+type CalendlyGlobal = {
+  initInlineWidget?: (opts: { url: string; parentElement: HTMLElement }) => void;
+};
 
 const CALLS = [
   {
@@ -49,6 +65,30 @@ const CALLS = [
 ];
 
 export default function Book() {
+  const widgetRef = useRef<HTMLDivElement>(null);
+
+  // A <script> tag written into JSX never executes, so the widget script is
+  // injected here. On a client-side route change back to /book the script is
+  // already loaded and will not rescan the page, so initInlineWidget is
+  // called directly when the global is present.
+  useEffect(() => {
+    const parentElement = widgetRef.current;
+    if (!parentElement) return;
+
+    const calendly = (window as unknown as { Calendly?: CalendlyGlobal }).Calendly;
+    if (calendly?.initInlineWidget) {
+      calendly.initInlineWidget({ url: CALENDLY_PROFILE_URL, parentElement });
+      return;
+    }
+
+    if (document.querySelector(`script[src="${CALENDLY_SCRIPT}"]`)) return;
+
+    const script = document.createElement("script");
+    script.src = CALENDLY_SCRIPT;
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
@@ -65,7 +105,7 @@ export default function Book() {
             Pick a time that works for you.
           </h1>
           <p style={{ fontSize: 17.5, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, margin: 0 }}>
-            Two kinds of call, both free. Choose the one that fits and pick a time on the calendar.
+            Two kinds of call, both free. Choose the one that fits and pick a time on the calendar below.
           </p>
         </div>
       </section>
@@ -76,7 +116,7 @@ export default function Book() {
             {CALLS.map((c) => (
               <div
                 key={c.name}
-                style={{ background: "#fff", border: "1px solid #e2e8f0", borderTop: `4px solid ${c.accent}`, borderRadius: 14, padding: "26px 28px", display: "flex", flexDirection: "column" }}
+                style={{ background: "#fff", border: "1px solid #e2e8f0", borderTop: `4px solid ${c.accent}`, borderRadius: 14, padding: "26px 28px" }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
                   {c.icon}
@@ -86,33 +126,41 @@ export default function Book() {
                 </div>
                 <h2 style={{ fontSize: 20, fontWeight: 800, margin: "0 0 6px", color: NAVY, lineHeight: 1.3 }}>{c.name}</h2>
                 <p style={{ fontSize: 13.5, fontWeight: 700, color: c.accent, margin: "0 0 14px" }}>{c.length}</p>
-                <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.75, margin: "0 0 22px", flexGrow: 1 }}>{c.body}</p>
-                <a
-                  href={c.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 9, background: c.accent, color: c.accent === GREEN ? NAVY : "#fff", padding: "14px 26px", borderRadius: 8, fontWeight: 800, fontSize: 16, textDecoration: "none" }}
-                >
-                  Pick a time
-                  <ExternalLink size={16} aria-hidden="true" />
-                </a>
+                <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.75, margin: 0 }}>{c.body}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div style={{ textAlign: "center", marginTop: 30 }}>
-            <p style={{ fontSize: 14, color: "#64748b", margin: 0, lineHeight: 1.7 }}>
-              Calendars open in a new tab. You can also email{" "}
-              <a href="mailto:info@edquityatthemargins.org" style={{ color: NAVY, fontWeight: 700 }}>
-                info@edquityatthemargins.org
-              </a>
-              , or call or text{" "}
-              <a href="tel:+17868106178" style={{ color: NAVY, fontWeight: 700 }}>
-                (786) 810-6178
-              </a>
-              .
-            </p>
-          </div>
+      {/* The calendar itself. */}
+      <section className="sp" style={{ background: "#fff", paddingTop: 26, paddingBottom: 30 }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <div
+            ref={widgetRef}
+            className="calendly-inline-widget"
+            data-url={CALENDLY_PROFILE_URL}
+            style={{ minWidth: 320, height: 700 }}
+          />
+          <p style={{ fontSize: 14, color: "#64748b", textAlign: "center", margin: "18px 0 0", lineHeight: 1.7 }}>
+            If the calendar does not load, open it directly:{" "}
+            <a href={CALENDLY_FAMILY_CALL} target="_blank" rel="noopener noreferrer" style={{ color: NAVY, fontWeight: 700 }}>
+              the family call
+            </a>{" "}
+            or{" "}
+            <a href={CALENDLY_PARTNERSHIP_CALL} target="_blank" rel="noopener noreferrer" style={{ color: NAVY, fontWeight: 700 }}>
+              the partnership and PD call
+            </a>
+            . You can also email{" "}
+            <a href="mailto:info@edquityatthemargins.org" style={{ color: NAVY, fontWeight: 700 }}>
+              info@edquityatthemargins.org
+            </a>
+            , or call or text{" "}
+            <a href="tel:+17868106178" style={{ color: NAVY, fontWeight: 700 }}>
+              (786) 810-6178
+            </a>
+            .
+          </p>
         </div>
       </section>
 
@@ -128,14 +176,13 @@ export default function Book() {
             The free IEP Audit begins with registration, which is where you upload your child's documents securely. A call is
             there if you want one first, not a step you have to clear.
           </p>
-          <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center" }}>
-            <a
-              href={PORTAL_REGISTER_URL}
-              style={{ display: "inline-flex", alignItems: "center", gap: 9, background: NAVY, color: "#fff", padding: "15px 30px", borderRadius: 8, fontWeight: 800, fontSize: 16, textDecoration: "none" }}
-            >
-              Start your free IEP Audit
-            </a>
-          </div>
+          <a
+            href={PORTAL_REGISTER_URL}
+            style={{ display: "inline-flex", alignItems: "center", gap: 9, background: NAVY, color: "#fff", padding: "15px 30px", borderRadius: 8, fontWeight: 800, fontSize: 16, textDecoration: "none" }}
+          >
+            Start your free IEP Audit
+            <ExternalLink size={15} aria-hidden="true" />
+          </a>
         </div>
       </section>
 

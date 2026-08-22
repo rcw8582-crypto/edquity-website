@@ -19,6 +19,15 @@
  * and keeps a visible fallback rather than trusting a frame.
  */
 
+/**
+ * The Calendly profile, which the inline widget on /book is pointed at.
+ *
+ * A profile URL lists every public event type, so the widget shows both
+ * calls below and nothing else. The walkthrough and the two monitoring
+ * events are secret, so they never appear here.
+ */
+export const CALENDLY_PROFILE_URL = "https://calendly.com/edquityatthemargins-info";
+
 /** Families who want to talk to a person before sending their child's records. */
 export const CALENDLY_FAMILY_CALL =
   "https://calendly.com/edquityatthemargins-info/new-family-getting-started-call";
