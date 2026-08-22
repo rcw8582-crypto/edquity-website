@@ -4,5 +4,6 @@ Allow: /
 Disallow: /admin
 Disallow: /client-portal
 Disallow: /intake
+Disallow: /audit-feedback
 
 Sitemap: https://www.edquityatthemargins.org/sitemap.xml
