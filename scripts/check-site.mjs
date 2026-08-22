@@ -36,9 +36,12 @@ const warn = (rule, detail) => warnings.push({ rule, detail });
  * Routes deliberately reachable only by a link we send someone directly.
  * /intake is the exception path for families who skip a registration call, so
  * it must resolve while staying unlinked and out of the sitemap.
+ * /audit-feedback is the usefulness study, emailed to families who already
+ * hold an audit report.
  */
 const INTENTIONALLY_UNLINKED = new Set([
   "/intake",
+  "/audit-feedback",
   "/admin",
   "/donor",
   // Linked from the intake confirmation screen, which only exists after a form
