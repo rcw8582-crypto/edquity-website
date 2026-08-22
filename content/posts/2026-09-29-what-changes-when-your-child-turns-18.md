@@ -4,7 +4,7 @@ slug: "what-changes-when-your-child-turns-18"
 excerpt: "In most states, the rights you have exercised on your child's behalf since preschool transfer to your child at the age of majority. Federal law requires the school to tell you both a year ahead, and that year is the whole opportunity."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-27"
+publishedAt: "2026-09-29"
 ---
 
 A parent shows up to the spring IEP meeting the way she has for eleven years, and the case manager says the student now signs the consent forms. The parent has not been told this was coming, the student has never been asked to make an education decision, and the meeting proceeds with everyone improvising.

@@ -4,7 +4,7 @@ slug: "resolution-meeting-first-30-days"
 excerpt: "You filed a due process complaint and expected a hearing. What federal law schedules first is a meeting, and the first 30 days after your complaint follow rules worth knowing before you walk in."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-07"
+publishedAt: "2026-09-09"
 ---
 
 You filed a due process complaint and braced for something that resembles a courtroom. Instead, the district calls to schedule a meeting nobody mentioned when you filed. Federal law created that meeting, and the first 30 days after your complaint follow a structure worth understanding before you walk in.

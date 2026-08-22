@@ -4,7 +4,7 @@ slug: "impartial-due-process-hearing"
 excerpt: "Parents heading toward a due process hearing often assume the district picks the judge. Federal law sets specific requirements for who can hear your case and what impartial has to mean."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-09"
+publishedAt: "2026-09-11"
 ---
 
 A parent weighing a due process complaint often stops at one fear: the hearing will happen on the district's turf, decided by someone the district chose. Federal law anticipated that fear. The regulation that creates the hearing also defines who may conduct it, and the definition is built around independence from the district.

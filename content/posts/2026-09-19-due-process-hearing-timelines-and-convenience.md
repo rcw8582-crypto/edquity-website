@@ -4,7 +4,7 @@ slug: "due-process-hearing-timelines-and-convenience"
 excerpt: "Federal law puts a 45-day limit on reaching a hearing decision and requires the hearing to happen at a time and place reasonably convenient to you and your child. Both rules exist so a dispute about this school year gets decided during this school year."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-17"
+publishedAt: "2026-09-19"
 ---
 
 You filed in October because your child has gone since August without the reading instruction the IEP promises. A dispute that takes a year to resolve returns a decision after the school year it was about has already ended. Federal law puts a clock on the process for exactly that reason.

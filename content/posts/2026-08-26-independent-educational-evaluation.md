@@ -4,7 +4,7 @@ slug: "independent-educational-evaluation"
 excerpt: "If you disagree with the school's evaluation of your child, federal law gives you the right to an independent educational evaluation, often at public expense, and requires the district to act without unnecessary delay."
 category: "Advocacy"
 published: false
-publishedAt: "2026-08-24"
+publishedAt: "2026-08-26"
 ---
 
 The evaluation meeting ends with scores that do not describe the child who lives in your house. You raise questions, the team stands by its numbers, and you drive home holding a report you do not believe.

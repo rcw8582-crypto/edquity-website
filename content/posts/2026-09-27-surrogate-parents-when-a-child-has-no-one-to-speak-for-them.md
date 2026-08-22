@@ -4,7 +4,7 @@ slug: "surrogate-parents-when-a-child-has-no-one-to-speak-for-them"
 excerpt: "Some children with disabilities have no parent available to sign consent, review an evaluation, or sit at the IEP table. Federal law requires the school system to appoint someone who can, and it sets rules about who that person may be."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-25"
+publishedAt: "2026-09-27"
 ---
 
 A caseworker opens a new file and finds a fifteen year old in state custody who has an IEP, a pending reevaluation, and no adult with education decision-making authority. A shelter worker meets a seventeen year old sleeping in the family room who mentions the resource class he used to attend. In both situations, the paperwork the school needs signed has nowhere to go.

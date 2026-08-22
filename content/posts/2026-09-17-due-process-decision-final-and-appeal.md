@@ -4,7 +4,7 @@ slug: "due-process-decision-final-and-appeal"
 excerpt: "A hearing decision arrives saying it is final. Federal law attaches an exception to that word, and which exception applies to your family depends on how your state built its hearing system."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-15"
+publishedAt: "2026-09-17"
 ---
 
 The decision arrives weeks after the hearing ends, running to twenty pages of findings, and somewhere near the front it says the decision is final. Reading that word after losing on the issue that mattered most feels like the end of the road. Federal law attaches an exception to it.

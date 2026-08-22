@@ -4,7 +4,7 @@ slug: "how-hearing-officers-decide"
 excerpt: "Proving the district broke a rule is not the same as proving your child was harmed, and federal law tells the hearing officer to look for the harm. Knowing that changes what belongs in your folder."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-13"
+publishedAt: "2026-09-15"
 ---
 
 You arrive at the hearing with a folder that proves the district broke rules. The evaluation ran past the deadline, one required team member never came to the meeting, and the IEP arrived weeks after the meeting ended. Federal law directs the hearing officer to ask a different question first, and that question changes what belongs in your folder.

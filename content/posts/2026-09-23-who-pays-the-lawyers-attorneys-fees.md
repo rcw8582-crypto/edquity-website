@@ -4,7 +4,7 @@ slug: "who-pays-the-lawyers-attorneys-fees"
 excerpt: "Families often decide a due process case is impossible because they cannot afford an attorney. Federal law lets a court order a district to pay a prevailing parent's reasonable attorneys' fees, and it sets limits that run in both directions."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-21"
+publishedAt: "2026-09-23"
 ---
 
 A parent has a folder of emails, three progress reports that say nothing measurable, and a growing certainty that the district has denied their child services it owed. Then the parent calls an attorney, hears an hourly rate, and closes the folder. The cost ends the case before anyone reads the file.

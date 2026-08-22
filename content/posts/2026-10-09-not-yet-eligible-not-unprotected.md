@@ -4,7 +4,7 @@ slug: "not-yet-eligible-not-unprotected"
 excerpt: "A child without an IEP can still claim IDEA's discipline protections if the district had reason to know about a disability before the incident occurred. A dated written concern is what creates that protection."
 category: "Advocacy"
 published: false
-publishedAt: "2026-10-07"
+publishedAt: "2026-10-09"
 ---
 
 The school calls to say your son is suspended and a disciplinary hearing is coming. He has no IEP, so you assume the special education protections you have heard about do not apply to him. You emailed his teacher in October saying you believed he needed special education, and that email changes the picture.

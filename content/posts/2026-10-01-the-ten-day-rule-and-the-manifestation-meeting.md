@@ -4,7 +4,7 @@ slug: "the-ten-day-rule-and-the-manifestation-meeting"
 excerpt: "A suspension takes your child out of school, and federal law counts every day of it. At ten school days in a year, protections most families never hear about switch on."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-29"
+publishedAt: "2026-10-01"
 ---
 
 The call comes at lunchtime. Your child is suspended for five days, the assistant principal says, and someone will send the paperwork home. What the office rarely explains is that federal law counts every day of that removal, and that the count changes what the school owes your child.

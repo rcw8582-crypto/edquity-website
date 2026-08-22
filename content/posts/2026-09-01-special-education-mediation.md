@@ -4,7 +4,7 @@ slug: "special-education-mediation"
 excerpt: "When you and the district disagree, federal law offers a middle path between giving in and going to a hearing. The state pays for it, a neutral mediator runs it, and a signed agreement is enforceable in court."
 category: "Advocacy"
 published: false
-publishedAt: "2026-08-30"
+publishedAt: "2026-09-01"
 ---
 
 You disagree with the district about your child's services. The disagreement has outlasted two IEP meetings, everyone is still polite, and nothing has moved. From where you sit, the choices look like accepting the district's answer or hiring a lawyer.

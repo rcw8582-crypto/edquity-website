@@ -4,7 +4,7 @@ slug: "your-rights-at-the-due-process-hearing"
 excerpt: "A due process hearing sounds like a courtroom where the district holds every advantage. Federal law gives both parties specific rights at the hearing, and it reserves a few for parents alone."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-11"
+publishedAt: "2026-09-13"
 ---
 
 The hearing date is set, and the picture in your head is a courtroom where the district arrives with lawyers and you arrive alone. Federal law wrote specific rights into that room before you ever enter it. Some belong to both parties, and a few belong only to parents.

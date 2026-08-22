@@ -4,7 +4,7 @@ slug: "when-removals-add-up"
 excerpt: "A single long suspension is not the only way discipline changes a placement. Short removals, including the informal ones no letter ever documents, add up under federal law, and parents who count them hold the record that matters."
 category: "Advocacy"
 published: false
-publishedAt: "2026-10-11"
+publishedAt: "2026-10-13"
 ---
 
 The front office calls at 11:15 and asks you to pick your son up early because he is having a hard day. No suspension letter follows, nothing appears in the portal, and by February you have made that midday drive nine times.

@@ -4,7 +4,7 @@ slug: "enforcing-written-agreements"
 excerpt: "A signed mediation or resolution agreement is a binding legal commitment, and federal law gives families more than one way to enforce it when a district lets its promises slide."
 category: "Advocacy"
 published: false
-publishedAt: "2026-10-13"
+publishedAt: "2026-10-15"
 ---
 
 You went to mediation, the district agreed in writing to provide compensatory services, and everyone signed. Three months later nothing has been scheduled, and the emails have gone quiet.

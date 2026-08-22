@@ -4,7 +4,7 @@ slug: "who-picks-the-interim-setting"
 excerpt: "When a school removes a child with a disability to an interim alternative educational setting, an administrator does not choose the destination alone. The IEP team, with the parent at the table, makes that decision."
 category: "Advocacy"
 published: false
-publishedAt: "2026-10-01"
+publishedAt: "2026-10-03"
 ---
 
 The manifestation meeting ends, the removal stands, and the assistant principal mentions the district's alternative school as though the destination were settled weeks ago. One sentence of federal regulation says otherwise, and that sentence puts you at the table.

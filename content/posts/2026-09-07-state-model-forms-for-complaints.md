@@ -4,7 +4,7 @@ slug: "state-model-forms-for-complaints"
 excerpt: "Parents often assume a complaint needs legal language or a lawyer's signature before the state will accept it. Federal law says otherwise, and it requires your state to hand you a form that makes filing simpler."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-05"
+publishedAt: "2026-09-07"
 ---
 
 A parent decides to file a state complaint, opens a blank document, and stops. Does it need legal language, a particular format, or a lawyer's signature before anyone will accept it? Federal law answered that question directly, and the answer already sits on your state education agency's website.

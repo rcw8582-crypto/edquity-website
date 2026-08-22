@@ -4,7 +4,7 @@ slug: "placement-during-the-appeal"
 excerpt: "In most special education disputes, your child stays put while the case is heard. Discipline appeals flip that default, and knowing which way it points changes how you use the process."
 category: "Advocacy"
 published: false
-publishedAt: "2026-10-05"
+publishedAt: "2026-10-07"
 ---
 
 You filed the expedited appeal the week the manifestation decision came down, and you expect your child to return to the classroom while the hearing is pending, the way stay-put usually works. Discipline runs the default in the other direction, and the regulation that says so is a single sentence.

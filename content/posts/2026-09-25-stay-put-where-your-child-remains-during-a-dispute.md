@@ -4,7 +4,7 @@ slug: "stay-put-where-your-child-remains-during-a-dispute"
 excerpt: "A district proposes moving your child to a different program, you disagree, and the move is scheduled for Monday. Federal law holds your child's current placement in place while the dispute runs its course."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-23"
+publishedAt: "2026-09-25"
 ---
 
 The team meeting ends with the district proposing to move your child from the general education classroom with support into a self-contained setting across town. You say you disagree and you intend to file. Someone tells you the transfer paperwork is already moving and the new placement starts after the break.

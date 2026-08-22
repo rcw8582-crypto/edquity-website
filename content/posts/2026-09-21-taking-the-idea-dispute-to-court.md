@@ -4,7 +4,7 @@ slug: "taking-the-idea-dispute-to-court"
 excerpt: "A family that disagrees with a hearing decision can file in state or federal court, and the filing window is short. Knowing what the court does differently, and what the deadline is in your state, matters before the decision ever arrives."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-19"
+publishedAt: "2026-09-21"
 ---
 
 The hearing decision went against you on the issue that mattered most, and the calendar has already started running on your next option. Federal law gives you a court, and it gives you a limited number of days to reach it. Both facts are worth understanding before the decision lands rather than after.

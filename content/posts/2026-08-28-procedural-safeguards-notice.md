@@ -4,7 +4,7 @@ slug: "procedural-safeguards-notice"
 excerpt: "The procedural safeguards notice explains every right federal special education law gives you, and the school must hand it to you at the exact moments you are most likely to need it."
 category: "Advocacy"
 published: false
-publishedAt: "2026-08-26"
+publishedAt: "2026-08-28"
 ---
 
 At the annual IEP meeting, someone slides a thick stapled booklet across the table. You sign a form confirming you received it, and it rides home in a folder with everything else from the meeting. In most houses nobody ever opens it.

@@ -4,7 +4,7 @@ slug: "school-notices-by-email"
 excerpt: "Federal law lets you elect to receive the most important special education notices by email if your district offers the option. One sentence in the regulations can turn a crumpled paper in a backpack into a dated, searchable record."
 category: "Advocacy"
 published: false
-publishedAt: "2026-08-28"
+publishedAt: "2026-08-30"
 ---
 
 The procedural safeguards notice went home in your child's folder in October. You found it in February, folded around a field trip form, with nothing on it to show when it left the school. If anything turned on when the district sent it, the backpack ate the evidence.

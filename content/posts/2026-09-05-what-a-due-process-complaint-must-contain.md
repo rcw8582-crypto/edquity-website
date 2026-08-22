@@ -4,7 +4,7 @@ slug: "what-a-due-process-complaint-must-contain"
 excerpt: "Federal law lists exactly what a due process complaint must include, who receives it, and how fast anyone objecting to it has to move. Knowing the list keeps a filing from stalling before it starts."
 category: "Advocacy"
 published: false
-publishedAt: "2026-09-03"
+publishedAt: "2026-09-05"
 ---
 
 Deciding to file a due process complaint takes most families months. Learning weeks after filing that the document was missing a required element, and that the missing element stalled everything, is the avoidable version of that story.

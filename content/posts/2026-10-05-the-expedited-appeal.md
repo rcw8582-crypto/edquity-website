@@ -4,7 +4,7 @@ slug: "the-expedited-appeal"
 excerpt: "If you disagree with a manifestation determination or a disciplinary placement, federal law gives you an appeal that runs on a faster clock than any other due process case."
 category: "Advocacy"
 published: false
-publishedAt: "2026-10-03"
+publishedAt: "2026-10-05"
 ---
 
 The team went around the table, the district members concluded the behavior was not a manifestation, and your child starts at the alternative program on Monday. You disagree with the finding, and you have heard that school disputes take months to resolve. This one runs on a different clock, because the regulations built a separate, faster track for discipline disputes.

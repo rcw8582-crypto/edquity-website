@@ -4,7 +4,7 @@ slug: "see-the-records-be-in-the-room"
 excerpt: "Federal law gives parents the opportunity to examine every education record behind an identification, evaluation, or placement decision, and a seat in every meeting that decides those questions."
 category: "Advocacy"
 published: false
-publishedAt: "2026-08-22"
+publishedAt: "2026-08-24"
 ---
 
 The placement letter arrives in August and names a program across town. When you call to ask how that happened, the school explains that the team met in June and settled the question then. Nobody invited you, and nobody has shown you the records behind the decision.

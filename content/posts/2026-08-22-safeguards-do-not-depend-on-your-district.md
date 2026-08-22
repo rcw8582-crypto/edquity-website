@@ -3,8 +3,8 @@ title: "Your Child's Rights Do Not Depend on Your District"
 slug: "safeguards-do-not-depend-on-your-district"
 excerpt: "Every procedural safeguard in federal special education law applies in every district, because the state must guarantee it. This post opens a series walking through those safeguards one regulation at a time."
 category: "Advocacy"
-published: false
-publishedAt: "2026-08-20"
+published: true
+publishedAt: "2026-08-22"
 ---
 
 A family moves one county over in the middle of the school year. At the new school, the case manager explains that the previous district handled things differently and that this one has its own way of responding to parent requests. The parent leaves the office wondering which set of rules was ever the real one.
@@ -13,7 +13,13 @@ Federal law answers that question in the first section of its procedural safegua
 
 ## One sentence carries the whole subpart
 
-Under 34 C.F.R. § 300.500, each state education agency must ensure that each public agency establishes, maintains, and implements procedural safeguards that meet the requirements of §§ 300.500 through 300.536. The regulation runs a single sentence, and that sentence sets the terms for everything else in Subpart E, the portion of the federal special education regulations devoted to procedural safeguards.
+The regulation runs a single sentence, and that sentence sets the terms for everything else in Subpart E, the portion of the federal special education regulations devoted to procedural safeguards. Here it is in full:
+
+> Each SEA must ensure that each public agency establishes, maintains, and implements procedural safeguards that meet the requirements of §§ 300.500 through 300.536.
+>
+> 34 C.F.R. § 300.500
+
+SEA stands for state education agency, which in most states is the department of education. Public agency covers your district and the other public bodies responsible for educating your child.
 
 Three verbs do the work. A public agency must establish the safeguards, so they exist in the first place. It must maintain them, so they survive staff turnover and lean budget years. It must implement them, so they operate in actual meetings with actual families rather than resting in a policy binder.
 
