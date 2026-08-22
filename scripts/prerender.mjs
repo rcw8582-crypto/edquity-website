@@ -190,9 +190,11 @@ const SITEMAP_PREFIX_WEIGHTS = [
  * /client-portal is a sign-in gate with nothing to index. /intake is the
  * exception path for families who do not do a registration call, so it has to
  * keep working when Reba sends it directly, without being something a visitor
- * or a crawler finds on its own.
+ * or a crawler finds on its own. /audit-feedback is the usefulness study,
+ * sent by link to families who already hold a report, and it would only
+ * confuse a visitor who had never seen one.
  */
-const SITEMAP_EXCLUDE = new Set(["/client-portal", "/intake"]);
+const SITEMAP_EXCLUDE = new Set(["/client-portal", "/intake", "/audit-feedback"]);
 
 function buildSitemap(routeList) {
   const entries = routeList
