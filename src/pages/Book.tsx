@@ -4,7 +4,6 @@ import {
   CALENDLY_FAMILY_CALL,
   CALENDLY_PARTNERSHIP_CALL,
   PORTAL_REGISTER_URL,
-  ZEFFY_FAMILY_PLANS,
 } from "@/lib/booking";
 
 /**
@@ -135,15 +134,6 @@ export default function Book() {
               style={{ display: "inline-flex", alignItems: "center", gap: 9, background: NAVY, color: "#fff", padding: "15px 30px", borderRadius: 8, fontWeight: 800, fontSize: 16, textDecoration: "none" }}
             >
               Start your free IEP Audit
-            </a>
-            <a
-              href={ZEFFY_FAMILY_PLANS}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: 9, background: "#fff", color: NAVY, border: `2px solid ${NAVY}`, padding: "13px 28px", borderRadius: 8, fontWeight: 800, fontSize: 16, textDecoration: "none" }}
-            >
-              See family support plans
-              <ExternalLink size={15} aria-hidden="true" />
             </a>
           </div>
         </div>

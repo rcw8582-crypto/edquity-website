@@ -48,18 +48,14 @@ export const CALENDLY_PARTNERSHIP_CALL =
 export const BOOKING_URL = "/book";
 
 /**
- * Paid family plans, on Zeffy so no processing fee is taken out.
+ * No payment is collected anywhere on this site.
  *
- * One membership campaign carries every plan: IEP Review and Family Support,
- * the Parent IEP Advocacy Academy, and the Complete Family Support bundle,
- * each payable annually or monthly, plus single IEP Meeting Attendance.
- *
- * The slug still says iep-monitoring-and-advocacy because Zeffy kept the
- * original slug when the campaign was renamed. Linked rather than framed,
- * for the storage-partitioning reason described above.
+ * A Zeffy membership campaign exists for the paid family plans, but it is
+ * deliberately not linked from here and not exported. Pricing and scope are
+ * still being settled, and a live payment link for an undefined service is
+ * worse than no link at all. Add the constant back here when the plans are
+ * final and the campaign has been checked end to end.
  */
-export const ZEFFY_FAMILY_PLANS =
-  "https://www.zeffy.com/en-US/ticketing/iep-monitoring-and-advocacy";
 
 /**
  * Where every "Start Your Free IEP Audit" button points.
