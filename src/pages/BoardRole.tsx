@@ -197,7 +197,7 @@ export default function BoardRole() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <article className="max-w-3xl" data-testid="role-body">
             <p className="text-muted-foreground leading-relaxed">
-              EDquity at the Margins is a Tennessee nonprofit corporation and an IRS-recognized 501(c)(3) public charity, EIN 42-2295582. We review IEPs for families who cannot afford an advocate and we deliver free workshops on parent rights. Every family service is free.
+              EDquity at the Margins is a Tennessee nonprofit corporation and an IRS-recognized 501(c)(3) public charity, EIN 42-2295582. We review IEPs for families who cannot afford an advocate and we deliver free workshops on parent rights. The IEP Audit and those workshops are free to every family.
             </p>
 
             <RoleBody role={role} shared={shared} />
