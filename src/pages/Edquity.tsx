@@ -16,6 +16,7 @@ import {
   EDQUITY_DERIVED,
   EDQUITY_GAP_MEASURE,
   EDQUITY_EXCLUSIONS,
+  EDQUITY_META_DESCRIPTION,
 } from "@/lib/edquity";
 import { PORTAL_REGISTER_URL } from "@/lib/booking";
 
@@ -44,7 +45,7 @@ export default function Edquity() {
     <div className="pt-20">
       <PageMeta
         title="EDquity: A Definition of Equity You Can Measure"
-        description="EDquity is the condition in which every family can find out how good their child's education plan is, judged against one standard, by someone with nothing to gain from the answer, without paying for the privilege."
+        description={EDQUITY_META_DESCRIPTION}
       />
 
       {/* The entry itself, set as the hero because the definition is the page */}
@@ -71,7 +72,7 @@ export default function Edquity() {
           <ol className="space-y-7">
             {senses.map((sense) => (
               <li key={sense.n} className="flex gap-5">
-                <span className="text-accent font-black text-xl shrink-0 leading-relaxed">
+                <span className="text-accent font-black text-lg md:text-2xl shrink-0 leading-relaxed">
                   {sense.n}.
                 </span>
                 <p className="text-lg md:text-2xl leading-relaxed">
