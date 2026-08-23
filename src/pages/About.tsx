@@ -19,9 +19,9 @@ export default function About() {
             </p>
             <p className="mt-6 text-base text-muted-foreground leading-relaxed">
               EDquity at the Margins is a Tennessee nonprofit corporation and an IRS-recognized{" "}
-              <strong className="text-primary">501(c)(3) public charity</strong>, EIN 42-2295582. Every
-              service we provide to families is free, funded by donations and by our paid work with
-              schools and school systems.
+              <strong className="text-primary">501(c)(3) public charity</strong>, EIN 42-2295582. Our
+              IEP Audit, our Know Your Rights workshops, and our Advocacy Toolkit are free to every
+              family, funded by donations and by our paid work with schools and school systems.
             </p>
           </div>
         </div>
