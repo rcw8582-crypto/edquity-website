@@ -70,7 +70,7 @@ export default function Navbar() {
               alt=""
               width={400}
               height={129}
-              fetchPriority="high"
+              {...{ fetchpriority: "high" }}
               className="h-10 w-auto group-hover:scale-105 transition-transform duration-300"
             />
           </Link>
