@@ -49,7 +49,7 @@ export default function About() {
                 Every family we have served self-identifies as Black, and half report household income below 200 percent of the federal poverty level.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We do not represent families, and we do not attend IEP meetings. Our goal is to empower parents to advocate for their children and give them the language to do it. All family services are free.
+                Our goal is to empower parents to advocate for their children and give them the language to do it. Our IEP Audit, our Know Your Rights workshops, and our Advocacy Toolkit are free.
               </p>
             </motion.div>
             
@@ -216,10 +216,13 @@ export default function About() {
                 .
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We never charge families for anything. We never accept payment from a school district in
+                Our IEP Audit, our Know Your Rights workshops, and our Advocacy Toolkit are free to
+                every family, and they always will be. Our multi-week courses and our one-to-one advocacy
+                services carry a fee, set below market rate and reduced or waived by the Families First
+                Scholarship for families who qualify. We never accept payment from a school district in
                 connection with an individual child's case. Schools that engage us pay for reviews of
                 their own IEP quality across their system, and ten percent of every school engagement fee
-                is designated to the Family Audit Fund, which keeps family services free.
+                is designated to the Family Audit Fund, which keeps our free services free.
               </p>
             </div>
           </div>
