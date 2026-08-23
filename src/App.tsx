@@ -33,6 +33,7 @@ const Press = lazy(() => import("@/pages/Press"));
 const Accessibility = lazy(() => import("@/pages/Accessibility"));
 const IEPGoalChecker = lazy(() => import("@/pages/IEPGoalChecker"));
 const Methodology = lazy(() => import("@/pages/Methodology"));
+const Edquity = lazy(() => import("@/pages/Edquity"));
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const FerpaCompliance = lazy(() => import("@/pages/FerpaCompliance"));
@@ -127,6 +128,7 @@ function Router() {
           <Route path="/press" component={Press} />
           <Route path="/accessibility" component={Accessibility} />
           <Route path="/tools/iep-goal-checker" component={IEPGoalChecker} />
+          <Route path="/edquity" component={Edquity} />
           <Route path="/our-methodology" component={Methodology} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
           <Route path="/terms-of-service" component={TermsOfService} />
