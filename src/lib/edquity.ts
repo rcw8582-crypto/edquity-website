@@ -22,7 +22,7 @@ export const EDQUITY_PART_OF_SPEECH = "noun";
  * service.
  */
 export const EDQUITY_DEFINITION =
-  "The condition in which every family can find out how good their child's education plan is, judged against one standard, by someone with nothing to gain from the answer, without paying for the privilege.";
+  "The condition in which every family can find out how strong their child's education plan is, judged against one standard, by someone with nothing to gain from the answer, without paying for the privilege.";
 
 /**
  * Sense 2, the practice.
@@ -45,7 +45,7 @@ export const EDQUITY_DEFINITION_ORGANIZATION =
  * opening of a workshop.
  */
 export const EDQUITY_DEFINITION_PLAIN =
-  "You get to know whether your child's plan is any good, measured the same way it would be measured for a family who could afford to hire someone, and finding out costs you nothing.";
+  "You get to know how strong your child's plan is, measured the same way it would be measured for a family who could afford to hire someone, and finding out costs you nothing.";
 
 /**
  * The three conditions that have to hold together. Sense 1 is satisfied only
@@ -109,6 +109,14 @@ export const EDQUITY_EXCLUSIONS: ReadonlyArray<string> = [
   "It makes no claim about equal resources, since a system can distribute unevenly and still satisfy the test, or distribute evenly and fail it.",
   "It sits earlier than both, because it names the condition that makes any claim about outcomes or resources checkable.",
 ];
+
+/**
+ * Search-result description. Deliberately shorter than EDQUITY_DEFINITION,
+ * which runs past the length Google will show, and kept here so the page does
+ * not end up holding a second copy of the definition that can drift.
+ */
+export const EDQUITY_META_DESCRIPTION =
+  "EDquity: knowing how strong your child's education plan is, judged against one standard, by someone with nothing to gain, at no cost to you.";
 
 /** Canonical path of the definition page, for links from other surfaces. */
 export const EDQUITY_DEFINITION_URL = "/edquity";
