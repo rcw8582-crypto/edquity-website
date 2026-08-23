@@ -8,8 +8,7 @@ const milestones = [
   { year: "2026", text: "Incorporated as a Tennessee charitable corporation" },
   { year: "2026", text: "Received 501(c)(3) tax-exempt determination from the IRS" },
   { year: "2026", text: "Launched the free IEP Audit service and online intake portal" },
-  { year: "2026", text: "Delivered our first parent workshop at Gallatin Public Library" },
-  { year: "2026", text: "First fiscal year goal: 31 families served at no cost" },
+  { year: "2026", text: "First fiscal year goal: 100 independent IEP audits at no cost to families" },
 ];
 
 const principles = [
