@@ -22,6 +22,7 @@ export const STATIC_ROUTES: string[] = [
   "/",
   "/about",
   "/services",
+  "/edquity",
   "/our-methodology",
   "/fellowship",
   "/edquity-scholars",
