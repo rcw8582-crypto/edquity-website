@@ -13,7 +13,7 @@ const milestones = [
 ];
 
 const principles = [
-  "We do not charge families for anything. Our independent IEP Audit and our parent workshops are free, and our Advocacy Toolkit and My Child's Playbook are free to download.",
+  "Our independent IEP Audit is free, our Know Your Rights workshops are free, and our Advocacy Toolkit and My Child's Playbook are free to download. Our multi-week courses carry tuition, and the Families First Scholarship covers that tuition in full or in part for families who qualify, with seats limited by available funding.",
   "We never accept payment from a school district in connection with an individual child's case. Schools and districts that enroll in our IEP Quality Improvement Program are purchasing a review of their own IEP quality across their system, and no family service is ever funded by the district whose documents we review.",
   "We publish our EIN and organizational filings so anyone can verify our nonprofit status.",
   "We will never sell subscriber data or family information to any third party.",
@@ -59,7 +59,7 @@ export default function Transparency() {
             <div>
               <h2 style={{ fontSize: "clamp(22px,2.5vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 32px", letterSpacing: "-0.5px" }}>How We Spend</h2>
               <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.7, margin: 0 }}>
-                Family services stay free because paid work with schools and systems underwrites them, and because our founder contributes the majority of the professional time the organization runs on without pay. As a newly founded organization, we will publish our full financial statements with each annual 990 filing rather than post projections before we have a year of actual spending to report.
+                Our free services stay free because paid work with schools and districts, tuition from families who can pay it, and donations underwrite them, and because our founder contributes the majority of the professional time the organization runs on without pay. As a newly founded organization, we will publish our full financial statements with each annual 990 filing rather than post projections before we have a year of actual spending to report.
               </p>
               {/* A page about accountability that never said who governs the
                   organization. The board page carries the detail. */}
