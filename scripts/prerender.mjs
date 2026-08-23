@@ -150,6 +150,7 @@ const SITEMAP_WEIGHTS = {
   "/services": { changefreq: "monthly", priority: "0.9" },
   "/about": { changefreq: "monthly", priority: "0.9" },
   "/resources": { changefreq: "monthly", priority: "0.9" },
+  "/edquity": { changefreq: "monthly", priority: "0.9" },
   "/our-methodology": { changefreq: "monthly", priority: "0.8" },
   "/news": { changefreq: "weekly", priority: "0.8" },
   "/events": { changefreq: "weekly", priority: "0.8" },
