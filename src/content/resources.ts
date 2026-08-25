@@ -146,6 +146,16 @@ export const RESOURCES: Resource[] = [
   },
 ];
 
+/**
+ * The download button names the format it hands over, so a family knows whether
+ * they are getting something to print or something to type into. Derived from
+ * the extension rather than stored, so adding a resource cannot get it wrong.
+ */
+export function fileLabel(file: string): string {
+  if (file.endsWith(".docx") || file.endsWith(".doc")) return "Word document";
+  return "PDF";
+}
+
 export function getResource(slug: string): Resource | undefined {
   return RESOURCES.find((r) => r.slug === slug);
 }
