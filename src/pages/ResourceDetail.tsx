@@ -2,7 +2,7 @@ import { Link, useParams } from "wouter";
 import { Download, ArrowRight, ChevronRight, Check } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import NotFound from "@/pages/not-found";
-import { getResource, getRelated } from "@/content/resources";
+import { getResource, getRelated, fileLabel } from "@/content/resources";
 import { PORTAL_REGISTER_URL } from "@/lib/booking";
 
 /**
@@ -96,7 +96,7 @@ export default function ResourceDetail() {
               download
               style={{ display: "inline-flex", alignItems: "center", gap: 10, background: NAVY, color: "#fff", padding: "15px 32px", borderRadius: 8, fontWeight: 800, fontSize: 16, textDecoration: "none" }}
             >
-              <Download size={17} aria-hidden="true" /> Download the PDF
+              <Download size={17} aria-hidden="true" /> Download the {fileLabel(resource.file)}
             </a>
             <p style={{ fontSize: 14, color: "#64748b", margin: "16px 0 0", lineHeight: 1.6 }}>
               Free, with no email required. Print it, copy it, and share it with any family who needs it.
