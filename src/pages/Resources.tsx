@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Download, ExternalLink, FileText, BookOpen, MessageSquare, Search, Layers, Target, Newspaper, ArrowRight, ClipboardList } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
-import { RESOURCES } from "@/content/resources";
+import { RESOURCES, fileLabel } from "@/content/resources";
 
 import { PORTAL_REGISTER_URL } from "@/lib/booking";
 
@@ -182,7 +182,7 @@ export default function Resources() {
                       fontWeight: 700, fontSize: 13.5, textDecoration: "none",
                     }}
                   >
-                    <Download size={14} aria-hidden="true" /> Download PDF
+                    <Download size={14} aria-hidden="true" /> Download {fileLabel(guide.file)}
                   </a>
                 </div>
               </motion.div>
