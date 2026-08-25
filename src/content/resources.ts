@@ -12,7 +12,7 @@
  * page is a dead end.
  */
 
-export type ResourceKind = "Worksheet" | "Reference card" | "Template";
+export type ResourceKind = "Worksheet" | "Reference card" | "Template" | "Binder";
 
 export interface Resource {
   slug: string;
@@ -32,6 +32,30 @@ export interface Resource {
 }
 
 export const RESOURCES: Resource[] = [
+  {
+    slug: "iep-master-binder",
+    title: "The IEP Master Binder",
+    kind: "Binder",
+    summary:
+      "A twenty-page filing system that keeps every IEP record, deadline, and conversation in one place, with eight tab dividers and a full school year of logs.",
+    body: [
+      "The district arrives at every meeting with the complete file. Most families arrive with whatever they could find that morning, which is how a service that was never delivered becomes a service nobody can prove was missed. The gap is rarely about memory, it is about filing.",
+      "This binder is the file you build before you need it, so your child's records have a fixed home and a question about missing speech minutes in March gets answered with a dated entry instead of a recollection. The sections that matter most are the ones you fill in as the year goes, because a record made the day something happened carries weight that a summary written afterward never will.",
+    ],
+    inside: [
+      "A cover page for your child's details, the case manager's email, and the four dates every team will ask you about",
+      "Eight printable tab dividers, each listing exactly what belongs behind it, running from Rights & Law through Medical & Private",
+      "A twelve-month communication log, August through July, with a filled-in example showing what a useful entry looks like",
+      "A six-point progress monitoring calendar marking when to check in across the year, and what to ask each time",
+      "The six-week and midyear emails written word for word, along with what to say out loud when the team says no",
+      "A records request checklist that separates the documents schools send routinely from the ones they release only when you name them",
+    ],
+    howToUse:
+      "Print it, punch it, and put it in a one-inch three-ring binder with eight dividers, then file the records you already have. Fill in the cover page and mark the six calendar dates during the week the IEP starts. Log every call and email the same day, because the log is only worth as much as the habit behind it.",
+    file: "/resources/EDATM_IEP_Master_Binder.pdf",
+    accent: "#2563EB",
+    related: ["iep-meeting-notecatcher", "iep-team-directory", "idea-vs-504"],
+  },
   {
     slug: "iep-meeting-notecatcher",
     title: "IEP Meeting Notecatcher",
@@ -54,7 +78,7 @@ export const RESOURCES: Resource[] = [
       "Print it and fill in the first two sections the night before, so you walk in already prepared rather than assembling your thoughts in the room. Bring a pen. Write while people talk, because a commitment nobody wrote down is a commitment that did not happen.",
     file: "/resources/EDATM_IEP_Meeting_Notecatcher.pdf",
     accent: "#EC4899",
-    related: ["iep-eligibility-checklist", "iep-team-directory", "idea-vs-504"],
+    related: ["iep-master-binder", "iep-eligibility-checklist", "iep-team-directory"],
   },
   {
     slug: "iep-eligibility-checklist",
@@ -142,7 +166,7 @@ export const RESOURCES: Resource[] = [
       "Fill it in once at the start of the school year and bring it to every meeting. Log every contact the same day, while you still remember what was said, and print extra copies of the tracking page as the year fills up.",
     file: "/resources/EDATM_IEP_Team_Directory.pdf",
     accent: "#FBBF24",
-    related: ["iep-meeting-notecatcher", "idea-disability-categories", "iep-eligibility-checklist"],
+    related: ["iep-master-binder", "iep-meeting-notecatcher", "idea-disability-categories"],
   },
 ];
 
