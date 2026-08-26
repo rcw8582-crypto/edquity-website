@@ -48,6 +48,10 @@ const INTENTIONALLY_UNLINKED = new Set([
   // submission and so never appears in prerendered markup. Reached by a direct
   // link rather than by browsing.
   "/tell-us-about-your-child",
+  // Reached only after a student answers the interest questions, and built
+  // entirely from what their own browser is holding.
+  "/pathways/explore/results",
+  "/pathways/explore/plan",
 ]);
 
 /** Link text that describes an action, mapped to where it may legitimately go. */
