@@ -18,6 +18,9 @@
     { "source": "/donor", "destination": "/donate", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/pathways/explore/questions/(.*)", "destination": "/pathways/explore/questions" },
+    { "source": "/pathways/explore/fields/(.*)", "destination": "/pathways/explore/fields" },
+    { "source": "/pathways/explore/careers/(.*)", "destination": "/pathways/explore" },
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
