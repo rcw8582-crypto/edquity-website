@@ -758,14 +758,18 @@
 
   .pw-paper {
     max-width: none; width: 100%; margin: 0; border-radius: 0; box-shadow: none;
-    break-after: page; page-break-after: always;
-    /* Measuring the sheet in the browser is not the same as measuring it on
-       paper: the printable column is narrower, text wraps more, and the sheet
-       grows. Scaling the whole sheet is what makes it fit at any wrap width,
-       and it leaves headroom for a student who saves more than four careers. */
-    zoom: 0.88;
+    /* Measured at the real printable column, 8.5in less 0.4in margins, each
+       sheet comes to about 0.85 of a page. The small scale is headroom for a
+       student who saves more careers than the four this was measured with. */
+    zoom: 0.95;
   }
-  .pw-paper:last-of-type { break-after: auto; page-break-after: auto; }
+
+  /* Break BEFORE each sheet after the first, never after the last one.
+     "break-after on every sheet, auto on :last-of-type" looked equivalent and
+     was not: the attribution block is a later div sibling, so :last-of-type
+     never matched the second sheet, its forced break survived, and a two-page
+     document printed with a blank third page. */
+  .pw-paper + .pw-paper { break-before: page; page-break-before: always; }
   .pw-paper .pp-card,
   .pw-paper .pp-panel,
   .pw-paper .pp-team,
