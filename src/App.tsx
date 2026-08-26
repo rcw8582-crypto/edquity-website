@@ -67,6 +67,18 @@ const queryClient = new QueryClient();
 
 function ScrollToTop() {
   const [location] = useLocation();
+
+  /**
+   * The browser restores the previous scroll position on Back, and it does so
+   * after the effect below has already run, so it silently won every time and
+   * dropped the visitor wherever they had scrolled to. On a long page that is
+   * the bottom. Taking manual control is what makes scrolling to the top apply
+   * to Back as well as to forward navigation.
+   */
+  useEffect(() => {
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  }, []);
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [location]);
