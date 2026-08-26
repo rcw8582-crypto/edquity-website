@@ -32,6 +32,13 @@ const Funders = lazy(() => import("@/pages/Funders"));
 const Press = lazy(() => import("@/pages/Press"));
 const Accessibility = lazy(() => import("@/pages/Accessibility"));
 const IEPGoalChecker = lazy(() => import("@/pages/IEPGoalChecker"));
+const PathwaysExplore = lazy(() => import("@/pages/PathwaysExplore"));
+const PathwaysQuestions = lazy(() => import("@/pages/PathwaysQuestions"));
+const PathwaysResults = lazy(() => import("@/pages/PathwaysResults"));
+const PathwaysCareer = lazy(() => import("@/pages/PathwaysCareer"));
+const PathwaysFields = lazy(() => import("@/pages/PathwaysFields"));
+const PathwaysSearch = lazy(() => import("@/pages/PathwaysSearch"));
+const PathwaysPlan = lazy(() => import("@/pages/PathwaysPlan"));
 const Methodology = lazy(() => import("@/pages/Methodology"));
 const Edquity = lazy(() => import("@/pages/Edquity"));
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
@@ -128,6 +135,15 @@ function Router() {
           <Route path="/press" component={Press} />
           <Route path="/accessibility" component={Accessibility} />
           <Route path="/tools/iep-goal-checker" component={IEPGoalChecker} />
+          <Route path="/pathways/explore/questions/:n" component={PathwaysQuestions} />
+          <Route path="/pathways/explore/questions" component={PathwaysQuestions} />
+          <Route path="/pathways/explore/results" component={PathwaysResults} />
+          <Route path="/pathways/explore/careers/:code" component={PathwaysCareer} />
+          <Route path="/pathways/explore/fields/:code" component={PathwaysFields} />
+          <Route path="/pathways/explore/fields" component={PathwaysFields} />
+          <Route path="/pathways/explore/search" component={PathwaysSearch} />
+          <Route path="/pathways/explore/plan" component={PathwaysPlan} />
+          <Route path="/pathways/explore" component={PathwaysExplore} />
           <Route path="/edquity" component={Edquity} />
           <Route path="/our-methodology" component={Methodology} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
