@@ -25,7 +25,7 @@ const interactiveTools = [
   },
   {
     icon: <Compass size={28} color="#FBBF24" />,
-    title: "Explore Careers",
+    title: "Career Explorer",
     desc: "Free career explorer for students. Search hundreds of careers or browse by group to see what the work involves, what else the job is called, and which careers sit next to it. No account, nothing saved.",
     href: "/pathways/explore",
     badge: "Interactive Tool",
