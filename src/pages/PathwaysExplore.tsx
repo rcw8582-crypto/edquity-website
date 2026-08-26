@@ -27,13 +27,13 @@ export default function PathwaysExplore() {
   return (
     <div className="pt-20">
       <PageMeta
-        title="Explore Careers"
+        title="Career Explorer"
         description="Free career exploration for students. Answer short questions about what you like, then see real careers that fit, what they pay, and how much school or training each one needs. No account needed. Built on O*NET data from the U.S. Department of Labor."
       />
 
       <PathwaysShell>
         <p className="pw-eyebrow">EDquity Pathways</p>
-        <h1>What do you actually want to do?</h1>
+        <h1>Career Explorer</h1>
         <p className="pw-lede">
           You do not need an answer yet. Tell us what you like doing, and we will show you real jobs
           that match, what they pay, and how much school each one takes.
