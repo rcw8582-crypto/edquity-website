@@ -35,6 +35,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/services", label: "Services" },
     { href: "/resources", label: "Resources" },
+    { href: "/pathways/explore", label: "Career Explorer" },
     { href: "/events", label: "Events" },
     { href: "/about", label: "About" },
     { href: "/news", label: "In the Margins" },
