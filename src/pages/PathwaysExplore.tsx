@@ -33,10 +33,10 @@ export default function PathwaysExplore() {
 
       <PathwaysShell>
         <p className="pw-eyebrow">EDquity Pathways</p>
-        <h1>Career Explorer</h1>
+        <h1>What are your plans after high school?</h1>
         <p className="pw-lede">
-          You do not need an answer yet. Tell us what you like doing, and we will show you real jobs
-          that match, what they pay, and how much school each one takes.
+          You do not need an answer yet. Tell us what you like doing, and we will show you real
+          careers that fit, what they pay, and how much school or training each one takes.
         </p>
         <p className="pw-fine">
           Nothing is timed and there are no wrong answers. Everything you type stays in this browser
