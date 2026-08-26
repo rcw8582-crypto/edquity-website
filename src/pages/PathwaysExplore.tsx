@@ -9,14 +9,25 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
-import { ClipboardList, Compass, Search, ArrowRight, Printer } from "lucide-react";
+import { ClipboardList, Compass, Search, ArrowRight, Printer, UserX } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import PathwaysShell from "@/components/pathways/PathwaysShell";
-import { loadAnswers, loadPicks } from "@/lib/pathways";
+import { clearEverything, loadAnswers, loadPicks } from "@/lib/pathways";
 
 export default function PathwaysExplore() {
   const [answered, setAnswered] = useState(0);
   const [picks, setPicks] = useState(0);
+
+  /**
+   * Shared computers are the normal case here: a school lab, a library, a
+   * family laptop. Whoever sits down next has to be able to say "that was not
+   * me" and start clean, or they inherit the last student's answers and name.
+   */
+  const startFresh = () => {
+    clearEverything();
+    setAnswered(0);
+    setPicks(0);
+  };
 
   // Read after mount so the prerendered page and the first client render match.
   useEffect(() => {
@@ -62,7 +73,15 @@ export default function PathwaysExplore() {
                   See my plan
                 </Link>
               )}
+              <button type="button" className="pw-ghost" onClick={startFresh}>
+                <UserX size={15} style={{ marginRight: 7, verticalAlign: "-2px" }} aria-hidden="true" />
+                This is not me, start fresh
+              </button>
             </div>
+            <p className="pw-fine" style={{ margin: "14px 0 0" }}>
+              Sharing this computer? Starting fresh erases the answers, the saved careers and the
+              name it is holding.
+            </p>
           </div>
         )}
 
