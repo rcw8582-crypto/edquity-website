@@ -586,7 +586,7 @@ export default function PathwaysPlan() {
             </div>
 
             {/* ============ PAGE TWO: the explainer ============ */}
-            <div className="pw-paper" style={{ marginTop: 26, pageBreakBefore: "always", breakBefore: "page" }}>
+            <div className="pw-paper" style={{ marginTop: 26 }}>
               <div className="pp-band">
                 <div>
                   <img
