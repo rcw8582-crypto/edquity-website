@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Download, ExternalLink, FileText, BookOpen, MessageSquare, Search, Layers, Target, Newspaper, ArrowRight, ClipboardList } from "lucide-react";
+import { Download, ExternalLink, FileText, BookOpen, MessageSquare, Search, Layers, Target, Newspaper, ArrowRight, ClipboardList, Compass } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import { RESOURCES, fileLabel } from "@/content/resources";
 
@@ -22,6 +22,14 @@ const interactiveTools = [
     href: "/tools/iep-goal-checker",
     badge: "Interactive Tool",
     badgeColor: "#14B8A6",
+  },
+  {
+    icon: <Compass size={28} color="#FBBF24" />,
+    title: "Explore Careers",
+    desc: "Free career explorer for students. Search hundreds of careers or browse by group to see what the work involves, what else the job is called, and which careers sit next to it. No account, nothing saved.",
+    href: "/pathways/explore",
+    badge: "Interactive Tool",
+    badgeColor: "#B45309",
   },
   {
     icon: <Newspaper size={28} color="#8B5CF6" />,
