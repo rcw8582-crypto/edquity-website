@@ -156,6 +156,10 @@ const SITEMAP_WEIGHTS = {
   "/events": { changefreq: "weekly", priority: "0.8" },
   "/donate": { changefreq: "monthly", priority: "0.8" },
   "/tools/iep-goal-checker": { changefreq: "monthly", priority: "0.7" },
+  "/pathways/explore": { changefreq: "monthly", priority: "0.7" },
+  "/pathways/explore/questions": { changefreq: "monthly", priority: "0.6" },
+  "/pathways/explore/fields": { changefreq: "monthly", priority: "0.6" },
+  "/pathways/explore/search": { changefreq: "monthly", priority: "0.5" },
   "/tell-us-about-your-child": { changefreq: "monthly", priority: "0.7" },
   "/fellowship": { changefreq: "monthly", priority: "0.7" },
   "/edquity-scholars": { changefreq: "monthly", priority: "0.7" },
@@ -195,7 +199,15 @@ const SITEMAP_PREFIX_WEIGHTS = [
  * sent by link to families who already hold a report, and it would only
  * confuse a visitor who had never seen one.
  */
-const SITEMAP_EXCLUDE = new Set(["/client-portal", "/intake", "/audit-feedback"]);
+const SITEMAP_EXCLUDE = new Set([
+  "/client-portal",
+  "/intake",
+  "/audit-feedback",
+  // Both are built from answers held in the visitor's own browser, so they have
+  // nothing in them for a crawler and nothing worth landing on cold.
+  "/pathways/explore/results",
+  "/pathways/explore/plan",
+]);
 
 function buildSitemap(routeList) {
   const entries = routeList
