@@ -19,11 +19,12 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "wouter";
-import { ArrowLeft, Loader2, Printer, Trash2 } from "lucide-react";
+import { ArrowLeft, Loader2, Printer, Trash2, UserX } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import PathwaysShell from "@/components/pathways/PathwaysShell";
 import {
   areaStyle,
+  clearEverything,
   fetchQuestions,
   fetchScores,
   HEXAGON_ORDER,
@@ -248,6 +249,27 @@ export default function PathwaysPlan() {
               <Link href="/pathways/explore/results" className="pw-ghost" style={{ textDecoration: "none" }}>
                 Add more careers
               </Link>
+            </div>
+
+            {/* Printing is where a session ends, so it is where clearing up
+                belongs on a shared computer. */}
+            <div className="pw-notice">
+              <h3>Finished on a shared computer?</h3>
+              <p className="pw-fine" style={{ marginBottom: 14 }}>
+                Print or save your plan first. Erasing removes your answers, your saved careers and
+                your name from this browser, and it cannot be undone.
+              </p>
+              <button
+                type="button"
+                className="pw-ghost"
+                onClick={() => {
+                  clearEverything();
+                  window.location.assign("/pathways/explore");
+                }}
+              >
+                <UserX size={15} style={{ marginRight: 7, verticalAlign: "-2px" }} aria-hidden="true" />
+                Erase my answers from this computer
+              </button>
             </div>
 
             {picks.length > 0 && (
