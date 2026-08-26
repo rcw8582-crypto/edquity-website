@@ -515,6 +515,20 @@
 .pw .pw-fine { font-size: 13.5px; color: var(--pw-ink-3); line-height: 1.55; }
 .pw .pw-eyebrow { font-size: 11.5px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--pw-ink-3); margin: 0 0 10px; }
 .pw a { color: var(--pw-teal); }
+
+/* A link styled as a button has to keep the button's colours. ".pw a" and
+   ".pw-cta" carry the same specificity, so the link colour was winning on
+   source order and putting teal text on the lime button: a real contrast
+   failure, not a cosmetic one. These selectors outrank both. */
+.pw a.pw-cta { color: var(--pw-cta-ink); }
+.pw a.pw-save { color: var(--pw-cta-ink); }
+.pw a.pw-ghost,
+.pw a.pw-back { color: var(--pw-ink-2); }
+.pw a.pw-cardbtn,
+.pw a.pw-door,
+.pw a.pw-filter { color: var(--pw-ink); }
+.pw a.pw-door em { color: var(--pw-lime); }
+.pw a.pw-cardbtn em { color: var(--pw-lime); }
 .pw :focus-visible { outline: 3px solid var(--pw-teal); outline-offset: 3px; border-radius: 6px; }
 
 /* ---- the three doors ---- */

@@ -214,7 +214,10 @@ export default async function handler(req: Request): Promise<Response> {
     return json({ error: "Career information is unavailable." }, 503, false);
   }
 
-  const params = new URL(req.url).searchParams;
+  // A base is supplied because req.url is a full URL on the edge runtime and a
+  // bare path on the Node runtime, and new URL() throws on the latter. Parsing
+  // it this way works under either, so a runtime change cannot break it again.
+  const params = new URL(req.url, "http://localhost").searchParams;
   const resolved = resolvePath(params);
   if ("error" in resolved) return json({ error: resolved.error }, 400, false);
 
@@ -248,3 +251,10 @@ export default async function handler(req: Request): Promise<Response> {
 
   return json(data, 200, true);
 }
+
+/**
+ * Every other function in this directory runs on the edge runtime, and this one
+ * has no reason to differ. Without this it deployed as a Node function, where
+ * req.url arrives as a bare path, and every request failed with an invalid URL.
+ */
+export const config = { runtime: "edge" };
