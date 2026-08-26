@@ -379,6 +379,7 @@ export async function fetchCareer(
 
 const ANSWERS_KEY = "edatm-pathways-answers-v1";
 const PICKS_KEY = "edatm-pathways-picks-v1";
+const IDENTITY_KEY = "edatm-pathways-identity-v1";
 const THEME_KEY = "edatm-pathways-light-v1";
 
 export const SHORT_FORM = 30;
@@ -479,7 +480,6 @@ export interface PlanIdentity {
   school: string;
 }
 
-const IDENTITY_KEY = "edatm-pathways-identity-v1";
 
 export function loadIdentity(): PlanIdentity {
   const empty: PlanIdentity = { name: "", grade: "", school: "" };
@@ -503,6 +503,28 @@ export function saveIdentity(identity: PlanIdentity): void {
     localStorage.setItem(IDENTITY_KEY, JSON.stringify(identity));
   } catch {
     /* nothing to do */
+  }
+}
+
+/**
+ * Wipes everything this browser is holding about a student.
+ *
+ * Shared computers are the normal case, not the edge case: a school lab, a
+ * library, a family laptop, or Reba's own machine at a workshop. Without this,
+ * the next student to sit down inherits the last one's answers, saved careers
+ * and name, which is both wrong and a small privacy failure.
+ *
+ * The light-mode preference deliberately survives. It describes the device and
+ * the person reading, not the student's answers, and clearing it would undo an
+ * accessibility choice someone made for a reason.
+ */
+export function clearEverything(): void {
+  for (const key of [ANSWERS_KEY, PICKS_KEY, IDENTITY_KEY]) {
+    try {
+      localStorage.removeItem(key);
+    } catch {
+      /* a browser blocking storage has nothing to clear */
+    }
   }
 }
 
