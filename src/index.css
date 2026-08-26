@@ -789,6 +789,19 @@
   .pw-paper .pp-team,
   .pw-paper .pp-sec { break-inside: avoid; page-break-inside: avoid; }
 
+  /* Chrome ships "Background graphics" switched OFF, and every browser has an
+     equivalent. Without this the navy header band disappears and takes its
+     white text with it, the coloured interest badges empty out, and the
+     "Hiring more" ribbons go blank. print-color-adjust: exact tells the
+     browser these fills carry meaning rather than decoration, and it prints
+     them whether or not the box is ticked. Applied to the sheet and to every
+     descendant, because it does not inherit reliably across all engines. */
+  .pw-paper,
+  .pw-paper * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
   /* On screen each sheet has room to breathe. On paper it has 10.2 inches, and
      measuring showed both sheets running about 1.2 pages, which spilled a
      two-page document across five. Everything below buys that back out of
