@@ -86,7 +86,7 @@ export default function PathwaysQuestions() {
   // Focus the question text on every change, so a screen reader announces the
   // new question rather than leaving the user on the button they just pressed.
   useEffect(() => {
-    if (question) heading.current?.focus();
+    if (question) heading.current?.focus({ preventScroll: true });
   }, [question]);
 
   const record = useCallback(
