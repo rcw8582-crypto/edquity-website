@@ -26,7 +26,7 @@ const interactiveTools = [
   {
     icon: <Compass size={28} color="#FBBF24" />,
     title: "Career Explorer",
-    desc: "Free career explorer for students. Search hundreds of careers or browse by group to see what the work involves, what else the job is called, and which careers sit next to it. No account, nothing saved.",
+    desc: "For students, ages 13 and up. Answer 30 short questions about what you like, then see real careers that fit, what they pay, and how much school or training each one takes. Print a one-page plan to bring to a school meeting, with a sheet explaining it for families. No account needed.",
     href: "/pathways/explore",
     badge: "Interactive Tool",
     badgeColor: "#B45309",
