@@ -759,11 +759,46 @@
   .pw-paper {
     max-width: none; width: 100%; margin: 0; border-radius: 0; box-shadow: none;
     break-after: page; page-break-after: always;
+    /* Measuring the sheet in the browser is not the same as measuring it on
+       paper: the printable column is narrower, text wraps more, and the sheet
+       grows. Scaling the whole sheet is what makes it fit at any wrap width,
+       and it leaves headroom for a student who saves more than four careers. */
+    zoom: 0.88;
   }
   .pw-paper:last-of-type { break-after: auto; page-break-after: auto; }
   .pw-paper .pp-card,
   .pw-paper .pp-panel,
   .pw-paper .pp-team,
   .pw-paper .pp-sec { break-inside: avoid; page-break-inside: avoid; }
+
+  /* On screen each sheet has room to breathe. On paper it has 10.2 inches, and
+     measuring showed both sheets running about 1.2 pages, which spilled a
+     two-page document across five. Everything below buys that back out of
+     padding and leading rather than out of the content, so nothing a student
+     wrote or chose is lost to make it fit. */
+  .pw-paper .pp-band { padding: 12px 28px 11px; }
+  .pw-paper .pp-band h2 { font-size: 23px; }
+  .pw-paper .pp-id div { padding: 6px 11px; }
+  .pw-paper .pp-body { padding: 12px 28px 12px; }
+  .pw-paper .pp-sec { margin-bottom: 8px; }
+  .pw-paper .pp-h { margin-bottom: 8px; }
+  .pw-paper .pp-hexrow { gap: 14px; }
+  .pw-paper .pp-tiles { gap: 5px; }
+  .pw-paper .pp-tile { padding: 4px 8px; }
+  .pw-paper .pp-cards { gap: 7px; }
+  .pw-paper .pp-card { padding: 7px 10px; }
+  .pw-paper .pp-card h4 { margin-bottom: 5px; }
+  .pw-paper .pp-paybar { margin: 5px 0 6px; }
+  .pw-paper .pp-two { gap: 9px; }
+  .pw-paper .pp-panel { padding: 8px 10px; }
+  .pw-paper .pp-steps { gap: 6px; }
+  .pw-paper .pp-team { padding: 9px 11px; }
+  .pw-paper .pp-team p { line-height: 1.45; }
+  .pw-paper .pp-cite { margin-top: 4px; line-height: 1.38; }
+  .pw-paper .pp-foot { padding: 7px 28px 9px; line-height: 1.35; }
+  .pw-paper ul { line-height: 1.35 !important; }
+  .pw-paper .pp-panel p { line-height: 1.4 !important; }
+  /* The hexagon drives the height of the interests row, so it shrinks with it. */
+  .pw-paper .pp-hexrow svg { width: 168px !important; height: 129px !important; }
 }
 @page { size: letter; margin: 0.4in; }
