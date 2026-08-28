@@ -2,19 +2,15 @@
 #
 # Posts are baked into the site at build time, and src/lib/posts.ts hides any
 # post whose publishedAt date is later than the build date. A rebuild is
-# therefore what releases a scheduled post, so this workflow asks Vercel for a
-# fresh build once a day and each morning's build picks up whatever is due.
+# therefore what releases a scheduled post.
 #
-# Setup, one time:
-#   1. In Vercel, open the edquity-website project, then Settings, Git,
-#      Deploy Hooks. Create a hook named "daily-scheduled-publish" on the
-#      main branch and copy the URL it gives you.
-#   2. In GitHub, open the repository, then Settings, Secrets and variables,
-#      Actions. Add a repository secret named VERCEL_DEPLOY_HOOK_URL and paste
-#      the URL as its value.
+# This job checks each morning whether a post is due today. When one is, it
+# pushes an empty commit, which is what Vercel already watches, so the site
+# rebuilds and the post appears. On every other morning it exits quietly and
+# writes nothing, so the git history gains a commit only on release days.
 #
-# Nothing else is needed. Removing the secret switches the schedule off and
-# leaves every already-released post live.
+# No setup, no secrets, no Vercel configuration. Switch the schedule off by
+# disabling this workflow in the repository's Actions tab.
 
 name: Scheduled publish
 
@@ -22,32 +18,68 @@ on:
   schedule:
     # 12:00 UTC daily, which is 7:00 AM Central Daylight Time and 6:00 AM Central Standard Time.
     - cron: "0 12 * * *"
-  # Lets you release a post immediately from the Actions tab instead of waiting.
+  # Lets you release a due post immediately from the Actions tab.
   workflow_dispatch:
 
-# Two runs rebuilding at once would waste a deploy and could race, so a new run
-# waits rather than starting alongside one already going.
+# Pushing a commit needs write access to the repository contents.
+permissions:
+  contents: write
+
+# Two runs pushing at once would race, so a new run waits its turn.
 concurrency:
   group: scheduled-publish
   cancel-in-progress: false
 
 jobs:
-  trigger-rebuild:
+  release-due-posts:
     runs-on: ubuntu-latest
     steps:
-      - name: Ask Vercel for a fresh production build
-        env:
-          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+      - uses: actions/checkout@v4
+
+      - name: Find posts due today
+        id: due
         run: |
-          if [ -z "$HOOK_URL" ]; then
-            echo "VERCEL_DEPLOY_HOOK_URL is not set, so there is nothing to trigger."
-            echo "Add the secret in Settings, Secrets and variables, Actions."
-            exit 1
+          # Central time decides the release date, so a post dated the 24th
+          # goes out on the 24th in Nashville rather than on UTC's calendar.
+          TODAY=$(TZ=America/Chicago date +%F)
+          echo "Checking for posts dated $TODAY (America/Chicago)"
+
+          DUE=""
+          for file in content/posts/*.md; do
+            # Frontmatter only, which is everything above the second --- line.
+            fm=$(awk 'NR>1 && /^---$/{exit} {print}' "$file")
+            case "$fm" in
+              *"published: true"*) ;;
+              *) continue ;;
+            esac
+            date_line=$(printf '%s\n' "$fm" | sed -n 's/^publishedAt:[[:space:]]*"\{0,1\}\([0-9-]\{10\}\).*/\1/p')
+            if [ "$date_line" = "$TODAY" ]; then
+              title=$(printf '%s\n' "$fm" | sed -n 's/^title:[[:space:]]*"\(.*\)"[[:space:]]*$/\1/p')
+              echo "  due: $title"
+              DUE="$DUE$title
+          "
+            fi
+          done
+
+          if [ -z "$DUE" ]; then
+            echo "Nothing is due today, so no rebuild is needed."
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=true" >> "$GITHUB_OUTPUT"
+            {
+              echo "titles<<EOF"
+              printf '%s' "$DUE"
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
           fi
 
-          status=$(curl --silent --show-error --fail-with-body \
-            --output response.txt --write-out '%{http_code}' \
-            --request POST "$HOOK_URL")
-
-          echo "Vercel responded with HTTP $status"
-          cat response.txt
+      - name: Trigger a rebuild so the due post goes live
+        if: steps.due.outputs.found == 'true'
+        env:
+          TITLES: ${{ steps.due.outputs.titles }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "Release scheduled post" -m "$TITLES"
+          git push
+          echo "Pushed. Vercel rebuilds from this commit and the post appears."
