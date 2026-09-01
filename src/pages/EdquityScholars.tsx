@@ -366,7 +366,7 @@ export default function EdquityScholars() {
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: "0 0 14px" }}>How to request a seat</h2>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 14px" }}>
-            Your student is eligible if they will be in grades 8 through 12 during the 2027-28 school year and have a current IEP or Section 504 plan. Requesting a seat takes about five minutes and works like this:
+            Your student is eligible if they will be in grades 8 through 12 during the 2027-28 school year and have a current IEP or Section 504 plan. Every Scholar has one, because the cohort is built on that shared experience: every student in the room knows what it is to carry the document, and nobody has to explain themselves. Requesting a seat takes about five minutes and works like this:
           </p>
           <ol style={{ fontSize: 15, color: "#475569", lineHeight: 1.8, margin: "0 0 0 20px", padding: 0 }}>
             <li>Submit the form below. No payment is collected, because no family ever pays.</li>
