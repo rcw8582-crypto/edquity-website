@@ -56,8 +56,6 @@ const Fellowship = lazy(() => import("@/pages/Fellowship"));
 const EdquityScholars = lazy(() => import("@/pages/EdquityScholars"));
 const Book = lazy(() => import("@/pages/Book"));
 const IepQualityImprovement = lazy(() => import("@/pages/IepQualityImprovement"));
-const Scholarship = lazy(() => import("@/pages/Scholarship"));
-const ReserveSeat = lazy(() => import("@/pages/ReserveSeat"));
 const AuditFeedback = lazy(() => import("@/pages/AuditFeedback"));
 const TeacherPD = lazy(() => import("@/pages/TeacherPD"));
 const NotFound = lazy(() => import("@/pages/not-found"));
@@ -173,9 +171,6 @@ function Router() {
           <Route path="/college-success" component={EdquityScholars} />
           <Route path="/book" component={Book} />
           <Route path="/iep-quality-improvement" component={IepQualityImprovement} />
-          <Route path="/scholarship" component={Scholarship} />
-          <Route path="/parent-academy" component={EdquityScholars} />
-          <Route path="/reserve" component={ReserveSeat} />
           <Route path="/audit-feedback" component={AuditFeedback} />
           <Route path="/professional-development" component={TeacherPD} />
           <Route component={NotFound} />
