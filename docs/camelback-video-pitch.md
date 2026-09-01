@@ -35,11 +35,11 @@ section, which is the section that decides whether they advance.
 > no parent has an independent way to know whether it's any good.
 >
 > So we read it for them, free. A family sends us the document, we evaluate it
-> blind against a forty-condition rubric, and we send back a plain-language
+> blind against a 54-condition rubric, and we send back a plain-language
 > report telling them what's missing and what to say about it at the next
 > meeting.
 
-Say "forty-condition rubric" clearly and do not rush past it. That phrase is
+Say "54-condition rubric" clearly and do not rush past it. That phrase is
 the difference between sounding like a helpful person and sounding like
 someone who built an instrument.
 
