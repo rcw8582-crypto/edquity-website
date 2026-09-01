@@ -21,7 +21,7 @@ function Fact({ label, value }: FactProps) {
 
 const BELIEFS = [
   "A student who spends a full year with the same peers and the same adults builds skills that no single workshop can, which is why Scholars runs from July through May and welcomes students back year after year until they graduate.",
-  "The student is the one who carries the file. Every Scholar learns to read their own document, name what helps them learn, and speak in their own meeting, because after graduation nobody is required to do any of that for them.",
+  "The document belongs to the student. Every Scholar learns to read their own document, name what helps them learn, and speak in their own meeting, skills that stay with them long after graduation.",
   "Families grow alongside their students. Parents attend their own workshops on the same days their Scholars meet, so the whole household leaves the year stronger than it entered.",
 ];
 
@@ -138,7 +138,7 @@ export default function EdquityScholars() {
             EDquity Scholars
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 720, margin: "0 auto 12px" }}>
-            A year-long program for students in grades 8 through 12 with an Individualized Education Program (IEP) or a Section 504 plan. Scholars learn to read their own document, speak in their own meeting, and run the systems the IEP keeps writing goals about, because sooner or later the student carries the file.
+            A year-long program for students in grades 8 through 12 with an Individualized Education Program (IEP) or a Section 504 plan. Scholars learn to read their own document, speak in their own meeting, and build the organization, planning, and self-advocacy skills that carry them through school and into college and work.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 36px" }}>
             In person in Gallatin. Parents attend their own workshops on the same days.
@@ -165,10 +165,10 @@ export default function EdquityScholars() {
         <div style={{ maxWidth: 820, margin: "0 auto" }}>
           <p style={{ fontSize: 12, fontWeight: 700, color: TEAL_TEXT, letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Why This Program Exists</p>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, lineHeight: 1.2, margin: "0 0 18px" }}>
-            The system writes goals about skills it never teaches.
+            Self-advocacy and executive functioning are learned skills, and we teach them directly.
           </h2>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 14px" }}>
-            Year after year, IEPs set goals for organization, planning, and self-advocacy, and almost none of them say who will teach those skills or how. Students sit through meetings about their own education without ever being shown what the document says or how to speak in the room. Scholars teaches both, directly, across a full year rather than in a single workshop.
+            IEPs often carry goals for organization, planning, and self-advocacy, and students grow fastest in those areas when someone teaches them directly and gives them a full year to practice. Students also do best when they understand their own document and can speak in the meetings about their own education. Scholars teaches both, directly, across a full year rather than in a single workshop.
           </p>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: 0 }}>
             The other gap opens at graduation. The Individuals with Disabilities Education Act ends, college runs on Section 504 and the ADA, and under those laws nobody is required to find the student, evaluate the student, or write a program for them. Most students are never told the rules change, and their families find out after the first bad semester. Scholars teaches it years ahead of graduation, while the high school team can still help.

@@ -228,7 +228,7 @@ export default function Services() {
             <p style={{ fontSize: 24, fontWeight: 900, color: "#22C55E", margin: "0 0 6px" }}>$1,000 per seat · Sponsor-funded</p>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "0 0 20px" }}>Grades 8 through 12 · Thirty seats · The first cohort begins July 2027 · In person in Gallatin</p>
             <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              EDquity Scholars is one program for students in grades 8 through 12. Students build the executive function skills the IEP keeps writing goals about and rarely teaches, alongside career and college readiness, while their parents learn to read and question the document in workshops that run the same day. Each student's IEP is audited when they enroll and again in May, so the year ends with evidence of whether the document actually improved.
+              EDquity Scholars is one program for students in grades 8 through 12. Students spend the year building executive functioning skills like organization, planning, and self-advocacy, alongside career exploration and college readiness, while their parents build their own advocacy skills in workshops that run the same day. Each student's IEP is audited when they enroll and again in May, so families end the year knowing whether the document improved.
             </p>
             <div className="rg-2" style={{ gap: 16, marginBottom: 24 }}>
               <div style={{ background: "rgba(255,255,255,0.06)", borderRadius: 14, padding: 24 }}>
