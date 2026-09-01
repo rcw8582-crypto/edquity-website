@@ -24,7 +24,7 @@ export default function Services() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: "#122C54", background: "#fff" }}>
       <PageMeta
         title="Free IEP Audit and Know Your Rights Workshops for Families"
-        description="Free services for families of children with disabilities: an independent IEP Audit and Know Your Rights workshops, plus paid parent workshops, the Parent IEP Advocacy Academy, and student programs. Delivered virtually nationwide."
+        description="Free services for families of children with disabilities: an independent IEP Audit, Know Your Rights workshops, downloadable advocacy tools, and EDquity Scholars, a sponsor-funded year-long program for students. The audit and workshops are delivered virtually nationwide; Scholars meets in person in Gallatin."
       />
 
       {/* Hero */}
@@ -35,7 +35,7 @@ export default function Services() {
             Independent IEP Support for Families Who Deserve More Than a Form Letter
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, maxWidth: 680, margin: "0 auto 16px" }}>
-            Our core services are free. The IEP Audit and our Know Your Rights workshops never cost a family anything, because access is the point. Families who want deeper, structured training across the school year can join the Parent IEP Advocacy Academy. Every service is delivered virtually.
+            Every family service is free to the family it serves. The IEP Audit and our Know Your Rights workshops never cost a family anything, because access is the point, and EDquity Scholars gives students a sponsor-funded year of direct instruction. The audit and workshops are delivered virtually; Scholars meets in person in Gallatin.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 40px" }}>
             Serving families across the greater Metro Nashville area and, through our virtual delivery model, anywhere in the country.
@@ -89,9 +89,9 @@ export default function Services() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ marginBottom: 56 }}>
             <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>What We Offer</p>
-            <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>Two free core services. One purpose.</h2>
+            <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>Free family services. One purpose.</h2>
             <p style={{ fontSize: 18, color: "#64748b", maxWidth: 680, lineHeight: 1.65, margin: 0 }}>
-              The school district arrives at that meeting with a full professional team. Our free core services exist because you should not have to sit across from that team without independent support, and deeper training programs are available for families and students who want more.
+              The school district arrives at that meeting with a full professional team. Our free services exist because you should not have to sit across from that team without independent support, and EDquity Scholars extends that support to the student directly across a full year.
             </p>
           </div>
 
@@ -237,7 +237,7 @@ export default function Services() {
                   "A five-day summer intensive in July that launches the cohort",
                   "Nine monthly Saturday sessions, September through May",
                   "Two local college visits, each including the disability services office",
-                  "A family showcase in May where every Scholar presents",
+                  "A closing celebration in May where every Scholar presents",
                 ].map((w, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 10 }}>
                     <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#22C55E", marginTop: 7, flexShrink: 0 }} />
@@ -281,7 +281,7 @@ export default function Services() {
             </div>
             <h3 style={{ fontSize: "clamp(20px,2.2vw,26px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px", letterSpacing: "-0.5px" }}>Take these with you, no appointment needed</h3>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              Alongside our two services, we publish tools you can download and use on your own: the Advocacy Toolkit with plain-language IDEA guides, meeting notecatchers, and eligibility checklists; My Child's Playbook for bringing your child's own voice into the meeting; and the IEP Goal Checker for testing whether a goal is actually measurable.
+              Alongside our services, we publish tools you can download and use on your own: the Advocacy Toolkit with plain-language IDEA guides, meeting notecatchers, and eligibility checklists; My Child's Playbook for bringing your child's own voice into the meeting; and the IEP Goal Checker for testing whether a goal is actually measurable.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <Link href="/resources"

@@ -15,7 +15,7 @@ import { trackInquirySubmitted } from "@/lib/analytics";
  * Teacher Professional Development.
  *
  * Content source: "EDATM Teacher PD Overview" (Reba's Word document, August
- * 2026). Sessions grow out of the same forty-condition audit standard the
+ * 2026). Sessions grow out of the same 54-condition audit standard the
  * IEP Quality Improvement Program applies, so this page cross-links with
  * that page and the Fellowship rather than restating the methodology.
  *
@@ -83,7 +83,7 @@ const OFFERINGS: Offering[] = [
   {
     title: "High-Quality IEP Writing",
     blurb:
-      "The substantive standard first: what a meaningful IEP looks like under the Endrew F. decision, and how to write present levels, goals, and services that hold up. Participants work in redacted sample IEPs, rewriting weak sections against the forty-condition audit standard. Most schools schedule this one first because every other session builds on it.",
+      "The substantive standard first: what a meaningful IEP looks like under the Endrew F. decision, and how to write present levels, goals, and services that hold up. Participants work in redacted sample IEPs, rewriting weak sections against the 54-condition audit standard. Most schools schedule this one first because every other session builds on it.",
     objectives: [
       "Distinguish compliance from substantive quality and explain the Endrew F. standard in plain language.",
       "Write present levels statements that connect evaluation data, classroom evidence, and student strengths to the goals that follow.",
@@ -223,7 +223,7 @@ export default function TeacherPD() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
         title="Teacher Professional Development"
-        description="Full-day professional development for educators and districts, built from ongoing audits of real IEPs against a forty-condition standard grounded in IDEA and the Endrew F. substantive standard. Sessions are capped at 40 participants and scheduled around each school's needs, delivered virtually or on-site."
+        description="Full-day professional development for educators and districts, built from ongoing audits of real IEPs against a 54-condition standard grounded in IDEA and the Endrew F. substantive standard. Sessions are capped at 40 participants and scheduled around each school's needs, delivered virtually or on-site."
       />
 
       {/* Hero */}
@@ -239,7 +239,7 @@ export default function TeacherPD() {
             Full-day PD built from what real IEPs show
           </p>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 760, margin: "0 auto" }}>
-            Every session grows out of our IEP audit practice, a forty-condition standard grounded
+            Every session grows out of our IEP audit practice, a 54-condition standard grounded
             in IDEA and the Endrew F. substantive-benefit standard, applied to real IEPs every
             month.
           </p>

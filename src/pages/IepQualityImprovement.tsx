@@ -212,7 +212,7 @@ export default function IepQualityImprovement() {
           </p>
           <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.8, margin: "0 0 22px" }}>
             Schools that want to develop the whole staff can send teachers to our full-day
-            professional development sessions, built from the same forty-condition audit standard
+            professional development sessions, built from the same 54-condition audit standard
             and open to individuals, groups, and private district cohorts.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
