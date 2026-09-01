@@ -35,7 +35,7 @@ const SESSIONS: Array<[string, string]> = [
   ["February 2028", "Saturday session. Rights after high school: IDEA ends, Section 504 and the ADA begin."],
   ["March 2028", "Saturday session and a campus visit to Volunteer State, including the disability services office."],
   ["April 2028", "Saturday session and a campus visit to Tennessee State or Fisk, including the disability services office."],
-  ["May 2028", "Closing celebration. Every Scholar presents their capstone, and every Scholar's IEP is audited a second time."],
+  ["May 2028", "Closing celebration. Every Scholar presents their capstone. Returning Scholars' IEPs are audited a second time, and graduating seniors leave with their complete transition package for college."],
 ];
 
 const LEARN = [
@@ -51,9 +51,9 @@ const LEARN = [
 
 const OUTCOMES = [
   "A capstone portfolio the Scholar owns: their documentation, their accommodation requests, the words they use to ask, and their plan, in one place",
-  "Two independent audits of their IEP, one at enrollment and one in May, so the year closes with evidence of whether the document itself improved",
+  "An independent audit of their IEP at enrollment, and for returning Scholars a second audit in May, so the year closes with evidence of whether the document improved",
   "Real practice speaking in their own IEP meeting, built up across the year rather than rehearsed once",
-  "A concrete plan after graduation, grounded in real information about what careers pay and require",
+  "A concrete plan after graduation, grounded in real information about what careers pay and require; graduating seniors leave with their complete transition package for college: the documentation, the disability services registration plan, and the words to ask for their accommodations",
   "Two college campuses visited, including a sit-down with each disability services office, so the first campus conversation is not the scary one",
   "A place to come back to: Scholars can return every year through graduation, and graduates return as Alumni mentors for the students behind them",
 ];
@@ -127,7 +127,7 @@ export default function EdquityScholars() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
         title="EDquity Scholars: A Year-Long Program for Students in Grades 8 to 12"
-        description="EDquity Scholars is a year-long, no-cost program for students in grades 8 through 12 with an IEP or a 504 plan. A five-day July intensive, nine monthly Saturdays, two campus visits with disability services appointments, parent workshops on the same days, and an independent IEP audit at intake and again in May. A seat is $1,000, funded by a sponsor rather than by the family. The first cohort begins July 2027 in Gallatin."
+        description="EDquity Scholars is a year-long, no-cost program for students in grades 8 through 12 with an IEP or a 504 plan. A five-day July intensive, nine monthly Saturdays, two campus visits with disability services appointments, parent workshops on the same days, and an independent IEP audit at intake and again in May for returning Scholars, while graduating seniors leave with their complete college transition package. A seat is $1,000, funded by a sponsor rather than by the family. The first cohort begins July 2027 in Gallatin."
       />
 
       {/* Hero */}
@@ -345,7 +345,7 @@ export default function EdquityScholars() {
             <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, color: "#fff", margin: 0 }}>How seats are funded</h2>
           </div>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.82)", lineHeight: 1.75, margin: "0 0 18px" }}>
-            A seat is $1,000, which covers the cost of delivering a full year to one student: the summer intensive, nine Saturdays, two campus visits, materials, food, transportation, and two IEP audits. Every seat is funded by a sponsor and is free to the family it serves; no family ever pays for a seat, and no documentation is ever required. Seats open as sponsorships are secured, which is exactly what sponsoring a Scholar funds. Requesting a seat costs nothing and carries no obligation.
+            A seat is $1,000, which covers the cost of delivering a full year to one student: the summer intensive, nine Saturdays, two campus visits, materials, food, transportation, and each Scholar's IEP audits. Every seat is funded by a sponsor and is free to the family it serves; no family ever pays for a seat, and no documentation is ever required. Seats open as sponsorships are secured, which is exactly what sponsoring a Scholar funds. Requesting a seat costs nothing and carries no obligation.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: 14, margin: "0 0 18px" }}>
             {SPONSOR_TIERS.map(([amount, what]) => (
