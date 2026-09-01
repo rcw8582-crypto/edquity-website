@@ -81,7 +81,7 @@ export default function IepQualityImprovement() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
         title="The IEP Quality Improvement Program"
-        description="A year-long program for schools and systems: independent blind review of your own IEPs against forty research-grounded conditions drawn from IDEA 34 CFR Part 300, with monthly reports that show where quality is improving and where it is not."
+        description="A year-long program for schools and systems: independent blind review of your own IEPs against 54 research-grounded conditions drawn from IDEA 34 CFR Part 300, with monthly reports that show where quality is improving and where it is not."
       />
 
       {/* Hero */}
@@ -95,7 +95,7 @@ export default function IepQualityImprovement() {
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 1000, margin: "0 auto" }}>
             Rubric-based independent review of a fixed sample of individualized education programs,
-            scored against forty research-grounded conditions drawn from IDEA 34 CFR Part 300 and
+            scored against 54 research-grounded conditions drawn from IDEA 34 CFR Part 300 and
             the peer-reviewed literature on IEP quality.
           </p>
         </div>
@@ -108,8 +108,8 @@ export default function IepQualityImprovement() {
             Monthly IEP Quality Audits
           </h2>
           <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.8, margin: "0 0 32px" }}>
-            Twenty-one of the forty are compliance conditions, the requirements IDEA places on what
-            an IEP must contain. The remaining nineteen are substantive conditions, holding the
+            Thirty-three of the 54 are compliance conditions, the requirements IDEA places on what
+            an IEP must contain. The remaining twenty-one are substantive conditions, holding the
             document to the standard the Supreme Court set in Endrew F. v. Douglas County School
             District RE-1 (2017): an IEP must be reasonably calculated to enable a child to make
             progress appropriate in light of the child's circumstances, and its goals must be
