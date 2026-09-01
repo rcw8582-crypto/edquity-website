@@ -76,8 +76,8 @@ export default function Donate() {
             {[
               { amount: "$25", label: "covers a printed resource guide mailed to a family without reliable internet access" },
               { amount: "$100", label: "equips a hands-on workshop with the toolkits and meeting notecatchers families take home" },
-              { amount: "$250", label: "funds half of one child's expert IEP Audit, paired with another donor's gift" },
-              { amount: "$500", label: "sponsors one child's complete IEP Audit, written report, and walkthrough, a $500 professional service, free to a family who could never afford independent advocacy" },
+              { amount: "$250", label: "sponsors one child's complete IEP Audit, written report, and walkthrough, free to a family who could never afford independent advocacy" },
+              { amount: "$1,000", label: "sponsors a seat in EDquity Scholars, a full year of advocacy, executive function, and college and career readiness for one student" },
             ].map((item, i) => (
               <div key={i} style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 22px", textAlign: "center" }}>
                 <p style={{ fontSize: 32, fontWeight: 900, color: "#15803D", margin: "0 0 10px", letterSpacing: "-1px" }}>{item.amount}</p>

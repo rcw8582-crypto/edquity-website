@@ -17,10 +17,10 @@ const tiers = [
     color: "#14B8A6",
     featured: true,
     includes: [
-      "$500 sponsors one child's complete IEP audit, written report, and walkthrough",
-      "$5,000 sponsors audits for ten children",
-      "$25,000 sponsors audits for fifty children",
-      "$50,000 completes our full first-year goal of 100 children",
+      "$250 sponsors one child's complete IEP audit, written report, and walkthrough",
+      "$2,500 sponsors audits for ten children",
+      "$12,500 sponsors audits for fifty children",
+      "$25,000 completes our full first-year goal of 100 children",
       "Every sponsor receives named acknowledgment on our website and in the annual report, along with the annual impact report",
     ],
   },
@@ -123,7 +123,7 @@ export default function Funders() {
 
           <h2 style={{ fontSize: "clamp(22px,2.5vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px" }}>Sponsor a Child's Audit</h2>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.75, margin: "0 0 40px", maxWidth: 720 }}>
-            Our first-year goal is 100 independent IEP audits for children in minority families. Each audit covers one child's IEP and is a $500 professional service we deliver at no cost to the family, so your gift translates directly into children served.
+            Our first-year goal is 100 independent IEP audits for children in minority families. Each audit covers one child's IEP and costs $250 to deliver, free to the family, so your gift translates directly into children served.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
             {tiers.map((tier, i) => (

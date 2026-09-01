@@ -172,7 +172,7 @@ export default function Services() {
             </div>
           </motion.div>
 
-          {/* Parent IEP Advocacy Academy */}
+          {/* EDquity Scholars: the year-long program */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             style={{ background: "#122C54", borderRadius: 20, padding: "clamp(28px,4vw,44px)", marginTop: 32 }}>
@@ -180,20 +180,20 @@ export default function Services() {
               <Award size={16} color="#FBBF24" />
               <span style={{ fontSize: 12, fontWeight: 700, color: "#FBBF24", letterSpacing: 1, textTransform: "uppercase" }}>Year-Long Program</span>
             </div>
-            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#fff", margin: "0 0 8px", letterSpacing: "-0.5px" }}>Parent IEP Advocacy Academy</h3>
-            <p style={{ fontSize: 24, fontWeight: 900, color: "#22C55E", margin: "0 0 6px" }}>$497 per year · Families First Scholarship available</p>
-            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "0 0 20px" }}>Four courses in a small cohort across the fall semester, in person in Gallatin or virtual</p>
+            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#fff", margin: "0 0 8px", letterSpacing: "-0.5px" }}>EDquity Scholars</h3>
+            <p style={{ fontSize: 24, fontWeight: 900, color: "#22C55E", margin: "0 0 6px" }}>$1,000 per seat · Sponsor-funded</p>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "0 0 20px" }}>Grades 8 through 12 · Thirty seats · The first cohort begins July 2027 · In person in Gallatin</p>
             <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              Our free Know Your Rights workshops stay free and open to everyone. The Academy goes deeper: four evidence-grounded courses sequenced across the school year, in a small cohort, with fillable workbooks, live practice on real documents, and direct feedback, so by your child's next annual IEP meeting you have rehearsed every skill you will need in that room.
+              EDquity Scholars is one program for students in grades 8 through 12. Students build the executive function skills the IEP keeps writing goals about and rarely teaches, alongside career and college readiness, while their parents learn to read and question the document in workshops that run the same day. Each student's IEP is audited when they enroll and again in May, so the year ends with evidence of whether the document actually improved.
             </p>
             <div className="rg-2" style={{ gap: 16, marginBottom: 24 }}>
               <div style={{ background: "rgba(255,255,255,0.06)", borderRadius: 14, padding: 24 }}>
-                <p style={{ fontSize: 13, fontWeight: 700, color: "#22C55E", letterSpacing: 1, textTransform: "uppercase", margin: "0 0 14px" }}>The Four Courses</p>
+                <p style={{ fontSize: 13, fontWeight: 700, color: "#22C55E", letterSpacing: 1, textTransform: "uppercase", margin: "0 0 14px" }}>Across the Year</p>
                 {[
-                  "Reading Your Child's IEP",
-                  "Your Procedural Safeguards, Decoded",
-                  "Is the IEP Working? Mid-Year Check-In",
-                  "When You Disagree: Mediation, Complaints & Due Process",
+                  "A five-day summer intensive in July that launches the cohort",
+                  "Nine monthly Saturday sessions, September through May",
+                  "Two local college visits, each including the disability services office",
+                  "A family showcase in May where every Scholar presents",
                 ].map((w, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 10 }}>
                     <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#22C55E", marginTop: 7, flexShrink: 0 }} />
@@ -202,12 +202,12 @@ export default function Services() {
                 ))}
               </div>
               <div style={{ background: "rgba(255,255,255,0.06)", borderRadius: 14, padding: 24 }}>
-                <p style={{ fontSize: 13, fontWeight: 700, color: "#FBBF24", letterSpacing: 1, textTransform: "uppercase", margin: "0 0 14px" }}>Every Member Receives</p>
+                <p style={{ fontSize: 13, fontWeight: 700, color: "#FBBF24", letterSpacing: 1, textTransform: "uppercase", margin: "0 0 14px" }}>Every Scholar Receives</p>
                 {[
-                  "All four workshops in a small-cohort format with live practice",
-                  "Fillable workbooks and letter templates to keep",
-                  "Quarterly open office hours between workshops",
-                  "A certificate of completion for each workshop and the full Academy",
+                  "An independent IEP audit at intake and again in May",
+                  "Executive function instruction: planning, organization, task initiation, self-monitoring",
+                  "Career and college readiness, finishing with a transition portfolio",
+                  "Parent workshops running alongside on the same days",
                 ].map((item, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 10 }}>
                     <CheckCircle2 size={15} color="#FBBF24" style={{ marginTop: 2, flexShrink: 0 }} />
@@ -217,17 +217,13 @@ export default function Services() {
               </div>
             </div>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
-              <Link href="/reserve"
+              <Link href="/edquity-scholars"
                 style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
-                Reserve a Seat
-              </Link>
-              <Link href="/parent-academy"
-                style={{ display: "inline-block", background: "transparent", color: "#fff", padding: "13px 26px", borderRadius: 8, fontWeight: 700, textDecoration: "none", fontSize: 15, border: "2px solid rgba(255,255,255,0.35)" }}>
-                See the Full Curriculum
+                Learn More and Reserve a Seat
               </Link>
             </div>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, margin: "20px 0 0", maxWidth: 760 }}>
-              The <Link href="/scholarship" style={{ color: "#22C55E", textDecoration: "underline" }}>Families First Scholarship</Link> awards full and partial tuition coverage for families who qualify, with seats limited by available funding. The application takes about five minutes, income eligibility is checked automatically, and no documentation is ever required. Schools and districts can also bring the Academy to their families as family engagement programming; email info@edquityatthemargins.org.
+              Seats are bought by sponsors rather than by families. A business, a funder, or an individual donor sponsors a Scholar for $1,000, and the <Link href="/scholarship" style={{ color: "#22C55E", textDecoration: "underline" }}>Families First Scholarship</Link> covers families who qualify, with seats limited by available funding. The application takes about five minutes, income eligibility is checked automatically, and no documentation is ever required.
             </p>
           </motion.div>
 
@@ -255,52 +251,6 @@ export default function Services() {
             </div>
           </motion.div>
 
-          {/* EDquity Scholars course */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 20, padding: "clamp(28px,4vw,44px)", marginTop: 32 }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(20,184,166,0.12)", borderRadius: 8, padding: "6px 14px", marginBottom: 20 }}>
-              <GraduationCap size={16} color="#14B8A6" />
-              <span style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1, textTransform: "uppercase" }}>For High School Students</span>
-            </div>
-            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>EDquity Scholars</h3>
-            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>$697 tuition · Families First Scholarship available</p>
-            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Six weekly virtual sessions. The inaugural cohort begins January 12, 2027, and additional cohorts open during the year. Seats are limited.</p>
-            <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              The IEP does not go to college, and neither does a 504 plan. This six-week course teaches college-bound high school seniors with an IEP or a 504 plan how their rights change at graduation, how to register with a college disability services office, and how to advocate for themselves in their own words. Every Scholar finishes with a transition portfolio and a one-to-one review of their own transition file.
-            </p>
-            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <Link href="/edquity-scholars"
-                style={{ display: "inline-block", background: "#14B8A6", color: "#fff", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
-                Learn More and Reserve a Seat
-              </Link>
-            </div>
-          </motion.div>
-
-          {/* Camp EDquity: fall break camp for self-advocacy and executive function */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 20, padding: "clamp(28px,4vw,44px)", marginTop: 32 }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(20,184,166,0.12)", borderRadius: 8, padding: "6px 14px", marginBottom: 20 }}>
-              <GraduationCap size={16} color="#14B8A6" />
-              <span style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 1, textTransform: "uppercase" }}>For Middle and High School Students</span>
-            </div>
-            <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>Camp EDquity</h3>
-            <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>$497 · Families First Scholarship available</p>
-            <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>A fall break camp for self-advocacy and executive function, grades 6 through 10 · In person in Gallatin, four camp days, 9:00 AM to 12:00 PM</p>
-            <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              Students with IEPs sit through meetings about their own education without being taught how to speak in them. Across four camp days, campers learn what their IEP actually says, how to name what helps them learn, how to speak up in their own IEP meeting and ask for their accommodations in class, and the executive function systems for time, tasks, and asking for help early. Every camper finishes by presenting one page, in their own words, at their next IEP meeting.
-            </p>
-            <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
-              <Link href="/reserve"
-                style={{ display: "inline-block", background: "#14B8A6", color: "#fff", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
-                Reserve a Seat
-              </Link>
-            </div>
-            <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.65, margin: "20px 0 0", maxWidth: 760 }}>
-              The <Link href="/scholarship" style={{ color: "#0F766E", textDecoration: "underline" }}>Families First Scholarship</Link> awards full and partial tuition coverage for families who qualify, with seats limited by available funding. The application takes about five minutes, income eligibility is checked automatically, and no documentation is ever required.
-            </p>
-          </motion.div>
         </div>
       </section>
 
