@@ -127,7 +127,7 @@ export default function EdquityScholars() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
         title="EDquity Scholars: A Year-Long Program for Students in Grades 8 to 12"
-        description="An IEP review is one point in time: a family learns something, goes back into the system alone, and nobody finds out whether anything changed. EDquity Scholars is what we built in response. Students in grades 8 through 12 spend a full year building the executive functioning and self-advocacy skills the system keeps writing goals about and rarely teaches, their parents train on the same days, and each child's IEP is audited at enrollment and again in May, so the year ends with evidence. Every seat is sponsor-funded and free to the family. First cohort July 2027, in Gallatin."
+        description="EDquity Scholars is a year-long, no-cost program for students in grades 8 through 12 with an IEP or a 504 plan. A five-day July intensive, nine monthly Saturdays, two campus visits with disability services appointments, parent workshops on the same days, and an independent IEP audit at intake and again in May. A seat is $1,000, funded by a sponsor rather than by the family. The first cohort begins July 2027 in Gallatin."
       />
 
       {/* Hero */}
@@ -138,7 +138,7 @@ export default function EdquityScholars() {
             EDquity Scholars
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 720, margin: "0 auto 12px" }}>
-            An audit tells a family what the document says. Scholars changes what happens next. For a full year, students in grades 8 through 12 with an Individualized Education Program (IEP) or a Section 504 plan learn to read their own document, speak in their own meeting, and run the executive functioning systems their IEPs keep writing goals about and never teach, alongside twenty-nine peers who carry the same experience.
+            A year-long program for students in grades 8 through 12 with an Individualized Education Program (IEP) or a Section 504 plan. Scholars learn to read their own document, speak in their own meeting, and run the systems the IEP keeps writing goals about, because sooner or later the student carries the file.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 36px" }}>
             In person in Gallatin. Parents attend their own workshops on the same days.
