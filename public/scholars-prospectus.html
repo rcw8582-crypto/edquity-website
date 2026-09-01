@@ -1,0 +1,523 @@
+<title>EDquity Scholars Prospectus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
+
+<style>
+  :root {
+    --navy:       #122C54;
+    --green:      #15803D;
+    --green-vivid:#22C55E;
+    --teal:       #0F766E;
+    --teal-vivid: #14B8A6;
+    --amber:      #B45309;
+    --amber-vivid:#FBBF24;
+
+    --body:       #475569;
+    --muted:      #64748b;
+    --line:       #e2e8f0;
+    --line-soft:  #eef2f7;
+    --wash:       #f8fafc;
+    --sheet:      #ffffff;
+    --paper:      #eef1f6;
+
+    --band:       #122C54;
+    --band-ink:   #ffffff;
+    --band-body:  rgba(255,255,255,0.82);
+    --band-faint: rgba(255,255,255,0.60);
+    --band-line:  rgba(255,255,255,0.18);
+    --band-wash:  rgba(255,255,255,0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --navy:       #CBD9F0;
+      --green:      #4ADE80;
+      --green-vivid:#22C55E;
+      --teal:       #5EEAD4;
+      --teal-vivid: #14B8A6;
+      --amber:      #FBBF24;
+      --amber-vivid:#FBBF24;
+
+      --body:       #b6c2d6;
+      --muted:      #8b9ab4;
+      --line:       #2b3a58;
+      --line-soft:  #223047;
+      --wash:       #16233c;
+      --sheet:      #101b31;
+      --paper:      #080f1d;
+
+      --band:       #081426;
+      --band-ink:   #ffffff;
+      --band-body:  rgba(255,255,255,0.82);
+      --band-faint: rgba(255,255,255,0.60);
+      --band-line:  rgba(255,255,255,0.16);
+      --band-wash:  rgba(255,255,255,0.05);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --navy:       #CBD9F0;
+    --green:      #4ADE80;
+    --green-vivid:#22C55E;
+    --teal:       #5EEAD4;
+    --teal-vivid: #14B8A6;
+    --amber:      #FBBF24;
+    --amber-vivid:#FBBF24;
+
+    --body:       #b6c2d6;
+    --muted:      #8b9ab4;
+    --line:       #2b3a58;
+    --line-soft:  #223047;
+    --wash:       #16233c;
+    --sheet:      #101b31;
+    --paper:      #080f1d;
+
+    --band:       #081426;
+    --band-ink:   #ffffff;
+    --band-body:  rgba(255,255,255,0.82);
+    --band-faint: rgba(255,255,255,0.60);
+    --band-line:  rgba(255,255,255,0.16);
+    --band-wash:  rgba(255,255,255,0.05);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--body);
+    font-family: Outfit, "Segoe UI", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 28px 20px 64px;
+  }
+
+  .sheet {
+    width: 100%;
+    max-width: 46rem;
+    background: var(--sheet);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: clamp(26px, 5vw, 56px);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* ---------- masthead ---------- */
+
+  .masthead { display: flex; flex-direction: column; gap: 16px; }
+
+  .org {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(38px, 7.5vw, 62px);
+    font-weight: 900;
+    line-height: 1.04;
+    letter-spacing: -1.5px;
+    color: var(--navy);
+    text-wrap: balance;
+  }
+
+  .standfirst {
+    margin: 0;
+    font-size: clamp(17px, 2.4vw, 20px);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--body);
+    max-width: 34em;
+    text-wrap: pretty;
+  }
+
+  .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 26px;
+    padding-top: 18px;
+    border-top: 3px solid var(--navy);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .facts b { color: var(--navy); font-weight: 800; }
+
+  /* ---------- sections ---------- */
+
+  section { display: flex; flex-direction: column; gap: 14px; }
+
+  h2 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  p { margin: 0; max-width: 40em; text-wrap: pretty; }
+
+  .lead {
+    font-size: clamp(19px, 2.4vw, 22px);
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.4px;
+    color: var(--navy);
+  }
+
+  em { font-style: italic; }
+
+  /* ---------- findings ---------- */
+
+  .findings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 12px;
+  }
+
+  .finding {
+    background: var(--wash);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .finding .n {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1.5px;
+    font-variant-numeric: tabular-nums;
+    color: var(--navy);
+  }
+  .finding.zero .n { color: var(--amber); }
+
+  .finding .k {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+
+  .findings-note {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  /* ---------- the year ---------- */
+
+  .year { display: flex; flex-direction: column; margin: 0; }
+
+  .beat {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 4px 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .beat:first-child { border-top: 1px solid var(--line-soft); }
+
+  .beat dt {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--teal);
+    padding-top: 5px;
+  }
+  .beat dd {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--body);
+  }
+
+  /* ---------- the ask ---------- */
+
+  .ask {
+    background: var(--band);
+    border-radius: 20px;
+    padding: clamp(24px, 4vw, 40px);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .ask h2 { color: var(--amber-vivid); border-bottom-color: var(--band-line); }
+  .ask p:not(.seat) { color: var(--band-faint); font-weight: 500; font-size: 15px; }
+
+  .seat {
+    margin: 0;
+    font-size: clamp(25px, 4.6vw, 36px);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    color: var(--band-ink);
+    max-width: 20em;
+  }
+  .seat strong { color: var(--green-vivid); font-weight: 900; }
+
+  .tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+    gap: 10px;
+  }
+
+  .tier {
+    background: var(--band-wash);
+    border: 1px solid var(--band-line);
+    border-radius: 14px;
+    padding: 15px 16px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .tier .amt {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+    font-variant-numeric: tabular-nums;
+    color: var(--amber-vivid);
+  }
+  .tier .what {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--band-faint);
+  }
+
+  /* ---------- colophon ---------- */
+
+  .colophon {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 22px;
+    border-top: 3px solid var(--navy);
+  }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 22px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .contact a { color: var(--teal); text-decoration: none; border-bottom: 2px solid currentColor; }
+  .contact a:focus-visible { outline: 2px solid var(--amber-vivid); outline-offset: 3px; }
+
+  .cite {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 42em;
+  }
+
+
+  /* ---------- standalone chrome (screen only, not imported) ---------- */
+
+  .topbar {
+    display: flex;
+    justify-content: center;
+    background: var(--navy);
+  }
+  .topbar-in {
+    width: 100%;
+    max-width: 46rem;
+    padding: 14px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 20px;
+  }
+  .topbar a {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .topbar a:hover { text-decoration: underline; }
+  .topbar a:focus-visible { outline: 2px solid #FBBF24; outline-offset: 3px; }
+  .topbar .hint { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.62); }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .topbar { background: #081426; }
+  }
+  :root[data-theme="dark"] .topbar { background: #081426; }
+
+  @media print { .topbar { display: none; } }
+
+  /* ---------- print ---------- */
+
+  @page { size: letter; margin: 0.6in; }
+
+  @media print {
+    body { background: #fff; color: #475569; }
+    .stack { display: block; padding: 0; gap: 0; }
+    .sheet {
+      max-width: none;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      page-break-after: always;
+      break-after: page;
+    }
+    .sheet:last-child { page-break-after: auto; break-after: auto; }
+    .ask { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    section, .findings, .ask, .colophon { break-inside: avoid; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a href="https://edquityatthemargins.org">&larr; EDquity at the Margins</a>
+    <span class="hint">Press Cmd&#8202;+&#8202;P to save as PDF</span>
+  </div>
+</div>
+
+<div class="stack">
+
+  <!-- ============ SHEET ONE ============ -->
+  <article class="sheet" data-document-role="page">
+
+    <header class="masthead">
+      <p class="org">EDquity at the Margins</p>
+      <h1>EDquity Scholars</h1>
+      <p class="standfirst">A year of advocacy, executive function, and college and career readiness for thirty students with high-incidence disabilities.</p>
+      <div class="facts">
+        <span>First cohort <b>July 2027</b></span>
+        <span><b>Gallatin, Tennessee</b></span>
+        <span>501(c)(3) EIN <b>42-2295582</b></span>
+      </div>
+    </header>
+
+    <section>
+      <h2>The problem</h2>
+      <p class="lead">Year after year, IEPs set goals for organization, planning, and self-advocacy, and almost none of them say who will teach those skills or how.</p>
+      <p>Students sit through meetings about their own education without anyone showing them what the document says or how to speak in the room.</p>
+    </section>
+
+    <section>
+      <h2>What our first nine audits found</h2>
+      <div class="findings">
+        <div class="finding zero">
+          <span class="n">0 of 9</span>
+          <span class="k">goals included a stated baseline</span>
+        </div>
+        <div class="finding zero">
+          <span class="n">0 of 9</span>
+          <span class="k">documents used language a family could follow without help</span>
+        </div>
+        <div class="finding">
+          <span class="n">80%</span>
+          <span class="k">of compliance conditions passed</span>
+        </div>
+        <div class="finding">
+          <span class="n">31%</span>
+          <span class="k">of substantive conditions passed</span>
+        </div>
+      </div>
+      <p class="findings-note">Nine independent IEP audits for eight families, scored against a 54-condition rubric.</p>
+      <p>The paperwork clears the legal bar while the instruction it is supposed to describe goes missing.</p>
+    </section>
+
+    <section>
+      <h2>The program</h2>
+      <p class="lead">Thirty students in grades 8 through 12, together, for a full year.</p>
+      <dl class="year">
+        <div class="beat">
+          <dt>July</dt>
+          <dd>A five-day intensive makes the cohort.</dd>
+        </div>
+        <div class="beat">
+          <dt>Sept to May</dt>
+          <dd>Nine monthly Saturdays, nine in the morning to one in the afternoon.</dd>
+        </div>
+        <div class="beat">
+          <dt>Mar and Apr</dt>
+          <dd>Two local college visits where students meet the disability services office alongside the standard admissions tour.</dd>
+        </div>
+        <div class="beat">
+          <dt>May</dt>
+          <dd>A family showcase where every Scholar presents.</dd>
+        </div>
+      </dl>
+    </section>
+
+  </article>
+
+  <!-- ============ SHEET TWO ============ -->
+  <article class="sheet" data-document-role="page">
+
+    <section>
+      <h2>What students build</h2>
+      <p>Students build executive function directly: planning, organization, task initiation, and self-monitoring. They learn what their own IEP says, how to ask for their accommodations in class, and how their rights change the day they graduate.</p>
+      <p>Parents attend their own workshops on the same days, so a family leaves knowing the same things.</p>
+    </section>
+
+    <section>
+      <h2>How we know it worked</h2>
+      <p>We audit every Scholar's IEP when they enroll and again in May against our 54-condition rubric, which is anchored in IDEA and in the standard the Supreme Court set in <em>Endrew F.</em></p>
+      <p>The second audit is the outcome measure, and sponsors receive an annual report showing what moved.</p>
+    </section>
+
+    <section class="ask">
+      <h2>The ask</h2>
+      <p class="seat">A seat is <strong>$1,000</strong>. Thirty students, thirty seats.</p>
+      <div class="tiers">
+        <div class="tier"><span class="amt">$1,000</span><span class="what">One seat</span></div>
+        <div class="tier"><span class="amt">$5,000</span><span class="what">Five seats</span></div>
+        <div class="tier"><span class="amt">$10,000</span><span class="what">Ten seats</span></div>
+        <div class="tier"><span class="amt">$30,000</span><span class="what">Full cohort</span></div>
+      </div>
+      <p>We name every sponsor on our website and in the annual report.</p>
+    </section>
+
+    <section>
+      <h2>Who runs it</h2>
+      <p>Dr. Reba Clarke-Wedderburn founded EDquity at the Margins after twenty-one years as an educator and years advocating for her own children through IEP meetings. The organization delivers free independent IEP audits to families and built the 54-condition rubric the program measures against.</p>
+    </section>
+
+    <footer class="colophon">
+      <div class="contact">
+        <a href="mailto:info@edquityatthemargins.org">info@edquityatthemargins.org</a>
+        <a href="https://edquityatthemargins.org">edquityatthemargins.org</a>
+      </div>
+      <p class="cite"><em>Endrew F. v. Douglas County School District RE-1</em>, 580 U.S. 386 (2017).</p>
+    </footer>
+
+  </article>
+
+</div>

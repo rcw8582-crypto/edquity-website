@@ -154,7 +154,21 @@ export default function Funders() {
             ))}
           </div>
 
-          <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: 28, marginTop: 40 }}>
+          <div style={{ background: "#122C54", borderRadius: 16, padding: 32, marginTop: 40, display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 20 }}>
+            <div style={{ maxWidth: 480 }}>
+              <p style={{ fontSize: 13, fontWeight: 700, color: "#FBBF24", textTransform: "uppercase", letterSpacing: 1.2, margin: "0 0 8px" }}>Sponsor a Scholar</p>
+              <h3 style={{ fontSize: 22, fontWeight: 900, color: "#fff", margin: "0 0 10px", letterSpacing: "-0.5px" }}>EDquity Scholars prospectus</h3>
+              <p style={{ fontSize: 14, color: "rgba(255,255,255,0.8)", lineHeight: 1.7, margin: 0 }}>
+                A two-page brief on the year-long program: what our first nine audits found, how the year runs, how we measure whether a student's IEP improved, and what a $1,000 seat covers.
+              </p>
+            </div>
+            <a href="/scholars-prospectus"
+              style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 15, whiteSpace: "nowrap" }}>
+              Read the Prospectus
+            </a>
+          </div>
+
+          <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: 28, marginTop: 24 }}>
             <h3 style={{ fontSize: 17, fontWeight: 800, color: "#122C54", margin: "0 0 10px" }}>Institutional Sponsorship</h3>
             <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>
               Separately from family sponsorships, funders may underwrite a Leader Fellowship seat for an under-resourced school. One seat is $8,000 and funds the full fellowship year, including the donated evaluation services the school receives. Seat sponsors are invited to the annual Impact Expo, where fellows present their schools' measured results.
