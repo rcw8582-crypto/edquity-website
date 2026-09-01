@@ -99,25 +99,32 @@ export default function Services() {
           <div style={{ marginBottom: 40 }}>
             <h3 style={{ fontSize: "clamp(20px,2.4vw,28px)", fontWeight: 900, color: "#122C54", margin: "0 0 10px", letterSpacing: "-0.5px" }}>Which one is for you?</h3>
             <p style={{ fontSize: 16, color: "#64748b", lineHeight: 1.65, margin: "0 0 20px", maxWidth: 760 }}>
-              Everything on this page serves families, and nothing on this page costs a family anything. They differ in who they serve and what they work on: the audit examines your child's document, the workshops teach you the rights behind it, Scholars teaches the student directly across a full year, and the downloads and the Career Explorer are yours to use today without talking to anyone.
+              Everything on this page serves families, and nothing on this page costs a family anything. Three are services we deliver: the audit examines your child's document, the workshops teach you the rights behind it, and Scholars teaches the student directly across a full year. Two are resources you use on your own, today, without talking to anyone: the downloads and the Career Explorer.
             </p>
             <div style={{ overflowX: "auto", border: "1px solid #e2e8f0", borderRadius: 12 }}>
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14.5, minWidth: 720 }}>
                 <thead>
                   <tr style={{ background: "#122C54" }}>
-                    {["Service", "Who it serves", "What it works on", "Time", "Cost to your family"].map((h) => (
+                    {["", "Who it serves", "What it works on", "Time", "Cost to your family"].map((h) => (
                       <th key={h} style={{ color: "#fff", fontWeight: 800, textAlign: "left", padding: "12px 16px", fontSize: 13, letterSpacing: 0.5, textTransform: "uppercase" }}>{h}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
                   {([
+                    ["group", "Services", "", "", "", ""],
                     ["IEP Audit", "#", "Parents", "Your child's current IEP: an independent expert review with a written report and a walkthrough", "One time; report in 10 business days", "Free"],
                     ["Know Your Rights Workshops", "/events", "Parents", "The rights behind the document: what the law entitles your child to, in plain language", "One session at a time, as scheduled", "Free"],
                     ["EDquity Scholars", "/edquity-scholars", "Students, grades 8 to 12, with an IEP or 504 plan", "The student directly: self-advocacy, executive function, and career and college readiness, with parent workshops on the same days", "A full year, July through May", "Free; a sponsor funds each $1,000 seat"],
+                    ["group", "Resources", "", "", "", ""],
                     ["Advocacy Toolkit and My Child's Playbook", "/resources", "Parents", "Tools you use on your own: worksheets that turn the audit's findings into action", "Self-paced, download now", "Free"],
                     ["Career Explorer", "/pathways/explore", "Students", "Careers and pathways, explored online with real federal wage and preparation data", "Self-paced, use it now", "Free"],
-                  ] as Array<[string, string, string, string, string, string]>).map(([name, href, who, what, time, cost], i) => (
+                  ] as Array<[string, string, string, string, string, string]>).map(([name, href, who, what, time, cost], i) =>
+                    name === "group" ? (
+                      <tr key={href} style={{ background: "#e8edf5" }}>
+                        <td colSpan={5} style={{ padding: "9px 16px", color: "#122C54", fontWeight: 800, fontSize: 13, letterSpacing: 1, textTransform: "uppercase" }}>{href}</td>
+                      </tr>
+                    ) : (
                     <tr key={name} style={{ background: i % 2 ? "#f8fafc" : "#fff", borderTop: "1px solid #eef2f7" }}>
                       <td style={{ padding: "13px 16px", lineHeight: 1.55, verticalAlign: "top" }}>
                         {href === "#" ? (
