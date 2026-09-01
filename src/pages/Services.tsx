@@ -142,7 +142,7 @@ export default function Services() {
               </table>
             </div>
             <p style={{ fontSize: 14, color: "#64748b", lineHeight: 1.6, margin: "14px 0 0" }}>
-              Looking for our work with schools and districts, including the IEP Quality Improvement Program and the EDquity Leader Fellowship? That lives on its own page: <Link href="/iep-quality-improvement" style={{ color: "#0F766E", textDecoration: "underline", fontWeight: 700 }}>for schools and districts</Link>.
+              Looking for our work with schools and districts, including the IEP Quality Improvement Program and the EDquity Leader Fellowship? That lives on its own page: <Link href="/institutional-services" style={{ color: "#0F766E", textDecoration: "underline", fontWeight: 700 }}>Institutional Services</Link>.
             </p>
           </div>
 

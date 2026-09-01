@@ -184,9 +184,7 @@ export default function Footer() {
               <li><Link href="/our-methodology" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Our Methodology</Link></li>
               <li><Link href="/transparency" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Transparency</Link></li>
               <li><Link href="/funders" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">For Funders</Link></li>
-              <li><Link href="/iep-quality-improvement" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">IEP Quality Improvement Program</Link></li>
-              <li><Link href="/professional-development" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Teacher Professional Development</Link></li>
-              <li><Link href="/fellowship" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Leader Fellowship</Link></li>
+              <li><Link href="/institutional-services" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Institutional Services</Link></li>
               <li><Link href="/press" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Press & Media</Link></li>
               <li><Link href="/client-portal" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">EDquity360 Portal</Link></li>
             </ul>
@@ -241,8 +239,6 @@ export default function Footer() {
             <Link href="/terms-of-service" className="inline-block py-2 hover:text-accent transition-colors">Terms of Service</Link>
             <span>·</span>
             <Link href="/ferpa-compliance" className="inline-block py-2 hover:text-accent transition-colors">FERPA Compliance</Link>
-            <span>·</span>
-            <Link href="/transparency" className="inline-block py-2 hover:text-accent transition-colors">Transparency</Link>
             <span>·</span>
             <Link href="/intake-consent" className="inline-block py-2 hover:text-accent transition-colors">Intake Consent</Link>
             <span>·</span>

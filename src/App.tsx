@@ -53,6 +53,7 @@ const Admin = lazy(() => import("@/pages/Admin"));
 const Intake = lazy(() => import("@/pages/Intake"));
 const ParentQuestions = lazy(() => import("@/pages/ParentQuestions"));
 const Fellowship = lazy(() => import("@/pages/Fellowship"));
+const InstitutionalServices = lazy(() => import("@/pages/InstitutionalServices"));
 const EdquityScholars = lazy(() => import("@/pages/EdquityScholars"));
 const Book = lazy(() => import("@/pages/Book"));
 const IepQualityImprovement = lazy(() => import("@/pages/IepQualityImprovement"));
@@ -170,6 +171,7 @@ function Router() {
           <Route path="/edquity-scholars" component={EdquityScholars} />
           <Route path="/college-success" component={EdquityScholars} />
           <Route path="/book" component={Book} />
+          <Route path="/institutional-services" component={InstitutionalServices} />
           <Route path="/iep-quality-improvement" component={IepQualityImprovement} />
           <Route path="/audit-feedback" component={AuditFeedback} />
           <Route path="/professional-development" component={TeacherPD} />

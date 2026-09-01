@@ -13,8 +13,8 @@
     }
   ],
   "redirects": [
-    { "source": "/consulting", "destination": "/iep-quality-improvement", "permanent": true },
-    { "source": "/for-schools", "destination": "/iep-quality-improvement", "permanent": true },
+    { "source": "/consulting", "destination": "/institutional-services", "permanent": true },
+    { "source": "/for-schools", "destination": "/institutional-services", "permanent": true },
     { "source": "/donor", "destination": "/donate", "permanent": true },
     { "source": "/scholarship", "destination": "/edquity-scholars", "permanent": true },
     { "source": "/reserve", "destination": "/edquity-scholars", "permanent": true },
