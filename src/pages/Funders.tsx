@@ -162,7 +162,7 @@ export default function Funders() {
                 A two-page brief on the year-long program: what our first nine audits found, how the year runs, how we measure whether a student's IEP improved, and what a $1,000 seat covers.
               </p>
             </div>
-            <a href="/scholars-prospectus"
+            <a href="/scholars-prospectus.html"
               style={{ display: "inline-block", background: "#22C55E", color: "#122C54", padding: "14px 28px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 15, whiteSpace: "nowrap" }}>
               Read the Prospectus
             </a>
