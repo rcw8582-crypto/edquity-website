@@ -95,6 +95,50 @@ export default function Services() {
             </p>
           </div>
 
+          {/* Which service fits: the map of how the programs differ */}
+          <div style={{ marginBottom: 40 }}>
+            <h3 style={{ fontSize: "clamp(20px,2.4vw,28px)", fontWeight: 900, color: "#122C54", margin: "0 0 10px", letterSpacing: "-0.5px" }}>Which one is for you?</h3>
+            <p style={{ fontSize: 16, color: "#64748b", lineHeight: 1.65, margin: "0 0 20px", maxWidth: 760 }}>
+              Everything on this page serves families, and nothing on this page costs a family anything. They differ in who they serve and what they work on: the audit examines your child's document, the workshops teach you the rights behind it, Scholars teaches the student directly across a full year, and the downloads and the Career Explorer are yours to use today without talking to anyone.
+            </p>
+            <div style={{ overflowX: "auto", border: "1px solid #e2e8f0", borderRadius: 12 }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14.5, minWidth: 720 }}>
+                <thead>
+                  <tr style={{ background: "#122C54" }}>
+                    {["Service", "Who it serves", "What it works on", "Time", "Cost to your family"].map((h) => (
+                      <th key={h} style={{ color: "#fff", fontWeight: 800, textAlign: "left", padding: "12px 16px", fontSize: 13, letterSpacing: 0.5, textTransform: "uppercase" }}>{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {([
+                    ["IEP Audit", "#", "Parents", "Your child's current IEP: an independent expert review with a written report and a walkthrough", "One time; report in 10 business days", "Free"],
+                    ["Know Your Rights Workshops", "/events", "Parents", "The rights behind the document: what the law entitles your child to, in plain language", "One session at a time, as scheduled", "Free"],
+                    ["EDquity Scholars", "/edquity-scholars", "Students, grades 8 to 12, with an IEP or 504 plan", "The student directly: self-advocacy, executive function, and career and college readiness, with parent workshops on the same days", "A full year, July through May", "Free; a sponsor funds each $1,000 seat"],
+                    ["Advocacy Toolkit and My Child's Playbook", "/resources", "Parents", "Tools you use on your own: worksheets that turn the audit's findings into action", "Self-paced, download now", "Free"],
+                    ["Career Explorer", "/pathways/explore", "Students", "Careers and pathways, explored online with real federal wage and preparation data", "Self-paced, use it now", "Free"],
+                  ] as Array<[string, string, string, string, string, string]>).map(([name, href, who, what, time, cost], i) => (
+                    <tr key={name} style={{ background: i % 2 ? "#f8fafc" : "#fff", borderTop: "1px solid #eef2f7" }}>
+                      <td style={{ padding: "13px 16px", lineHeight: 1.55, verticalAlign: "top" }}>
+                        {href === "#" ? (
+                          <span style={{ color: "#122C54", fontWeight: 800 }}>{name}</span>
+                        ) : (
+                          <Link href={href} style={{ color: "#122C54", fontWeight: 800, textDecoration: "underline", textDecorationColor: "#22C55E", textUnderlineOffset: 3 }}>{name}</Link>
+                        )}
+                      </td>
+                      {[who, what, time, cost].map((cell, j) => (
+                        <td key={j} style={{ padding: "13px 16px", color: "#475569", fontWeight: 500, lineHeight: 1.55, verticalAlign: "top" }}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p style={{ fontSize: 14, color: "#64748b", lineHeight: 1.6, margin: "14px 0 0" }}>
+              Looking for our work with schools and districts, including the IEP Quality Improvement Program and the EDquity Leader Fellowship? That lives on its own page: <Link href="/iep-quality-improvement" style={{ color: "#0F766E", textDecoration: "underline", fontWeight: 700 }}>for schools and districts</Link>.
+            </p>
+          </div>
+
           {/* IEP Audit: featured card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
@@ -162,7 +206,7 @@ export default function Services() {
             <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free</p>
             <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Live sessions on what the law entitles your child to</p>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
-              Walking into the meeting knowing what to ask for starts with knowing what the law entitles your child to. Our Know Your Rights workshops teach exactly that, in plain language, at no cost, open to any family. We also offer additional parent workshops, covering topics like reading the document the school hands you, responding when services are cut, and putting requests in writing so the district has to answer, for a per-seat fee; those appear on our events page as they are scheduled.
+              Walking into the meeting knowing what to ask for starts with knowing what the law entitles your child to. Our Know Your Rights workshops teach exactly that, in plain language, at no cost, open to any family. We also offer additional parent workshops, covering topics like reading the document the school hands you, responding when services are cut, and putting requests in writing so the district has to answer; those appear on our events page as they are scheduled, and they are free to attend.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <Link href="/events"
