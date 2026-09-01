@@ -57,7 +57,7 @@ scales to none.
 ## The solution
 
 A free, independent IEP audit. A family sends the document, and it gets
-evaluated blind against a 40-condition rubric across six domains, with state
+evaluated blind against a 54-condition rubric across six domains, with state
 overlays layered on top where state law exceeds the federal floor. Tennessee
 is built, and it matters because Tennessee requires the transition plan two
 years earlier than IDEA does, which means a 14-year-old in Tennessee passes
