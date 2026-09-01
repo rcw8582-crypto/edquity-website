@@ -119,7 +119,7 @@ export default function Footer() {
 
         <NewsletterSignup />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10">
 
           <div className="md:col-span-2 lg:col-span-4 xl:col-span-2 space-y-6">
             <img
@@ -162,52 +162,40 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6">Navigate</h3>
-            <ul className="space-y-3 text-sm">
-              <li><Link href="/" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Home</Link></li>
-              <li><Link href="/about" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link href="/services" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Family Services</Link></li>
-              <li><Link href="/edquity-scholars" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">EDquity Scholars</Link></li>
-              <li><Link href="/news" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">In the Margins</Link></li>
-              <li><Link href="/donate" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Donate</Link></li>
-              <li><Link href="/volunteer" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Volunteer</Link></li>
-              <li><Link href="/resources" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Free Resources &amp; Tools</Link></li>
-              <li><Link href="/tools/iep-goal-checker" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">IEP Goal Checker</Link></li>
-              <li><Link href="/pathways/explore" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Career Explorer</Link></li>
-              <li><Link href="/edquity" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">What EDquity Means</Link></li>
-              <li><Link href="/our-methodology" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Our Methodology</Link></li>
-              <li><Link href="/events" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Events</Link></li>
+            <h3 className="text-lg font-semibold mb-3">Navigate</h3>
+            <ul className="space-y-1 text-sm">
+              <li><Link href="/services" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Family Services</Link></li>
+              <li><Link href="/edquity-scholars" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">EDquity Scholars</Link></li>
+              <li><Link href="/news" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">In the Margins</Link></li>
+              <li><Link href="/donate" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Donate</Link></li>
+              <li><Link href="/volunteer" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Volunteer</Link></li>
+              <li><Link href="/resources" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Free Resources &amp; Tools</Link></li>
+              <li><Link href="/tools/iep-goal-checker" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">IEP Goal Checker</Link></li>
+              <li><Link href="/pathways/explore" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Career Explorer</Link></li>
+              <li><Link href="/events" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Events</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6">Organization</h3>
-            <ul className="space-y-3 text-sm">
-              <li><Link href="/board" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Join Our Board</Link></li>
-              <li><Link href="/transparency" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Transparency</Link></li>
-              <li><Link href="/funders" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">For Funders</Link></li>
-              <li><Link href="/iep-quality-improvement" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">IEP Quality Improvement Program</Link></li>
-              <li><Link href="/professional-development" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Teacher Professional Development</Link></li>
-              <li><Link href="/fellowship" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Leader Fellowship</Link></li>
-              <li><Link href="/press" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Press & Media</Link></li>
-              <li><Link href="/client-portal" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">EDquity360 Portal</Link></li>
+            <h3 className="text-lg font-semibold mb-3">Organization</h3>
+            <ul className="space-y-1 text-sm">
+              <li><Link href="/board" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Join Our Board</Link></li>
+              <li><Link href="/edquity" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">What EDquity Means</Link></li>
+              <li><Link href="/our-methodology" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Our Methodology</Link></li>
+              <li><Link href="/transparency" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Transparency</Link></li>
+              <li><Link href="/funders" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">For Funders</Link></li>
+              <li><Link href="/iep-quality-improvement" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">IEP Quality Improvement Program</Link></li>
+              <li><Link href="/professional-development" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Teacher Professional Development</Link></li>
+              <li><Link href="/fellowship" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Leader Fellowship</Link></li>
+              <li><Link href="/press" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">Press & Media</Link></li>
+              <li><Link href="/client-portal" className="inline-block py-1 text-primary-foreground/80 hover:text-accent transition-colors">EDquity360 Portal</Link></li>
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Legal</h3>
-            <ul className="space-y-3 text-sm">
-              <li><Link href="/privacy-policy" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms-of-service" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Terms of Service</Link></li>
-              <li><Link href="/ferpa-compliance" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">FERPA Compliance</Link></li>
-              <li><Link href="/research-data-policy" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Research Data Use</Link></li>
-              <li><Link href="/intake-consent" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Intake Consent</Link></li>
-              <li><Link href="/accessibility" className="inline-block py-2 text-primary-foreground/80 hover:text-accent transition-colors">Accessibility</Link></li>
-            </ul>
-          </div>
+          
 
           <div>
-            <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-3">Contact Us</h3>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3 text-primary-foreground/80">
                 <MapPin size={20} className="shrink-0 text-accent" />
@@ -257,6 +245,10 @@ export default function Footer() {
             <Link href="/transparency" className="inline-block py-2 hover:text-accent transition-colors">Transparency</Link>
             <span>·</span>
             <Link href="/intake-consent" className="inline-block py-2 hover:text-accent transition-colors">Intake Consent</Link>
+            <span>·</span>
+            <Link href="/research-data-policy" className="inline-block py-2 hover:text-accent transition-colors">Research Data Use</Link>
+            <span>·</span>
+            <Link href="/accessibility" className="inline-block py-2 hover:text-accent transition-colors">Accessibility</Link>
           </div>
         </div>
       </div>

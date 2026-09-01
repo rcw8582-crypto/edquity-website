@@ -98,7 +98,7 @@ export default function Resources() {
           <h1 style={{ fontSize: "clamp(32px,4.5vw,52px)", fontWeight: 900, color: "#fff", margin: "0 0 20px", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
             Tools for families who need to know their rights.
           </h1>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.75)", lineHeight: 1.75, margin: 0, maxWidth: 600, marginInline: "auto" }}>
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.75)", lineHeight: 1.75, margin: 0, maxWidth: 1000, marginInline: "auto" }}>
             Every guide below was written with one goal: giving you the specific knowledge you need to advocate effectively for your child. Download freely, share widely.
           </p>
         </div>
@@ -107,7 +107,7 @@ export default function Resources() {
       <section className="sp" style={{ background: "#fff" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(24px,3vw,36px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px", letterSpacing: "-0.5px" }}>Interactive Tools and Methodology</h2>
-          <p style={{ fontSize: 16, color: "#64748b", margin: "0 0 40px", lineHeight: 1.65, maxWidth: 720 }}>
+          <p style={{ fontSize: 16, color: "#64748b", margin: "0 0 40px", lineHeight: 1.65, maxWidth: 1000 }}>
             Use these tools right now to read your child's IEP with sharper eyes. Everything below is free and works on your phone, tablet, or laptop.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 24 }}>

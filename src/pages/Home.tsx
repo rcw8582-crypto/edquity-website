@@ -243,7 +243,7 @@ export default function Home() {
                 footer and on inner pages. Google Ad Grants asks that a
                 nonprofit's status be prominently displayed, and this is the
                 page a reviewer lands on. */}
-            <p style={{ fontSize: 15, color: "#475569", margin: "0 auto 24px", maxWidth: 620, lineHeight: 1.6 }}>
+            <p style={{ fontSize: 15, color: "#475569", margin: "0 auto 24px", maxWidth: 880, lineHeight: 1.6 }}>
               EDquity at the Margins is a <strong style={{ color: "#122C54" }}>501(c)(3) nonprofit organization</strong> (EIN 42-2295582).
               Our work is funded by donations, sponsorships, and paid engagements with schools and districts. Every family service is free to the family it serves, and every gift adds a sponsored seat.
             </p>
@@ -324,7 +324,7 @@ export default function Home() {
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Who We Serve</p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 900, margin: "0 0 20px", color: "#122C54", letterSpacing: "-1px" }}>Is this for your family?</h2>
-            <p style={{ fontSize: 18, color: "#64748b", maxWidth: 600, margin: "0 auto", lineHeight: 1.65 }}>Our service is specifically designed for families navigating the special education system without independent support.</p>
+            <p style={{ fontSize: 18, color: "#64748b", maxWidth: 1000, margin: "0 auto", lineHeight: 1.65 }}>Our service is specifically designed for families navigating the special education system without independent support.</p>
           </div>
           <div className="rg-3" style={{ marginBottom: 20 }}>
             {[

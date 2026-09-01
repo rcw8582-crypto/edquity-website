@@ -238,7 +238,7 @@ export default function TeacherPD() {
           <p style={{ fontSize: 20, fontWeight: 700, color: GREEN, margin: "0 0 18px" }}>
             Full-day PD built from what real IEPs show
           </p>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 760, margin: "0 auto" }}>
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 1000, margin: "0 auto" }}>
             Every session grows out of our IEP audit practice, a 54-condition standard grounded
             in IDEA and the Endrew F. substantive-benefit standard, applied to real IEPs every
             month.

@@ -122,7 +122,7 @@ export default function Funders() {
           </div>
 
           <h2 style={{ fontSize: "clamp(22px,2.5vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px" }}>Sponsor a Child's Audit</h2>
-          <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.75, margin: "0 0 40px", maxWidth: 720 }}>
+          <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.75, margin: "0 0 40px", maxWidth: 1000 }}>
             Our first-year goal is 100 independent IEP audits for children in minority families. Each audit covers one child's IEP and costs $250 to deliver, free to the family, so your gift translates directly into children served.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>

@@ -119,7 +119,7 @@ export default function Fellowship() {
           <h1 style={{ fontSize: "clamp(32px,4.5vw,52px)", fontWeight: 900, lineHeight: 1.08, color: "#fff", margin: "0 0 24px", letterSpacing: "-1.5px" }}>
             The EDquity Leader Fellowship
           </h1>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 720, margin: "0 auto 12px" }}>
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 1000, margin: "0 auto 12px" }}>
             A selective, year-long program that develops the leader who manages your special education programming into a Certified IEP Quality Improvement Leader, powered by monthly blind evaluations of your school's own IEPs.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 36px" }}>
@@ -163,7 +163,7 @@ export default function Fellowship() {
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <p style={{ fontSize: 12, fontWeight: 700, color: TEAL_TEXT, letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px", textAlign: "center" }}>How It Works</p>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, textAlign: "center", margin: "0 0 14px" }}>The monthly diagnostic loop</h2>
-          <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.7, textAlign: "center", maxWidth: 760, margin: "0 auto 34px" }}>
+          <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.7, textAlign: "center", maxWidth: 1000, margin: "0 auto 34px" }}>
             Every month from August 2027 through May 2028, your school submits three randomly selected, redacted IEPs, one at each complexity tier, and EDquity blind-evaluates them against our proprietary 54-condition master rubric. No document repeats month to month, so the year yields 30 unique IEPs independently evaluated, a diagnostic service valued at $29,950 on our standard rate card, donated in full to fellowship schools.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20, marginBottom: 40 }}>
@@ -229,7 +229,7 @@ export default function Fellowship() {
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 15, color: "rgba(255,255,255,0.6)", textAlign: "center", margin: "30px auto 0", maxWidth: 720, lineHeight: 1.7 }}>
+          <p style={{ fontSize: 15, color: "rgba(255,255,255,0.6)", textAlign: "center", margin: "30px auto 0", maxWidth: 1000, lineHeight: 1.7 }}>
             The investment is $8,000 per seat, typically funded through PD budgets, Title II-A, or IDEA Part B professional development allocations, so it never needs to touch local operating funds. Confirm allowability with your special education finance coordinator or state education agency.
           </p>
         </div>

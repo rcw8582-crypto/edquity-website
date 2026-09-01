@@ -134,7 +134,7 @@ export default function AuditFeedback() {
           <h1 style={{ fontSize: "clamp(28px,4vw,46px)", fontWeight: 900, color: "#fff", margin: "0 0 18px", letterSpacing: "-1px", lineHeight: 1.1 }}>
             How did the report work for you?
           </h1>
-          <p style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
+          <p style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 1000, margin: "0 auto" }}>
             You are one of the first families to receive an EDquity IEP Audit, and your answers
             decide what the next version of this report looks like. Nothing here is required, a
             few sentences help, and honest criticism helps most of all.

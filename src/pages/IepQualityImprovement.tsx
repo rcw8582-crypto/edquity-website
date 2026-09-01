@@ -93,7 +93,7 @@ export default function IepQualityImprovement() {
           <h1 style={{ fontSize: "clamp(32px,4.5vw,50px)", fontWeight: 900, lineHeight: 1.08, color: "#fff", margin: "0 0 24px", letterSpacing: "-1.5px" }}>
             The IEP Quality Improvement Program
           </h1>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 760, margin: "0 auto" }}>
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 1000, margin: "0 auto" }}>
             Rubric-based independent review of a fixed sample of individualized education programs,
             scored against forty research-grounded conditions drawn from IDEA 34 CFR Part 300 and
             the peer-reviewed literature on IEP quality.

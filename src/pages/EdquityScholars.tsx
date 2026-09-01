@@ -137,7 +137,7 @@ export default function EdquityScholars() {
           <h1 style={{ fontSize: "clamp(32px,4.5vw,52px)", fontWeight: 900, lineHeight: 1.08, color: "#fff", margin: "0 0 24px", letterSpacing: "-1.5px" }}>
             EDquity Scholars
           </h1>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 720, margin: "0 auto 12px" }}>
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 1000, margin: "0 auto 12px" }}>
             A year-long program for students in grades 8 through 12 with an Individualized Education Program (IEP) or a Section 504 plan. Scholars learn to read their own document, speak in their own meeting, and build the organization, planning, and self-advocacy skills that carry them through school and into college and work.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 36px" }}>
@@ -198,7 +198,7 @@ export default function EdquityScholars() {
             <Compass size={22} color={TEAL} />
             <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>One program, two grade bands</h2>
           </div>
-          <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 22px", maxWidth: 780 }}>
+          <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 22px", maxWidth: 1000 }}>
             All thirty Scholars share the same program days, open and close every session together, and split into two grade bands for the heart of the day, fifteen seats in each. A student can join in eighth grade and stay with us through graduation, moving from one band to the next, and graduates come back as Alumni mentors.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 18 }}>
