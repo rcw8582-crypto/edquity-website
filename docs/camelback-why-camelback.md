@@ -30,7 +30,7 @@ have never built an organization that does not depend on me personally.
 
 What I want to challenge is the assumption that family advocacy is a
 relationship business. The field runs on anecdote and individual advocates, and
-I am building an instrument that scores an IEP against forty conditions whether
+I am building an instrument that scores an IEP against 54 conditions whether
 or not I am in the room. I would rather argue that out with a cohort that
 pushes back than keep being right on my own.
 
