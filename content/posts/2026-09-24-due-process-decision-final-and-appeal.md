@@ -41,6 +41,10 @@ Your procedural safeguards notice answers this question, and § 300.504 requires
 
 Tennessee falls in the second group. The Tennessee Department of Education's Notice of Procedural Safeguards states that a decision made in a due process hearing, including a hearing relating to disciplinary procedures, is final, except that any party may appeal the decision by bringing a civil action (Tennessee Department of Education, 2024). Tennessee families therefore move from the administrative law judge's decision to state or federal court rather than to a second administrative review. Notices get revised, so confirm the version your district hands you, and your state's Parent Training and Information Center can confirm the current structure if the notice reads ambiguously.
 
+> A decision made in a due process hearing (including a hearing relating to disciplinary procedures) is final, except that any party involved in the hearing (you or the school district) may appeal the decision by bringing a civil action.
+>
+> Tennessee Department of Education, Notice of Procedural Safeguards (February 2024)
+
 Knowing your state's structure before you file changes how you prepare, because in a two-tier state the record you build at the first hearing is the record a state official later examines in full, and in a one-tier state that same record is what a court receives. Either way, the evidence you put in early is the evidence that carries. This post is general information rather than legal advice, and a special education attorney or your state's Parent Training and Information Center can advise you on a specific case.
 
 Our free IEP Audit reviews your child's IEP across six research-grounded areas and returns a written report naming what is missing and what to ask for. Families pay nothing. [Book a New Family Registration call](/book) and we will walk you through how it works.
