@@ -223,7 +223,7 @@ export default function Services() {
               </Link>
             </div>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, margin: "20px 0 0", maxWidth: 760 }}>
-              Seats are bought by sponsors rather than by families. A business, a funder, or an individual donor sponsors a Scholar for $1,000, and the <Link href="/scholarship" style={{ color: "#22C55E", textDecoration: "underline" }}>Families First Scholarship</Link> covers families who qualify, with seats limited by available funding. The application takes about five minutes, income eligibility is checked automatically, and no documentation is ever required.
+              Seats are bought by sponsors rather than by families. A business, a funder, or an individual donor sponsors a Scholar for $1,000, and every seat is free to the family it serves, with seats limited by available funding. Requesting a seat takes about five minutes, and no documentation is ever required.
             </p>
           </motion.div>
 
@@ -349,7 +349,7 @@ export default function Services() {
       <section className="sp" style={{ background: "#fff", borderTop: "1px solid #e2e8f0" }}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.7, margin: "0 0 14px", textAlign: "center" }}>
-            EDquity at the Margins is a nonprofit organization. Every program fee and tuition payment directly funds our mission, including the free IEP Audit, free Know Your Rights workshops, and the free resources we publish for families.
+            EDquity at the Margins is a nonprofit organization. Donations, sponsorships, and paid work with schools and districts directly fund our mission, including the free IEP Audit, free Know Your Rights workshops, and the free resources we publish for families.
           </p>
           <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.7, margin: 0, textAlign: "center" }}>
             EDquity at the Margins provides independent educational expertise, not legal advice. We are not attorneys and do not provide legal representation. Families who believe their child's rights have been violated under IDEA are encouraged to consult a special education attorney or contact their state's Parent Training and Information Center at{" "}

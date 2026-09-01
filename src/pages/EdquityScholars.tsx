@@ -195,7 +195,7 @@ export default function EdquityScholars() {
             <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, color: "#fff", margin: 0 }}>How seats are funded</h2>
           </div>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.82)", lineHeight: 1.75, margin: "0 0 14px" }}>
-            A seat is $1,000, which covers the cost of delivering a full year to one student: the summer intensive, nine Saturdays, two campus visits, materials, food, transportation, and two IEP audits. The <a href="/scholarship" style={{ color: GREEN, fontWeight: 700 }}>Families First Scholarship</a> awards full and partial tuition coverage for families who qualify through low income (checked automatically from two questions), public assistance, single-parent households, foster or kinship care, recent hardship, language barriers, rural communities, or an urgent IEP situation. No documentation is required; the standard is honesty, not paperwork. Scholarship seats are limited and open as donations are secured, which is exactly what sponsoring a Scholar funds. Requesting a seat costs nothing and carries no obligation.
+            A seat is $1,000, which covers the cost of delivering a full year to one student: the summer intensive, nine Saturdays, two campus visits, materials, food, transportation, and two IEP audits. Every seat is funded by a sponsor and is free to the family it serves; no family ever pays for a seat, and no documentation is ever required. Seats open as sponsorships are secured, which is exactly what sponsoring a Scholar funds. Requesting a seat costs nothing and carries no obligation.
           </p>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.82)", lineHeight: 1.75, margin: 0 }}>
             Individuals, businesses, and funders can sponsor an EDquity Scholar for $1,000, covering one student's full year, or sponsor several Scholars at once. Email <a href="mailto:info@edquityatthemargins.org" style={{ color: GREEN, fontWeight: 700 }}>info@edquityatthemargins.org</a> to sponsor, or give through our <a href="/donate" style={{ color: GREEN, fontWeight: 700 }}>donation page</a> and note "EDquity Scholars" with your gift.
@@ -208,7 +208,7 @@ export default function EdquityScholars() {
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, textAlign: "center", margin: "0 0 10px" }}>Reserve a seat</h2>
           <p style={{ fontSize: 15, color: "#475569", textAlign: "center", lineHeight: 1.7, margin: "0 0 30px" }}>
-            Seats are limited and confirmed on a first-come, first-served basis. Submitting this form requests a seat in the next available cohort; no payment is collected with this form. We confirm every seat by email. If tuition is a barrier, apply for the Families First Scholarship; seats are limited by available funding, and no documentation is ever required. Each cohort is confirmed once minimum enrollment is reached.
+            Seats are limited and confirmed on a first-come, first-served basis. Submitting this form requests a seat in the next available cohort; no payment is collected, and no family ever pays for a seat. We confirm every seat by email as sponsor funding allows, and each cohort is confirmed once minimum enrollment is reached.
           </p>
 
           {status === "sent" ? (
@@ -216,7 +216,7 @@ export default function EdquityScholars() {
               <CheckCircle2 size={34} color={GREEN} style={{ margin: "0 auto 12px" }} />
               <p style={{ fontSize: 17, fontWeight: 800, margin: "0 0 8px" }}>Seat request received.</p>
               <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>
-                Check your inbox for a confirmation with the cohort dates. We will follow up by email to confirm your student's seat and walk through tuition and funding options. Nothing is due now.
+                Check your inbox for a confirmation with the cohort dates. We will follow up by email to confirm your student's seat. Seats are sponsor-funded and free to your family; nothing is ever due.
               </p>
             </div>
           ) : (

@@ -217,9 +217,8 @@ export default function About() {
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Our IEP Audit, our Know Your Rights workshops, and our Advocacy Toolkit are free to
-                every family, and they always will be. Our multi-week courses and our one-to-one advocacy
-                services carry a fee, set below market rate and reduced or waived by the Families First
-                Scholarship for families who qualify. We never accept payment from a school district in
+                every family, and they always will be. EDquity Scholars seats are funded by sponsors,
+                so no family ever pays for a seat. We never accept payment from a school district in
                 connection with an individual child's case. Schools that engage us pay for reviews of
                 their own IEP quality across their system, and ten percent of every school engagement fee
                 is designated to the Family Audit Fund, which keeps our free services free.
