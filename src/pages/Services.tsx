@@ -34,7 +34,7 @@ export default function Services() {
           <h1 style={{ fontSize: "clamp(32px,4.5vw,52px)", fontWeight: 900, lineHeight: 1.08, color: "#fff", margin: "0 0 24px", letterSpacing: "-1.5px" }}>
             Independent IEP Support for Families Who Deserve More Than a Form Letter
           </h1>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, maxWidth: 680, margin: "0 auto 16px" }}>
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, maxWidth: 880, margin: "0 auto 16px" }}>
             Every family service is free to the family it serves. The IEP Audit and our Know Your Rights workshops never cost a family anything, because access is the point, and EDquity Scholars gives students a sponsor-funded year of direct instruction. The audit and workshops are delivered virtually; Scholars meets in person in Gallatin.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 40px" }}>
@@ -90,7 +90,7 @@ export default function Services() {
           <div style={{ marginBottom: 56 }}>
             <p style={{ fontSize: 12, fontWeight: 700, color: "#15803D", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>What We Offer</p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>Free family services. One purpose.</h2>
-            <p style={{ fontSize: 18, color: "#64748b", maxWidth: 680, lineHeight: 1.65, margin: 0 }}>
+            <p style={{ fontSize: 18, color: "#64748b", maxWidth: 1000, lineHeight: 1.65, margin: 0 }}>
               The school district arrives at that meeting with a full professional team. Our free services exist because you should not have to sit across from that team without independent support, and EDquity Scholars extends that support to the student directly across a full year.
             </p>
           </div>
@@ -98,7 +98,7 @@ export default function Services() {
           {/* Which service fits: the map of how the programs differ */}
           <div style={{ marginBottom: 40 }}>
             <h3 style={{ fontSize: "clamp(20px,2.4vw,28px)", fontWeight: 900, color: "#122C54", margin: "0 0 10px", letterSpacing: "-0.5px" }}>Which one is for you?</h3>
-            <p style={{ fontSize: 16, color: "#64748b", lineHeight: 1.65, margin: "0 0 20px", maxWidth: 760 }}>
+            <p style={{ fontSize: 16, color: "#64748b", lineHeight: 1.65, margin: "0 0 20px", maxWidth: 1000 }}>
               Everything on this page serves families, and nothing on this page costs a family anything. Three are services we deliver: the audit examines your child's document, the workshops teach you the rights behind it, and Scholars teaches the student directly across a full year. Two are resources you use on your own, today, without talking to anyone: the downloads and the Career Explorer.
             </p>
             <div style={{ overflowX: "auto", border: "1px solid #e2e8f0", borderRadius: 12 }}>
@@ -212,7 +212,7 @@ export default function Services() {
             <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#122C54", margin: "0 0 8px", letterSpacing: "-0.5px" }}>Know Your Rights Workshops</h3>
             <p style={{ fontSize: 24, fontWeight: 900, color: "#15803D", margin: "0 0 6px" }}>Free</p>
             <p style={{ fontSize: 14, color: "#64748b", margin: "0 0 20px" }}>Live sessions on what the law entitles your child to</p>
-            <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
+            <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 1000 }}>
               Walking into the meeting knowing what to ask for starts with knowing what the law entitles your child to. Our Know Your Rights workshops teach exactly that, in plain language, at no cost, open to any family. We also offer additional parent workshops, covering topics like reading the document the school hands you, responding when services are cut, and putting requests in writing so the district has to answer; those appear on our events page as they are scheduled, and they are free to attend.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
@@ -234,7 +234,7 @@ export default function Services() {
             <h3 style={{ fontSize: "clamp(22px,2.8vw,32px)", fontWeight: 900, color: "#fff", margin: "0 0 8px", letterSpacing: "-0.5px" }}>EDquity Scholars</h3>
             <p style={{ fontSize: 24, fontWeight: 900, color: "#22C55E", margin: "0 0 6px" }}>$1,000 per seat · Sponsor-funded</p>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "0 0 20px" }}>Grades 8 through 12 · Thirty seats · The first cohort begins July 2027 · In person in Gallatin</p>
-            <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
+            <p style={{ fontSize: 16, color: "rgba(255,255,255,0.8)", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 1000 }}>
               EDquity Scholars is one program for students in grades 8 through 12. Students spend the year building executive functioning skills like organization, planning, and self-advocacy, alongside career exploration and college readiness, while their parents build their own advocacy skills in workshops that run the same day. Each student's IEP is audited when they enroll; returning students are audited again in May so families see whether the document improved, and graduating seniors finish with their complete transition package for college.
             </p>
             <div className="rg-2" style={{ gap: 16, marginBottom: 24 }}>
@@ -273,7 +273,7 @@ export default function Services() {
                 Learn More and Reserve a Seat
               </Link>
             </div>
-            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, margin: "20px 0 0", maxWidth: 760 }}>
+            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, margin: "20px 0 0", maxWidth: 1000 }}>
               Seats are bought by sponsors rather than by families. A business, a funder, or an individual donor sponsors a Scholar for $1,000, and every seat is free to the family it serves, with seats limited by available funding. Requesting a seat takes about five minutes, and no documentation is ever required.
             </p>
           </motion.div>
@@ -287,7 +287,7 @@ export default function Services() {
               <span style={{ fontSize: 12, fontWeight: 700, color: "#B45309", letterSpacing: 1, textTransform: "uppercase" }}>Free Resources</span>
             </div>
             <h3 style={{ fontSize: "clamp(20px,2.2vw,26px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px", letterSpacing: "-0.5px" }}>Take these with you, no appointment needed</h3>
-            <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 760 }}>
+            <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 1000 }}>
               Alongside our services, we publish tools you can download and use on your own: the Advocacy Toolkit with plain-language IDEA guides, meeting notecatchers, and eligibility checklists; My Child's Playbook for bringing your child's own voice into the meeting; and the IEP Goal Checker for testing whether a goal is actually measurable.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
@@ -311,7 +311,7 @@ export default function Services() {
           <div style={{ marginBottom: 32 }}>
             <p style={{ fontSize: 12, fontWeight: 700, color: "#0F766E", letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>No IEP Yet?</p>
             <h2 style={{ fontSize: "clamp(28px,3.5vw,42px)", fontWeight: 900, margin: "0 0 16px", color: "#122C54", letterSpacing: "-1px" }}>Your Child Does Not Need an IEP for the School to Have Legal Obligations</h2>
-            <p style={{ fontSize: 18, color: "#64748b", maxWidth: 720, lineHeight: 1.65, margin: 0 }}>
+            <p style={{ fontSize: 18, color: "#64748b", maxWidth: 1000, lineHeight: 1.65, margin: 0 }}>
               Federal law requires schools to identify children with suspected disabilities, provide appropriate support at every tier, and intensify intervention when a student is not making progress, regardless of whether a formal disability designation is in place. If your child does not yet have an IEP, start with a free discovery call, and use the free Advocacy Toolkit to understand your rights.
             </p>
           </div>
