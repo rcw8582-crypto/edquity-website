@@ -25,6 +25,10 @@ Under § 300.516(b), the party bringing the action has 90 days from the date of 
 
 Read the exception carefully, because a state limit can be shorter than 90 days. The Tennessee Department of Education's Notice of Procedural Safeguards states that the party bringing the action has 60 calendar days from the date of the administrative law judge's decision to file a civil action (Tennessee Department of Education, 2024). A Tennessee family working from the federal 90 days would lose the case to the calendar. Check your own state's procedural safeguards notice for the number that applies to you, confirm it with a special education attorney, and treat the shorter figure as the real deadline.
 
+> The party (you or the school district) bringing the action shall have 60 calendar days from the date of the decision of the administrative law judge to file a civil action.
+>
+> Tennessee Department of Education, Notice of Procedural Safeguards (February 2024)
+
 ## What a court does differently
 
 Under § 300.516(c), a court hearing one of these actions receives the records of the administrative proceedings under (c)(1), hears additional evidence at the request of a party under (c)(2), and, basing its decision on the preponderance of the evidence, grants the relief it determines to be appropriate under (c)(3).
