@@ -277,8 +277,16 @@ console.log(`wrote sitemap.xml with ${routes.length - SITEMAP_EXCLUDE.size} URLs
  * post on the previous day.
  */
 function buildFeed(items) {
-  const rfc822 = (date) =>
-    date ? new Date(`${date}T12:00:00Z`).toUTCString() : new Date().toUTCString();
+  // Items are stamped 12:00Z, which is 07:00 Central, the hour the scheduled
+  // release runs. A post published off-schedule can set publishedTime (HH:MM,
+  // UTC) so the feed reports when it actually appeared: an RSS reader compares
+  // an item's date against its own last check and skips anything that looks
+  // older, so a post that goes out at noon while claiming 7 AM can be treated
+  // as backlog and never shared.
+  const rfc822 = (date, time) =>
+    date
+      ? new Date(`${date}T${time ? `${time}:00` : "12:00:00"}Z`).toUTCString()
+      : new Date().toUTCString();
 
   const entries = items.map((item) => {
     const url = `${SITE}/news/${item.slug}`;
@@ -302,13 +310,13 @@ function buildFeed(items) {
       <title>${escapeText(item.title)}</title>
       <link>${url}</link>
       <guid isPermaLink="true">${url}</guid>
-      <pubDate>${rfc822(item.publishedAt)}</pubDate>
+      <pubDate>${rfc822(item.publishedAt, item.publishedTime)}</pubDate>
       <category>${escapeText(item.category)}</category>
       <description>${escapeText(item.excerpt)}</description>${media}
     </item>`;
   });
 
-  const latest = items.find((item) => item.publishedAt)?.publishedAt ?? null;
+  const newest = items.find((item) => item.publishedAt) ?? null;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
@@ -318,7 +326,7 @@ function buildFeed(items) {
     <atom:link href="${SITE}/rss.xml" rel="self" type="application/rss+xml" />
     <description>Plain-language guidance on IEPs and special education rights for families who deserve a seat at the table.</description>
     <language>en-us</language>
-    <lastBuildDate>${rfc822(latest)}</lastBuildDate>
+    <lastBuildDate>${rfc822(newest?.publishedAt ?? null, newest?.publishedTime)}</lastBuildDate>
 ${entries.join("\n")}
   </channel>
 </rss>

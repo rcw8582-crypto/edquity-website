@@ -22,6 +22,14 @@ export interface BlogPost {
   readTime: string;
   published: boolean;
   publishedAt: string | null;
+  /**
+   * Optional clock time for publishedAt, as HH:MM in UTC. The RSS feed stamps
+   * items at 07:00 Central by default, matching the scheduled release hour. A
+   * post released off-schedule can set this so the feed reports when it really
+   * appeared, which matters because RSS readers treat an item dated before
+   * they last checked as old news and skip it.
+   */
+  publishedTime: string | null;
   createdAt: string;
 }
 
@@ -33,6 +41,7 @@ type Frontmatter = {
   readTime?: string;
   published?: boolean;
   publishedAt?: string;
+  publishedTime?: string;
   createdAt?: string;
 };
 
@@ -120,6 +129,7 @@ const ALL_POSTS: BlogPost[] = Object.entries(modules)
       readTime: String(fm.readTime ?? estimateReadTime(body)),
       published: fm.published !== false,
       publishedAt: fm.publishedAt ? String(fm.publishedAt) : fallbackDate,
+      publishedTime: fm.publishedTime ? String(fm.publishedTime) : null,
       createdAt: fm.createdAt ? String(fm.createdAt) : (fallbackDate ?? new Date().toISOString()),
     } satisfies BlogPost;
   })

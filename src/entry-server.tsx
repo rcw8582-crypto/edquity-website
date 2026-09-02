@@ -88,6 +88,7 @@ export interface FeedItem {
   excerpt: string;
   category: string;
   publishedAt: string | null;
+  publishedTime: string | null;
 }
 
 /**
@@ -97,13 +98,16 @@ export interface FeedItem {
  * post that does not exist or miss one that does.
  */
 export function feedItems(): FeedItem[] {
-  return getAllPublishedPosts().map(({ title, slug, excerpt, category, publishedAt }) => ({
-    title,
-    slug,
-    excerpt,
-    category,
-    publishedAt,
-  }));
+  return getAllPublishedPosts().map(
+    ({ title, slug, excerpt, category, publishedAt, publishedTime }) => ({
+      title,
+      slug,
+      excerpt,
+      category,
+      publishedAt,
+      publishedTime,
+    }),
+  );
 }
 
 /**
