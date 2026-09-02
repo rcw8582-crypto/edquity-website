@@ -12,7 +12,7 @@
  */
 
 import { readFile, writeFile, mkdir, rm } from "node:fs/promises";
-import { existsSync } from "node:fs";
+import { existsSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -282,20 +282,36 @@ function buildFeed(items) {
 
   const entries = items.map((item) => {
     const url = `${SITE}/news/${item.slug}`;
+
+    // The post's own share card, carried in the feed so scheduling tools that
+    // read RSS (Social Champ, Buffer, Zapier) can attach the image themselves
+    // rather than relying on each network to scrape the page. Both element
+    // shapes appear because readers differ in which one they honour, and both
+    // are omitted when a post has no generated card.
+    const cardPath = path.join(distDir, "images", "og", `${item.slug}.jpg`);
+    let media = "";
+    if (existsSync(cardPath)) {
+      const cardUrl = `${SITE}/images/og/${item.slug}.jpg`;
+      const bytes = statSync(cardPath).size;
+      media =
+        `\n      <enclosure url="${cardUrl}" type="image/jpeg" length="${bytes}" />` +
+        `\n      <media:content url="${cardUrl}" type="image/jpeg" medium="image" width="1200" height="630" />`;
+    }
+
     return `    <item>
       <title>${escapeText(item.title)}</title>
       <link>${url}</link>
       <guid isPermaLink="true">${url}</guid>
       <pubDate>${rfc822(item.publishedAt)}</pubDate>
       <category>${escapeText(item.category)}</category>
-      <description>${escapeText(item.excerpt)}</description>
+      <description>${escapeText(item.excerpt)}</description>${media}
     </item>`;
   });
 
   const latest = items.find((item) => item.publishedAt)?.publishedAt ?? null;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>In the Margins</title>
     <link>${SITE}/news</link>
