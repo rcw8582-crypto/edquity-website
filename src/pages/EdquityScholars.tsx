@@ -70,6 +70,7 @@ const TRACK_UPPER = {
 };
 
 const SHARED = [
+  "Rehearsed participation in their own IEP or 504 meeting, built across the year",
   "Opening and closing blocks of every session",
   "Executive function instruction: planning, organization, task initiation, self-monitoring",
   "Two campus visits, each including a disability services office meeting",
