@@ -81,7 +81,7 @@ const SHARED = [
 
 const EXPECTATIONS = [
   ["Attendance", "Each session builds on the one before it, so coming to every session matters. A Scholar who misses more than two of the nine Saturdays cannot finish the year. After any missed day, we meet with that Scholar one to one for fifteen minutes to catch them up."],
-  ["Come as you are", "There is no dress code. Wear whatever you want."],
+  ["What to wear", "Wear your program T-shirt with shorts or jeans. Shirts have to cover your midriff, and sleeves cannot be cut off. We give every Scholar their program T-shirt, so there is nothing to buy."],
   ["No cost, ever", "A sponsor pays for every seat. We provide food at every session, all materials and workbooks, and a chartered bus for the campus visits. Your family pays nothing for any of it."],
   ["Access", "We ask what your student needs when they enroll, and we set up the day to match. That can mean captions, materials sent ahead of time, extra breaks, or anything else. Every adult in the program passes a background check."],
 ];
