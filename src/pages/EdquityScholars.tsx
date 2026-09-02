@@ -51,7 +51,6 @@ const TRACK_LOWER = {
     "Explores real occupations using federal occupation data",
     "Interviews a volunteer professional working in a field they choose",
     "Practices interviewing, with feedback, more than once",
-    "Produces a Pathway Presentation for their family and their IEP team",
   ],
 };
 
