@@ -26,32 +26,31 @@ const BELIEFS = [
 ];
 
 const SESSIONS: Array<[string, string]> = [
-  ["July 12 to 16, 2027", "Summer intensive, five days. The cohort forms, and every Scholar reads their own IEP in plain language."],
-  ["Saturday, September 11, 2027", "Session 1. What your IEP actually says, and how to name what helps you learn."],
-  ["Saturday, October 23, 2027", "Session 2. Executive function: systems for time, tasks, and materials. Set past fall break."],
-  ["Saturday, November 13, 2027", "Session 3. Speaking in your own IEP meeting and asking for your accommodations in class."],
-  ["Saturday, December 11, 2027", "Session 4. Interests, strengths, and the work that fits them."],
-  ["Saturday, January 8, 2028", "Session 5. Careers and pathways: what the job actually asks of you."],
-  ["Saturday, February 12, 2028", "Session 6. Rights after high school: IDEA ends, Section 504 and the ADA begin."],
-  ["Saturday, February 26, 2028", "College visit, Volunteer State, built around the disability services office."],
-  ["Saturday, March 11, 2028", "Session 7. Building the transition portfolio: documentation, requests, and the words to ask."],
-  ["Saturday, April 8, 2028", "Session 8. Self-monitoring and task initiation, the two skills IEPs name most and teach least."],
-  ["Saturday, April 22, 2028", "College visit, Tennessee State or Fisk, including the disability services office."],
-  ["Saturday, May 6, 2028", "Session 9. Every Scholar finishes their portfolio and rehearses presenting it."],
-  ["Saturday, May 20, 2028", "Family showcase. Every Scholar presents, and every IEP is audited a second time."],
+  ["July 12 to 16, 2027", "Summer intensive, five days"],
+  ["Saturday, September 11, 2027", "Session 1"],
+  ["Saturday, October 23, 2027", "Session 2"],
+  ["Saturday, November 13, 2027", "Session 3"],
+  ["Saturday, December 11, 2027", "Session 4"],
+  ["Saturday, January 8, 2028", "Session 5"],
+  ["Saturday, February 12, 2028", "Session 6"],
+  ["Saturday, February 26, 2028", "College visit, Volunteer State"],
+  ["Saturday, March 11, 2028", "Session 7"],
+  ["Saturday, April 8, 2028", "Session 8"],
+  ["Saturday, April 22, 2028", "College visit, Nashville"],
+  ["Saturday, May 6, 2028", "Session 9"],
+  ["Saturday, May 20, 2028", "Family showcase"],
 ];
 
 const TRACK_LOWER = {
   band: "Grades 8 to 10",
   name: "Pathways",
   length: "Eight sessions",
-  blurb: "Career exploration and mentorship. Students work out what they are good at, what work fits it, and how to talk to an adult in that field.",
+  blurb: "By the end of the year, a Pathways Scholar can do these things.",
   items: [
-    "Strengths and self-understanding, using the iceberg and a formal strengths assessment",
-    "Career interest and aptitude exploration with real occupation data",
-    "Informational interviews with volunteer professionals",
-    "Practice interviews, rehearsed and repeated",
-    "A capstone Pathway Presentation the family carries into the IEP meeting",
+    "Name their own strengths and say where they come from",
+    "Name careers that fit those strengths, and what each one requires",
+    "Hold an interview with an adult working in a field they care about",
+    "Present a Pathway Presentation their family carries into the next IEP meeting",
   ],
 };
 
@@ -59,32 +58,21 @@ const TRACK_UPPER = {
   band: "Grades 11 to 12",
   name: "Scholars",
   length: "Six sessions plus orientation",
-  blurb: "The transition out. Students learn what changes legally at graduation and rehearse every request they will have to make for themselves.",
+  blurb: "By the end of the year, a Scholars student can do these things.",
   items: [
-    "IDEA ends at graduation, and the asking becomes yours",
-    "Your Summary of Performance, and getting copies before you leave",
-    "Registering with a college disability services office, and registering early",
-    "Disclosure: name the effect, end with a question, never name a diagnosis",
-    "Deadlines live in one place, and one named human checks on you",
-    "A capstone portfolio carrying three steps, each with a date and a person",
+    "Explain what changes legally at graduation, and what becomes their own job",
+    "Register with a college disability services office, and know when to do it",
+    "Request an accommodation in their own words, without naming a diagnosis",
+    "Hold a transition portfolio they own, carrying documentation and a plan",
   ],
 };
 
 const SHARED = [
-  "The culture block that opens every Saturday",
   "Executive function: planning, organizing, starting tasks, self-monitoring",
-  "The closing, where every Scholar names one thing they are taking with them",
-  "Both college visits, both audits of their IEP, and the family showcase",
-];
-
-const OUTCOMES = [
-  "Grades 8 to 10 finish with a Pathway Presentation, which the family carries into the next IEP meeting",
-  "Grades 11 to 12 finish with a transition portfolio the Scholar owns: their documentation, their accommodation requests, the words they use to ask, and their plan, in one place",
-  "An independent audit of their IEP at enrollment, and for returning Scholars a second audit in May, so the year closes with evidence of whether the document improved",
-  "Real practice speaking in their own IEP meeting, built up across the year rather than rehearsed once",
-  "A concrete plan grounded in real information about what careers pay and require, and for graduating seniors a complete transition package: the documentation, the disability services registration plan, and the words to ask",
-  "Two college campuses visited, including a sit-down with each disability services office, so the first campus conversation is not the scary one",
-  "A place to come back to: Scholars can return every year through graduation, and graduates return as Alumni mentors for the students behind them",
+  "Real practice speaking in their own IEP meeting, built up across the year",
+  "Two campus visits, each including a sit-down with disability services",
+  "Their IEP independently audited at enrollment and again in May",
+  "A place to come back to, through graduation and then as Alumni mentors",
 ];
 
 const EXPECTATIONS = [
@@ -257,7 +245,7 @@ export default function EdquityScholars() {
             <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>Two tracks, one shared day</h2>
           </div>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 26px", maxWidth: 760 }}>
-            Younger and older Scholars do not receive the same programming. They arrive on the same Saturday and open the morning together, then split into small groups by grade band for the work itself, which is where most of the year happens. A Scholar is always in the small group for their own track.
+            Younger and older Scholars do not receive the same programming. They arrive on the same Saturday and open the morning together, then split into small groups by grade band for the work itself, which is where most of the year happens. A Scholar is always in the small group for their own track, and the two tracks finish the year able to do different things.
           </p>
 
           <div className="rg-2" style={{ gap: 20, marginBottom: 24 }}>
@@ -356,21 +344,6 @@ export default function EdquityScholars() {
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: 0 }}>
             The first cohort visits Volunteer State in March and Tennessee State or Fisk in April. Travel is by chartered bus with background-checked adults, at no cost to families.
           </p>
-        </div>
-      </section>
-
-      {/* Completion produces */}
-      <section className="sp" style={{ background: "#f8fafc", borderTop: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: "0 0 18px" }}>Completing the year produces</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", gap: 16 }}>
-            {OUTCOMES.map((t) => (
-              <div key={t} style={{ display: "flex", gap: 12, alignItems: "flex-start", background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: "18px 20px" }}>
-                <CheckCircle2 size={20} color={TEAL_TEXT} style={{ flexShrink: 0, marginTop: 2 }} />
-                <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.6, margin: 0 }}>{t}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
