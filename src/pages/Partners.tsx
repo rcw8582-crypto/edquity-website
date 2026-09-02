@@ -25,6 +25,24 @@ const partners = [
     description:
       "The Sumner County Special Needs Collaborative is a Tennessee 501(c)(3) that works to make Sumner County more livable for individuals with special needs, disabilities, or neurodivergence. The collaborative connects families to local resources through its online resource directory and the annual Regional Special Needs Expo, supports special education teams in local schools, and hosts retreats for caregivers.",
   },
+  {
+    name: "Dunigan Law",
+    location: "Nashville, Tennessee",
+    website: "https://duniganlawfirm.com/",
+    websiteLabel: "duniganlawfirm.com",
+    logo: "/images/partners/dunigan-law.png",
+    description:
+      "Dunigan Law is a Nashville, Tennessee firm led by Brian Dunigan and Blair Dunigan, who bring more than fifty years of combined legal experience to personal injury and special education law. Some disputes move past what advocacy alone can resolve, and special education attorneys carry those cases the rest of the way.",
+  },
+  {
+    name: "NAACP Sumner County Branch",
+    location: "Gallatin, Tennessee",
+    website: "https://www.naacpsumnercounty.org/",
+    websiteLabel: "naacpsumnercounty.org",
+    logo: "/images/partners/naacp-sumner-county.png",
+    description:
+      "The NAACP Sumner County Branch has advocated for justice, equality, and opportunity in Sumner County since 1968. Its work spans civil rights advocacy, community engagement, and youth and education initiatives that prepare the next generation of leaders, in the same county where we host our free parent workshops.",
+  },
 ];
 
 export default function Partners() {
@@ -98,8 +116,11 @@ export default function Partners() {
             <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: "0 0 12px" }}>
               Many of the children we serve receive occupational therapy, physical therapy, or speech-language services through their IEPs. The professionals who deliver those services sit at the IEP table, and families are better served when the people across that table reflect and understand their communities.
             </p>
-            <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>
+            <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: "0 0 12px" }}>
               Closer to home, Sumner County is where we host our free parent workshops, and the Collaborative's resource network reaches the same families those workshops serve. You will find us at its annual Regional Special Needs Expo.
+            </p>
+            <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>
+              Some of what families face is not a services question but a rights question. Partners who practice special education law and partners who have defended civil rights in this county since 1968 both widen what a family can reach when advocacy alone is not enough.
             </p>
           </div>
         </div>
