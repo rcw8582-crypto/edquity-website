@@ -20,9 +20,9 @@ function Fact({ label, value }: FactProps) {
 }
 
 const BELIEFS = [
-  "A student who spends a full year with the same peers and the same adults builds skills that no single workshop can, which is why Scholars runs from July through May and welcomes students back year after year until they graduate.",
-  "The document belongs to the student. Every Scholar learns to read their own document, name what helps them learn, and speak in their own meeting, skills that stay with them long after graduation.",
-  "Families grow alongside their students. Parents attend their own workshops on the same days their Scholars meet, so the whole household leaves the year stronger than it entered.",
+  "Scholars runs from July through May with the same students and the same adults all year. One workshop is not long enough to learn these skills. Students can come back every year until they graduate.",
+  "The IEP or 504 plan belongs to the student. Every Scholar learns to read their own plan, say what helps them learn, and talk in their own meeting. They keep those skills after they graduate.",
+  "Parents learn too. Parents go to their own workshops on the same days their students meet, so the parent and the student learn the same things at the same time.",
 ];
 
 const SESSIONS: Array<[string, string]> = [
@@ -80,10 +80,10 @@ const SHARED = [
 ];
 
 const EXPECTATIONS = [
-  ["Attendance", "The year builds skill on skill, so attendance is the one thing we ask families to protect. A Scholar who misses more than two of the nine Saturdays cannot complete the year, and every missed day is followed by a fifteen-minute one-to-one so nobody falls behind quietly."],
-  ["Come as you are", "There is no attire requirement. We care what Scholars do, not what they wear."],
-  ["No cost, ever", "Every seat is sponsor-funded. Food is provided at every session, materials and workbooks are provided, and campus visits travel by chartered bus. No family ever pays for any of it."],
-  ["Access", "We ask about access needs at enrollment and build the day around them: captions, materials in advance, breaks, or anything else that helps a Scholar participate fully. Every adult in the program is background-checked."],
+  ["Attendance", "Each session builds on the one before it, so coming to every session matters. A Scholar who misses more than two of the nine Saturdays cannot finish the year. After any missed day, we meet with that Scholar one to one for fifteen minutes to catch them up."],
+  ["Come as you are", "There is no dress code. Wear whatever you want."],
+  ["No cost, ever", "A sponsor pays for every seat. We provide food at every session, all materials and workbooks, and a chartered bus for the campus visits. Your family pays nothing for any of it."],
+  ["Access", "We ask what your student needs when they enroll, and we set up the day to match. That can mean captions, materials sent ahead of time, extra breaks, or anything else. Every adult in the program passes a background check."],
 ];
 
 const SPONSOR_TIERS: Array<[string, string]> = [
@@ -186,13 +186,13 @@ export default function EdquityScholars() {
         <div style={{ maxWidth: 820, margin: "0 auto" }}>
           <p style={{ fontSize: 12, fontWeight: 700, color: TEAL_TEXT, letterSpacing: 2, textTransform: "uppercase", margin: "0 0 12px" }}>Why This Program Exists</p>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, lineHeight: 1.2, margin: "0 0 18px" }}>
-            Self-advocacy and executive functioning are learned skills, and we teach them directly.
+            Speaking up for yourself and getting organized are skills. We teach them directly.
           </h2>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 14px" }}>
-            IEPs often carry goals for organization, planning, and self-advocacy, and students grow fastest in those areas when someone teaches them directly and gives them a full year to practice. Students also do best when they understand their own document and can speak in the meetings about their own education. Scholars teaches both, directly, across a full year rather than in a single workshop.
+            IEPs often set goals for organization, planning, and speaking up. Students learn those things fastest when a person teaches them directly and they get a full year to practice. Students also do better when they understand their own plan and can talk in the meetings about their own education. Scholars teaches both of those, across a full year instead of in one workshop.
           </p>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: 0 }}>
-            The other gap opens at graduation. The Individuals with Disabilities Education Act ends, college runs on Section 504 and the ADA, and under those laws nobody is required to find the student, evaluate the student, or write a program for them. Most students are never told the rules change, and their families find out after the first bad semester. Scholars teaches it years ahead of graduation, while the high school team can still help.
+            The second thing happens at graduation. The IEP stops. College follows two different laws, Section 504 and the ADA. Under those laws, no one has to find the student, test the student, or write a plan for them. The student has to ask. Most students are never told this, and most families find out after a hard first semester of college. Scholars teaches it years before graduation, while the high school team can still help.
           </p>
         </div>
       </section>
@@ -208,35 +208,6 @@ export default function EdquityScholars() {
                 <p style={{ fontSize: 15.5, color: "#475569", lineHeight: 1.7, margin: 0 }}>{t}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Two grade bands */}
-      <section className="sp" style={{ background: "#fff" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
-            <Compass size={22} color={TEAL} />
-            <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>One program, two grade bands</h2>
-          </div>
-          <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 22px", maxWidth: 1000 }}>
-            All thirty Scholars share the same program days, open and close every session together, and split into two grade bands for the heart of the day, fifteen seats in each. A student can join in eighth grade and stay with us through graduation, moving from one band to the next, and graduates come back as Alumni mentors.
-          </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 18 }}>
-            <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 26px" }}>
-              <p style={{ fontSize: 12, fontWeight: 700, color: TEAL_TEXT, letterSpacing: 1.5, textTransform: "uppercase", margin: "0 0 8px" }}>Scholars, grades 8 to 10</p>
-              <h3 style={{ fontSize: 20, fontWeight: 800, margin: "0 0 12px" }}>Career exploration</h3>
-              <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>
-                The younger band works through a career exploration curriculum built on real federal career data: what they are interested in, what they are good at, what real occupations actually pay and require, and how to build a plan that connects school to the work that fits them. Nothing about the curriculum presumes what any student can or cannot do.
-              </p>
-            </div>
-            <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 14, padding: "24px 26px" }}>
-              <p style={{ fontSize: 12, fontWeight: 700, color: TEAL_TEXT, letterSpacing: 1.5, textTransform: "uppercase", margin: "0 0 8px" }}>Scholars, grades 11 to 12</p>
-              <h3 style={{ fontSize: 20, fontWeight: 800, margin: "0 0 12px" }}>The transition</h3>
-              <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>
-                The older band prepares for the day the rules change. IDEA ends at graduation, so juniors and seniors learn what Section 504 and the ADA require of them, how to register with a disability services office, what documentation to gather before leaving high school, and how to disclose and ask for accommodations in college or at work, in their own words.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -293,14 +264,14 @@ export default function EdquityScholars() {
             <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>How a program Saturday runs</h2>
           </div>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 22px" }}>
-            Saturdays run nine to one. Every session teaches one core skill, Scholars practice it until they can produce it on their own, nothing is graded, and anyone who is not there yet gets retaught in smaller steps rather than left behind. Food is provided every program day.
+            Saturdays run from 9:00 in the morning to 1:00 in the afternoon. Each session teaches one skill. Scholars practice that skill until they can do it on their own. Nothing is graded. A Scholar who cannot do it yet gets taught again in smaller steps. We provide food every program day.
           </p>
           <div style={{ border: "1px solid #e2e8f0", borderRadius: 12, overflow: "hidden", marginBottom: 22 }}>
             {[
-              ["Arrival", "Scholars land, settle, and eat."],
-              ["Culture block, whole group", "The block rotates across the year: a guest from the community, a Scholar teaching the group something they made, or a skill the whole room builds together."],
-              ["Grade-band breakouts", "The heart of the day. Each band works its own curriculum with its own facilitator, opening with a recall of last month's skill and closing only when this month's skill is actually in hand. A break with food sits in the middle."],
-              ["Closing, whole group", "Every Scholar writes a commitment for the month ahead, volunteers say theirs aloud, and everyone names one thing they are taking out the door."],
+              ["Arrival", "Scholars arrive, get settled, and eat."],
+              ["Culture block, whole group", "This changes each month. Sometimes a guest from the community comes in. Sometimes a Scholar teaches the group something they made. Sometimes the whole room learns one skill together."],
+              ["Grade-band breakouts", "This is the longest part of the day. Each grade band works with its own teacher on its own material. They start by going back over last month's skill. They finish when they can do this month's skill. There is a break with food in the middle."],
+              ["Closing, whole group", "Every Scholar writes down one thing they will do before the next session. Anyone who wants to reads theirs out loud. Then everyone says one thing they learned that day."],
             ].map(([name, desc], i) => (
               <div key={name} style={{ display: "flex", flexWrap: "wrap", gap: 6, padding: "13px 18px", background: i % 2 ? "#f8fafc" : "#fff", borderTop: i ? "1px solid #eef2f7" : "none" }}>
                 <span style={{ fontWeight: 800, fontSize: 14, width: 230, flexShrink: 0 }}>{name}</span>
@@ -309,7 +280,7 @@ export default function EdquityScholars() {
             ))}
           </div>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: 0 }}>
-            While Scholars are in their breakouts, one program day each quarter adds a parent workshop drawn from our researched parent workshop catalog, four across the year, so parents build their own advocacy skills on the same days their students build theirs.
+            Four times a year, on a program day, parents attend a workshop from our parent workshop catalog while their students are in their small groups. Parents learn on the same days their students do.
           </p>
         </div>
       </section>
@@ -322,7 +293,7 @@ export default function EdquityScholars() {
             <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>The program year</h2>
           </div>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 22px" }}>
-            The year opens with a five-day intensive in July that makes the cohort, then runs on the second Saturday of the month from September through May, nine in the morning to one in the afternoon. October moves past fall break. Two campus visits fall on fourth Saturdays in February and April, and the year closes on the third Saturday in May with a celebration where every Scholar presents. Nothing meets on a school day, so no Scholar misses class. Seats are limited to thirty, and requests are confirmed by email on a first-come, first-served basis.
+            The year starts with five days together in July. After that we meet on the second Saturday of the month, September through May, from 9:00 in the morning to 1:00 in the afternoon. October is on the fourth Saturday instead, so it does not land on fall break. The two campus visits are on fourth Saturdays in February and April. The year ends on the third Saturday in May, when every Scholar presents to their family. Nothing meets on a school day, so no Scholar misses class. There are thirty seats, and we confirm them by email in the order requests arrive.
           </p>
           <div style={{ border: "1px solid #e2e8f0", borderRadius: 12, overflow: "hidden", background: "#fff" }}>
             {SESSIONS.map(([date, session], i) => (
@@ -340,13 +311,13 @@ export default function EdquityScholars() {
         <div style={{ maxWidth: 820, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
             <MapPin size={22} color={TEAL} />
-            <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>Campus visits that ask the right question</h2>
+            <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>What happens on a campus visit</h2>
           </div>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 14px" }}>
-            Every college gives tours. Ours are different in one specific way: alongside the standard tour, we book time with each campus disability services office, because that office decides what a Scholar's accommodations look like after high school and almost no family knows to ask for it. Scholars walk in with their questions ready and walk out having had the conversation most students do not have until something has already gone wrong.
+            Every college gives tours. On our visits, Scholars take the tour and also meet with the campus disability services office. That office decides what accommodations a student gets in college. Most families do not know to ask for that meeting. Scholars bring their questions with them and get answers before they need them.
           </p>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: 0 }}>
-            The first cohort visits Volunteer State in March and Tennessee State or Fisk in April. Travel is by chartered bus with background-checked adults, at no cost to families.
+            The first cohort visits Volunteer State on February 26 and Tennessee State or Fisk on April 22. We travel by chartered bus. Every adult on the trip passes a background check. The trip costs families nothing.
           </p>
         </div>
       </section>
@@ -356,7 +327,7 @@ export default function EdquityScholars() {
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
             <Users size={22} color={TEAL} />
-            <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>What we ask of families, and what families can count on</h2>
+            <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>What we ask of families, and what families get</h2>
           </div>
           <div style={{ display: "grid", gap: 16 }}>
             {EXPECTATIONS.map(([name, desc]) => (
@@ -398,12 +369,12 @@ export default function EdquityScholars() {
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: "0 0 14px" }}>How to request a seat</h2>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 14px" }}>
-            Your student is eligible if they will be in grades 8 through 12 during the 2027-28 school year and have a current IEP or Section 504 plan. Every Scholar has one, because the cohort is built on that shared experience: every student in the room knows what it is to carry the document, and nobody has to explain themselves. Requesting a seat takes about five minutes and works like this:
+            Your student can join if they will be in grades 8 through 12 during the 2027-28 school year and have a current IEP or Section 504 plan. Every Scholar in the room has one. That means no student has to explain their plan to anyone. Asking for a seat takes about five minutes:
           </p>
           <ol style={{ fontSize: 15, color: "#475569", lineHeight: 1.8, margin: "0 0 0 20px", padding: 0 }}>
             <li>Submit the form below. No payment is collected, because no family ever pays.</li>
             <li>We confirm your request by email right away.</li>
-            <li>We follow up to confirm your student's seat. Seats are confirmed in the order requests arrive, as sponsor funding allows, and each cohort is confirmed once minimum enrollment is reached.</li>
+            <li>We email you again to confirm the seat. We confirm seats in the order requests arrive, as sponsors fund them.</li>
           </ol>
         </div>
       </section>
@@ -413,7 +384,7 @@ export default function EdquityScholars() {
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, textAlign: "center", margin: "0 0 10px" }}>Reserve a seat</h2>
           <p style={{ fontSize: 15, color: "#475569", textAlign: "center", lineHeight: 1.7, margin: "0 0 30px" }}>
-            Seats are limited and confirmed on a first-come, first-served basis. Submitting this form requests a seat in the next available cohort; no payment is collected, and no family ever pays for a seat. We confirm every seat by email as sponsor funding allows, and each cohort is confirmed once minimum enrollment is reached.
+            There are thirty seats, and we confirm them in the order requests arrive. This form asks for a seat. It does not commit you to anything. We collect no payment, and no family ever pays. We confirm each seat by email as sponsors fund them.
           </p>
 
           {status === "sent" ? (
@@ -474,7 +445,7 @@ export default function EdquityScholars() {
               </div>
               <div style={fieldWrap}>
                 <label style={labelStyle} htmlFor="accessNeeds">Access needs</label>
-                <textarea style={{ ...inputStyle, minHeight: 90, resize: "vertical" }} id="accessNeeds" name="accessNeeds" maxLength={2000} placeholder="Tell us anything that helps your student participate fully: captions, materials in advance, breaks, or anything else." />
+                <textarea style={{ ...inputStyle, minHeight: 90, resize: "vertical" }} id="accessNeeds" name="accessNeeds" maxLength={2000} placeholder="Tell us anything that helps your student take part. For example: captions, materials sent ahead of time, or extra breaks." />
               </div>
               <div style={fieldWrap}>
                 <label style={labelStyle} htmlFor="questions">Questions for us</label>
