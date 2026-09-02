@@ -41,15 +41,40 @@ const SESSIONS: Array<[string, string]> = [
   ["Saturday, May 20, 2028", "Family showcase. Every Scholar presents, and every IEP is audited a second time."],
 ];
 
-const LEARN = [
-  "What their own IEP says, in plain language, and how to name what helps them learn",
-  "How to speak in their own IEP meeting and ask for their accommodations in class",
-  "Executive function systems for time, tasks, materials, and asking for help early",
-  "Their own interests and strengths, and the careers and pathways that fit them",
-  "What real occupations actually pay and require, drawn from real federal career data",
-  "How their rights change the day they graduate, when IDEA ends and Section 504 and the ADA begin",
-  "How to register with a college disability services office and what documentation it asks for",
-  "How to build and present a capstone portfolio they own and carry with them",
+const TRACK_LOWER = {
+  band: "Grades 8 to 10",
+  name: "Pathways",
+  length: "Eight sessions",
+  blurb: "Career exploration and mentorship. Students work out what they are good at, what work fits it, and how to talk to an adult in that field.",
+  items: [
+    "Strengths and self-understanding, using the iceberg and a formal strengths assessment",
+    "Career interest and aptitude exploration with real occupation data",
+    "Informational interviews with volunteer professionals",
+    "Practice interviews, rehearsed and repeated",
+    "A capstone Pathway Presentation the family carries into the IEP meeting",
+  ],
+};
+
+const TRACK_UPPER = {
+  band: "Grades 11 to 12",
+  name: "Scholars",
+  length: "Six sessions plus orientation",
+  blurb: "The transition out. Students learn what changes legally at graduation and rehearse every request they will have to make for themselves.",
+  items: [
+    "IDEA ends at graduation, and the asking becomes yours",
+    "Your Summary of Performance, and getting copies before you leave",
+    "Registering with a college disability services office, and registering early",
+    "Disclosure: name the effect, end with a question, never name a diagnosis",
+    "Deadlines live in one place, and one named human checks on you",
+    "A capstone portfolio carrying three steps, each with a date and a person",
+  ],
+};
+
+const SHARED = [
+  "The culture block that opens every Saturday",
+  "Executive function: planning, organizing, starting tasks, self-monitoring",
+  "The closing, where every Scholar names one thing they are taking with them",
+  "Both college visits, both audits of their IEP, and the family showcase",
 ];
 
 const OUTCOMES = [
@@ -223,20 +248,46 @@ export default function EdquityScholars() {
         </div>
       </section>
 
-      {/* What students learn */}
+      {/* Two tracks, one shared day */}
       <section className="sp" style={{ background: "#f8fafc", borderTop: "1px solid #e2e8f0", borderBottom: "1px solid #e2e8f0" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
+        <div style={{ maxWidth: 980, margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
             <GraduationCap size={22} color={TEAL} />
-            <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>What students leave with</h2>
+            <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>Two tracks, one shared day</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", gap: 16 }}>
-            {LEARN.map((t) => (
-              <div key={t} style={{ display: "flex", gap: 12, alignItems: "flex-start", background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: "18px 20px" }}>
-                <CheckCircle2 size={20} color={TEAL_TEXT} style={{ flexShrink: 0, marginTop: 2 }} />
-                <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.6, margin: 0 }}>{t}</p>
+          <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 26px", maxWidth: 760 }}>
+            Younger and older Scholars do not receive the same programming. They arrive on the same Saturday and open the morning together, then split into small groups by grade band for the work itself, which is where most of the year happens. A Scholar is always in the small group for their own track.
+          </p>
+
+          <div className="rg-2" style={{ gap: 20, marginBottom: 24 }}>
+            {[TRACK_LOWER, TRACK_UPPER].map((t, i) => (
+              <div key={t.name} style={{ background: "#fff", border: `2px solid ${i === 0 ? TEAL : NAVY}`, borderRadius: 16, padding: "26px 26px 28px" }}>
+                <p style={{ fontSize: 12, fontWeight: 700, color: i === 0 ? TEAL_TEXT : NAVY, letterSpacing: 1.4, textTransform: "uppercase", margin: "0 0 6px" }}>{t.band}</p>
+                <h3 style={{ fontSize: 24, fontWeight: 900, color: NAVY, margin: "0 0 4px", letterSpacing: "-0.5px" }}>{t.name}</h3>
+                <p style={{ fontSize: 13, fontWeight: 700, color: "#64748b", margin: "0 0 14px" }}>{t.length}</p>
+                <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 18px" }}>{t.blurb}</p>
+                <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 11 }}>
+                  {t.items.map((item) => (
+                    <li key={item} style={{ display: "flex", gap: 11, alignItems: "flex-start" }}>
+                      <CheckCircle2 size={17} color={i === 0 ? TEAL_TEXT : NAVY} style={{ flexShrink: 0, marginTop: 3 }} />
+                      <span style={{ fontSize: 14.5, color: "#475569", lineHeight: 1.55 }}>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
+          </div>
+
+          <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: "24px 26px 26px" }}>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#B45309", letterSpacing: 1.4, textTransform: "uppercase", margin: "0 0 12px" }}>What both tracks share</p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 12 }}>
+              {SHARED.map((t) => (
+                <div key={t} style={{ display: "flex", gap: 11, alignItems: "flex-start" }}>
+                  <CheckCircle2 size={17} color="#B45309" style={{ flexShrink: 0, marginTop: 3 }} />
+                  <span style={{ fontSize: 14.5, color: "#475569", lineHeight: 1.55 }}>{t}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
