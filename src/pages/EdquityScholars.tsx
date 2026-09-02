@@ -50,7 +50,7 @@ const TRACK_LOWER = {
     "Take a strengths assessment that shows what they are good at",
     "Look up real jobs and find out what each job pays and what it requires",
     "Talk with an adult who works in a job the student is interested in",
-    "Practice answering interview questions, and hear what worked and what to try differently",
+    "Practice answering interview questions, get feedback, and practice again",
   ],
 };
 
