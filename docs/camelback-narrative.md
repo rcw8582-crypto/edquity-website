@@ -79,10 +79,9 @@ service that requires the founder in the room caps at the founder's calendar.
 | Fact | Detail |
 |---|---|
 | Public offering | One, the IEP Audit |
-| Families served | 8, since intake opened June 2026 |
+| Families served | 8, since intake opened May 2026 |
 | Reach | Multiple states |
-| Turnaround | Median 3 days from request to report |
-| Demographics | Every family served self-identifies as Black; half report household income below 200 percent of the federal poverty level |
+| Turnaround | Median 4 days from request to report |
 | Current work | Report in active revision, with a two-wave usefulness study running against the first cohort |
 | Legal status | Tennessee nonprofit corporation, IRS-recognized 501(c)(3), May 2026, EIN 42-2295582 |
 
