@@ -26,16 +26,19 @@ const BELIEFS = [
 ];
 
 const SESSIONS: Array<[string, string]> = [
-  ["July 2027, five days", "Summer intensive, Monday through Friday. The cohort launches: culture, goal setting, and each Scholar reading their own IEP in plain language."],
-  ["September 2027", "Saturday session. What your IEP actually says, and how to name what helps you learn."],
-  ["October 2027", "Saturday session. Executive function: systems for time, tasks, and materials."],
-  ["November 2027", "Saturday session. Speaking in your own IEP meeting and asking for your accommodations in class."],
-  ["December 2027", "Saturday session. Interests, strengths, and the work that fits them."],
-  ["January 2028", "Saturday session. Careers and pathways: what the job actually asks of you."],
-  ["February 2028", "Saturday session. Rights after high school: IDEA ends, Section 504 and the ADA begin."],
-  ["March 2028", "Saturday session and a campus visit to Volunteer State, including the disability services office."],
-  ["April 2028", "Saturday session and a campus visit to Tennessee State or Fisk, including the disability services office."],
-  ["May 2028", "Closing celebration. Every Scholar presents their capstone. Returning Scholars' IEPs are audited a second time, and graduating seniors leave with their complete transition package for college."],
+  ["July 12 to 16, 2027", "Summer intensive, five days. The cohort forms, and every Scholar reads their own IEP in plain language."],
+  ["Saturday, September 11, 2027", "Session 1. What your IEP actually says, and how to name what helps you learn."],
+  ["Saturday, October 23, 2027", "Session 2. Executive function: systems for time, tasks, and materials. Set past fall break."],
+  ["Saturday, November 13, 2027", "Session 3. Speaking in your own IEP meeting and asking for your accommodations in class."],
+  ["Saturday, December 11, 2027", "Session 4. Interests, strengths, and the work that fits them."],
+  ["Saturday, January 8, 2028", "Session 5. Careers and pathways: what the job actually asks of you."],
+  ["Saturday, February 12, 2028", "Session 6. Rights after high school: IDEA ends, Section 504 and the ADA begin."],
+  ["Saturday, February 26, 2028", "College visit, Volunteer State, built around the disability services office."],
+  ["Saturday, March 11, 2028", "Session 7. Building the transition portfolio: documentation, requests, and the words to ask."],
+  ["Saturday, April 8, 2028", "Session 8. Self-monitoring and task initiation, the two skills IEPs name most and teach least."],
+  ["Saturday, April 22, 2028", "College visit, Tennessee State or Fisk, including the disability services office."],
+  ["Saturday, May 6, 2028", "Session 9. Every Scholar finishes their portfolio and rehearses presenting it."],
+  ["Saturday, May 20, 2028", "Family showcase. Every Scholar presents, and every IEP is audited a second time."],
 ];
 
 const LEARN = [
@@ -153,7 +156,7 @@ export default function EdquityScholars() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 14, maxWidth: 920, margin: "0 auto" }}>
             <Fact label="First cohort" value="July 2027 through May 2028" />
-            <Fact label="Format" value="A five-day July intensive, then nine monthly Saturdays" />
+            <Fact label="Format" value="A five-day July intensive, then one Saturday a month" />
             <Fact label="Seats" value="Thirty, across grades 8 through 12" />
             <Fact label="A seat" value="$1,000, funded by a sponsor" />
           </div>
@@ -275,7 +278,7 @@ export default function EdquityScholars() {
             <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>The program year</h2>
           </div>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 22px" }}>
-            The year opens with a five-day intensive in July that makes the cohort, then runs one Saturday a month from September through May, nine to one. Two of those months add a campus visit, and the year closes with a celebration where every Scholar presents. Seats are limited to thirty, and requests are confirmed by email on a first-come, first-served basis.
+            The year opens with a five-day intensive in July that makes the cohort, then runs on the second Saturday of the month from September through May, nine in the morning to one in the afternoon. October moves past fall break. Two campus visits fall on fourth Saturdays in February and April, and the year closes on the third Saturday in May with a celebration where every Scholar presents. Nothing meets on a school day, so no Scholar misses class. Seats are limited to thirty, and requests are confirmed by email on a first-come, first-served basis.
           </p>
           <div style={{ border: "1px solid #e2e8f0", borderRadius: 12, overflow: "hidden", background: "#fff" }}>
             {SESSIONS.map(([date, session], i) => (

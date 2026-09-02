@@ -43,10 +43,7 @@ export default function About() {
                 EDquity at the Margins is a 501(c)(3) public charity recognized in May 2026. We provide IEP advocacy support to marginalized families through an independent audit of their child's IEP and recurring parent workshops on their child's school experience. We also publish The EDquity IEP Advocacy Toolkit, a 22-sheet parent instrument set that stands behind the audit: every indicator the report flags as missing points to the tool a parent uses to act on it.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We opened intake in June 2026 and deliver audits for families across multiple states, with a median turnaround of three days from request to report. We led our first workshop in July 2026 at the Gallatin Public Library and lead monthly Know Your Rights webinars.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Every family we have served self-identifies as Black, and half report household income below 200 percent of the federal poverty level.
+                We opened intake in May 2026 and deliver audits for families across multiple states, with a median of four days from request to report. We led our first workshop in July 2026 at the Gallatin Public Library and lead monthly Know Your Rights webinars.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Our goal is to empower parents to advocate for their children and give them the language to do it. Our IEP Audit, our Know Your Rights workshops, and our Advocacy Toolkit are free.

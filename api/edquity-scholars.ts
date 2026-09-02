@@ -173,10 +173,11 @@ export default async function handler(req: Request): Promise<Response> {
       <p>Thank you for requesting an EDquity Scholars seat for ${escapeHtml(studentName)}. Nothing is due now; we confirm every seat by email, in the order requests arrive.</p>
       <p style="margin: 16px 0 6px;"><strong>The first cohort</strong></p>
       <ul style="margin: 0 0 16px; padding-left: 20px;">
-        <li>A five-day intensive in July 2027 that opens the year</li>
-        <li>Nine monthly Saturdays, September 2027 through May 2028, nine in the morning to one in the afternoon</li>
-        <li>Two local college visits, and a family showcase in May</li>
-        <li>In person in Gallatin, Tennessee</li>
+        <li>Summer intensive: July 12 to 16, 2027</li>
+        <li>Saturday sessions, 9:00 AM to 1:00 PM: September 11, October 23, November 13, December 11, 2027, then January 8, February 12, March 11, April 8 and May 6, 2028</li>
+        <li>College visits: February 26 and April 22, 2028</li>
+        <li>Family showcase: May 20, 2028</li>
+        <li>In person in Gallatin, Tennessee. Nothing meets on a school day.</li>
       </ul>
       <p>Every seat is sponsored and free to your student. We confirm seats as sponsorships are secured, on a first-come, first-served basis, and no payment is ever collected from families. Thirty students join the first cohort, and we confirm requests in the order they arrive.</p>
       <p>If you told us about access needs, we will build for them from the start and follow up if we have questions.</p>
@@ -223,7 +224,7 @@ export default async function handler(req: Request): Promise<Response> {
       to: parentEmail,
       subject: "Your EDquity Scholars seat request has been received",
       html: ackHtml,
-      text: `Hi ${parentName}, thank you for requesting an EDquity Scholars seat for ${studentName}. The first cohort opens with a five-day intensive in July 2027, then meets one Saturday a month from September 2027 through May 2028, in person in Gallatin. Thirty students join the first cohort. Every seat is sponsored and free to your student, we confirm requests in the order they arrive, and nothing is due now.`,
+      text: `Hi ${parentName}, thank you for requesting an EDquity Scholars seat for ${studentName}. The first cohort opens with a summer intensive July 12 to 16, 2027, then meets Saturdays from 9:00 AM to 1:00 PM on September 11, October 23, November 13 and December 11, 2027, and January 8, February 12, March 11, April 8 and May 6, 2028. College visits fall on February 26 and April 22, 2028, and the family showcase is May 20, 2028. Everything is in person in Gallatin and nothing meets on a school day. Thirty students join the first cohort. Every seat is sponsored and free to your student, we confirm requests in the order they arrive, and nothing is due now.`,
     });
     if (ack.error) {
       console.error("[edquity-scholars] acknowledgment email failed:", ack.error);
