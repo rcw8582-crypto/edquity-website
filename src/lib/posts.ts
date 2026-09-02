@@ -133,11 +133,14 @@ const ALL_POSTS: BlogPost[] = Object.entries(modules)
       createdAt: fm.createdAt ? String(fm.createdAt) : (fallbackDate ?? new Date().toISOString()),
     } satisfies BlogPost;
   })
-  // Sort newest first by publishedAt, falling back to createdAt
+  // Sort newest first by publishedAt, falling back to createdAt. publishedTime
+  // joins the key so two posts sharing a date order by the hour they appeared,
+  // which keeps the newest item first in the news list and in the RSS feed. A
+  // post without a time sorts at 12:00, the scheduled release hour.
   .sort((a, b) => {
-    const ad = a.publishedAt ?? a.createdAt;
-    const bd = b.publishedAt ?? b.createdAt;
-    return bd.localeCompare(ad);
+    const key = (p: BlogPost) =>
+      `${p.publishedAt ?? p.createdAt.slice(0, 10)}T${p.publishedTime ?? "12:00"}`;
+    return key(b).localeCompare(key(a));
   });
 
 /**
