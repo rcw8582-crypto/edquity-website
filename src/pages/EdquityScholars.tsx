@@ -78,10 +78,11 @@ const SHARED = [
 ];
 
 const OUTCOMES = [
-  "A capstone portfolio the Scholar owns: their documentation, their accommodation requests, the words they use to ask, and their plan, in one place",
+  "Grades 8 to 10 finish with a Pathway Presentation, which the family carries into the next IEP meeting",
+  "Grades 11 to 12 finish with a transition portfolio the Scholar owns: their documentation, their accommodation requests, the words they use to ask, and their plan, in one place",
   "An independent audit of their IEP at enrollment, and for returning Scholars a second audit in May, so the year closes with evidence of whether the document improved",
   "Real practice speaking in their own IEP meeting, built up across the year rather than rehearsed once",
-  "A concrete plan after graduation, grounded in real information about what careers pay and require; graduating seniors leave with their complete transition package for college: the documentation, the disability services registration plan, and the words to ask for their accommodations",
+  "A concrete plan grounded in real information about what careers pay and require, and for graduating seniors a complete transition package: the documentation, the disability services registration plan, and the words to ask",
   "Two college campuses visited, including a sit-down with each disability services office, so the first campus conversation is not the scary one",
   "A place to come back to: Scholars can return every year through graduation, and graduates return as Alumni mentors for the students behind them",
 ];
