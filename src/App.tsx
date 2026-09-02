@@ -1,4 +1,4 @@
-import { useEffect, lazy, Suspense } from "react";
+import { Component, useEffect, lazy, Suspense, type ReactNode } from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MotionConfig } from "framer-motion";
@@ -8,6 +8,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Layout from "@/components/layout/Layout";
 import { BOOKING_URL, PORTAL_REGISTER_URL } from "@/lib/booking";
 import { trackBookingClick, trackPortalRegistrationStart } from "@/lib/analytics";
+import { isStaleChunkError, reloadForStaleChunk } from "@/lib/staleChunk";
 
 // Home stays eager-loaded since it is the most common entry point
 // and lazy-loading it would delay the first paint for first-time visitors.
@@ -122,64 +123,104 @@ function RouteFallback() {
   );
 }
 
+/**
+ * Backstop for the vite:preloadError listener in main.tsx. When a lazy page
+ * chunk fails in a way that reaches React instead (or the visitor's browser
+ * never fired the event), this boundary catches it, reloads once onto the
+ * current build, and otherwise offers a reload button rather than letting
+ * React unmount everything into a blank page.
+ */
+class RouteErrorBoundary extends Component<
+  { children: ReactNode },
+  { failed: boolean }
+> {
+  state = { failed: false };
+
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+
+  componentDidCatch(error: unknown) {
+    if (isStaleChunkError(error) && reloadForStaleChunk()) return;
+  }
+
+  render() {
+    if (!this.state.failed) return this.props.children;
+    return (
+      <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4 px-6 text-center">
+        <p className="text-lg font-medium">This page didn&apos;t finish loading.</p>
+        <button
+          type="button"
+          onClick={() => window.location.reload()}
+          className="rounded-md bg-accent px-4 py-2 text-accent-foreground"
+        >
+          Reload the page
+        </button>
+      </div>
+    );
+  }
+}
+
 function Router() {
   return (
     <Layout>
       <ScrollToTop />
       <TrackBookingClicks />
-      <Suspense fallback={<RouteFallback />}>
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/services" component={Services} />
-          <Route path="/news" component={News} />
-          <Route path="/donate" component={Donate} />
-          <Route path="/volunteer" component={Volunteer} />
-          <Route path="/board/roles/:slug" component={BoardRole} />
-          <Route path="/board/roles" component={BoardRoles} />
-          <Route path="/board" component={Board} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/resources" component={Resources} />
-          <Route path="/events" component={Events} />
-          <Route path="/transparency" component={Transparency} />
-          <Route path="/funders" component={Funders} />
-          <Route path="/partners" component={Partners} />
-          <Route path="/press" component={Press} />
-          <Route path="/accessibility" component={Accessibility} />
-          <Route path="/tools/iep-goal-checker" component={IEPGoalChecker} />
-          <Route path="/pathways/explore/questions/:n" component={PathwaysQuestions} />
-          <Route path="/pathways/explore/questions" component={PathwaysQuestions} />
-          <Route path="/pathways/explore/results" component={PathwaysResults} />
-          <Route path="/pathways/explore/careers/:code" component={PathwaysCareer} />
-          <Route path="/pathways/explore/fields/:code" component={PathwaysFields} />
-          <Route path="/pathways/explore/fields" component={PathwaysFields} />
-          <Route path="/pathways/explore/search" component={PathwaysSearch} />
-          <Route path="/pathways/explore/plan" component={PathwaysPlan} />
-          <Route path="/pathways/explore" component={PathwaysExplore} />
-          <Route path="/edquity" component={Edquity} />
-          <Route path="/our-methodology" component={Methodology} />
-          <Route path="/privacy-policy" component={PrivacyPolicy} />
-          <Route path="/terms-of-service" component={TermsOfService} />
-          <Route path="/ferpa-compliance" component={FerpaCompliance} />
-          <Route path="/research-data-policy" component={ResearchDataPolicy} />
-          <Route path="/intake-consent" component={IntakeConsent} />
-          <Route path="/client-portal" component={ClientPortal} />
-          <Route path="/news/:slug" component={NewsPost} />
-          <Route path="/resources/:slug" component={ResourceDetail} />
-          <Route path="/admin" component={Admin} />
-          <Route path="/intake" component={Intake} />
-          <Route path="/tell-us-about-your-child" component={ParentQuestions} />
-          <Route path="/fellowship" component={Fellowship} />
-          <Route path="/edquity-scholars" component={EdquityScholars} />
-          <Route path="/college-success" component={EdquityScholars} />
-          <Route path="/book" component={Book} />
-          <Route path="/institutional-services" component={InstitutionalServices} />
-          <Route path="/iep-quality-improvement" component={IepQualityImprovement} />
-          <Route path="/audit-feedback" component={AuditFeedback} />
-          <Route path="/professional-development" component={TeacherPD} />
-          <Route component={NotFound} />
-        </Switch>
-      </Suspense>
+      <RouteErrorBoundary>
+        <Suspense fallback={<RouteFallback />}>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/services" component={Services} />
+            <Route path="/news" component={News} />
+            <Route path="/donate" component={Donate} />
+            <Route path="/volunteer" component={Volunteer} />
+            <Route path="/board/roles/:slug" component={BoardRole} />
+            <Route path="/board/roles" component={BoardRoles} />
+            <Route path="/board" component={Board} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/resources" component={Resources} />
+            <Route path="/events" component={Events} />
+            <Route path="/transparency" component={Transparency} />
+            <Route path="/funders" component={Funders} />
+            <Route path="/partners" component={Partners} />
+            <Route path="/press" component={Press} />
+            <Route path="/accessibility" component={Accessibility} />
+            <Route path="/tools/iep-goal-checker" component={IEPGoalChecker} />
+            <Route path="/pathways/explore/questions/:n" component={PathwaysQuestions} />
+            <Route path="/pathways/explore/questions" component={PathwaysQuestions} />
+            <Route path="/pathways/explore/results" component={PathwaysResults} />
+            <Route path="/pathways/explore/careers/:code" component={PathwaysCareer} />
+            <Route path="/pathways/explore/fields/:code" component={PathwaysFields} />
+            <Route path="/pathways/explore/fields" component={PathwaysFields} />
+            <Route path="/pathways/explore/search" component={PathwaysSearch} />
+            <Route path="/pathways/explore/plan" component={PathwaysPlan} />
+            <Route path="/pathways/explore" component={PathwaysExplore} />
+            <Route path="/edquity" component={Edquity} />
+            <Route path="/our-methodology" component={Methodology} />
+            <Route path="/privacy-policy" component={PrivacyPolicy} />
+            <Route path="/terms-of-service" component={TermsOfService} />
+            <Route path="/ferpa-compliance" component={FerpaCompliance} />
+            <Route path="/research-data-policy" component={ResearchDataPolicy} />
+            <Route path="/intake-consent" component={IntakeConsent} />
+            <Route path="/client-portal" component={ClientPortal} />
+            <Route path="/news/:slug" component={NewsPost} />
+            <Route path="/resources/:slug" component={ResourceDetail} />
+            <Route path="/admin" component={Admin} />
+            <Route path="/intake" component={Intake} />
+            <Route path="/tell-us-about-your-child" component={ParentQuestions} />
+            <Route path="/fellowship" component={Fellowship} />
+            <Route path="/edquity-scholars" component={EdquityScholars} />
+            <Route path="/college-success" component={EdquityScholars} />
+            <Route path="/book" component={Book} />
+            <Route path="/institutional-services" component={InstitutionalServices} />
+            <Route path="/iep-quality-improvement" component={IepQualityImprovement} />
+            <Route path="/audit-feedback" component={AuditFeedback} />
+            <Route path="/professional-development" component={TeacherPD} />
+            <Route component={NotFound} />
+          </Switch>
+        </Suspense>
+      </RouteErrorBoundary>
     </Layout>
   );
 }
