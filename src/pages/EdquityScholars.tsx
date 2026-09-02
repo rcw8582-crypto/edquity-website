@@ -45,12 +45,12 @@ const TRACK_LOWER = {
   band: "Grades 8 to 10",
   name: "Pathways",
   length: "Eight sessions",
-  blurb: "Completed by the end of the program year:",
+  blurb: "What these students do during the year:",
   items: [
-    "Formal strengths assessment",
-    "Occupation exploration using federal occupation data",
-    "Informational interview with a volunteer professional",
-    "Structured interview practice with feedback",
+    "Take a strengths assessment that shows what they are good at",
+    "Look up real jobs and find out what each job pays and what it requires",
+    "Talk with an adult who works in a job the student is interested in",
+    "Practice answering interview questions, and get told what to fix",
   ],
 };
 
@@ -58,25 +58,25 @@ const TRACK_UPPER = {
   band: "Grades 11 to 12",
   name: "Scholars",
   length: "Six sessions plus orientation",
-  blurb: "Completed by the end of the program year:",
+  blurb: "What these students do during the year:",
   items: [
-    "The legal transition at graduation: IDEA ends, Section 504 and the ADA apply",
-    "Summary of Performance: requesting it and obtaining copies",
-    "Registration with a college disability services office",
-    "Accommodation disclosure: stating the functional effect without stating a diagnosis",
-    "Deadline consolidation with a single point of accountability",
-    "Transition portfolio: documentation, requests, and a dated action plan",
+    "Learn that the IEP stops when they graduate, and that college follows different laws",
+    "Ask the school for their Summary of Performance and get a copy to keep",
+    "Sign up with the disability services office at a college",
+    "Learn how to tell a teacher what makes learning hard and what to ask for, without saying their diagnosis",
+    "Keep all their due dates in one place, with one person who checks in on them",
+    "Build a folder that holds their paperwork, the accommodations they ask for, and their next steps with dates",
   ],
 };
 
 const SHARED = [
-  "Rehearsed participation in their own IEP or 504 meeting, built across the year",
-  "Opening and closing blocks of every session",
-  "Executive function instruction: planning, organization, task initiation, self-monitoring",
-  "Two campus visits, each including a disability services office meeting",
-  "Independent IEP audit at enrollment and again in May",
-  "Family showcase in May",
-  "Annual re-enrollment through graduation, then Alumni mentorship",
+  "Practice talking in their own IEP or 504 meeting",
+  "Learn how to plan, get organized, start work without being told, and check their own progress",
+  "Start and end every Saturday with the whole group",
+  "Visit two colleges, and meet the disability services office at each one",
+  "Have their IEP reviewed by us when they join, and reviewed again in May",
+  "Present to their family in May",
+  "Come back every year until they graduate, then return to help younger students",
 ];
 
 const EXPECTATIONS = [
@@ -249,7 +249,7 @@ export default function EdquityScholars() {
             <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>Two tracks, one shared day</h2>
           </div>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 26px", maxWidth: 760 }}>
-            Grade bands receive separate programming. All Scholars attend the same Saturday and share the opening and closing blocks. Instruction occurs in grade-band small groups, which account for the majority of each session. Students remain in the small group assigned to their track.
+            Students in grades 8 to 10 and students in grades 11 to 12 learn different things. Everyone comes on the same Saturday. The whole group starts together and ends together. In between, students work in a small group with only their own grade range. That small group is where most of the day happens.
           </p>
 
           <div className="rg-2" style={{ gap: 20, marginBottom: 24 }}>
