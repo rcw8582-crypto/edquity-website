@@ -16,6 +16,15 @@ const partners = [
     description:
       "The Black in Rehab Foundation is a Florida-based nonprofit that builds community among Black occupational therapists, physical therapists, speech-language pathologists, assistants, and students. Through retreats, workshops, and mentorship, the foundation grows Black representation across the rehabilitation professions, the same professions that deliver many of the related services written into children's IEPs.",
   },
+  {
+    name: "Sumner County Special Needs Collaborative",
+    location: "Sumner County, Tennessee",
+    website: "https://www.sumnercountyspecialneeds.org/",
+    websiteLabel: "sumnercountyspecialneeds.org",
+    logo: "/images/partners/sumner-county-special-needs-collaborative.png",
+    description:
+      "The Sumner County Special Needs Collaborative is a Tennessee 501(c)(3) that works to make Sumner County more livable for individuals with special needs, disabilities, or neurodivergence. The collaborative connects families to local resources through its online resource directory and the annual Regional Special Needs Expo, supports special education teams in local schools, and hosts retreats for caregivers.",
+  },
 ];
 
 export default function Partners() {
