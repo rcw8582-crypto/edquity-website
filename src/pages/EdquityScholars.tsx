@@ -20,7 +20,7 @@ function Fact({ label, value }: FactProps) {
 }
 
 const BELIEFS = [
-  "Scholars runs from July through May with the same students and the same adults all year. One workshop is not long enough to learn these skills. Students can come back every year until they graduate.",
+  "Scholars runs from July through May with the same students and the same adults all year. One workshop is not long enough to learn these skills.",
   "The IEP or 504 plan belongs to the student. Every Scholar learns to read their own plan, say what helps them learn, and talk in their own meeting. They keep those skills after they graduate.",
   "Parents learn too. Parents go to their own workshops on the same days their students meet, so the parent and the student learn the same things at the same time.",
 ];
@@ -76,7 +76,6 @@ const SHARED = [
   "Visit two colleges, and meet the disability services office at each one",
   "Get an IEP audit, or a 504 review, when they join and again in May",
   "Present to their family in May",
-  "Come back every year until they graduate, then return to help younger students",
 ];
 
 const EXPECTATIONS = [
