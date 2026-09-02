@@ -117,6 +117,7 @@ export default function Events() {
                     <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                       {month.rows.map((event) => {
                         const isNext = event.id === upcoming[0].id;
+                        const isProgram = event.event_type === "Program";
                         return (
                           <motion.div
                             key={event.id}
@@ -157,19 +158,33 @@ export default function Events() {
                                 </p>
                               )}
                             </div>
-                            <a href={event.rsvp_url ?? "/contact"}
-                              target={event.rsvp_url ? "_blank" : undefined}
-                              rel={event.rsvp_url ? "noopener noreferrer" : undefined}
-                              onClick={() => trackSeatClaimed(event.title)}
-                              style={{
-                                display: "inline-flex", alignItems: "center", gap: 6,
-                                background: isNext ? "#122C54" : "#fff",
-                                color: isNext ? "#fff" : "#122C54",
-                                border: isNext ? "none" : "1px solid #cbd5e1",
-                                padding: "9px 18px", borderRadius: 8, fontWeight: 700, fontSize: 13.5, textDecoration: "none",
+                            {/* A multi-date program is enrolled in once, not RSVP'd date by
+                                date, so only the date that carries an enrollment link shows a
+                                button. The other dates in the same program read as schedule. */}
+                            {isProgram && !event.rsvp_url ? (
+                              <span style={{
+                                display: "inline-flex", alignItems: "center",
+                                padding: "9px 14px", borderRadius: 8, fontWeight: 700, fontSize: 12.5,
+                                color: "#0F766E", background: "#f0fdfa", border: "1px solid #99f6e4",
+                                whiteSpace: "nowrap",
                               }}>
-                              {isNext ? "Save my seat" : "RSVP"} <ArrowRight size={13} />
-                            </a>
+                                Program date
+                              </span>
+                            ) : (
+                              <a href={event.rsvp_url ?? "/contact"}
+                                target={event.rsvp_url ? "_blank" : undefined}
+                                rel={event.rsvp_url ? "noopener noreferrer" : undefined}
+                                onClick={() => trackSeatClaimed(event.title)}
+                                style={{
+                                  display: "inline-flex", alignItems: "center", gap: 6,
+                                  background: isNext ? "#122C54" : "#fff",
+                                  color: isNext ? "#fff" : "#122C54",
+                                  border: isNext ? "none" : "1px solid #cbd5e1",
+                                  padding: "9px 18px", borderRadius: 8, fontWeight: 700, fontSize: 13.5, textDecoration: "none",
+                                }}>
+                                {isProgram ? "Enroll" : isNext ? "Save my seat" : "RSVP"} <ArrowRight size={13} />
+                              </a>
+                            )}
                           </motion.div>
                         );
                       })}
