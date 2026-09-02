@@ -45,12 +45,12 @@ const TRACK_LOWER = {
   band: "Grades 8 to 10",
   name: "Pathways",
   length: "Eight sessions",
-  blurb: "What a Pathways Scholar does and produces across the year.",
+  blurb: "Completed by the end of the program year:",
   items: [
-    "Completes a formal strengths assessment",
-    "Explores real occupations using federal occupation data",
-    "Interviews a volunteer professional working in a field they choose",
-    "Practices interviewing, with feedback, more than once",
+    "Formal strengths assessment",
+    "Occupation exploration using federal occupation data",
+    "Informational interview with a volunteer professional",
+    "Structured interview practice with feedback",
   ],
 };
 
@@ -58,24 +58,24 @@ const TRACK_UPPER = {
   band: "Grades 11 to 12",
   name: "Scholars",
   length: "Six sessions plus orientation",
-  blurb: "What a Scholars student does and produces across the year.",
+  blurb: "Completed by the end of the program year:",
   items: [
-    "Learns that IDEA ends at graduation and the asking becomes theirs",
-    "Requests their Summary of Performance and leaves with copies in hand",
-    "Registers with a college disability services office, and registers early",
-    "Uses a disclosure script: name the effect, end with a question, never name a diagnosis",
-    "Puts every deadline in one place, with one named person checking in",
-    "Produces a transition portfolio carrying three steps, each with a date and a person",
+    "The legal transition at graduation: IDEA ends, Section 504 and the ADA apply",
+    "Summary of Performance: requesting it and obtaining copies",
+    "Registration with a college disability services office",
+    "Accommodation disclosure: stating the functional effect without stating a diagnosis",
+    "Deadline consolidation with a single point of accountability",
+    "Transition portfolio: documentation, requests, and a dated action plan",
   ],
 };
 
 const SHARED = [
-  "The culture block that opens every Saturday, and the closing that ends it",
-  "Executive function: planning, organizing, starting tasks, self-monitoring",
-  "Two campus visits, each including a sit-down with disability services",
-  "An independent audit of their IEP at enrollment and again in May",
-  "The family showcase in May, where every Scholar presents",
-  "A place to return to each year through graduation, then as an Alumni mentor",
+  "Opening and closing blocks of every session",
+  "Executive function instruction: planning, organization, task initiation, self-monitoring",
+  "Two campus visits, each including a disability services office meeting",
+  "Independent IEP audit at enrollment and again in May",
+  "Family showcase in May",
+  "Annual re-enrollment through graduation, then Alumni mentorship",
 ];
 
 const EXPECTATIONS = [
@@ -248,7 +248,7 @@ export default function EdquityScholars() {
             <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: 0 }}>Two tracks, one shared day</h2>
           </div>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 26px", maxWidth: 760 }}>
-            Younger and older Scholars do not receive the same programming. They arrive on the same Saturday and open the morning together, then split into small groups by grade band for the work itself, which is where most of the year happens. A Scholar is always in the small group for their own track, and the two tracks finish the year able to do different things.
+            Grade bands receive separate programming. All Scholars attend the same Saturday and share the opening and closing blocks. Instruction occurs in grade-band small groups, which account for the majority of each session. Students remain in the small group assigned to their track.
           </p>
 
           <div className="rg-2" style={{ gap: 20, marginBottom: 24 }}>
