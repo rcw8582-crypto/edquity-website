@@ -94,28 +94,51 @@ def card(title, section, path):
     d.line([(64 * S, 92 * S), (64 * S, H - 92 * S)], fill=GREEN, width=5 * S)
 
     x = 104 * S
-    eyebrow = font("GeistMono-Regular.ttf", 21 * S)
-    draw_tracked(d, (x, 96 * S), "EDQUITY AT THE MARGINS", eyebrow, AMBER, 7 * S)
+
+    # The brand logo, so a card reads as EDquity at a glance rather than
+    # relying on a typed wordmark. The white-on-navy asset ships with its navy
+    # baked in and no real alpha, which would sit on the gradient as a visible
+    # rectangle, so the flat navy is keyed out before compositing.
+    logo = Image.open(os.path.join(ROOT, "public", "images", "logo-white.png")).convert("RGBA")
+    bg = logo.getpixel((0, 0))[:3]
+    px = logo.load()
+    for ly in range(logo.height):
+        for lx in range(logo.width):
+            r, g, b, a = px[lx, ly]
+            dist = max(abs(r - bg[0]), abs(g - bg[1]), abs(b - bg[2]))
+            if dist <= 14:
+                px[lx, ly] = (r, g, b, 0)
+            elif dist < 46:
+                # Feather the antialiased rim so the mark keeps clean edges.
+                px[lx, ly] = (r, g, b, round(255 * (dist - 14) / 32))
+    lw = 236 * S
+    logo = logo.resize((lw, round(logo.height * lw / logo.width)), Image.LANCZOS)
+    img.paste(logo, (x, 80 * S), logo)
 
     # Headline: shrink until it fits three lines inside the safe width.
     max_w = int(W * 0.66)
-    for size in (66, 60, 54, 48, 43):
+    for size in (62, 56, 50, 45, 41):
         big = font("BricolageGrotesque-Bold.ttf", size * S)
         lines = wrap(d, title, big, max_w)
         if len(lines) <= 3:
             break
     lh = int(size * 1.24) * S
-    y = int(H * 0.50) - (len(lines) * lh) // 2
+    # Centred within the band between the logo and the footer, so two-line and
+    # three-line headlines both sit optically level.
+    band_top, band_bottom = 210 * S, H - 150 * S
+    y = band_top + (band_bottom - band_top - len(lines) * lh) // 2
     for ln in lines:
         d.text((x, y), ln, font=big, fill=CREAM)
         y += lh
 
+    # Footer keeps its own baseline rather than trailing the headline, so the
+    # citation never crowds the URL on a long title.
     if section:
-        lab = font("GeistMono-Regular.ttf", 23 * S)
-        draw_tracked(d, (x, y + 26 * S), section, lab, TEAL, 3 * S)
+        lab = font("GeistMono-Regular.ttf", 22 * S)
+        draw_tracked(d, (x, H - 132 * S), section, lab, TEAL, 3 * S)
 
-    url = font("InstrumentSans-Regular.ttf", 25 * S)
-    d.text((x, H - 118 * S), "edquityatthemargins.org", font=url, fill=MIST)
+    url = font("InstrumentSans-Regular.ttf", 24 * S)
+    d.text((x, H - 84 * S), "edquityatthemargins.org", font=url, fill=MIST)
 
     img.resize((1200, 630), Image.LANCZOS).save(path, "JPEG", quality=88, optimize=True)
 
