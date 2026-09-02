@@ -45,12 +45,13 @@ const TRACK_LOWER = {
   band: "Grades 8 to 10",
   name: "Pathways",
   length: "Eight sessions",
-  blurb: "By the end of the year, a Pathways Scholar can do these things.",
+  blurb: "What a Pathways Scholar does and produces across the year.",
   items: [
-    "Name their own strengths and say where they come from",
-    "Name careers that fit those strengths, and what each one requires",
-    "Hold an interview with an adult working in a field they care about",
-    "Present a Pathway Presentation their family carries into the next IEP meeting",
+    "Completes a formal strengths assessment",
+    "Explores real occupations using federal occupation data",
+    "Interviews a volunteer professional working in a field they choose",
+    "Practices interviewing, with feedback, more than once",
+    "Produces a Pathway Presentation for their family and their IEP team",
   ],
 };
 
@@ -58,21 +59,24 @@ const TRACK_UPPER = {
   band: "Grades 11 to 12",
   name: "Scholars",
   length: "Six sessions plus orientation",
-  blurb: "By the end of the year, a Scholars student can do these things.",
+  blurb: "What a Scholars student does and produces across the year.",
   items: [
-    "Explain what changes legally at graduation, and what becomes their own job",
-    "Register with a college disability services office, and know when to do it",
-    "Request an accommodation in their own words, without naming a diagnosis",
-    "Hold a transition portfolio they own, carrying documentation and a plan",
+    "Learns that IDEA ends at graduation and the asking becomes theirs",
+    "Requests their Summary of Performance and leaves with copies in hand",
+    "Registers with a college disability services office, and registers early",
+    "Uses a disclosure script: name the effect, end with a question, never name a diagnosis",
+    "Puts every deadline in one place, with one named person checking in",
+    "Produces a transition portfolio carrying three steps, each with a date and a person",
   ],
 };
 
 const SHARED = [
+  "The culture block that opens every Saturday, and the closing that ends it",
   "Executive function: planning, organizing, starting tasks, self-monitoring",
-  "Real practice speaking in their own IEP meeting, built up across the year",
   "Two campus visits, each including a sit-down with disability services",
-  "Their IEP independently audited at enrollment and again in May",
-  "A place to come back to, through graduation and then as Alumni mentors",
+  "An independent audit of their IEP at enrollment and again in May",
+  "The family showcase in May, where every Scholar presents",
+  "A place to return to each year through graduation, then as an Alumni mentor",
 ];
 
 const EXPECTATIONS = [
