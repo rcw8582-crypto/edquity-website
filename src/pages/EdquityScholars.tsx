@@ -33,10 +33,10 @@ const SESSIONS: Array<[string, string]> = [
   ["Saturday, December 11, 2027", "Session 4"],
   ["Saturday, January 8, 2028", "Session 5"],
   ["Saturday, February 12, 2028", "Session 6"],
-  ["Saturday, February 26, 2028", "College visit, Volunteer State"],
+  ["Saturday, February 26, 2028 (tentative)", "College visit, Volunteer State"],
   ["Saturday, March 11, 2028", "Session 7"],
   ["Saturday, April 8, 2028", "Session 8"],
-  ["Saturday, April 22, 2028", "College visit, Nashville"],
+  ["Saturday, April 22, 2028 (tentative)", "College visit, Nashville"],
   ["Saturday, May 6, 2028", "Session 9"],
   ["Saturday, May 20, 2028", "Family showcase"],
 ];
@@ -81,7 +81,7 @@ const SHARED = [
 const EXPECTATIONS = [
   ["Attendance", "Each session builds on the one before it, so coming to every session matters. A Scholar who misses more than two of the nine Saturdays cannot finish the year. After any missed day, we meet with that Scholar one to one for fifteen minutes to catch them up."],
   ["What to wear", "Wear your program T-shirt with shorts or jeans. Shirts have to cover your midriff, and sleeves cannot be cut off. We give every Scholar their program T-shirt, so there is nothing to buy."],
-  ["No cost, ever", "A sponsor pays for every seat. We provide food at every session, all materials and workbooks, and a chartered bus for the campus visits. Your family pays nothing for any of it."],
+  ["No cost, ever", "A sponsor pays for every seat. We provide food at every session, all materials and workbooks, and transportation for the campus visits. Your family pays nothing for any of it."],
   ["Access", "We ask what your student needs when they enroll, and we set up the day to match. That can mean captions, materials sent ahead of time, extra breaks, or anything else. Every adult in the program passes a background check."],
 ];
 
@@ -316,7 +316,7 @@ export default function EdquityScholars() {
             Every college gives tours. On our visits, Scholars take the tour and also meet with the campus disability services office. That office decides what accommodations a student gets in college. Most families do not know to ask for that meeting. Scholars bring their questions with them and get answers before they need them.
           </p>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: 0 }}>
-            The first cohort visits Volunteer State on February 26 and Tennessee State or Fisk on April 22. We travel by chartered bus. Every adult on the trip passes a background check. The trip costs families nothing.
+            The first cohort visits Volunteer State and then Tennessee State or Fisk. Both dates are still to be confirmed. Every adult on the trip passes a background check. The trip costs families nothing.
           </p>
         </div>
       </section>
@@ -368,12 +368,12 @@ export default function EdquityScholars() {
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: "0 0 14px" }}>How to request a seat</h2>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 14px" }}>
-            Your student can join if they will be in grades 8 through 12 during the 2027-28 school year and have a current IEP or Section 504 plan. Every Scholar in the room has one. That means no student has to explain their plan to anyone. Asking for a seat takes about five minutes:
+            Your student can join if they will be in grades 8 through 12 during the 2027-28 school year and have a current IEP or Section 504 plan.
           </p>
           <ol style={{ fontSize: 15, color: "#475569", lineHeight: 1.8, margin: "0 0 0 20px", padding: 0 }}>
-            <li>Submit the form below. No payment is collected, because no family ever pays.</li>
-            <li>We confirm your request by email right away.</li>
-            <li>We email you again to confirm the seat. We confirm seats in the order requests arrive, as sponsors fund them.</li>
+            <li>Fill out the form below. It takes about five minutes and asks for no payment.</li>
+            <li>You get an email right away saying we received it.</li>
+            <li>Later you get a second email telling you whether the seat is confirmed. Seats go in the order requests arrive, as sponsors fund them.</li>
           </ol>
         </div>
       </section>

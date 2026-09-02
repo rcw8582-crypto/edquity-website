@@ -175,7 +175,7 @@ export default async function handler(req: Request): Promise<Response> {
       <ul style="margin: 0 0 16px; padding-left: 20px;">
         <li>Summer intensive: July 12 to 16, 2027</li>
         <li>Saturday sessions, 9:00 AM to 1:00 PM: September 11, October 23, November 13, December 11, 2027, then January 8, February 12, March 11, April 8 and May 6, 2028</li>
-        <li>College visits: February 26 and April 22, 2028</li>
+        <li>Two college visits: dates to be confirmed</li>
         <li>Family showcase: May 20, 2028</li>
         <li>In person in Gallatin, Tennessee. Nothing meets on a school day.</li>
       </ul>
@@ -224,7 +224,7 @@ export default async function handler(req: Request): Promise<Response> {
       to: parentEmail,
       subject: "Your EDquity Scholars seat request has been received",
       html: ackHtml,
-      text: `Hi ${parentName}, thank you for requesting an EDquity Scholars seat for ${studentName}. The first cohort opens with a summer intensive July 12 to 16, 2027, then meets Saturdays from 9:00 AM to 1:00 PM on September 11, October 23, November 13 and December 11, 2027, and January 8, February 12, March 11, April 8 and May 6, 2028. College visits fall on February 26 and April 22, 2028, and the family showcase is May 20, 2028. Everything is in person in Gallatin and nothing meets on a school day. Thirty students join the first cohort. Every seat is sponsored and free to your student, we confirm requests in the order they arrive, and nothing is due now.`,
+      text: `Hi ${parentName}, thank you for requesting an EDquity Scholars seat for ${studentName}. The first cohort opens with a summer intensive July 12 to 16, 2027, then meets Saturdays from 9:00 AM to 1:00 PM on September 11, October 23, November 13 and December 11, 2027, and January 8, February 12, March 11, April 8 and May 6, 2028. Two college visits fall in February and April 2028 on dates still to be confirmed, and the family showcase is May 20, 2028. Everything is in person in Gallatin and nothing meets on a school day. Thirty students join the first cohort. Every seat is sponsored and free to your student, we confirm requests in the order they arrive, and nothing is due now.`,
     });
     if (ack.error) {
       console.error("[edquity-scholars] acknowledgment email failed:", ack.error);
