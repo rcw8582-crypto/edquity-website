@@ -120,7 +120,7 @@ export default async function handler(req: Request): Promise<Response> {
     return Response.json({ error: "Please select your student's grade level." }, { status: 400 });
   }
   if (!isNonEmptyString(body.schoolName, 300)) {
-    return Response.json({ error: "Please provide your student's high school." }, { status: 400 });
+    return Response.json({ error: "Please provide your student's school." }, { status: 400 });
   }
   if (!isNonEmptyString(body.county, 120)) {
     return Response.json({ error: "Please provide your county." }, { status: 400 });
@@ -153,7 +153,7 @@ export default async function handler(req: Request): Promise<Response> {
         ${row("Phone", parentPhone || "Not provided")}
         ${row("Student", studentName)}
         ${row("Grade level", gradeLevel)}
-        ${row("High school", schoolName)}
+        ${row("School", schoolName)}
         ${row("County / State", `${county}, ${state}`)}
         ${row("Access needs", accessNeeds || "None listed")}
         ${row("Questions", questions || "None")}
@@ -171,12 +171,14 @@ export default async function handler(req: Request): Promise<Response> {
       <h2 style="color: #122C54; margin: 0 0 16px; font-size: 18px;">Your EDquity Scholars seat request has been received</h2>
       <p>Hi ${escapeHtml(parentName)},</p>
       <p>Thank you for requesting an EDquity Scholars seat for ${escapeHtml(studentName)}. Nothing is due now; we confirm every seat by email, in the order requests arrive.</p>
-      <p style="margin: 16px 0 6px;"><strong>Inaugural cohort dates</strong></p>
+      <p style="margin: 16px 0 6px;"><strong>The first cohort</strong></p>
       <ul style="margin: 0 0 16px; padding-left: 20px;">
-        <li>Parent and student orientation: Tuesday, January 12, 2027</li>
-        <li>Six weekly virtual sessions: Tuesdays, January 19 through February 23, 2027</li>
+        <li>A five-day intensive in July 2027 that opens the year</li>
+        <li>Nine monthly Saturdays, September 2027 through May 2028, nine in the morning to one in the afternoon</li>
+        <li>Two local college visits, and a family showcase in May</li>
+        <li>In person in Gallatin, Tennessee</li>
       </ul>
-      <p>Every seat is sponsored and free to your student. We confirm seats as sponsorships are secured, on a first-come, first-served basis, and no payment is ever collected from families. If the inaugural cohort fills before your request is confirmed, we confirm your student's seat in the next cohort of the year.</p>
+      <p>Every seat is sponsored and free to your student. We confirm seats as sponsorships are secured, on a first-come, first-served basis, and no payment is ever collected from families. Thirty students join the first cohort, and we confirm requests in the order they arrive.</p>
       <p>If you told us about access needs, we will build for them from the start and follow up if we have questions.</p>
       <p style="margin-top: 20px;">EDquity at the Margins<br />
       <a href="https://edquityatthemargins.org/edquity-scholars" style="color: #14B8A6;">edquityatthemargins.org/edquity-scholars</a></p>
@@ -221,7 +223,7 @@ export default async function handler(req: Request): Promise<Response> {
       to: parentEmail,
       subject: "Your EDquity Scholars seat request has been received",
       html: ackHtml,
-      text: `Hi ${parentName}, thank you for requesting an EDquity Scholars seat for ${studentName}. Orientation for the inaugural cohort is Tuesday, January 12, 2027, with six weekly virtual sessions Tuesdays, January 19 through February 23, 2027; if the inaugural cohort fills, we confirm your student in the next cohort of the year. We confirm every seat by email and nothing is due now.`,
+      text: `Hi ${parentName}, thank you for requesting an EDquity Scholars seat for ${studentName}. The first cohort opens with a five-day intensive in July 2027, then meets one Saturday a month from September 2027 through May 2028, in person in Gallatin. Thirty students join the first cohort. Every seat is sponsored and free to your student, we confirm requests in the order they arrive, and nothing is due now.`,
     });
     if (ack.error) {
       console.error("[edquity-scholars] acknowledgment email failed:", ack.error);
