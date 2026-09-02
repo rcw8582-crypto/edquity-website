@@ -113,6 +113,7 @@ export default function EdquityScholars() {
       parentPhone: data.get("parentPhone"),
       studentName: data.get("studentName"),
       gradeLevel: data.get("gradeLevel"),
+      planType: data.get("planType"),
       schoolName: data.get("schoolName"),
       county: data.get("county"),
       state: data.get("state"),
@@ -443,6 +444,20 @@ export default function EdquityScholars() {
                 <input style={inputStyle} id="state" name="state" required maxLength={60} defaultValue="Tennessee" />
               </div>
               <div style={fieldWrap}>
+                <span style={labelStyle}>Which one does your student have? *</span>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px 26px", marginTop: 4 }}>
+                  {[
+                    ["IEP", "An IEP (Individualized Education Program)"],
+                    ["504", "A Section 504 plan"],
+                  ].map(([value, label]) => (
+                    <label key={value} style={{ display: "flex", gap: 9, alignItems: "flex-start", fontSize: 15, color: NAVY, lineHeight: 1.5, cursor: "pointer" }}>
+                      <input type="radio" name="planType" value={value} required style={{ marginTop: 4 }} />
+                      {label}
+                    </label>
+                  ))}
+                </div>
+              </div>
+              <div style={fieldWrap}>
                 <label style={labelStyle} htmlFor="accessNeeds">Access needs</label>
                 <textarea style={{ ...inputStyle, minHeight: 90, resize: "vertical" }} id="accessNeeds" name="accessNeeds" maxLength={2000} placeholder="Tell us anything that helps your student take part. For example: captions, materials sent ahead of time, or extra breaks." />
               </div>
@@ -453,7 +468,7 @@ export default function EdquityScholars() {
 
               <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "#475569", lineHeight: 1.6, marginBottom: 20, cursor: "pointer" }}>
                 <input type="checkbox" name="eligibilityConfirmed" required style={{ marginTop: 3 }} />
-                My student will be in grades 8 through 12 during the 2027-28 school year and has a current Individualized Education Program (IEP) or Section 504 plan. *
+                My student will be in grades 8 through 12 during the 2027-28 school year, and the plan I selected above is current. *
               </label>
 
               {status === "error" && (

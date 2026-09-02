@@ -24,6 +24,7 @@ type Body = {
   parentPhone?: unknown;
   studentName?: unknown;
   gradeLevel?: unknown;
+  planType?: unknown;
   schoolName?: unknown;
   county?: unknown;
   state?: unknown;
@@ -128,6 +129,9 @@ export default async function handler(req: Request): Promise<Response> {
   if (!isNonEmptyString(body.state, 60)) {
     return Response.json({ error: "Please provide your state." }, { status: 400 });
   }
+  if (body.planType !== "IEP" && body.planType !== "504") {
+    return Response.json({ error: "Please tell us whether your student has an IEP or a Section 504 plan." }, { status: 400 });
+  }
   if (body.eligibilityConfirmed !== true) {
     return Response.json({ error: "EDquity Scholars is for students in grades 8 through 12 with a current IEP or 504 plan; please confirm eligibility." }, { status: 400 });
   }
@@ -137,6 +141,7 @@ export default async function handler(req: Request): Promise<Response> {
   const parentPhone = optionalString(body.parentPhone, 60);
   const studentName = (body.studentName as string).trim();
   const gradeLevel = (body.gradeLevel as string).trim();
+  const planType = body.planType === "IEP" ? "IEP" : "Section 504 plan";
   const schoolName = (body.schoolName as string).trim();
   const county = (body.county as string).trim();
   const state = (body.state as string).trim();
@@ -153,13 +158,14 @@ export default async function handler(req: Request): Promise<Response> {
         ${row("Phone", parentPhone || "Not provided")}
         ${row("Student", studentName)}
         ${row("Grade level", gradeLevel)}
+        ${row("Plan", planType)}
         ${row("School", schoolName)}
         ${row("County / State", `${county}, ${state}`)}
         ${row("Access needs", accessNeeds || "None listed")}
         ${row("Questions", questions || "None")}
       </table>
       <p style="color: #64748b; font-size: 12px; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
-        Eligibility confirmed: student in grades 8 through 12 with a current IEP or 504 plan.<br />
+        Eligibility confirmed: student in grades 8 through 12 with a current ${planType}.<br />
         Seats are limited; confirm by email in the order requests arrive, as sponsorships allow.<br />
         Submitted via the EDquity Scholars page on edquityatthemargins.org.
       </p>
@@ -201,6 +207,7 @@ export default async function handler(req: Request): Promise<Response> {
           parentPhone,
           studentName,
           gradeLevel,
+          planType,
           schoolName,
           county,
           state,
