@@ -6,6 +6,13 @@ import { trackPageview } from "@/lib/analytics";
 interface PageMetaProps {
   title: string;
   description: string;
+  /**
+   * Slug of a blog post that has its own generated share card. Passing it
+   * points og:image at that card so client-side navigation keeps the same
+   * image the prerendered HTML already carries. Omit it elsewhere and the
+   * page uses the sitewide card.
+   */
+  cardSlug?: string;
 }
 
 const SITE = "EDquity at the Margins";
@@ -18,10 +25,13 @@ const SITE = "EDquity at the Margins";
  */
 export const BASE_URL = "https://www.edquityatthemargins.org";
 
-export default function PageMeta({ title, description }: PageMetaProps) {
+export default function PageMeta({ title, description, cardSlug }: PageMetaProps) {
   const [location] = useLocation();
   const fullTitle = `${title} | ${SITE}`;
   const canonical = `${BASE_URL}${location === "/" ? "" : location}`;
+  const cardUrl = cardSlug
+    ? `${BASE_URL}/images/og/${cardSlug}.jpg`
+    : `${BASE_URL}/images/og-card.jpg`;
 
   // On the server there is no document and no effects, so report the values to
   // the prerender collector instead. See src/lib/head.ts.
@@ -48,11 +58,11 @@ export default function PageMeta({ title, description }: PageMetaProps) {
     setMeta('meta[property="og:description"]', "content", description);
     setMeta('meta[property="og:type"]', "content", "website");
     setMeta('meta[property="og:url"]', "content", canonical);
-    setMeta('meta[property="og:image"]', "content", `${BASE_URL}/images/og-card.jpg`);
+    setMeta('meta[property="og:image"]', "content", cardUrl);
     setMeta('meta[name="twitter:card"]', "content", "summary_large_image");
     setMeta('meta[name="twitter:title"]', "content", fullTitle);
     setMeta('meta[name="twitter:description"]', "content", description);
-    setMeta('meta[name="twitter:image"]', "content", `${BASE_URL}/images/og-card.jpg`);
+    setMeta('meta[name="twitter:image"]', "content", cardUrl);
 
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {
@@ -70,7 +80,7 @@ export default function PageMeta({ title, description }: PageMetaProps) {
     return () => {
       document.title = SITE;
     };
-  }, [fullTitle, description, canonical, location]);
+  }, [fullTitle, description, canonical, location, cardUrl]);
 
   return null;
 }
