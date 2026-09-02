@@ -94,9 +94,12 @@ export default function Partners() {
           </div>
 
           <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: 28, marginTop: 40 }}>
-            <h2 style={{ fontSize: 17, fontWeight: 800, color: "#122C54", margin: "0 0 10px" }}>Why representation in rehabilitation matters here</h2>
-            <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>
+            <h2 style={{ fontSize: 17, fontWeight: 800, color: "#122C54", margin: "0 0 10px" }}>Why these partnerships matter</h2>
+            <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: "0 0 12px" }}>
               Many of the children we serve receive occupational therapy, physical therapy, or speech-language services through their IEPs. The professionals who deliver those services sit at the IEP table, and families are better served when the people across that table reflect and understand their communities.
+            </p>
+            <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>
+              Closer to home, Sumner County is where we host our free parent workshops, and the Collaborative's resource network reaches the same families those workshops serve. You will find us at its annual Regional Special Needs Expo.
             </p>
           </div>
         </div>
