@@ -27,7 +27,7 @@ That structure tells you what actually matters. The state cannot reject your fil
 
 ## Where to find the form
 
-Most states post their model forms on the state education agency's website. In Tennessee, the forms live on the Tennessee Department of Education's special education dispute resolution page, alongside descriptions of each process. If you cannot locate your state's forms, your state's Parent Training and Information Center can point you to them and talk through which process fits your situation.
+Most states post their model forms on the state education agency's website. In Tennessee, they sit on the Dispute Resolution Processes page, inside the Tennessee Department of Education's Special Education Legal Services section, where the department publishes a Model Administrative Complaint Form and a Model Due Process Hearing Request Form in six languages, English, Spanish, Vietnamese, Swahili, Arabic, and Japanese (Tennessee Department of Education, n.d.). If you cannot locate your state's forms, your state's Parent Training and Information Center can point you to them and talk through which process fits your situation.
 
 Using the model form carries a practical advantage even though it is optional. The form prompts you for each element the regulation requires, so a complete filing becomes harder to get wrong, and a complete filing matters because a due process complaint that omits required content can be challenged before it moves forward.
 
@@ -50,3 +50,5 @@ Assistance to States for the Education of Children With Disabilities, 34 C.F.R. 
 Assistance to States for the Education of Children With Disabilities, 34 C.F.R. § 300.509 (2017).
 
 Individuals with Disabilities Education Act, 20 U.S.C. § 1400 et seq. (2004).
+
+Tennessee Department of Education. (n.d.). *Dispute resolution processes*. https://www.tn.gov/education/legal-services/special-education-legal-services/legal-dispute-resolution-processes.html
