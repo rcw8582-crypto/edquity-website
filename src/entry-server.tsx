@@ -46,6 +46,7 @@ export const STATIC_ROUTES: string[] = [
   "/board",
   "/board/roles",
   "/funders",
+  "/partners",
   "/press",
   "/transparency",
   "/contact",

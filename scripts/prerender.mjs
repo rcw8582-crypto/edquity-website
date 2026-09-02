@@ -168,6 +168,7 @@ const SITEMAP_WEIGHTS = {
   "/board": { changefreq: "monthly", priority: "0.7" },
   "/board/roles": { changefreq: "monthly", priority: "0.6" },
   "/funders": { changefreq: "monthly", priority: "0.7" },
+  "/partners": { changefreq: "monthly", priority: "0.6" },
   "/contact": { changefreq: "monthly", priority: "0.7" },
   "/book": { changefreq: "monthly", priority: "0.8" },
   "/press": { changefreq: "monthly", priority: "0.6" },

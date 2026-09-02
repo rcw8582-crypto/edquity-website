@@ -29,6 +29,7 @@ const Resources = lazy(() => import("@/pages/Resources"));
 const Events = lazy(() => import("@/pages/Events"));
 const Transparency = lazy(() => import("@/pages/Transparency"));
 const Funders = lazy(() => import("@/pages/Funders"));
+const Partners = lazy(() => import("@/pages/Partners"));
 const Press = lazy(() => import("@/pages/Press"));
 const Accessibility = lazy(() => import("@/pages/Accessibility"));
 const IEPGoalChecker = lazy(() => import("@/pages/IEPGoalChecker"));
@@ -142,6 +143,7 @@ function Router() {
           <Route path="/events" component={Events} />
           <Route path="/transparency" component={Transparency} />
           <Route path="/funders" component={Funders} />
+          <Route path="/partners" component={Partners} />
           <Route path="/press" component={Press} />
           <Route path="/accessibility" component={Accessibility} />
           <Route path="/tools/iep-goal-checker" component={IEPGoalChecker} />
