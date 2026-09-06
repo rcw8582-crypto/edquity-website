@@ -6,6 +6,32 @@ import { RESOURCES, fileLabel } from "@/content/resources";
 
 import { PORTAL_REGISTER_URL } from "@/lib/booking";
 
+/**
+ * The two flagship destinations, shown inside the hero so they sit above
+ * everything else on the page. They left the interactiveTools grid below when
+ * they moved up here, so each appears exactly once.
+ */
+const heroFeatures = [
+  {
+    icon: <Compass size={30} color="#FBBF24" />,
+    title: "Career Explorer",
+    badge: "For Students",
+    badgeColor: "#FBBF24",
+    desc: "For students, ages 13 and up. Answer 30 short questions about what you like, then see real careers that fit, what they pay, and how much school or training each one takes. Print a one-page plan to bring to a school meeting. No account needed.",
+    href: "/pathways/explore",
+    cta: "Start Exploring",
+  },
+  {
+    icon: <Newspaper size={30} color="#22C55E" />,
+    title: "In the Margins",
+    badge: "Our Blog",
+    badgeColor: "#22C55E",
+    desc: "Plain-language articles on IEP rights, the stranger test, the difference between MTSS, 504, and IEP, and how families can advocate effectively.",
+    href: "/news",
+    cta: "Read the Blog",
+  },
+];
+
 const interactiveTools = [
   {
     icon: <Layers size={28} color="#22C55E" />,
@@ -22,22 +48,6 @@ const interactiveTools = [
     href: "/tools/iep-goal-checker",
     badge: "Interactive Tool",
     badgeColor: "#14B8A6",
-  },
-  {
-    icon: <Compass size={28} color="#FBBF24" />,
-    title: "Career Explorer",
-    desc: "For students, ages 13 and up. Answer 30 short questions about what you like, then see real careers that fit, what they pay, and how much school or training each one takes. Print a one-page plan to bring to a school meeting, with a sheet explaining it for families. No account needed.",
-    href: "/pathways/explore",
-    badge: "Interactive Tool",
-    badgeColor: "#B45309",
-  },
-  {
-    icon: <Newspaper size={28} color="#8B5CF6" />,
-    title: "In the Margins",
-    desc: "Plain-language articles on IEP rights, the stranger test, the difference between MTSS, 504, and IEP, and how families can advocate effectively.",
-    href: "/news",
-    badge: "Articles",
-    badgeColor: "#8B5CF6",
   },
 ];
 
