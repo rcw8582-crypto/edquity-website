@@ -4,7 +4,7 @@ slug: "when-the-school-calls-the-police"
 excerpt: "IDEA does not stop a school from reporting a crime, and a report does not stop the IEP. Here is what the regulation permits, what FERPA limits, and what to ask for if it happens to your family."
 category: "Advocacy"
 published: true
-publishedAt: "2026-10-18"
+publishedAt: "2026-10-16"
 ---
 
 The phone call says there was an incident at school, the school resource officer was involved, and a report has been filed. Your child has an IEP, and you are left trying to sort out what the report means for their education.

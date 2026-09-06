@@ -4,7 +4,7 @@ slug: "filing-a-due-process-complaint"
 excerpt: "A due process complaint is how a special education dispute moves from the meeting room to a hearing officer. Federal law says who can file one, what it can cover, and how long you have."
 category: "Advocacy"
 published: true
-publishedAt: "2026-09-10"
+publishedAt: "2026-09-08"
 ---
 
 You asked for the evaluation, the meeting produced nothing, and the [Prior Written Notice](/news/prior-written-notice-when-school-says-no) confirmed the refusal in writing. The disagreement is still standing months later, and asking the district to reconsider has stopped producing anything new.
