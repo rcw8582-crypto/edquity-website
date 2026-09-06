@@ -33,10 +33,10 @@ export default function Navbar() {
   // footer and the mobile utility list; the logo covers Home.
   const navLinks = [
     { href: "/about", label: "About" },
-    { href: "/services", label: "Services" },
+    { href: "/services", label: "Family Services" },
     { href: "/resources", label: "Resources" },
     { href: "/edquity-scholars", label: "Scholars" },
-    { href: "/institutional-services", label: "For Institutions" },
+    { href: "/institutional-services", label: "Institutional Services" },
   ];
 
   /**
