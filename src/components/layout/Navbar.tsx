@@ -28,7 +28,7 @@ export default function Navbar() {
     };
   }, []);
 
-  // Four primary destinations, in this order. Everything else the header used
+  // Five primary destinations, in this order. Everything else the header used
   // to carry (Events, Career Explorer, In the Margins, Contact) lives in the
   // footer and the mobile utility list; the logo covers Home.
   const navLinks = [
@@ -36,6 +36,7 @@ export default function Navbar() {
     { href: "/services", label: "Services" },
     { href: "/resources", label: "Resources" },
     { href: "/edquity-scholars", label: "Scholars" },
+    { href: "/institutional-services", label: "For Institutions" },
   ];
 
   /**
@@ -129,7 +130,7 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div id="mobile-nav" className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-border shadow-lg animate-in slide-in-from-top-2">
           <div className="flex flex-col py-4 px-6">
-            {/* The same four links the header shows, in the same order. */}
+            {/* The same five links the header shows, in the same order. */}
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
