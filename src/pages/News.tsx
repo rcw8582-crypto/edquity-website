@@ -4,6 +4,7 @@ import PageMeta from "@/components/PageMeta";
 import { Calendar, ArrowRight, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getAllPublishedPosts, type BlogPost } from "@/lib/posts";
+import { formatPostDate } from "@/lib/date";
 
 const categoryColors: Record<string, string> = {
   Education: "bg-blue-100 text-blue-800",
@@ -21,15 +22,6 @@ const NEWS_IMAGES = [
   "/images/news-5.png",
   "/images/news-6.png",
 ];
-
-function formatDate(iso: string | null) {
-  if (!iso) return "";
-  return new Date(iso).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
 
 export default function News() {
   const posts: BlogPost[] = getAllPublishedPosts();
@@ -102,7 +94,7 @@ export default function News() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2 text-xs text-muted-foreground">
                         <Calendar size={14} />
-                        <span>{formatDate(post.publishedAt || post.createdAt)}</span>
+                        <span>{formatPostDate(post.publishedAt || post.createdAt)}</span>
                       </div>
                       <Link
                         href={`/news/${post.slug}`}

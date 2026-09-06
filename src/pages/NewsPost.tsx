@@ -6,6 +6,7 @@ import PageMeta from "@/components/PageMeta";
 import ShareWidget from "@/components/ShareWidget";
 import RelatedPosts from "@/components/RelatedPosts";
 import { getPostBySlug } from "@/lib/posts";
+import { formatPostDate } from "@/lib/date";
 
 const NEWS_IMAGES = [
   "/images/news-1.png",
@@ -23,15 +24,6 @@ const categoryColors: Record<string, string> = {
   Community: "bg-orange-100 text-orange-800",
   Events: "bg-pink-100 text-pink-800",
 };
-
-function formatDate(iso: string | null) {
-  if (!iso) return "";
-  return new Date(iso).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
 
 export default function NewsPost() {
   const params = useParams<{ slug: string }>();
@@ -81,7 +73,7 @@ export default function NewsPost() {
           </motion.h1>
           <div className="flex items-center gap-2 text-primary-foreground/70 text-sm">
             <Calendar size={15} />
-            <span>{formatDate(post.publishedAt || post.createdAt)}</span>
+            <span>{formatPostDate(post.publishedAt || post.createdAt)}</span>
           </div>
         </div>
       </section>

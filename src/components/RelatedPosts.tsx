@@ -13,6 +13,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Calendar, ArrowRight, Tag } from "lucide-react";
 import { getRelatedPosts, type BlogPost } from "@/lib/posts";
+import { formatPostDate } from "@/lib/date";
 
 const NEWS_IMAGES = [
   "/images/news-1.png",
@@ -30,15 +31,6 @@ const categoryColors: Record<string, string> = {
   Community: "bg-orange-100 text-orange-800",
   Events: "bg-pink-100 text-pink-800",
 };
-
-function formatDate(iso: string | null) {
-  if (!iso) return "";
-  return new Date(iso).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
 
 interface RelatedPostsProps {
   currentSlug: string;
@@ -104,7 +96,7 @@ export default function RelatedPosts({ currentSlug, count = 3 }: RelatedPostsPro
                 <div className="flex items-center justify-between text-xs text-muted-foreground">
                   <span className="inline-flex items-center gap-1">
                     <Calendar size={12} aria-hidden="true" />
-                    {formatDate(post.publishedAt || post.createdAt)}
+                    {formatPostDate(post.publishedAt || post.createdAt)}
                   </span>
                   <Link
                     href={`/news/${post.slug}`}
