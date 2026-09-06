@@ -12,7 +12,7 @@
  * page is a dead end.
  */
 
-export type ResourceKind = "Worksheet" | "Reference card" | "Template" | "Binder";
+export type ResourceKind = "Worksheet" | "Reference card" | "Template" | "Binder" | "Toolkit";
 
 export interface Resource {
   slug: string;
@@ -32,6 +32,32 @@ export interface Resource {
 }
 
 export const RESOURCES: Resource[] = [
+  {
+    slug: "iep-advocacy-toolkit",
+    title: "The IEP Advocacy Toolkit",
+    kind: "Toolkit",
+    summary:
+      "Twenty-two numbered worksheets, letters, and reference cards covering the full arc of IEP advocacy, from the first eligibility question through state complaints and transition planning.",
+    body: [
+      "Most advocacy resources answer one question. The problem is that special education asks families a new question every month: whether to request an evaluation, what a draft IEP actually promises, what to say when services quietly stop arriving. Answering each one means finding a new website, a new template, a new explanation of your rights.",
+      "This toolkit puts the whole sequence in one place. Every sheet is numbered and stands on its own, so you print the one your situation calls for instead of reading a manual. The sheets refer to each other by number, follow your child from eligibility through transition planning, and file into the IEP Master Binder as you complete them.",
+    ],
+    inside: [
+      "A plain language glossary of the words the school will use, from FAPE and PLAAFP to Prior Written Notice",
+      "Eligibility tools: a pre-evaluation checklist, IDEA vs. Section 504, the 13 disability categories, and a team member directory with an escalation ladder",
+      "Your rights in writing: a FAPE self-assessment, the placement continuum, and ready-to-send letters requesting an IEE and your child's full records",
+      "Document review tools: an IEP review guide, a PLAAFP evaluation rubric, and a quality checklist to run on every proposed goal",
+      "The meeting set: a preparation checklist, a parent concerns letter, a meeting notes template, and the post-meeting follow-up email",
+      "When things go wrong: an escalation letter guide, a state complaint filing guide and template, and a free legal help directory",
+      "Looking ahead: school transition and secondary transition planning checklists, self-advocacy goals, and an advocacy village directory",
+      "The five practices that make everything else work, starting with putting every conversation in writing",
+    ],
+    howToUse:
+      "Open the contents page and find your situation in the right-hand column, then print only the sheet that answers it. Worksheets are filled in, reference cards are read, and templates are copied and sent. File completed sheets in your IEP Master Binder so the record builds as you go.",
+    file: "/resources/EDATM_IEP_Advocacy_Toolkit.pdf",
+    accent: "#122C54",
+    related: ["iep-master-binder", "iep-meeting-notecatcher", "iep-eligibility-checklist"],
+  },
   {
     slug: "iep-master-binder",
     title: "The IEP Master Binder",
@@ -54,7 +80,7 @@ export const RESOURCES: Resource[] = [
       "Print it, punch it, and put it in a one-inch three-ring binder with eight dividers, then file the records you already have. Fill in the cover page and mark the six calendar dates during the week the IEP starts. Log every call and email the same day, because the log is only worth as much as the habit behind it.",
     file: "/resources/EDATM_IEP_Master_Binder.pdf",
     accent: "#2563EB",
-    related: ["iep-meeting-notecatcher", "iep-team-directory", "idea-vs-504"],
+    related: ["iep-advocacy-toolkit", "iep-meeting-notecatcher", "iep-team-directory"],
   },
   {
     slug: "iep-meeting-notecatcher",
