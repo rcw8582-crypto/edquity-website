@@ -112,6 +112,54 @@ export default function Resources() {
             Every guide below was written with one goal: giving you the specific knowledge you need to advocate effectively for your child. Download freely, share widely.
           </p>
         </div>
+
+        {/* The two flagship destinations sit inside the hero, above every
+            other resource on the page. */}
+        <div style={{ maxWidth: 1100, margin: "48px auto 0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24 }}>
+          {heroFeatures.map((feature, i) => (
+            <motion.div
+              key={feature.href}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              style={{
+                background: "rgba(255,255,255,0.06)",
+                border: `1px solid ${feature.badgeColor}55`,
+                borderTop: `4px solid ${feature.badgeColor}`,
+                borderRadius: 16,
+                padding: "32px 32px 28px",
+                display: "flex",
+                flexDirection: "column",
+                gap: 16,
+                textAlign: "left",
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                <div style={{ width: 56, height: 56, borderRadius: 12, background: "rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  {feature.icon}
+                </div>
+                <span style={{ fontSize: 12, fontWeight: 700, color: feature.badgeColor, background: `${feature.badgeColor}22`, padding: "4px 12px", borderRadius: 999, letterSpacing: 0.5, textTransform: "uppercase" }}>
+                  {feature.badge}
+                </span>
+              </div>
+              <div>
+                <h2 style={{ fontSize: 24, fontWeight: 900, color: "#fff", margin: "0 0 10px", letterSpacing: "-0.5px" }}>{feature.title}</h2>
+                <p style={{ fontSize: 15, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, margin: 0 }}>{feature.desc}</p>
+              </div>
+              <Link
+                href={feature.href}
+                style={{
+                  marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                  background: feature.badgeColor, color: "#122C54", padding: "14px 24px", borderRadius: 8,
+                  fontWeight: 800, fontSize: 15, textDecoration: "none",
+                }}
+              >
+                {feature.cta} <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+            </motion.div>
+          ))}
+        </div>
       </section>
 
       <section className="sp" style={{ background: "#fff" }}>
