@@ -28,18 +28,14 @@ export default function Navbar() {
     };
   }, []);
 
-  // Kept short enough to fit on a 1024px laptop without collapsing into the
-  // hamburger, since a nav that is visible only above 1536px reads as no nav
-  // at all on the screens most visitors and reviewers actually use. Volunteer
-  // and the portal login live in the footer; the logo covers Home.
+  // Four primary destinations, in this order. Everything else the header used
+  // to carry (Events, Career Explorer, In the Margins, Contact) lives in the
+  // footer and the mobile utility list; the logo covers Home.
   const navLinks = [
+    { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/resources", label: "Resources" },
-    { href: "/pathways/explore", label: "Career Explorer" },
-    { href: "/events", label: "Events" },
-    { href: "/about", label: "About" },
-    { href: "/news", label: "In the Margins" },
-    { href: "/contact", label: "Contact" },
+    { href: "/edquity-scholars", label: "Scholars" },
   ];
 
   /**
@@ -51,6 +47,10 @@ export default function Navbar() {
    * utilities: reached deliberately rather than browsed.
    */
   const utilityLinks = [
+    { href: "/news", label: "In the Margins" },
+    { href: "/events", label: "Events" },
+    { href: "/pathways/explore", label: "Career Explorer" },
+    { href: "/contact", label: "Contact" },
     { href: "/volunteer", label: "Get Involved" },
     { href: "/board", label: "Join Our Board" },
     { href: "/client-portal", label: "EDquity360 Portal" },
@@ -129,7 +129,7 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div id="mobile-nav" className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-border shadow-lg animate-in slide-in-from-top-2">
           <div className="flex flex-col py-4 px-6">
-            {/* The same six links the header shows, in the same order. */}
+            {/* The same four links the header shows, in the same order. */}
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
