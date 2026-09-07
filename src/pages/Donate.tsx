@@ -61,6 +61,19 @@ export default function Donate() {
             You will receive a tax receipt. Zeffy passes on one hundred percent of your gift, so
             nothing is taken out in processing fees.
           </p>
+          <p style={{ fontSize: 14, color: "#64748b", margin: "28px 0 0", lineHeight: 1.7 }}>
+            Prefer PayPal?{" "}
+            <a
+              href="https://www.paypal.com/donate/?hosted_button_id=8TUN2LHMFF2VW"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="donate-paypal"
+              style={{ color: "#15803D", fontWeight: 700 }}
+            >
+              Donate with PayPal
+            </a>
+            , one-time, monthly, or yearly, and choose the program your gift supports.
+          </p>
         </div>
 
         <p style={{ fontSize: 13, color: "#64748b", textAlign: "center", marginTop: 20, lineHeight: 1.6, padding: "0 24px" }}>
