@@ -147,8 +147,8 @@ export default function EdquityScholars() {
   return (
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
-        title="EDquity Scholars: A Year-Long Program for Students in Grades 8 to 12"
-        description="EDquity Scholars is a year-long, no-cost program for students in grades 8 through 12 with an IEP or a 504 plan. A five-day July intensive, nine monthly Saturdays, two campus visits with disability services appointments, four parent workshops during the year, an IEP audit or a 504 review at intake, a May re-audit for returning Scholars, and a complete college transition package for graduating seniors. A seat is $1,000, funded by a sponsor rather than by the family. The first cohort begins July 2027 in Gallatin."
+        title="EDquity Scholars: A Year-Long Program for College-Bound Students in Grades 8 to 12"
+        description="EDquity Scholars is a year-long, no-cost program for college-bound students in grades 8 through 12 with an IEP or a 504 plan. A five-day July intensive, nine monthly Saturdays, two campus visits with disability services appointments, four parent workshops during the year, an IEP audit or a 504 review at intake, a May re-audit for returning Scholars, and a complete college transition package for graduating seniors. A seat is $1,000, funded by a sponsor rather than by the family. The first cohort begins July 2027 in Gallatin."
       />
 
       {/* Hero */}
@@ -159,7 +159,7 @@ export default function EdquityScholars() {
             EDquity Scholars
           </h1>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.78)", lineHeight: 1.7, maxWidth: 1000, margin: "0 auto 12px" }}>
-            A year-long program for students in grades 8 through 12 with an Individualized Education Program (IEP) or a Section 504 plan. Scholars learn to read their own document, speak in their own meeting, and build the organization, planning, and self-advocacy skills that carry them through school and into college and work.
+            A year-long program for college-bound students in grades 8 through 12 with an Individualized Education Program (IEP) or a Section 504 plan. Scholars learn to read their own document, speak in their own meeting, and build the organization, planning, and self-advocacy skills that carry them through school and into college and work.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 36px" }}>
             In person in Gallatin. Parents attend four workshops of their own during the year.
@@ -369,7 +369,7 @@ export default function EdquityScholars() {
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(22px,2.6vw,30px)", fontWeight: 800, margin: "0 0 14px" }}>How to request a seat</h2>
           <p style={{ fontSize: 15, color: "#475569", lineHeight: 1.7, margin: "0 0 14px" }}>
-            Your student can join if they will be in grades 8 through 12 during the 2027-28 school year and have a current IEP or Section 504 plan.
+            Your student can join if they are college-bound, will be in grades 8 through 12 during the 2027-28 school year, and have a current IEP or Section 504 plan.
           </p>
           <ol style={{ fontSize: 15, color: "#475569", lineHeight: 1.8, margin: "0 0 0 20px", padding: 0 }}>
             <li>Fill out the form below. It takes about five minutes and asks for no payment.</li>
