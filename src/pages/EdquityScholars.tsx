@@ -22,7 +22,7 @@ function Fact({ label, value }: FactProps) {
 const BELIEFS = [
   "Scholars runs from July through May with the same students and the same adults all year. One workshop is not long enough to learn these skills.",
   "The IEP or 504 plan belongs to the student. Every Scholar learns to read their own plan, say what helps them learn, and talk in their own meeting. They keep those skills after they graduate.",
-  "Parents learn too. Parents go to their own workshops on the same days their students meet, so the parent and the student learn the same things at the same time.",
+  "Parents learn too. Four times a year, on a program day, parents attend a workshop of their own while their students meet in their small groups.",
 ];
 
 const SESSIONS: Array<[string, string]> = [
@@ -74,7 +74,7 @@ const SHARED = [
   "Learn how to plan, get organized, start work without being told, and check their own progress",
   "Start and end every Saturday with the whole group",
   "Visit two colleges, and meet the disability services office at each one",
-  "Get an IEP audit, or a 504 review, when they join and again in May",
+  "Get an IEP audit, or a 504 review, when they join. Returning Scholars get a second one in May; graduating seniors leave with their complete college transition package instead",
   "Present to their family in May",
 ];
 
@@ -148,7 +148,7 @@ export default function EdquityScholars() {
     <div className="pt-20" style={{ fontFamily: "'Outfit', sans-serif", color: NAVY, background: "#fff" }}>
       <PageMeta
         title="EDquity Scholars: A Year-Long Program for Students in Grades 8 to 12"
-        description="EDquity Scholars is a year-long, no-cost program for students in grades 8 through 12 with an IEP or a 504 plan. A five-day July intensive, nine monthly Saturdays, two campus visits with disability services appointments, parent workshops on the same days, an IEP audit or a 504 review at intake and again in May, while graduating seniors leave with their complete college transition package. A seat is $1,000, funded by a sponsor rather than by the family. The first cohort begins July 2027 in Gallatin."
+        description="EDquity Scholars is a year-long, no-cost program for students in grades 8 through 12 with an IEP or a 504 plan. A five-day July intensive, nine monthly Saturdays, two campus visits with disability services appointments, four parent workshops during the year, an IEP audit or a 504 review at intake, a May re-audit for returning Scholars, and a complete college transition package for graduating seniors. A seat is $1,000, funded by a sponsor rather than by the family. The first cohort begins July 2027 in Gallatin."
       />
 
       {/* Hero */}
@@ -162,7 +162,7 @@ export default function EdquityScholars() {
             A year-long program for students in grades 8 through 12 with an Individualized Education Program (IEP) or a Section 504 plan. Scholars learn to read their own document, speak in their own meeting, and build the organization, planning, and self-advocacy skills that carry them through school and into college and work.
           </p>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.55)", margin: "0 0 36px" }}>
-            In person in Gallatin. Parents attend their own workshops on the same days.
+            In person in Gallatin. Parents attend four workshops of their own during the year.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap", marginBottom: 40 }}>
             <a href="#enroll" style={{ background: GREEN, color: NAVY, padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}>
@@ -348,7 +348,7 @@ export default function EdquityScholars() {
             <h2 style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 800, color: "#fff", margin: 0 }}>How seats are funded</h2>
           </div>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.82)", lineHeight: 1.75, margin: "0 0 18px" }}>
-            A seat is $1,000, which covers the cost of delivering a full year to one student: the summer intensive, nine Saturdays, two campus visits, materials, food, transportation, and each Scholar's two IEP audits or 504 reviews. Every seat is funded by a sponsor and is free to the family it serves; no family ever pays for a seat, and no documentation is ever required. Seats open as sponsorships are secured, which is exactly what sponsoring a Scholar funds. Requesting a seat costs nothing and carries no obligation.
+            A seat is $1,000, which covers the cost of delivering a full year to one student: the summer intensive, nine Saturdays, two campus visits, materials, food, transportation, and each Scholar's IEP audits or 504 reviews. Every seat is funded by a sponsor and is free to the family it serves; no family ever pays for a seat, and we never ask for proof of income or hardship to qualify. Seats open as sponsorships are secured, which is exactly what sponsoring a Scholar funds. Requesting a seat costs nothing and carries no obligation.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: 14, margin: "0 0 18px" }}>
             {SPONSOR_TIERS.map(([amount, what]) => (
