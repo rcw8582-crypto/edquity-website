@@ -392,7 +392,7 @@ export default function TeacherPD() {
             Professional learning offerings
           </h2>
           <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.8, margin: "0 0 32px" }}>
-            Six sessions, each grounded in real IEP audit findings.
+            Five sessions, each grounded in real IEP audit findings.
           </p>
 
           <div style={{ display: "grid", gap: 24 }}>
