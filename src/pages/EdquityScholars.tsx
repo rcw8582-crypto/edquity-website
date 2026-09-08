@@ -44,7 +44,7 @@ const SESSIONS: Array<[string, string]> = [
 const TRACK_LOWER = {
   band: "Grades 8 to 10",
   name: "Pathways",
-  length: "Eight sessions",
+  length: "Five days in July, then nine Saturdays",
   blurb: "What these students do during the year:",
   items: [
     "Take a strengths assessment that shows what they are good at",
@@ -57,7 +57,7 @@ const TRACK_LOWER = {
 const TRACK_UPPER = {
   band: "Grades 11 to 12",
   name: "Scholars",
-  length: "Six sessions plus orientation",
+  length: "Five days in July, then nine Saturdays",
   blurb: "What these students do during the year:",
   items: [
     "Learn that the IEP stops when they graduate, and that college follows different laws",
