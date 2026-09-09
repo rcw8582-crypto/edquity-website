@@ -17,7 +17,7 @@ import { BOOKING_URL, PORTAL_REGISTER_URL } from "@/lib/booking";
  * belongs in the founder bio on About, and the second published a goal rather
  * than a result, which told a visitor the organization was small and had not
  * done it yet. Every figure here is verifiable elsewhere on the site and
- * answers a question the reader actually has.
+ * answers a question the reader has.
  */
 const STATS: Array<{ value: number | string; suffix: string; label: string }> = [
   { value: "$0", suffix: "", label: "What families pay for the IEP audit, the toolkit, and Know Your Rights workshops" },
@@ -328,7 +328,7 @@ export default function Home() {
           </div>
           <div className="rg-3" style={{ marginBottom: 20 }}>
             {[
-              { icon: <Lightbulb size={22} color="#22C55E" />, title: "Need Clarity", text: "Feel overwhelmed by institutional jargon and want a plain-language translation of what the IEP actually says." },
+              { icon: <Lightbulb size={22} color="#22C55E" />, title: "Need Clarity", text: "Feel overwhelmed by institutional jargon and want a plain-language translation of what the IEP says." },
               { icon: <Target size={22} color="#22C55E" />, title: "Spotting Gaps", text: "Suspect their child's current IEP is missing crucial supports or failing to address documented needs." },
               { icon: <Shield size={22} color="#22C55E" />, title: "Independent Eyes", text: "Want an expert, objective opinion outside of the school district's perspective before signing anything." },
             ].map((card, i) => (
@@ -394,7 +394,7 @@ export default function Home() {
             style={{ fontSize: "clamp(28px,4vw,52px)", fontWeight: 900, lineHeight: 1.1, margin: "0 0 48px", color: "#fff", letterSpacing: "-1.5px" }}>
             Securing what children<br />are <span style={{ color: "#15803D" }}>already owed.</span>
           </motion.h2>
-          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: "0 0 28px" }}>EDquity at the Margins was founded to address the gap between the federal protections guaranteed to families of children with disabilities and the educational experiences those families actually receive.</p>
+          <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: "0 0 28px" }}>EDquity at the Margins was founded to address the gap between the federal protections guaranteed to families of children with disabilities and the educational experiences those families receive.</p>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: "0 0 28px" }}>The Individuals with Disabilities Education Act entitles every eligible child to a free and appropriate public education in the least restrictive environment, yet the families covered by that law frequently lack the position to enforce its provisions, because navigating implementation systems demands levels of knowledge, documentation, and advocacy capacity that race, income, language, and geography distribute unequally.</p>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.72)", lineHeight: 1.8, margin: 0 }}>The work is grounded in special education because that domain holds the most explicit federal protections and reveals the widest distance between statutory requirement and institutional practice, while the systemic conditions producing that distance extend well beyond any single policy area.</p>
         </div>
