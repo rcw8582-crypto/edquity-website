@@ -58,7 +58,7 @@ If MTSS interventions are not working, ask in writing for a special education ev
 
 ## What if your child is in the wrong system
 
-This is one of the most common reasons families come to us. A child placed in Tier 2 MTSS who actually needs an IEP. A child given a 504 plan when their disability requires specialized instruction. A child stuck in a holding pattern for years while the school cycles through interventions that have already failed.
+This is one of the most common reasons families come to us. A child placed in Tier 2 MTSS who needs an IEP. A child given a 504 plan when their disability requires specialized instruction. A child stuck in a holding pattern for years while the school cycles through interventions that have already failed.
 
 If you suspect your child is in the wrong system, the family has the right to request a comprehensive evaluation in writing. The school must respond, usually within a state-specific timeline of 30 to 60 days. The evaluation answers, in writing, whether your child qualifies for an IEP, a 504 plan, or continued MTSS support.
 
