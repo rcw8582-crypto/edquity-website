@@ -183,7 +183,7 @@ export default function Methodology() {
             number="05"
             iepLabel="Transition Services"
             title="Future: planning for after high school"
-            intro="For students age 16 and older, the IEP must include transition services that connect this year's coursework to life after high school. Many transition services are written as templates filled out the same way for every student. Transition services that are not specific to your child are not legally compliant."
+            intro="For students age 16 and older, the IEP must include transition services that connect this year's coursework to life after high school. Many transition services are written as templates filled out the same way for every student. When transition services could apply to any student, the record does not demonstrate that they were built for your child."
             lookFor={[
               "A current, age-appropriate transition assessment exists. Career interest inventory, adaptive behavior scale, self-determination assessment.",
               "The IEP names measurable postsecondary goals in further education, employment, and independent living where appropriate.",
