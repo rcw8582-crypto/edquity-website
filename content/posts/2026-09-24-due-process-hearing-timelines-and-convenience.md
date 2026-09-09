@@ -43,7 +43,7 @@ Under § 300.515(d), each hearing and each review involving oral arguments must 
 
 That requirement has practical teeth for working parents. A hearing set for 9:00 a.m. across three days in a district office forty minutes away, when you work a shift you cannot leave, is a scheduling problem the regulation already addresses. Respond in writing, name the conflict plainly, propose specific alternatives such as later start times or a virtual format where your state offers one, and cite § 300.515(d). Ask early, because the further out the request goes, the easier it is to accommodate.
 
-The two rules in this section work together. A decision that arrives inside the school year it concerns, reached at a hearing you were actually able to attend, is what the regulation is built to produce. This post is general information rather than legal advice, and a special education attorney or your state's Parent Training and Information Center can advise you on a specific case.
+The two rules in this section work together. A decision that arrives inside the school year it concerns, reached at a hearing you were able to attend, is what the regulation is built to produce. This post is general information rather than legal advice, and a special education attorney or your state's Parent Training and Information Center can advise you on a specific case.
 
 Our free IEP Audit reviews your child's IEP across six research-grounded areas and returns a written report naming what is missing and what to ask for. Families pay nothing. [Book a New Family Registration call](/book) and we will walk you through how it works.
 
