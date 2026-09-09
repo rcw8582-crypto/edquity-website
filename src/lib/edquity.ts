@@ -53,16 +53,32 @@ export const EDQUITY_DEFINITION =
   "A condition in which the quality of the education a child receives is not dependent on the child's intersecting identities and circumstances, including race, ethnicity, national origin, family income, home language, disability, or where the child lives.";
 
 /**
- * Sense 2, the property. Use it where a reader needs the term to hold by
- * degree rather than all at once, which is most institutional writing: a
- * system is closer to the condition or further from it.
+ * There is deliberately no institutional sense of the noun.
+ *
+ * A draft on 2026-09-09 read "a school, district, or state holds EDquity to the
+ * highest degree when...", and Reba struck it: equity cannot be a school or a
+ * district. The noun names a condition children either meet or do not, so an
+ * institution is never an instance of it, and making a system the subject would
+ * turn the word into a property that institutions own.
+ *
+ * The institution keeps its own plain noun, which is school, district, state,
+ * or the umbrella term system. EDquitable is an adjective, so it states a
+ * property and modifies that noun rather than standing in for it. Write "an
+ * EDquitable district", never "the district holds EDquity" and never the
+ * adjective on its own where a noun belongs.
  */
-export const EDQUITY_DEFINITION_PROPERTY =
-  "A school, district, or state holds EDquity to the degree that the quality of the education it provides does not vary based on the child's intersecting identities and circumstances.";
 
-/** Sense 3, the proper noun. */
+/**
+ * Sense 2, the proper noun.
+ *
+ * The wording was "The organization that does this" until 2026-09-09, when Reba
+ * asked what the organization does. The phrase had pointed at the old practice
+ * sense, and once that sense left the entry there was no antecedent: sense 1
+ * names a condition, and an organization cannot do a condition. It works toward
+ * one.
+ */
 export const EDQUITY_DEFINITION_ORGANIZATION =
-  "The organization that does this.";
+  "The organization that supports historically underserved families in achieving education equity.";
 
 /**
  * The family-facing paraphrase, for spoken use and for surfaces where the
@@ -155,9 +171,13 @@ export const EDQUITY_DERIVED: ReadonlyArray<{
   body: string;
 }> = [
   {
+    // Takes a school, a district, a state, or the umbrella noun system. That
+    // list stays out of the gloss, since "providing" already tells a reader
+    // only a system can be EDquitable, and a list plus a colon plus a
+    // participle reads as a fragment bolted onto a label.
     term: "EDquitable",
     partOfSpeech: "adjective",
-    body: "Describing a system in which the quality of a child's education does not vary based on the child's intersecting identities and circumstances.",
+    body: "Providing education of the same quality to every child, regardless of their intersecting identities and circumstances.",
   },
   {
     term: "EDquity gap",
@@ -167,9 +187,12 @@ export const EDQUITY_DERIVED: ReadonlyArray<{
 ];
 
 /**
- * The gap kept under its own name, because it is the figure quoted on its own
- * and the derived-forms array is not always the right shape for a page.
+ * The adjective and the gap kept under their own names, because each gets
+ * quoted on its own and the derived-forms array is not always the right shape
+ * for a page. Institutional surfaces take EDQUITABLE_DEFINITION and apply it to
+ * a noun of their own, since the noun EDquity has no institutional sense.
  */
+export const EDQUITABLE_DEFINITION = EDQUITY_DERIVED[0].body;
 export const EDQUITY_GAP = EDQUITY_DERIVED[1].body;
 
 /* ------------------------------------------------------------------ *
