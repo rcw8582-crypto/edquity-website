@@ -135,7 +135,7 @@ export default function Footer() {
               We translate institutional special education practices into plain language so families can engage with schools as true, empowered partners.
             </p>
             {/* Labelled rather than four bare icons. Unlabelled glyphs read as
-                decoration, so nothing on the site actually asked anyone to
+                decoration, so nothing on the site asked anyone to
                 follow. The handle is spelled out because people search for it
                 as often as they click. */}
             <div>
