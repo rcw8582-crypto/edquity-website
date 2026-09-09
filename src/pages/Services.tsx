@@ -288,7 +288,7 @@ export default function Services() {
             </div>
             <h3 style={{ fontSize: "clamp(20px,2.2vw,26px)", fontWeight: 900, color: "#122C54", margin: "0 0 12px", letterSpacing: "-0.5px" }}>Take these with you, no appointment needed</h3>
             <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 24px", maxWidth: 1000 }}>
-              Alongside our services, we publish tools you can download and use on your own: the Advocacy Toolkit with plain-language IDEA guides, meeting notecatchers, and eligibility checklists; My Child's Playbook for bringing your child's own voice into the meeting; and the IEP Goal Checker for testing whether a goal is actually measurable.
+              Alongside our services, we publish tools you can download and use on your own: the Advocacy Toolkit with plain-language IDEA guides, meeting notecatchers, and eligibility checklists; My Child's Playbook for bringing your child's own voice into the meeting; and the IEP Goal Checker for testing whether a goal is measurable.
             </p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <Link href="/resources"
