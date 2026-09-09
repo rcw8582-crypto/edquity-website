@@ -29,7 +29,7 @@ It opens with the rights closest to everyday advocacy: independent educational e
 
 Two topics round out the list: procedures for students subject to placement in an interim alternative educational setting, which arise in discipline cases, and the requirements for parents who unilaterally place a child in a private school at public expense.
 
-## Written so you can actually read it
+## Written so you can understand it
 
 Under § 300.504(d), the notice must meet the readability requirements of § 300.503(c). The school must write it in language understandable to the general public and provide it in your native language or other mode of communication, unless doing so is clearly not feasible. If your native language or other mode of communication is not a written language, § 300.503(c)(2) requires the school to translate the notice orally or by other means, to ensure you understand its content, and to keep written evidence that it did both.
 
