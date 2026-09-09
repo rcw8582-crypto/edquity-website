@@ -152,7 +152,7 @@ export default function PathwaysResults() {
             <p className="pw-lede">
               {strongest.size > 0
                 ? "Your strongest areas are marked. This is about the work you said you would enjoy, and it does not measure how good you are at anything."
-                : "Your answers came out fairly even across all six areas, so nothing stands out yet. That is a real result, not a mistake. Look through the careers below, or answer again and say what you actually like rather than what sounds sensible."}
+                : "Your answers came out fairly even across all six areas, so nothing stands out yet. That is a real result, not a mistake. Look through the careers below, or answer again and say what you like rather than what sounds sensible."}
             </p>
 
             <div className="pw-areas">
