@@ -154,7 +154,7 @@ export default function About() {
 
       {/* Programs. Named here because Ad Grants lists Programs among the key
           pages a reviewer reads, and because About previously described the
-          mission and the founder without ever saying what we actually run. */}
+          mission and the founder without ever saying what we run. */}
       <section className="sp" style={{ background: "#f8fafc" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div className="max-w-4xl mx-auto">
