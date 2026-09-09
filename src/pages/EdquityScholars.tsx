@@ -21,7 +21,7 @@ function Fact({ label, value }: FactProps) {
 
 const BELIEFS = [
   "Scholars runs from July through May with the same students and the same adults all year. One workshop is not long enough to learn these skills.",
-  "The IEP or 504 plan belongs to the student. Every Scholar learns to read their own plan, say what helps them learn, and talk in their own meeting. They keep those skills after they graduate.",
+  "The IEP or 504 plan belongs to the student. Every Scholar learns to read their own document, say what helps them learn, and talk in their own meeting. They keep those skills after they graduate.",
   "Parents learn too. Four times a year, on a program day, parents attend a workshop of their own while their students meet in their small groups.",
 ];
 
@@ -188,10 +188,10 @@ export default function EdquityScholars() {
             Speaking up for yourself and getting organized are skills. We teach them directly.
           </h2>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: "0 0 14px" }}>
-            IEPs often set goals for organization, planning, and speaking up. Students learn those things fastest when a person teaches them directly and they get a full year to practice. Students also do better when they understand their own plan and can talk in the meetings about their own education. Scholars teaches both of those, across a full year instead of in one workshop.
+            IEPs often set goals for organization, planning, and speaking up. Students learn those things fastest when a person teaches them directly and they get a full year to practice. Students also do better when they understand their own program and can talk in the meetings about their own education. Scholars teaches both of those, across a full year instead of in one workshop.
           </p>
           <p style={{ fontSize: 16, color: "#475569", lineHeight: 1.75, margin: 0 }}>
-            The second thing happens at graduation. The IEP stops. College follows two different laws, Section 504 and the ADA. Under those laws, no one has to find the student, test the student, or write a plan for them. The student has to ask. Most students are never told this, and most families find out after a hard first semester of college. Scholars teaches it years before graduation, while the high school team can still help.
+            The second thing happens at graduation. The IEP stops. College follows two different laws, Section 504 and the ADA. Under those laws, no one has to find the student, test the student, or put supports in place for them. The student has to ask. Most students are never told this, and most families find out after a hard first semester of college. Scholars teaches it years before graduation, while the high school team can still help.
           </p>
         </div>
       </section>
