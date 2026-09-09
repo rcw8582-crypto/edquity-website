@@ -11,7 +11,7 @@ You arrive at the hearing with a folder that proves the district broke rules. Th
 
 ## What the hearing officer has to decide
 
-Under 34 C.F.R. § 300.513(a)(1), a hearing officer's determination of whether a child received a free appropriate public education must be based on substantive grounds. Substantive means the education itself: what the district offered your child, what services it actually delivered, and whether the IEP was built to let your child make progress. The hearing officer asks whether your child received what the law promises rather than whether the district followed every step in the right order.
+Under 34 C.F.R. § 300.513(a)(1), a hearing officer's determination of whether a child received a free appropriate public education must be based on substantive grounds. Substantive means the education itself: what the district offered your child, what services it delivered, and whether the IEP was built to let your child make progress. The hearing officer asks whether your child received what the law promises rather than whether the district followed every step in the right order.
 
 > Subject to paragraph (a)(2) of this section, a hearing officer's determination of whether a child received FAPE must be based on substantive grounds. (2) In matters alleging a procedural violation, a hearing officer may find that a child did not receive a FAPE only if the procedural inadequacies— (i) Impeded the child's right to a FAPE; (ii) Significantly impeded the parent's opportunity to participate in the decision-making process regarding the provision of a FAPE to the parent's child; or (iii) Caused a deprivation of educational benefit.
 >
