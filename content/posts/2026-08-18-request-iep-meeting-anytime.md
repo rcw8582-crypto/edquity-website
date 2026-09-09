@@ -11,7 +11,7 @@ A parent watches services slip through September and October, notices a goal tha
 
 Nothing in federal law makes families wait like that. The annual review is a floor, not a schedule.
 
-## What the law actually requires
+## What the law requires
 
 Under 34 C.F.R. § 300.324(b)(1), the district must ensure the IEP team reviews your child's IEP periodically, and not less than annually, to determine whether the annual goals are being achieved. The same regulation requires the team to revise the IEP as appropriate to address any lack of expected progress toward the annual goals, the results of any reevaluation, information about the child provided to or by the parents, the child's anticipated needs, or other matters.
 
