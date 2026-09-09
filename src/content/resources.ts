@@ -5,7 +5,7 @@
  * five PDFs sat behind a single card on /resources, which meant one indexable
  * page for the whole library and no way for a family searching "what do I bring
  * to an IEP meeting" to land on the worksheet that answers it. Every `body`
- * paragraph below describes what is actually in the file; nothing here is
+ * paragraph below describes what is in the file; nothing here is
  * aspirational copy.
  *
  * `related` carries slugs, so each page links to three others and no resource
@@ -39,7 +39,7 @@ export const RESOURCES: Resource[] = [
     summary:
       "Twenty-two numbered worksheets, letters, and reference cards covering the full arc of IEP advocacy, from the first eligibility question through state complaints and transition planning.",
     body: [
-      "Most advocacy resources answer one question. The problem is that special education asks families a new question every month: whether to request an evaluation, what a draft IEP actually promises, what to say when services quietly stop arriving. Answering each one means finding a new website, a new template, a new explanation of your rights.",
+      "Most advocacy resources answer one question. The problem is that special education asks families a new question every month: whether to request an evaluation, what a draft IEP promises, what to say when services quietly stop arriving. Answering each one means finding a new website, a new template, a new explanation of your rights.",
       "This toolkit puts the whole sequence in one place. Every sheet is numbered and stands on its own, so you print the one your situation calls for instead of reading a manual. The sheets refer to each other by number, follow your child from eligibility through transition planning, and file into the IEP Master Binder as you complete them.",
     ],
     inside: [
@@ -136,7 +136,7 @@ export const RESOURCES: Resource[] = [
       "A side-by-side comparison of the two laws, built around one question: does your child need different instruction, or better access to the same instruction?",
     body: [
       "Families are often told their child will get a 504 plan as though it were a lighter version of an IEP. It is not a lighter version, it is a different law. IDEA is federal special education law and it provides specialized instruction. Section 504 is federal civil rights law and it provides access and accommodations without specialized instruction.",
-      "The difference shows up in the protections you hold as a parent. IDEA requires consent for evaluation and initial placement, an annual review at least every twelve months, prior written notice, and access to mediation and due process. Section 504 requires none of those at the federal level. Knowing which document your child is under tells you which rights you can actually invoke.",
+      "The difference shows up in the protections you hold as a parent. IDEA requires consent for evaluation and initial placement, an annual review at least every twelve months, prior written notice, and access to mediation and due process. Section 504 requires none of those at the federal level. Knowing which document your child is under tells you which rights you can invoke.",
     ],
     inside: [
       "A quick comparison table across what kind of law each is, what each provides, and who pays",
@@ -158,7 +158,7 @@ export const RESOURCES: Resource[] = [
       "All thirteen federally recognized categories in plain language, and why the category matters less than families are led to believe.",
     body: [
       "IDEA recognizes thirteen disability categories for eligibility. Families are often handed a category and told that it explains what their child will receive, which is not how the law works. Meeting a category is the starting point, not the end goal.",
-      "What actually determines your child's program is the evaluation data, the present levels of performance written into the document, and your advocacy at the table. The category gets your child into the room. It does not decide what happens once they are there.",
+      "What determines your child's program is the evaluation data, the present levels of performance written into the document, and your advocacy at the table. The category gets your child into the room. It does not decide what happens once they are there.",
     ],
     inside: [
       "All thirteen categories with a brief definition of each",
@@ -167,7 +167,7 @@ export const RESOURCES: Resource[] = [
       "The separation between a medical diagnosis and educational eligibility, which are two different determinations",
     ],
     howToUse:
-      "Use it to check whether the category on your child's paperwork matches what the evaluation actually found, and to push back if a category is being used to narrow what your child is offered.",
+      "Use it to check whether the category on your child's paperwork matches what the evaluation found, and to push back if a category is being used to narrow what your child is offered.",
     file: "/resources/EDATM_13_IDEA_Disability_Categories.pdf",
     accent: "#8B5CF6",
     related: ["idea-vs-504", "iep-eligibility-checklist", "iep-team-directory"],
