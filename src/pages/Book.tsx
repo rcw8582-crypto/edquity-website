@@ -12,7 +12,7 @@ import {
  * Booking.
  *
  * The two cards describe the calls, and the Calendly widget below them is
- * where a visitor actually picks a time. The widget is pointed at the
+ * where a visitor picks a time. The widget is pointed at the
  * Calendly profile, so it lists every public event type and nothing else:
  * the walkthrough and the two monitoring events are secret and stay out.
  *
