@@ -7,7 +7,6 @@ import {
   EDQUITY_PRONUNCIATION,
   EDQUITY_PART_OF_SPEECH,
   EDQUITY_DEFINITION,
-  EDQUITY_DEFINITION_PROPERTY,
   EDQUITY_DEFINITION_ORGANIZATION,
   EDQUITY_DEFINITION_PLAIN,
   EDUCATION_EQUITY_DIMENSIONS,
@@ -45,10 +44,12 @@ import { PORTAL_REGISTER_URL } from "@/lib/booking";
  * they could apply to their own state without us.
  */
 export default function Edquity() {
+  // Two senses only. There is no institutional sense of the noun: a school is
+  // never an instance of a condition, so institutional writing takes the
+  // adjective EDquitable and applies it to a noun of its own.
   const senses = [
     { n: 1, body: EDQUITY_DEFINITION },
-    { n: 2, body: EDQUITY_DEFINITION_PROPERTY },
-    { n: 3, body: EDQUITY_DEFINITION_ORGANIZATION, note: "proper" },
+    { n: 2, body: EDQUITY_DEFINITION_ORGANIZATION, note: "proper" },
   ];
 
   return (
