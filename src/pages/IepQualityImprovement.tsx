@@ -159,7 +159,7 @@ export default function IepQualityImprovement() {
           <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.8, margin: "0 0 20px" }}>
             Participating schools enroll for the school year and submit a sample of redacted IEPs
             each month from September through May. A single review tells you where one document
-            stands. A year of them tells you whether your practice is actually changing, which is
+            stands. A year of them tells you whether your practice is changing, which is
             the point of the Program.
           </p>
           <p style={{ fontSize: 17, color: "#475569", lineHeight: 1.8, margin: 0 }}>
