@@ -20,7 +20,7 @@ const QUESTIONS: { key: string; label: string; hint?: string }[] = [
   { key: "schoolVsHome", label: "What does the school say about your child, and what do you see at home that matches or does not?" },
   { key: "settingAndChanges", label: "What classroom setting is your child in now, and is any change coming?", hint: "For example a new school, a new grade, or a move." },
   { key: "diagnoses", label: "What disability categories or diagnoses does your child have, as you understand them?", hint: "Also tell us about any outside evaluations done or scheduled, and when." },
-  { key: "services", label: "What services and supports do you believe your child receives each week, and do you see them actually happening?" },
+  { key: "services", label: "What services and supports do you believe your child receives each week, and do you see them happening?" },
   { key: "behavior", label: "Any behavior incidents, calls home, suspensions, or removals this year?" },
   { key: "language", label: "What language does your family speak at home? Do you need documents or meetings in another language?" },
   { key: "health", label: "Any health needs the school should plan for?", hint: "Allergies, medication, medical conditions." },
