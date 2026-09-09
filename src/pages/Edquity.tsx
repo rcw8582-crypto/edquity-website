@@ -7,15 +7,20 @@ import {
   EDQUITY_PRONUNCIATION,
   EDQUITY_PART_OF_SPEECH,
   EDQUITY_DEFINITION,
-  EDQUITY_DEFINITION_PRACTICE,
+  EDQUITY_DEFINITION_PROPERTY,
   EDQUITY_DEFINITION_ORGANIZATION,
   EDQUITY_DEFINITION_PLAIN,
+  EDUCATION_EQUITY_DIMENSIONS,
+  EDQUITY_RELATION,
   EDQUITY_TEST,
   EDQUITY_ETYMOLOGY_SHORT,
   EDQUITY_ETYMOLOGY,
   EDQUITY_DERIVED,
-  EDQUITY_GAP_MEASURE,
+  EDQUITY_GAP,
   EDQUITY_EXCLUSIONS,
+  EDQUITY_SOURCES,
+  EDQUITY_FENCE,
+  EDATM_EQUITY_STATEMENT,
   EDQUITY_META_DESCRIPTION,
 } from "@/lib/edquity";
 import { PORTAL_REGISTER_URL } from "@/lib/booking";
@@ -33,18 +38,23 @@ import { PORTAL_REGISTER_URL } from "@/lib/booking";
  * Structured as a dictionary entry rather than an essay on purpose. A coinage
  * is easier to adopt when it is presented as a word with senses than as an
  * argument to be agreed with, and the entry form is what makes it quotable.
+ *
+ * The order of sections carries an argument of its own. The entry comes first,
+ * the field the term belongs to comes second, and this organization appears
+ * only in the last section. A reader who stops halfway has read a definition
+ * they could apply to their own state without us.
  */
 export default function Edquity() {
   const senses = [
     { n: 1, body: EDQUITY_DEFINITION },
-    { n: 2, body: EDQUITY_DEFINITION_PRACTICE },
+    { n: 2, body: EDQUITY_DEFINITION_PROPERTY },
     { n: 3, body: EDQUITY_DEFINITION_ORGANIZATION, note: "proper" },
   ];
 
   return (
     <div className="pt-20">
       <PageMeta
-        title="EDquity: A Definition of Equity You Can Measure"
+        title="EDquity: A Definition"
         description={EDQUITY_META_DESCRIPTION}
       />
 
@@ -89,6 +99,43 @@ export default function Edquity() {
         </div>
       </section>
 
+      {/* The field the coinage belongs to, placed directly after the entry so a
+          researcher or a funder reads the word as a contribution to education
+          equity rather than as a private substitute for it */}
+      <section className="bg-background border-b border-border">
+        <div className="max-w-4xl mx-auto px-6 py-16 md:py-20">
+          <p className="text-xs font-bold uppercase tracking-widest text-accent-ink mb-4">
+            Where the word sits
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">
+            Education equity
+          </h2>
+          <p className="text-lg md:text-xl text-foreground leading-relaxed mb-12 max-w-3xl">
+            {EDQUITY_RELATION}
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+            {EDUCATION_EQUITY_DIMENSIONS.map((dimension) => (
+              <div
+                key={dimension.name}
+                className="border-t-2 border-accent pt-5"
+              >
+                <h3 className="text-xl font-bold text-primary mb-2">
+                  {dimension.name}
+                </h3>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  {dimension.body}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-muted-foreground mt-6 max-w-3xl">
+            The two dimensions follow Field, Kuczera, and Pont (2007), and the
+            test below turns them into something a system can check.
+          </p>
+        </div>
+      </section>
+
       {/* The test: what makes the definition falsifiable rather than aspirational */}
       <section className="bg-background">
         <div className="max-w-4xl mx-auto px-6 py-16 md:py-20">
@@ -96,7 +143,7 @@ export default function Edquity() {
             The test
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-12 max-w-2xl">
-            Sense 1 holds only when all three of these are true at once. Any one
+            Sense 1 holds only when all four of these are true at once. Any one
             of them failing is enough to say a system does not have it.
           </p>
 
@@ -147,7 +194,7 @@ export default function Edquity() {
         </div>
       </section>
 
-      {/* What it excludes, and the number it yields */}
+      {/* What it excludes, and the distance it names */}
       <section className="bg-background border-t border-border">
         <div className="max-w-4xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-12 md:gap-16">
           <div>
@@ -168,19 +215,20 @@ export default function Edquity() {
 
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 leading-tight">
-              What it counts
+              The distance it names
             </h2>
             <p className="text-base text-muted-foreground leading-relaxed mb-6">
-              Definitions of equity are usually criticized for naming an end
-              state without naming anything countable. This one yields a figure
-              you can compute for a school, a district, or a state, this year.
+              A condition stated as an end state gives nobody anything to close.
+              This one names a distance you can point at for one child, and a
+              school, a district, or a state holds as many of those distances as
+              it enrolls children.
             </p>
             <div className="bg-primary text-primary-foreground rounded-xl p-6">
               <p className="text-xs font-bold uppercase tracking-widest text-accent mb-3">
                 The EDquity gap
               </p>
               <p className="text-base md:text-lg leading-relaxed">
-                {EDQUITY_GAP_MEASURE}
+                {EDQUITY_GAP}
               </p>
             </div>
           </div>
@@ -211,24 +259,49 @@ export default function Edquity() {
         </div>
       </section>
 
-      {/* Where the standard comes from, and how to get the measurement */}
+      {/* Attribution, so the framing is citable rather than asserted */}
+      <section className="bg-background border-t border-border">
+        <div className="max-w-4xl mx-auto px-6 py-12 md:py-16">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-accent-ink mb-6">
+            References
+          </h2>
+          <ul className="space-y-4">
+            {EDQUITY_SOURCES.map((source) => (
+              <li
+                key={source}
+                className="text-sm md:text-base text-muted-foreground leading-relaxed"
+                style={{ paddingLeft: "1.75rem", textIndent: "-1.75rem" }}
+              >
+                {source}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* This organization, and only here. The section exists to show a reader
+          that the term does not depend on us, so the fence comes before the
+          calls to action rather than after them. */}
       <section className="bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-6 py-16 md:py-20">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-            The instrument behind the definition
+            How we pursue it
           </h2>
-          <p className="text-lg text-primary-foreground/75 leading-relaxed mb-4 max-w-3xl">
-            None of this would mean anything without something to measure with.
-            We read every plan against the same set of conditions, organized
-            across six domains and grounded in research on what makes a plan
-            work in practice, and the instrument does not change according to who
-            asked for the reading.
+          <p className="text-lg text-primary-foreground/75 leading-relaxed mb-8 max-w-3xl">
+            {EDQUITY_FENCE}
           </p>
+          <blockquote className="border-l-4 border-accent pl-6 md:pl-8 mb-10">
+            <p className="text-xl md:text-2xl font-semibold leading-snug">
+              {EDATM_EQUITY_STATEMENT}
+            </p>
+          </blockquote>
           <p className="text-lg text-primary-foreground/75 leading-relaxed mb-10 max-w-3xl">
-            A family receives a plain-language report on what their child's plan
-            is missing. A school receives trend data across its own documents
-            showing what its plans consistently miss. Same measurement, opposite
-            direction.
+            We read every program against the same set of conditions, organized
+            across six domains and grounded in research on what makes a program
+            work in practice. A family receives a plain-language report on what
+            their child's program is missing, and a school receives trend data
+            across its own documents showing what its programs consistently
+            miss.
           </p>
 
           <div className="flex flex-wrap gap-4">
