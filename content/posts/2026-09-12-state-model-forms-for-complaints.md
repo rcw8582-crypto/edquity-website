@@ -23,7 +23,7 @@ The two processes the forms cover are different tools. A state complaint under �
 
 Paragraph (b) of § 300.509 says you may use the model form, another form, or any other document, so long as what you file meets the content requirements in § 300.508(b) for a due process complaint or the requirements in § 300.153(b) for a state complaint. A plain letter that includes the required content counts exactly as much as the official form does.
 
-That structure tells you what actually matters. The state cannot reject your filing for arriving on the wrong template, and it cannot demand legal formatting, an attorney's involvement, or any particular software. Content is the only test, which means you do not need a lawyer or a special legal format to start either process.
+That structure tells you what matters. The state cannot reject your filing for arriving on the wrong template, and it cannot demand legal formatting, an attorney's involvement, or any particular software. Content is the only test, which means you do not need a lawyer or a special legal format to start either process.
 
 ## Where to find the form
 
