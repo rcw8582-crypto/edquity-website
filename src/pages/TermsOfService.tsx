@@ -50,7 +50,7 @@ export default function TermsOfService() {
             </ul>
 
             <h2>6. Limitation of Liability</h2>
-            <p>Edquity at the Margins provides services in good faith based on the information and documents provided by the family. The organization makes no guarantee regarding specific educational outcomes, IEP amendments, service changes, or school district responses. For services provided at no cost, Edquity at the Margins accepts no monetary liability arising from their delivery. For fee-based services, the liability of Edquity at the Margins is limited to the amount the family actually paid for the service giving rise to the claim.</p>
+            <p>Edquity at the Margins provides services in good faith based on the information and documents provided by the family. The organization makes no guarantee regarding specific educational outcomes, IEP amendments, service changes, or school district responses. For services provided at no cost, Edquity at the Margins accepts no monetary liability arising from their delivery. For fee-based services, the liability of Edquity at the Margins is limited to the amount the family paid for the service giving rise to the claim.</p>
 
             <h2>7. Termination of Services</h2>
             <p>Either party may terminate the service relationship with reasonable written notice. Edquity at the Margins reserves the right to decline or terminate services if a client engages in abusive, harassing, or threatening behavior toward staff or contractors.</p>
