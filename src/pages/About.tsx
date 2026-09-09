@@ -145,7 +145,7 @@ export default function About() {
                 School districts arrive at IEP meetings with teams of professionals, evaluators, and administrators whose command of specialized terminology and procedural rules creates a structural disadvantage for families who lack equivalent training. For families of color, economically disadvantaged families, and non-native English speakers, that disadvantage is compounded by documented patterns of racial and economic disparity in special education identification, placement, and service delivery.
               </p>
               <p>
-                <strong>EDquity at the Margins addresses that gap directly.</strong> Parents hold knowledge about their children that no evaluation instrument can replicate, and our work translates that knowledge into legally binding educational plans through document analysis and sustained advocacy support.
+                <strong>EDquity at the Margins addresses that gap directly.</strong> Parents hold knowledge about their children that no evaluation instrument can replicate, and our work translates that knowledge into legally binding education programs through document analysis and sustained advocacy support.
               </p>
             </div>
           </div>
