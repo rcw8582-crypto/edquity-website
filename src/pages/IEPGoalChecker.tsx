@@ -292,7 +292,7 @@ const COMPONENTS: Array<{
     label: "Observable skill or behavior",
     description: "The specific skill the goal targets, using a measurable verb (solve, write, read, identify, initiate).",
     missingPrompt: (n) =>
-      `The goal does not name a specific observable skill or behavior. What is ${n || "my child"} actually expected to do?`,
+      `The goal does not name a specific observable skill or behavior. What is ${n || "my child"} expected to do?`,
     weakPrompt: (n) =>
       `The verb in this goal is not observable. What is ${n || "my child"} expected to do in a way a substitute teacher could see and measure?`,
   },
