@@ -37,7 +37,7 @@ Section 300.519(e) closes a loophole that would otherwise defeat the rule. A per
 
 Section 300.519(f) creates a targeted exception for unaccompanied homeless youth. Appropriate staff of emergency shelters, transitional shelters, independent living programs, and street outreach programs may be appointed as temporary surrogate parents without regard to the employee restriction in paragraph (d)(2)(i), until the agency appoints a surrogate who meets all of the paragraph (d) requirements. A shelter worker who already knows the young person can therefore step in immediately, and that appointment is temporary by design rather than permanent.
 
-## What the surrogate can actually decide
+## What the surrogate can decide
 
 Section 300.519(g) gives the surrogate parent authority to represent the child in all matters relating to the identification, evaluation, and educational placement of the child, and the provision of a free appropriate public education to the child. In practice that covers consenting to evaluation, reviewing records, participating in IEP team meetings, agreeing or refusing to agree to a proposed placement, requesting an independent educational evaluation, and pursuing dispute resolution.
 
