@@ -29,7 +29,7 @@ export default function News() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [query, setQuery] = useState("");
 
-  // Categories that actually appear in published posts, so the filter row
+  // Categories that appear in published posts, so the filter row
   // never offers an empty result.
   const categories = useMemo(() => {
     const seen = new Set<string>();
