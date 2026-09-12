@@ -357,8 +357,19 @@ export default function EdquityScholars() {
               </div>
             ))}
           </div>
+          <div style={{ margin: "0 0 20px" }}>
+            <a
+              href="https://www.paypal.com/donate/?hosted_button_id=8TUN2LHMFF2VW"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="scholars-paypal"
+              style={{ display: "inline-block", background: GREEN, color: NAVY, padding: "15px 32px", borderRadius: 8, fontWeight: 800, textDecoration: "none", fontSize: 16 }}
+            >
+              Sponsor a seat with PayPal
+            </a>
+          </div>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.82)", lineHeight: 1.75, margin: 0 }}>
-            Individuals, businesses, and funders can sponsor an EDquity Scholar for $1,000, covering one student's full year, or sponsor several Scholars at once. Email <a href="mailto:info@edquityatthemargins.org" style={{ color: GREEN, fontWeight: 700 }}>info@edquityatthemargins.org</a> to sponsor, or give through our <a href="/donate" style={{ color: GREEN, fontWeight: 700 }}>donation page</a> and note "EDquity Scholars" with your gift.
+            Individuals, businesses, and funders can sponsor an EDquity Scholar for $1,000, covering one student's full year, or sponsor several Scholars at once. Email <a href="mailto:info@edquityatthemargins.org" style={{ color: GREEN, fontWeight: 700 }}>info@edquityatthemargins.org</a> to sponsor, give through <a href="https://www.paypal.com/donate/?hosted_button_id=8TUN2LHMFF2VW" target="_blank" rel="noopener noreferrer" style={{ color: GREEN, fontWeight: 700 }}>PayPal</a>, or use our <a href="/donate" style={{ color: GREEN, fontWeight: 700 }}>donation page</a>. Note "EDquity Scholars" with your gift.
           </p>
         </div>
       </section>
